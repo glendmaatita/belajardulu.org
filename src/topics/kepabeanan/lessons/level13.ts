@@ -1,0 +1,280 @@
+import type { Lesson } from "../../../types";
+
+export const level13: Lesson[] = [
+  // ============================================================
+  {
+    id: "simulasi-impor",
+    levelId: "praktik",
+    order: 1,
+    title: "Simulasi Impor End-to-End",
+    summary: "Menyatukan semua materi: dari mencari supplier, hitung landed cost, sampai barang keluar pelabuhan. Dengan video & kalkulator.",
+    durationMin: 16,
+    tags: ["simulasi", "impor", "landed cost", "praktik"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Saatnya menyatukan semuanya. Bayangkan Anda mengimpor satu kontainer barang. Pelajaran ini menelusuri seluruh langkah praktiknya, dari mencari supplier sampai barang tiba di gudang, lengkap dengan perhitungan biayanya.",
+      },
+      {
+        type: "video",
+        comp: "AlurImpor",
+        title: "Video: Alur Proses Impor",
+        caption: "Tinjau kembali enam langkah impor sebelum mulai menghitung biaya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Enam langkah inti",
+        html: "1) Cari & nego supplier. 2) Sepakati Incoterm & pembayaran. 3) Supplier kirim + dokumen. 4) Hitung & bayar bea/pajak (PIB). 5) Penjaluran & clearance. 6) Barang keluar ke gudang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Hitung landed cost dulu",
+        html: "Sebelum deal, hitung total biaya barang sampai gudang. Harga supplier murah belum tentu murah setelah freight, bea, dan pajak. Gunakan kalkulator di bawah.",
+      },
+      { type: "widget", widget: "KalkulatorLandedCost" },
+      {
+        type: "case",
+        title: "Studi Kasus: Menentukan harga jual",
+        html: "Landed cost satu unit barang ternyata Rp1,3 juta (sudah termasuk freight, bea, dan pajak), bukan Rp1 juta seperti harga supplier. Bila importir menetapkan harga jual berdasarkan Rp1 juta dengan margin 20% (Rp1,2 juta), ia justru <strong>rugi</strong>. Menghitung landed cost sebelum menetapkan harga adalah penyelamat margin.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Landed cost per unit Rp1,3 juta. Ingin margin 25%. Berapa harga jual minimal per unit (Rp)?",
+        answer: 1625000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Harga jual = Rp1,3 juta x 1,25 = <strong>Rp1.625.000</strong> agar margin 25% tercapai.",
+        hint: "Kalikan landed cost dengan (1 + margin).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Aktivitas ini ada di tahap awal atau akhir proses impor?",
+        buckets: ["Tahap awal", "Tahap akhir"],
+        items: [
+          { text: "Negosiasi harga dengan supplier", bucket: "Tahap awal" },
+          { text: "Penjaluran dan clearance pabean", bucket: "Tahap akhir" },
+          { text: "Menyepakati Incoterm", bucket: "Tahap awal" },
+          { text: "Barang keluar menuju gudang", bucket: "Tahap akhir" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Komponen landed cost per unit (ilustrasi)",
+        unit: "Rp ribu",
+        source: "ilustrasi edukatif",
+        note: "Harga supplier hanya sebagian dari total. Freight, bea, pajak, dan biaya lokal menambah hingga landed cost Rp1.300 ribu.",
+        data: [
+          { label: "Harga supplier", value: 1000, color: "#0ea5e9" },
+          { label: "Freight & asuransi", value: 120, color: "#6366f1" },
+          { label: "Bea masuk", value: 90, color: "#f59e0b" },
+          { label: "PPN & PPh impor", value: 70, color: "#ef4444" },
+          { label: "Biaya lokal & clearance", value: 20, color: "#10b981" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan komponen biaya impor dengan pengertiannya.",
+        pairs: [
+          { left: "Landed cost", right: "Total biaya barang sampai gudang" },
+          { left: "Freight", right: "Ongkos angkut barang dari supplier" },
+          { left: "Bea masuk", right: "Pungutan negara atas barang impor" },
+          { left: "PIB", right: "Pemberitahuan impor barang ke Bea Cukai" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Tarif Smoot-Hawley dan pentingnya landed cost",
+        html: "Pada <strong>1930</strong>, <strong>Tarif Smoot-Hawley</strong> di Amerika Serikat menaikkan bea masuk atas lebih dari <strong>20.000</strong> jenis barang sehingga harga barang impor melonjak jauh di atas harga belinya. Peristiwa ini menegaskan pelajaran abadi: harga supplier hanyalah awal, sebab bea masuk dan pajak dapat menambah biaya secara drastis. Itulah mengapa setiap importir wajib menghitung <strong>landed cost</strong> sebelum menetapkan harga jual.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Impor end-to-end menyatukan dokumen, logistik, Incoterm, bea, dan pajak.",
+          "Hitung landed cost sebelum menyepakati transaksi.",
+          "Harga supplier murah belum tentu murah setelah semua biaya.",
+          "Tetapkan harga jual berdasarkan landed cost, bukan harga supplier.",
+          "Kepatuhan dan dokumen rapi mempercepat clearance.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mengapa landed cost dihitung sebelum deal?",
+            options: ["Agar terlihat sibuk", "Agar harga jual tidak salah dan margin terjaga", "Wajib hukum", "Tidak penting"],
+            answer: 1,
+            explain: "Landed cost menjadi dasar penetapan harga jual yang benar.",
+          },
+          {
+            q: "Langkah paling awal dalam impor?",
+            options: ["Clearance pabean", "Cari & negosiasi supplier", "Barang keluar gudang", "Bayar PPN"],
+            answer: 1,
+            explain: "Proses dimulai dari mencari dan menegosiasikan supplier.",
+          },
+          {
+            q: "Dokumen pemberitahuan untuk membayar bea impor?",
+            options: ["PEB", "PIB", "NPE", "COO"],
+            answer: 1,
+            explain: "PIB adalah pemberitahuan impor barang, dasar pembayaran bea.",
+          },
+          {
+            q: "Landed cost Rp2 juta, margin 20%. Harga jual minimal?",
+            options: ["Rp2,4 juta", "Rp2,2 juta", "Rp1,6 juta", "Rp2 juta"],
+            answer: 0,
+            explain: "Rp2 juta x 1,2 = Rp2,4 juta.",
+          },
+          {
+            q: "Harga supplier murah tetapi landed cost tinggi karena?",
+            options: ["Freight, bea, dan pajak", "Warna kemasan", "Merek", "Cuaca"],
+            answer: 0,
+            explain: "Freight, bea masuk, dan pajak menambah biaya di atas harga supplier.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "simulasi-ekspor",
+    levelId: "praktik",
+    order: 2,
+    title: "Simulasi Ekspor End-to-End",
+    summary: "Praktik langkah demi langkah mengekspor barang: dari mencari pembeli, quotation, kontrak, menyiapkan barang, PEB, pengapalan, sampai pembayaran masuk.",
+    durationMin: 16,
+    tags: ["simulasi", "ekspor", "PEB", "praktik", "quotation"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Setelah memahami impor, kini giliran arah sebaliknya: <strong>ekspor</strong>. Bayangkan Anda seorang eksportir kopi yang baru mendapat permintaan dari pembeli di luar negeri. Pelajaran ini menelusuri seluruh langkah praktiknya, dari mencari pembeli sampai uang masuk ke rekening, lengkap dengan perhitungan harga dan marginnya.",
+      },
+      {
+        type: "video",
+        comp: "AlurEkspor",
+        title: "Video: Alur Proses Ekspor",
+        caption: "Tinjau tujuh langkah ekspor sebelum mulai menghitung harga dan margin.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tujuh langkah inti ekspor",
+        html: "1) Cari pembeli (buyer). 2) Kirim quotation/penawaran harga. 3) Sepakati kontrak & Incoterm. 4) Siapkan barang & dokumen. 5) Buat PEB (Pemberitahuan Ekspor Barang). 6) Pengapalan (shipping) & dapatkan NPE. 7) Pembayaran masuk.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Quotation harus sudah hitung semua biaya",
+        html: "Saat membuat <strong>quotation</strong>, jangan hanya pakai harga pokok barang. Masukkan biaya pengemasan ekspor, trucking ke pelabuhan, dokumen, dan ongkos kapal sesuai Incoterm yang ditawarkan (misalnya FOB atau CIF), lalu tambahkan margin Anda.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "PEB dan NPE wajib benar",
+        html: "Ekspor sah secara pabean lewat <strong>PEB</strong>. Setelah barang siap muat, Anda memperoleh <strong>NPE (Nota Pelayanan Ekspor)</strong> sebagai bukti barang boleh dimuat ke kapal. Pastikan data PEB cocok dengan invoice, packing list, dan kontrak agar tidak tertahan.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menentukan harga ekspor kopi",
+        html: "Pak Andi mengekspor kopi dengan harga pokok (HPP) Rp80.000 per kg. Biaya ekspor (pengemasan, trucking, dokumen, freight sampai FOB) sekitar Rp20.000 per kg. Total biaya menjadi Rp100.000 per kg. Bila ia menetapkan harga jual ekspor Rp130.000 per kg, marginnya sehat. Tetapi jika ia lupa memasukkan biaya ekspor dan hanya menambah margin di atas HPP Rp80.000, ia bisa kehilangan margin begitu freight dan dokumen ditagihkan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Total biaya ekspor kopi Rp100.000 per kg. Pak Andi ingin margin 30%. Berapa harga jual ekspor minimal per kg (Rp)?",
+        answer: 130000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Harga jual = Rp100.000 x 1,30 = <strong>Rp130.000</strong> per kg agar margin 30% tercapai.",
+        hint: "Kalikan total biaya dengan (1 + margin).",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan istilah ekspor dengan pengertiannya.",
+        pairs: [
+          { left: "Quotation", right: "Penawaran harga kepada calon pembeli" },
+          { left: "PEB", right: "Pemberitahuan Ekspor Barang ke Bea Cukai" },
+          { left: "NPE", right: "Nota Pelayanan Ekspor, izin barang dimuat" },
+          { left: "FOB", right: "Incoterm: biaya penjual sampai barang di atas kapal" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Susunan harga ekspor kopi per kg (ilustrasi FOB)",
+        unit: "Rp ribu/kg",
+        source: "ilustrasi edukatif",
+        note: "HPP plus biaya ekspor membentuk total biaya Rp100 ribu/kg; margin 30% menghasilkan harga jual Rp130 ribu/kg.",
+        data: [
+          { label: "HPP kopi", value: 80, color: "#0ea5e9" },
+          { label: "Pengemasan ekspor", value: 6, color: "#6366f1" },
+          { label: "Trucking ke pelabuhan", value: 5, color: "#f59e0b" },
+          { label: "Dokumen & PEB", value: 4, color: "#ef4444" },
+          { label: "Freight sampai FOB", value: 5, color: "#a855f7" },
+          { label: "Margin 30%", value: 30, color: "#10b981" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Komponen ini termasuk biaya pokok barang atau biaya ekspor tambahan?",
+        buckets: ["Biaya pokok (HPP)", "Biaya ekspor tambahan"],
+        items: [
+          { text: "Harga beli biji kopi dari petani", bucket: "Biaya pokok (HPP)" },
+          { text: "Pengemasan standar ekspor", bucket: "Biaya ekspor tambahan" },
+          { text: "Trucking ke pelabuhan", bucket: "Biaya ekspor tambahan" },
+          { text: "Pengurusan dokumen dan PEB", bucket: "Biaya ekspor tambahan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Kopi Jawa dan warisan ekspor Nusantara",
+        html: "Sejak awal <strong>abad ke-18</strong>, <strong>VOC</strong> mengembangkan perkebunan kopi di Jawa hingga 'Java coffee' menjadi komoditas ekspor yang termasyhur di Eropa. Indonesia pun tumbuh menjadi salah satu eksportir kopi terbesar dunia hingga kini. Warisan ini mengingatkan bahwa keberhasilan ekspor, dulu maupun sekarang, bertumpu pada mutu produk dan kemampuan menembus pasar luar negeri.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Ekspor end-to-end: cari pembeli, quotation, kontrak, siapkan barang, PEB, shipping, pembayaran.",
+          "Quotation harus sudah memuat seluruh biaya ekspor plus margin.",
+          "PEB adalah dokumen pabean ekspor; NPE adalah izin barang dimuat ke kapal.",
+          "Data PEB harus cocok dengan invoice, packing list, dan kontrak.",
+          "Hitung harga jual dari total biaya ekspor, bukan hanya HPP barang.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Langkah paling awal dalam ekspor?",
+            options: ["Buat PEB", "Cari pembeli (buyer)", "Pengapalan", "Terima pembayaran"],
+            answer: 1,
+            explain: "Proses ekspor dimulai dari mencari pembeli di luar negeri.",
+          },
+          {
+            q: "Dokumen pemberitahuan ekspor ke Bea Cukai adalah?",
+            options: ["PIB", "PEB", "Quotation", "COO"],
+            answer: 1,
+            explain: "PEB (Pemberitahuan Ekspor Barang) adalah dokumen pabean untuk ekspor.",
+          },
+          {
+            q: "Apa fungsi NPE?",
+            options: ["Penawaran harga", "Bukti barang boleh dimuat ke kapal", "Pembayaran pajak", "Daftar supplier"],
+            answer: 1,
+            explain: "NPE (Nota Pelayanan Ekspor) menjadi bukti barang ekspor boleh dimuat.",
+          },
+          {
+            q: "Quotation yang baik harus memuat?",
+            options: ["Hanya HPP barang", "Seluruh biaya ekspor plus margin", "Nama kapal saja", "Hanya freight"],
+            answer: 1,
+            explain: "Quotation harus mencakup semua biaya sampai Incoterm yang ditawarkan, lalu margin.",
+          },
+          {
+            q: "Total biaya ekspor Rp200.000/kg, margin 25%. Harga jual minimal?",
+            options: ["Rp250.000", "Rp225.000", "Rp160.000", "Rp200.000"],
+            answer: 0,
+            explain: "Rp200.000 x 1,25 = Rp250.000.",
+          },
+        ],
+      },
+    ],
+  },
+];

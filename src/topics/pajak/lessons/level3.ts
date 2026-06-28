@@ -1,0 +1,703 @@
+import type { Lesson } from "../../../types";
+
+export const level3: Lesson[] = [
+  // ============================================================
+  {
+    id: "apa-itu-ppn",
+    levelId: "ppn",
+    order: 1,
+    title: "Apa Itu PPN (Pajak Pertambahan Nilai)?",
+    summary: "PPN itu pajak yang dititipkan konsumen lewat penjual. Kenali cara kerjanya dengan video.",
+    durationMin: 11,
+    tags: ["PPN", "dasar", "PKP"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>PPN (Pajak Pertambahan Nilai)</strong> adalah pajak atas konsumsi barang dan jasa. Tarifnya <strong>11%</strong> (sesuai UU HPP). Yang menanggung sebenarnya adalah <strong>konsumen</strong>, sedangkan penjual (yang sudah PKP) hanya memungut lalu menyetorkannya.",
+      },
+      {
+        type: "video",
+        comp: "AlurPPN",
+        title: "Video: Ke Mana Uang PPN Mengalir?",
+        caption: "Animasi: konsumen membayar PPN, penjual menitipkan, negara menerima.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "PPN bukan biaya penjual",
+        html: "Banyak yang salah kira PPN mengurangi keuntungan. Padahal PPN hanya <strong>numpang lewat</strong>: dipungut dari pembeli, lalu disetor ke negara. Yang benar-benar menanggung adalah konsumen akhir.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Catatan tarif",
+        html: "Tarif PPN saat ini 11%. Tarif pajak dapat berubah mengikuti kebijakan pemerintah, jadi selalu cek aturan terbaru sebelum menetapkan harga.",
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "11%", label: "Tarif PPN umum", sub: "atas barang/jasa kena pajak", color: "#0ea5e9" },
+          { value: "PKP", label: "Hanya yang berstatus ini", sub: "yang wajib memungut PPN", color: "#10b981" },
+          { value: "Rp4,8 M", label: "Ambang wajib PKP", sub: "omzet setahun", color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Sejarah Tarif PPN di Indonesia (ilustrasi)",
+        unit: "%",
+        source: "UU HPP",
+        note: "Rencana 12% sewaktu-waktu dapat berubah sesuai kebijakan pemerintah.",
+        data: [
+          { label: "1984-2021", value: 10, color: "#94a3b8" },
+          { label: "Sejak 2022", value: 11, color: "#0ea5e9" },
+          { label: "Rencana", value: 12, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Contoh Aliran PPN pada Satu Penjualan (ilustrasi)",
+        unit: "Rp juta",
+        note: "Harga barang Rp10 juta, PPN 11% = Rp1,1 juta yang dititipkan ke negara.",
+        data: [
+          { label: "Harga barang", value: 10, color: "#10b981" },
+          { label: "PPN 11%", value: 1.1, color: "#0ea5e9" },
+          { label: "Total dibayar", value: 11.1, color: "#6366f1" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Salah anggap PPN bikin rugi",
+        html: "Pak Bagus (sudah PKP) menjual mebel Rp10 juta dan menambahkan PPN 11% (Rp1,1 juta), sehingga pembeli membayar Rp11,1 juta. Pak Bagus sempat mengira ia 'rugi' Rp1,1 juta. Padahal Rp1,1 juta itu bukan miliknya, hanya dititipkan untuk disetor ke negara. Keuntungannya tetap dari harga Rp10 juta.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Harga barang Rp10.000.000 (belum PPN). Berapa PPN 11% yang ditambahkan?",
+        answer: 1100000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN = 11% x Rp10.000.000 = <strong>Rp1.100.000</strong>. Pembeli membayar total Rp11.100.000.",
+        hint: "Kalikan harga dengan 11% (0,11).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pernyataan tentang PPN ini benar atau keliru?",
+        buckets: ["Benar", "Keliru"],
+        items: [
+          { text: "PPN ditanggung konsumen akhir", bucket: "Benar" },
+          { text: "Hanya PKP yang wajib memungut PPN", bucket: "Benar" },
+          { text: "PPN adalah keuntungan penjual", bucket: "Keliru" },
+          { text: "Semua UMKM wajib memungut PPN", bucket: "Keliru" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Warung non-PKP tidak memungut PPN",
+        html: "Bu Sari punya warung kelontong dengan omzet Rp600 juta setahun (jauh di bawah Rp4,8 miliar) dan berstatus non-PKP. Saat menjual minyak goreng seharga Rp20.000, ia <strong>tidak menambahkan PPN</strong>, sehingga pembeli cukup membayar Rp20.000. Bandingkan dengan toko ber-PKP yang menjual barang Rp20.000 plus PPN 11% (Rp2.200), pembeli membayar Rp22.200. Inilah alasan banyak warung kecil memilih tetap non-PKP.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Toko PKP menjual barang Rp250.000 (belum PPN). Berapa total yang dibayar pembeli setelah PPN 11%?",
+        answer: 277500,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN = 11% x Rp250.000 = Rp27.500. Total = Rp250.000 + Rp27.500 = <strong>Rp277.500</strong>.",
+        hint: "Hitung PPN 11% dulu, lalu tambahkan ke harga.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "PPN adalah pajak konsumsi, tarif umum 11%.",
+          "Hanya PKP yang wajib memungut PPN.",
+          "PPN dititipkan: dipungut dari pembeli, disetor ke negara.",
+          "PPN bukan biaya atau keuntungan penjual.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Tarif PPN umum saat ini adalah?",
+            options: ["5%", "11%", "0,5%", "22%"],
+            answer: 1,
+            explain: "Tarif PPN umum adalah 11% sesuai UU HPP (dapat berubah sesuai kebijakan).",
+          },
+          {
+            q: "Siapa yang sebenarnya menanggung PPN?",
+            options: ["Penjual", "Konsumen akhir", "Pemerintah", "Bank"],
+            answer: 1,
+            explain: "PPN ditanggung konsumen; penjual hanya memungut dan menyetorkan.",
+          },
+          {
+            q: "Siapa yang wajib memungut PPN?",
+            options: ["Semua pedagang", "Hanya PKP", "Hanya importir", "Tidak ada"],
+            answer: 1,
+            explain: "Hanya Pengusaha Kena Pajak (PKP) yang wajib memungut PPN.",
+          },
+          {
+            q: "Jual barang Rp20 juta + PPN 11%. Total yang dibayar pembeli?",
+            options: ["Rp20 juta", "Rp22,2 juta", "Rp2,2 juta", "Rp21,1 juta"],
+            answer: 1,
+            explain: "PPN = 11% x 20 juta = 2,2 juta. Total = Rp22,2 juta.",
+          },
+          {
+            q: "Bagi penjual PKP, PPN yang dipungut itu?",
+            options: [
+              "Tambahan keuntungan",
+              "Titipan yang harus disetor ke negara",
+              "Biaya yang mengurangi laba",
+              "Pajak penghasilannya",
+            ],
+            answer: 1,
+            explain: "PPN keluaran adalah titipan dari konsumen yang wajib disetor ke negara.",
+          },
+          {
+            q: "Sejak tahun berapa tarif PPN umum menjadi 11%?",
+            options: ["2018", "2020", "2022", "2025"],
+            answer: 2,
+            explain: "Tarif naik dari 10% menjadi 11% sejak tahun 2022 sesuai UU HPP.",
+          },
+          {
+            q: "PPN termasuk jenis pajak atas?",
+            options: ["Penghasilan", "Konsumsi barang dan jasa", "Kepemilikan tanah", "Kendaraan"],
+            answer: 1,
+            explain: "PPN adalah pajak atas konsumsi barang dan jasa kena pajak.",
+          },
+          {
+            q: "Warung non-PKP menjual barang Rp50.000. Berapa yang dibayar pembeli?",
+            options: ["Rp50.000", "Rp55.500", "Rp5.500", "Rp61.000"],
+            answer: 0,
+            explain: "Non-PKP tidak memungut PPN, jadi pembeli cukup membayar Rp50.000.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "kapan-wajib-pkp",
+    levelId: "ppn",
+    order: 2,
+    title: "Kapan UMKM Wajib Jadi PKP?",
+    summary: "Status PKP punya untung dan rugi. Pahami ambang Rp4,8 miliar dan pertimbangannya.",
+    durationMin: 10,
+    tags: ["PKP", "ambang", "PPN"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>PKP (Pengusaha Kena Pajak)</strong> adalah status yang membuatmu wajib memungut PPN. Kamu <strong>wajib</strong> dikukuhkan jadi PKP bila omzet setahun melewati <strong>Rp4,8 miliar</strong>. Di bawah itu, kamu boleh memilih (non-PKP).",
+      },
+      {
+        type: "table",
+        caption: "Untung dan rugi menjadi PKP",
+        headers: ["Sisi", "Penjelasan"],
+        rows: [
+          ["Untung", "Bisa kreditkan PPN Masukan; lebih dipercaya perusahaan besar/tender"],
+          ["Untung", "Wajar bila pelangganmu juga PKP (mereka bisa kreditkan PPN-mu)"],
+          ["Pertimbangan", "Harga jualmu jadi 11% lebih mahal bagi konsumen non-PKP"],
+          ["Pertimbangan", "Ada kewajiban administrasi: faktur pajak & lapor SPT Masa PPN"],
+        ],
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "Rp4,8 M", label: "Ambang wajib PKP", sub: "omzet setahun", color: "#f59e0b" },
+          { value: "Wajib", label: "Bila omzet melewati ambang", sub: "harus dikukuhkan PKP", color: "#ef4444" },
+          { value: "Bebas pilih", label: "Bila di bawah ambang", sub: "boleh PKP atau non-PKP", color: "#10b981" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Omzet Setahun vs Ambang PKP Rp4,8 M (ilustrasi)",
+        unit: "Rp miliar",
+        note: "Garis ambang ada di Rp4,8 miliar. Di atasnya wajib PKP.",
+        data: [
+          { label: "Warung kecil", value: 0.6, color: "#10b981" },
+          { label: "UMKM menengah", value: 3, color: "#84cc16" },
+          { label: "Ambang PKP", value: 4.8, color: "#f59e0b" },
+          { label: "Usaha besar", value: 6, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan singkat",
+        html: "Omzet > Rp4,8 miliar setahun: <strong>wajib PKP</strong>. Omzet di bawah itu: <strong>boleh memilih</strong> jadi PKP atau tidak.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Cek statusmu",
+        html: "Geser omzet di alat ini untuk melihat apakah kamu sudah wajib PKP.",
+      },
+      { type: "widget", widget: "CekStatusPajak" },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih jadi PKP lebih awal",
+        html: "PT Maju Bersama beromzet Rp3 miliar (belum wajib PKP), tapi pelanggannya kebanyakan perusahaan besar yang ber-PKP. Mereka memilih jadi PKP secara sukarela agar PPN yang ditagih bisa dikreditkan pelanggan, sehingga lebih kompetitif di mata klien korporat. Sebaliknya, warung yang menjual ke konsumen rumah tangga umumnya memilih tetap non-PKP agar harganya tidak naik 11%.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Berdasarkan omzet setahun, statusnya wajib PKP atau boleh memilih?",
+        buckets: ["Wajib PKP", "Boleh memilih (non-PKP)"],
+        items: [
+          { text: "Omzet Rp6 miliar", bucket: "Wajib PKP" },
+          { text: "Omzet Rp2 miliar", bucket: "Boleh memilih (non-PKP)" },
+          { text: "Omzet Rp4,8 miliar tepat", bucket: "Boleh memilih (non-PKP)" },
+          { text: "Omzet Rp10 miliar", bucket: "Wajib PKP" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Omzet rata-rata Rp450 juta per bulan. Berapa omzet setahun (Rp), untuk cek apakah wajib PKP?",
+        answer: 5400000000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Setahun = Rp450 juta x 12 = <strong>Rp5.400.000.000</strong>. Karena di atas Rp4,8 miliar, wajib PKP.",
+        hint: "Kalikan omzet bulanan dengan 12.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Telat mendaftar PKP",
+        html: "CV Sukses beromzet Rp5,2 miliar setahun tetapi baru mendaftar PKP enam bulan setelah melewati ambang Rp4,8 miliar. Karena terlambat, ia berisiko menanggung PPN yang seharusnya dipungut selama periode itu plus sanksi administrasi. Pelajaran: pantau omzet kumulatif, dan segera daftar PKP begitu menembus Rp4,8 miliar.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan kondisi omzet dengan status PKP-nya.",
+        pairs: [
+          { left: "Omzet Rp7 miliar", right: "Wajib PKP" },
+          { left: "Omzet Rp3 miliar", right: "Boleh memilih (non-PKP)" },
+          { left: "Pelanggan korporat ber-PKP", right: "Untung jadi PKP" },
+          { left: "Pelanggan rumah tangga", right: "Sering pilih non-PKP" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "PKP adalah status untuk memungut PPN.",
+          "Wajib PKP bila omzet setahun melewati Rp4,8 miliar.",
+          "Di bawah itu boleh memilih jadi PKP atau tidak.",
+          "Jadi PKP menguntungkan bila pelangganmu juga PKP.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Wajib dikukuhkan jadi PKP bila omzet setahun melewati?",
+            options: ["Rp500 juta", "Rp4,8 miliar", "Rp50 miliar", "Tidak ada batas"],
+            answer: 1,
+            explain: "Ambang wajib PKP adalah omzet di atas Rp4,8 miliar setahun.",
+          },
+          {
+            q: "Omzet Rp2 miliar setahun. Status PKP?",
+            options: ["Wajib PKP", "Boleh memilih (non-PKP)", "Dilarang PKP", "Otomatis PKP"],
+            answer: 1,
+            explain: "Di bawah Rp4,8 miliar, boleh memilih menjadi PKP atau tetap non-PKP.",
+          },
+          {
+            q: "Keuntungan menjadi PKP terutama bila?",
+            options: [
+              "Pelanggan kebanyakan rumah tangga",
+              "Pelanggan kebanyakan perusahaan ber-PKP",
+              "Tidak punya pelanggan",
+              "Tidak ingin lapor",
+            ],
+            answer: 1,
+            explain: "Bila pelangganmu PKP, mereka bisa mengkreditkan PPN yang kamu tagih, jadi tidak masalah.",
+          },
+          {
+            q: "Konsekuensi administrasi jadi PKP adalah?",
+            options: [
+              "Tidak ada",
+              "Wajib membuat faktur pajak dan lapor SPT Masa PPN",
+              "Bebas semua laporan",
+              "Hanya bayar sekali",
+            ],
+            answer: 1,
+            explain: "PKP wajib menerbitkan faktur pajak dan melaporkan SPT Masa PPN tiap bulan.",
+          },
+          {
+            q: "Omzet Rp500 juta/bulan. Setahun dan statusnya?",
+            options: [
+              "Rp6 miliar, wajib PKP",
+              "Rp6 miliar, non-PKP",
+              "Rp600 juta, wajib PKP",
+              "Rp5 miliar, boleh memilih",
+            ],
+            answer: 0,
+            explain: "Rp500 juta x 12 = Rp6 miliar, di atas Rp4,8 miliar, jadi wajib PKP.",
+          },
+          {
+            q: "Omzet rata-rata Rp300 juta per bulan. Setahun dan statusnya?",
+            options: [
+              "Rp3,6 miliar, boleh memilih",
+              "Rp3,6 miliar, wajib PKP",
+              "Rp36 miliar, wajib PKP",
+              "Rp360 juta, non-PKP",
+            ],
+            answer: 0,
+            explain: "Rp300 juta x 12 = Rp3,6 miliar, di bawah Rp4,8 miliar, jadi boleh memilih.",
+          },
+          {
+            q: "Risiko bila terlambat mendaftar PKP setelah lewat ambang adalah?",
+            options: [
+              "Tidak ada risiko",
+              "Menanggung PPN terutang plus sanksi administrasi",
+              "Diberi hadiah",
+              "Otomatis bebas pajak",
+            ],
+            answer: 1,
+            explain: "Keterlambatan membuat PKP berisiko menanggung PPN terutang dan sanksi.",
+          },
+          {
+            q: "Warung yang menjual ke konsumen rumah tangga umumnya memilih?",
+            options: ["Wajib PKP", "Tetap non-PKP agar harga tidak naik 11%", "Tutup usaha", "Bayar PPN dua kali"],
+            answer: 1,
+            explain: "Agar harga tetap bersaing, usaha kecil ke konsumen akhir cenderung non-PKP.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "hitung-ppn",
+    levelId: "ppn",
+    order: 3,
+    title: "Menghitung PPN: Keluaran, Masukan, Setor",
+    summary: "Rumus inti PPN yang dibayar: PPN Keluaran dikurangi PPN Masukan. Dengan simulator.",
+    durationMin: 12,
+    tags: ["hitung PPN", "keluaran", "masukan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kalau sudah PKP, kamu tidak menyetor seluruh PPN yang dipungut. Yang disetor adalah <strong>selisihnya</strong>: PPN yang kamu pungut saat menjual (Keluaran) dikurangi PPN yang kamu bayar saat belanja (Masukan).",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus inti",
+        html: "<strong>PPN Disetor = PPN Keluaran (saat menjual) − PPN Masukan (saat membeli)</strong><br/>Kalau Masukan lebih besar, kamu lebih bayar dan bisa dikompensasi ke bulan berikutnya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Geser nilai penjualan dan pembelian untuk melihat berapa PPN yang harus kamu setor bulan ini.",
+      },
+      { type: "widget", widget: "SimulatorPPN" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Contoh: PPN Keluaran vs Masukan vs Disetor (ilustrasi)",
+        unit: "Rp juta",
+        note: "Disetor = Keluaran Rp22 jt dikurangi Masukan Rp16,5 jt = Rp5,5 jt.",
+        data: [
+          { label: "PPN Keluaran", value: 22, color: "#0ea5e9" },
+          { label: "PPN Masukan", value: 16.5, color: "#f59e0b" },
+          { label: "PPN Disetor", value: 5.5, color: "#10b981" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko bahan bangunan",
+        html: "Toko Jaya (PKP) sebulan menjual Rp200 juta (PPN Keluaran Rp22 juta) dan membeli stok Rp150 juta dari distributor PKP (PPN Masukan Rp16,5 juta). PPN yang disetor ke negara = Rp22 juta − Rp16,5 juta = <strong>Rp5,5 juta</strong>. Toko hanya menyetor selisihnya, bukan seluruh Rp22 juta.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "PPN Keluaran Rp22.000.000, PPN Masukan Rp16.500.000. Berapa PPN yang disetor?",
+        answer: 5500000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN disetor = Keluaran − Masukan = Rp22.000.000 − Rp16.500.000 = <strong>Rp5.500.000</strong>.",
+        hint: "Kurangkan PPN Masukan dari PPN Keluaran.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Penjualan sebulan Rp50.000.000 (belum PPN). Berapa PPN Keluaran 11%?",
+        answer: 5500000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN Keluaran = 11% x Rp50.000.000 = <strong>Rp5.500.000</strong>.",
+        hint: "Kalikan penjualan dengan 11%.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah PPN dengan artinya.",
+        pairs: [
+          { left: "PPN Keluaran", right: "PPN yang dipungut saat menjual" },
+          { left: "PPN Masukan", right: "PPN yang dibayar saat membeli" },
+          { left: "PPN Disetor", right: "Keluaran dikurangi Masukan" },
+          { left: "Lebih bayar", right: "Masukan lebih besar dari Keluaran" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Bulan sepi, terjadi lebih bayar",
+        html: "Konveksi Rapi (PKP) di bulan Januari memborong kain dan mesin senilai Rp120 juta (PPN Masukan Rp13,2 juta), tapi penjualannya baru Rp40 juta (PPN Keluaran Rp4,4 juta). Karena Masukan > Keluaran, terjadi <strong>lebih bayar Rp8,8 juta</strong> (Rp13,2 juta - Rp4,4 juta). Selisih ini tidak hangus, melainkan dikompensasikan ke masa pajak berikutnya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Setiap transaksi ini menghasilkan PPN Keluaran atau PPN Masukan?",
+        buckets: ["PPN Keluaran", "PPN Masukan"],
+        items: [
+          { text: "Menjual barang ke pelanggan", bucket: "PPN Keluaran" },
+          { text: "Membeli stok dari distributor PKP", bucket: "PPN Masukan" },
+          { text: "Menerbitkan faktur penjualan", bucket: "PPN Keluaran" },
+          { text: "Membeli mesin produksi dari pemasok PKP", bucket: "PPN Masukan" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "PPN Disetor = PPN Keluaran − PPN Masukan.",
+          "PPN Keluaran dipungut saat menjual; Masukan dibayar saat membeli.",
+          "Kalau Masukan lebih besar, terjadi lebih bayar (bisa dikompensasi).",
+          "Penjual hanya menyetor selisihnya, bukan seluruh PPN yang dipungut.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rumus PPN yang disetor adalah?",
+            options: [
+              "Keluaran + Masukan",
+              "Keluaran − Masukan",
+              "Masukan − Keluaran selalu",
+              "Omzet x 0,5%",
+            ],
+            answer: 1,
+            explain: "PPN disetor = PPN Keluaran dikurangi PPN Masukan.",
+          },
+          {
+            q: "PPN Keluaran adalah PPN yang?",
+            options: ["Dibayar saat membeli", "Dipungut saat menjual", "Dibayar ke karyawan", "Tidak ada"],
+            answer: 1,
+            explain: "PPN Keluaran dipungut dari pembeli saat kamu menjual.",
+          },
+          {
+            q: "Keluaran Rp10 juta, Masukan Rp7 juta. PPN disetor?",
+            options: ["Rp17 juta", "Rp3 juta", "Rp7 juta", "Rp10 juta"],
+            answer: 1,
+            explain: "10 juta − 7 juta = Rp3 juta.",
+          },
+          {
+            q: "Bila PPN Masukan lebih besar dari Keluaran, maka?",
+            options: [
+              "Harus bayar dua kali",
+              "Terjadi lebih bayar, bisa dikompensasi bulan berikutnya",
+              "Denda",
+              "PPN hangus",
+            ],
+            answer: 1,
+            explain: "Selisih lebih bayar dapat dikompensasikan ke masa pajak berikutnya.",
+          },
+          {
+            q: "Penjualan Rp80 juta (belum PPN). PPN Keluaran 11%?",
+            options: ["Rp8 juta", "Rp8,8 juta", "Rp880 ribu", "Rp11 juta"],
+            answer: 1,
+            explain: "11% x 80 juta = Rp8,8 juta.",
+          },
+          {
+            q: "PPN Masukan adalah PPN yang?",
+            options: ["Dipungut saat menjual", "Dibayar saat membeli", "Disetor ke karyawan", "Dikembalikan bank"],
+            answer: 1,
+            explain: "PPN Masukan adalah PPN yang kamu bayar saat membeli barang/jasa.",
+          },
+          {
+            q: "Keluaran Rp4,4 juta, Masukan Rp13,2 juta. Hasilnya?",
+            options: [
+              "Setor Rp8,8 juta",
+              "Lebih bayar Rp8,8 juta, dikompensasi bulan berikutnya",
+              "Setor Rp17,6 juta",
+              "Tidak ada selisih",
+            ],
+            answer: 1,
+            explain: "Masukan lebih besar Rp8,8 juta, jadi lebih bayar yang bisa dikompensasi.",
+          },
+          {
+            q: "Keluaran Rp15 juta, Masukan Rp9 juta. PPN disetor?",
+            options: ["Rp24 juta", "Rp6 juta", "Rp9 juta", "Rp15 juta"],
+            answer: 1,
+            explain: "Rp15 juta − Rp9 juta = Rp6 juta yang disetor.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "faktur-pajak",
+    levelId: "ppn",
+    order: 4,
+    title: "Faktur Pajak & e-Faktur",
+    summary: "Bukti resmi pemungutan PPN. Wajib dibuat PKP setiap kali menjual.",
+    durationMin: 9,
+    tags: ["faktur pajak", "e-faktur", "PKP"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Faktur pajak</strong> adalah bukti resmi bahwa PKP telah memungut PPN. Setiap penjualan kena pajak harus dibuatkan faktur, dan sekarang dibuat secara elektronik lewat aplikasi <strong>e-Faktur</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kenapa faktur pajak penting?",
+        html: "Bagi pembeli yang PKP, faktur pajak adalah <strong>syarat</strong> agar PPN Masukan bisa dikreditkan. Tanpa faktur yang benar, PPN yang dibayar pembeli tidak bisa dikurangkan.",
+      },
+      {
+        type: "list",
+        items: [
+          "Dibuat oleh <strong>PKP</strong> untuk setiap penyerahan barang/jasa kena pajak.",
+          "Dibuat lewat aplikasi <strong>e-Faktur</strong> (elektronik, ada nomor seri resmi).",
+          "Harus berisi data benar: identitas penjual & pembeli, jenis barang, DPP, dan PPN.",
+          "Menjadi dasar pelaporan <strong>SPT Masa PPN</strong> bulanan.",
+        ],
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "e-Faktur", label: "Wajib elektronik", sub: "lewat aplikasi resmi DJP", color: "#0ea5e9" },
+          { value: "PKP", label: "Hanya pihak ini", sub: "yang menerbitkan faktur", color: "#10b981" },
+          { value: "Bulanan", label: "Dasar SPT Masa PPN", sub: "dilaporkan tiap bulan", color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Porsi PPN dalam Penerimaan Pajak Negara (ilustrasi)",
+        unit: "%",
+        note: "Angka ilustrasi: PPN adalah salah satu penyumbang terbesar penerimaan pajak.",
+        data: [
+          { label: "PPN & PPnBM", value: 42, color: "#0ea5e9" },
+          { label: "PPh", value: 48, color: "#6366f1" },
+          { label: "Lainnya", value: 10, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Faktur salah, PPN tak bisa dikreditkan",
+        html: "PT Klien membeli barang Rp100 juta dari pemasok PKP dan membayar PPN Rp11 juta. Namun faktur pajaknya salah menulis NPWP pembeli. Akibatnya PPN Masukan Rp11 juta itu <strong>tidak bisa dikreditkan</strong> dan menjadi beban PT Klien. Faktur yang benar dan tepat waktu itu krusial.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pernyataan tentang faktur pajak: benar atau keliru?",
+        buckets: ["Benar", "Keliru"],
+        items: [
+          { text: "Hanya PKP yang membuat faktur pajak", bucket: "Benar" },
+          { text: "Faktur pajak kini dibuat lewat e-Faktur", bucket: "Benar" },
+          { text: "Faktur pajak boleh asal-asalan datanya", bucket: "Keliru" },
+          { text: "Non-PKP wajib membuat faktur pajak", bucket: "Keliru" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan artinya.",
+        pairs: [
+          { left: "Faktur pajak", right: "Bukti resmi pemungutan PPN" },
+          { left: "e-Faktur", right: "Aplikasi membuat faktur pajak elektronik" },
+          { left: "Nomor seri faktur", right: "Nomor resmi dari DJP untuk tiap faktur" },
+          { left: "SPT Masa PPN", right: "Laporan PPN bulanan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Faktur benar, PPN Masukan bisa dikreditkan",
+        html: "CV Mandiri (PKP) membeli bahan baku Rp80 juta dari pemasok PKP dan menerima faktur pajak yang benar dengan PPN Masukan Rp8,8 juta. Pada bulan yang sama ia menjual produk dengan PPN Keluaran Rp15 juta. Karena fakturnya valid, PPN Masukan Rp8,8 juta bisa dikreditkan sehingga ia cukup menyetor Rp15 juta - Rp8,8 juta = <strong>Rp6,2 juta</strong>. Faktur yang benar menghemat kas perusahaan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Faktur pembelian benar: PPN Masukan Rp8.800.000. PPN Keluaran bulan itu Rp15.000.000. Berapa PPN yang disetor?",
+        answer: 6200000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN disetor = Keluaran − Masukan = Rp15.000.000 − Rp8.800.000 = <strong>Rp6.200.000</strong>. Faktur valid membuat Masukan bisa dikreditkan.",
+        hint: "Kurangkan PPN Masukan dari PPN Keluaran.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Faktur pajak adalah bukti resmi pemungutan PPN.",
+          "Dibuat hanya oleh PKP, lewat aplikasi e-Faktur.",
+          "Menjadi syarat agar PPN Masukan pembeli bisa dikreditkan.",
+          "Data harus benar dan tepat waktu, jadi dasar SPT Masa PPN.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Faktur pajak adalah?",
+            options: ["Struk belanja biasa", "Bukti resmi pemungutan PPN", "Bukti potong PPh", "Kode billing"],
+            answer: 1,
+            explain: "Faktur pajak adalah dokumen resmi bukti pemungutan PPN oleh PKP.",
+          },
+          {
+            q: "Faktur pajak kini dibuat melalui?",
+            options: ["Tulis tangan", "Aplikasi e-Faktur", "WhatsApp", "Email biasa"],
+            answer: 1,
+            explain: "Faktur pajak dibuat elektronik lewat aplikasi e-Faktur dengan nomor seri resmi.",
+          },
+          {
+            q: "Siapa yang membuat faktur pajak?",
+            options: ["Semua pedagang", "PKP", "Konsumen", "Bank"],
+            answer: 1,
+            explain: "Hanya PKP yang membuat faktur pajak atas penyerahan kena pajak.",
+          },
+          {
+            q: "Fungsi faktur pajak bagi pembeli PKP adalah?",
+            options: [
+              "Hiasan",
+              "Syarat agar PPN Masukan bisa dikreditkan",
+              "Bukti garansi",
+              "Tidak ada fungsi",
+            ],
+            answer: 1,
+            explain: "Tanpa faktur pajak yang benar, PPN Masukan tidak bisa dikreditkan.",
+          },
+          {
+            q: "Akibat faktur pajak yang salah data adalah?",
+            options: [
+              "Tidak ada masalah",
+              "PPN Masukan bisa tidak dapat dikreditkan",
+              "Pajak jadi nol",
+              "Denda untuk konsumen",
+            ],
+            answer: 1,
+            explain: "Faktur cacat membuat PPN Masukan tidak bisa dikreditkan dan menjadi beban pembeli.",
+          },
+          {
+            q: "Faktur pajak menjadi dasar pelaporan?",
+            options: ["SPT Tahunan PPh", "SPT Masa PPN bulanan", "Laporan keuangan audit", "Slip gaji"],
+            answer: 1,
+            explain: "Faktur pajak menjadi dasar pelaporan SPT Masa PPN yang dilaporkan tiap bulan.",
+          },
+          {
+            q: "Data yang wajib ada di faktur pajak antara lain?",
+            options: [
+              "Warna kemasan",
+              "Identitas penjual & pembeli, DPP, dan PPN",
+              "Nomor HP kurir",
+              "Nama media sosial",
+            ],
+            answer: 1,
+            explain: "Faktur harus memuat identitas para pihak, Dasar Pengenaan Pajak (DPP), dan jumlah PPN.",
+          },
+          {
+            q: "Faktur valid: Keluaran Rp15 juta, Masukan Rp8,8 juta. PPN disetor?",
+            options: ["Rp23,8 juta", "Rp6,2 juta", "Rp8,8 juta", "Rp15 juta"],
+            answer: 1,
+            explain: "Karena faktur valid, Masukan dikreditkan: Rp15 juta − Rp8,8 juta = Rp6,2 juta.",
+          },
+        ],
+      },
+    ],
+  },
+];

@@ -1,0 +1,298 @@
+import type { Lesson } from "../../../types";
+
+export const level12: Lesson[] = [
+  // ============================================================
+  {
+    id: "digital-customs",
+    levelId: "digital",
+    order: 1,
+    title: "Digital Customs: CEISA, INSW & Trade Digital",
+    summary: "Bagaimana pengurusan kepabeanan kini serba elektronik lewat satu pintu, dan dampaknya bagi pelaku usaha.",
+    durationMin: 12,
+    tags: ["CEISA", "INSW", "e-manifest", "digital trade"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dulu pengurusan pabean berarti tumpukan kertas dan antrean panjang. Kini prosesnya <strong>digital</strong>. Bea Cukai memakai sistem <strong>CEISA</strong>, dan seluruh perizinan lintas instansi disatukan lewat <strong>INSW</strong> (Indonesia National Single Window).",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Satu pintu (single window)",
+        html: "<strong>INSW</strong> menyatukan banyak instansi (Bea Cukai, karantina, perizinan) dalam satu portal. Pelaku usaha cukup mengajukan sekali, data dibagikan antar instansi, sehingga lebih cepat dan transparan.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Komponen sistem",
+        html: "<strong>CEISA</strong> untuk dokumen pabean (PIB/PEB), <strong>e-Manifest</strong> untuk daftar muatan kapal, dan <strong>e-Billing</strong> untuk pembayaran bea dan pajak secara elektronik.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Dampak Digitalisasi pada Waktu Clearance (ilustrasi)",
+        unit: "jam rata-rata",
+        source: "ilustrasi edukatif",
+        note: "Proses digital memangkas waktu pengurusan secara signifikan dibanding manual.",
+        data: [
+          { label: "Manual (dulu)", value: 72, color: "#ef4444" },
+          { label: "Semi-digital", value: 36, color: "#f59e0b" },
+          { label: "Digital penuh", value: 12, color: "#10b981" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: UMKM ekspor lewat marketplace global",
+        html: "Sebuah UMKM kerajinan menjual ke luar negeri lewat marketplace lintas batas. Dengan dokumentasi elektronik dan integrasi data, pengiriman kecil dapat diproses cepat tanpa harus datang ke kantor. Digitalisasi menurunkan hambatan masuk bagi pelaku kecil untuk go international.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Waktu clearance turun dari 72 jam menjadi 12 jam. Berapa persen penurunannya?",
+        answer: 83.3,
+        tolerance: 0.5,
+        suffix: "%",
+        solution: "Penurunan = (72 - 12) / 72 = 60/72 = <strong>83,3%</strong>. Efisiensi waktu sangat besar.",
+        hint: "Bagi selisih waktu dengan waktu awal, lalu jadikan persen.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Sistem ini berfungsi untuk apa?",
+        buckets: ["Dokumen/perizinan", "Pembayaran"],
+        items: [
+          { text: "CEISA (dokumen PIB/PEB)", bucket: "Dokumen/perizinan" },
+          { text: "INSW (satu pintu perizinan)", bucket: "Dokumen/perizinan" },
+          { text: "e-Billing", bucket: "Pembayaran" },
+          { text: "e-Manifest (daftar muatan)", bucket: "Dokumen/perizinan" },
+        ],
+      },
+      {
+        type: "video",
+        comp: "DigitalCustomsVideo",
+        title: "Alur Satu Pintu: Dari CEISA ke INSW",
+        caption: "Menelusuri perjalanan dokumen PIB/PEB lewat CEISA dan integrasi perizinan di INSW.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Pertumbuhan Pemanfaatan Layanan Elektronik Kepabeanan (ilustrasi)",
+        unit: "% dokumen elektronik",
+        source: "ilustrasi edukatif",
+        note: "Adopsi dokumen elektronik terus naik mendekati 100% seiring digitalisasi single window.",
+        data: [
+          { label: "2018", value: 60, color: "#94a3b8" },
+          { label: "2020", value: 78, color: "#60a5fa" },
+          { label: "2022", value: 90, color: "#3b82f6" },
+          { label: "2024", value: 98, color: "#10b981" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan sistem dengan fungsinya.",
+        pairs: [
+          { left: "CEISA", right: "Dokumen pabean PIB/PEB" },
+          { left: "INSW", right: "Portal satu pintu perizinan lintas instansi" },
+          { left: "e-Manifest", right: "Daftar muatan kapal" },
+          { left: "e-Billing", right: "Pembayaran bea dan pajak elektronik" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: ASEAN Single Window dan lahirnya INSW",
+        html: "Pada <strong>2005</strong>, negara-negara ASEAN menyepakati pembentukan <strong>ASEAN Single Window</strong> untuk mengintegrasikan layanan kepabeanan kawasan. Sebagai tindak lanjut, Indonesia meluncurkan <strong>INSW</strong> sekitar <strong>2007</strong> dan terus mengembangkan <strong>CEISA</strong>. Transformasi inilah yang mengubah pengurusan pabean dari tumpukan kertas menjadi satu portal digital.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pengurusan kepabeanan kini serba elektronik.",
+          "CEISA menangani dokumen pabean; INSW menyatukan perizinan lintas instansi.",
+          "e-Manifest untuk muatan, e-Billing untuk pembayaran.",
+          "Single window mempercepat dan mentransparankan proses.",
+          "Digitalisasi membuka peluang ekspor bagi UMKM.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "INSW berfungsi sebagai?",
+            options: ["Pelabuhan", "Portal satu pintu perizinan lintas instansi", "Bank", "Kapal"],
+            answer: 1,
+            explain: "INSW menyatukan perizinan banyak instansi dalam satu portal.",
+          },
+          {
+            q: "CEISA terutama menangani?",
+            options: ["Pembayaran gaji", "Dokumen pabean PIB/PEB", "Asuransi", "Booking hotel"],
+            answer: 1,
+            explain: "CEISA adalah sistem Bea Cukai untuk dokumen kepabeanan.",
+          },
+          {
+            q: "e-Billing dipakai untuk?",
+            options: ["Daftar muatan", "Pembayaran bea & pajak elektronik", "Klasifikasi HS", "Asuransi"],
+            answer: 1,
+            explain: "e-Billing memfasilitasi pembayaran bea dan pajak secara elektronik.",
+          },
+          {
+            q: "Manfaat utama single window?",
+            options: ["Lebih banyak kertas", "Proses lebih cepat & transparan", "Tarif lebih tinggi", "Wajib datang ke kantor"],
+            answer: 1,
+            explain: "Single window memangkas birokrasi sehingga lebih cepat dan transparan.",
+          },
+          {
+            q: "Waktu turun dari 40 jam ke 10 jam. Penurunannya?",
+            options: ["75%", "25%", "30%", "50%"],
+            answer: 0,
+            explain: "(40-10)/40 = 30/40 = 75%.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "digital-trade",
+    levelId: "digital",
+    order: 2,
+    title: "Digital Trade: E-Commerce Lintas Batas untuk Penjual Kecil",
+    summary: "Bagaimana penjual kecil bisa go global lewat e-commerce lintas batas, marketplace internasional, dan dokumentasi elektronik, beserta peluang dan aturannya.",
+    durationMin: 14,
+    tags: ["digital trade", "e-commerce", "cross-border", "marketplace", "UMKM"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Internet menghapus jarak. Kini seorang perajin di desa bisa menjual produknya ke pembeli di Eropa atau Amerika lewat <strong>e-commerce lintas batas (cross-border e-commerce)</strong>. Transaksi, pembayaran, dan dokumentasi berlangsung secara digital, sehingga hambatan masuk bagi penjual kecil jauh lebih rendah dibanding ekspor konvensional.",
+      },
+      {
+        type: "paragraph",
+        html: "Modelnya beragam. Penjual bisa berjualan langsung lewat <strong>marketplace lintas batas</strong> (misalnya platform global), lewat toko online sendiri, atau lewat agregator ekspor. Pengiriman umumnya berupa paket kecil yang ditangani jasa kurir atau pos, dengan dokumen elektronik yang menyertai setiap kiriman.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Apa itu cross-border e-commerce",
+        html: "Cross-border e-commerce adalah jual beli barang antar negara yang dilakukan lewat platform digital. Pembeli memesan online, barang dikirim lintas negara, dan dokumen pabean dibuat secara elektronik. Cocok untuk transaksi bervolume kecil tetapi sering.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Manfaatkan marketplace global",
+        html: "Daripada membangun toko dan reputasi dari nol, penjual kecil bisa menumpang pada <strong>marketplace lintas batas</strong> yang sudah punya jutaan pembeli, sistem pembayaran, dan logistik terintegrasi. Fokuskan energi pada kualitas produk dan deskripsi yang akurat.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Tetap patuh aturan",
+        html: "Walau serba digital, ekspor tetap tunduk pada aturan. Pastikan produk tidak termasuk barang larangan/pembatasan (lartas), cantumkan deskripsi dan nilai yang benar di dokumen, dan pahami ketentuan negara tujuan (misalnya batas nilai bebas bea atau de minimis).",
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Komposisi Saluran Ekspor UMKM Digital (ilustrasi)",
+        unit: "% penjual",
+        source: "ilustrasi edukatif",
+        note: "Marketplace lintas batas menjadi pintu masuk paling populer bagi penjual kecil.",
+        data: [
+          { label: "Marketplace lintas batas", value: 55, color: "#10b981" },
+          { label: "Toko online sendiri", value: 25, color: "#3b82f6" },
+          { label: "Agregator/eksportir pihak ketiga", value: 20, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Perajin batik go global",
+        html: "Bu Sari menjual scarf batik seharga Rp150.000 per lembar di pasar lokal. Lewat marketplace lintas batas, ia memasang harga USD 25 (sekitar Rp400.000) per lembar untuk pembeli mancanegara. Setelah dikurangi biaya kirim, komisi platform, dan biaya pembayaran sekitar Rp120.000 per lembar, ia tetap mengantongi sekitar Rp280.000 bersih, jauh di atas penjualan lokal. Dokumentasi dibuat elektronik dan paket dijemput kurir, tanpa perlu datang ke pelabuhan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Bu Sari menjual scarf seharga Rp400.000 lewat marketplace global. Total potongan (kirim, komisi, biaya bayar) Rp120.000 per lembar. Berapa pendapatan bersih per lembar (Rp)?",
+        answer: 280000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Pendapatan bersih = Rp400.000 - Rp120.000 = <strong>Rp280.000</strong> per lembar.",
+        hint: "Kurangi harga jual dengan total potongan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana yang merupakan PELUANG dan mana yang merupakan ATURAN/risiko dalam digital trade?",
+        buckets: ["Peluang", "Aturan/risiko"],
+        items: [
+          { text: "Akses ke jutaan pembeli global lewat marketplace", bucket: "Peluang" },
+          { text: "Produk tidak boleh termasuk barang lartas", bucket: "Aturan/risiko" },
+          { text: "Hambatan masuk rendah bagi UMKM", bucket: "Peluang" },
+          { text: "Deskripsi dan nilai harus benar di dokumen", bucket: "Aturan/risiko" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perbandingan Pendapatan Bersih per Lembar: Lokal vs Ekspor Digital (ilustrasi)",
+        unit: "Rp ribu",
+        source: "ilustrasi edukatif",
+        note: "Walau ada potongan kirim dan komisi, ekspor lewat marketplace global tetap memberi margin lebih tinggi.",
+        data: [
+          { label: "Jual lokal", value: 150, color: "#94a3b8" },
+          { label: "Harga ekspor", value: 400, color: "#3b82f6" },
+          { label: "Bersih ekspor", value: 280, color: "#10b981" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Bu Sari menjual 40 lembar scarf per bulan lewat marketplace global dengan pendapatan bersih Rp280.000 per lembar. Jika ia menjual lokal, bersihnya hanya Rp150.000 per lembar. Berapa tambahan pendapatan bulanan dari beralih ke ekspor digital (Rp)?",
+        answer: 5200000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Selisih per lembar = Rp280.000 - Rp150.000 = Rp130.000. Tambahan bulanan = 40 x Rp130.000 = <strong>Rp5.200.000</strong>.",
+        hint: "Hitung selisih bersih per lembar, lalu kalikan dengan jumlah lembar per bulan.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Dari Jalur Sutra ke jalur sutra digital",
+        html: "Ribuan tahun lalu, <strong>Jalur Sutra</strong> mempertemukan pedagang lintas benua, tetapi hanya kafilah besar yang sanggup menempuhnya. Kini <strong>e-commerce lintas batas</strong> menjadi semacam jalur sutra digital yang memungkinkan bahkan perajin kecil menjual langsung ke pembeli di benua lain. Internet memangkas jarak dan perantara yang dulu menjadi penghalang utama.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Cross-border e-commerce membuka pasar global bagi penjual kecil.",
+          "Marketplace lintas batas menyediakan pembeli, pembayaran, dan logistik siap pakai.",
+          "Dokumentasi elektronik membuat pengiriman paket kecil jadi praktis.",
+          "Ekspor digital tetap tunduk pada aturan lartas dan ketentuan negara tujuan.",
+          "Cantumkan deskripsi dan nilai barang yang benar pada setiap kiriman.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa itu cross-border e-commerce?",
+            options: ["Jual beli lokal saja", "Jual beli antar negara lewat platform digital", "Hanya pembayaran online", "Sistem pajak"],
+            answer: 1,
+            explain: "Cross-border e-commerce adalah jual beli barang antar negara melalui platform digital.",
+          },
+          {
+            q: "Keuntungan utama berjualan lewat marketplace lintas batas bagi penjual kecil?",
+            options: ["Tidak perlu produk", "Akses pembeli global, pembayaran & logistik siap pakai", "Bebas dari semua aturan", "Harga selalu lebih murah"],
+            answer: 1,
+            explain: "Marketplace menyediakan basis pembeli, sistem pembayaran, dan logistik yang terintegrasi.",
+          },
+          {
+            q: "Walau serba digital, ekspor tetap harus?",
+            options: ["Mengabaikan dokumen", "Patuh aturan lartas dan ketentuan negara tujuan", "Tanpa nilai barang", "Selalu tanpa kurir"],
+            answer: 1,
+            explain: "Ekspor digital tetap tunduk pada aturan larangan/pembatasan dan ketentuan negara tujuan.",
+          },
+          {
+            q: "Apa yang dimaksud batas de minimis?",
+            options: ["Batas berat maksimum kapal", "Batas nilai barang yang dibebaskan dari bea di negara tujuan", "Jenis marketplace", "Nama dokumen ekspor"],
+            answer: 1,
+            explain: "De minimis adalah ambang nilai barang yang dibebaskan dari bea/pajak impor di negara tujuan.",
+          },
+          {
+            q: "Harga jual Rp500.000, potongan total Rp180.000. Pendapatan bersih?",
+            options: ["Rp320.000", "Rp680.000", "Rp180.000", "Rp500.000"],
+            answer: 0,
+            explain: "Rp500.000 - Rp180.000 = Rp320.000.",
+          },
+        ],
+      },
+    ],
+  },
+];

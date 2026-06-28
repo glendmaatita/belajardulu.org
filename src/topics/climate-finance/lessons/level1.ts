@@ -1,0 +1,615 @@
+import type { Lesson } from "../../../types";
+
+export const level1: Lesson[] = [
+  // ============================================================
+  {
+    id: "apa-itu-climate-finance",
+    levelId: "fondasi",
+    order: 1,
+    title: "Apa Itu Climate Finance?",
+    summary: "Mengalirkan modal ke proyek yang mengurangi emisi dan memperkuat ketahanan iklim. Dengan video alur dana.",
+    durationMin: 12,
+    tags: ["fondasi", "definisi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Climate finance</strong> adalah aliran dana, dari sumber publik maupun swasta, untuk membiayai aksi iklim: <strong>mitigasi</strong> (mengurangi emisi) dan <strong>adaptasi</strong> (memperkuat ketahanan terhadap dampak iklim). Tujuannya menutup jurang antara kebutuhan investasi hijau dan dana yang tersedia.",
+      },
+      {
+        type: "video",
+        comp: "AlurClimateFinance",
+        title: "Video: Bagaimana Climate Finance Mengalir",
+        caption: "Animasi dana dari sumber publik dan swasta menuju proyek mitigasi dan adaptasi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kenapa penting?",
+        html: "Transisi ke ekonomi rendah karbon butuh investasi sangat besar. Pemerintah saja tidak cukup, sehingga modal swasta harus ikut mengalir. Climate finance adalah jembatan yang mengarahkan uang ke tempat yang tepat.",
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "Triliunan", label: "USD kebutuhan/tahun", sub: "investasi iklim global (ilustrasi)", color: "#06b6d4" },
+          { value: "2", label: "Tujuan utama", sub: "mitigasi & adaptasi", color: "#10b981" },
+          { value: "Publik+Swasta", label: "Sumber dana", sub: "harus berkolaborasi", color: "#6366f1" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Kemana Climate Finance Dialokasikan (ilustrasi)",
+        unit: "% dari total",
+        source: "ilustrasi pola umum global",
+        note: "Selama ini porsi mitigasi (energi bersih) jauh lebih besar dibanding adaptasi, padahal adaptasi makin mendesak.",
+        data: [
+          { label: "Mitigasi (energi, transport)", value: 65 },
+          { label: "Adaptasi (ketahanan)", value: 20 },
+          { label: "Lintas keduanya", value: 15 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: PLTS yang butuh modal awal",
+        html: "Sebuah daerah ingin mengganti genset diesel dengan PLTS untuk memangkas emisi dan biaya bahan bakar. Manfaatnya jelas, tetapi <strong>biaya pembangunan di depan sangat besar</strong>. Tanpa climate finance (pinjaman murah, hibah, atau investor hijau), proyek ini tidak akan terwujud meski secara jangka panjang menguntungkan dan bersih. Inilah peran climate finance: menutup hambatan modal awal.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan artinya.",
+        pairs: [
+          { left: "Climate finance", right: "Aliran dana untuk aksi iklim" },
+          { left: "Mitigasi", right: "Mengurangi emisi gas rumah kaca" },
+          { left: "Adaptasi", right: "Memperkuat ketahanan terhadap dampak iklim" },
+          { left: "Blended finance", right: "Menggabungkan dana publik dan swasta" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Proyek ini termasuk mitigasi atau adaptasi?",
+        buckets: ["Mitigasi", "Adaptasi"],
+        items: [
+          { text: "Membangun PLTS menggantikan diesel", bucket: "Mitigasi" },
+          { text: "Membangun tanggul penahan banjir rob", bucket: "Adaptasi" },
+          { text: "Sistem irigasi tahan kekeringan", bucket: "Adaptasi" },
+          { text: "Efisiensi energi pabrik", bucket: "Mitigasi" },
+          { text: "Transportasi umum listrik", bucket: "Mitigasi" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Aliran Climate Finance Global per Sumber (ilustrasi)",
+        unit: "miliar USD per tahun",
+        source: "ilustrasi pola umum global",
+        note: "Modal swasta dan publik kini menyumbang porsi yang hampir seimbang, tetapi keduanya masih jauh dari kebutuhan total.",
+        data: [
+          { label: "Swasta (bank, korporasi, rumah tangga)", value: 625, color: "#6366f1" },
+          { label: "Publik (pemerintah, BUMN)", value: 640, color: "#06b6d4" },
+          { label: "Bank pembangunan (MDB/DFI)", value: 110, color: "#10b981" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Aliran climate finance global sekitar 1.300 miliar USD/tahun, sedangkan kebutuhan diperkirakan 5.200 miliar USD/tahun. Berapa miliar USD kekurangannya per tahun?",
+        answer: 3900,
+        tolerance: 0,
+        suffix: "miliar USD",
+        solution: "Kekurangan = 5.200 - 1.300 = <strong>3.900 miliar USD</strong> per tahun yang masih harus dimobilisasi.",
+        hint: "Kurangkan aliran yang tersedia dari total kebutuhan.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Persetujuan Paris 2015",
+        html: "Pada <strong>Desember 2015</strong>, hampir 200 negara menyepakati <strong>Persetujuan Paris (COP21)</strong> dengan target menahan kenaikan suhu <strong>di bawah 2 derajat C</strong> dan mengupayakan 1,5 derajat C. Persetujuan ini menegaskan komitmen negara maju memobilisasi dana iklim <strong>sekitar USD 100 miliar per tahun</strong> bagi negara berkembang, menempatkan climate finance sebagai bagian inti aksi iklim global.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Climate finance mengalirkan dana ke aksi iklim.",
+          "Dua tujuannya: mitigasi (kurangi emisi) dan adaptasi (perkuat ketahanan).",
+          "Dana publik saja tidak cukup, modal swasta harus ikut.",
+          "Perannya menutup hambatan modal awal proyek hijau.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Climate finance pada dasarnya adalah?",
+            options: ["Pajak baru", "Aliran dana untuk aksi iklim", "Jenis asuransi", "Mata uang"],
+            answer: 1,
+            explain: "Climate finance adalah pembiayaan untuk mitigasi dan adaptasi iklim.",
+          },
+          {
+            q: "Mitigasi berarti?",
+            options: ["Menyesuaikan diri dengan dampak", "Mengurangi emisi", "Membayar denda", "Menambah emisi"],
+            answer: 1,
+            explain: "Mitigasi adalah upaya mengurangi emisi gas rumah kaca.",
+          },
+          {
+            q: "Membangun tanggul penahan rob termasuk?",
+            options: ["Mitigasi", "Adaptasi", "Spekulasi", "Pajak"],
+            answer: 1,
+            explain: "Memperkuat ketahanan terhadap dampak iklim adalah adaptasi.",
+          },
+          {
+            q: "Mengapa modal swasta dibutuhkan dalam climate finance?",
+            options: [
+              "Karena pemerintah dilarang ikut",
+              "Karena kebutuhan investasi terlalu besar untuk dana publik saja",
+              "Karena swasta tidak peduli iklim",
+              "Karena tidak ada risiko",
+            ],
+            answer: 1,
+            explain: "Skala kebutuhan investasi iklim jauh melampaui kemampuan dana publik sendirian.",
+          },
+          {
+            q: "Hambatan utama proyek hijau seperti PLTS sering kali adalah?",
+            options: ["Tidak ada manfaat", "Biaya modal awal yang besar", "Selalu rugi", "Dilarang"],
+            answer: 1,
+            explain: "Proyek hijau sering menguntungkan jangka panjang tetapi terhambat biaya awal yang besar.",
+          },
+          {
+            q: "Selama ini, alokasi climate finance lebih besar ke?",
+            options: ["Adaptasi", "Mitigasi", "Tidak ada", "Spekulasi pasar"],
+            answer: 1,
+            explain: "Porsi mitigasi (mis. energi bersih) historisnya jauh lebih besar dibanding adaptasi.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "mitigasi-vs-adaptasi",
+    levelId: "fondasi",
+    order: 2,
+    title: "Mitigasi vs Adaptasi",
+    summary: "Dua jalur aksi iklim yang dibiayai, dengan karakter risiko dan imbal hasil yang berbeda.",
+    durationMin: 11,
+    tags: ["mitigasi", "adaptasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Climate finance membiayai dua jalur. <strong>Mitigasi</strong> menyerang penyebab (emisi); <strong>adaptasi</strong> mengurangi kerugian dari dampak yang sudah pasti terjadi. Keduanya penting, tetapi punya profil pembiayaan berbeda.",
+      },
+      {
+        type: "table",
+        caption: "Mitigasi vs Adaptasi",
+        headers: ["Aspek", "Mitigasi", "Adaptasi"],
+        rows: [
+          ["Fokus", "Mengurangi emisi", "Mengurangi kerugian dampak"],
+          ["Contoh", "PLTS, EV, efisiensi energi", "Tanggul, irigasi, varietas tahan iklim"],
+          ["Imbal hasil", "Sering komersial (hemat energi)", "Sering sosial, sulit dimonetisasi"],
+          ["Pendanaan", "Lebih menarik swasta", "Lebih bergantung dana publik"],
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Mengapa Adaptasi Sulit Menarik Swasta (ilustrasi)",
+        unit: "skor daya tarik komersial relatif",
+        source: "ilustrasi konsep",
+        note: "Mitigasi sering menghasilkan arus kas (hemat biaya energi), adaptasi lebih banyak manfaat sosial yang sulit diuangkan.",
+        data: [
+          { label: "Energi terbarukan (mitigasi)", value: 85, color: "#10b981" },
+          { label: "Efisiensi (mitigasi)", value: 70, color: "#10b981" },
+          { label: "Tanggul banjir (adaptasi)", value: 30, color: "#f59e0b" },
+          { label: "Sistem peringatan dini (adaptasi)", value: 20, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Petani dan asuransi indeks cuaca",
+        html: "Petani rentan gagal panen akibat kekeringan. Sebuah proyek adaptasi memberi <strong>asuransi indeks cuaca</strong>: jika curah hujan di bawah ambang tertentu, petani otomatis menerima pembayaran. Manfaatnya besar secara sosial, tetapi sulit menghasilkan keuntungan komersial, sehingga butuh dukungan dana publik atau donor. Ini contoh khas mengapa adaptasi lebih sulit didanai swasta murni.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Aksi ini mitigasi atau adaptasi?",
+        buckets: ["Mitigasi", "Adaptasi"],
+        items: [
+          { text: "Memasang panel surya di pabrik", bucket: "Mitigasi" },
+          { text: "Menanam mangrove untuk menahan abrasi", bucket: "Adaptasi" },
+          { text: "Mengganti truk diesel dengan truk listrik", bucket: "Mitigasi" },
+          { text: "Membangun waduk untuk cadangan air musim kering", bucket: "Adaptasi" },
+          { text: "Sistem peringatan dini banjir", bucket: "Adaptasi" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan jenis aksi dengan ciri pendanaannya.",
+        pairs: [
+          { left: "Mitigasi", right: "Lebih sering menarik modal swasta" },
+          { left: "Adaptasi", right: "Lebih bergantung dana publik/donor" },
+          { left: "Asuransi indeks cuaca", right: "Adaptasi dengan manfaat sosial" },
+          { left: "Energi terbarukan", right: "Mitigasi dengan arus kas komersial" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Pembagian Pendanaan: Mitigasi vs Adaptasi (ilustrasi)",
+        unit: "% dari total climate finance",
+        source: "ilustrasi pola umum global",
+        note: "Adaptasi sangat kurang dana: hanya sekitar 10% dari total, jauh di bawah kebutuhan negara rentan.",
+        data: [
+          { label: "Mitigasi", value: 90, color: "#10b981" },
+          { label: "Adaptasi", value: 10, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dari total dana iklim 1.000 miliar USD, hanya 10% mengalir ke adaptasi. Berapa miliar USD yang masuk ke adaptasi?",
+        answer: 100,
+        tolerance: 0,
+        suffix: "miliar USD",
+        solution: "Adaptasi = 10% x 1.000 = <strong>100 miliar USD</strong>, sisanya 900 miliar USD ke mitigasi.",
+        hint: "Kalikan total dengan 10% (0,10).",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Protokol Kyoto 1997",
+        html: "<strong>Protokol Kyoto</strong> diadopsi pada <strong>1997</strong> dan berlaku efektif <strong>2005</strong>, menjadi perjanjian iklim mengikat pertama yang mewajibkan negara maju menurunkan emisi <strong>sekitar 5%</strong> di bawah tingkat 1990. Fokus utamanya adalah <strong>mitigasi</strong> (memangkas emisi), sementara perhatian pada pendanaan adaptasi baru menguat pada perjanjian-perjanjian sesudahnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Mitigasi mengurangi emisi; adaptasi mengurangi kerugian dampak.",
+          "Mitigasi sering komersial, adaptasi sering bermanfaat sosial.",
+          "Adaptasi lebih sulit menarik swasta, butuh dukungan publik.",
+          "Keduanya sama penting dan saling melengkapi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Adaptasi berfokus pada?",
+            options: ["Mengurangi emisi", "Mengurangi kerugian dari dampak iklim", "Menambah pajak", "Menjual karbon"],
+            answer: 1,
+            explain: "Adaptasi memperkuat ketahanan dan mengurangi kerugian dari dampak yang sudah terjadi.",
+          },
+          {
+            q: "Mengapa adaptasi lebih sulit menarik investor swasta?",
+            options: [
+              "Karena tidak penting",
+              "Karena manfaatnya sering sosial dan sulit dimonetisasi",
+              "Karena dilarang",
+              "Karena terlalu murah",
+            ],
+            answer: 1,
+            explain: "Adaptasi banyak menghasilkan manfaat sosial yang sulit menjadi arus kas komersial.",
+          },
+          {
+            q: "Memasang PLTS termasuk?",
+            options: ["Adaptasi", "Mitigasi", "Keduanya bukan", "Spekulasi"],
+            answer: 1,
+            explain: "Mengurangi emisi dengan energi bersih adalah mitigasi.",
+          },
+          {
+            q: "Asuransi indeks cuaca untuk petani adalah contoh?",
+            options: ["Mitigasi", "Adaptasi", "Pajak karbon", "Green bond"],
+            answer: 1,
+            explain: "Itu adaptasi: mengurangi kerugian petani dari risiko iklim.",
+          },
+          {
+            q: "Pendanaan mitigasi cenderung?",
+            options: ["Hanya dari pemerintah", "Lebih menarik modal swasta", "Tidak ada", "Selalu hibah"],
+            answer: 1,
+            explain: "Mitigasi sering punya arus kas (hemat energi) sehingga lebih menarik swasta.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "financing-gap",
+    levelId: "fondasi",
+    order: 3,
+    title: "Kesenjangan Pendanaan Iklim",
+    summary: "Kebutuhan jauh lebih besar dari dana tersedia. Memahami gap dan cara menutupnya.",
+    durationMin: 11,
+    tags: ["financing gap", "kebutuhan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Masalah inti climate finance adalah <strong>kesenjangan (gap)</strong>: dunia perlu berinvestasi jauh lebih banyak daripada yang mengalir saat ini, terutama di negara berkembang. Memahami gap ini menjelaskan kenapa begitu banyak instrumen kreatif diciptakan.",
+      },
+      {
+        type: "video",
+        comp: "FinancingGap",
+        title: "Video: Kesenjangan Pendanaan Iklim",
+        caption: "Animasi kebutuhan dana iklim dibanding dana yang tersedia.",
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "Besar", label: "Gap pendanaan", sub: "kebutuhan jauh di atas realisasi", color: "#f59e0b" },
+          { value: "Negara berkembang", label: "Paling kurang dana", sub: "padahal paling rentan", color: "#ef4444" },
+          { value: "Swasta", label: "Kunci penutup gap", sub: "harus dimobilisasi", color: "#10b981" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Kebutuhan vs Aliran Dana Iklim (ilustrasi)",
+        unit: "indeks relatif",
+        source: "ilustrasi konsep",
+        note: "Selisih besar antara yang dibutuhkan dan yang tersedia inilah yang harus ditutup.",
+        data: [
+          { label: "Kebutuhan", value: 100, color: "#f59e0b" },
+          { label: "Tersedia saat ini", value: 40, color: "#10b981" },
+          { label: "Gap", value: 60, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Cara menutup gap",
+        html: "Tiga pendekatan utama: <strong>memobilisasi swasta</strong> (de-risking, blended finance), <strong>instrumen baru</strong> (green bond), dan <strong>dana iklim internasional</strong> (mis. Green Climate Fund).",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: De-risking menarik investor",
+        html: "Sebuah proyek energi terbarukan di negara berkembang dianggap terlalu berisiko oleh bank komersial (risiko mata uang, regulasi). Lembaga pembangunan memberi <strong>jaminan parsial</strong> dan pinjaman konsesi untuk menanggung sebagian risiko. Dengan risiko yang turun, bank komersial akhirnya mau ikut mendanai. Sedikit dukungan publik berhasil membuka aliran modal swasta yang jauh lebih besar.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan pendekatan menutup gap dengan contohnya.",
+        pairs: [
+          { left: "Mobilisasi swasta", right: "Blended finance dan de-risking" },
+          { left: "Instrumen baru", right: "Green bond" },
+          { left: "Dana internasional", right: "Green Climate Fund (GCF)" },
+          { left: "De-risking", right: "Jaminan parsial menurunkan risiko investor" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Kebutuhan dana proyek Rp1.000 miliar, dana yang sudah tersedia Rp400 miliar. Berapa gap-nya?",
+        answer: 600,
+        tolerance: 0,
+        suffix: "miliar",
+        solution: "Gap = Rp1.000 miliar - Rp400 miliar = <strong>Rp600 miliar</strong> yang masih perlu dimobilisasi.",
+        hint: "Kurangkan dana tersedia dari kebutuhan.",
+      },
+      {
+        type: "chart",
+        variant: "area",
+        title: "Kebutuhan Dana Iklim Naik Lebih Cepat dari Realisasi (ilustrasi)",
+        unit: "triliun USD per tahun",
+        source: "ilustrasi proyeksi tren",
+        note: "Kebutuhan terus menanjak menuju 2030, sementara aliran dana tumbuh lebih lambat, sehingga gap melebar bila tidak ada percepatan.",
+        data: [
+          { label: "2020", value: 0.6, color: "#10b981" },
+          { label: "2022", value: 1.3, color: "#10b981" },
+          { label: "2025", value: 2.5, color: "#10b981" },
+          { label: "2030 (kebutuhan)", value: 5.0, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Tindakan ini memperkecil atau memperbesar kesenjangan pendanaan iklim?",
+        buckets: ["Memperkecil gap", "Memperbesar gap"],
+        items: [
+          { text: "Menerbitkan green bond untuk proyek hijau", bucket: "Memperkecil gap" },
+          { text: "Mencabut subsidi energi bersih", bucket: "Memperbesar gap" },
+          { text: "Memberi jaminan parsial untuk menarik bank komersial", bucket: "Memperkecil gap" },
+          { text: "Membiarkan proyek berisiko tanpa de-risking", bucket: "Memperbesar gap" },
+          { text: "Menambah kontribusi ke Green Climate Fund", bucket: "Memperkecil gap" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Laporan Stern 2006",
+        html: "Pada <strong>2006</strong>, ekonom <strong>Nicholas Stern</strong> menerbitkan laporan yang memperkirakan biaya membiarkan perubahan iklim bisa mencapai <strong>5% hingga 20% PDB global</strong>, jauh lebih besar daripada biaya bertindak yang sekitar <strong>1% PDB</strong>. Laporan ini menyadarkan dunia bahwa kebutuhan investasi iklim sangat besar dan menegaskan adanya kesenjangan pendanaan yang harus ditutup sedini mungkin.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Ada kesenjangan besar antara kebutuhan dan dana iklim yang tersedia.",
+          "Negara berkembang paling kekurangan dana padahal paling rentan.",
+          "Menutup gap butuh mobilisasi swasta, instrumen baru, dan dana internasional.",
+          "De-risking membuat investor swasta berani masuk.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Kesenjangan pendanaan iklim berarti?",
+            options: [
+              "Dana berlebih",
+              "Kebutuhan investasi jauh lebih besar dari dana yang tersedia",
+              "Tidak ada kebutuhan",
+              "Pajak baru",
+            ],
+            answer: 1,
+            explain: "Gap adalah selisih antara kebutuhan investasi dan dana yang benar-benar mengalir.",
+          },
+          {
+            q: "Siapa yang paling kekurangan dana iklim?",
+            options: ["Negara maju", "Negara berkembang", "Perusahaan minyak", "Bank sentral"],
+            answer: 1,
+            explain: "Negara berkembang paling rentan dampak iklim namun paling kurang akses pendanaan.",
+          },
+          {
+            q: "De-risking bertujuan?",
+            options: [
+              "Menaikkan risiko",
+              "Menurunkan risiko agar investor swasta mau masuk",
+              "Menghapus proyek",
+              "Menambah pajak",
+            ],
+            answer: 1,
+            explain: "Dengan menurunkan risiko (jaminan, konsesi), modal swasta lebih berani ikut.",
+          },
+          {
+            q: "Kebutuhan Rp800 miliar, tersedia Rp500 miliar. Gap-nya?",
+            options: ["Rp300 miliar", "Rp1.300 miliar", "Rp500 miliar", "Rp800 miliar"],
+            answer: 0,
+            explain: "800 - 500 = Rp300 miliar.",
+          },
+          {
+            q: "Green Climate Fund (GCF) adalah contoh?",
+            options: ["Bank komersial", "Dana iklim internasional", "Bursa saham", "Perusahaan asuransi"],
+            answer: 1,
+            explain: "GCF adalah salah satu dana iklim internasional untuk membantu negara berkembang.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "sumber-dan-aktor",
+    levelId: "fondasi",
+    order: 4,
+    title: "Sumber Dana & Aktor Utama",
+    summary: "Siapa saja yang menyediakan dan menyalurkan climate finance, dan bagaimana mereka berkolaborasi.",
+    durationMin: 12,
+    tags: ["sumber dana", "aktor", "blended"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Climate finance melibatkan banyak pemain. Memahami siapa menyediakan dan siapa menyalurkan membantu kita melihat bagaimana satu proyek hijau bisa terwujud dari banyak sumber dana sekaligus.",
+      },
+      {
+        type: "table",
+        caption: "Aktor utama climate finance",
+        headers: ["Aktor", "Peran"],
+        rows: [
+          ["Pemerintah / APBN", "Hibah, subsidi, regulasi, penjamin"],
+          ["Bank Pembangunan (MDB)", "Pinjaman lunak, jaminan, de-risking (mis. World Bank, ADB)"],
+          ["Dana iklim (GCF, GEF)", "Pendanaan khusus untuk negara berkembang"],
+          ["Bank & investor swasta", "Modal komersial terbesar, mencari imbal hasil"],
+          ["Filantropi / donor", "Hibah untuk proyek berisiko tinggi atau perintis"],
+        ],
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kekuatan blended finance",
+        html: "Dengan menggabungkan dana publik yang menanggung risiko awal dan modal swasta yang besar, <strong>blended finance</strong> memobilisasi dana berkali lipat dari sedikit dana publik.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Lihat bagaimana sedikit dana publik (first-loss) bisa menarik modal komersial yang jauh lebih besar.",
+      },
+      { type: "widget", widget: "SimulatorBlendedFinance" },
+      {
+        type: "case",
+        title: "Studi Kasus: Satu PLTS, banyak sumber dana",
+        html: "Sebuah PLTS besar dibiayai dari: hibah donor untuk studi kelayakan, pinjaman lunak bank pembangunan untuk menurunkan risiko, dan mayoritas dana dari bank komersial. Dana publik yang relatif kecil (sekitar 20%) berhasil membuka 80% pendanaan komersial. Tanpa kolaborasi ini, proyek kemungkinan tidak terbangun.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dana publik (first-loss) Rp100 miliar dengan rasio mobilisasi 4x. Berapa total dana proyek yang terbentuk?",
+        answer: 500,
+        tolerance: 0,
+        suffix: "miliar",
+        solution: "Modal komersial = 100 x 4 = Rp400 miliar. Total = 100 + 400 = <strong>Rp500 miliar</strong>.",
+        hint: "Komersial = publik x leverage, lalu tambahkan dana publik.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Sumber dana ini umumnya bersifat publik/konsesi atau komersial?",
+        buckets: ["Publik / konsesi", "Komersial"],
+        items: [
+          { text: "Hibah donor untuk studi kelayakan", bucket: "Publik / konsesi" },
+          { text: "Pinjaman bank komersial mencari bunga", bucket: "Komersial" },
+          { text: "Pinjaman lunak bank pembangunan", bucket: "Publik / konsesi" },
+          { text: "Investasi dana pensiun di green bond", bucket: "Komersial" },
+        ],
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Kontribusi Dana per Aktor Utama (ilustrasi)",
+        unit: "% dari total pendanaan proyek",
+        source: "ilustrasi pola blended finance",
+        note: "Modal swasta biasanya porsi terbesar, sementara bank pembangunan dan pemerintah menanggung risiko awal, dan filantropi mengisi celah perintis.",
+        data: [
+          { label: "Bank & investor swasta", value: 55, color: "#6366f1" },
+          { label: "Bank Pembangunan (MDB)", value: 20, color: "#10b981" },
+          { label: "Pemerintah / APBN", value: 18, color: "#06b6d4" },
+          { label: "Filantropi / donor", value: 7, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan aktor dengan jenis dana yang biasa mereka sediakan.",
+        pairs: [
+          { left: "Pemerintah / APBN", right: "Hibah, subsidi, dan jaminan" },
+          { left: "Bank Pembangunan (MDB)", right: "Pinjaman lunak dan de-risking" },
+          { left: "Bank & investor swasta", right: "Modal komersial mencari imbal hasil" },
+          { left: "Filantropi / donor", right: "Hibah untuk proyek perintis berisiko tinggi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: JETP Indonesia 2022",
+        html: "Pada <strong>November 2022</strong> di sela KTT G20 Bali, Indonesia dan sejumlah mitra internasional menyepakati <strong>Just Energy Transition Partnership (JETP)</strong> senilai <strong>sekitar USD 20 miliar</strong> untuk mempercepat transisi energi. Pendanaannya menggabungkan dana publik negara mitra, bank pembangunan multilateral, dan modal swasta, contoh nyata banyak aktor berkolaborasi dalam satu paket pendanaan iklim.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Climate finance melibatkan pemerintah, MDB, dana iklim, swasta, dan donor.",
+          "Modal swasta adalah yang terbesar, tetapi butuh risiko terkelola.",
+          "Blended finance memobilisasi dana besar dari sedikit dana publik.",
+          "Satu proyek hijau sering didanai banyak sumber sekaligus.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bank Pembangunan Multilateral (MDB) berperan?",
+            options: [
+              "Hanya memberi hibah",
+              "Memberi pinjaman lunak dan menurunkan risiko (de-risking)",
+              "Menjual saham",
+              "Memungut pajak",
+            ],
+            answer: 1,
+            explain: "MDB menyediakan pinjaman lunak dan jaminan untuk menarik modal swasta.",
+          },
+          {
+            q: "Sumber modal terbesar yang harus dimobilisasi adalah?",
+            options: ["Donor", "Swasta", "Pajak", "Lotere"],
+            answer: 1,
+            explain: "Modal swasta jauh lebih besar dan menjadi kunci menutup kesenjangan.",
+          },
+          {
+            q: "Blended finance bekerja dengan?",
+            options: [
+              "Hanya dana publik",
+              "Menggabungkan dana publik penanggung risiko dengan modal swasta",
+              "Melarang swasta",
+              "Menghapus risiko sepenuhnya",
+            ],
+            answer: 1,
+            explain: "Dana publik menanggung risiko awal sehingga modal swasta berani masuk.",
+          },
+          {
+            q: "Dana publik Rp50 miliar, leverage 5x. Total dana proyek?",
+            options: ["Rp250 miliar", "Rp300 miliar", "Rp255 miliar", "Rp55 miliar"],
+            answer: 1,
+            explain: "Komersial = 50 x 5 = 250; total = 250 + 50 = Rp300 miliar.",
+          },
+          {
+            q: "Green Climate Fund (GCF) dan GEF tergolong?",
+            options: ["Bank komersial", "Dana iklim internasional", "Perusahaan tambang", "Bursa karbon"],
+            answer: 1,
+            explain: "Keduanya adalah dana iklim internasional yang menyalurkan pendanaan iklim.",
+          },
+        ],
+      },
+    ],
+  },
+];

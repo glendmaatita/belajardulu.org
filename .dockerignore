@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+data
+*.db
+*.db-*
+.env
+.env.local
+.env.*.local
+.git
+.github
+*.log
+.DS_Store
+.vscode
+.idea

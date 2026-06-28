@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-ink antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn bg-slate-100 text-ink-soft hover:bg-slate-200;
+  }
+  .prose-id p {
+    @apply mb-4 leading-relaxed text-ink-soft;
+  }
+  .prose-id h3 {
+    @apply mt-8 mb-3 text-xl font-bold text-ink;
+  }
+  .prose-id ul {
+    @apply mb-4 ml-5 list-disc space-y-1.5 text-ink-soft;
+  }
+  .prose-id strong {
+    @apply font-semibold text-ink;
+  }
+}
+
+/* Tabular numbers for accounting figures */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== Glosarium: istilah dengan ikon info + tooltip definisi ===== */
+.gloss {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dashed #93b4f5;
+  outline: none;
+  white-space: normal;
+}
+.gloss-i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95em;
+  height: 0.95em;
+  margin-left: 1px;
+  font-size: 0.62em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: super;
+  color: #fff;
+  background: #3b82f6;
+  border-radius: 9999px;
+  user-select: none;
+}
+.gloss-pop {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  z-index: 50;
+  width: max-content;
+  max-width: min(20rem, 80vw);
+  transform: translateX(-50%) translateY(4px);
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  white-space: normal;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.14s ease, transform 0.14s ease;
+  pointer-events: none;
+}
+.gloss-pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #0f172a;
+}
+.gloss-pop-term {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+.gloss:hover .gloss-pop,
+.gloss:focus .gloss-pop,
+.gloss:focus-within .gloss-pop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}

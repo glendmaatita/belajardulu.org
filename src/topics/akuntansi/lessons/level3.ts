@@ -1,0 +1,776 @@
+import type { Lesson } from "../../../types";
+
+export const level3: Lesson[] = [
+  // ============================================================
+  {
+    id: "perusahaan-dagang",
+    levelId: "dagang",
+    order: 1,
+    title: "Karakteristik Perusahaan Dagang",
+    summary: "Perbedaan perusahaan jasa vs dagang dan akun-akun baru yang muncul.",
+    durationMin: 12,
+    tags: ["dagang", "pengantar"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Perusahaan dagang</strong> membeli barang lalu menjualnya kembali tanpa mengubah bentuk (mis. minimarket, toko bangunan). Berbeda dengan perusahaan jasa, di sini muncul akun baru seperti Persediaan dan Harga Pokok Penjualan (HPP).",
+      },
+      {
+        type: "table",
+        headers: ["Aspek", "Perusahaan Jasa", "Perusahaan Dagang"],
+        rows: [
+          ["Sumber pendapatan", "Jasa", "Penjualan barang"],
+          ["Persediaan", "Tidak ada", "Ada (barang dagang)"],
+          ["HPP", "Tidak ada", "Ada"],
+          ["Laba kotor", "Tidak dihitung", "Penjualan − HPP"],
+        ],
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Struktur Laba Rugi Perusahaan Dagang",
+        html: "Penjualan − HPP = <strong>Laba Kotor</strong>; Laba Kotor − Beban Operasional = <strong>Laba Bersih</strong>.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko Sembako 'Berkah'",
+        html: "Toko Berkah membeli beras Rp10.000/kg dan menjual Rp12.000/kg. Selisih Rp2.000 adalah laba kotor per kg. Dari laba kotor inilah biaya sewa, listrik, dan gaji harus tertutup agar tetap untung bersih.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko Pakaian 'Citra Busana'",
+        html: "Citra Busana menjual baju selama Maret 2026 sebesar <strong>Rp120.000.000</strong>. HPP barang yang terjual <strong>Rp78.000.000</strong>, sehingga laba kotor <strong>Rp42.000.000</strong>. Beban operasional (sewa toko Rp10jt, gaji 3 pegawai Rp15jt, listrik & internet Rp3jt) totalnya Rp28.000.000. Maka laba bersih = 42jt − 28jt = <strong>Rp14.000.000</strong>.<br/><em>Pelajaran:</em> laba kotor terlihat besar, tetapi laba bersih yang benar-benar masuk kantong jauh lebih kecil setelah semua beban operasional dibayar. Mengelola beban operasional sama pentingnya dengan menaikkan penjualan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan akun berikut: muncul khusus di perusahaan DAGANG, atau dipakai juga oleh perusahaan JASA?",
+        buckets: ["Khusus Dagang", "Umum (Jasa juga)"],
+        items: [
+          { text: "Persediaan Barang Dagang", bucket: "Khusus Dagang" },
+          { text: "Harga Pokok Penjualan", bucket: "Khusus Dagang" },
+          { text: "Retur Penjualan", bucket: "Khusus Dagang" },
+          { text: "Kas", bucket: "Umum (Jasa juga)" },
+          { text: "Beban Gaji", bucket: "Umum (Jasa juga)" },
+          { text: "Beban Sewa", bucket: "Umum (Jasa juga)" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Penjualan Rp120.000.000, HPP Rp78.000.000. Berapa laba kotor?",
+        answer: 42_000_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Laba kotor = Penjualan − HPP = 120.000.000 − 78.000.000 = Rp42.000.000.",
+        hint: "Laba kotor hanya mengurangkan HPP dari penjualan, belum beban operasional.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Laba kotor Rp42.000.000 dan total beban operasional Rp28.000.000. Berapa laba bersih?",
+        answer: 14_000_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Laba bersih = Laba Kotor − Beban Operasional = 42.000.000 − 28.000.000 = Rp14.000.000.",
+        hint: "Langkah kedua dari struktur laba rugi dagang.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan pengertiannya.",
+        pairs: [
+          { left: "Perusahaan dagang", right: "Membeli barang lalu menjualnya kembali tanpa mengubah bentuk" },
+          { left: "Perusahaan jasa", right: "Menjual layanan, tidak memiliki persediaan barang" },
+          { left: "Laba kotor", right: "Penjualan − HPP" },
+          { left: "Laba bersih", right: "Laba kotor − beban operasional" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Perusahaan dagang menjual kembali barang tanpa mengubahnya.",
+          "Muncul akun Persediaan & HPP yang tidak ada di perusahaan jasa.",
+          "Laba Kotor = Penjualan − HPP; Laba Bersih = Laba Kotor − Beban operasional.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Laba kotor dihitung dengan rumus…",
+            options: [
+              "Penjualan − Beban operasional",
+              "Penjualan − HPP",
+              "HPP − Beban",
+              "Pendapatan − Pajak",
+            ],
+            answer: 1,
+            explain: "Laba kotor = Penjualan − HPP. Beban operasional dikurangkan setelahnya untuk laba bersih.",
+          },
+          {
+            q: "Akun manakah yang TIDAK akan kamu temukan di perusahaan jasa murni?",
+            options: ["Kas", "Beban Gaji", "Persediaan Barang Dagang", "Pendapatan"],
+            answer: 2,
+            explain: "Persediaan Barang Dagang hanya ada di perusahaan dagang karena perusahaan jasa tidak menjual barang.",
+          },
+          {
+            q: "Penjualan Rp50.000.000 dan HPP Rp32.000.000. Laba kotornya adalah…",
+            options: ["Rp82.000.000", "Rp18.000.000", "Rp32.000.000", "Rp50.000.000"],
+            answer: 1,
+            explain: "Laba kotor = 50jt − 32jt = Rp18.000.000.",
+          },
+          {
+            q: "Manakah contoh perusahaan dagang?",
+            options: ["Bengkel motor", "Salon kecantikan", "Toko bangunan", "Kantor akuntan"],
+            answer: 2,
+            explain: "Toko bangunan membeli material lalu menjualnya kembali, ciri perusahaan dagang. Yang lain menjual jasa.",
+          },
+          {
+            q: "Urutan benar dalam laporan laba rugi perusahaan dagang adalah…",
+            options: [
+              "Penjualan → Laba Bersih → HPP → Laba Kotor",
+              "Penjualan → HPP → Laba Kotor → Beban Operasional → Laba Bersih",
+              "HPP → Penjualan → Beban → Laba",
+              "Beban Operasional → Penjualan → HPP → Laba",
+            ],
+            answer: 1,
+            explain: "Penjualan dikurangi HPP menghasilkan laba kotor, lalu dikurangi beban operasional menghasilkan laba bersih.",
+          },
+          {
+            q: "Laba kotor Rp30.000.000, beban operasional Rp22.000.000. Laba bersihnya…",
+            options: ["Rp52.000.000", "Rp8.000.000", "Rp30.000.000", "Rp22.000.000"],
+            answer: 1,
+            explain: "Laba bersih = 30jt − 22jt = Rp8.000.000.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "pencatatan-persediaan",
+    levelId: "dagang",
+    order: 2,
+    title: "Sistem Pencatatan Persediaan: Perpetual vs Periodik",
+    summary: "Dua cara mencatat persediaan barang dagang dan kapan memakai masing-masing.",
+    durationMin: 16,
+    tags: ["persediaan", "perpetual", "periodik"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Ada dua sistem mencatat persediaan: <strong>Perpetual</strong> (terus-menerus diperbarui setiap transaksi) dan <strong>Periodik</strong> (dihitung di akhir periode lewat stok opname).",
+      },
+      {
+        type: "table",
+        headers: ["Aspek", "Perpetual", "Periodik"],
+        rows: [
+          ["Update persediaan", "Setiap transaksi", "Akhir periode"],
+          ["Akun saat beli", "Persediaan", "Pembelian"],
+          ["HPP saat jual", "Dicatat langsung", "Dihitung akhir periode"],
+          ["Cocok untuk", "Barang bernilai tinggi, ada sistem (POS)", "Barang banyak & murah"],
+        ],
+      },
+      { type: "heading", text: "Contoh Jurnal, Penjualan Barang" },
+      {
+        type: "journal",
+        title: "PERPETUAL: jual barang Rp1.500.000 (HPP Rp1.000.000), tunai",
+        lines: [
+          { account: "Kas", debit: 1_500_000 },
+          { account: "Penjualan", credit: 1_500_000 },
+          { account: "Harga Pokok Penjualan", debit: 1_000_000 },
+          { account: "Persediaan", credit: 1_000_000 },
+        ],
+        note: "Perpetual butuh 2 jurnal: mencatat penjualan DAN mencatat HPP + pengurangan persediaan.",
+      },
+      {
+        type: "journal",
+        title: "PERIODIK: jual barang Rp1.500.000, tunai",
+        lines: [
+          { account: "Kas", debit: 1_500_000 },
+          { account: "Penjualan", credit: 1_500_000 },
+        ],
+        note: "Periodik hanya 1 jurnal. HPP & persediaan baru dihitung saat tutup buku.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Minimarket modern vs warung",
+        html: "Minimarket dengan kasir barcode memakai <strong>perpetual</strong>: stok terupdate otomatis tiap scan. Warung kecil memakai <strong>periodik</strong>: pemilik menghitung stok di akhir bulan. Pilihan sistem mengikuti skala & alat yang tersedia.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Setiap pernyataan ini menggambarkan sistem yang mana?",
+        buckets: ["Perpetual", "Periodik"],
+        items: [
+          { text: "Persediaan diperbarui setiap kali terjadi transaksi", bucket: "Perpetual" },
+          { text: "Pembelian dicatat ke akun 'Pembelian'", bucket: "Periodik" },
+          { text: "Pembelian dicatat langsung ke akun 'Persediaan'", bucket: "Perpetual" },
+          { text: "HPP baru dihitung saat tutup buku lewat stok opname", bucket: "Periodik" },
+          { text: "HPP dicatat setiap kali barang terjual", bucket: "Perpetual" },
+          { text: "Cocok untuk toko dengan barang banyak & bernilai kecil tanpa sistem POS", bucket: "Periodik" },
+        ],
+      },
+      {
+        type: "journalExercise",
+        prompt: "Sistem PERPETUAL: jual barang seharga Rp2.000.000 secara tunai; HPP barang tersebut Rp1.300.000. Buat jurnal lengkapnya (4 baris).",
+        accounts: ["Kas", "Penjualan", "Harga Pokok Penjualan", "Persediaan", "Pembelian"],
+        answer: [
+          { account: "Kas", debit: 2_000_000 },
+          { account: "Penjualan", credit: 2_000_000 },
+          { account: "Harga Pokok Penjualan", debit: 1_300_000 },
+          { account: "Persediaan", credit: 1_300_000 },
+        ],
+        hint: "Perpetual butuh 2 pasang jurnal: mencatat penjualan, lalu mencatat HPP dan pengurangan persediaan.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko Elektronik 'Maju Jaya' pindah ke perpetual",
+        html: "Toko Maju Jaya menjual TV & kulkas (barang sedikit tapi bernilai tinggi). Dulu memakai sistem periodik, baru ketahuan ada selisih stok 2 unit TV (≈ <strong>Rp9.000.000</strong>) saat stok opname akhir tahun, entah hilang atau salah catat, sudah sulit dilacak. Setelah memasang aplikasi kasir <strong>perpetual</strong>, setiap penjualan langsung mengurangi persediaan dan mencatat HPP, sehingga selisih stok bisa terdeteksi harian.<br/><em>Pelajaran:</em> untuk barang bernilai tinggi, sistem perpetual memberi kontrol stok yang jauh lebih ketat dan mempercepat deteksi kehilangan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Perpetual: persediaan & HPP terus diperbarui setiap transaksi (butuh sistem).",
+          "Periodik: persediaan & HPP dihitung di akhir periode lewat stok opname.",
+          "Perpetual butuh jurnal ganda saat penjualan; periodik cukup satu.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada sistem PERIODIK, pembelian barang dagang dicatat ke akun…",
+            options: ["Persediaan", "Pembelian", "HPP", "Beban"],
+            answer: 1,
+            explain: "Sistem periodik memakai akun 'Pembelian'; sistem perpetual langsung ke 'Persediaan'.",
+          },
+          {
+            q: "Pada sistem PERPETUAL, saat menjual barang berapa pasang jurnal yang dibuat?",
+            options: ["Satu pasang", "Dua pasang (penjualan + HPP/persediaan)", "Tiga pasang", "Tidak ada jurnal sampai tutup buku"],
+            answer: 1,
+            explain: "Perpetual mencatat penjualan (Kas/Piutang ke Penjualan) DAN mencatat HPP serta pengurangan Persediaan, dua pasang jurnal.",
+          },
+          {
+            q: "Kapan HPP dihitung pada sistem PERIODIK?",
+            options: ["Setiap transaksi penjualan", "Setiap pembelian", "Di akhir periode lewat stok opname", "Tidak pernah dihitung"],
+            answer: 2,
+            explain: "Sistem periodik tidak mencatat HPP per transaksi; HPP dihitung di akhir periode setelah persediaan akhir diketahui dari stok opname.",
+          },
+          {
+            q: "Sebuah toko menjual ribuan jenis barang murah (kelontong) tanpa sistem komputer. Sistem yang paling praktis adalah…",
+            options: ["Perpetual", "Periodik", "Wajib keduanya", "Tidak perlu sistem"],
+            answer: 1,
+            explain: "Untuk barang banyak & bernilai kecil tanpa POS, mencatat HPP tiap transaksi tidak praktis, sistem periodik lebih sesuai.",
+          },
+          {
+            q: "Manakah jurnal yang BENAR untuk penjualan tunai Rp1.500.000 (HPP Rp1.000.000) pada sistem perpetual?",
+            options: [
+              "Hanya: Kas (D) Rp1.500.000; Penjualan (K) Rp1.500.000",
+              "Kas (D) Rp1.500.000; Penjualan (K) Rp1.500.000; HPP (D) Rp1.000.000; Persediaan (K) Rp1.000.000",
+              "Kas (D) Rp1.000.000; Penjualan (K) Rp1.000.000",
+              "Pembelian (D) Rp1.500.000; Kas (K) Rp1.500.000",
+            ],
+            answer: 1,
+            explain: "Perpetual memerlukan kedua pasang jurnal: mencatat penjualan Rp1.500.000 dan mencatat HPP Rp1.000.000 dengan mengkredit Persediaan.",
+          },
+          {
+            q: "Pernyataan yang BENAR tentang akun 'Persediaan' saat pembelian barang…",
+            options: [
+              "Perpetual & periodik sama-sama mendebit Persediaan",
+              "Perpetual mendebit Persediaan; periodik mendebit Pembelian",
+              "Periodik mendebit Persediaan; perpetual mendebit Pembelian",
+              "Keduanya mendebit Pembelian",
+            ],
+            answer: 1,
+            explain: "Saat membeli, perpetual langsung menambah akun Persediaan, sedangkan periodik mencatatnya ke akun Pembelian.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "metode-persediaan",
+    levelId: "dagang",
+    order: 3,
+    title: "Metode Penilaian Persediaan: FIFO & Rata-rata",
+    summary: "Cara menentukan nilai persediaan & HPP saat harga beli berubah-ubah. Dengan kalkulator interaktif.",
+    durationMin: 18,
+    tags: ["FIFO", "average", "persediaan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Ketika harga beli barang naik-turun, kita perlu metode untuk menentukan barang mana yang 'dianggap terjual' lebih dulu. Ini memengaruhi nilai HPP dan persediaan akhir.",
+      },
+      {
+        type: "video",
+        comp: "PersediaanFIFO",
+        title: "Video: Cara Kerja FIFO",
+        caption: "Animasi: barang masuk lebih dulu, keluar lebih dulu.",
+      },
+      {
+        type: "list",
+        items: [
+          "<strong>FIFO (First In First Out)</strong>: barang yang masuk lebih dulu dianggap terjual lebih dulu.",
+          "<strong>Rata-rata (Average)</strong>: HPP dihitung dari harga rata-rata seluruh barang.",
+          "<strong>LIFO</strong>: masuk terakhir keluar dulu. <em>Catatan: LIFO TIDAK diizinkan oleh PSAK/IFRS di Indonesia</em>, hanya dibahas sebagai konsep.",
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Penting untuk Indonesia",
+        html: "Standar akuntansi Indonesia (PSAK, mengikuti IFRS) <strong>hanya mengizinkan FIFO dan Rata-rata</strong>. LIFO dilarang. Maka fokuskan latihan pada FIFO & Average.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba kalkulatornya 👇",
+        html: "Masukkan transaksi pembelian & penjualan, lalu bandingkan hasil HPP dan persediaan akhir antara metode FIFO dan Rata-rata.",
+      },
+      { type: "widget", widget: "KalkulatorPersediaan" },
+      {
+        type: "case",
+        title: "Studi Kasus: Saat inflasi, metode mana untung di pajak?",
+        html: "Ketika harga naik (inflasi), FIFO menghasilkan HPP lebih rendah → laba lebih tinggi → pajak lebih besar. Metode rata-rata 'menghaluskan' lonjakan harga. Pemilihan metode berdampak nyata pada laba & pajak, jadi harus konsisten antar periode.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Contoh angka untuk latihan",
+        html: "Toko 'Sumber Rezeki': persediaan awal <strong>10 unit @ Rp100.000</strong> (Rp1.000.000). Lalu membeli <strong>20 unit @ Rp120.000</strong> (Rp2.400.000). Selama bulan itu terjual <strong>15 unit</strong>. Hitung HPP-nya dengan FIFO maupun rata-rata pada dua latihan di bawah.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dengan metode FIFO, berapa HPP atas 15 unit yang terjual? (awal 10 unit @ Rp100.000; beli 20 unit @ Rp120.000)",
+        answer: 1_600_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "FIFO menjual barang lama dulu: 10 unit @100.000 = 1.000.000, lalu 5 unit @120.000 = 600.000. HPP = 1.000.000 + 600.000 = Rp1.600.000.",
+        hint: "Ambil 10 unit termurah (yang lebih dulu masuk), sisanya dari pembelian berikutnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dengan metode RATA-RATA tertimbang, berapa HPP atas 15 unit yang terjual? (total 30 unit senilai Rp3.400.000)",
+        answer: 1_700_000,
+        tolerance: 1_000,
+        prefix: "Rp",
+        solution: "Harga rata-rata = 3.400.000 ÷ 30 unit = Rp113.333/unit. HPP = 15 × 113.333 ≈ Rp1.700.000.",
+        hint: "Total nilai semua barang ÷ total unit = harga rata-rata, lalu kalikan unit terjual.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah persediaan dengan definisinya.",
+        pairs: [
+          { left: "FIFO", right: "Barang yang masuk lebih dulu dianggap terjual lebih dulu" },
+          { left: "Rata-rata tertimbang", right: "HPP dihitung dari harga rata-rata seluruh barang tersedia" },
+          { left: "LIFO", right: "Masuk terakhir keluar dulu, dilarang PSAK/IFRS di Indonesia" },
+          { left: "Persediaan akhir", right: "Nilai barang yang masih tersisa di gudang setelah penjualan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko Beras 'Tani Makmur' memilih metode",
+        html: "Tani Makmur membeli beras tiga kali bulan ini: <strong>500 kg @ Rp11.000</strong>, lalu <strong>400 kg @ Rp12.000</strong>, lalu <strong>300 kg @ Rp13.000</strong> (harga terus naik). Total 1.200 kg senilai <strong>Rp14.200.000</strong>. Terjual 1.000 kg. Dengan <strong>FIFO</strong>, HPP = 500×11.000 + 400×12.000 + 100×13.000 = Rp11.600.000. Dengan <strong>rata-rata</strong> (Rp11.833/kg), HPP ≈ Rp11.833.000. FIFO menghasilkan HPP lebih rendah, sehingga laba (dan pajaknya) lebih tinggi.<br/><em>Pelajaran:</em> di masa harga naik, rata-rata membuat laba lebih konservatif dan beban pajak lebih ringan; apa pun pilihannya harus diterapkan konsisten setiap periode.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "FIFO: barang lama dijual dulu; cocok mencerminkan alur fisik banyak barang.",
+          "Rata-rata: HPP dari harga rata-rata, menghaluskan fluktuasi harga.",
+          "LIFO dilarang oleh PSAK/IFRS di Indonesia.",
+          "Saat harga naik, FIFO → laba & pajak lebih tinggi dibanding rata-rata.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Metode persediaan manakah yang DILARANG di Indonesia (PSAK/IFRS)?",
+            options: ["FIFO", "Rata-rata tertimbang", "LIFO", "Semua diizinkan"],
+            answer: 2,
+            explain: "LIFO dilarang oleh IFRS/PSAK. Hanya FIFO dan rata-rata yang diizinkan.",
+          },
+          {
+            q: "Saat harga beli terus naik, FIFO menghasilkan…",
+            options: [
+              "HPP tinggi, laba rendah",
+              "HPP rendah, laba tinggi",
+              "HPP & laba tidak berubah",
+              "Persediaan akhir rendah",
+            ],
+            answer: 1,
+            explain:
+              "FIFO membebankan barang lama (lebih murah) sebagai HPP, sehingga HPP rendah & laba (juga pajak) lebih tinggi saat inflasi.",
+          },
+          {
+            q: "Pada metode FIFO, barang yang dianggap masih tersisa (persediaan akhir) adalah…",
+            options: [
+              "Barang yang paling lama dibeli",
+              "Barang yang paling baru dibeli",
+              "Campuran rata-rata semua barang",
+              "Tidak ada barang tersisa",
+            ],
+            answer: 1,
+            explain: "Karena barang lama dijual lebih dulu, yang tersisa di gudang adalah barang dari pembelian terakhir (terbaru).",
+          },
+          {
+            q: "Awal 10 unit @Rp100.000, beli 20 unit @Rp120.000, terjual 15 unit. HPP menurut FIFO adalah…",
+            options: ["Rp1.500.000", "Rp1.600.000", "Rp1.700.000", "Rp1.800.000"],
+            answer: 1,
+            explain: "FIFO: 10×100.000 + 5×120.000 = 1.000.000 + 600.000 = Rp1.600.000.",
+          },
+          {
+            q: "Total 30 unit senilai Rp3.400.000. Berapa harga rata-rata tertimbang per unit?",
+            options: ["Rp100.000", "Rp113.333", "Rp120.000", "Rp226.667"],
+            answer: 1,
+            explain: "Harga rata-rata = total nilai ÷ total unit = 3.400.000 ÷ 30 ≈ Rp113.333/unit.",
+          },
+          {
+            q: "Mengapa metode penilaian persediaan harus diterapkan secara konsisten antar periode?",
+            options: [
+              "Agar laba bisa dimanipulasi tiap bulan",
+              "Agar laporan keuangan dapat dibandingkan dan tidak menyesatkan",
+              "Karena diwajibkan mengganti tiap tahun",
+              "Supaya pajak selalu nol",
+            ],
+            answer: 1,
+            explain: "Konsistensi metode menjaga komparabilitas laporan keuangan antar periode; berganti-ganti metode akan menyesatkan pembaca laporan.",
+          },
+          {
+            q: "Saat harga beli barang STABIL (tidak berubah), hasil HPP metode FIFO dan rata-rata akan…",
+            options: ["Selalu berbeda jauh", "Sama atau hampir sama", "FIFO selalu lebih tinggi", "Rata-rata selalu lebih tinggi"],
+            answer: 1,
+            explain: "Jika harga beli tidak berubah, kedua metode menghasilkan HPP yang sama karena tidak ada selisih harga antar pembelian.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "hpp",
+    levelId: "dagang",
+    order: 4,
+    title: "Harga Pokok Penjualan (HPP)",
+    summary: "Menghitung biaya barang yang benar-benar terjual.",
+    durationMin: 14,
+    tags: ["HPP", "perhitungan"],
+    blocks: [
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus HPP (sistem periodik)",
+        html: "HPP = Persediaan Awal + Pembelian Bersih − Persediaan Akhir<br/>Pembelian Bersih = Pembelian + Ongkos Angkut − Retur − Potongan Pembelian",
+      },
+      { type: "heading", text: "Contoh Perhitungan" },
+      {
+        type: "table",
+        caption: "HPP, Toko Berkah, Januari 2026",
+        headers: ["Komponen", "Rp"],
+        rows: [
+          ["Persediaan awal", "20.000.000"],
+          ["Pembelian", "50.000.000"],
+          ["Ongkos angkut pembelian", "2.000.000"],
+          ["Retur pembelian", "(3.000.000)"],
+          ["Potongan pembelian", "(1.000.000)"],
+          ["Barang tersedia untuk dijual", "68.000.000"],
+          ["Persediaan akhir", "(18.000.000)"],
+          ["HARGA POKOK PENJUALAN", "50.000.000"],
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Persediaan akhir salah hitung",
+        html: "Jika persediaan akhir dilebih-hitung Rp5jt, maka HPP turun Rp5jt dan laba 'seolah' naik Rp5jt, laba palsu! Akurasi stok opname sangat memengaruhi laba. Inilah mengapa stok opname dilakukan serius.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pembelian Rp50.000.000, ongkos angkut pembelian Rp2.000.000, retur pembelian Rp3.000.000, potongan pembelian Rp1.000.000. Berapa pembelian bersih?",
+        answer: 48_000_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Pembelian Bersih = Pembelian + Ongkos Angkut − Retur − Potongan = 50.000.000 + 2.000.000 − 3.000.000 − 1.000.000 = Rp48.000.000.",
+        hint: "Ongkos angkut menambah; retur dan potongan pembelian mengurangi.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Persediaan awal Rp20.000.000, pembelian bersih Rp48.000.000, persediaan akhir Rp18.000.000. Berapa HPP?",
+        answer: 50_000_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "HPP = Persediaan Awal + Pembelian Bersih − Persediaan Akhir = 20.000.000 + 48.000.000 − 18.000.000 = Rp50.000.000.",
+        hint: "Tambahkan persediaan awal dan pembelian bersih, lalu kurangi persediaan akhir.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Penjualan Rp90.000.000 dengan HPP Rp50.000.000. Berapa laba kotornya?",
+        answer: 40_000_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Laba kotor = Penjualan − HPP = 90.000.000 − 50.000.000 = Rp40.000.000.",
+        hint: "Laba kotor hanya mengurangkan HPP dari penjualan.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko Bangunan 'Sentosa' menyusun HPP",
+        html: "Maret 2026, Toko Sentosa punya persediaan awal semen & material <strong>Rp35.000.000</strong>. Membeli lagi <strong>Rp80.000.000</strong>, membayar ongkos angkut <strong>Rp4.000.000</strong>, dan meretur barang rusak senilai <strong>Rp5.000.000</strong>. Stok opname akhir bulan menunjukkan persediaan akhir <strong>Rp30.000.000</strong>. Pembelian bersih = 80 + 4 − 5 = Rp79.000.000. HPP = 35 + 79 − 30 = <strong>Rp84.000.000</strong>. Bila penjualan bulan itu Rp110.000.000, laba kotor = <strong>Rp26.000.000</strong>.<br/><em>Pelajaran:</em> ongkos angkut pembelian sering terlupa, padahal menambah HPP; mengabaikannya membuat HPP terlalu kecil dan laba terlihat lebih besar dari kenyataan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "HPP = Persediaan Awal + Pembelian Bersih − Persediaan Akhir.",
+          "Ongkos angkut pembelian menambah; retur & potongan mengurangi.",
+          "Kesalahan persediaan akhir langsung menyesatkan laba.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Persediaan awal 10jt, pembelian bersih 40jt, persediaan akhir 15jt. HPP?",
+            options: ["65jt", "35jt", "45jt", "25jt"],
+            answer: 1,
+            explain: "HPP = 10 + 40 − 15 = 35jt.",
+          },
+          {
+            q: "Rumus pembelian bersih yang benar adalah…",
+            options: [
+              "Pembelian − Ongkos Angkut + Retur + Potongan",
+              "Pembelian + Ongkos Angkut − Retur − Potongan",
+              "Pembelian + Retur + Potongan − Ongkos Angkut",
+              "Pembelian − Persediaan Akhir",
+            ],
+            answer: 1,
+            explain: "Pembelian Bersih = Pembelian + Ongkos Angkut Pembelian − Retur Pembelian − Potongan Pembelian.",
+          },
+          {
+            q: "Barang tersedia untuk dijual dihitung dengan…",
+            options: [
+              "Persediaan Awal + Pembelian Bersih",
+              "Pembelian Bersih − Persediaan Akhir",
+              "Penjualan − HPP",
+              "Persediaan Akhir + HPP",
+            ],
+            answer: 0,
+            explain: "Barang Tersedia untuk Dijual = Persediaan Awal + Pembelian Bersih. Dikurangi persediaan akhir baru menghasilkan HPP.",
+          },
+          {
+            q: "Jika persediaan akhir DILEBIH-hitung Rp5jt, dampaknya pada HPP dan laba…",
+            options: [
+              "HPP naik, laba turun",
+              "HPP turun, laba naik (laba palsu)",
+              "HPP & laba tidak berubah",
+              "HPP turun, laba turun",
+            ],
+            answer: 1,
+            explain: "Persediaan akhir mengurangi HPP. Jika dilebih-hitung, HPP turun sehingga laba terlihat naik secara semu (palsu).",
+          },
+          {
+            q: "Persediaan awal 25jt, pembelian bersih 60jt, persediaan akhir 20jt. Berapa HPP?",
+            options: ["Rp65.000.000", "Rp105.000.000", "Rp55.000.000", "Rp45.000.000"],
+            answer: 0,
+            explain: "HPP = 25 + 60 − 20 = Rp65.000.000.",
+          },
+          {
+            q: "Penjualan Rp120.000.000 dengan HPP Rp65.000.000. Laba kotornya…",
+            options: ["Rp185.000.000", "Rp55.000.000", "Rp65.000.000", "Rp45.000.000"],
+            answer: 1,
+            explain: "Laba kotor = Penjualan − HPP = 120.000.000 − 65.000.000 = Rp55.000.000.",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ============================================================
+  {
+    id: "diskon-retur-ppn",
+    levelId: "dagang",
+    order: 5,
+    title: "Diskon, Retur, dan PPN",
+    summary: "Mencatat potongan harga, pengembalian barang, dan Pajak Pertambahan Nilai.",
+    durationMin: 16,
+    tags: ["diskon", "retur", "PPN", "pajak"],
+    blocks: [
+      { type: "heading", text: "Diskon (Potongan)" },
+      {
+        type: "list",
+        items: [
+          "<strong>Potongan tunai (cash discount)</strong>: mis. termin '2/10, n/30': potongan 2% jika bayar dalam 10 hari, jatuh tempo 30 hari.",
+          "<strong>Potongan dagang (trade discount)</strong>: potongan dari harga daftar, langsung mengurangi harga (tidak dijurnal terpisah).",
+        ],
+      },
+      {
+        type: "journal",
+        title: "Pelunasan dalam masa diskon (termin 2/10): utang Rp10jt",
+        lines: [
+          { account: "Utang Usaha", debit: 10_000_000 },
+          { account: "Kas", credit: 9_800_000 },
+          { account: "Potongan Pembelian", credit: 200_000 },
+        ],
+        note: "Diskon 2% × 10jt = 200rb. Kas keluar hanya 9,8jt.",
+      },
+      { type: "heading", text: "Retur" },
+      {
+        type: "journal",
+        title: "Retur penjualan: pelanggan kembalikan barang Rp500.000 (tunai)",
+        lines: [
+          { account: "Retur Penjualan", debit: 500_000 },
+          { account: "Kas", credit: 500_000 },
+        ],
+      },
+      { type: "heading", text: "PPN (Pajak Pertambahan Nilai)" },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tarif PPN Indonesia",
+        html: "Tarif umum PPN saat ini <strong>11%</strong> (sesuai UU HPP; ada rencana penyesuaian bertahap). PPN saat membeli = <strong>PPN Masukan</strong> (aset/dapat dikreditkan); PPN saat menjual = <strong>PPN Keluaran</strong> (kewajiban).",
+      },
+      {
+        type: "journal",
+        title: "Menjual barang Rp10.000.000 + PPN 11% (tunai)",
+        lines: [
+          { account: "Kas", debit: 11_100_000 },
+          { account: "Penjualan", credit: 10_000_000 },
+          { account: "PPN Keluaran", credit: 1_100_000 },
+        ],
+        note: "Penjual memungut PPN dari pembeli, lalu menyetorkannya ke negara (setelah dikurangi PPN Masukan).",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: PPN bukan beban penjual",
+        html: "Banyak pemula mengira PPN mengurangi laba. Padahal PPN hanya 'dititipkan': penjual memungut PPN Keluaran dari pembeli, mengkreditkan PPN Masukan dari pembelian, dan menyetor selisihnya. Yang menanggung PPN adalah konsumen akhir.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Termin 2/10, n/30. Utang Rp25.000.000 dilunasi pada hari ke-7. Berapa nilai potongan (diskon) yang diperoleh?",
+        answer: 500_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Karena dilunasi dalam 10 hari, dapat diskon 2%. Potongan = 2% × 25.000.000 = Rp500.000.",
+        hint: "Diskon 2% berlaku karena dibayar ≤10 hari sejak transaksi.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Termin 2/10, n/30. Utang Rp25.000.000 dilunasi pada hari ke-7. Berapa kas yang harus dibayarkan?",
+        answer: 24_500_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Kas = Utang − Diskon = 25.000.000 − (2% × 25.000.000) = 25.000.000 − 500.000 = Rp24.500.000.",
+        hint: "Kurangi nilai diskon 2% dari jumlah utang.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Menjual barang Rp40.000.000 dengan PPN 11% tunai. Berapa total kas yang diterima?",
+        answer: 44_400_000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN Keluaran = 11% × 40.000.000 = 4.400.000. Kas = 40.000.000 + 4.400.000 = Rp44.400.000.",
+        hint: "Kas diterima = harga jual + PPN 11%.",
+      },
+      {
+        type: "journalExercise",
+        prompt: "Menjual barang Rp30.000.000 ditambah PPN 11% secara tunai. Buat jurnalnya (3 baris).",
+        accounts: ["Kas", "Penjualan", "PPN Keluaran", "PPN Masukan", "Piutang Usaha"],
+        answer: [
+          { account: "Kas", debit: 33_300_000 },
+          { account: "Penjualan", credit: 30_000_000 },
+          { account: "PPN Keluaran", credit: 3_300_000 },
+        ],
+        hint: "PPN 11% × 30.000.000 = 3.300.000. Kas didebit sebesar harga + PPN; PPN Keluaran adalah kewajiban (kredit).",
+      },
+      {
+        type: "journalExercise",
+        prompt: "Melunasi utang usaha Rp10.000.000 dalam masa diskon (termin 2/10) secara tunai. Buat jurnalnya (3 baris).",
+        accounts: ["Utang Usaha", "Kas", "Potongan Pembelian", "Penjualan", "Retur Pembelian"],
+        answer: [
+          { account: "Utang Usaha", debit: 10_000_000 },
+          { account: "Kas", credit: 9_800_000 },
+          { account: "Potongan Pembelian", credit: 200_000 },
+        ],
+        hint: "Diskon 2% × 10.000.000 = 200.000. Utang dihapus penuh, kas keluar hanya 9.800.000, selisihnya potongan pembelian.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah diskon/retur/PPN dengan pengertiannya.",
+        pairs: [
+          { left: "PPN Masukan", right: "PPN yang dibayar saat membeli, dapat dikreditkan (aset)" },
+          { left: "PPN Keluaran", right: "PPN yang dipungut saat menjual, kewajiban ke negara" },
+          { left: "Potongan tunai (2/10, n/30)", right: "Diskon karena melunasi lebih cepat dari jatuh tempo" },
+          { left: "Retur penjualan", right: "Akun kontra saat pelanggan mengembalikan barang" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko Grosir 'Berkah Jaya' dan termin diskon",
+        html: "Berkah Jaya membeli barang dari distributor seharga <strong>Rp50.000.000</strong> dengan termin <strong>2/10, n/30</strong>. Jika melunasi dalam 10 hari, mereka hemat 2% = <strong>Rp1.000.000</strong> (cukup bayar Rp49.000.000). Pemilik menghitung: menunda bayar 20 hari ekstra demi 'menahan' Rp49 juta tidak sebanding dengan kehilangan diskon Rp1 juta, itu setara bunga sangat tinggi bila disetahunkan. Maka mereka selalu memanfaatkan masa diskon.<br/><em>Pelajaran:</em> mengambil potongan tunai (cash discount) hampir selalu menguntungkan; melewatkannya sama saja membayar 'bunga' mahal atas penundaan pembayaran.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Termin '2/10, n/30': diskon 2% bila dilunasi ≤10 hari, jatuh tempo 30 hari.",
+          "Retur penjualan/pembelian dicatat di akun kontra tersendiri.",
+          "PPN Keluaran (jual) = kewajiban; PPN Masukan (beli) = dapat dikreditkan.",
+          "PPN ditanggung konsumen akhir, bukan beban penjual.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Menjual barang Rp20.000.000 dengan PPN 11%. Berapa kas diterima jika tunai?",
+            options: ["Rp20.000.000", "Rp22.200.000", "Rp17.800.000", "Rp21.100.000"],
+            answer: 1,
+            explain: "PPN = 11% × 20jt = 2,2jt. Kas = 20jt + 2,2jt = Rp22.200.000.",
+          },
+          {
+            q: "Termin '2/10, n/30' artinya…",
+            options: [
+              "Diskon 10% jika bayar dalam 2 hari",
+              "Diskon 2% jika bayar dalam 10 hari, jatuh tempo 30 hari",
+              "Bunga 2% per 10 hari",
+              "Diskon 30% jika bayar dalam 2 hari",
+            ],
+            answer: 1,
+            explain: "Angka pertama = persen diskon, kedua = batas hari diskon, n/30 = jatuh tempo penuh 30 hari.",
+          },
+          {
+            q: "Utang Rp15.000.000 dilunasi dalam masa diskon (termin 2/10). Berapa kas yang dibayar?",
+            options: ["Rp15.000.000", "Rp14.700.000", "Rp14.850.000", "Rp13.500.000"],
+            answer: 1,
+            explain: "Diskon 2% × 15jt = 300rb. Kas = 15jt − 300rb = Rp14.700.000.",
+          },
+          {
+            q: "PPN yang dibayar perusahaan saat MEMBELI barang dicatat sebagai…",
+            options: ["PPN Keluaran (kewajiban)", "PPN Masukan (dapat dikreditkan)", "Beban PPN", "Pendapatan PPN"],
+            answer: 1,
+            explain: "PPN saat membeli = PPN Masukan, bersifat aset/dapat dikreditkan terhadap PPN Keluaran.",
+          },
+          {
+            q: "Saat pelanggan mengembalikan barang yang dibeli tunai Rp500.000, akun yang DIDEBIT adalah…",
+            options: ["Kas", "Penjualan", "Retur Penjualan", "Persediaan"],
+            answer: 2,
+            explain: "Retur Penjualan (akun kontra pendapatan) didebit, dan Kas dikredit karena uang dikembalikan ke pelanggan.",
+          },
+          {
+            q: "Pernyataan yang BENAR tentang PPN bagi penjual…",
+            options: [
+              "PPN adalah beban yang mengurangi laba penjual",
+              "PPN hanya 'dititipkan'; penjual menyetor selisih Keluaran − Masukan ke negara",
+              "PPN menambah laba kotor penjual",
+              "PPN dibayar penuh oleh penjual, bukan pembeli",
+            ],
+            answer: 1,
+            explain: "PPN bukan beban penjual. Penjual memungut PPN Keluaran, mengkreditkan PPN Masukan, lalu menyetor selisihnya. Beban PPN ditanggung konsumen akhir.",
+          },
+          {
+            q: "Membeli barang Rp10.000.000 + PPN 11%. Berapa total yang dibayar?",
+            options: ["Rp10.000.000", "Rp11.100.000", "Rp8.900.000", "Rp11.000.000"],
+            answer: 1,
+            explain: "PPN Masukan = 11% × 10jt = 1,1jt. Total dibayar = 10jt + 1,1jt = Rp11.100.000.",
+          },
+        ],
+      },
+    ],
+  },
+];
