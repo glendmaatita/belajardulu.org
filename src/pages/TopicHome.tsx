@@ -1,18 +1,23 @@
 import { Link, useParams } from "react-router-dom";
-import { getTopic, lessonsByLevel, orderedLessons, progressKey } from "../topics";
+import { getTopic, lessonsByLevel, orderedLessons, progressKey, getCategoryForTopic } from "../topics";
 import { useProgress } from "../lib/progress";
+import { useAuth } from "../lib/auth";
+import { Icon, type IconName } from "../components/Icon";
 
 export function TopicHome() {
   const { topicId = "" } = useParams();
   const topic = getTopic(topicId);
   const { isDone, doneInTopic } = useProgress();
+  const { user, ready } = useAuth();
+  const locked = ready && !user;
+  const category = getCategoryForTopic(topicId);
 
   if (!topic) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center">
         <h1 className="text-2xl font-bold">Topik tidak ditemukan</h1>
         <Link to="/" className="btn-primary mt-4">
-          ← Kembali ke daftar topik
+          <Icon name="arrow-left" /> Kembali ke daftar topik
         </Link>
       </div>
     );
@@ -31,9 +36,19 @@ export function TopicHome() {
       {/* Hero */}
       <section className={`relative overflow-hidden border-b border-slate-200 bg-gradient-to-br ${topic.hero} text-white`}>
         <div className="mx-auto max-w-5xl px-4 py-14">
-          <Link to="/" className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold hover:bg-white/25">
-            ← Semua Topik
-          </Link>
+          <div className="flex flex-wrap items-center gap-2">
+            <Link to="/" className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold hover:bg-white/25">
+              <Icon name="arrow-left" /> Semua Topik
+            </Link>
+            {category && (
+              <a
+                href={`/#kategori-${category.id}`}
+                className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold hover:bg-white/25"
+              >
+                <Icon name={category.icon} /> {category.title}
+              </a>
+            )}
+          </div>
           <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
             {topic.icon} {topic.title}
           </h1>
@@ -43,25 +58,38 @@ export function TopicHome() {
               to={`/${topic.id}/pelajaran/${nextLesson.id}`}
               className="btn bg-white px-5 py-3 text-brand-700 hover:bg-slate-100"
             >
-              {completed > 0 ? "Lanjutkan Belajar" : "Mulai Belajar"} →
+              <Icon name={completed > 0 ? "play" : "rocket"} />
+              {completed > 0 ? "Lanjutkan Belajar" : "Mulai Belajar"}
             </Link>
             <a href="#kurikulum" className="btn bg-white/15 px-5 py-3 text-white hover:bg-white/25">
-              Lihat Kurikulum
+              <Icon name="list-check" /> Lihat Kurikulum
             </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/80">
-            <Stat n={`${topic.levels.length}`} label="Level" />
-            <Stat n={`${topic.lessons.length}`} label="Pelajaran" />
-            <Stat n={`${videoCount}`} label="Video animasi" />
-            <Stat n={`${quizCount}`} label="Soal kuis" />
+            <Stat icon="layers" n={`${topic.levels.length}`} label="Level" />
+            <Stat icon="book" n={`${topic.lessons.length}`} label="Pelajaran" />
+            <Stat icon="film" n={`${videoCount}`} label="Video animasi" />
+            <Stat icon="question" n={`${quizCount}`} label="Soal kuis" />
           </div>
         </div>
       </section>
 
       {/* Curriculum */}
       <section id="kurikulum" className="mx-auto max-w-5xl scroll-mt-20 px-4 py-12">
-        <h2 className="text-2xl font-bold text-ink">Kurikulum Lengkap</h2>
+        <h2 className="flex items-center gap-2.5 text-2xl font-bold text-ink">
+          <Icon name="route" className="text-brand-600" />
+          Kurikulum Lengkap
+        </h2>
         <p className="mt-1 text-ink-faint">Ikuti urut dari Level 1, atau lompat ke bagian yang kamu butuhkan.</p>
+
+        {locked && (
+          <div className="mt-5 flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+            <Icon name="lock" className="shrink-0" />
+            <span>
+              Kamu bisa melihat seluruh daftar pelajaran di bawah. Untuk membuka isinya, masuk dulu dengan Google.
+            </span>
+          </div>
+        )}
 
         <div className="mt-8 space-y-10">
           {[...topic.levels]
@@ -99,13 +127,18 @@ export function TopicHome() {
                                 complete ? "bg-emerald-500 text-white" : "bg-slate-100 text-ink-faint"
                               }`}
                             >
-                              {complete ? "✓" : l.order}
+                              {complete ? <Icon name="check" /> : l.order}
                             </span>
-                            <span className="min-w-0">
+                            <span className="min-w-0 flex-1">
                               <span className="block font-semibold text-ink group-hover:text-brand-700">{l.title}</span>
                               <span className="mt-0.5 block text-sm text-ink-faint">{l.summary}</span>
-                              <span className="mt-1.5 inline-block text-xs text-ink-faint">⏱ {l.durationMin} menit</span>
+                              <span className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-ink-faint">
+                                <Icon name="clock" /> {l.durationMin} menit
+                              </span>
                             </span>
+                            {locked && (
+                              <Icon name="lock" className="mt-0.5 shrink-0 text-slate-300 group-hover:text-brand-400" />
+                            )}
                           </Link>
                         </li>
                       );
@@ -120,11 +153,16 @@ export function TopicHome() {
   );
 }
 
-function Stat({ n, label }: { n: string; label: string }) {
+function Stat({ icon, n, label }: { icon: IconName; n: string; label: string }) {
   return (
-    <div>
-      <div className="text-2xl font-extrabold text-white">{n}</div>
-      <div className="text-xs uppercase tracking-wide">{label}</div>
+    <div className="flex items-center gap-3">
+      <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/15 text-lg text-white">
+        <Icon name={icon} />
+      </span>
+      <div>
+        <div className="text-2xl font-extrabold leading-none text-white">{n}</div>
+        <div className="mt-1 text-xs uppercase tracking-wide">{label}</div>
+      </div>
     </div>
   );
 }

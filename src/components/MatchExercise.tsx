@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Icon } from "./Icon";
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -26,7 +27,9 @@ export function MatchExercise({
 
   return (
     <div className="my-6 card p-5">
-      <div className="mb-3 text-sm font-bold text-brand-700">🔗 Latihan Menjodohkan</div>
+      <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
+        <Icon name="puzzle" /> Latihan Menjodohkan
+      </div>
       <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft">{prompt}</p>
 
       <div className="space-y-2.5">
@@ -43,8 +46,12 @@ export function MatchExercise({
             >
               <div className="text-sm font-medium text-ink">
                 {p.left}
-                {isCorrect && <span className="ml-2 text-emerald-600">✓</span>}
-                {isWrong && <span className="ml-2 text-xs text-rose-600">✗ → {p.right}</span>}
+                {isCorrect && <Icon name="check-circle" className="ml-2 text-emerald-600" />}
+                {isWrong && (
+                  <span className="ml-2 inline-flex items-center gap-1 text-xs text-rose-600">
+                    <Icon name="arrow-right" /> {p.right}
+                  </span>
+                )}
               </div>
               <select
                 value={picked || ""}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { QuizQuestion } from "../types";
+import { Icon } from "./Icon";
 
 export function Quiz({ questions }: { questions: QuizQuestion[] }) {
   const [answers, setAnswers] = useState<(number | null)[]>(() => questions.map(() => null));
@@ -19,10 +20,12 @@ export function Quiz({ questions }: { questions: QuizQuestion[] }) {
   return (
     <div className="my-6 card overflow-hidden">
       <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-5 py-3">
-        <span className="text-sm font-bold text-brand-700">📝 Kuis Pemahaman</span>
+        <span className="flex items-center gap-2 text-sm font-bold text-brand-700">
+          <Icon name="list-check" /> Kuis Pemahaman
+        </span>
         {answered > 0 && (
-          <span className="text-xs font-semibold text-ink-faint">
-            Benar {correct}/{questions.length}
+          <span className="flex items-center gap-1.5 text-xs font-semibold text-ink-faint">
+            <Icon name="check-circle" className="text-emerald-500" /> Benar {correct}/{questions.length}
           </span>
         )}
       </div>
@@ -57,8 +60,8 @@ export function Quiz({ questions }: { questions: QuizQuestion[] }) {
                         {String.fromCharCode(65 + oi)}.
                       </span>
                       <span>{opt}</span>
-                      {locked && isCorrect && <span className="ml-auto">✓</span>}
-                      {locked && isChosen && !isCorrect && <span className="ml-auto">✗</span>}
+                      {locked && isCorrect && <Icon name="check-circle" className="ml-auto mt-0.5 text-emerald-600" />}
+                      {locked && isChosen && !isCorrect && <Icon name="warn" className="ml-auto mt-0.5 text-rose-500" />}
                     </button>
                   );
                 })}

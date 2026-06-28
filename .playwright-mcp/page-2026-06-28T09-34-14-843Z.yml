@@ -1,0 +1,495 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "YukBelajar" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - generic [ref=e10]: YukBelajar
+      - navigation [ref=e11]:
+        - link "Topik" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - img [ref=e13]
+          - text: Topik
+        - link "0/454" [ref=e15] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e17]: 0/454
+  - main [ref=e18]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img [ref=e22]
+        - text: Berbahasa Indonesia · Interaktif · Berbasis Studi Kasus
+      - heading "Belajar apa hari ini?" [level=1] [ref=e24]
+      - paragraph [ref=e25]: Satu platform, banyak topik. Pilih kursus di bawah dan belajar lewat video animasi, simulator, grafik data, studi kasus, dan kuis. Progresmu tersimpan otomatis.
+      - generic [ref=e27]:
+        - img [ref=e28]
+        - searchbox "Cari topik" [ref=e30]
+      - generic [ref=e31]:
+        - link "Matematika 8" [ref=e32] [cursor=pointer]:
+          - /url: "#kategori-matematika"
+          - img [ref=e33]
+          - text: Matematika
+          - generic [ref=e35]: "8"
+        - link "Ekonomi & Kebijakan 5" [ref=e36] [cursor=pointer]:
+          - /url: "#kategori-ekonomi-kebijakan"
+          - img [ref=e37]
+          - text: Ekonomi & Kebijakan
+          - generic [ref=e39]: "5"
+        - link "Keuangan & Investasi 6" [ref=e40] [cursor=pointer]:
+          - /url: "#kategori-keuangan-investasi"
+          - img [ref=e41]
+          - text: Keuangan & Investasi
+          - generic [ref=e43]: "6"
+        - link "Logika & Filsafat 2" [ref=e44] [cursor=pointer]:
+          - /url: "#kategori-logika-filsafat"
+          - img [ref=e45]
+          - text: Logika & Filsafat
+          - generic [ref=e47]: "2"
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - heading "Pilih Materi" [level=2] [ref=e50]:
+          - img [ref=e51]
+          - text: Pilih Materi
+        - generic [ref=e53]: 21 topik · 4 kategori
+      - paragraph [ref=e54]: Materi dikelompokkan per kategori. Setiap topik adalah kurikulum lengkap dari dasar hingga lanjutan.
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - img [ref=e59]
+            - generic [ref=e61]:
+              - heading "Matematika" [level=3] [ref=e62]
+              - paragraph [ref=e63]: Dari berhitung dasar sampai kalkulus, bangun intuisi lewat petualangan.
+            - generic [ref=e64]: 8 topik
+          - generic [ref=e65]:
+            - link "📐 Matematika Dasar Bukan sekadar berhitung Matematika bukan hanya berhitung. Berhitung hanyalah bagian kecilnya. Di sini kita berpetualang melihat pola di alam, memakai matematika dalam kehidupan sehari-hari, dan memahaminya sebagai bahasa untuk membaca semesta. Kita jelajahi dulu masalahnya sampai sebuah rumus tercipta dengan sendirinya, bukan menghafal rumus di awal. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e66] [cursor=pointer]:
+              - /url: /matematika-dasar
+              - generic [ref=e67]:
+                - generic [ref=e68]: 📐
+                - generic [ref=e69]: Matematika Dasar
+                - generic [ref=e70]: Bukan sekadar berhitung
+              - generic [ref=e71]:
+                - paragraph [ref=e72]: Matematika bukan hanya berhitung. Berhitung hanyalah bagian kecilnya. Di sini kita berpetualang melihat pola di alam, memakai matematika dalam kehidupan sehari-hari, dan memahaminya sebagai bahasa untuk membaca semesta. Kita jelajahi dulu masalahnya sampai sebuah rumus tercipta dengan sendirinya, bukan menghafal rumus di awal.
+                - generic [ref=e75]: 0/20
+                - generic [ref=e76]:
+                  - generic [ref=e77]:
+                    - img [ref=e78]
+                    - text: 5 level
+                    - generic [ref=e80]: ·
+                    - img [ref=e81]
+                    - text: 20 pelajaran
+                  - generic [ref=e83]:
+                    - text: Lihat materi
+                    - img [ref=e84]
+            - link "🟰 Aljabar Bahasa simbol matematika Aljabar bukan sekadar berhitung dengan huruf. Ia adalah bahasa untuk menangkap pola dan menyelesaikan teka-teki yang angkanya belum diketahui. Kita berpetualang dari soal nyata sampai sebuah persamaan dan rumus tercipta dengan sendirinya, bukan menghafal rumus di awal. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e86] [cursor=pointer]:
+              - /url: /aljabar
+              - generic [ref=e87]:
+                - generic [ref=e88]: 🟰
+                - generic [ref=e89]: Aljabar
+                - generic [ref=e90]: Bahasa simbol matematika
+              - generic [ref=e91]:
+                - paragraph [ref=e92]: Aljabar bukan sekadar berhitung dengan huruf. Ia adalah bahasa untuk menangkap pola dan menyelesaikan teka-teki yang angkanya belum diketahui. Kita berpetualang dari soal nyata sampai sebuah persamaan dan rumus tercipta dengan sendirinya, bukan menghafal rumus di awal.
+                - generic [ref=e95]: 0/20
+                - generic [ref=e96]:
+                  - generic [ref=e97]:
+                    - img [ref=e98]
+                    - text: 5 level
+                    - generic [ref=e100]: ·
+                    - img [ref=e101]
+                    - text: 20 pelajaran
+                  - generic [ref=e103]:
+                    - text: Lihat materi
+                    - img [ref=e104]
+            - link "📏 Geometri Membaca bentuk dan ruang Geometri adalah cara matematika membaca bentuk, ruang, dan posisi di dunia nyata. Bukan menghafal rumus luas dan volume, melainkan menemukannya lewat mengukur, menyusun, dan mengamati pola, sampai rumusnya muncul sendiri di akhir. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e106] [cursor=pointer]:
+              - /url: /geometri
+              - generic [ref=e107]:
+                - generic [ref=e108]: 📏
+                - generic [ref=e109]: Geometri
+                - generic [ref=e110]: Membaca bentuk dan ruang
+              - generic [ref=e111]:
+                - paragraph [ref=e112]: Geometri adalah cara matematika membaca bentuk, ruang, dan posisi di dunia nyata. Bukan menghafal rumus luas dan volume, melainkan menemukannya lewat mengukur, menyusun, dan mengamati pola, sampai rumusnya muncul sendiri di akhir.
+                - generic [ref=e115]: 0/20
+                - generic [ref=e116]:
+                  - generic [ref=e117]:
+                    - img [ref=e118]
+                    - text: 5 level
+                    - generic [ref=e120]: ·
+                    - img [ref=e121]
+                    - text: 20 pelajaran
+                  - generic [ref=e123]:
+                    - text: Lihat materi
+                    - img [ref=e124]
+            - 'link "🔺 Trigonometri Matematika segitiga & gelombang Trigonometri lahir dari kebutuhan mengukur yang tak terjangkau: tinggi gunung, jarak bintang, lebar sungai. Lewat perbandingan sisi segitiga, kita berpetualang menemukan sinus, kosinus, dan tangen, sampai rumus dan identitasnya muncul sebagai kesimpulan. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e126] [cursor=pointer]':
+              - /url: /trigonometri
+              - generic [ref=e127]:
+                - generic [ref=e128]: 🔺
+                - generic [ref=e129]: Trigonometri
+                - generic [ref=e130]: Matematika segitiga & gelombang
+              - generic [ref=e131]:
+                - paragraph [ref=e132]: "Trigonometri lahir dari kebutuhan mengukur yang tak terjangkau: tinggi gunung, jarak bintang, lebar sungai. Lewat perbandingan sisi segitiga, kita berpetualang menemukan sinus, kosinus, dan tangen, sampai rumus dan identitasnya muncul sebagai kesimpulan."
+                - generic [ref=e135]: 0/20
+                - generic [ref=e136]:
+                  - generic [ref=e137]:
+                    - img [ref=e138]
+                    - text: 5 level
+                    - generic [ref=e140]: ·
+                    - img [ref=e141]
+                    - text: 20 pelajaran
+                  - generic [ref=e143]:
+                    - text: Lihat materi
+                    - img [ref=e144]
+            - link "📈 Fungsi & Grafik Mesin hubungan & gambarnya Fungsi adalah mesin yang mengubah masukan menjadi keluaran, dan grafik adalah potretnya. Bukan menghafal bentuk grafik, kita berpetualang memasukkan angka, melihat polanya di bidang koordinat, sampai persamaan dan ciri grafiknya tersimpulkan. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e146] [cursor=pointer]:
+              - /url: /fungsi-grafik
+              - generic [ref=e147]:
+                - generic [ref=e148]: 📈
+                - generic [ref=e149]: Fungsi & Grafik
+                - generic [ref=e150]: Mesin hubungan & gambarnya
+              - generic [ref=e151]:
+                - paragraph [ref=e152]: Fungsi adalah mesin yang mengubah masukan menjadi keluaran, dan grafik adalah potretnya. Bukan menghafal bentuk grafik, kita berpetualang memasukkan angka, melihat polanya di bidang koordinat, sampai persamaan dan ciri grafiknya tersimpulkan.
+                - generic [ref=e155]: 0/20
+                - generic [ref=e156]:
+                  - generic [ref=e157]:
+                    - img [ref=e158]
+                    - text: 5 level
+                    - generic [ref=e160]: ·
+                    - img [ref=e161]
+                    - text: 20 pelajaran
+                  - generic [ref=e163]:
+                    - text: Lihat materi
+                    - img [ref=e164]
+            - link "🧮 Logika Matematika Bernalar dengan pasti Logika matematika adalah aturan main untuk bernalar tanpa keliru. Bukan menghafal tabel, kita berpetualang menguji pernyataan benar dan salah, menyusun tabel kebenaran, dan menarik kesimpulan yang sah, sampai aturannya tersimpulkan sendiri. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e166] [cursor=pointer]:
+              - /url: /logika-matematika
+              - generic [ref=e167]:
+                - generic [ref=e168]: 🧮
+                - generic [ref=e169]: Logika Matematika
+                - generic [ref=e170]: Bernalar dengan pasti
+              - generic [ref=e171]:
+                - paragraph [ref=e172]: Logika matematika adalah aturan main untuk bernalar tanpa keliru. Bukan menghafal tabel, kita berpetualang menguji pernyataan benar dan salah, menyusun tabel kebenaran, dan menarik kesimpulan yang sah, sampai aturannya tersimpulkan sendiri.
+                - generic [ref=e175]: 0/20
+                - generic [ref=e176]:
+                  - generic [ref=e177]:
+                    - img [ref=e178]
+                    - text: 5 level
+                    - generic [ref=e180]: ·
+                    - img [ref=e181]
+                    - text: 20 pelajaran
+                  - generic [ref=e183]:
+                    - text: Lihat materi
+                    - img [ref=e184]
+            - link "📊 Statistika Membaca dunia lewat data Statistika adalah cara matematika memahami dunia yang penuh data dan ketidakpastian. Bukan menghafal rumus rata-rata dan simpangan, kita berpetualang mengumpulkan, menyajikan, dan meringkas data nyata, sampai ukuran dan rumusnya muncul sebagai kesimpulan. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e186] [cursor=pointer]:
+              - /url: /statistika
+              - generic [ref=e187]:
+                - generic [ref=e188]: 📊
+                - generic [ref=e189]: Statistika
+                - generic [ref=e190]: Membaca dunia lewat data
+              - generic [ref=e191]:
+                - paragraph [ref=e192]: Statistika adalah cara matematika memahami dunia yang penuh data dan ketidakpastian. Bukan menghafal rumus rata-rata dan simpangan, kita berpetualang mengumpulkan, menyajikan, dan meringkas data nyata, sampai ukuran dan rumusnya muncul sebagai kesimpulan.
+                - generic [ref=e195]: 0/20
+                - generic [ref=e196]:
+                  - generic [ref=e197]:
+                    - img [ref=e198]
+                    - text: 5 level
+                    - generic [ref=e200]: ·
+                    - img [ref=e201]
+                    - text: 20 pelajaran
+                  - generic [ref=e203]:
+                    - text: Lihat materi
+                    - img [ref=e204]
+            - link "♾️ Kalkulus Matematika perubahan Kalkulus adalah matematika tentang perubahan dan penumpukan tak hingga. Bukan menghafal aturan turunan dan integral, kita berpetualang dari laju perubahan dan luas di bawah kurva, sampai konsep limit, turunan, dan integral tercipta dengan sendirinya. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e206] [cursor=pointer]:
+              - /url: /kalkulus
+              - generic [ref=e207]:
+                - generic [ref=e208]: ♾️
+                - generic [ref=e209]: Kalkulus
+                - generic [ref=e210]: Matematika perubahan
+              - generic [ref=e211]:
+                - paragraph [ref=e212]: Kalkulus adalah matematika tentang perubahan dan penumpukan tak hingga. Bukan menghafal aturan turunan dan integral, kita berpetualang dari laju perubahan dan luas di bawah kurva, sampai konsep limit, turunan, dan integral tercipta dengan sendirinya.
+                - generic [ref=e215]: 0/20
+                - generic [ref=e216]:
+                  - generic [ref=e217]:
+                    - img [ref=e218]
+                    - text: 5 level
+                    - generic [ref=e220]: ·
+                    - img [ref=e221]
+                    - text: 20 pelajaran
+                  - generic [ref=e223]:
+                    - text: Lihat materi
+                    - img [ref=e224]
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - img [ref=e229]
+            - generic [ref=e231]:
+              - heading "Ekonomi & Kebijakan" [level=3] [ref=e232]
+              - paragraph [ref=e233]: Bagaimana pasar, negara, dan regulasi membentuk keputusan ekonomi.
+            - generic [ref=e234]: 5 topik
+          - generic [ref=e235]:
+            - 'link "🧩 Mikroekonomi Perilaku pelaku & pasar Memahami keputusan individu, rumah tangga, dan perusahaan: kelangkaan dan biaya peluang, hukum permintaan dan penawaran, elastisitas dan perilaku konsumen, produksi dan biaya, hingga struktur pasar dari persaingan sempurna sampai monopoli. Penuh simulator, grafik, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e236] [cursor=pointer]':
+              - /url: /mikroekonomi
+              - generic [ref=e237]:
+                - generic [ref=e238]: 🧩
+                - generic [ref=e239]: Mikroekonomi
+                - generic [ref=e240]: Perilaku pelaku & pasar
+              - generic [ref=e241]:
+                - paragraph [ref=e242]: "Memahami keputusan individu, rumah tangga, dan perusahaan: kelangkaan dan biaya peluang, hukum permintaan dan penawaran, elastisitas dan perilaku konsumen, produksi dan biaya, hingga struktur pasar dari persaingan sempurna sampai monopoli. Penuh simulator, grafik, dan video animasi."
+                - generic [ref=e245]: 0/20
+                - generic [ref=e246]:
+                  - generic [ref=e247]:
+                    - img [ref=e248]
+                    - text: 5 level
+                    - generic [ref=e250]: ·
+                    - img [ref=e251]
+                    - text: 20 pelajaran
+                  - generic [ref=e253]:
+                    - text: Lihat materi
+                    - img [ref=e254]
+            - 'link "🌐 Makroekonomi Ekonomi secara keseluruhan Memahami perekonomian secara agregat: mengukur PDB dan pertumbuhan, inflasi dan pengangguran, kebijakan moneter dan fiskal, ekonomi terbuka (perdagangan dan nilai tukar), hingga siklus bisnis dan model AD-AS. Penuh kalkulator, grafik, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e256] [cursor=pointer]':
+              - /url: /makroekonomi
+              - generic [ref=e257]:
+                - generic [ref=e258]: 🌐
+                - generic [ref=e259]: Makroekonomi
+                - generic [ref=e260]: Ekonomi secara keseluruhan
+              - generic [ref=e261]:
+                - paragraph [ref=e262]: "Memahami perekonomian secara agregat: mengukur PDB dan pertumbuhan, inflasi dan pengangguran, kebijakan moneter dan fiskal, ekonomi terbuka (perdagangan dan nilai tukar), hingga siklus bisnis dan model AD-AS. Penuh kalkulator, grafik, dan video animasi."
+                - generic [ref=e265]: 0/20
+                - generic [ref=e266]:
+                  - generic [ref=e267]:
+                    - img [ref=e268]
+                    - text: 5 level
+                    - generic [ref=e270]: ·
+                    - img [ref=e271]
+                    - text: 20 pelajaran
+                  - generic [ref=e273]:
+                    - text: Lihat materi
+                    - img [ref=e274]
+            - 'link "🏛️ Kebijakan Fiskal APBN & keuangan negara Indonesia Memahami kebijakan fiskal Indonesia: fungsi alokasi, distribusi, dan stabilisasi; struktur dan siklus APBN; penerimaan negara (pajak dan PNBP); belanja dan transfer ke daerah; serta defisit, utang, dan keberlanjutan fiskal. Penuh simulator, grafik, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e276] [cursor=pointer]':
+              - /url: /kebijakan-fiskal
+              - generic [ref=e277]:
+                - generic [ref=e278]: 🏛️
+                - generic [ref=e279]: Kebijakan Fiskal
+                - generic [ref=e280]: APBN & keuangan negara Indonesia
+              - generic [ref=e281]:
+                - paragraph [ref=e282]: "Memahami kebijakan fiskal Indonesia: fungsi alokasi, distribusi, dan stabilisasi; struktur dan siklus APBN; penerimaan negara (pajak dan PNBP); belanja dan transfer ke daerah; serta defisit, utang, dan keberlanjutan fiskal. Penuh simulator, grafik, dan video animasi."
+                - generic [ref=e285]: 0/20
+                - generic [ref=e286]:
+                  - generic [ref=e287]:
+                    - img [ref=e288]
+                    - text: 5 level
+                    - generic [ref=e290]: ·
+                    - img [ref=e291]
+                    - text: 20 pelajaran
+                  - generic [ref=e293]:
+                    - text: Lihat materi
+                    - img [ref=e294]
+            - 'link "🧾 Pajak UMKM Dibuat ramah untuk awam Pajak terkenal sulit, jadi topik ini sengaja dibuat sesederhana mungkin: bahasa sehari-hari dan banyak simulator. Mulai dari NPWP, PPh Final 0,5%, PPN & PKP, pajak karyawan (PPh 21/23), sampai cara bayar, lapor, dan menghindari denda. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e296] [cursor=pointer]':
+              - /url: /pajak
+              - generic [ref=e297]:
+                - generic [ref=e298]: 🧾
+                - generic [ref=e299]: Pajak UMKM
+                - generic [ref=e300]: Dibuat ramah untuk awam
+              - generic [ref=e301]:
+                - paragraph [ref=e302]: "Pajak terkenal sulit, jadi topik ini sengaja dibuat sesederhana mungkin: bahasa sehari-hari dan banyak simulator. Mulai dari NPWP, PPh Final 0,5%, PPN & PKP, pajak karyawan (PPh 21/23), sampai cara bayar, lapor, dan menghindari denda."
+                - generic [ref=e305]: 0/20
+                - generic [ref=e306]:
+                  - generic [ref=e307]:
+                    - img [ref=e308]
+                    - text: 5 level
+                    - generic [ref=e310]: ·
+                    - img [ref=e311]
+                    - text: 20 pelajaran
+                  - generic [ref=e313]:
+                    - text: Lihat materi
+                    - img [ref=e314]
+            - 'link "🛳️ Kepabeanan Ekspor, impor & bea cukai Kurikulum lengkap ilmu ekspor, impor, dan kepabeanan: dari fundamental perdagangan internasional, klasifikasi HS Code, teknis PIB/PEB dan nilai pabean, dokumen, logistik, Incoterms 2020, pembayaran internasional dan LC, asuransi pengangkutan, perpajakan impor dan fasilitas fiskal, compliance dan manajemen risiko, customs digital (CEISA/INSW), sampai simulasi impor-ekspor dan trade analytics. Penuh kalkulator, simulator, grafik, dan video animasi. 0/35 14 level · 35 pelajaran Lihat materi" [ref=e316] [cursor=pointer]':
+              - /url: /kepabeanan
+              - generic [ref=e317]:
+                - generic [ref=e318]: 🛳️
+                - generic [ref=e319]: Kepabeanan
+                - generic [ref=e320]: Ekspor, impor & bea cukai
+              - generic [ref=e321]:
+                - paragraph [ref=e322]: "Kurikulum lengkap ilmu ekspor, impor, dan kepabeanan: dari fundamental perdagangan internasional, klasifikasi HS Code, teknis PIB/PEB dan nilai pabean, dokumen, logistik, Incoterms 2020, pembayaran internasional dan LC, asuransi pengangkutan, perpajakan impor dan fasilitas fiskal, compliance dan manajemen risiko, customs digital (CEISA/INSW), sampai simulasi impor-ekspor dan trade analytics. Penuh kalkulator, simulator, grafik, dan video animasi."
+                - generic [ref=e325]: 0/35
+                - generic [ref=e326]:
+                  - generic [ref=e327]:
+                    - img [ref=e328]
+                    - text: 14 level
+                    - generic [ref=e330]: ·
+                    - img [ref=e331]
+                    - text: 35 pelajaran
+                  - generic [ref=e333]:
+                    - text: Lihat materi
+                    - img [ref=e334]
+        - generic [ref=e336]:
+          - generic [ref=e337]:
+            - img [ref=e339]
+            - generic [ref=e341]:
+              - heading "Keuangan & Investasi" [level=3] [ref=e342]
+              - paragraph [ref=e343]: Pasar modal, investasi, keuangan perusahaan, sampai perdagangan karbon.
+            - generic [ref=e344]: 6 topik
+          - generic [ref=e345]:
+            - 'link "💹 Pasar Keuangan Tempat dana bertemu peluang Memahami cara kerja pasar keuangan: fungsi dan pelakunya (OJK, Bank Indonesia, bursa), pasar uang dan suku bunga acuan, pasar modal saham (bursa, IPO, indeks), pasar obligasi dan yield curve, hingga pasar valas, derivatif, dan hipotesis pasar efisien. Penuh simulator, grafik, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e346] [cursor=pointer]':
+              - /url: /pasar-keuangan
+              - generic [ref=e347]:
+                - generic [ref=e348]: 💹
+                - generic [ref=e349]: Pasar Keuangan
+                - generic [ref=e350]: Tempat dana bertemu peluang
+              - generic [ref=e351]:
+                - paragraph [ref=e352]: "Memahami cara kerja pasar keuangan: fungsi dan pelakunya (OJK, Bank Indonesia, bursa), pasar uang dan suku bunga acuan, pasar modal saham (bursa, IPO, indeks), pasar obligasi dan yield curve, hingga pasar valas, derivatif, dan hipotesis pasar efisien. Penuh simulator, grafik, dan video animasi."
+                - generic [ref=e355]: 0/20
+                - generic [ref=e356]:
+                  - generic [ref=e357]:
+                    - img [ref=e358]
+                    - text: 5 level
+                    - generic [ref=e360]: ·
+                    - img [ref=e361]
+                    - text: 20 pelajaran
+                  - generic [ref=e363]:
+                    - text: Lihat materi
+                    - img [ref=e364]
+            - 'link "📈 Investasi Mengelola & menumbuhkan dana Dari prinsip dasar investasi sampai dunia profesional: manajemen portofolio dan diversifikasi, equity research dan valuasi saham, asset management (reksa dana & ETF), hingga private markets (venture capital & private equity). Penuh simulator, grafik, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e366] [cursor=pointer]':
+              - /url: /investasi
+              - generic [ref=e367]:
+                - generic [ref=e368]: 📈
+                - generic [ref=e369]: Investasi
+                - generic [ref=e370]: Mengelola & menumbuhkan dana
+              - generic [ref=e371]:
+                - paragraph [ref=e372]: "Dari prinsip dasar investasi sampai dunia profesional: manajemen portofolio dan diversifikasi, equity research dan valuasi saham, asset management (reksa dana & ETF), hingga private markets (venture capital & private equity). Penuh simulator, grafik, dan video animasi."
+                - generic [ref=e375]: 0/20
+                - generic [ref=e376]:
+                  - generic [ref=e377]:
+                    - img [ref=e378]
+                    - text: 5 level
+                    - generic [ref=e380]: ·
+                    - img [ref=e381]
+                    - text: 20 pelajaran
+                  - generic [ref=e383]:
+                    - text: Lihat materi
+                    - img [ref=e384]
+            - 'link "🏢 Corporate Finance Keputusan keuangan perusahaan Bagaimana perusahaan mengambil keputusan keuangan untuk menciptakan nilai: investasi (capital budgeting, NPV, WACC), pendanaan dan struktur modal, treasury & modal kerja, project finance, sampai merger & akuisisi (valuasi, LBO). Penuh kalkulator, grafik, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e386] [cursor=pointer]':
+              - /url: /corporate-finance
+              - generic [ref=e387]:
+                - generic [ref=e388]: 🏢
+                - generic [ref=e389]: Corporate Finance
+                - generic [ref=e390]: Keputusan keuangan perusahaan
+              - generic [ref=e391]:
+                - paragraph [ref=e392]: "Bagaimana perusahaan mengambil keputusan keuangan untuk menciptakan nilai: investasi (capital budgeting, NPV, WACC), pendanaan dan struktur modal, treasury & modal kerja, project finance, sampai merger & akuisisi (valuasi, LBO). Penuh kalkulator, grafik, dan video animasi."
+                - generic [ref=e395]: 0/20
+                - generic [ref=e396]:
+                  - generic [ref=e397]:
+                    - img [ref=e398]
+                    - text: 5 level
+                    - generic [ref=e400]: ·
+                    - img [ref=e401]
+                    - text: 20 pelajaran
+                  - generic [ref=e403]:
+                    - text: Lihat materi
+                    - img [ref=e404]
+            - 'link "🌍 Climate Finance Mendanai transisi iklim Bagaimana dunia membiayai transisi menuju ekonomi rendah karbon dan tahan iklim: instrumen pendanaan hijau (green bond, blended finance), risiko iklim bagi keuangan, pengungkapan & standar (TCFD, ISSB), sampai menilai kelayakan proyek hijau. Penuh grafik, simulator, dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e406] [cursor=pointer]':
+              - /url: /climate-finance
+              - generic [ref=e407]:
+                - generic [ref=e408]: 🌍
+                - generic [ref=e409]: Climate Finance
+                - generic [ref=e410]: Mendanai transisi iklim
+              - generic [ref=e411]:
+                - paragraph [ref=e412]: "Bagaimana dunia membiayai transisi menuju ekonomi rendah karbon dan tahan iklim: instrumen pendanaan hijau (green bond, blended finance), risiko iklim bagi keuangan, pengungkapan & standar (TCFD, ISSB), sampai menilai kelayakan proyek hijau. Penuh grafik, simulator, dan video animasi."
+                - generic [ref=e415]: 0/20
+                - generic [ref=e416]:
+                  - generic [ref=e417]:
+                    - img [ref=e418]
+                    - text: 5 level
+                    - generic [ref=e420]: ·
+                    - img [ref=e421]
+                    - text: 20 pelajaran
+                  - generic [ref=e423]:
+                    - text: Lihat materi
+                    - img [ref=e424]
+            - 'link "🌿 Carbon Trading Konsep sampai strategi Belajar perdagangan karbon menyeluruh: lingkungan, ekonomi, hukum, kebijakan, keuangan, akuntansi, pajak, teknologi (MRV), tata kelola, risiko, bisnis, sosial, etika, internasional, dan politik. Penuh grafik data, simulator, kuis, dan video animasi. 0/32 6 level · 32 pelajaran Lihat materi" [ref=e426] [cursor=pointer]':
+              - /url: /carbon
+              - generic [ref=e427]:
+                - generic [ref=e428]: 🌿
+                - generic [ref=e429]: Carbon Trading
+                - generic [ref=e430]: Konsep sampai strategi
+              - generic [ref=e431]:
+                - paragraph [ref=e432]: "Belajar perdagangan karbon menyeluruh: lingkungan, ekonomi, hukum, kebijakan, keuangan, akuntansi, pajak, teknologi (MRV), tata kelola, risiko, bisnis, sosial, etika, internasional, dan politik. Penuh grafik data, simulator, kuis, dan video animasi."
+                - generic [ref=e435]: 0/32
+                - generic [ref=e436]:
+                  - generic [ref=e437]:
+                    - img [ref=e438]
+                    - text: 6 level
+                    - generic [ref=e440]: ·
+                    - img [ref=e441]
+                    - text: 32 pelajaran
+                  - generic [ref=e443]:
+                    - text: Lihat materi
+                    - img [ref=e444]
+            - link "📒 Akuntansi Dari nol hingga mahir Belajar akuntansi dari persamaan dasar, siklus akuntansi, perusahaan dagang, topik lanjutan, sampai analisis laporan & standar. Dilengkapi simulasi jurnal, kalkulator, kuis, dan video animasi. 0/27 5 level · 27 pelajaran Lihat materi" [ref=e446] [cursor=pointer]:
+              - /url: /akuntansi
+              - generic [ref=e447]:
+                - generic [ref=e448]: 📒
+                - generic [ref=e449]: Akuntansi
+                - generic [ref=e450]: Dari nol hingga mahir
+              - generic [ref=e451]:
+                - paragraph [ref=e452]: Belajar akuntansi dari persamaan dasar, siklus akuntansi, perusahaan dagang, topik lanjutan, sampai analisis laporan & standar. Dilengkapi simulasi jurnal, kalkulator, kuis, dan video animasi.
+                - generic [ref=e455]: 0/27
+                - generic [ref=e456]:
+                  - generic [ref=e457]:
+                    - img [ref=e458]
+                    - text: 5 level
+                    - generic [ref=e460]: ·
+                    - img [ref=e461]
+                    - text: 27 pelajaran
+                  - generic [ref=e463]:
+                    - text: Lihat materi
+                    - img [ref=e464]
+        - generic [ref=e466]:
+          - generic [ref=e467]:
+            - img [ref=e469]
+            - generic [ref=e471]:
+              - heading "Logika & Filsafat" [level=3] [ref=e472]
+              - paragraph [ref=e473]: Cara berpikir jernih, menalar, dan menelusuri pemikiran besar sepanjang sejarah.
+            - generic [ref=e474]: 2 topik
+          - generic [ref=e475]:
+            - 'link "🧠 Logika Seni berpikir lurus Belajar bernalar dengan benar: proposisi dan penalaran deduktif vs induktif, logika proposisional dan tabel kebenaran, silogisme dan validitas, mengenali sesat pikir (fallacy), serta berpikir kritis dalam kehidupan sehari-hari. Penuh latihan interaktif dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e476] [cursor=pointer]':
+              - /url: /logika
+              - generic [ref=e477]:
+                - generic [ref=e478]: 🧠
+                - generic [ref=e479]: Logika
+                - generic [ref=e480]: Seni berpikir lurus
+              - generic [ref=e481]:
+                - paragraph [ref=e482]: "Belajar bernalar dengan benar: proposisi dan penalaran deduktif vs induktif, logika proposisional dan tabel kebenaran, silogisme dan validitas, mengenali sesat pikir (fallacy), serta berpikir kritis dalam kehidupan sehari-hari. Penuh latihan interaktif dan video animasi."
+                - generic [ref=e485]: 0/20
+                - generic [ref=e486]:
+                  - generic [ref=e487]:
+                    - img [ref=e488]
+                    - text: 5 level
+                    - generic [ref=e490]: ·
+                    - img [ref=e491]
+                    - text: 20 pelajaran
+                  - generic [ref=e493]:
+                    - text: Lihat materi
+                    - img [ref=e494]
+            - 'link "🦉 Filsafat Cinta pada kebijaksanaan Menjelajahi pertanyaan-pertanyaan terbesar manusia: cabang-cabang filsafat, epistemologi (hakikat pengetahuan), metafisika (hakikat kenyataan dan kehendak bebas), etika (utilitarianisme, deontologi, keutamaan), serta filsafat dalam kehidupan termasuk eksistensialisme dan Pancasila. Penuh eksperimen pikiran interaktif dan video animasi. 0/20 5 level · 20 pelajaran Lihat materi" [ref=e496] [cursor=pointer]':
+              - /url: /filsafat
+              - generic [ref=e497]:
+                - generic [ref=e498]: 🦉
+                - generic [ref=e499]: Filsafat
+                - generic [ref=e500]: Cinta pada kebijaksanaan
+              - generic [ref=e501]:
+                - paragraph [ref=e502]: "Menjelajahi pertanyaan-pertanyaan terbesar manusia: cabang-cabang filsafat, epistemologi (hakikat pengetahuan), metafisika (hakikat kenyataan dan kehendak bebas), etika (utilitarianisme, deontologi, keutamaan), serta filsafat dalam kehidupan termasuk eksistensialisme dan Pancasila. Penuh eksperimen pikiran interaktif dan video animasi."
+                - generic [ref=e505]: 0/20
+                - generic [ref=e506]:
+                  - generic [ref=e507]:
+                    - img [ref=e508]
+                    - text: 5 level
+                    - generic [ref=e510]: ·
+                    - img [ref=e511]
+                    - text: 20 pelajaran
+                  - generic [ref=e513]:
+                    - text: Lihat materi
+                    - img [ref=e514]
+      - paragraph [ref=e516]:
+        - img [ref=e517]
+        - text: Topik baru akan ditambahkan secara berkala.
+  - contentinfo [ref=e519]:
+    - generic [ref=e520]:
+      - paragraph [ref=e521]:
+        - img [ref=e522]
+        - text: YukBelajar
+      - paragraph [ref=e524]: Platform belajar interaktif berbahasa Indonesia dengan banyak topik, dari akuntansi sampai perdagangan karbon. Setiap topik dilengkapi video animasi, simulator, grafik data, studi kasus, dan kuis.
+      - paragraph [ref=e525]: Materi bersifat edukatif. Angka, tarif, dan regulasi dapat berubah, selalu rujuk sumber resmi sebelum mengambil keputusan nyata.

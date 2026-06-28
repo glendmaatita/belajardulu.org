@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Icon, type IconName } from "./Icon";
 
 // ---- shared hooks ----
 function useInView<T extends HTMLElement>(): [React.RefObject<T | null>, boolean] {
@@ -70,10 +71,15 @@ export function Chart({
   const [ref, inView] = useInView<HTMLDivElement>();
   const p = useProgress(inView);
 
+  const chartIcon: IconName =
+    variant === "line" || variant === "area" ? "chart-line" : variant === "donut" ? "chart-pie" : "chart-bar";
+
   return (
     <figure ref={ref} className="my-6 card p-5">
       <figcaption className="mb-1 flex items-baseline justify-between gap-2">
-        <span className="text-sm font-bold text-ink">📊 {title}</span>
+        <span className="flex items-center gap-2 text-sm font-bold text-ink">
+          <Icon name={chartIcon} className="text-brand-500" /> {title}
+        </span>
         {unit && <span className="text-xs font-medium text-ink-faint">dalam {unit}</span>}
       </figcaption>
       <div className="mt-3">

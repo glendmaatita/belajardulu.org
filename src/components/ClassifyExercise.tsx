@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Icon } from "./Icon";
 
 interface Item {
   text: string;
@@ -42,7 +43,9 @@ export function ClassifyExercise({
 
   return (
     <div className="my-6 card p-5">
-      <div className="mb-3 text-sm font-bold text-brand-700">🗂️ Latihan Klasifikasi</div>
+      <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
+        <Icon name="layers" /> Latihan Klasifikasi
+      </div>
       <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft">{prompt}</p>
 
       <div className="space-y-2.5">
@@ -59,8 +62,12 @@ export function ClassifyExercise({
             >
               <div className="mb-2 flex items-center gap-2 text-sm font-medium text-ink">
                 <span>{it.text}</span>
-                {isCorrect && <span className="text-emerald-600">✓</span>}
-                {isWrong && <span className="text-xs text-rose-600">✗ seharusnya: {it.bucket}</span>}
+                {isCorrect && <Icon name="check-circle" className="text-emerald-600" />}
+                {isWrong && (
+                  <span className="flex items-center gap-1 text-xs text-rose-600">
+                    <Icon name="warn" /> seharusnya: {it.bucket}
+                  </span>
+                )}
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {buckets.map((b) => (

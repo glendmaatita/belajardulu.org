@@ -141,6 +141,20 @@ import { SimulatorPi } from "./SimulatorPi";
 import { SimulatorProporsi } from "./SimulatorProporsi";
 import { SimulatorKecepatan } from "./SimulatorKecepatan";
 import { SimulatorStatistik } from "./SimulatorStatistik";
+// Aljabar / Geometri / Trigonometri / Fungsi / Logika Matematika / Statistika / Kalkulus
+import { PolaKeAljabar } from "./PolaKeAljabar";
+import { SimulatorTimbangan } from "./SimulatorTimbangan";
+import { SimulatorSudut } from "./SimulatorSudut";
+import { SimulatorVolume } from "./SimulatorVolume";
+import { SimulatorTrigonometri } from "./SimulatorTrigonometri";
+import { SimulatorLingkaranSatuan } from "./SimulatorLingkaranSatuan";
+import { SimulatorMesinFungsi } from "./SimulatorMesinFungsi";
+import { PlotterFungsi } from "./PlotterFungsi";
+import { SimulatorHimpunan } from "./SimulatorHimpunan";
+import { SimulatorPenyebaran } from "./SimulatorPenyebaran";
+import { SimulatorLimit } from "./SimulatorLimit";
+import { SimulatorTurunan } from "./SimulatorTurunan";
+import { SimulatorIntegral } from "./SimulatorIntegral";
 // Filsafat
 import { SimulatorDilemaEtika } from "./SimulatorDilemaEtika";
 import { PencocokAliranFilsafat } from "./PencocokAliranFilsafat";
@@ -281,6 +295,19 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorProporsi,
   SimulatorKecepatan,
   SimulatorStatistik,
+  PolaKeAljabar,
+  SimulatorTimbangan,
+  SimulatorSudut,
+  SimulatorVolume,
+  SimulatorTrigonometri,
+  SimulatorLingkaranSatuan,
+  SimulatorMesinFungsi,
+  PlotterFungsi,
+  SimulatorHimpunan,
+  SimulatorPenyebaran,
+  SimulatorLimit,
+  SimulatorTurunan,
+  SimulatorIntegral,
   SimulatorDilemaEtika,
   PencocokAliranFilsafat,
   PetaCabangFilsafat,

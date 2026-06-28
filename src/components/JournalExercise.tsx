@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { JournalLine } from "../types";
 import { rupiah } from "../lib/format";
+import { Icon } from "./Icon";
 
 interface Row {
   account: string;
@@ -49,7 +50,9 @@ export function JournalExercise({
 
   return (
     <div className="my-6 card p-5">
-      <div className="mb-3 text-sm font-bold text-brand-700">✍️ Latihan Membuat Jurnal</div>
+      <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
+        <Icon name="edit" /> Latihan Membuat Jurnal
+      </div>
       <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft">{prompt}</p>
 
       <div className="space-y-2">
@@ -91,22 +94,23 @@ export function JournalExercise({
       </div>
 
       <div className="mt-3 flex items-center justify-between text-xs">
-        <span className={balanced ? "font-semibold text-emerald-600" : "text-ink-faint"}>
-          Total Debit {rupiah(totalDebit)} · Kredit {rupiah(totalCredit)} {balanced ? "✓ seimbang" : ""}
+        <span className={balanced ? "inline-flex items-center gap-1.5 font-semibold text-emerald-600" : "text-ink-faint"}>
+          Total Debit {rupiah(totalDebit)} · Kredit {rupiah(totalCredit)}
+          {balanced && <><Icon name="check-circle" /> seimbang</>}
         </span>
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
         <button onClick={check} className="btn-primary">
-          Periksa Jawaban
+          <Icon name="check" /> Periksa Jawaban
         </button>
         {hint && (
           <button onClick={() => setShowHint((s) => !s)} className="btn-ghost">
-            💡 {showHint ? "Sembunyikan" : "Petunjuk"}
+            <Icon name="lightbulb" className="text-amber-500" /> {showHint ? "Sembunyikan" : "Petunjuk"}
           </button>
         )}
         <button onClick={() => setRevealed((s) => !s)} className="btn-ghost">
-          {revealed ? "Tutup kunci" : "Lihat kunci"}
+          <Icon name="key" /> {revealed ? "Tutup kunci" : "Lihat kunci"}
         </button>
       </div>
 

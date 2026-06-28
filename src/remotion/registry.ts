@@ -166,6 +166,19 @@ import { ProporsiVideo, ProporsiVideoDuration } from "./ProporsiVideo";
 import { PersenVideo, PersenVideoDuration } from "./PersenVideo";
 import { StatistikaVideo, StatistikaVideoDuration } from "./StatistikaVideo";
 import { BerpikirMatematis, BerpikirMatematisDuration } from "./BerpikirMatematis";
+// Aljabar / Geometri / Trigonometri / Fungsi / Logika Matematika / Statistika / Kalkulus
+import { AljabarVideo, AljabarVideoDuration } from "./AljabarVideo";
+import { PersamaanVideo, PersamaanVideoDuration } from "./PersamaanVideo";
+import { SudutVideo, SudutVideoDuration } from "./SudutVideo";
+import { VolumeVideo, VolumeVideoDuration } from "./VolumeVideo";
+import { TrigonometriVideo, TrigonometriVideoDuration } from "./TrigonometriVideo";
+import { LingkaranSatuanVideo, LingkaranSatuanVideoDuration } from "./LingkaranSatuanVideo";
+import { FungsiVideo, FungsiVideoDuration } from "./FungsiVideo";
+import { HimpunanVideo, HimpunanVideoDuration } from "./HimpunanVideo";
+import { PenyebaranVideo, PenyebaranVideoDuration } from "./PenyebaranVideo";
+import { LimitVideo, LimitVideoDuration } from "./LimitVideo";
+import { TurunanVideo, TurunanVideoDuration } from "./TurunanVideo";
+import { IntegralVideo, IntegralVideoDuration } from "./IntegralVideo";
 import { GarisWaktuFilsafat, GarisWaktuFilsafatDuration } from "./GarisWaktuFilsafat";
 import { DialektikaHegel, DialektikaHegelDuration } from "./DialektikaHegel";
 import { EvolusiPemikiran, EvolusiPemikiranDuration } from "./EvolusiPemikiran";
@@ -345,6 +358,19 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   PersenVideo: { component: PersenVideo, durationInFrames: PersenVideoDuration },
   StatistikaVideo: { component: StatistikaVideo, durationInFrames: StatistikaVideoDuration },
   BerpikirMatematis: { component: BerpikirMatematis, durationInFrames: BerpikirMatematisDuration },
+  // Aljabar / Geometri / Trigonometri / Fungsi / Logika Matematika / Statistika / Kalkulus
+  AljabarVideo: { component: AljabarVideo, durationInFrames: AljabarVideoDuration },
+  PersamaanVideo: { component: PersamaanVideo, durationInFrames: PersamaanVideoDuration },
+  SudutVideo: { component: SudutVideo, durationInFrames: SudutVideoDuration },
+  VolumeVideo: { component: VolumeVideo, durationInFrames: VolumeVideoDuration },
+  TrigonometriVideo: { component: TrigonometriVideo, durationInFrames: TrigonometriVideoDuration },
+  LingkaranSatuanVideo: { component: LingkaranSatuanVideo, durationInFrames: LingkaranSatuanVideoDuration },
+  FungsiVideo: { component: FungsiVideo, durationInFrames: FungsiVideoDuration },
+  HimpunanVideo: { component: HimpunanVideo, durationInFrames: HimpunanVideoDuration },
+  PenyebaranVideo: { component: PenyebaranVideo, durationInFrames: PenyebaranVideoDuration },
+  LimitVideo: { component: LimitVideo, durationInFrames: LimitVideoDuration },
+  TurunanVideo: { component: TurunanVideo, durationInFrames: TurunanVideoDuration },
+  IntegralVideo: { component: IntegralVideo, durationInFrames: IntegralVideoDuration },
   // Filsafat
   CabangFilsafat: { component: CabangFilsafat, durationInFrames: CabangFilsafatDuration },
   RasionalismeEmpirisme: { component: RasionalismeEmpirisme, durationInFrames: RasionalismeEmpirismeDuration },

@@ -1,6 +1,7 @@
 import { Player } from "@remotion/player";
 import type { VideoComp } from "../types";
 import { videoRegistry, VIDEO } from "../remotion/registry";
+import { Icon } from "./Icon";
 
 export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: string; caption?: string }) {
   const entry = videoRegistry[comp];
@@ -13,7 +14,9 @@ export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: 
           <span className="h-3 w-3 rounded-full bg-amber-400" />
           <span className="h-3 w-3 rounded-full bg-emerald-400" />
         </span>
-        <span className="ml-2 text-sm font-semibold text-slate-200">🎬 {title}</span>
+        <span className="ml-2 flex items-center gap-2 text-sm font-semibold text-slate-200">
+          <Icon name="film" className="text-rose-400" /> {title}
+        </span>
       </div>
       <Player
         component={entry.component}

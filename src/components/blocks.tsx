@@ -9,6 +9,7 @@ import { MatchExercise } from "./MatchExercise";
 import { Chart, StatCards } from "./Charts";
 import { widgetRegistry } from "./widgets";
 import { annotateGlossary } from "../lib/glossary";
+import { Icon, type IconName } from "./Icon";
 
 // Code-split Remotion (heavy) so it only loads on lessons that have a video.
 const VideoPlayer = lazy(() => import("./VideoPlayer").then((m) => ({ default: m.VideoPlayer })));
@@ -49,7 +50,7 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
         <div className="my-6 overflow-hidden rounded-2xl border-l-4 border-violet-400 bg-violet-50/60">
           <div className="px-5 py-4">
             <div className="mb-1 flex items-center gap-2 text-sm font-bold text-violet-700">
-              🔎 {block.title}
+              <Icon name="search" /> {block.title}
             </div>
             <p className="text-sm leading-relaxed text-ink-soft" dangerouslySetInnerHTML={{ __html: annotateGlossary(block.html) }} />
           </div>
@@ -86,11 +87,13 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
     case "takeaways":
       return (
         <div className="my-6 rounded-2xl bg-gradient-to-br from-brand-50 to-emerald-50 p-5">
-          <div className="mb-2 flex items-center gap-2 font-bold text-brand-800">🎯 Inti Pelajaran</div>
+          <div className="mb-2 flex items-center gap-2 font-bold text-brand-800">
+            <Icon name="target" /> Inti Pelajaran
+          </div>
           <ul className="space-y-2">
             {block.items.map((it, i) => (
               <li key={i} className="flex gap-2 text-sm text-ink-soft">
-                <span className="text-emerald-500">✓</span>
+                <Icon name="check-circle" className="mt-0.5 shrink-0 text-emerald-500" />
                 <span dangerouslySetInnerHTML={{ __html: annotateGlossary(it) }} />
               </li>
             ))}
@@ -152,11 +155,11 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
 }
 
 const calloutStyles = {
-  info: { wrap: "border-sky-300 bg-sky-50", title: "text-sky-700", icon: "ℹ️" },
-  tip: { wrap: "border-emerald-300 bg-emerald-50", title: "text-emerald-700", icon: "💡" },
-  warn: { wrap: "border-amber-300 bg-amber-50", title: "text-amber-700", icon: "⚠️" },
-  key: { wrap: "border-brand-300 bg-brand-50", title: "text-brand-700", icon: "🔑" },
-} as const;
+  info: { wrap: "border-sky-300 bg-sky-50", title: "text-sky-700", icon: "info" },
+  tip: { wrap: "border-emerald-300 bg-emerald-50", title: "text-emerald-700", icon: "lightbulb" },
+  warn: { wrap: "border-amber-300 bg-amber-50", title: "text-amber-700", icon: "warn" },
+  key: { wrap: "border-brand-300 bg-brand-50", title: "text-brand-700", icon: "key" },
+} as const satisfies Record<string, { wrap: string; title: string; icon: IconName }>;
 
 function ImageBlock({ src, alt, caption, credit }: { src: string; alt: string; caption?: string; credit?: string }) {
   return (
@@ -183,7 +186,11 @@ function Callout({ tone, title, html }: { tone: keyof typeof calloutStyles; titl
   const s = calloutStyles[tone];
   return (
     <div className={`my-5 rounded-xl border-l-4 px-5 py-4 ${s.wrap}`}>
-      {title && <div className={`mb-1 flex items-center gap-2 text-sm font-bold ${s.title}`}>{s.icon} {title}</div>}
+      {title && (
+        <div className={`mb-1 flex items-center gap-2 text-sm font-bold ${s.title}`}>
+          <Icon name={s.icon} /> {title}
+        </div>
+      )}
       <div
         className="text-sm leading-relaxed text-ink-soft [&_b]:font-semibold [&_b]:text-ink [&_em]:text-ink-soft [&_strong]:font-semibold [&_strong]:text-ink"
         dangerouslySetInnerHTML={{ __html: annotateGlossary(html) }}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Icon } from "./Icon";
 
 export function CalcExercise({
   prompt,
@@ -35,7 +36,9 @@ export function CalcExercise({
 
   return (
     <div className="my-6 card p-5">
-      <div className="mb-3 text-sm font-bold text-brand-700">🧮 Latihan Hitung</div>
+      <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
+        <Icon name="flask" /> Latihan Hitung
+      </div>
       <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft" dangerouslySetInnerHTML={{ __html: prompt }} />
 
       <div className="flex flex-wrap items-center gap-2">
@@ -56,15 +59,15 @@ export function CalcExercise({
           {suffix && <span className="bg-slate-50 px-3 py-2.5 text-sm font-semibold text-ink-faint">{suffix}</span>}
         </div>
         <button onClick={check} className="btn-primary">
-          Periksa
+          <Icon name="check" /> Periksa
         </button>
         {hint && (
           <button onClick={() => setShowHint((s) => !s)} className="btn-ghost">
-            💡 Petunjuk
+            <Icon name="lightbulb" className="text-amber-500" /> Petunjuk
           </button>
         )}
         <button onClick={() => setShowSolution((s) => !s)} className="btn-ghost">
-          {showSolution ? "Tutup" : "Lihat"} pembahasan
+          <Icon name="book" /> {showSolution ? "Tutup" : "Lihat"} pembahasan
         </button>
       </div>
 
@@ -72,8 +75,8 @@ export function CalcExercise({
         <div className="mt-3 animate-fade-up rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">{hint}</div>
       )}
       {status === "correct" && (
-        <div className="mt-3 animate-fade-up rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700">
-          🎉 Benar!
+        <div className="mt-3 flex animate-fade-up items-center gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700">
+          <Icon name="check-circle" /> Benar!
         </div>
       )}
       {status === "wrong" && (

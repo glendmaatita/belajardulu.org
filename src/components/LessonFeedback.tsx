@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../lib/auth";
+import { Icon, type IconName } from "./Icon";
 
 type Vote = "up" | "down";
 interface Summary {
@@ -98,7 +99,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
       .finally(() => setSending(false));
   }
 
-  const btn = (value: Vote, icon: string, label: string) => {
+  const btn = (value: Vote, icon: IconName, label: string) => {
     const active = summary.mine === value;
     const count = value === "up" ? summary.up : summary.down;
     const activeColor = value === "up" ? "bg-emerald-500 text-white border-emerald-500" : "bg-rose-500 text-white border-rose-500";
@@ -112,7 +113,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
           active ? activeColor : "border-slate-200 bg-white text-ink-soft hover:border-slate-300 hover:bg-slate-50"
         }`}
       >
-        <span className="text-base">{icon}</span>
+        <Icon name={icon} className="text-base" />
         <span className="tnum">{count}</span>
       </button>
     );
@@ -132,16 +133,16 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
           </p>
         </div>
         <div className="flex gap-2">
-          {btn("up", "👍", "Membantu")}
-          {btn("down", "👎", "Belum membantu")}
+          {btn("up", "thumbs-up", "Membantu")}
+          {btn("down", "thumbs-down", "Belum membantu")}
         </div>
       </div>
 
       <hr className="my-4 border-slate-100" />
 
       {sent ? (
-        <div className="rounded-xl bg-emerald-50 p-3 text-sm text-emerald-800">
-          ✓ Terima kasih! Usulanmu sudah kami terima dan akan dipertimbangkan.
+        <div className="flex items-center gap-2 rounded-xl bg-emerald-50 p-3 text-sm text-emerald-800">
+          <Icon name="check-circle" /> Terima kasih! Usulanmu sudah kami terima dan akan dipertimbangkan.
         </div>
       ) : formOpen ? (
         <form onSubmit={submitSuggestion} className="space-y-3">
@@ -183,9 +184,9 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
       ) : (
         <button
           onClick={() => setFormOpen(true)}
-          className="text-sm font-semibold text-brand-600 hover:text-brand-700"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700"
         >
-          ✏️ Usulkan perbaikan untuk materi ini
+          <Icon name="edit" /> Usulkan perbaikan untuk materi ini
         </button>
       )}
     </section>
