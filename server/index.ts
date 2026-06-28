@@ -12,6 +12,9 @@ import {
   listProgress,
   setProgress,
   mergeProgress,
+  setFeedback,
+  getFeedbackSummary,
+  addSuggestion,
 } from "./db.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -128,6 +131,35 @@ app.post("/api/progress/merge", requireAuth, (req, res) => {
   const { lessonIds } = req.body ?? {};
   if (Array.isArray(lessonIds)) mergeProgress(uid, lessonIds.filter((x) => typeof x === "string"));
   res.json({ completed: listProgress(uid) });
+});
+
+// ---- feedback (thumbs up / down) ----
+// Open to everyone: logged-in votes are tied to the account (one changeable
+// vote), anonymous votes are counted without identity.
+app.get("/api/feedback", (req, res) => {
+  const lessonKey = typeof req.query.lessonKey === "string" ? req.query.lessonKey : "";
+  if (!lessonKey) return res.status(400).json({ error: "bad_request" });
+  res.json(getFeedbackSummary(lessonKey, currentUserId(req)));
+});
+
+app.post("/api/feedback", (req, res) => {
+  const { lessonKey, value } = req.body ?? {};
+  if (typeof lessonKey !== "string" || !lessonKey) return res.status(400).json({ error: "bad_request" });
+  if (value !== "up" && value !== "down") return res.status(400).json({ error: "bad_value" });
+  setFeedback(lessonKey, currentUserId(req), value === "up" ? 1 : -1);
+  res.json(getFeedbackSummary(lessonKey, currentUserId(req)));
+});
+
+// ---- improvement suggestions ----
+app.post("/api/suggestion", (req, res) => {
+  const { lessonKey, message, email } = req.body ?? {};
+  if (typeof lessonKey !== "string" || !lessonKey) return res.status(400).json({ error: "bad_request" });
+  const text = typeof message === "string" ? message.trim() : "";
+  if (text.length < 3) return res.status(400).json({ error: "message_too_short" });
+  if (text.length > 4000) return res.status(400).json({ error: "message_too_long" });
+  const contact = typeof email === "string" && email.trim() ? email.trim().slice(0, 200) : null;
+  addSuggestion(lessonKey, currentUserId(req), text, contact);
+  res.json({ ok: true });
 });
 
 // ---- serve built frontend in production ----

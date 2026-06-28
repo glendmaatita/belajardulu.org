@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getTopic, getLesson, adjacentLessons, progressKey } from "../topics";
 import { BlockRenderer } from "../components/blocks";
+import { LessonFeedback } from "../components/LessonFeedback";
 import { useProgress } from "../lib/progress";
 import { useAuth } from "../lib/auth";
 
@@ -82,6 +83,9 @@ export function LessonPage() {
             : "Progres tersimpan di perangkat ini. Masuk dengan Google untuk menyimpan ke akun."}
         </p>
       </div>
+
+      {/* Review (thumbs) + improvement proposal */}
+      <LessonFeedback lessonKey={key} />
 
       {/* Prev / Next */}
       <nav className="mt-8 grid gap-3 sm:grid-cols-2">

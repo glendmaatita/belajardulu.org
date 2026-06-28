@@ -30,6 +30,33 @@ db.exec(`
     PRIMARY KEY (user_id, lesson_id),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
+
+  -- Thumbs up / down per material (lesson_key = "topicId:lessonId").
+  -- user_id is NULL for anonymous votes. Logged-in users get one
+  -- changeable vote per material (enforced by the partial unique index).
+  CREATE TABLE IF NOT EXISTS feedback (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    lesson_key TEXT NOT NULL,
+    user_id    INTEGER,
+    value      INTEGER NOT NULL,           -- 1 = thumbs up, -1 = thumbs down
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
+  CREATE UNIQUE INDEX IF NOT EXISTS feedback_user_unique
+    ON feedback(lesson_key, user_id) WHERE user_id IS NOT NULL;
+  CREATE INDEX IF NOT EXISTS feedback_lesson_idx ON feedback(lesson_key);
+
+  -- Improvement proposals submitted from a material page.
+  CREATE TABLE IF NOT EXISTS suggestion (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    lesson_key TEXT NOT NULL,
+    user_id    INTEGER,
+    email      TEXT,
+    message    TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+  );
+  CREATE INDEX IF NOT EXISTS suggestion_lesson_idx ON suggestion(lesson_key);
 `);
 
 export interface UserRow {
@@ -94,4 +121,60 @@ export function mergeProgress(userId: number, lessonIds: string[]) {
     for (const id of ids) insert.run(userId, id);
   });
   tx(lessonIds);
+}
+
+// ---- feedback (thumbs up / down) ----
+
+export interface FeedbackSummary {
+  up: number;
+  down: number;
+  mine: "up" | "down" | null; // current user's vote (logged-in only)
+}
+
+export function setFeedback(lessonKey: string, userId: number | null, value: 1 | -1) {
+  if (userId === null) {
+    db.prepare("INSERT INTO feedback (lesson_key, user_id, value) VALUES (?, NULL, ?)").run(
+      lessonKey,
+      value
+    );
+    return;
+  }
+  db.prepare(
+    `INSERT INTO feedback (lesson_key, user_id, value) VALUES (?, ?, ?)
+     ON CONFLICT(lesson_key, user_id) WHERE user_id IS NOT NULL
+     DO UPDATE SET value = excluded.value, created_at = datetime('now')`
+  ).run(lessonKey, userId, value);
+}
+
+export function getFeedbackSummary(lessonKey: string, userId: number | null): FeedbackSummary {
+  const row = db
+    .prepare(
+      `SELECT
+         SUM(CASE WHEN value = 1 THEN 1 ELSE 0 END) AS up,
+         SUM(CASE WHEN value = -1 THEN 1 ELSE 0 END) AS down
+       FROM feedback WHERE lesson_key = ?`
+    )
+    .get(lessonKey) as { up: number | null; down: number | null };
+
+  let mine: "up" | "down" | null = null;
+  if (userId !== null) {
+    const m = db
+      .prepare("SELECT value FROM feedback WHERE lesson_key = ? AND user_id = ?")
+      .get(lessonKey, userId) as { value: number } | undefined;
+    if (m) mine = m.value === 1 ? "up" : "down";
+  }
+  return { up: row?.up ?? 0, down: row?.down ?? 0, mine };
+}
+
+// ---- improvement suggestions ----
+
+export function addSuggestion(
+  lessonKey: string,
+  userId: number | null,
+  message: string,
+  email: string | null
+) {
+  db.prepare(
+    "INSERT INTO suggestion (lesson_key, user_id, email, message) VALUES (?, ?, ?, ?)"
+  ).run(lessonKey, userId, email, message);
 }
