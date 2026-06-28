@@ -28,7 +28,7 @@ export function SimulatorPeluang() {
       <p className="mb-4 text-xs text-ink-faint">Lempar dadu berkali-kali dan hitung berapa kali muncul angka genap. Amati ke mana frekuensinya menuju.</p>
 
       <div className="grid grid-cols-3 gap-2 text-center">
-        <div className="rounded-xl bg-slate-50 p-3">
+        <div className="rounded-xl bg-canvas p-3">
           <div className="text-xs text-ink-faint">Lemparan</div>
           <div className="text-lg font-extrabold text-ink tnum">{total}</div>
         </div>
@@ -43,9 +43,9 @@ export function SimulatorPeluang() {
       </div>
 
       <div className="mt-3 flex gap-2">
-        <button onClick={() => lempar(1)} className="btn flex-1 bg-slate-100 text-ink-soft hover:bg-slate-200">Lempar 1x</button>
+        <button onClick={() => lempar(1)} className="btn flex-1 bg-canvas text-ink-soft hover:bg-line">Lempar 1x</button>
         <button onClick={() => lempar(50)} className="btn-primary flex-1">Lempar 50x</button>
-        <button onClick={reset} className="btn flex-1 bg-slate-100 text-ink-soft hover:bg-slate-200">Ulang</button>
+        <button onClick={reset} className="btn flex-1 bg-canvas text-ink-soft hover:bg-line">Ulang</button>
       </div>
 
       {reveal ? (

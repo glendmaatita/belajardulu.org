@@ -30,7 +30,7 @@ export function KalkulatorSanksiPabean() {
         <Slider label="Lama tertunggak" value={bulan} set={setBulan} min={1} max={24} step={1} fmt={(v) => `${v} bulan`} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Pokok kekurangan bayar" value={rupiah(Math.round(kurangBayar))} />
         <Row label={`Denda administrasi (${faktorDenda}%)`} value={rupiah(Math.round(r.denda))} />
         <Row label={`Bunga (${bunga}%/bln x ${bulan} bln)`} value={rupiah(Math.round(r.totalBunga))} />
@@ -67,7 +67,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

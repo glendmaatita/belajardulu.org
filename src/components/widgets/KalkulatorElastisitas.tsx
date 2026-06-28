@@ -37,11 +37,11 @@ export function KalkulatorElastisitas() {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2 text-sm">
-        <div className="rounded-xl bg-slate-50 p-3 text-center">
+        <div className="rounded-xl bg-canvas p-3 text-center">
           <div className="text-xs text-ink-faint">% perubahan jumlah</div>
           <div className="tnum font-bold text-ink">{r.dQpct.toFixed(1)}%</div>
         </div>
-        <div className="rounded-xl bg-slate-50 p-3 text-center">
+        <div className="rounded-xl bg-canvas p-3 text-center">
           <div className="text-xs text-ink-faint">% perubahan harga</div>
           <div className="tnum font-bold text-ink">{r.dPpct.toFixed(1)}%</div>
         </div>
@@ -67,7 +67,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

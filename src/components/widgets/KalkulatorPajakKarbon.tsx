@@ -41,7 +41,7 @@ export function KalkulatorPajakKarbon() {
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-3">
+    <div className="rounded-xl bg-canvas p-3">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${accent}`}>{value}</div>
     </div>
@@ -80,7 +80,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-emerald-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-emerald-600"
       />
       <div className="mt-0.5 text-right text-[11px] text-ink-faint">{unit}</div>
     </div>

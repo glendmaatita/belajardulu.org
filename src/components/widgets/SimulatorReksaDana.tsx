@@ -42,7 +42,7 @@ export function SimulatorReksaDana() {
               <span className="font-semibold text-ink-soft">{j.nama} <span className="text-ink-faint">({j.ret}%/th, risiko {j.risk}%)</span></span>
               <span className="tnum font-bold text-ink">{fmt(j.nilai)}</span>
             </div>
-            <div className="h-4 w-full rounded-full bg-slate-100">
+            <div className="h-4 w-full rounded-full bg-canvas">
               <div className="h-4 rounded-full" style={{ width: `${(j.nilai / maxNilai) * 100}%`, background: j.warna }} />
             </div>
           </div>
@@ -63,7 +63,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

@@ -45,7 +45,7 @@ function Bar({ label, level }: { label: string; level: number }) {
           {level >= 4 ? "Tinggi" : level === 3 ? "Sedang" : "Rendah"}
         </span>
       </div>
-      <div className="h-3 w-full rounded-full bg-slate-200">
+      <div className="h-3 w-full rounded-full bg-line">
         <div className="h-3 rounded-full" style={{ width: `${(level / 5) * 100}%`, background: warna }} />
       </div>
     </div>
@@ -69,7 +69,7 @@ export function SimulatorPembayaranEkspor() {
             key={m}
             onClick={() => setMetode(m)}
             className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${
-              metode === m ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+              metode === m ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {m}
@@ -82,7 +82,7 @@ export function SimulatorPembayaranEkspor() {
         <Bar label="Risiko bagi Importir (pembeli)" level={d.risikoImportir} />
       </div>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-4 rounded-xl bg-canvas p-4 text-sm">
         <p className="text-ink-soft">{d.narasi}</p>
         <p className="mt-2 text-xs text-ink-faint">
           Paling cocok: <b>{d.cocok}</b>

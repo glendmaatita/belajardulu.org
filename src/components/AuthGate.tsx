@@ -19,13 +19,13 @@ export function AuthGate({
   perks?: string[];
 }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-50/60 to-emerald-50/40" />
+    <div className="card-ruled p-8 text-center">
+      <div className="pointer-events-none absolute inset-0 bg-dotgrid text-brand-900/[0.04]" />
       <div className="relative">
-        <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand-600 text-2xl text-white shadow-lg shadow-brand-600/30">
+        <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand-600 text-2xl text-accent-300 shadow-lift">
           <Icon name="lock" />
         </span>
-        <h2 className="mt-5 text-2xl font-extrabold text-ink">{title}</h2>
+        <h2 className="mt-5 font-display text-2xl font-semibold text-ink">{title}</h2>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-ink-soft">{description}</p>
 
         <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left">

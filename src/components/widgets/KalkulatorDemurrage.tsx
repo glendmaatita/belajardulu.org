@@ -32,7 +32,7 @@ export function KalkulatorDemurrage() {
         <Slider label="Tarif hari berikutnya" value={tarifLanjut} set={setTarifLanjut} min={200_000} max={4_000_000} step={100_000} fmt={(v) => rupiah(v)} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Hari kena biaya (total - free time)" value={`${r.hariKena} hari`} />
         <Row label={`Tier 1 (${r.tier1} hari)`} value={rupiah(r.tier1 * tarifAwal)} />
         <Row label={`Tier 2 (${r.tier2} hari)`} value={rupiah(r.tier2 * tarifLanjut)} />
@@ -66,7 +66,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

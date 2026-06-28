@@ -46,7 +46,7 @@ export function ClassifyExercise({
       <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
         <Icon name="layers" /> Latihan Klasifikasi
       </div>
-      <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft">{prompt}</p>
+      <p className="mb-4 rounded-xl bg-canvas p-3 text-sm text-ink-soft">{prompt}</p>
 
       <div className="space-y-2.5">
         {ordered.map((it, i) => {
@@ -57,7 +57,7 @@ export function ClassifyExercise({
             <div
               key={i}
               className={`rounded-xl border p-3 ${
-                isCorrect ? "border-emerald-300 bg-emerald-50" : isWrong ? "border-rose-300 bg-rose-50" : "border-slate-200"
+                isCorrect ? "border-emerald-300 bg-emerald-50" : isWrong ? "border-rose-300 bg-rose-50" : "border-line"
               }`}
             >
               <div className="mb-2 flex items-center gap-2 text-sm font-medium text-ink">
@@ -78,7 +78,7 @@ export function ClassifyExercise({
                     className={`rounded-lg border px-2.5 py-1 text-xs font-semibold transition-colors ${
                       picked === b
                         ? "border-brand-500 bg-brand-600 text-white"
-                        : "border-slate-200 bg-white text-ink-soft hover:bg-slate-50"
+                        : "border-line bg-white text-ink-soft hover:bg-canvas"
                     }`}
                   >
                     {b}

@@ -69,7 +69,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

@@ -40,7 +40,7 @@ export function KalkulatorInflasi() {
         <div className={`mt-1 text-sm font-bold ${warna}`}>{r.kategori}</div>
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-4 text-center text-sm">
+      <div className="mt-3 rounded-xl bg-canvas p-4 text-center text-sm">
         Nilai riil uangmu menjadi <b className="text-ink">{fmt(r.dayaBeli)}</b>, tergerus <b className="text-rose-700">{fmt(r.erosi)}</b> oleh inflasi.
       </div>
 
@@ -58,7 +58,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

@@ -22,13 +22,13 @@ export function PetaCabangFilsafat() {
 
       <div className="mb-4 flex flex-wrap gap-2">
         {CABANG.map((x, i) => (
-          <button key={i} onClick={() => setIdx(i)} className={`rounded-lg px-3 py-1.5 text-sm font-bold transition ${idx === i ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={i} onClick={() => setIdx(i)} className={`rounded-lg px-3 py-1.5 text-sm font-bold transition ${idx === i ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             {x.ikon} {x.nama}
           </button>
         ))}
       </div>
 
-      <div className="rounded-xl bg-slate-50 p-4">
+      <div className="rounded-xl bg-canvas p-4">
         <div className="text-2xl font-extrabold text-ink">{c.ikon} {c.nama}</div>
         <div className="mt-3 space-y-2 text-sm">
           <Row label="Pertanyaan inti" value={c.tanya} />

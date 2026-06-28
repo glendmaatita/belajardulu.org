@@ -78,7 +78,7 @@ function Field({
         max={max}
         min={0}
         onChange={(e) => onChange(Math.max(0, Number(e.target.value)))}
-        className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm tnum focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
+        className="w-full rounded-lg border border-line-strong px-3 py-2 text-sm tnum focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100"
       />
       {!plain && <span className="mt-1 block text-xs text-ink-faint">{rupiah(value)}</span>}
     </label>
@@ -95,10 +95,10 @@ function Table({
   accent: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200">
-      <div className={`bg-slate-50 px-3 py-2 text-sm font-bold ${accent}`}>{title}</div>
+    <div className="overflow-hidden rounded-xl border border-line">
+      <div className={`bg-canvas px-3 py-2 text-sm font-bold ${accent}`}>{title}</div>
       <table className="w-full text-right text-xs tnum">
-        <thead className="bg-slate-50 text-ink-faint">
+        <thead className="bg-canvas text-ink-faint">
           <tr>
             <th className="px-2 py-1.5 text-left">Thn</th>
             <th className="px-2 py-1.5">Beban</th>
@@ -107,7 +107,7 @@ function Table({
         </thead>
         <tbody>
           {rows.map((r) => (
-            <tr key={r.tahun} className="border-t border-slate-100">
+            <tr key={r.tahun} className="border-t border-line">
               <td className="px-2 py-1.5 text-left font-semibold">{r.tahun}</td>
               <td className="px-2 py-1.5">{rupiah(Math.round(r.beban))}</td>
               <td className="px-2 py-1.5 text-ink-faint">{rupiah(Math.round(r.nilaiBuku))}</td>

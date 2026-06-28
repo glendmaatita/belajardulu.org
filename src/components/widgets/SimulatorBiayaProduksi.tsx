@@ -29,7 +29,7 @@ export function SimulatorBiayaProduksi() {
         <Slider label="Jumlah produksi (Q)" value={q} set={setQ} min={50} max={3000} step={50} fmt={(v) => `${v} unit`} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Biaya variabel total (VC)" value={rupiah(r.vc)} />
         <Row label="Biaya total (TC = FC + VC)" value={rupiah(r.tc)} />
         <Row label="Biaya tetap rata-rata (AFC)" value={rupiah(Math.round(r.afc))} />
@@ -65,7 +65,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

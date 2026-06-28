@@ -26,12 +26,12 @@ export function KalkulatorSharpe() {
       <Slider label="Aset bebas risiko (risk free)" value={rf} set={setRf} min={0} max={10} step={0.5} fmt={(v) => `${v}%`} />
 
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <div className="rounded-xl bg-slate-50 p-3">
+        <div className="rounded-xl bg-canvas p-3">
           <div className="mb-2 text-sm font-bold text-sky-700">Portofolio A</div>
           <Slider label="Imbal hasil" value={returnA} set={setReturnA} min={0} max={40} step={1} fmt={(v) => `${v}%`} />
           <Slider label="Volatilitas" value={riskA} set={setRiskA} min={1} max={50} step={1} fmt={(v) => `${v}%`} />
         </div>
-        <div className="rounded-xl bg-slate-50 p-3">
+        <div className="rounded-xl bg-canvas p-3">
           <div className="mb-2 text-sm font-bold text-violet-700">Portofolio B</div>
           <Slider label="Imbal hasil" value={returnB} set={setReturnB} min={0} max={40} step={1} fmt={(v) => `${v}%`} />
           <Slider label="Volatilitas" value={riskB} set={setRiskB} min={1} max={50} step={1} fmt={(v) => `${v}%`} />
@@ -39,11 +39,11 @@ export function KalkulatorSharpe() {
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className={`rounded-xl p-3 text-center ${r.lebihBaik === "A" ? "bg-emerald-50" : "bg-slate-100"}`}>
+        <div className={`rounded-xl p-3 text-center ${r.lebihBaik === "A" ? "bg-emerald-50" : "bg-canvas"}`}>
           <div className="text-xs text-ink-faint">Sharpe Portofolio A</div>
           <div className="text-2xl font-extrabold tnum text-sky-700">{r.sA.toFixed(2)}</div>
         </div>
-        <div className={`rounded-xl p-3 text-center ${r.lebihBaik === "B" ? "bg-emerald-50" : "bg-slate-100"}`}>
+        <div className={`rounded-xl p-3 text-center ${r.lebihBaik === "B" ? "bg-emerald-50" : "bg-canvas"}`}>
           <div className="text-xs text-ink-faint">Sharpe Portofolio B</div>
           <div className="text-2xl font-extrabold tnum text-violet-700">{r.sB.toFixed(2)}</div>
         </div>
@@ -63,7 +63,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

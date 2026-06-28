@@ -31,7 +31,7 @@ export function CocokkanFilsufEra() {
       <div className="mb-1 text-sm font-bold text-brand-700">🗂️ Cocokkan Filsuf & Era</div>
       <p className="mb-4 text-xs text-ink-faint">Tentukan di era mana filsuf berikut hidup dan berkarya.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-center text-lg font-bold text-ink">{s.tokoh}</div>
+      <div className="rounded-xl bg-canvas p-4 text-center text-lg font-bold text-ink">{s.tokoh}</div>
 
       <div className="mt-3 grid grid-cols-2 gap-2">
         {ERA.map((e) => (
@@ -44,7 +44,7 @@ export function CocokkanFilsufEra() {
                 ? "bg-emerald-500 text-white"
                 : pilih === e
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {e}

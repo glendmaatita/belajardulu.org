@@ -22,15 +22,15 @@ export function PlotterFungsi() {
       <input type="range" min={-4} max={4} step={1} value={c} onChange={(e) => setC(Number(e.target.value))} className="w-full" />
 
       <div className="mt-2 flex justify-center">
-        <svg width={W} height={H} className="rounded-lg bg-slate-50">
-          <line x1="0" y1={cy} x2={W} y2={cy} stroke="#cbd5e1" strokeWidth="1" />
-          <line x1={cx} y1="0" x2={cx} y2={H} stroke="#cbd5e1" strokeWidth="1" />
+        <svg width={W} height={H} className="rounded-lg bg-canvas">
+          <line x1="0" y1={cy} x2={W} y2={cy} stroke="#d9cdb6" strokeWidth="1" />
+          <line x1={cx} y1="0" x2={cx} y2={H} stroke="#d9cdb6" strokeWidth="1" />
           <line x1={sx(x1)} y1={sy(yAt(x1))} x2={sx(x2)} y2={sy(yAt(x2))} stroke="#6366f1" strokeWidth="3" />
           <circle cx={sx(0)} cy={sy(c)} r="5" fill="#f59e0b" />
         </svg>
       </div>
 
-      <div className="mt-2 rounded-xl bg-slate-50 p-3 text-center font-mono text-base text-ink">
+      <div className="mt-2 rounded-xl bg-canvas p-3 text-center font-mono text-base text-ink">
         y = {m}x {c >= 0 ? "+ " + c : "- " + Math.abs(c)}
       </div>
       <p className="mt-2 text-xs text-ink-faint">

@@ -22,7 +22,7 @@ export function KalkulatorPersenHidup() {
         min={0}
         step={10000}
         onChange={(e) => setHarga(Math.max(0, Number(e.target.value) || 0))}
-        className="mt-1 w-full rounded-lg border border-slate-200 p-2 text-sm tnum outline-none focus:border-brand-400"
+        className="mt-1 w-full rounded-lg border border-line p-2 text-sm tnum outline-none focus:border-brand-400"
       />
 
       <label className="mt-3 block text-xs font-bold text-ink-faint">Diskon: <span className="tnum">{diskon}%</span></label>

@@ -30,7 +30,7 @@ export function KalkulatorNeracaPembayaran() {
         <Slider label="Transaksi modal & finansial" value={modalFinansial} set={setModalFinansial} min={-30} max={80} step={5} fmt={(v) => `${v} M USD`} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Neraca perdagangan (ekspor - impor)" value={fmt(r.neracaDagang)} />
         <Row label="Transaksi berjalan" value={fmt(r.transaksiBerjalan)} tone={r.transaksiBerjalan >= 0 ? "pos" : "neg"} />
       </div>
@@ -67,7 +67,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

@@ -35,13 +35,13 @@ export function SimulatorDilemaEtika() {
 
       <div className="mb-4 flex flex-wrap gap-2">
         {DILEMA.map((_, i) => (
-          <button key={i} onClick={() => setIdx(i)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${idx === i ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={i} onClick={() => setIdx(i)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${idx === i ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             Dilema {i + 1}
           </button>
         ))}
       </div>
 
-      <div className="rounded-xl bg-slate-50 p-4">
+      <div className="rounded-xl bg-canvas p-4">
         <div className="text-xs text-ink-faint">Dilema</div>
         <div className="mt-1 text-base font-semibold text-ink">{d.teks}</div>
       </div>

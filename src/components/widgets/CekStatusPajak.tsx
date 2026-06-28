@@ -33,7 +33,7 @@ export function CekStatusPajak() {
         step={100_000_000}
         value={omzet}
         onChange={(e) => setOmzet(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
       />
 
       <div className="mt-5 space-y-2.5">
@@ -102,7 +102,7 @@ function Toggle({ active, onClick, label }: { active: boolean; onClick: () => vo
     <button
       onClick={onClick}
       className={`flex-1 rounded-lg border px-3 py-2 text-sm font-semibold transition-colors ${
-        active ? "border-brand-400 bg-brand-50 text-brand-700" : "border-slate-200 bg-white text-ink-faint"
+        active ? "border-brand-400 bg-brand-50 text-brand-700" : "border-line bg-white text-ink-faint"
       }`}
     >
       {label}

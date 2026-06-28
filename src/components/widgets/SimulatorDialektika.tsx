@@ -87,7 +87,7 @@ export function SimulatorDialektika() {
                 ? "bg-emerald-500 text-white"
                 : pilih === i
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {o}

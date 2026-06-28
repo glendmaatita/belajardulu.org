@@ -36,20 +36,20 @@ export function TabelKebenaranBuilder() {
 
       <div className="mb-4 flex flex-wrap gap-2">
         {OPS.map((o) => (
-          <button key={o} onClick={() => setOp(o)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${op === o ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={o} onClick={() => setOp(o)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${op === o ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             {o}
           </button>
         ))}
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-200">
-        <div className="flex bg-slate-100 text-sm font-bold text-ink">
+      <div className="overflow-hidden rounded-xl border border-line">
+        <div className="flex bg-canvas text-sm font-bold text-ink">
           <div className="flex-1 p-2 text-center">p</div>
           <div className="flex-1 p-2 text-center">q</div>
           <div className="flex-[2] p-2 text-center">p {op.split(" ")[0]} q</div>
         </div>
         {rows.map((r, i) => (
-          <div key={i} className={`flex text-sm ${i % 2 ? "bg-slate-50" : ""}`}>
+          <div key={i} className={`flex text-sm ${i % 2 ? "bg-canvas" : ""}`}>
             <Cell v={r.p} />
             <Cell v={r.q} />
             <div className={`flex-[2] p-2 text-center font-bold ${r.r ? "text-emerald-600" : "text-rose-500"}`}>{r.r ? "B" : "S"}</div>
@@ -57,7 +57,7 @@ export function TabelKebenaranBuilder() {
         ))}
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-3 text-center text-sm">
+      <div className="mt-3 rounded-xl bg-canvas p-3 text-center text-sm">
         Hasil benar pada <b>{benarCount}</b> dari 4 baris. Sifat: <b className="text-brand-700">{sifat}</b>.
       </div>
 

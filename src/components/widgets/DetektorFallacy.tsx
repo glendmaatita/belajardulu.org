@@ -37,18 +37,18 @@ export function DetektorFallacy() {
         Baca pernyataan berikut dan tentukan jenis sesat pikir (fallacy) yang terjadi.
       </p>
 
-      <div className="rounded-xl bg-slate-50 p-4">
+      <div className="rounded-xl bg-canvas p-4">
         <div className="text-xs text-ink-faint">Pernyataan</div>
         <div className="mt-1 text-base font-semibold text-ink">"{soal.teks}"</div>
       </div>
 
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         {OPSI.map((o) => {
-          let cls = "bg-white border-slate-200 hover:bg-slate-50";
+          let cls = "bg-white border-line hover:bg-canvas";
           if (pilih) {
             if (o === soal.jawab) cls = "bg-emerald-50 border-emerald-400 text-emerald-800";
             else if (o === pilih) cls = "bg-rose-50 border-rose-300 text-rose-700";
-            else cls = "bg-white border-slate-200 opacity-60";
+            else cls = "bg-white border-line opacity-60";
           }
           return (
             <button key={o} onClick={() => jawab(o)} disabled={!!pilih} className={`rounded-lg border px-3 py-2 text-left text-sm font-semibold transition ${cls}`}>

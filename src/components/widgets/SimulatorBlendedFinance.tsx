@@ -28,13 +28,13 @@ export function SimulatorBlendedFinance() {
           <span className="text-sm font-semibold text-ink-soft">Dana publik / konsesi (first-loss)</span>
           <span className="tnum text-sm font-bold text-ink">Rp{angka(konsesi)} miliar</span>
         </div>
-        <input type="range" min={10} max={1000} step={10} value={konsesi} onChange={(e) => setKonsesi(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+        <input type="range" min={10} max={1000} step={10} value={konsesi} onChange={(e) => setKonsesi(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
       </div>
       <div className="mb-1 flex items-center justify-between">
         <span className="text-sm font-semibold text-ink-soft">Rasio mobilisasi (leverage)</span>
         <span className="tnum text-sm font-bold text-ink">{leverage}x</span>
       </div>
-      <input type="range" min={1} max={10} step={0.5} value={leverage} onChange={(e) => setLeverage(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={1} max={10} step={0.5} value={leverage} onChange={(e) => setLeverage(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
 
       <div className="mt-5">
         <div className="flex h-9 overflow-hidden rounded-lg">
@@ -62,7 +62,7 @@ export function SimulatorBlendedFinance() {
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-3">
+    <div className="rounded-xl bg-canvas p-3">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-base font-extrabold tnum ${accent}`}>{value}</div>
     </div>

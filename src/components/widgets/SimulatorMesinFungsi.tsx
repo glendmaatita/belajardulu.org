@@ -13,13 +13,13 @@ export function SimulatorMesinFungsi() {
 
       <div className="flex items-center justify-center gap-3">
         <span className="text-xs font-bold text-ink-faint">x =</span>
-        <button onClick={() => setX((v) => v - 1)} className="h-8 w-8 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">-</button>
+        <button onClick={() => setX((v) => v - 1)} className="h-8 w-8 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">-</button>
         <span className="w-10 text-center text-lg font-bold tnum">{x}</span>
-        <button onClick={() => setX((v) => v + 1)} className="h-8 w-8 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">+</button>
+        <button onClick={() => setX((v) => v + 1)} className="h-8 w-8 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">+</button>
       </div>
 
       <div className="mt-3 flex items-center justify-center gap-3">
-        <div className="grid h-12 w-14 place-items-center rounded-lg bg-slate-100 text-lg font-bold tnum">{x}</div>
+        <div className="grid h-12 w-14 place-items-center rounded-lg bg-canvas text-lg font-bold tnum">{x}</div>
         <span className="text-xl text-ink-faint">→</span>
         <div className="grid h-16 w-28 place-items-center rounded-xl bg-brand-600 text-center text-xs font-bold text-white">MESIN</div>
         <span className="text-xl text-ink-faint">→</span>

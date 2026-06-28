@@ -11,9 +11,9 @@ export function SimulatorPecahan() {
   const Step = ({ label, val, set, min, max }: { label: string; val: number; set: (n: number) => void; min: number; max: number }) => (
     <div className="flex items-center gap-2">
       <span className="w-24 text-xs font-bold text-ink-faint">{label}</span>
-      <button onClick={() => set(Math.max(min, val - 1))} className="h-7 w-7 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">-</button>
+      <button onClick={() => set(Math.max(min, val - 1))} className="h-7 w-7 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">-</button>
       <span className="w-6 text-center font-bold tnum">{val}</span>
-      <button onClick={() => set(Math.min(max, val + 1))} className="h-7 w-7 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">+</button>
+      <button onClick={() => set(Math.min(max, val + 1))} className="h-7 w-7 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">+</button>
     </div>
   );
 
@@ -29,7 +29,7 @@ export function SimulatorPecahan() {
 
       <div className="mt-4 flex flex-wrap justify-center gap-1">
         {cells.map((i) => (
-          <div key={i} className={`h-9 w-9 rounded ${i < pembilang ? "bg-brand-500" : "bg-slate-100"}`} />
+          <div key={i} className={`h-9 w-9 rounded ${i < pembilang ? "bg-brand-500" : "bg-canvas"}`} />
         ))}
       </div>
 

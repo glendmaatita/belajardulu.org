@@ -25,7 +25,7 @@ export function KalkulatorTradeFinance() {
         Trade finance membantu arus kas: factoring menjual piutang lebih awal, LC memberi jaminan bank dengan biaya. Lihat biayanya.
       </p>
 
-      <div className="mb-4 flex rounded-lg bg-slate-100 p-1 text-sm font-bold">
+      <div className="mb-4 flex rounded-lg bg-canvas p-1 text-sm font-bold">
         {(["Factoring", "Letter of Credit"] as Mode[]).map((m) => (
           <button key={m} onClick={() => setMode(m)} className={`flex-1 rounded-md py-2 transition ${mode === m ? "bg-brand-600 text-white" : "text-ink-soft"}`}>
             {m}
@@ -57,7 +57,7 @@ export function KalkulatorTradeFinance() {
 function Stat({ label, value, tone }: { label: string; value: string; tone: "rose" | "emerald" | "violet" }) {
   const map = { rose: "text-rose-700", emerald: "text-emerald-700", violet: "text-violet-700" };
   return (
-    <div className="rounded-xl bg-slate-50 p-3 text-center">
+    <div className="rounded-xl bg-canvas p-3 text-center">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${map[tone]}`}>{value}</div>
     </div>
@@ -71,7 +71,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

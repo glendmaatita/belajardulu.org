@@ -27,12 +27,12 @@ export function KalkulatorUtilitas() {
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-xl bg-slate-50 p-3">
+        <div className="rounded-xl bg-canvas p-3">
           <div className="mb-2 text-sm font-bold text-sky-700">Barang A</div>
           <Slider label="Utilitas marginal (util)" value={muA} set={setMuA} min={5} max={100} step={5} fmt={(v) => `${v}`} />
           <Slider label="Harga" value={hargaA} set={setHargaA} min={1000} max={20000} step={1000} fmt={(v) => `Rp${v.toLocaleString("id-ID")}`} />
         </div>
-        <div className="rounded-xl bg-slate-50 p-3">
+        <div className="rounded-xl bg-canvas p-3">
           <div className="mb-2 text-sm font-bold text-violet-700">Barang B</div>
           <Slider label="Utilitas marginal (util)" value={muB} set={setMuB} min={5} max={100} step={5} fmt={(v) => `${v}`} />
           <Slider label="Harga" value={hargaB} set={setHargaB} min={1000} max={20000} step={1000} fmt={(v) => `Rp${v.toLocaleString("id-ID")}`} />
@@ -58,7 +58,7 @@ export function KalkulatorUtilitas() {
 function Stat({ label, value, tone }: { label: string; value: string; tone: "sky" | "violet" }) {
   const map = { sky: "text-sky-700", violet: "text-violet-700" };
   return (
-    <div className="rounded-xl bg-slate-50 p-3 text-center">
+    <div className="rounded-xl bg-canvas p-3 text-center">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${map[tone]}`}>{value}</div>
     </div>
@@ -72,7 +72,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-xs font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-xs font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

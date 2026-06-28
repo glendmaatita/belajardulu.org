@@ -35,7 +35,7 @@ export function SimulatorRisikoTransisi() {
           <span className="font-semibold text-ink-soft">Nilai aset setelah memperhitungkan biaya karbon</span>
           <span className="tnum font-bold">{rupiah(Math.round(r.nilaiBaru))}</span>
         </div>
-        <div className="flex h-7 overflow-hidden rounded-lg bg-slate-200">
+        <div className="flex h-7 overflow-hidden rounded-lg bg-line">
           <div className="bg-emerald-500" style={{ width: `${100 - r.turunPct}%` }} />
           <div className="bg-rose-500" style={{ width: `${r.turunPct}%` }} />
         </div>
@@ -90,7 +90,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
       />
     </div>
   );
@@ -98,7 +98,7 @@ function Slider({
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-3">
+    <div className="rounded-xl bg-canvas p-3">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${accent}`}>{value}</div>
     </div>

@@ -23,7 +23,7 @@ export function KalkulatorEksternalitas() {
         Eksternalitas adalah dampak ke pihak ketiga yang tidak diperhitungkan pasar. Pemerintah dapat mengoreksinya lewat pajak (untuk dampak negatif) atau subsidi (untuk dampak positif).
       </p>
 
-      <div className="mb-4 flex rounded-lg bg-slate-100 p-1 text-sm font-bold">
+      <div className="mb-4 flex rounded-lg bg-canvas p-1 text-sm font-bold">
         <button onClick={() => setJenis("negatif")} className={`flex-1 rounded-md py-2 transition ${jenis === "negatif" ? "bg-rose-500 text-white" : "text-ink-soft"}`}>
           Negatif (mis. polusi)
         </button>
@@ -37,7 +37,7 @@ export function KalkulatorEksternalitas() {
         <Slider label="Besar eksternalitas / unit" value={dampakEksternal} set={setDampakEksternal} min={0} max={20000} step={1000} fmt={fmt} />
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4 text-center">
+      <div className="mt-5 rounded-xl bg-canvas p-4 text-center">
         <div className="text-xs text-ink-faint">{jenis === "negatif" ? "Biaya sosial per unit (privat + eksternal)" : "Manfaat sosial per unit (privat + eksternal)"}</div>
         <div className="text-2xl font-extrabold tnum text-ink">{fmt(r.biayaSosial)}</div>
       </div>
@@ -65,7 +65,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

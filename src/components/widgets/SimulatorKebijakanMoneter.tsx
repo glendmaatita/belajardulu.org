@@ -32,7 +32,7 @@ export function SimulatorKebijakanMoneter() {
         <Slider label="BI Rate baru" value={biRateBaru} set={setBiRateBaru} min={3} max={9} step={0.25} fmt={(v) => `${v}%`} />
       </div>
 
-      <div className={`mt-5 rounded-xl p-4 text-center ${r.delta === 0 ? "bg-slate-100" : ekspansif ? "bg-emerald-50" : "bg-rose-50"}`}>
+      <div className={`mt-5 rounded-xl p-4 text-center ${r.delta === 0 ? "bg-canvas" : ekspansif ? "bg-emerald-50" : "bg-rose-50"}`}>
         <div className="text-xs text-ink-faint">Perubahan {r.delta > 0 ? "+" : ""}{r.delta.toFixed(2)} poin</div>
         <div className={`text-2xl font-extrabold ${r.delta === 0 ? "text-ink" : ekspansif ? "text-emerald-700" : "text-rose-700"}`}>{r.arah}</div>
       </div>
@@ -52,7 +52,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

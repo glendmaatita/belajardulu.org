@@ -27,7 +27,7 @@ export function SimulatorAlokasiAset() {
         <span className="text-sm font-semibold text-ink-soft">Toleransi risiko</span>
         <span className="tnum text-sm font-bold text-ink">{r.profil}</span>
       </div>
-      <input type="range" min={0} max={100} step={5} value={risk} onChange={(e) => setRisk(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={0} max={100} step={5} value={risk} onChange={(e) => setRisk(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
 
       <div className="mt-5 flex h-9 overflow-hidden rounded-lg">
         <Seg pct={r.saham} color="#ef4444" label="Saham" />
@@ -62,7 +62,7 @@ function Seg({ pct, color, label }: { pct: number; color: string; label: string 
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-4">
+    <div className="rounded-xl bg-canvas p-4">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-2xl font-extrabold tnum ${accent}`}>{value}</div>
     </div>

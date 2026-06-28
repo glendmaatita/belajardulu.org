@@ -15,9 +15,9 @@ export function SimulatorRasio() {
 
       <div className="flex items-center justify-center gap-3">
         <span className="text-xs font-bold text-ink-faint">Porsi</span>
-        <button onClick={() => setPorsi((p) => Math.max(1, p - 1))} className="h-8 w-8 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">-</button>
+        <button onClick={() => setPorsi((p) => Math.max(1, p - 1))} className="h-8 w-8 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">-</button>
         <span className="w-8 text-center text-lg font-bold tnum">{porsi}</span>
-        <button onClick={() => setPorsi((p) => Math.min(10, p + 1))} className="h-8 w-8 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">+</button>
+        <button onClick={() => setPorsi((p) => Math.min(10, p + 1))} className="h-8 w-8 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">+</button>
       </div>
 
       <div className="mt-4 grid grid-cols-3 gap-2 text-center">

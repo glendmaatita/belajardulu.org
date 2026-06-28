@@ -29,7 +29,7 @@ export function EquationPlayground() {
         />
       </div>
 
-      <div className="mt-6 rounded-xl bg-slate-50 p-4">
+      <div className="mt-6 rounded-xl bg-canvas p-4">
         <div className="mb-2 text-center text-sm font-semibold text-ink-faint">
           ASET = KEWAJIBAN + EKUITAS
         </div>
@@ -81,7 +81,7 @@ function Slider({
         step={1_000_000}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className={`h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-current ${color.replace("bg-", "text-")}`}
+        className={`h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-current ${color.replace("bg-", "text-")}`}
       />
     </div>
   );

@@ -34,16 +34,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const loginWithCredential = useCallback(async (credential: string) => {
-    const r = await fetch("/api/auth/google", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ credential }),
-    });
-    if (!r.ok) return false;
-    const d = await r.json();
-    setUser(d.user);
-    return true;
+    try {
+      const r = await fetch("/api/auth/google", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ credential }),
+      });
+      if (!r.ok) {
+        const err = await r.text().catch(() => "");
+        console.error("[auth] login gagal:", r.status, err);
+        return false;
+      }
+      const d = await r.json();
+      setUser(d.user);
+      return true;
+    } catch (e) {
+      console.error("[auth] login error:", e);
+      return false;
+    }
   }, []);
 
   const logout = useCallback(async () => {

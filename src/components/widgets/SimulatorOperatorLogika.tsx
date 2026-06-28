@@ -42,14 +42,14 @@ export function SimulatorOperatorLogika() {
           <button
             key={o.id}
             onClick={() => setOp(o.id)}
-            className={`rounded-lg px-3 py-1.5 text-sm font-bold transition ${op === o.id ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}
+            className={`rounded-lg px-3 py-1.5 text-sm font-bold transition ${op === o.id ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}
           >
             {o.sym}
           </button>
         ))}
       </div>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-4 text-center">
+      <div className="mt-4 rounded-xl bg-canvas p-4 text-center">
         <div className="text-xs font-bold text-ink-faint">{cur.nama}</div>
         <div className="mt-1 font-mono text-lg text-ink">
           {cur.sym.replace("p", p ? "B" : "S").replace("q", q ? "B" : "S")} ={" "}

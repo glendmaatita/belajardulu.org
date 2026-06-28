@@ -57,7 +57,7 @@ export function SimulatorIncoterms() {
             key={t}
             onClick={() => setTerm(t)}
             className={`rounded-lg px-3 py-1.5 text-sm font-bold transition ${
-              term === t ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+              term === t ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {t}
@@ -84,7 +84,7 @@ export function SimulatorIncoterms() {
         })}
       </div>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-4 rounded-xl bg-canvas p-4 text-sm">
         <div className="mb-1 font-bold text-ink">{term}</div>
         <p className="text-ink-soft">{DESKRIPSI[term]}</p>
         <p className="mt-2 text-xs text-ink-faint">

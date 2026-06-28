@@ -56,7 +56,7 @@ export function TebakFilsuf() {
       <div className="mb-1 text-sm font-bold text-brand-700">🤔 Tebak Sang Filsuf</div>
       <p className="mb-4 text-xs text-ink-faint">Baca petunjuk gagasannya, lalu tebak siapa filsufnya.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-sm italic text-ink">{s.petunjuk}</div>
+      <div className="rounded-xl bg-canvas p-4 text-sm italic text-ink">{s.petunjuk}</div>
 
       <div className="mt-3 grid grid-cols-3 gap-2">
         {s.opsi.map((o, i) => (
@@ -69,7 +69,7 @@ export function TebakFilsuf() {
                 ? "bg-emerald-500 text-white"
                 : pilih === i
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {o}

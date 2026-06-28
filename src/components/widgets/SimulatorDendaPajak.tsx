@@ -34,7 +34,7 @@ export function SimulatorDendaPajak() {
         <select
           value={jenis}
           onChange={(e) => setJenis(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
+          className="w-full rounded-lg border border-line-strong px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
         >
           {Object.entries(DENDA_LAPOR).map(([k, v]) => (
             <option key={k} value={k}>
@@ -57,7 +57,7 @@ export function SimulatorDendaPajak() {
             step={500_000}
             value={pajak}
             onChange={(e) => setPajak(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
         </div>
         <div>
@@ -72,12 +72,12 @@ export function SimulatorDendaPajak() {
             step={1}
             value={bulan}
             onChange={(e) => setBulan(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
         </div>
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4">
+      <div className="mt-5 rounded-xl bg-canvas p-4">
         <div className="grid grid-cols-2 gap-3">
           <Card label="Denda telat lapor" value={rupiah(r.dendaLapor)} accent="text-amber-700" />
           <Card label="Bunga telat bayar" value={rupiah(Math.round(r.bungaBayar))} accent="text-rose-600" />

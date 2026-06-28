@@ -49,12 +49,12 @@ export function KalkulatorPersediaan() {
           </thead>
           <tbody>
             {txs.map((tx) => (
-              <tr key={tx.id} className="border-t border-slate-100">
+              <tr key={tx.id} className="border-t border-line">
                 <td className="px-2 py-1.5">
                   <select
                     value={tx.tipe}
                     onChange={(e) => update(tx.id, { tipe: e.target.value as Tx["tipe"] })}
-                    className="rounded-md border border-slate-300 px-2 py-1 text-sm"
+                    className="rounded-md border border-line-strong px-2 py-1 text-sm"
                   >
                     <option>Beli</option>
                     <option>Jual</option>
@@ -66,7 +66,7 @@ export function KalkulatorPersediaan() {
                     value={tx.qty}
                     min={0}
                     onChange={(e) => update(tx.id, { qty: Math.max(0, Number(e.target.value)) })}
-                    className="w-20 rounded-md border border-slate-300 px-2 py-1 text-right text-sm tnum"
+                    className="w-20 rounded-md border border-line-strong px-2 py-1 text-right text-sm tnum"
                   />
                 </td>
                 <td className="px-2 py-1.5 text-right">
@@ -77,7 +77,7 @@ export function KalkulatorPersediaan() {
                       min={0}
                       step={500}
                       onChange={(e) => update(tx.id, { harga: Math.max(0, Number(e.target.value)) })}
-                      className="w-28 rounded-md border border-slate-300 px-2 py-1 text-right text-sm tnum"
+                      className="w-28 rounded-md border border-line-strong px-2 py-1 text-right text-sm tnum"
                     />
                   ) : (
                     <span className="text-ink-faint">-</span>
@@ -138,9 +138,9 @@ function ResultCard({
   units: number;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200">
+    <div className="overflow-hidden rounded-xl border border-line">
       <div className={`px-3 py-2 text-sm font-bold ${accent}`}>{title}</div>
-      <dl className="divide-y divide-slate-100 text-sm">
+      <dl className="divide-y divide-line text-sm">
         <Row label="HPP (barang terjual)" value={rupiah(Math.round(cogs))} />
         <Row label={`Persediaan akhir (${angka(units)} unit)`} value={rupiah(Math.round(ending))} />
       </dl>

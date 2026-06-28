@@ -7,34 +7,100 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-slate-50 text-ink antialiased;
+    @apply bg-canvas text-ink antialiased;
+  }
+  /* Editorial display type defaults */
+  h1,
+  h2 {
+    font-feature-settings: "ss01";
+  }
+  ::selection {
+    background: #f1d18c;
+    color: #1c1a17;
+  }
+  :focus-visible {
+    outline: 2px solid #224066;
+    outline-offset: 2px;
+    border-radius: 6px;
   }
 }
 
 @layer components {
+  /* ===== Surfaces: index-card motif ===== */
   .card {
-    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+    @apply rounded-2xl border border-line bg-white shadow-card;
   }
+  /* card with a thin accent rule along the top edge */
+  .card-ruled {
+    @apply card relative overflow-hidden;
+  }
+  .card-ruled::before {
+    content: "";
+    @apply absolute inset-x-0 top-0 h-1 bg-accent-400;
+  }
+  .panel {
+    @apply rounded-xl border border-line bg-[#fcfaf4];
+  }
+
+  /* ===== Buttons ===== */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold tracking-tight transition-all disabled:cursor-not-allowed disabled:opacity-50;
   }
   .btn-primary {
-    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+    @apply btn bg-brand-600 text-white shadow-card hover:bg-brand-700 active:translate-y-px;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500 text-white shadow-card hover:bg-accent-600 active:translate-y-px;
   }
   .btn-ghost {
-    @apply btn bg-slate-100 text-ink-soft hover:bg-slate-200;
+    @apply btn border border-line bg-white text-ink-soft hover:border-line-strong hover:bg-[#fcfaf4];
   }
+
+  /* ===== Editorial helpers ===== */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-accent-600;
+  }
+  .display {
+    @apply font-display font-semibold tracking-tight;
+  }
+  /* short accent rule used to anchor section headings */
+  .rule {
+    @apply inline-block h-1 w-10 rounded-full bg-accent-400 align-middle;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-0.5 text-xs font-medium text-ink-faint;
+  }
+
+  /* ===== Lesson reading typography ===== */
   .prose-id p {
     @apply mb-4 leading-relaxed text-ink-soft;
   }
   .prose-id h3 {
-    @apply mt-8 mb-3 text-xl font-bold text-ink;
+    @apply mt-8 mb-3 font-display text-xl font-semibold text-ink;
   }
   .prose-id ul {
     @apply mb-4 ml-5 list-disc space-y-1.5 text-ink-soft;
   }
   .prose-id strong {
     @apply font-semibold text-ink;
+  }
+}
+
+@layer utilities {
+  /* ===== Texture: faint dot grid + paper grain for hero panels ===== */
+  .bg-dotgrid {
+    background-image: radial-gradient(currentColor 1px, transparent 1.4px);
+    background-size: 22px 22px;
+  }
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  /* warm paper hero (used where there is no topic gradient) */
+  .hero-paper {
+    background-color: #f3ecdd;
+    background-image:
+      radial-gradient(60rem 30rem at 85% -10%, rgba(200, 132, 31, 0.12), transparent 60%),
+      radial-gradient(40rem 22rem at 0% 110%, rgba(34, 64, 102, 0.1), transparent 55%);
   }
 }
 
@@ -47,7 +113,7 @@
 .gloss {
   position: relative;
   cursor: help;
-  border-bottom: 1px dashed #93b4f5;
+  border-bottom: 1px dashed #c8841f;
   outline: none;
   white-space: normal;
 }
@@ -64,7 +130,7 @@
   line-height: 1;
   vertical-align: super;
   color: #fff;
-  background: #3b82f6;
+  background: #c8841f;
   border-radius: 9999px;
   user-select: none;
 }
@@ -78,14 +144,14 @@
   transform: translateX(-50%) translateY(4px);
   padding: 0.6rem 0.75rem;
   border-radius: 0.6rem;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #1c1a17;
+  color: #ece5d8;
   font-size: 0.78rem;
   font-weight: 400;
   line-height: 1.4;
   text-align: left;
   white-space: normal;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 12px 32px rgba(28, 26, 23, 0.3);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.14s ease, transform 0.14s ease;
@@ -98,13 +164,13 @@
   left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent;
-  border-top-color: #0f172a;
+  border-top-color: #1c1a17;
 }
 .gloss-pop-term {
   display: block;
   margin-bottom: 0.15rem;
   font-weight: 700;
-  color: #fff;
+  color: #f1d18c;
 }
 .gloss:hover .gloss-pop,
 .gloss:focus .gloss-pop,

@@ -43,7 +43,7 @@ export function SimulatorOmzetKumulatif() {
         step={5_000_000}
         value={omzetBulan}
         onChange={(e) => setOmzetBulan(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
       />
 
       {/* 12 month bars */}
@@ -91,7 +91,7 @@ export function SimulatorOmzetKumulatif() {
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-3">
+    <div className="rounded-xl bg-canvas p-3">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-base font-extrabold tnum ${accent}`}>{value}</div>
     </div>

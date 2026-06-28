@@ -45,7 +45,7 @@ export function KalkulatorJejakKarbon() {
         <Slider label="Harga karbon (offset)" value={harga} set={setHarga} min={10_000} max={200_000} step={5_000} unit="Rp/tCO2e" money />
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4">
+      <div className="mt-5 rounded-xl bg-canvas p-4">
         <div className="mb-3 space-y-2">
           {perKategori.map((k) => (
             <div key={k.label}>
@@ -53,13 +53,13 @@ export function KalkulatorJejakKarbon() {
                 <span className="text-ink-soft">{k.label}</span>
                 <span className="tnum font-semibold">{angka(Math.round(k.kg))} kg</span>
               </div>
-              <div className="h-2.5 overflow-hidden rounded-full bg-slate-200">
+              <div className="h-2.5 overflow-hidden rounded-full bg-line">
                 <div className="h-full rounded-full transition-all" style={{ width: `${(k.kg / maxKg) * 100}%`, background: k.color }} />
               </div>
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-3 border-t border-slate-200 pt-3">
+        <div className="grid grid-cols-2 gap-3 border-t border-line pt-3">
           <Result label="Total emisi / tahun" value={`${totalTon.toLocaleString("id-ID", { maximumFractionDigits: 2 })} tCO2e`} accent="text-emerald-700" />
           <Result label="Biaya offset" value={rupiah(Math.round(biaya))} accent="text-sky-700" />
         </div>
@@ -107,7 +107,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-emerald-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-emerald-600"
       />
       {money && <div className="mt-0.5 text-right text-[11px] text-ink-faint">{unit}</div>}
     </div>

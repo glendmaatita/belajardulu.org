@@ -38,34 +38,37 @@ export function LessonPage() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-8">
       {/* Breadcrumb */}
-      <div className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-ink-faint">
-        <Link to="/" className="hover:text-brand-600">Topik</Link>
-        <Icon name="chevron-right" className="text-[10px] text-slate-300" />
-        <Link to={`/${topic.id}`} className="hover:text-brand-600">{topic.title}</Link>
+      <div className="mb-5 flex flex-wrap items-center gap-1.5 text-sm text-ink-faint">
+        <Link to="/" className="hover:text-brand-700">Topik</Link>
+        <Icon name="chevron-right" className="text-[10px] text-line-strong" />
+        <Link to={`/${topic.id}`} className="hover:text-brand-700">{topic.title}</Link>
         {level && (
           <>
-            <Icon name="chevron-right" className="text-[10px] text-slate-300" />
-            <Link to={`/${topic.id}#kurikulum`} className="hover:text-brand-600">{level.subtitle}</Link>
+            <Icon name="chevron-right" className="text-[10px] text-line-strong" />
+            <Link to={`/${topic.id}#kurikulum`} className="hover:text-brand-700">{level.subtitle}</Link>
           </>
         )}
       </div>
 
-      <div className="mb-2 flex flex-wrap gap-2">
+      <div className="mb-3 flex flex-wrap gap-2">
         {lesson.tags.map((t) => (
-          <span key={t} className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-ink-faint">
-            <Icon name="hashtag" className="text-[9px] text-brand-400" />
+          <span key={t} className="chip">
+            <Icon name="hashtag" className="text-[9px] text-accent-500" />
             {t}
           </span>
         ))}
       </div>
 
-      <h1 className="text-3xl font-extrabold leading-tight text-ink">{lesson.title}</h1>
-      <p className="mt-2 text-lg text-ink-faint">{lesson.summary}</p>
+      <h1 className="display text-[2.1rem] leading-[1.1] text-ink sm:text-4xl">{lesson.title}</h1>
+      <p className="mt-3 text-lg leading-relaxed text-ink-soft">{lesson.summary}</p>
       <div className="mt-3 flex items-center gap-2 text-sm text-ink-faint">
-        <Icon name="clock" className="text-brand-500" /> Estimasi {lesson.durationMin} menit
+        <Icon name="clock" className="text-accent-500" /> Estimasi {lesson.durationMin} menit
       </div>
 
-      <hr className="my-6 border-slate-200" />
+      <div className="my-6 flex items-center gap-3">
+        <span className="rule" />
+        <span className="h-px flex-1 bg-line" />
+      </div>
 
       {/* Body (gated: hanya pengguna login yang bisa melihat isi materi) */}
       {!ready ? (
@@ -88,10 +91,10 @@ export function LessonPage() {
           </div>
 
           {/* Complete toggle */}
-          <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-5 text-center">
+          <div className="card-ruled mt-10 p-6 text-center">
             <button
               onClick={() => toggle(key)}
-              className={done ? "btn bg-emerald-500 text-white hover:bg-emerald-600" : "btn-primary"}
+              className={done ? "btn bg-emerald-500 text-white shadow-card hover:bg-emerald-600 active:translate-y-px" : "btn-primary"}
             >
               <Icon name={done ? "check-circle" : "flag"} />
               {done ? "Sudah diselesaikan" : "Tandai sebagai selesai"}

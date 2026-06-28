@@ -10,9 +10,9 @@ export function SimulatorVolume() {
   const Step = ({ label, val, set }: { label: string; val: number; set: (n: number) => void }) => (
     <div className="flex items-center gap-2">
       <span className="w-20 text-xs font-bold text-ink-faint">{label}</span>
-      <button onClick={() => set(Math.max(1, val - 1))} className="h-7 w-7 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">-</button>
+      <button onClick={() => set(Math.max(1, val - 1))} className="h-7 w-7 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">-</button>
       <span className="w-6 text-center font-bold tnum">{val}</span>
-      <button onClick={() => set(Math.min(6, val + 1))} className="h-7 w-7 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">+</button>
+      <button onClick={() => set(Math.min(6, val + 1))} className="h-7 w-7 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">+</button>
     </div>
   );
 

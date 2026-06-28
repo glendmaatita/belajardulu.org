@@ -25,7 +25,7 @@ export function PenjelajahPola() {
       <div className="mb-1 text-sm font-bold text-brand-700">🧭 Penjelajah Pola</div>
       <p className="mb-4 text-xs text-ink-faint">Jangan cari rumus dulu. Amati deret, tebak suku berikutnya, baru kita temukan aturannya.</p>
 
-      <div className="flex flex-wrap items-center justify-center gap-2 rounded-xl bg-slate-50 p-4">
+      <div className="flex flex-wrap items-center justify-center gap-2 rounded-xl bg-canvas p-4">
         {s.deret.map((n, i) => (
           <span key={i} className="rounded-lg bg-white px-3 py-2 text-lg font-bold text-ink tnum">{n}</span>
         ))}
@@ -44,7 +44,7 @@ export function PenjelajahPola() {
                 ? "bg-emerald-500 text-white"
                 : pilih === p
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {p}

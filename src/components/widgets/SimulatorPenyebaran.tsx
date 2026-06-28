@@ -26,16 +26,16 @@ export function SimulatorPenyebaran() {
       <div className="mb-1 text-sm font-bold text-brand-700">📏 Simulator Penyebaran</div>
       <p className="mb-4 text-xs text-ink-faint">Masukkan data, lalu lihat bukan hanya rata-ratanya tetapi juga seberapa menyebar nilainya.</p>
 
-      <div className="flex flex-wrap gap-1.5 rounded-xl bg-slate-50 p-3">
+      <div className="flex flex-wrap gap-1.5 rounded-xl bg-canvas p-3">
         {data.length ? data.map((n, i) => (
           <span key={i} className="rounded-md bg-white px-2.5 py-1 text-sm font-bold text-ink tnum">{n}</span>
         )) : <span className="text-xs text-ink-faint">Belum ada data.</span>}
       </div>
 
       <div className="mt-3 flex gap-2">
-        <input type="number" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && tambah()} placeholder="Tambah angka" className="flex-1 rounded-lg border border-slate-200 p-2 text-sm tnum outline-none focus:border-brand-400" />
+        <input type="number" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === "Enter" && tambah()} placeholder="Tambah angka" className="flex-1 rounded-lg border border-line p-2 text-sm tnum outline-none focus:border-brand-400" />
         <button onClick={tambah} className="btn-primary">Tambah</button>
-        <button onClick={() => setData([])} className="btn bg-slate-100 text-ink-soft hover:bg-slate-200">Ulang</button>
+        <button onClick={() => setData([])} className="btn bg-canvas text-ink-soft hover:bg-line">Ulang</button>
       </div>
 
       <div className="mt-3 grid grid-cols-3 gap-2 text-center">

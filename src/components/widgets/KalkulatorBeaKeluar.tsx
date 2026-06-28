@@ -28,10 +28,10 @@ export function KalkulatorBeaKeluar() {
         <Slider label="Tarif bea keluar" value={tarif} set={setTarif} min={0} max={30} step={0.5} fmt={(v) => `${v}%`} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Nilai ekspor (harga x volume)" value={rupiah(Math.round(r.nilaiEkspor))} />
         <Row label={`Bea Keluar (${tarif}%)`} value={rupiah(Math.round(r.beaKeluar))} />
-        <div className="my-1 border-t border-slate-200" />
+        <div className="my-1 border-t border-line" />
         <Row label="Diterima eksportir (neto)" value={rupiah(Math.round(r.netoEksportir))} bold />
       </div>
 
@@ -58,7 +58,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

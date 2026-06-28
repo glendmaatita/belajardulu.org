@@ -51,7 +51,7 @@ export function SimulatorPPhBadan() {
             step={500_000_000}
             value={omzet}
             onChange={(e) => setOmzet(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
         </div>
         <div>
@@ -66,18 +66,18 @@ export function SimulatorPPhBadan() {
             step={1}
             value={margin}
             onChange={(e) => setMargin(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
           <div className="mt-1 text-right text-xs text-ink-faint">Laba kena pajak: {rupiah(Math.round(r.laba))}</div>
         </div>
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-xl bg-slate-50 p-4">
+        <div className="rounded-xl bg-canvas p-4">
           <div className="text-xs text-ink-faint">PPh Badan setahun</div>
           <div className="text-xl font-extrabold tnum text-brand-700">{rupiah(Math.round(r.pph))}</div>
         </div>
-        <div className="rounded-xl bg-slate-50 p-4">
+        <div className="rounded-xl bg-canvas p-4">
           <div className="text-xs text-ink-faint">Tarif efektif</div>
           <div className="text-xl font-extrabold tnum text-sky-700">{r.efektif.toFixed(1)}%</div>
         </div>

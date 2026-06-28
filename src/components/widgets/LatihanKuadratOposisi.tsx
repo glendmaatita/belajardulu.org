@@ -65,7 +65,7 @@ export function LatihanKuadratOposisi() {
       <div className="mb-1 text-sm font-bold text-brand-700">🔲 Latihan Kuadrat Oposisi</div>
       <p className="mb-4 text-xs text-ink-faint">Dari proposisi yang diketahui, tentukan nilai proposisi targetnya menurut hubungan A, E, I, O.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4">
+      <div className="rounded-xl bg-canvas p-4">
         <div className="text-sm font-bold text-ink">Diketahui: {s.diketahui}</div>
         <div className="mt-2 text-sm text-ink-soft">Target: {s.target}</div>
       </div>
@@ -81,7 +81,7 @@ export function LatihanKuadratOposisi() {
                 ? "bg-emerald-500 text-white"
                 : pilih === o.id
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {o.label}

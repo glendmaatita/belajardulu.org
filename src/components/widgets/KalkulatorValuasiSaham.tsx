@@ -42,7 +42,7 @@ export function KalkulatorValuasiSaham() {
         <Card label="Nilai (P/E)" value={rupiah(Math.round(r.peVal))} accent="text-violet-700" />
         <Card label="Nilai wajar (rata-rata)" value={rupiah(Math.round(r.fair))} accent="text-emerald-700" />
       </div>
-      <p className={`mt-3 rounded-lg px-3 py-2 text-sm ${r.verdict === "undervalued" ? "bg-emerald-50 text-emerald-800" : r.verdict === "overvalued" ? "bg-rose-50 text-rose-700" : "bg-slate-100 text-ink-soft"}`}>
+      <p className={`mt-3 rounded-lg px-3 py-2 text-sm ${r.verdict === "undervalued" ? "bg-emerald-50 text-emerald-800" : r.verdict === "overvalued" ? "bg-rose-50 text-rose-700" : "bg-canvas text-ink-soft"}`}>
         Harga pasar {rupiah(harga)} vs nilai wajar {rupiah(Math.round(r.fair))}: saham terlihat{" "}
         <b>{r.verdict === "undervalued" ? "murah (undervalued)" : r.verdict === "overvalued" ? "mahal (overvalued)" : "wajar"}</b>.
         Ingat: valuasi sangat sensitif terhadap asumsi g dan r.
@@ -58,14 +58,14 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-3">
+    <div className="rounded-xl bg-canvas p-3">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${accent}`}>{value}</div>
     </div>

@@ -38,7 +38,7 @@ export function KalkulatorDeposito() {
         <Slider label="Jumlah perpanjangan" value={periode} set={setPeriode} min={1} max={10} step={1} fmt={(v) => `${v}x`} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Bunga kotor 1 periode" value={rupiah(Math.round(r.bungaKotor1))} />
         <Row label="Pajak final 20%" value={`- ${rupiah(Math.round(r.bungaKotor1 * 0.2))}`} />
         <Row label="Bunga bersih 1 periode" value={rupiah(Math.round(r.bungaBersih1))} />
@@ -73,7 +73,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

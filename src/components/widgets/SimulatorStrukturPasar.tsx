@@ -25,13 +25,13 @@ export function SimulatorStrukturPasar() {
 
       <div className="mb-4 flex flex-wrap gap-2">
         {LIST.map((x) => (
-          <button key={x} onClick={() => setS(x)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${s === x ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={x} onClick={() => setS(x)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${s === x ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             {x}
           </button>
         ))}
       </div>
 
-      <div className="space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Jumlah penjual" value={d.penjual} />
         <Row label="Jenis produk" value={d.produk} />
         <Row label="Kendali atas harga" value={d.kendaliHarga} />

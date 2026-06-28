@@ -46,18 +46,18 @@ export function SimulatorHSCode() {
         Setiap barang punya kode HS. Dua digit pertama menunjukkan bab. Tebak bab yang tepat untuk produk berikut.
       </p>
 
-      <div className="rounded-xl bg-slate-50 p-4">
+      <div className="rounded-xl bg-canvas p-4">
         <div className="text-xs text-ink-faint">Produk</div>
         <div className="text-xl font-extrabold text-ink">{soal.produk}</div>
       </div>
 
       <div className="mt-3 grid gap-2">
         {PILIHAN.map((opsi) => {
-          let cls = "bg-white border-slate-200 hover:bg-slate-50";
+          let cls = "bg-white border-line hover:bg-canvas";
           if (pilih) {
             if (opsi === soal.bab) cls = "bg-emerald-50 border-emerald-400 text-emerald-800";
             else if (opsi === pilih) cls = "bg-red-50 border-red-300 text-red-700";
-            else cls = "bg-white border-slate-200 opacity-60";
+            else cls = "bg-white border-line opacity-60";
           }
           return (
             <button key={opsi} onClick={() => jawab(opsi)} disabled={!!pilih} className={`rounded-lg border px-3 py-2 text-left text-sm font-semibold transition ${cls}`}>

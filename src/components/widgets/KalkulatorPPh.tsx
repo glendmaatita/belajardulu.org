@@ -44,7 +44,7 @@ export function KalkulatorPPh() {
 
       <Slider label="Penghasilan bruto setahun" value={penghasilanTahunan} set={setPenghasilanTahunan} min={54_000_000} max={2_000_000_000} step={6_000_000} fmt={(v) => rupiah(v)} />
 
-      <div className="mt-4 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-4 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Penghasilan Kena Pajak (PKP)" value={rupiah(r.pkp)} />
         {r.rincian.map((x, i) => (
           <Row key={i} label={`Lapisan ${(x.tarif * 100).toFixed(0)}% atas ${rupiah(Math.round(x.kena))}`} value={rupiah(Math.round(x.pajak))} muted />
@@ -85,7 +85,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

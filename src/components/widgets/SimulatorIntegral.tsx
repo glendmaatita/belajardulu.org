@@ -27,7 +27,7 @@ export function SimulatorIntegral() {
       <input type="range" min={1} max={40} value={n} onChange={(e) => setN(Number(e.target.value))} className="w-full" />
 
       <div className="mt-2 flex justify-center">
-        <svg width={W} height={H} className="rounded-lg bg-slate-50">
+        <svg width={W} height={H} className="rounded-lg bg-canvas">
           {bars.map((bar, i) => (
             <rect key={i} x={(a + i * dx) * scaleX} y={H - bar.h * scaleY} width={dx * scaleX - 1} height={bar.h * scaleY} fill="rgba(96,165,250,0.5)" stroke="#60a5fa" />
           ))}

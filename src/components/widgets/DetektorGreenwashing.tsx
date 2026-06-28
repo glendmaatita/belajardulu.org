@@ -35,7 +35,7 @@ export function DetektorGreenwashing() {
 
       <div className="space-y-2">
         {TANDA.map((t) => (
-          <label key={t.id} className="flex cursor-pointer items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+          <label key={t.id} className="flex cursor-pointer items-center justify-between rounded-lg bg-canvas px-3 py-2">
             <span className="text-sm text-ink-soft">{t.teks}</span>
             <input type="checkbox" checked={!!aktif[t.id]} onChange={(e) => setAktif((p) => ({ ...p, [t.id]: e.target.checked }))} className="h-4 w-4 accent-rose-500" />
           </label>

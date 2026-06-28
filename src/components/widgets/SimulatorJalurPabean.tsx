@@ -74,7 +74,7 @@ export function SimulatorJalurPabean() {
 function Toggle({ label, value, set, naik }: { label: string; value: boolean; set: (b: boolean) => void; naik?: boolean }) {
   // `naik` menandai faktor yang menaikkan risiko jika dicentang.
   return (
-    <label className="flex cursor-pointer items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+    <label className="flex cursor-pointer items-center justify-between rounded-lg bg-canvas px-3 py-2">
       <span className="text-sm text-ink-soft">{label}</span>
       <input type="checkbox" checked={value} onChange={(e) => set(e.target.checked)} className={`h-4 w-4 ${naik ? "accent-red-500" : "accent-emerald-500"}`} />
     </label>

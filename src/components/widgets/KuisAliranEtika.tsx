@@ -53,7 +53,7 @@ export function KuisAliranEtika() {
       <div className="mb-1 text-sm font-bold text-brand-700">⚖️ Kuis Aliran Etika</div>
       <p className="mb-4 text-xs text-ink-faint">Tentukan aliran etika yang mendasari setiap penalaran moral berikut.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-sm text-ink">{s.kasus}</div>
+      <div className="rounded-xl bg-canvas p-4 text-sm text-ink">{s.kasus}</div>
 
       <div className="mt-3 grid grid-cols-3 gap-2">
         {ALIRAN.map((a) => (
@@ -66,7 +66,7 @@ export function KuisAliranEtika() {
                 ? "bg-emerald-500 text-white"
                 : pilih === a
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {a}

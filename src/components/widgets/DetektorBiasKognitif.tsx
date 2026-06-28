@@ -59,7 +59,7 @@ export function DetektorBiasKognitif() {
       <div className="mb-1 text-sm font-bold text-brand-700">🧠 Detektor Bias Kognitif</div>
       <p className="mb-4 text-xs text-ink-faint">Baca skenario, lalu tentukan bias kognitif yang sedang bekerja.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-sm text-ink">{s.skenario}</div>
+      <div className="rounded-xl bg-canvas p-4 text-sm text-ink">{s.skenario}</div>
 
       <div className="mt-3 flex flex-wrap gap-2">
         {BIAS.map((b) => (
@@ -72,7 +72,7 @@ export function DetektorBiasKognitif() {
                 ? "bg-emerald-500 text-white"
                 : pilih === b
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {b}

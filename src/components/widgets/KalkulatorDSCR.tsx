@@ -28,7 +28,7 @@ export function KalkulatorDSCR() {
         <Slider label="Bunga / tahun" value={bunga} set={setBunga} min={0} max={150} step={5} />
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4 text-center">
+      <div className="mt-5 rounded-xl bg-canvas p-4 text-center">
         <div className="text-xs text-ink-faint">DSCR</div>
         <div className={`text-3xl font-extrabold tnum ${r.bankable ? "text-emerald-700" : "text-rose-600"}`}>{Number.isFinite(r.dscr) ? `${r.dscr.toFixed(2)}x` : "-"}</div>
         <div className={`text-sm font-semibold ${r.bankable ? "text-emerald-600" : "text-rose-500"}`}>
@@ -50,7 +50,7 @@ function Slider({ label, value, set, min, max, step }: { label: string; value: n
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">Rp{angka(value)} M</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

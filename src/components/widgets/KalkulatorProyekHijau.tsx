@@ -43,7 +43,7 @@ export function KalkulatorProyekHijau() {
             {r.layak ? "✓ Layak (NPV positif)" : "✗ Belum layak (NPV negatif)"}
           </div>
         </div>
-        <div className="rounded-xl bg-slate-50 p-4">
+        <div className="rounded-xl bg-canvas p-4">
           <div className="text-xs text-ink-faint">Payback (balik modal)</div>
           <div className="text-xl font-extrabold tnum text-sky-700">
             {Number.isFinite(r.payback) ? `${r.payback.toFixed(1)} tahun` : "-"}
@@ -88,7 +88,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
       />
     </div>
   );

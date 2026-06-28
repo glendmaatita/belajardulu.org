@@ -59,7 +59,7 @@ export function SimulatorAnalisisSkenario() {
 
       <div className="mt-4 flex flex-wrap gap-2">
         {LIST.map((s) => (
-          <button key={s} onClick={() => setSkenario(s)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${skenario === s ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={s} onClick={() => setSkenario(s)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${skenario === s ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             {s}
           </button>
         ))}
@@ -95,7 +95,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

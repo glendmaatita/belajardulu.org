@@ -33,7 +33,7 @@ export function EvaluatorProposisi() {
 
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
         {ekspresi.map((e, i) => (
-          <div key={i} className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+          <div key={i} className="flex items-center justify-between rounded-lg bg-canvas px-3 py-2">
             <span className="text-sm text-ink-soft">{e.teks}</span>
             <span className={`rounded-md px-2 py-0.5 text-xs font-bold ${e.nilai ? "bg-emerald-100 text-emerald-700" : "bg-rose-100 text-rose-600"}`}>
               {e.nilai ? "BENAR" : "SALAH"}

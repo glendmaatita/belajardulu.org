@@ -64,7 +64,7 @@ export function SimulatorPPh21() {
             step={500_000}
             value={gaji}
             onChange={(e) => setGaji(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
         </div>
         <label className="block">
@@ -72,7 +72,7 @@ export function SimulatorPPh21() {
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
+            className="w-full rounded-lg border border-line-strong px-3 py-2 text-sm focus:border-brand-500 focus:outline-none"
           >
             {Object.entries(PTKP).map(([k, v]) => (
               <option key={k} value={k}>
@@ -84,7 +84,7 @@ export function SimulatorPPh21() {
         </label>
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4">
+      <div className="mt-5 rounded-xl bg-canvas p-4">
         {r.pphTahun === 0 ? (
           <p className="text-sm text-emerald-700">
             🎉 Penghasilan setahun ({rupiah(r.bruto)}) masih di bawah PTKP, jadi <b>PPh 21 = Rp0</b>. Karyawan tidak

@@ -46,7 +46,7 @@ export function SimulatorKebijakanFiskal() {
         </div>
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-3 text-center text-sm font-bold text-ink">Arah kebijakan: {r.arah}</div>
+      <div className="mt-3 rounded-xl bg-canvas p-3 text-center text-sm font-bold text-ink">Arah kebijakan: {r.arah}</div>
 
       <p className="mt-3 text-xs text-ink-faint">
         Saat resesi: belanja dinaikkan dan/atau pajak diturunkan (ekspansif, sering defisit) untuk mendorong permintaan. Saat ekonomi memanas: kebalikannya untuk meredam inflasi.
@@ -62,7 +62,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

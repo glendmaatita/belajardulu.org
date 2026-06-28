@@ -34,34 +34,40 @@ export function TopicHome() {
   return (
     <>
       {/* Hero */}
-      <section className={`relative overflow-hidden border-b border-slate-200 bg-gradient-to-br ${topic.hero} text-white`}>
-        <div className="mx-auto max-w-5xl px-4 py-14">
+      <section className={`relative overflow-hidden border-b border-line bg-gradient-to-br ${topic.hero} text-white`}>
+        <div className="pointer-events-none absolute inset-0 bg-dotgrid text-white/10" />
+        <div className="relative mx-auto max-w-5xl px-4 py-14">
           <div className="flex flex-wrap items-center gap-2">
-            <Link to="/" className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold hover:bg-white/25">
+            <Link to="/" className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold ring-1 ring-white/20 transition-colors hover:bg-white/25">
               <Icon name="arrow-left" /> Semua Topik
             </Link>
             {category && (
               <a
                 href={`/#kategori-${category.id}`}
-                className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold hover:bg-white/25"
+                className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold ring-1 ring-white/20 transition-colors hover:bg-white/25"
               >
                 <Icon name={category.icon} /> {category.title}
               </a>
             )}
           </div>
-          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
-            {topic.icon} {topic.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/85">{topic.description}</p>
+          <div className="mt-6 flex items-start gap-4">
+            <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-white/15 text-4xl shadow-inset ring-1 ring-white/20">
+              {topic.icon}
+            </span>
+            <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+              {topic.title}
+            </h1>
+          </div>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/85">{topic.description}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to={`/${topic.id}/pelajaran/${nextLesson.id}`}
-              className="btn bg-white px-5 py-3 text-brand-700 hover:bg-slate-100"
+              className="btn bg-white px-5 py-3 text-brand-700 shadow-card hover:bg-canvas active:translate-y-px"
             >
               <Icon name={completed > 0 ? "play" : "rocket"} />
               {completed > 0 ? "Lanjutkan Belajar" : "Mulai Belajar"}
             </Link>
-            <a href="#kurikulum" className="btn bg-white/15 px-5 py-3 text-white hover:bg-white/25">
+            <a href="#kurikulum" className="btn bg-white/15 px-5 py-3 text-white ring-1 ring-white/25 hover:bg-white/25">
               <Icon name="list-check" /> Lihat Kurikulum
             </a>
           </div>
@@ -76,14 +82,12 @@ export function TopicHome() {
 
       {/* Curriculum */}
       <section id="kurikulum" className="mx-auto max-w-5xl scroll-mt-20 px-4 py-12">
-        <h2 className="flex items-center gap-2.5 text-2xl font-bold text-ink">
-          <Icon name="route" className="text-brand-600" />
-          Kurikulum Lengkap
-        </h2>
+        <div className="eyebrow"><span className="rule" />Peta Belajar</div>
+        <h2 className="mt-2 display text-3xl text-ink">Kurikulum Lengkap</h2>
         <p className="mt-1 text-ink-faint">Ikuti urut dari Level 1, atau lompat ke bagian yang kamu butuhkan.</p>
 
         {locked && (
-          <div className="mt-5 flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+          <div className="mt-5 flex items-center gap-3 rounded-xl border border-accent-200 bg-accent-50 px-4 py-3 text-sm text-accent-800">
             <Icon name="lock" className="shrink-0" />
             <span>
               Kamu bisa melihat seluruh daftar pelajaran di bawah. Untuk membuka isinya, masuk dulu dengan Google.
@@ -99,14 +103,15 @@ export function TopicHome() {
               const done = lessons.filter((l) => isDone(progressKey(topic.id, l.id))).length;
               return (
                 <div key={lv.id}>
-                  <div className={`rounded-2xl bg-gradient-to-r ${lv.color} p-5 text-white shadow-sm`}>
-                    <div className="flex items-start justify-between gap-3">
+                  <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-r ${lv.color} p-5 text-white shadow-card`}>
+                    <div className="pointer-events-none absolute inset-0 bg-dotgrid text-white/10" />
+                    <div className="relative flex items-start justify-between gap-3">
                       <div>
                         <div className="text-2xl">{lv.icon}</div>
-                        <h3 className="mt-1 text-xl font-bold">{lv.title}</h3>
+                        <h3 className="mt-1 font-display text-xl font-semibold">{lv.title}</h3>
                         <p className="mt-1 max-w-2xl text-sm text-white/85">{lv.description}</p>
                       </div>
-                      <div className="shrink-0 rounded-xl bg-white/20 px-3 py-1.5 text-center text-sm font-semibold">
+                      <div className="shrink-0 rounded-xl bg-white/20 px-3 py-1.5 text-center text-sm font-semibold tnum ring-1 ring-white/20">
                         {done}/{lessons.length}
                         <div className="text-[10px] font-normal opacity-80">selesai</div>
                       </div>
@@ -120,11 +125,11 @@ export function TopicHome() {
                         <li key={l.id}>
                           <Link
                             to={`/${topic.id}/pelajaran/${l.id}`}
-                            className="group flex h-full items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-brand-300 hover:bg-brand-50/30"
+                            className="group flex h-full items-start gap-3 rounded-xl border border-line bg-white p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-line-strong hover:shadow-lift"
                           >
                             <span
-                              className={`mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs font-bold ${
-                                complete ? "bg-emerald-500 text-white" : "bg-slate-100 text-ink-faint"
+                              className={`mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs font-bold tnum ${
+                                complete ? "bg-emerald-500 text-white" : "bg-canvas text-ink-faint ring-1 ring-line"
                               }`}
                             >
                               {complete ? <Icon name="check" /> : l.order}
@@ -133,11 +138,11 @@ export function TopicHome() {
                               <span className="block font-semibold text-ink group-hover:text-brand-700">{l.title}</span>
                               <span className="mt-0.5 block text-sm text-ink-faint">{l.summary}</span>
                               <span className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-ink-faint">
-                                <Icon name="clock" /> {l.durationMin} menit
+                                <Icon name="clock" className="text-accent-500" /> {l.durationMin} menit
                               </span>
                             </span>
                             {locked && (
-                              <Icon name="lock" className="mt-0.5 shrink-0 text-slate-300 group-hover:text-brand-400" />
+                              <Icon name="lock" className="mt-0.5 shrink-0 text-line-strong group-hover:text-accent-500" />
                             )}
                           </Link>
                         </li>

@@ -31,7 +31,7 @@ export function SimulatorSLB() {
         <Slider label="Tahun tersisa" value={tahunSisa} set={setTahunSisa} min={1} max={10} step={1} fmt={(v) => `${v} tahun`} />
       </div>
 
-      <div className="mt-4 flex rounded-lg bg-slate-100 p-1 text-sm font-bold">
+      <div className="mt-4 flex rounded-lg bg-canvas p-1 text-sm font-bold">
         <button onClick={() => setTercapai(true)} className={`flex-1 rounded-md py-2 transition ${tercapai ? "bg-emerald-500 text-white" : "text-ink-soft"}`}>
           KPI tercapai
         </button>
@@ -41,7 +41,7 @@ export function SimulatorSLB() {
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-xl bg-slate-50 p-3 text-center">
+        <div className="rounded-xl bg-canvas p-3 text-center">
           <div className="text-xs text-ink-faint">Kupon per tahun saat ini</div>
           <div className="text-lg font-extrabold tnum text-ink">{rupiah(Math.round(r.kuponBaru))}</div>
           <div className="text-xs text-ink-faint">{tercapai ? `tetap ${kupon}%` : `${kupon}% + ${stepUp} bps`}</div>
@@ -67,7 +67,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

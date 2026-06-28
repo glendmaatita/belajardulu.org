@@ -19,7 +19,7 @@ export function Quiz({ questions }: { questions: QuizQuestion[] }) {
 
   return (
     <div className="my-6 card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-5 py-3">
+      <div className="flex items-center justify-between border-b border-line bg-canvas px-5 py-3">
         <span className="flex items-center gap-2 text-sm font-bold text-brand-700">
           <Icon name="list-check" /> Kuis Pemahaman
         </span>
@@ -30,7 +30,7 @@ export function Quiz({ questions }: { questions: QuizQuestion[] }) {
         )}
       </div>
 
-      <div className="divide-y divide-slate-100">
+      <div className="divide-y divide-line">
         {questions.map((q, qi) => {
           const chosen = answers[qi];
           const locked = chosen !== null;
@@ -43,11 +43,11 @@ export function Quiz({ questions }: { questions: QuizQuestion[] }) {
                 {q.options.map((opt, oi) => {
                   const isCorrect = oi === q.answer;
                   const isChosen = oi === chosen;
-                  let cls = "border-slate-200 hover:border-brand-300 hover:bg-brand-50/40";
+                  let cls = "border-line hover:border-brand-300 hover:bg-brand-50/40";
                   if (locked) {
                     if (isCorrect) cls = "border-emerald-400 bg-emerald-50 text-emerald-800";
                     else if (isChosen) cls = "border-rose-300 bg-rose-50 text-rose-700";
-                    else cls = "border-slate-200 opacity-60";
+                    else cls = "border-line opacity-60";
                   }
                   return (
                     <button

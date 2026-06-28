@@ -110,7 +110,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
         aria-pressed={active}
         title={label}
         className={`flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-bold transition disabled:cursor-not-allowed ${
-          active ? activeColor : "border-slate-200 bg-white text-ink-soft hover:border-slate-300 hover:bg-slate-50"
+          active ? activeColor : "border-line bg-white text-ink-soft hover:border-line-strong hover:bg-canvas"
         }`}
       >
         <Icon name={icon} className="text-base" />
@@ -120,7 +120,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
   };
 
   return (
-    <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
+    <section className="mt-8 rounded-2xl border border-line bg-white p-5">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="text-sm font-bold text-ink">Materi ini membantu?</div>
@@ -138,7 +138,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
         </div>
       </div>
 
-      <hr className="my-4 border-slate-100" />
+      <hr className="my-4 border-line" />
 
       {sent ? (
         <div className="flex items-center gap-2 rounded-xl bg-emerald-50 p-3 text-sm text-emerald-800">
@@ -153,7 +153,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
             rows={4}
             maxLength={4000}
             placeholder="Contoh: penjelasan di bagian X kurang jelas, atau ada data yang perlu diperbarui..."
-            className="w-full rounded-xl border border-slate-200 p-3 text-sm text-ink outline-none focus:border-brand-400"
+            className="w-full rounded-xl border border-line p-3 text-sm text-ink outline-none focus:border-brand-400"
           />
           {!user && (
             <input
@@ -161,7 +161,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email (opsional, jika ingin kami hubungi)"
-              className="w-full rounded-xl border border-slate-200 p-3 text-sm text-ink outline-none focus:border-brand-400"
+              className="w-full rounded-xl border border-line p-3 text-sm text-ink outline-none focus:border-brand-400"
             />
           )}
           {error && <div className="text-xs font-medium text-rose-600">{error}</div>}
@@ -175,7 +175,7 @@ export function LessonFeedback({ lessonKey }: { lessonKey: string }) {
                 setFormOpen(false);
                 setError("");
               }}
-              className="btn bg-slate-100 text-ink-soft hover:bg-slate-200"
+              className="btn bg-canvas text-ink-soft hover:bg-line"
             >
               Batal
             </button>

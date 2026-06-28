@@ -36,7 +36,7 @@ export function SimulatorPPN() {
         <Card label="PPN Masukan (kamu bayar)" value={rupiah(Math.round(r.masukan))} accent="text-sky-700" />
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-4">
+      <div className="mt-3 rounded-xl bg-canvas p-4">
         {r.setor > 0 ? (
           <p className="text-sm text-ink-soft">
             PPN yang harus <b>disetor ke negara</b> bulan ini ={" "}
@@ -71,7 +71,7 @@ function Slider({ label, value, set, max, step }: { label: string; value: number
         step={step}
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
       />
     </div>
   );
@@ -79,7 +79,7 @@ function Slider({ label, value, set, max, step }: { label: string; value: number
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-3">
+    <div className="rounded-xl bg-canvas p-3">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${accent}`}>{value}</div>
     </div>

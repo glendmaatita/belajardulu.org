@@ -19,7 +19,7 @@ export function SimulatorSudut() {
 
       <div className="mt-3 flex justify-center">
         <svg width="220" height="120">
-          <line x1="20" y1="100" x2="200" y2="100" stroke="#94a3b8" strokeWidth="3" />
+          <line x1="20" y1="100" x2="200" y2="100" stroke="#7c756a" strokeWidth="3" />
           <line
             x1="20"
             y1="100"
@@ -31,7 +31,7 @@ export function SimulatorSudut() {
         </svg>
       </div>
 
-      <div className="mt-2 rounded-xl bg-slate-50 p-3 text-center text-sm">
+      <div className="mt-2 rounded-xl bg-canvas p-3 text-center text-sm">
         Jenis sudut: <b className="text-brand-700">{jenis}</b>
       </div>
 

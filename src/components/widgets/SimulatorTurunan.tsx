@@ -17,13 +17,13 @@ export function SimulatorTurunan() {
 
       <div className="flex justify-center gap-2">
         {opsiH.map((v) => (
-          <button key={v} onClick={() => setH(v)} className={`rounded-lg px-3 py-1.5 text-sm font-bold tnum transition ${h === v ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={v} onClick={() => setH(v)} className={`rounded-lg px-3 py-1.5 text-sm font-bold tnum transition ${h === v ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             h={v}
           </button>
         ))}
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-4 text-center">
+      <div className="mt-3 rounded-xl bg-canvas p-4 text-center">
         <div className="font-mono text-sm text-ink-soft">
           ( f(2+{h}) - f(2) ) / {h} = ( {f(x0 + h).toFixed(4)} - 4 ) / {h}
         </div>

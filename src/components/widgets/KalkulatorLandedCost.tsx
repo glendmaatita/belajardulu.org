@@ -41,13 +41,13 @@ export function KalkulatorLandedCost() {
         <span className="font-semibold text-ink-soft">Punya API (Angka Pengenal Impor) &rarr; PPh 22 tarif lebih rendah</span>
       </label>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label="Nilai Pabean (CIF = FOB + Freight + Asuransi)" value={rupiah(Math.round(r.cif))} />
         <Row label={`Bea Masuk (${beaMasuk}% dari CIF)`} value={rupiah(Math.round(r.bm))} />
         <Row label="Dasar pengenaan PPN & PPh (CIF + Bea Masuk)" value={rupiah(Math.round(r.dasarPajak))} muted />
         <Row label="PPN Impor (11%)" value={rupiah(Math.round(r.ppn))} />
         <Row label={`PPh Pasal 22 Impor (${(r.tarifPph * 100).toFixed(1)}%)`} value={rupiah(Math.round(r.pph))} />
-        <div className="my-1 border-t border-slate-200" />
+        <div className="my-1 border-t border-line" />
         <Row label="Total pungutan negara (BM + PPN + PPh)" value={rupiah(Math.round(r.totalPungutan))} />
       </div>
 
@@ -78,7 +78,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

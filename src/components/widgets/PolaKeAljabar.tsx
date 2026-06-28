@@ -24,7 +24,7 @@ export function PolaKeAljabar() {
       <div className="mb-1 text-sm font-bold text-brand-700">🔤 Dari Pola ke Bentuk Aljabar</div>
       <p className="mb-4 text-xs text-ink-faint">Terjemahkan situasi nyata menjadi bentuk aljabar. Amati polanya dulu, baru pilih simbolnya.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-sm font-medium text-ink">{s.cerita}</div>
+      <div className="rounded-xl bg-canvas p-4 text-sm font-medium text-ink">{s.cerita}</div>
 
       <div className="mt-3 grid grid-cols-3 gap-2">
         {s.pilihan.map((p, i) => (
@@ -37,7 +37,7 @@ export function PolaKeAljabar() {
                 ? "bg-emerald-500 text-white"
                 : pilih === i
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {p}

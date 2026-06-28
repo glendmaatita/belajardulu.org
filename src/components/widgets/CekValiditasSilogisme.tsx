@@ -47,17 +47,17 @@ export function CekValiditasSilogisme() {
         Baca argumen berikut. Apakah bentuknya <b>valid</b> (kesimpulan mengikuti premis secara logis), terlepas dari benar atau tidaknya isi premis?
       </p>
 
-      <div className="space-y-1.5 rounded-xl bg-slate-50 p-4">
+      <div className="space-y-1.5 rounded-xl bg-canvas p-4">
         {c.premis.map((p, i) => (
           <div key={i} className={`text-sm ${i === c.premis.length - 1 ? "font-bold text-ink" : "text-ink-soft"}`}>{p}</div>
         ))}
       </div>
 
       <div className="mt-3 flex gap-2">
-        <button onClick={() => jawab(true)} disabled={pilih !== null} className={`flex-1 rounded-lg py-2 text-sm font-bold transition ${pilih !== null && c.valid ? "bg-emerald-500 text-white" : pilih === true ? "bg-rose-400 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+        <button onClick={() => jawab(true)} disabled={pilih !== null} className={`flex-1 rounded-lg py-2 text-sm font-bold transition ${pilih !== null && c.valid ? "bg-emerald-500 text-white" : pilih === true ? "bg-rose-400 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
           Valid
         </button>
-        <button onClick={() => jawab(false)} disabled={pilih !== null} className={`flex-1 rounded-lg py-2 text-sm font-bold transition ${pilih !== null && !c.valid ? "bg-emerald-500 text-white" : pilih === false ? "bg-rose-400 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+        <button onClick={() => jawab(false)} disabled={pilih !== null} className={`flex-1 rounded-lg py-2 text-sm font-bold transition ${pilih !== null && !c.valid ? "bg-emerald-500 text-white" : pilih === false ? "bg-rose-400 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
           Tidak valid
         </button>
       </div>

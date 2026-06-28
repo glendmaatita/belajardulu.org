@@ -29,7 +29,7 @@ export function SimulatorCashConversion() {
         <BarRow label="DPO (tempo dari pemasok)" value={dpo} max={maxBar} color="#10b981" />
       </div>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-4 text-center">
+      <div className="mt-4 rounded-xl bg-canvas p-4 text-center">
         <div className="text-xs text-ink-faint">Cash Conversion Cycle</div>
         <div className={`text-3xl font-extrabold tnum ${ccc <= 30 ? "text-emerald-700" : ccc <= 60 ? "text-amber-600" : "text-rose-600"}`}>{angka(ccc)} hari</div>
         <div className="mt-1 text-xs text-ink-faint">
@@ -51,7 +51,7 @@ function Slider({ label, value, set, min, max }: { label: string; value: number;
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{angka(value)} hari</span>
       </div>
-      <input type="range" min={min} max={max} step={1} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={1} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }
@@ -63,7 +63,7 @@ function BarRow({ label, value, max, color }: { label: string; value: number; ma
         <span className="text-ink-soft">{label}</span>
         <span className="tnum">{angka(value)} hari</span>
       </div>
-      <div className="h-3 overflow-hidden rounded-full bg-slate-200">
+      <div className="h-3 overflow-hidden rounded-full bg-line">
         <div className="h-full rounded-full" style={{ width: `${(value / max) * 100}%`, background: color }} />
       </div>
     </div>

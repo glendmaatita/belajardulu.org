@@ -79,11 +79,11 @@ export function DebitKreditDrill() {
           Soal {i + 1}/{deck.length} · Skor {score}
         </span>
       </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-canvas">
         <div className="h-full bg-brand-500 transition-all" style={{ width: `${(i / deck.length) * 100}%` }} />
       </div>
 
-      <div className="my-6 rounded-xl bg-slate-50 py-8 text-center text-xl font-bold text-ink">
+      <div className="my-6 rounded-xl bg-canvas py-8 text-center text-xl font-bold text-ink">
         {q.text}
       </div>
 
@@ -91,11 +91,11 @@ export function DebitKreditDrill() {
         {(["debit", "kredit"] as const).map((choice) => {
           const isAns = choice === q.answer;
           const isPicked = picked === choice;
-          let cls = "border-slate-200 bg-white hover:bg-slate-50";
+          let cls = "border-line bg-white hover:bg-canvas";
           if (picked) {
             if (isAns) cls = "border-emerald-500 bg-emerald-50 text-emerald-700";
             else if (isPicked) cls = "border-rose-400 bg-rose-50 text-rose-600";
-            else cls = "border-slate-200 bg-white opacity-60";
+            else cls = "border-line bg-white opacity-60";
           }
           return (
             <button

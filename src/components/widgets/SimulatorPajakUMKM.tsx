@@ -39,11 +39,11 @@ export function SimulatorPajakUMKM() {
         step={5_000_000}
         value={omzetBulan}
         onChange={(e) => setOmzetBulan(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
       />
       <div className="mt-1 text-right text-xs text-ink-faint">Omzet setahun: {rupiah(r.omzetTahun)}</div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4">
+      <div className="mt-5 rounded-xl bg-canvas p-4">
         {!badan && (
           <div className="mb-3 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
             ✨ Omzet pertama <b>Rp500 juta/tahun bebas pajak</b> (khusus Orang Pribadi). Yang kena pajak hanya{" "}
@@ -80,7 +80,7 @@ function Toggle({ active, onClick, label }: { active: boolean; onClick: () => vo
     <button
       onClick={onClick}
       className={`flex-1 rounded-lg border px-3 py-2 text-sm font-semibold transition-colors ${
-        active ? "border-brand-400 bg-brand-50 text-brand-700" : "border-slate-200 bg-white text-ink-faint"
+        active ? "border-brand-400 bg-brand-50 text-brand-700" : "border-line bg-white text-ink-faint"
       }`}
     >
       {label}

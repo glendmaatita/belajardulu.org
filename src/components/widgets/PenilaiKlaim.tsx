@@ -58,7 +58,7 @@ export function PenilaiKlaim() {
       <div className="mb-1 text-sm font-bold text-brand-700">🔎 Penilai Kekuatan Klaim</div>
       <p className="mb-4 text-xs text-ink-faint">Berpikir kritis: nilai apakah bukti di balik klaim ini kuat atau lemah. Perhatikan ukuran sampel, pembanding, sumber, dan konflik kepentingan.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-sm text-ink">{s.klaim}</div>
+      <div className="rounded-xl bg-canvas p-4 text-sm text-ink">{s.klaim}</div>
 
       <div className="mt-3 flex gap-2">
         {OPSI.map((o) => (
@@ -71,7 +71,7 @@ export function PenilaiKlaim() {
                 ? "bg-emerald-500 text-white"
                 : pilih === o.id
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {o.label}

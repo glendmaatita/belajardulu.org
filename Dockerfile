@@ -13,6 +13,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
+COPY .env.production.template .env.local
 # tsc -b && vite build -> outputs static assets to /app/dist
 RUN npm run build
 

@@ -30,7 +30,7 @@ export function MatchExercise({
       <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
         <Icon name="puzzle" /> Latihan Menjodohkan
       </div>
-      <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft">{prompt}</p>
+      <p className="mb-4 rounded-xl bg-canvas p-3 text-sm text-ink-soft">{prompt}</p>
 
       <div className="space-y-2.5">
         {pairs.map((p, i) => {
@@ -41,7 +41,7 @@ export function MatchExercise({
             <div
               key={i}
               className={`grid grid-cols-1 items-center gap-2 rounded-xl border p-3 sm:grid-cols-2 ${
-                isCorrect ? "border-emerald-300 bg-emerald-50" : isWrong ? "border-rose-300 bg-rose-50" : "border-slate-200"
+                isCorrect ? "border-emerald-300 bg-emerald-50" : isWrong ? "border-rose-300 bg-rose-50" : "border-line"
               }`}
             >
               <div className="text-sm font-medium text-ink">
@@ -57,7 +57,7 @@ export function MatchExercise({
                 value={picked || ""}
                 onChange={(e) => setPicks((x) => ({ ...x, [i]: e.target.value }))}
                 disabled={checked}
-                className="rounded-lg border border-slate-300 px-2 py-2 text-sm focus:border-brand-500 focus:outline-none disabled:bg-slate-50"
+                className="rounded-lg border border-line-strong px-2 py-2 text-sm focus:border-brand-500 focus:outline-none disabled:bg-canvas"
               >
                 <option value="">Pilih pasangan…</option>
                 {rights.map((r) => (

@@ -35,14 +35,14 @@ export function SimulatorHimpunan() {
           <button
             key={o}
             onClick={() => setOp(o)}
-            className={`rounded-lg px-3 py-1.5 text-sm font-bold capitalize transition ${op === o ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}
+            className={`rounded-lg px-3 py-1.5 text-sm font-bold capitalize transition ${op === o ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}
           >
             {o}
           </button>
         ))}
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-4 text-center font-mono text-lg text-ink">
+      <div className="mt-3 rounded-xl bg-canvas p-4 text-center font-mono text-lg text-ink">
         Hasil = &#123;{hasil.join(", ") || " "}&#125;
       </div>
       <div className="mt-2 rounded-lg bg-amber-50 p-3 text-sm text-amber-800">{ket[op]}</div>

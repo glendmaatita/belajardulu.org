@@ -40,7 +40,7 @@ export function SimulatorStrukturModal() {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        <Card label="ROE tanpa utang" value={`${r.noDebt.roe.toFixed(1)}%`} accent="text-slate-600" />
+        <Card label="ROE tanpa utang" value={`${r.noDebt.roe.toFixed(1)}%`} accent="text-ink-soft" />
         <Card label={`ROE dengan utang ${debtRatio}%`} value={`${r.now.roe.toFixed(1)}%`} accent={r.now.roe >= r.noDebt.roe ? "text-emerald-700" : "text-rose-600"} />
       </div>
       <p className="mt-3 text-xs text-ink-faint">
@@ -60,14 +60,14 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }
 
 function Card({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-xl bg-slate-50 p-4">
+    <div className="rounded-xl bg-canvas p-4">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-2xl font-extrabold tnum ${accent}`}>{value}</div>
     </div>

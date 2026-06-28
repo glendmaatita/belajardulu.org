@@ -59,7 +59,7 @@ export function IdentifikasiModus() {
       <div className="mb-1 text-sm font-bold text-brand-700">🧭 Identifikasi Bentuk Argumen</div>
       <p className="mb-4 text-xs text-ink-faint">Baca argumen kondisional ini, lalu tentukan bentuknya. Perhatikan mana yang valid dan mana yang sesat.</p>
 
-      <div className="space-y-1.5 rounded-xl bg-slate-50 p-4">
+      <div className="space-y-1.5 rounded-xl bg-canvas p-4">
         {s.premis.map((p, i) => (
           <div key={i} className={`text-sm ${i === s.premis.length - 1 ? "font-bold text-ink" : "text-ink-soft"}`}>{p}</div>
         ))}
@@ -76,7 +76,7 @@ export function IdentifikasiModus() {
                 ? "bg-emerald-500 text-white"
                 : pilih === b
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {b}

@@ -21,7 +21,7 @@ export function SimulatorTrigonometri() {
           <button
             key={su.deg}
             onClick={() => setIdx(i)}
-            className={`rounded-lg px-4 py-2 text-sm font-bold transition ${idx === i ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}
+            className={`rounded-lg px-4 py-2 text-sm font-bold transition ${idx === i ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}
           >
             {su.deg}°
           </button>
@@ -31,8 +31,8 @@ export function SimulatorTrigonometri() {
       <div className="mt-3 flex justify-center">
         <svg width="200" height="120">
           <polygon points="20,100 180,100 180,20" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" strokeWidth="2.5" />
-          <text x="100" y="116" fill="#94a3b8" fontSize="12" textAnchor="middle">samping</text>
-          <text x="192" y="62" fill="#94a3b8" fontSize="12" textAnchor="middle" transform="rotate(90 192 62)">depan</text>
+          <text x="100" y="116" fill="#7c756a" fontSize="12" textAnchor="middle">samping</text>
+          <text x="192" y="62" fill="#7c756a" fontSize="12" textAnchor="middle" transform="rotate(90 192 62)">depan</text>
           <text x="36" y="96" fill="#6366f1" fontSize="13" fontWeight="700">{s.deg}°</text>
         </svg>
       </div>

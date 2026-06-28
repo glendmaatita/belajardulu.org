@@ -64,7 +64,7 @@ export function PenyusunArgumen() {
       <div className="mb-1 text-sm font-bold text-brand-700">🧩 Penyusun Argumen Valid</div>
       <p className="mb-4 text-xs text-ink-faint">Pilih premis mayor yang membuat kesimpulan benar-benar mengikuti dari premis yang diketahui.</p>
 
-      <div className="rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="rounded-xl bg-canvas p-4 text-sm">
         <div className="text-ink-faint">Premis minor: <span className="font-medium text-ink-soft">{s.diketahui}</span></div>
         <div className="mt-2 font-bold text-ink">{s.kesimpulan}</div>
       </div>
@@ -81,7 +81,7 @@ export function PenyusunArgumen() {
                 ? "bg-emerald-500 text-white"
                 : pilih === i
                 ? "bg-rose-400 text-white"
-                : "bg-slate-100 text-ink-soft hover:bg-slate-200"
+                : "bg-canvas text-ink-soft hover:bg-line"
             }`}
           >
             {o}

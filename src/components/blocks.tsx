@@ -17,7 +17,12 @@ const VideoPlayer = lazy(() => import("./VideoPlayer").then((m) => ({ default: m
 export function BlockRenderer({ block }: { block: ContentBlock }) {
   switch (block.type) {
     case "heading":
-      return <h3 className="mt-9 mb-3 text-xl font-bold text-ink">{block.text}</h3>;
+      return (
+        <h3 className="mt-9 mb-3 flex items-center gap-2.5 font-display text-xl font-semibold text-ink">
+          <span className="h-4 w-1 shrink-0 rounded-full bg-accent-400" />
+          {block.text}
+        </h3>
+      );
 
     case "paragraph":
       return (
@@ -47,11 +52,12 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
 
     case "case":
       return (
-        <div className="my-6 overflow-hidden rounded-2xl border-l-4 border-violet-400 bg-violet-50/60">
+        <div className="my-6 overflow-hidden rounded-2xl border border-line border-l-[3px] border-l-violet-400 bg-violet-50/50 shadow-card">
           <div className="px-5 py-4">
-            <div className="mb-1 flex items-center gap-2 text-sm font-bold text-violet-700">
-              <Icon name="search" /> {block.title}
+            <div className="eyebrow mb-1.5 text-violet-700">
+              <Icon name="search" /> Studi Kasus
             </div>
+            <div className="mb-1 font-display text-base font-semibold text-ink">{block.title}</div>
             <p className="text-sm leading-relaxed text-ink-soft" dangerouslySetInnerHTML={{ __html: annotateGlossary(block.html) }} />
           </div>
         </div>
@@ -86,8 +92,8 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
 
     case "takeaways":
       return (
-        <div className="my-6 rounded-2xl bg-gradient-to-br from-brand-50 to-emerald-50 p-5">
-          <div className="mb-2 flex items-center gap-2 font-bold text-brand-800">
+        <div className="card-ruled my-6 bg-[#fbf6ea] p-5">
+          <div className="eyebrow mb-2.5">
             <Icon name="target" /> Inti Pelajaran
           </div>
           <ul className="space-y-2">
@@ -108,7 +114,7 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       return (
         <Suspense
           fallback={
-            <div className="my-6 grid h-64 place-items-center rounded-2xl border border-slate-200 bg-slate-900 text-sm text-slate-400">
+            <div className="my-6 grid h-64 place-items-center rounded-2xl border border-line bg-ink text-sm text-ink-faint">
               Memuat video…
             </div>
           }
@@ -164,7 +170,7 @@ const calloutStyles = {
 function ImageBlock({ src, alt, caption, credit }: { src: string; alt: string; caption?: string; credit?: string }) {
   return (
     <figure className="my-6">
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+      <div className="overflow-hidden rounded-2xl border border-line bg-canvas">
         <img
           src={src}
           alt={alt}
@@ -203,16 +209,16 @@ function JournalTable({ title, date, lines, note }: { title?: string; date?: str
   const totalD = lines.reduce((s, l) => s + (l.debit || 0), 0);
   const totalC = lines.reduce((s, l) => s + (l.credit || 0), 0);
   return (
-    <div className="my-5 overflow-hidden rounded-2xl border border-slate-200">
+    <div className="my-5 overflow-hidden rounded-2xl border border-line">
       {(title || date) && (
-        <div className="flex items-center justify-between gap-3 bg-slate-50 px-4 py-2.5">
+        <div className="flex items-center justify-between gap-3 bg-canvas px-4 py-2.5">
           <span className="text-sm font-semibold text-ink">{title}</span>
           {date && <span className="shrink-0 rounded-md bg-white px-2 py-0.5 text-xs font-medium text-ink-faint">{date}</span>}
         </div>
       )}
       <table className="w-full text-sm">
         <thead className="text-xs text-ink-faint">
-          <tr className="border-b border-slate-100">
+          <tr className="border-b border-line">
             <th className="px-4 py-2 text-left font-semibold">Akun</th>
             <th className="px-4 py-2 text-right font-semibold">Debit</th>
             <th className="px-4 py-2 text-right font-semibold">Kredit</th>
@@ -220,13 +226,13 @@ function JournalTable({ title, date, lines, note }: { title?: string; date?: str
         </thead>
         <tbody>
           {lines.map((l, i) => (
-            <tr key={i} className="border-b border-slate-50 last:border-0">
+            <tr key={i} className="border-b border-line last:border-0">
               <td className={`px-4 py-2 ${l.credit ? "pl-10 text-ink-soft" : "font-medium text-ink"}`}>{l.account}</td>
               <td className="px-4 py-2 text-right tnum">{l.debit ? rupiah(l.debit) : ""}</td>
               <td className="px-4 py-2 text-right tnum">{l.credit ? rupiah(l.credit) : ""}</td>
             </tr>
           ))}
-          <tr className="border-t-2 border-slate-200 bg-slate-50 font-bold">
+          <tr className="border-t-2 border-line bg-canvas font-bold">
             <td className="px-4 py-2 text-xs uppercase text-ink-faint">Total</td>
             <td className="px-4 py-2 text-right tnum">{rupiah(totalD)}</td>
             <td className="px-4 py-2 text-right tnum">{rupiah(totalC)}</td>
@@ -240,12 +246,12 @@ function JournalTable({ title, date, lines, note }: { title?: string; date?: str
 
 function DataTable({ headers, rows, caption }: { headers: string[]; rows: string[][]; caption?: string }) {
   return (
-    <div className="my-5 overflow-hidden rounded-2xl border border-slate-200">
-      {caption && <div className="bg-slate-50 px-4 py-2 text-xs font-semibold text-ink-faint">{caption}</div>}
+    <div className="my-5 overflow-hidden rounded-2xl border border-line">
+      {caption && <div className="bg-canvas px-4 py-2 text-xs font-semibold text-ink-faint">{caption}</div>}
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-slate-200 bg-slate-50 text-left text-xs font-semibold text-ink-faint">
+            <tr className="border-b border-line bg-canvas text-left text-xs font-semibold text-ink-faint">
               {headers.map((h, i) => (
                 <th key={i} className={`px-4 py-2.5 ${i > 0 ? "text-right" : ""}`}>{h}</th>
               ))}
@@ -255,7 +261,7 @@ function DataTable({ headers, rows, caption }: { headers: string[]; rows: string
             {rows.map((row, ri) => {
               const isTotal = /total|hpp|harga pokok|barang tersedia/i.test(row[0]);
               return (
-                <tr key={ri} className={`border-b border-slate-50 last:border-0 ${isTotal ? "bg-slate-50 font-bold" : ""}`}>
+                <tr key={ri} className={`border-b border-line last:border-0 ${isTotal ? "bg-canvas font-bold" : ""}`}>
                   {row.map((cell, ci) => (
                     <td key={ci} className={`px-4 py-2.5 ${ci > 0 ? "text-right tnum" : "text-ink-soft"}`}>{cell}</td>
                   ))}
@@ -311,31 +317,31 @@ function Ledger({ accounts }: { accounts: { name: string; debits: number[]; cred
         const tc = acc.credits.reduce((s, n) => s + n, 0);
         const bal = td - tc;
         return (
-          <div key={acc.name} className="overflow-hidden rounded-xl border border-slate-200">
-            <div className="bg-slate-800 px-3 py-1.5 text-center text-sm font-bold text-white">{acc.name}</div>
+          <div key={acc.name} className="overflow-hidden rounded-xl border border-line">
+            <div className="bg-ink px-3 py-1.5 text-center text-sm font-bold text-white">{acc.name}</div>
             <div className="grid grid-cols-2 text-xs">
-              <div className="border-r border-slate-200">
-                <div className="bg-slate-50 px-2 py-1 text-center font-semibold text-emerald-600">Debit</div>
+              <div className="border-r border-line">
+                <div className="bg-canvas px-2 py-1 text-center font-semibold text-emerald-600">Debit</div>
                 {acc.debits.length ? (
                   acc.debits.map((n, i) => (
                     <div key={i} className="px-2 py-1 text-right tnum">{rupiah(n)}</div>
                   ))
                 ) : (
-                  <div className="px-2 py-1 text-center text-slate-300">-</div>
+                  <div className="px-2 py-1 text-center text-line">-</div>
                 )}
               </div>
               <div>
-                <div className="bg-slate-50 px-2 py-1 text-center font-semibold text-rose-500">Kredit</div>
+                <div className="bg-canvas px-2 py-1 text-center font-semibold text-rose-500">Kredit</div>
                 {acc.credits.length ? (
                   acc.credits.map((n, i) => (
                     <div key={i} className="px-2 py-1 text-right tnum">{rupiah(n)}</div>
                   ))
                 ) : (
-                  <div className="px-2 py-1 text-center text-slate-300">-</div>
+                  <div className="px-2 py-1 text-center text-line">-</div>
                 )}
               </div>
             </div>
-            <div className="border-t border-slate-200 bg-slate-50 px-2 py-1.5 text-center text-xs font-bold">
+            <div className="border-t border-line bg-canvas px-2 py-1.5 text-center text-xs font-bold">
               Saldo: <span className="tnum">{rupiah(Math.abs(bal))}</span>{" "}
               <span className={bal >= 0 ? "text-emerald-600" : "text-rose-500"}>({bal >= 0 ? "D" : "K"})</span>
             </div>

@@ -26,8 +26,8 @@ export function KalkulatorOpsi() {
       </p>
 
       <div className="mb-4 flex gap-2">
-        <button onClick={() => setTipe("call")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${tipe === "call" ? "bg-emerald-500 text-white" : "bg-slate-100 text-ink-soft"}`}>Call (taruhan naik)</button>
-        <button onClick={() => setTipe("put")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${tipe === "put" ? "bg-rose-500 text-white" : "bg-slate-100 text-ink-soft"}`}>Put (taruhan turun)</button>
+        <button onClick={() => setTipe("call")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${tipe === "call" ? "bg-emerald-500 text-white" : "bg-canvas text-ink-soft"}`}>Call (taruhan naik)</button>
+        <button onClick={() => setTipe("put")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${tipe === "put" ? "bg-rose-500 text-white" : "bg-canvas text-ink-soft"}`}>Put (taruhan turun)</button>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
@@ -52,7 +52,7 @@ export function KalkulatorOpsi() {
 function Stat({ label, value, tone }: { label: string; value: string; tone: "sky" | "violet" | "emerald" | "rose" }) {
   const map = { sky: "text-sky-700", violet: "text-violet-700", emerald: "text-emerald-700", rose: "text-rose-700" };
   return (
-    <div className="rounded-xl bg-slate-50 p-3 text-center">
+    <div className="rounded-xl bg-canvas p-3 text-center">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${map[tone]}`}>{value}</div>
     </div>
@@ -66,7 +66,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

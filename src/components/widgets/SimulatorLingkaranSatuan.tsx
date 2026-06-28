@@ -23,8 +23,8 @@ export function SimulatorLingkaranSatuan() {
       <div className="mt-2 flex justify-center">
         <svg width="220" height="220">
           <circle cx={cx} cy={cy} r={r} fill="none" stroke="#60a5fa" strokeWidth="2.5" />
-          <line x1="10" y1={cy} x2="210" y2={cy} stroke="#cbd5e1" strokeWidth="1" />
-          <line x1={cx} y1="10" x2={cx} y2="210" stroke="#cbd5e1" strokeWidth="1" />
+          <line x1="10" y1={cy} x2="210" y2={cy} stroke="#d9cdb6" strokeWidth="1" />
+          <line x1={cx} y1="10" x2={cx} y2="210" stroke="#d9cdb6" strokeWidth="1" />
           <line x1={cx} y1={cy} x2={px} y2={py} stroke="#6366f1" strokeWidth="2.5" />
           <circle cx={px} cy={py} r="6" fill="#f59e0b" />
         </svg>

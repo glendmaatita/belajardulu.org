@@ -38,7 +38,7 @@ export function PencocokAliranFilsafat() {
             <div className="mb-2 text-sm font-semibold text-ink">{i + 1}. {p.q}</div>
             <div className="flex gap-2">
               {p.a.map((opt, j) => (
-                <button key={j} onClick={() => setJawaban((prev) => prev.map((x, k) => (k === i ? j : x)))} className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition ${jawaban[i] === j ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+                <button key={j} onClick={() => setJawaban((prev) => prev.map((x, k) => (k === i ? j : x)))} className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold transition ${jawaban[i] === j ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
                   {opt}
                 </button>
               ))}

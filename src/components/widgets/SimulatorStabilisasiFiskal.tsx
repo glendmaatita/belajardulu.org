@@ -41,7 +41,7 @@ export function SimulatorStabilisasiFiskal() {
         <div className="mb-1 text-sm font-semibold text-ink-soft">Kondisi ekonomi</div>
         <div className="flex flex-wrap gap-2">
           {KONDISI.map((k) => (
-            <button key={k} onClick={() => setKondisi(k)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${kondisi === k ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>{k}</button>
+            <button key={k} onClick={() => setKondisi(k)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${kondisi === k ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>{k}</button>
           ))}
         </div>
       </div>
@@ -49,7 +49,7 @@ export function SimulatorStabilisasiFiskal() {
         <div className="mb-1 text-sm font-semibold text-ink-soft">Arah kebijakan fiskal</div>
         <div className="flex flex-col gap-2">
           {STANCE.map((s) => (
-            <button key={s} onClick={() => setStance(s)} className={`rounded-lg px-3 py-2 text-left text-xs font-bold transition ${stance === s ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>{s}</button>
+            <button key={s} onClick={() => setStance(s)} className={`rounded-lg px-3 py-2 text-left text-xs font-bold transition ${stance === s ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>{s}</button>
           ))}
         </div>
       </div>

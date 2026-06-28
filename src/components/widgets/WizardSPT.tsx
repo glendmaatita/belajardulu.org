@@ -89,13 +89,13 @@ export function WizardSPT() {
           <button
             key={i}
             onClick={() => setStep(i)}
-            className={`h-1.5 flex-1 rounded-full transition-colors ${i <= step ? "bg-brand-500" : "bg-slate-200"}`}
+            className={`h-1.5 flex-1 rounded-full transition-colors ${i <= step ? "bg-brand-500" : "bg-line"}`}
             title={`Langkah ${i + 1}`}
           />
         ))}
       </div>
 
-      <div className="rounded-xl bg-slate-50 p-4">
+      <div className="rounded-xl bg-canvas p-4">
         <div className="flex items-center gap-3">
           <span className="text-3xl">{s.icon}</span>
           <div>
@@ -112,7 +112,7 @@ export function WizardSPT() {
                 <button onClick={() => toggle(key)} className="flex w-full items-start gap-2 text-left text-sm">
                   <span
                     className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded border text-xs ${
-                      on ? "border-emerald-500 bg-emerald-500 text-white" : "border-slate-300 bg-white"
+                      on ? "border-emerald-500 bg-emerald-500 text-white" : "border-line-strong bg-white"
                     }`}
                   >
                     {on ? "✓" : ""}

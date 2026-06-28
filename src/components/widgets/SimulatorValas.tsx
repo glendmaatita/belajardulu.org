@@ -37,7 +37,7 @@ export function SimulatorValas() {
         <Slider label="Pergerakan kurs" value={perubahan} set={setPerubahan} min={-15} max={15} step={1} fmt={(v) => `${v > 0 ? "+" : ""}${v}%`} />
       </div>
 
-      <div className="mt-5 space-y-1.5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 space-y-1.5 rounded-xl bg-canvas p-4 text-sm">
         <Row label={`Kurs jual bank (kamu beli USD)`} value={fmt(r.kursJual)} />
         <Row label={`Kurs beli bank (kamu jual USD)`} value={fmt(r.kursBeli)} />
         <Row label="Biaya spread bila beli lalu jual lagi" value={fmt(r.biayaSpread)} />
@@ -74,7 +74,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

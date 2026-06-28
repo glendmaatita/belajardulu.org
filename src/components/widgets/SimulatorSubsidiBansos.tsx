@@ -24,7 +24,7 @@ export function SimulatorSubsidiBansos() {
 
       <Slider label="Anggaran" value={anggaran} set={setAnggaran} min={50} max={600} step={10} fmt={(v) => `Rp${v.toLocaleString("id-ID")} T`} />
 
-      <div className="mt-4 flex rounded-lg bg-slate-100 p-1 text-sm font-bold">
+      <div className="mt-4 flex rounded-lg bg-canvas p-1 text-sm font-bold">
         <button onClick={() => setModelSubsidi(true)} className={`flex-1 rounded-md py-2 transition ${modelSubsidi ? "bg-amber-500 text-white" : "text-ink-soft"}`}>
           Subsidi harga
         </button>
@@ -37,7 +37,7 @@ export function SimulatorSubsidiBansos() {
         <div className="flex items-center justify-center bg-emerald-500 text-[11px] font-bold text-white" style={{ width: `${r.ketepatan * 100}%` }}>
           Tepat sasaran
         </div>
-        <div className="flex items-center justify-center bg-slate-400 text-[11px] font-bold text-white" style={{ width: `${(1 - r.ketepatan) * 100}%` }}>
+        <div className="flex items-center justify-center bg-ink-faint text-[11px] font-bold text-white" style={{ width: `${(1 - r.ketepatan) * 100}%` }}>
           Bocor
         </div>
       </div>
@@ -67,7 +67,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

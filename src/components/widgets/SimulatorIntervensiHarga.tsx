@@ -22,7 +22,7 @@ export function SimulatorIntervensiHarga() {
         Permintaan Qd = 100 - P, penawaran Qs = 10 + P (keseimbangan di harga 45). Tetapkan batas harga dan lihat kelangkaan atau surplus yang muncul.
       </p>
 
-      <div className="mb-4 flex rounded-lg bg-slate-100 p-1 text-sm font-bold">
+      <div className="mb-4 flex rounded-lg bg-canvas p-1 text-sm font-bold">
         <button onClick={() => setJenis("ceiling")} className={`flex-1 rounded-md py-2 transition ${jenis === "ceiling" ? "bg-rose-500 text-white" : "text-ink-soft"}`}>
           Harga Eceran Tertinggi
         </button>
@@ -44,7 +44,7 @@ export function SimulatorIntervensiHarga() {
         </div>
       </div>
 
-      <div className={`mt-3 rounded-xl p-4 text-center ${r.efektif ? (jenis === "ceiling" ? "bg-rose-50" : "bg-amber-50") : "bg-slate-100"}`}>
+      <div className={`mt-3 rounded-xl p-4 text-center ${r.efektif ? (jenis === "ceiling" ? "bg-rose-50" : "bg-amber-50") : "bg-canvas"}`}>
         {r.efektif ? (
           <>
             <div className="text-xs text-ink-faint">{jenis === "ceiling" ? "Kelangkaan (Qd > Qs)" : "Surplus (Qs > Qd)"}</div>
@@ -71,7 +71,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

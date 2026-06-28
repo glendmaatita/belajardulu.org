@@ -19,7 +19,7 @@ export function SimulatorFibonacci() {
       <div className="mb-1 text-sm font-bold text-brand-700">🐚 Simulator Fibonacci</div>
       <p className="mb-4 text-xs text-ink-faint">Tekan "Tambah suku" beberapa kali. Tiap suku = jumlah dua suku sebelumnya. Amati rasio suku terbaru terhadap sebelumnya.</p>
 
-      <div className="flex flex-wrap items-center gap-2 rounded-xl bg-slate-50 p-4">
+      <div className="flex flex-wrap items-center gap-2 rounded-xl bg-canvas p-4">
         {deret.map((v, i) => (
           <span
             key={i}
@@ -31,7 +31,7 @@ export function SimulatorFibonacci() {
       </div>
 
       <div className="mt-3 grid grid-cols-2 gap-3">
-        <div className="rounded-xl bg-slate-50 p-3 text-center">
+        <div className="rounded-xl bg-canvas p-3 text-center">
           <div className="text-xs text-ink-faint">Suku terakhir ÷ sebelumnya</div>
           <div className="text-xl font-extrabold text-ink tnum">{rasio.toFixed(5)}</div>
         </div>
@@ -43,7 +43,7 @@ export function SimulatorFibonacci() {
 
       <div className="mt-3 flex gap-2">
         <button onClick={tambah} className="btn-primary flex-1">Tambah suku</button>
-        <button onClick={reset} className="btn flex-1 bg-slate-100 text-ink-soft hover:bg-slate-200">Ulang</button>
+        <button onClick={reset} className="btn flex-1 bg-canvas text-ink-soft hover:bg-line">Ulang</button>
       </div>
 
       <p className="mt-3 text-xs text-ink-faint">

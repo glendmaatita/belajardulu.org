@@ -60,14 +60,14 @@ export function GarisWaktuFilsuf() {
           <button
             key={er.id}
             onClick={() => setAktif(i)}
-            className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${aktif === i ? `${er.warna} text-white` : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}
+            className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${aktif === i ? `${er.warna} text-white` : "bg-canvas text-ink-soft hover:bg-line"}`}
           >
             {er.nama}
           </button>
         ))}
       </div>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-4">
+      <div className="mt-4 rounded-xl bg-canvas p-4">
         <div className="flex items-baseline justify-between">
           <div className="text-base font-bold text-ink">{e.nama}</div>
           <div className="text-xs font-medium text-ink-faint">{e.masa}</div>

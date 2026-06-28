@@ -11,9 +11,9 @@ export function SimulatorTimbangan() {
   const Step = ({ label, val, set }: { label: string; val: number; set: (n: number) => void }) => (
     <div className="flex items-center gap-2">
       <span className="w-28 text-xs font-bold text-ink-faint">{label}</span>
-      <button onClick={() => set(Math.max(0, val - 1))} className="h-7 w-7 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">-</button>
+      <button onClick={() => set(Math.max(0, val - 1))} className="h-7 w-7 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">-</button>
       <span className="w-6 text-center font-bold tnum">{val}</span>
-      <button onClick={() => set(val + 1)} className="h-7 w-7 rounded-md bg-slate-100 font-bold text-ink-soft hover:bg-slate-200">+</button>
+      <button onClick={() => set(val + 1)} className="h-7 w-7 rounded-md bg-canvas font-bold text-ink-soft hover:bg-line">+</button>
     </div>
   );
 
@@ -27,7 +27,7 @@ export function SimulatorTimbangan() {
         <Step label="Hasil (b)" val={b} set={setB} />
       </div>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-4 text-center font-mono text-lg text-ink">
+      <div className="mt-4 rounded-xl bg-canvas p-4 text-center font-mono text-lg text-ink">
         x + {a} = {b}
       </div>
 

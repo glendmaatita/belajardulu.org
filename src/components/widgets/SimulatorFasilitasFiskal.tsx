@@ -44,7 +44,7 @@ export function SimulatorFasilitasFiskal() {
         </div>
       </div>
 
-      <div className="mt-3 rounded-xl bg-slate-50 p-4 text-center">
+      <div className="mt-3 rounded-xl bg-canvas p-4 text-center">
         <div className="text-xs text-ink-faint">Penghematan pungutan impor</div>
         <div className="text-2xl font-extrabold tnum text-emerald-700">{rupiah(Math.round(r.hemat))}</div>
       </div>
@@ -63,7 +63,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

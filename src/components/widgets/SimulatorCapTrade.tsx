@@ -49,7 +49,7 @@ export function SimulatorCapTrade() {
         <Bar label="Cap" value={cap} max={max} color="#10b981" />
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-50 p-4 text-sm">
+      <div className="mt-5 rounded-xl bg-canvas p-4 text-sm">
         {r.status === "surplus" ? (
           <p className="text-emerald-700">
             ✅ <b>Surplus {angka(r.surplus)} tCO2e</b>. Emisi di bawah jatah, perusahaan bisa <b>menjual</b> kelebihan
@@ -85,7 +85,7 @@ function Bar({ label, value, max, color }: { label: string; value: number; max: 
         <span className="font-semibold text-ink-soft">{label}</span>
         <span className="tnum">{angka(value)} tCO2e</span>
       </div>
-      <div className="h-4 overflow-hidden rounded-md bg-slate-200">
+      <div className="h-4 overflow-hidden rounded-md bg-line">
         <div className="h-full rounded-md transition-all" style={{ width: `${(value / max) * 100}%`, background: color }} />
       </div>
     </div>
@@ -94,7 +94,7 @@ function Bar({ label, value, max, color }: { label: string; value: number; max: 
 
 function Opt({ active, title, value }: { active: boolean; title: string; value: string }) {
   return (
-    <div className={`rounded-lg border p-2 ${active ? "border-emerald-400 bg-emerald-50" : "border-slate-200 bg-white opacity-70"}`}>
+    <div className={`rounded-lg border p-2 ${active ? "border-emerald-400 bg-emerald-50" : "border-line bg-white opacity-70"}`}>
       <div className="text-xs text-ink-faint">{title}</div>
       <div className="tnum font-bold text-ink">{value}</div>
       {active && <div className="text-[11px] font-semibold text-emerald-600">← termurah</div>}
@@ -134,7 +134,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-emerald-600"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-emerald-600"
       />
       <div className="mt-0.5 text-right text-[11px] text-ink-faint">{unit}</div>
     </div>

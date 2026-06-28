@@ -31,7 +31,7 @@ export function SimulatorRulesOfOrigin() {
         <div className="flex items-center justify-center bg-emerald-500 text-xs font-bold text-white" style={{ width: `${r.rvc}%` }}>
           {r.rvc > 16 ? `Kandungan lokal ${r.rvc.toFixed(0)}%` : ""}
         </div>
-        <div className="flex items-center justify-center bg-slate-400 text-xs font-bold text-white" style={{ width: `${100 - r.rvc}%` }}>
+        <div className="flex items-center justify-center bg-ink-faint text-xs font-bold text-white" style={{ width: `${100 - r.rvc}%` }}>
           {100 - r.rvc > 16 ? "Bahan impor" : ""}
         </div>
       </div>
@@ -58,7 +58,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

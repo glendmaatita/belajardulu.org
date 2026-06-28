@@ -43,14 +43,14 @@ export function KalkulatorValuasiDCF() {
         <Slider label="Pertumbuhan terminal" value={terminalG} set={setTerminalG} min={0} max={6} step={1} fmt={(v) => `${v}%`} />
       </div>
 
-      <div className="mt-5 overflow-hidden rounded-xl bg-slate-50 p-3 text-sm">
+      <div className="mt-5 overflow-hidden rounded-xl bg-canvas p-3 text-sm">
         <div className="mb-1 flex justify-between text-xs font-bold text-ink-faint">
           <span>Tahun</span>
           <span>FCF</span>
           <span>Nilai kini (PV)</span>
         </div>
         {r.rows.map((row) => (
-          <div key={row.th} className="flex justify-between border-t border-slate-200 py-1">
+          <div key={row.th} className="flex justify-between border-t border-line py-1">
             <span className="text-ink-soft">Tahun {row.th}</span>
             <span className="tnum text-ink-soft">{rupiah(Math.round(row.fcf))}</span>
             <span className="tnum font-semibold text-ink">{rupiah(Math.round(row.pv))}</span>
@@ -78,7 +78,7 @@ export function KalkulatorValuasiDCF() {
 function Stat({ label, value, tone }: { label: string; value: string; tone: "sky" | "violet" }) {
   const map = { sky: "text-sky-700", violet: "text-violet-700" };
   return (
-    <div className="rounded-xl bg-slate-50 p-3 text-center">
+    <div className="rounded-xl bg-canvas p-3 text-center">
       <div className="text-xs text-ink-faint">{label}</div>
       <div className={`text-lg font-extrabold tnum ${map[tone]}`}>{value}</div>
     </div>
@@ -92,7 +92,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

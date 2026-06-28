@@ -88,7 +88,7 @@ export function Chart({
         {variant === "donut" && <DonutChart data={data} p={p} />}
       </div>
       {note && <p className="mt-3 text-xs leading-relaxed text-ink-faint">{note}</p>}
-      {source && <p className="mt-1 text-[11px] italic text-slate-400">Sumber/ilustrasi: {source}</p>}
+      {source && <p className="mt-1 text-[11px] italic text-ink-faint">Sumber/ilustrasi: {source}</p>}
     </figure>
   );
 }
@@ -150,8 +150,8 @@ function LineChart({ data, p, area }: { data: ChartDatum[]; p: number; area: boo
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ maxHeight: 240 }}>
       {gridY.map((gv, i) => (
         <g key={i}>
-          <line x1={padL} x2={W - padR} y1={y(gv)} y2={y(gv)} stroke="#e2e8f0" strokeWidth={1} />
-          <text x={padL - 6} y={y(gv) + 3} textAnchor="end" fontSize={10} fill="#94a3b8">
+          <line x1={padL} x2={W - padR} y1={y(gv)} y2={y(gv)} stroke="#e8dfce" strokeWidth={1} />
+          <text x={padL - 6} y={y(gv) + 3} textAnchor="end" fontSize={10} fill="#7c756a">
             {fmt(gv)}
           </text>
         </g>
@@ -180,7 +180,7 @@ function LineChart({ data, p, area }: { data: ChartDatum[]; p: number; area: boo
       ))}
       {data.map((d, i) =>
         i % Math.ceil(data.length / 8) === 0 || i === data.length - 1 ? (
-          <text key={i} x={x(i)} y={H - 8} textAnchor="middle" fontSize={10} fill="#94a3b8">
+          <text key={i} x={x(i)} y={H - 8} textAnchor="middle" fontSize={10} fill="#7c756a">
             {d.label}
           </text>
         ) : null
@@ -287,7 +287,7 @@ function StatCard({
   }, [active, target, delay]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div className="rounded-2xl border border-line bg-white p-4 shadow-sm">
       <div className="text-2xl font-extrabold tnum" style={{ color: color || "#0f766e" }}>
         {shown}
       </div>

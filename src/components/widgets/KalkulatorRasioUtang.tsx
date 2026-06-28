@@ -30,8 +30,8 @@ export function KalkulatorRasioUtang() {
         <Slider label="Defisit tahun depan" value={defisitTahunan} set={setDefisitTahunan} min={0} max={1200} step={50} fmt={(v) => `Rp${v} T`} />
       </div>
 
-      <div className="mt-5 rounded-xl bg-slate-100 p-1">
-        <div className="relative h-8 overflow-hidden rounded-lg bg-slate-200">
+      <div className="mt-5 rounded-xl bg-canvas p-1">
+        <div className="relative h-8 overflow-hidden rounded-lg bg-line">
           <div className={`h-full ${r.ratio > 60 ? "bg-rose-500" : "bg-emerald-500"}`} style={{ width: `${Math.min(100, (r.ratio / 60) * 100)}%` }} />
           <div className="absolute right-0 top-0 h-full w-0.5 bg-rose-600" />
         </div>
@@ -66,7 +66,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

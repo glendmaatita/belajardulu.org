@@ -53,7 +53,7 @@ export function JournalExercise({
       <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
         <Icon name="edit" /> Latihan Membuat Jurnal
       </div>
-      <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft">{prompt}</p>
+      <p className="mb-4 rounded-xl bg-canvas p-3 text-sm text-ink-soft">{prompt}</p>
 
       <div className="space-y-2">
         <div className="grid grid-cols-12 gap-2 px-1 text-xs font-semibold text-ink-faint">
@@ -66,7 +66,7 @@ export function JournalExercise({
             <select
               value={r.account}
               onChange={(e) => update(i, { account: e.target.value })}
-              className="col-span-6 rounded-lg border border-slate-300 px-2 py-2 text-sm focus:border-brand-500 focus:outline-none"
+              className="col-span-6 rounded-lg border border-line-strong px-2 py-2 text-sm focus:border-brand-500 focus:outline-none"
             >
               <option value="">Pilih akun dulu…</option>
               {accounts.map((a) => (
@@ -80,14 +80,14 @@ export function JournalExercise({
               placeholder="0"
               value={r.debit}
               onChange={(e) => update(i, { debit: e.target.value, credit: "" })}
-              className="col-span-3 rounded-lg border border-slate-300 px-2 py-2 text-right text-sm tnum focus:border-brand-500 focus:outline-none"
+              className="col-span-3 rounded-lg border border-line-strong px-2 py-2 text-right text-sm tnum focus:border-brand-500 focus:outline-none"
             />
             <input
               type="number"
               placeholder="0"
               value={r.credit}
               onChange={(e) => update(i, { credit: e.target.value, debit: "" })}
-              className="col-span-3 rounded-lg border border-slate-300 px-2 py-2 text-right text-sm tnum focus:border-brand-500 focus:outline-none"
+              className="col-span-3 rounded-lg border border-line-strong px-2 py-2 text-right text-sm tnum focus:border-brand-500 focus:outline-none"
             />
           </div>
         ))}
@@ -130,12 +130,12 @@ export function JournalExercise({
       )}
 
       {revealed && (
-        <div className="mt-3 animate-fade-up overflow-hidden rounded-xl border border-slate-200">
-          <div className="bg-slate-50 px-3 py-2 text-xs font-bold text-ink-faint">Kunci Jawaban</div>
+        <div className="mt-3 animate-fade-up overflow-hidden rounded-xl border border-line">
+          <div className="bg-canvas px-3 py-2 text-xs font-bold text-ink-faint">Kunci Jawaban</div>
           <table className="w-full text-sm">
             <tbody>
               {answer.map((l, i) => (
-                <tr key={i} className="border-t border-slate-100">
+                <tr key={i} className="border-t border-line">
                   <td className={`px-3 py-2 ${l.credit ? "pl-8 text-ink-soft" : "font-medium"}`}>{l.account}</td>
                   <td className="px-3 py-2 text-right tnum">{l.debit ? rupiah(l.debit) : ""}</td>
                   <td className="px-3 py-2 text-right tnum">{l.credit ? rupiah(l.credit) : ""}</td>

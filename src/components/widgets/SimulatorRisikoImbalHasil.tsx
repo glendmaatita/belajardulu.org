@@ -38,7 +38,7 @@ export function SimulatorRisikoImbalHasil() {
 
       <div className="mt-4 flex gap-2">
         {LIST.map((p) => (
-          <button key={p} onClick={() => setProfil(p)} className={`flex-1 rounded-lg px-3 py-1.5 text-sm font-bold transition ${profil === p ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={p} onClick={() => setProfil(p)} className={`flex-1 rounded-lg px-3 py-1.5 text-sm font-bold transition ${profil === p ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             {p}
           </button>
         ))}
@@ -53,7 +53,7 @@ export function SimulatorRisikoImbalHasil() {
           <div className="text-xs text-ink-faint">Skenario buruk (1 tahun)</div>
           <div className="text-base font-extrabold tnum text-rose-700">{fmt(r.terburuk)}</div>
         </div>
-        <div className="rounded-xl bg-slate-100 p-3 text-center">
+        <div className="rounded-xl bg-canvas p-3 text-center">
           <div className="text-xs text-ink-faint">Ekspektasi</div>
           <div className="text-base font-extrabold tnum text-ink">{fmt(r.ekspektasi)}</div>
         </div>
@@ -77,7 +77,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

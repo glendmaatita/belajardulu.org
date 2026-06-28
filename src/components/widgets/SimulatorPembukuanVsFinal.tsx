@@ -55,7 +55,7 @@ export function SimulatorPembukuanVsFinal() {
             step={100_000_000}
             value={omzet}
             onChange={(e) => setOmzet(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
         </div>
         <div>
@@ -70,7 +70,7 @@ export function SimulatorPembukuanVsFinal() {
             step={1}
             value={margin}
             onChange={(e) => setMargin(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600"
           />
           <div className="mt-1 text-right text-xs text-ink-faint">Laba: {rupiah(Math.round(r.laba))}</div>
         </div>
@@ -91,7 +91,7 @@ export function SimulatorPembukuanVsFinal() {
 
 function Opt({ active, title, value, note }: { active: boolean; title: string; value: string; note: string }) {
   return (
-    <div className={`rounded-xl border p-3 ${active ? "border-emerald-400 bg-emerald-50" : "border-slate-200 bg-white opacity-75"}`}>
+    <div className={`rounded-xl border p-3 ${active ? "border-emerald-400 bg-emerald-50" : "border-line bg-white opacity-75"}`}>
       <div className="text-xs text-ink-faint">{title}</div>
       <div className="text-lg font-extrabold tnum text-ink">{value}</div>
       <div className="text-[11px] text-ink-faint">{note}</div>

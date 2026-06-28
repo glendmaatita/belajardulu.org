@@ -69,26 +69,28 @@ export function Dashboard() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-brand-600 via-brand-700 to-indigo-800 text-white">
-        <div className="mx-auto max-w-5xl px-4 py-12">
+      <section className="relative overflow-hidden border-b border-line bg-gradient-to-br from-brand-700 via-brand-800 to-brand-900 text-white">
+        <div className="pointer-events-none absolute inset-0 bg-dotgrid text-accent-300/10" />
+        <div className="relative mx-auto max-w-5xl px-4 py-12">
           <div className="flex items-center gap-4">
             {user.picture ? (
               <img
                 src={user.picture}
                 alt={user.name ?? user.email}
                 referrerPolicy="no-referrer"
-                className="h-14 w-14 rounded-full border-2 border-white/40"
+                className="h-14 w-14 rounded-full border-2 border-accent-300/60"
               />
             ) : (
-              <span className="grid h-14 w-14 place-items-center rounded-full bg-white/20 text-xl font-bold">
+              <span className="grid h-14 w-14 place-items-center rounded-full bg-white/15 text-xl font-bold text-accent-300 ring-1 ring-white/20">
                 {(user.name ?? user.email).charAt(0).toUpperCase()}
               </span>
             )}
             <div>
-              <h1 className="text-2xl font-extrabold sm:text-3xl">
+              <div className="eyebrow text-accent-300">Materi Saya</div>
+              <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
                 Halo, {user.name ?? user.email.split("@")[0]}!
               </h1>
-              <p className="text-sm text-white/85">Ini progres belajarmu sejauh ini.</p>
+              <p className="mt-1 text-sm text-white/80">Ini progres belajarmu sejauh ini.</p>
             </div>
           </div>
 
@@ -109,19 +111,18 @@ export function Dashboard() {
             {/* Lanjutkan belajar */}
             {resume && (
               <div className="mb-10">
-                <h2 className="mb-3 flex items-center gap-2 text-lg font-bold text-ink">
-                  <Icon name="play-circle" className="text-brand-600" /> Lanjutkan belajar
-                </h2>
+                <div className="eyebrow"><span className="rule" />Teruskan</div>
+                <h2 className="mb-3 mt-2 font-display text-2xl font-semibold text-ink">Lanjutkan belajar</h2>
                 <Link
                   to={`/${resume.topic.id}/pelajaran/${resume.nextLessonId}`}
-                  className="group flex flex-col gap-4 overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-emerald-50/50 p-6 transition-all hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:items-center"
+                  className="card-ruled group flex flex-col gap-4 p-6 transition-all hover:-translate-y-0.5 hover:shadow-lift sm:flex-row sm:items-center"
                 >
-                  <span className="text-4xl">{resume.topic.icon}</span>
+                  <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-canvas text-4xl ring-1 ring-line">{resume.topic.icon}</span>
                   <div className="min-w-0 flex-1">
-                    <div className="text-lg font-bold text-ink">{resume.topic.title}</div>
+                    <div className="font-display text-lg font-semibold text-ink">{resume.topic.title}</div>
                     <div className="mt-2 flex items-center gap-3">
-                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-white">
-                        <div className="h-full bg-emerald-500 transition-all" style={{ width: `${resume.pct}%` }} />
+                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-line">
+                        <div className="h-full rounded-full bg-brand-600 transition-all" style={{ width: `${resume.pct}%` }} />
                       </div>
                       <span className="tnum shrink-0 text-xs font-semibold text-ink-faint">
                         {resume.done}/{resume.total} · {resume.pct}%
@@ -138,8 +139,8 @@ export function Dashboard() {
             {/* Sedang berjalan */}
             {inProgress.length > 0 && (
               <div className="mb-10">
-                <h2 className="mb-3 flex items-center gap-2 text-lg font-bold text-ink">
-                  <Icon name="route" className="text-brand-600" /> Sedang kamu ikuti
+                <h2 className="mb-3 flex items-center gap-2.5 font-display text-2xl font-semibold text-ink">
+                  <Icon name="route" className="text-accent-500" /> Sedang kamu ikuti
                 </h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {inProgress.map((p) => (
@@ -152,8 +153,8 @@ export function Dashboard() {
             {/* Tuntas */}
             {finished.length > 0 && (
               <div>
-                <h2 className="mb-3 flex items-center gap-2 text-lg font-bold text-ink">
-                  <Icon name="trophy" className="text-amber-500" /> Sudah tuntas
+                <h2 className="mb-3 flex items-center gap-2.5 font-display text-2xl font-semibold text-ink">
+                  <Icon name="trophy" className="text-accent-500" /> Sudah tuntas
                 </h2>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {finished.map((p) => (
@@ -171,12 +172,12 @@ export function Dashboard() {
 
 function Stat({ icon, n, label }: { icon: IconName; n: number; label: string }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-3">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/15 text-lg">
+    <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-3 ring-1 ring-white/10">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/10 text-lg text-accent-300">
         <Icon name={icon} />
       </span>
       <div>
-        <div className="tnum text-2xl font-extrabold leading-none">{n}</div>
+        <div className="tnum font-display text-2xl font-semibold leading-none">{n}</div>
         <div className="mt-1 text-[11px] uppercase tracking-wide text-white/80">{label}</div>
       </div>
     </div>
@@ -189,23 +190,23 @@ function ProgressCard({ p }: { p: TopicProgress }) {
   return (
     <Link
       to={target}
-      className="group flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:border-brand-300 hover:bg-brand-50/30"
+      className="group flex items-start gap-3 rounded-2xl border border-line bg-white p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-line-strong hover:shadow-lift"
     >
-      <span className="text-3xl">{p.topic.icon}</span>
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-canvas text-2xl ring-1 ring-line">{p.topic.icon}</span>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <span className="truncate font-bold text-ink group-hover:text-brand-700">{p.topic.title}</span>
+          <span className="truncate font-semibold text-ink group-hover:text-brand-700">{p.topic.title}</span>
           {finished && <Icon name="check-circle" className="shrink-0 text-emerald-500" />}
         </div>
         {p.category && (
           <span className="mt-0.5 inline-flex items-center gap-1.5 text-xs text-ink-faint">
-            <Icon name={p.category.icon} /> {p.category.title}
+            <Icon name={p.category.icon} className="text-accent-500" /> {p.category.title}
           </span>
         )}
         <div className="mt-2.5 flex items-center gap-3">
-          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200">
+          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-line">
             <div
-              className={`h-full transition-all ${finished ? "bg-emerald-500" : "bg-brand-500"}`}
+              className={`h-full rounded-full transition-all ${finished ? "bg-emerald-500" : "bg-brand-600"}`}
               style={{ width: `${p.pct}%` }}
             />
           </div>
@@ -220,11 +221,11 @@ function ProgressCard({ p }: { p: TopicProgress }) {
 
 function EmptyState() {
   return (
-    <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center">
-      <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-slate-100 text-2xl text-ink-faint">
+    <div className="rounded-2xl border border-dashed border-line-strong bg-white p-12 text-center">
+      <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-canvas text-2xl text-accent-500 ring-1 ring-line">
         <Icon name="bookmark" />
       </span>
-      <h2 className="mt-4 text-xl font-bold text-ink">Belum ada materi yang kamu ikuti</h2>
+      <h2 className="mt-4 font-display text-xl font-semibold text-ink">Belum ada materi yang kamu ikuti</h2>
       <p className="mx-auto mt-2 max-w-md text-sm text-ink-soft">
         Pilih topik mana pun dan selesaikan pelajaran pertamamu. Progresmu akan muncul di sini.
       </p>

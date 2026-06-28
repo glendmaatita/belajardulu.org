@@ -39,11 +39,11 @@ export function CalcExercise({
       <div className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-700">
         <Icon name="flask" /> Latihan Hitung
       </div>
-      <p className="mb-4 rounded-xl bg-slate-50 p-3 text-sm text-ink-soft" dangerouslySetInnerHTML={{ __html: prompt }} />
+      <p className="mb-4 rounded-xl bg-canvas p-3 text-sm text-ink-soft" dangerouslySetInnerHTML={{ __html: prompt }} />
 
       <div className="flex flex-wrap items-center gap-2">
-        <div className="flex items-center overflow-hidden rounded-xl border border-slate-300 focus-within:border-brand-500 focus-within:ring-2 focus-within:ring-brand-100">
-          {prefix && <span className="bg-slate-50 px-3 py-2.5 text-sm font-semibold text-ink-faint">{prefix}</span>}
+        <div className="flex items-center overflow-hidden rounded-xl border border-line-strong focus-within:border-brand-500 focus-within:ring-2 focus-within:ring-brand-100">
+          {prefix && <span className="bg-canvas px-3 py-2.5 text-sm font-semibold text-ink-faint">{prefix}</span>}
           <input
             type="text"
             inputMode="numeric"
@@ -56,7 +56,7 @@ export function CalcExercise({
             placeholder="Ketik jawabanmu…"
             className="w-44 px-3 py-2.5 text-right text-sm tnum focus:outline-none"
           />
-          {suffix && <span className="bg-slate-50 px-3 py-2.5 text-sm font-semibold text-ink-faint">{suffix}</span>}
+          {suffix && <span className="bg-canvas px-3 py-2.5 text-sm font-semibold text-ink-faint">{suffix}</span>}
         </div>
         <button onClick={check} className="btn-primary">
           <Icon name="check" /> Periksa
@@ -86,7 +86,7 @@ export function CalcExercise({
       )}
       {showSolution && (
         <div
-          className="mt-3 animate-fade-up rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm leading-relaxed text-ink-soft [&_b]:font-semibold [&_b]:text-ink [&_strong]:font-semibold [&_strong]:text-ink"
+          className="mt-3 animate-fade-up rounded-xl border border-line bg-white px-4 py-3 text-sm leading-relaxed text-ink-soft [&_b]:font-semibold [&_b]:text-ink [&_strong]:font-semibold [&_strong]:text-ink"
           dangerouslySetInnerHTML={{ __html: `<strong>Pembahasan:</strong> ${solution}` }}
         />
       )}

@@ -67,8 +67,8 @@ export function SimulatorOrderBook() {
       </p>
 
       <div className="mt-3 flex gap-2">
-        <button onClick={() => setSisi("beli")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${sisi === "beli" ? "bg-emerald-500 text-white" : "bg-slate-100 text-ink-soft"}`}>Order Beli</button>
-        <button onClick={() => setSisi("jual")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${sisi === "jual" ? "bg-rose-500 text-white" : "bg-slate-100 text-ink-soft"}`}>Order Jual</button>
+        <button onClick={() => setSisi("beli")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${sisi === "beli" ? "bg-emerald-500 text-white" : "bg-canvas text-ink-soft"}`}>Order Beli</button>
+        <button onClick={() => setSisi("jual")} className={`flex-1 rounded-lg py-1.5 text-sm font-bold ${sisi === "jual" ? "bg-rose-500 text-white" : "bg-canvas text-ink-soft"}`}>Order Jual</button>
       </div>
 
       <div className="mt-3 grid gap-4 sm:grid-cols-2">
@@ -92,7 +92,7 @@ function Slider({ label, value, set, min, max, step, fmt }: { label: string; val
         <span className="text-sm font-semibold text-ink-soft">{label}</span>
         <span className="tnum text-sm font-bold text-ink">{fmt(value)}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-brand-600" />
+      <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => set(Number(e.target.value))} className="h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600" />
     </div>
   );
 }

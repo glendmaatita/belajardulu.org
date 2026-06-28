@@ -35,7 +35,7 @@ export function SimulatorADAS() {
 
       <div className="mb-4 flex flex-wrap gap-2">
         {LIST.map((x) => (
-          <button key={x} onClick={() => setG(x)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${g === x ? "bg-brand-600 text-white" : "bg-slate-100 text-ink-soft hover:bg-slate-200"}`}>
+          <button key={x} onClick={() => setG(x)} className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${g === x ? "bg-brand-600 text-white" : "bg-canvas text-ink-soft hover:bg-line"}`}>
             {x}
           </button>
         ))}
