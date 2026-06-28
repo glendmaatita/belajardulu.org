@@ -149,6 +149,23 @@ import { RasionalismeEmpirisme, RasionalismeEmpirismeDuration } from "./Rasional
 import { KehendakBebas, KehendakBebasDuration } from "./KehendakBebas";
 import { TigaTeoriEtika, TigaTeoriEtikaDuration } from "./TigaTeoriEtika";
 import { DilemaTrolley, DilemaTrolleyDuration } from "./DilemaTrolley";
+// Matematika Dasar
+import { MatematikaVsBerhitung, MatematikaVsBerhitungDuration } from "./MatematikaVsBerhitung";
+import { PolaAlam, PolaAlamDuration } from "./PolaAlam";
+import { BahasaSemesta, BahasaSemestaDuration } from "./BahasaSemesta";
+import { LahirnyaBilangan, LahirnyaBilanganDuration } from "./LahirnyaBilangan";
+import { MenemukanLuas, MenemukanLuasDuration } from "./MenemukanLuas";
+import { PythagorasPetualangan, PythagorasPetualanganDuration } from "./PythagorasPetualangan";
+import { RasioKehidupan, RasioKehidupanDuration } from "./RasioKehidupan";
+import { LajuPerubahan, LajuPerubahanDuration } from "./LajuPerubahan";
+import { PeluangVideo, PeluangVideoDuration } from "./PeluangVideo";
+import { EmpatOperasi, EmpatOperasiDuration } from "./EmpatOperasi";
+import { LahirnyaPi, LahirnyaPiDuration } from "./LahirnyaPi";
+import { BentukGeometri, BentukGeometriDuration } from "./BentukGeometri";
+import { ProporsiVideo, ProporsiVideoDuration } from "./ProporsiVideo";
+import { PersenVideo, PersenVideoDuration } from "./PersenVideo";
+import { StatistikaVideo, StatistikaVideoDuration } from "./StatistikaVideo";
+import { BerpikirMatematis, BerpikirMatematisDuration } from "./BerpikirMatematis";
 import { GarisWaktuFilsafat, GarisWaktuFilsafatDuration } from "./GarisWaktuFilsafat";
 import { DialektikaHegel, DialektikaHegelDuration } from "./DialektikaHegel";
 import { EvolusiPemikiran, EvolusiPemikiranDuration } from "./EvolusiPemikiran";
@@ -311,6 +328,23 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   FallacyFormalInformal: { component: FallacyFormalInformal, durationInFrames: FallacyFormalInformalDuration },
   StrukturArgumen: { component: StrukturArgumen, durationInFrames: StrukturArgumenDuration },
   BiasKognitif: { component: BiasKognitif, durationInFrames: BiasKognitifDuration },
+  // Matematika Dasar
+  MatematikaVsBerhitung: { component: MatematikaVsBerhitung, durationInFrames: MatematikaVsBerhitungDuration },
+  PolaAlam: { component: PolaAlam, durationInFrames: PolaAlamDuration },
+  BahasaSemesta: { component: BahasaSemesta, durationInFrames: BahasaSemestaDuration },
+  LahirnyaBilangan: { component: LahirnyaBilangan, durationInFrames: LahirnyaBilanganDuration },
+  MenemukanLuas: { component: MenemukanLuas, durationInFrames: MenemukanLuasDuration },
+  PythagorasPetualangan: { component: PythagorasPetualangan, durationInFrames: PythagorasPetualanganDuration },
+  RasioKehidupan: { component: RasioKehidupan, durationInFrames: RasioKehidupanDuration },
+  LajuPerubahan: { component: LajuPerubahan, durationInFrames: LajuPerubahanDuration },
+  PeluangVideo: { component: PeluangVideo, durationInFrames: PeluangVideoDuration },
+  EmpatOperasi: { component: EmpatOperasi, durationInFrames: EmpatOperasiDuration },
+  LahirnyaPi: { component: LahirnyaPi, durationInFrames: LahirnyaPiDuration },
+  BentukGeometri: { component: BentukGeometri, durationInFrames: BentukGeometriDuration },
+  ProporsiVideo: { component: ProporsiVideo, durationInFrames: ProporsiVideoDuration },
+  PersenVideo: { component: PersenVideo, durationInFrames: PersenVideoDuration },
+  StatistikaVideo: { component: StatistikaVideo, durationInFrames: StatistikaVideoDuration },
+  BerpikirMatematis: { component: BerpikirMatematis, durationInFrames: BerpikirMatematisDuration },
   // Filsafat
   CabangFilsafat: { component: CabangFilsafat, durationInFrames: CabangFilsafatDuration },
   RasionalismeEmpirisme: { component: RasionalismeEmpirisme, durationInFrames: RasionalismeEmpirismeDuration },

@@ -18,7 +18,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/" className="flex items-center gap-2 font-extrabold text-ink">
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-lg text-white">🎓</span>
             <span className="text-lg">
-              Belajar<span className="text-brand-600">Yuk</span>
+              Yuk<span className="text-brand-600">Belajar</span>
             </span>
           </Link>
 
@@ -72,7 +72,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="mt-16 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-ink-faint">
-          <p className="font-semibold text-ink">BelajarYuk</p>
+          <p className="font-semibold text-ink">YukBelajar</p>
           <p className="mt-1">
             Platform belajar interaktif berbahasa Indonesia dengan banyak topik, dari akuntansi sampai perdagangan
             karbon. Setiap topik dilengkapi video animasi, simulator, grafik data, studi kasus, dan kuis.

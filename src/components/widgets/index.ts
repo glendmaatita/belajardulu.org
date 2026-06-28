@@ -126,6 +126,21 @@ import { DetektorBiasKognitif } from "./DetektorBiasKognitif";
 import { DetektorPremisTersembunyi } from "./DetektorPremisTersembunyi";
 import { PenyusunArgumen } from "./PenyusunArgumen";
 import { PenilaiKlaim } from "./PenilaiKlaim";
+// Matematika Dasar
+import { PenjelajahPola } from "./PenjelajahPola";
+import { SimulatorFibonacci } from "./SimulatorFibonacci";
+import { PenemuLuas } from "./PenemuLuas";
+import { EksplorasiPythagoras } from "./EksplorasiPythagoras";
+import { SimulatorRasio } from "./SimulatorRasio";
+import { KalkulatorPersenHidup } from "./KalkulatorPersenHidup";
+import { SimulatorPeluang } from "./SimulatorPeluang";
+import { SimulatorPecahan } from "./SimulatorPecahan";
+import { SimulatorOperasi } from "./SimulatorOperasi";
+import { PenjelajahBentuk } from "./PenjelajahBentuk";
+import { SimulatorPi } from "./SimulatorPi";
+import { SimulatorProporsi } from "./SimulatorProporsi";
+import { SimulatorKecepatan } from "./SimulatorKecepatan";
+import { SimulatorStatistik } from "./SimulatorStatistik";
 // Filsafat
 import { SimulatorDilemaEtika } from "./SimulatorDilemaEtika";
 import { PencocokAliranFilsafat } from "./PencocokAliranFilsafat";
@@ -252,6 +267,20 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   DetektorPremisTersembunyi,
   PenyusunArgumen,
   PenilaiKlaim,
+  PenjelajahPola,
+  SimulatorFibonacci,
+  PenemuLuas,
+  EksplorasiPythagoras,
+  SimulatorRasio,
+  KalkulatorPersenHidup,
+  SimulatorPeluang,
+  SimulatorPecahan,
+  SimulatorOperasi,
+  PenjelajahBentuk,
+  SimulatorPi,
+  SimulatorProporsi,
+  SimulatorKecepatan,
+  SimulatorStatistik,
   SimulatorDilemaEtika,
   PencocokAliranFilsafat,
   PetaCabangFilsafat,

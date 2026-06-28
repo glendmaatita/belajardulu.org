@@ -12,10 +12,11 @@ import { makroekonomi } from "./makroekonomi/meta";
 import { kebijakanFiskal } from "./kebijakan-fiskal/meta";
 import { logika } from "./logika/meta";
 import { filsafat } from "./filsafat/meta";
+import { matematikaDasar } from "./matematika-dasar/meta";
 
 // Register topics here. Adding a future topic = create a folder + meta.ts, then
 // import it and add to this array.
-export const topics: Topic[] = [pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, logika, filsafat, akuntansi];
+export const topics: Topic[] = [matematikaDasar, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, logika, filsafat, akuntansi];
 
 export function getTopic(id: string | undefined): Topic | undefined {
   return topics.find((t) => t.id === id);

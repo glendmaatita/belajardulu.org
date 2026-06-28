@@ -1,4 +1,6 @@
-# BelajarYuk · Platform Belajar Interaktif Multi-Topik
+# YukBelajar · Platform Belajar Interaktif Multi-Topik
+
+Situs: [YukBelajar.org](https://yukbelajar.org)
 
 Satu aplikasi web, banyak topik. Tiap topik adalah kurikulum lengkap berbahasa
 **Indonesia** dengan video animasi (Remotion), simulator interaktif, grafik data,

@@ -63,10 +63,16 @@ Setiap pelajaran (objek `Lesson`) minimal harus punya:
 
 Sebaran aset di level/topik (target yang sudah dipakai semua topik):
 - Setiap level (4 pelajaran) punya **minimal 1-2 video** dan **beberapa simulator**. Jangan ada level yang kosong video & simulator.
-- Setiap pelajaran punya **minimal 1 grafik**. Topik yang sudah matang berkisar **~2 grafik per pelajaran**.
+- Setiap pelajaran sebaiknya punya grafik yang **bermakna**, bukan sekadar memenuhi jumlah. Satu grafik yang benar-benar mengajarkan sesuatu lebih baik daripada dua grafik pengisi. Lihat "Aturan mutu grafik" di bagian 6.
 
 ### Studi kasus historis (untuk topik yang bisa dihubungkan dengan sejarah)
 Untuk topik yang erat dengan peristiwa nyata (kebijakan-fiskal, makroekonomi, pasar-keuangan, investasi, kepabeanan, corporate-finance, climate-finance), setiap pelajaran punya tambahan `case` berjudul diawali **"Sejarah: "** yang mengaitkan konsep dengan kejadian penting di masa lalu (mis. Depresi Besar 1929, krismon Indonesia 1998, COVID-19/PEN 2020, Smoot-Hawley 1930, VOC & rempah, RJR Nabisco 1988, Protokol Kyoto 1997/Persetujuan Paris 2015, tulip mania 1637). Fakta dan tahun harus akurat (pakai "sekitar" bila angka tak pasti). Saat menambah pelajaran baru di topik-topik ini, sertakan satu studi kasus historis seperti ini.
+
+### Matematika: rumus selalu di akhir (untuk topik matematika-dasar)
+Topik **matematika-dasar** memakai pedagogi penemuan. Tegaskan bahwa matematika BUKAN sekadar berhitung (berhitung hanya bagiannya), fokus pada penerapan sehari-hari dan matematika sebagai bahasa semesta. **Rumus tidak pernah ditaruh di awal.** Tiap pelajaran membuka dengan kisah/situasi nyata, lalu mengajak pengguna berpetualang (video, widget interaktif, grafik, latihan) untuk membangun intuisi, dan barulah rumus "lahir" di akhir lewat `callout` `tone:"key"` berjudul **"Rumus pun lahir"** atau **"Kesimpulan pun lahir"**. Sertakan `callout` `tone:"tip"` berjudul "Ayo berpetualang dulu" di awal eksplorasi. Pertahankan pola ini saat menambah pelajaran matematika.
+
+### Foto/gambar tokoh (untuk topik yang berkaitan dengan tokoh, mis. filsafat)
+Untuk topik dengan tokoh nyata, sertakan `image` berisi potret domain publik dari Wikimedia Commons (lihat catatan `image` di bagian 3). Untuk filsafat, tekankan juga perkembangan pemikiran dari era ke era dan pola tesis-antitesis-sintesis (dialektika Hegel).
 
 ### Patokan angka yang sudah dicapai (acuan "menyeluruh")
 Per topik 5 level x 4 pelajaran (~20 pelajaran): ~10 video unik, ~10-14 simulator unik, ~38-63 chart, ~34-58 calcExercise, ~30+ classify/match, 20 quiz. Topik baru tidak harus identik, tetapi inilah definisi "banyak video, banyak grafik, banyak simulasi, banyak latihan".
@@ -136,6 +142,12 @@ Catatan:
 ## 6. Grafik (chart)
 
 Cukup pakai block `chart` (tidak perlu komponen baru). Sistem render (`Charts.tsx`) menganimasikan saat masuk viewport. Beri `title`, `unit`, `source` (tandai "ilustrasi" bila bukan data resmi), `note` (1 kalimat insight), dan `data` realistis. Untuk perbandingan kategori pakai `bar`/`donut`; untuk tren waktu pakai `line`/`area`.
+
+**Aturan mutu grafik (WAJIB, jangan bikin grafik pengisi):** Setiap grafik harus menyampaikan informasi yang BENAR, BERNILAI, dan NYAMBUNG dengan materi pelajaran itu. Sebelum menambah grafik, tanyakan: "Apakah ini mengajarkan sesuatu yang benar dan tidak sepele?" Jika tidak, jangan dibuat.
+- DILARANG angka karangan yang seolah-olah data survei (mis. "36% benda berbentuk lingkaran") yang tidak punya sumber dan tidak mengajarkan apa-apa. "ilustrasi edukatif" hanya boleh untuk konsep yang memang bermakna (mis. linear vs eksponensial, frekuensi dadu mendekati 0,5, rasio Fibonacci menuju 1,618).
+- DILARANG grafik tautologis yang hanya mengulang definisi (mis. batang "jumlah sisi": segitiga 3, segi empat 4, segi enam 6, sebab namanya sudah menyebut jumlah sisinya). Itu nol informasi.
+- Utamakan grafik yang memvisualkan angka NYATA dari eksplorasi pelajaran (hasil hitung petak luas, konvergensi rasio, pertumbuhan majemuk, sebaran data nyata) atau fakta dunia nyata yang akurat dan bersumber.
+- Lebih baik 1 grafik bermakna daripada 2 grafik pengisi. Mutu mengalahkan jumlah.
 
 ---
 
