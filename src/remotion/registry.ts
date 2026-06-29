@@ -197,6 +197,22 @@ import { MaterialismeIdealisme, MaterialismeIdealismeDuration } from "./Material
 import { EksistensialismeVideo, EksistensialismeVideoDuration } from "./EksistensialismeVideo";
 import { FilsafatTimurVideo, FilsafatTimurVideoDuration } from "./FilsafatTimurVideo";
 import { KeadilanVideo, KeadilanVideoDuration } from "./KeadilanVideo";
+// Cryptocurrency
+import { LahirnyaBitcoinVideo, LahirnyaBitcoinVideoDuration } from "./LahirnyaBitcoinVideo";
+import { RantaiBlokVideo, RantaiBlokVideoDuration } from "./RantaiBlokVideo";
+import { KunciKriptoVideo, KunciKriptoVideoDuration } from "./KunciKriptoVideo";
+import { HalvingVideo, HalvingVideoDuration } from "./HalvingVideo";
+import { EVMSmartContractVideo, EVMSmartContractVideoDuration } from "./EVMSmartContractVideo";
+import { KonsensusVideo, KonsensusVideoDuration } from "./KonsensusVideo";
+import { DaurHidupKontrakVideo, DaurHidupKontrakVideoDuration } from "./DaurHidupKontrakVideo";
+import { AMMVideo, AMMVideoDuration } from "./AMMVideo";
+import { StablecoinPegVideo, StablecoinPegVideoDuration } from "./StablecoinPegVideo";
+import { TokenomicsVideo, TokenomicsVideoDuration } from "./TokenomicsVideo";
+import { NFTKepemilikanVideo, NFTKepemilikanVideoDuration } from "./NFTKepemilikanVideo";
+import { BridgeVideo, BridgeVideoDuration } from "./BridgeVideo";
+import { KeamananDompetVideo, KeamananDompetVideoDuration } from "./KeamananDompetVideo";
+import { DCAKriptoVideo, DCAKriptoVideoDuration } from "./DCAKriptoVideo";
+
 import type { FC } from "react";
 import { VIDEO } from "./theme";
 
@@ -206,6 +222,21 @@ interface CompEntry {
 }
 
 export const videoRegistry: Record<VideoComp, CompEntry> = {
+  // Cryptocurrency
+  LahirnyaBitcoinVideo: { component: LahirnyaBitcoinVideo, durationInFrames: LahirnyaBitcoinVideoDuration },
+  RantaiBlokVideo: { component: RantaiBlokVideo, durationInFrames: RantaiBlokVideoDuration },
+  KunciKriptoVideo: { component: KunciKriptoVideo, durationInFrames: KunciKriptoVideoDuration },
+  HalvingVideo: { component: HalvingVideo, durationInFrames: HalvingVideoDuration },
+  EVMSmartContractVideo: { component: EVMSmartContractVideo, durationInFrames: EVMSmartContractVideoDuration },
+  KonsensusVideo: { component: KonsensusVideo, durationInFrames: KonsensusVideoDuration },
+  DaurHidupKontrakVideo: { component: DaurHidupKontrakVideo, durationInFrames: DaurHidupKontrakVideoDuration },
+  AMMVideo: { component: AMMVideo, durationInFrames: AMMVideoDuration },
+  StablecoinPegVideo: { component: StablecoinPegVideo, durationInFrames: StablecoinPegVideoDuration },
+  TokenomicsVideo: { component: TokenomicsVideo, durationInFrames: TokenomicsVideoDuration },
+  NFTKepemilikanVideo: { component: NFTKepemilikanVideo, durationInFrames: NFTKepemilikanVideoDuration },
+  BridgeVideo: { component: BridgeVideo, durationInFrames: BridgeVideoDuration },
+  KeamananDompetVideo: { component: KeamananDompetVideo, durationInFrames: KeamananDompetVideoDuration },
+  DCAKriptoVideo: { component: DCAKriptoVideo, durationInFrames: DCAKriptoVideoDuration },
   // Carbon
   EfekRumahKaca: { component: EfekRumahKaca, durationInFrames: EfekRumahKacaDuration },
   PasarKarbon: { component: PasarKarbon, durationInFrames: PasarKarbonDuration },

@@ -174,6 +174,21 @@ import { CocokkanFilsufEra } from "./CocokkanFilsufEra";
 import { SimulatorTeoriKebenaran } from "./SimulatorTeoriKebenaran";
 import { TebakFilsuf } from "./TebakFilsuf";
 import { KuisAliranEtika } from "./KuisAliranEtika";
+// Cryptocurrency
+import { SimulatorDoubleSpending } from "./SimulatorDoubleSpending";
+import { SimulatorBlokHash } from "./SimulatorBlokHash";
+import { SimulatorHashKripto } from "./SimulatorHashKripto";
+import { SimulatorHalvingBitcoin } from "./SimulatorHalvingBitcoin";
+import { KalkulatorGasFee } from "./KalkulatorGasFee";
+import { SimulatorPoWvsPoS } from "./SimulatorPoWvsPoS";
+import { SimulatorEscrowKontrak } from "./SimulatorEscrowKontrak";
+import { SimulatorAMM } from "./SimulatorAMM";
+import { SimulatorCollateralStablecoin } from "./SimulatorCollateralStablecoin";
+import { SimulatorTokenomics } from "./SimulatorTokenomics";
+import { SimulatorRoyaltiNFT } from "./SimulatorRoyaltiNFT";
+import { SimulatorBridge } from "./SimulatorBridge";
+import { SimulatorMultisig } from "./SimulatorMultisig";
+import { SimulatorDCAKripto } from "./SimulatorDCAKripto";
 
 export const widgetRegistry: Record<WidgetId, FC> = {
   KalkulatorJejakKarbon,
@@ -334,4 +349,18 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorTeoriKebenaran,
   TebakFilsuf,
   KuisAliranEtika,
+  SimulatorDoubleSpending,
+  SimulatorBlokHash,
+  SimulatorHashKripto,
+  SimulatorHalvingBitcoin,
+  KalkulatorGasFee,
+  SimulatorPoWvsPoS,
+  SimulatorEscrowKontrak,
+  SimulatorAMM,
+  SimulatorCollateralStablecoin,
+  SimulatorTokenomics,
+  SimulatorRoyaltiNFT,
+  SimulatorBridge,
+  SimulatorMultisig,
+  SimulatorDCAKripto,
 };

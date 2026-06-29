@@ -1,0 +1,625 @@
+import type { Lesson } from "../../../types";
+
+export const level11: Lesson[] = [
+  // ============================================================
+  {
+    id: "nft-metadata-ipfs",
+    levelId: "nftweb3",
+    order: 1,
+    title: "NFT, Metadata & IPFS",
+    summary:
+      "NFT adalah token unik yang membuktikan kepemilikan satu aset digital. Pahami metadata, content addressing (CID), dan penyimpanan IPFS.",
+    durationMin: 14,
+    tags: ["nft", "web3", "ipfs", "metadata"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>NFT</strong> (non-fungible token) adalah token <strong>unik</strong> yang tidak bisa ditukar satu lawan satu dengan token lain yang identik. Bila satu Bitcoin selalu sama nilainya dengan Bitcoin lain (fungible), tiap NFT punya nomor identitas sendiri yang menunjuk ke satu aset digital tertentu. Standar paling umum di Ethereum adalah <strong>ERC-721</strong>.",
+      },
+      {
+        type: "paragraph",
+        html: "NFT sendiri biasanya tidak menyimpan gambar di dalam blockchain (terlalu mahal). Yang dicatat on-chain adalah nomor token dan sebuah tautan ke <strong>metadata</strong>, yaitu berkas berisi nama, deskripsi, dan atribut karya. Metadata serta gambarnya sering disimpan <strong>off-chain</strong> di <strong>IPFS</strong>, jaringan penyimpanan terdesentralisasi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Content addressing & CID",
+        html: "IPFS mengalamati berkas bukan dari lokasinya, melainkan dari <strong>isinya</strong>. Tiap berkas menghasilkan sidik jari unik bernama <strong>CID</strong> (content identifier). Jika satu byte saja berubah, CID-nya ikut berubah. Inilah yang membuat tautan NFT sulit dipalsukan: CID menjamin gambar yang ditunjuk persis seperti saat NFT dibuat.",
+      },
+      {
+        type: "video",
+        comp: "NFTKepemilikanVideo",
+        title: "NFT & Kepemilikan Digital",
+        caption: "Bagaimana satu NFT unik menunjuk ke metadata di IPFS, dan bagaimana kepemilikan berpindah antar dompet.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Banyak NFT memberi <strong>royalti</strong> ke kreator setiap kali karya dijual ulang. Lihat berapa yang diterima kreator saat sebuah karya berpindah tangan beberapa kali.",
+      },
+      { type: "widget", widget: "SimulatorRoyaltiNFT" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Di Mana Bagian NFT Disimpan",
+        unit: "lokasi penyimpanan",
+        source: "ilustrasi edukatif arsitektur NFT yang umum",
+        note: "Yang on-chain hanya nomor token dan tautan; berkas berat seperti gambar disimpan off-chain di IPFS.",
+        data: [
+          { label: "Nomor token (on-chain)", value: 1, color: "#627eea" },
+          { label: "Tautan metadata (on-chain)", value: 1, color: "#8b5cf6" },
+          { label: "Metadata JSON (IPFS)", value: 3, color: "#26a17b" },
+          { label: "File gambar (IPFS)", value: 8, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: CryptoKitties 2017 memopulerkan NFT",
+        html: "Pada akhir <strong>2017</strong>, sebuah permainan bernama <strong>CryptoKitties</strong> memungkinkan orang membeli, mengembangbiakkan, dan menjual kucing digital, masing-masing sebuah NFT unik. Permainan ini sangat populer sampai sempat <strong>memacetkan jaringan Ethereum</strong>: transaksi menumpuk dan biaya gas melonjak. CryptoKitties jadi salah satu contoh pertama yang memperkenalkan NFT ke publik luas dan menunjukkan bahwa aset digital unik punya pasar nyata.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah NFT terjual seharga 10 ETH. Kreator menetapkan royalti 5% pada tiap penjualan ulang. Berapa ETH yang diterima kreator dari penjualan ini?",
+        answer: 0.5,
+        tolerance: 0,
+        suffix: "ETH",
+        solution:
+          "5% x 10 ETH = 0,05 x 10 = <strong>0,5 ETH</strong>. Sisanya, 9,5 ETH, diterima penjual. Royalti otomatis ini diatur oleh smart contract NFT.",
+        hint: "Kalikan harga jual dengan persentase royalti.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap hal sebagai disimpan on-chain atau off-chain (IPFS).",
+        buckets: ["On-chain", "Off-chain (IPFS)"],
+        items: [
+          { text: "Nomor identitas token (token ID)", bucket: "On-chain" },
+          { text: "Catatan siapa pemilik token saat ini", bucket: "On-chain" },
+          { text: "Berkas gambar resolusi tinggi", bucket: "Off-chain (IPFS)" },
+          { text: "Berkas metadata JSON berisi atribut karya", bucket: "Off-chain (IPFS)" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "NFT adalah token unik (non-fungible), umumnya memakai standar ERC-721 di Ethereum.",
+          "Yang dicatat on-chain biasanya hanya nomor token dan tautan ke metadata.",
+          "Metadata dan gambar sering disimpan off-chain di IPFS, penyimpanan terdesentralisasi.",
+          "CID adalah sidik jari isi berkas; jika isi berubah, CID berubah, sehingga sulit dipalsukan.",
+          "CryptoKitties (2017) memopulerkan NFT dan sempat memacetkan jaringan Ethereum.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa arti NFT bersifat non-fungible?",
+            options: [
+              "Bisa ditukar satu lawan satu dengan token identik",
+              "Setiap token unik dan tidak bisa saling menggantikan",
+              "Selalu berupa mata uang",
+              "Tidak punya pemilik",
+            ],
+            answer: 1,
+            explain: "Non-fungible berarti tiap token punya identitas sendiri dan tidak dapat ditukar secara setara.",
+          },
+          {
+            q: "Apa yang biasanya dicatat di dalam blockchain untuk sebuah NFT?",
+            options: [
+              "Seluruh berkas gambar resolusi tinggi",
+              "Nomor token dan tautan ke metadata",
+              "Nomor rekening bank pemilik",
+              "Tidak ada yang dicatat",
+            ],
+            answer: 1,
+            explain: "Menyimpan gambar penuh on-chain terlalu mahal; yang dicatat adalah nomor token dan tautan metadata.",
+          },
+          {
+            q: "Apa fungsi CID di IPFS?",
+            options: [
+              "Menyimpan kata sandi pengguna",
+              "Sidik jari unik dari isi berkas untuk mengalamatinya",
+              "Nama pemilik NFT",
+              "Biaya transaksi",
+            ],
+            answer: 1,
+            explain: "CID adalah content identifier; ia berasal dari isi berkas, sehingga isi berubah berarti CID berubah.",
+          },
+          {
+            q: "Mengapa metadata NFT sering disimpan di IPFS, bukan on-chain?",
+            options: [
+              "Agar gratis selamanya tanpa jaringan",
+              "Karena menyimpan berkas berat on-chain sangat mahal",
+              "Karena IPFS milik satu perusahaan",
+              "Agar NFT tidak bisa dijual",
+            ],
+            answer: 1,
+            explain: "Berkas berat seperti gambar mahal disimpan on-chain, jadi diletakkan off-chain di IPFS.",
+          },
+          {
+            q: "Apa dampak populernya CryptoKitties pada 2017?",
+            options: [
+              "Menutup jaringan Bitcoin",
+              "Memacetkan jaringan Ethereum karena lonjakan transaksi",
+              "Menghapus semua NFT",
+              "Membuat Ethereum gratis",
+            ],
+            answer: 1,
+            explain: "Lonjakan permainan ini membuat transaksi Ethereum menumpuk dan biaya gas melonjak.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "wallet-login-did",
+    levelId: "nftweb3",
+    order: 2,
+    title: "Wallet Login & Decentralized Identity",
+    summary:
+      "Di Web3, kamu masuk ke aplikasi dengan menandatangani pesan memakai dompet, tanpa kata sandi. Kenali decentralized identity yang kamu kendalikan sendiri.",
+    durationMin: 13,
+    tags: ["web3", "wallet", "identity", "did"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di web biasa (Web2), kamu membuat akun dengan email dan kata sandi, lalu data identitasmu disimpan di server perusahaan. Di <strong>Web3</strong>, kamu bisa masuk ke aplikasi cukup dengan <strong>dompet kripto</strong>: aplikasi meminta dompet menandatangani sebuah pesan, dan tanda tangan itu membuktikan kamu pemilik address tersebut. Tidak ada kata sandi yang dikirim atau disimpan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Login tanpa kata sandi",
+        html: "Dompet menyimpan <strong>kunci privat</strong>. Saat login, aplikasi mengirim pesan acak; dompet <strong>menandatanganinya</strong> dengan kunci privat tanpa pernah membocorkan kunci itu. Aplikasi memverifikasi tanda tangan terhadap address publikmu. Bukti kepemilikan tercapai tanpa server menyimpan rahasia apa pun.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Decentralized identity (DID)",
+        html: "<strong>Decentralized identity</strong> adalah identitas yang <strong>dikendalikan oleh pengguna</strong>, bukan oleh satu perusahaan. Kamu membawa identitas yang sama lintas aplikasi lewat dompetmu, dan kamu memutuskan data apa yang dibagikan. Tidak ada satu platform yang bisa menghapus atau mengunci identitasmu secara sepihak.",
+      },
+      {
+        type: "video",
+        comp: "NFTKepemilikanVideo",
+        title: "Kepemilikan yang Berpindah",
+        caption: "Dompet sebagai kunci identitas: aset dan kepemilikan menempel pada address, bukan pada akun perusahaan.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Login Web2 vs Login Web3",
+        unit: "perbandingan sifat",
+        source: "ilustrasi edukatif perbandingan konsep",
+        note: "Login Web3 memindahkan kendali rahasia dari server perusahaan ke dompet milik pengguna.",
+        data: [
+          { label: "Web2: rahasia di server", value: 1, color: "#94a3b8" },
+          { label: "Web2: butuh kata sandi", value: 1, color: "#94a3b8" },
+          { label: "Web3: rahasia di dompet", value: 1, color: "#627eea" },
+          { label: "Web3: tanda tangan pesan", value: 1, color: "#26a17b" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Kendali penuh berarti tanggung jawab penuh",
+        html: "Karena identitas dan aset menempel pada dompet, kehilangan <strong>kunci privat</strong> atau <strong>seed phrase</strong> berarti kehilangan akses selamanya. Tidak ada tombol 'lupa kata sandi'. Jaga seed phrase seperti menjaga seluruh identitas digitalmu.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Sign-In with Ethereum (EIP-4361, 2021)",
+        html: "Pada <strong>2021</strong>, komunitas Ethereum membakukan cara login pakai dompet lewat standar <strong>Sign-In with Ethereum (EIP-4361)</strong>. Sebelumnya tiap aplikasi membuat cara tanda tangan sendiri yang membingungkan. Standar ini menyeragamkan format pesan yang ditandatangani, sehingga pengguna tahu persis apa yang mereka setujui, dan pengembang punya pola login yang aman dan konsisten tanpa menyimpan kata sandi.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap ciri sebagai login Web2 (akun perusahaan) atau login Web3 (dompet).",
+        buckets: ["Login Web2", "Login Web3"],
+        items: [
+          { text: "Masuk dengan email dan kata sandi", bucket: "Login Web2" },
+          { text: "Rahasia disimpan di server perusahaan", bucket: "Login Web2" },
+          { text: "Masuk dengan menandatangani pesan memakai dompet", bucket: "Login Web3" },
+          { text: "Identitas dikendalikan pengguna lintas aplikasi", bucket: "Login Web3" },
+          { text: "Perusahaan bisa mereset atau mengunci akunmu", bucket: "Login Web2" },
+          { text: "Tidak ada kata sandi yang dikirim atau disimpan", bucket: "Login Web3" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah aplikasi Web2 menyimpan 12.000 kata sandi pengguna di servernya. Jika beralih ke login Web3, berapa kata sandi pengguna yang perlu disimpan aplikasi itu?",
+        answer: 0,
+        tolerance: 0,
+        suffix: "kata sandi",
+        solution:
+          "Pada login Web3 tidak ada kata sandi yang dikirim atau disimpan; bukti kepemilikan datang dari tanda tangan dompet. Jadi jawabannya <strong>0</strong>. Ini mengurangi risiko kebocoran basis data kata sandi.",
+        hint: "Pikirkan apa yang sebenarnya disimpan server saat login pakai tanda tangan dompet.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Login Web3 memakai tanda tangan dompet, bukan kata sandi yang dikirim ke server.",
+          "Kunci privat menandatangani pesan tanpa pernah bocor; aplikasi cukup memverifikasi tanda tangan.",
+          "Decentralized identity (DID) dikendalikan pengguna dan dibawa lintas aplikasi.",
+          "Tidak menyimpan kata sandi mengurangi risiko kebocoran basis data.",
+          "Kendali penuh berarti tanggung jawab penuh menjaga kunci privat dan seed phrase.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bagaimana cara login khas Web3?",
+            options: [
+              "Mengirim kata sandi ke server",
+              "Menandatangani pesan dengan dompet untuk membuktikan kepemilikan address",
+              "Mengisi formulir kartu kredit",
+              "Memindai sidik jari ke perusahaan",
+            ],
+            answer: 1,
+            explain: "Dompet menandatangani pesan dengan kunci privat; aplikasi memverifikasi tanda tangan itu.",
+          },
+          {
+            q: "Apa yang TIDAK terjadi saat menandatangani pesan login Web3?",
+            options: [
+              "Pesan ditandatangani kunci privat",
+              "Kunci privat dikirim ke aplikasi",
+              "Aplikasi memverifikasi tanda tangan",
+              "Address publik dipakai untuk verifikasi",
+            ],
+            answer: 1,
+            explain: "Kunci privat tidak pernah dikirim atau dibocorkan; hanya tanda tangannya yang dibagikan.",
+          },
+          {
+            q: "Apa inti dari decentralized identity?",
+            options: [
+              "Identitas dimiliki satu perusahaan besar",
+              "Identitas dikendalikan oleh pengguna sendiri",
+              "Identitas hanya berlaku di satu aplikasi",
+              "Identitas tanpa pemilik",
+            ],
+            answer: 1,
+            explain: "DID menempatkan kendali identitas di tangan pengguna, bukan satu platform terpusat.",
+          },
+          {
+            q: "Apa keuntungan keamanan login tanpa kata sandi?",
+            options: [
+              "Server tetap menyimpan banyak rahasia",
+              "Tidak ada basis data kata sandi yang bisa bocor",
+              "Pengguna tidak perlu dompet",
+              "Transaksi jadi gratis",
+            ],
+            answer: 1,
+            explain: "Tanpa kata sandi tersimpan, tidak ada basis data kata sandi yang menjadi sasaran kebocoran.",
+          },
+          {
+            q: "Apa konsekuensi kehilangan kunci privat atau seed phrase?",
+            options: [
+              "Bisa direset lewat email",
+              "Akses identitas dan aset bisa hilang selamanya",
+              "Perusahaan akan memulihkan",
+              "Tidak ada dampak apa pun",
+            ],
+            answer: 1,
+            explain: "Tidak ada otoritas pusat yang memulihkan; kehilangan kunci berarti kehilangan akses permanen.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "dao",
+    levelId: "nftweb3",
+    order: 3,
+    title: "DAO",
+    summary:
+      "Organisasi yang diatur oleh smart contract dan suara pemegang token, bukan oleh direksi. Pahami treasury bersama, voting, kuorum, dan pelajaran dari The DAO 2016.",
+    durationMin: 14,
+    tags: ["dao", "web3", "voting", "tata-kelola"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>DAO</strong> (decentralized autonomous organization) adalah organisasi yang aturannya tertulis dalam <strong>smart contract</strong> dan keputusannya diambil lewat <strong>voting</strong> para pemegang token, bukan oleh segelintir direksi. Tidak ada kantor pusat atau bos tunggal; kode dan suara komunitaslah yang menjalankan organisasi.",
+      },
+      {
+        type: "paragraph",
+        html: "Banyak DAO mengelola <strong>treasury bersama</strong>, yaitu kas berupa aset kripto yang dikuasai bersama. Untuk membelanjakan kas atau mengubah aturan, anggota mengajukan <strong>proposal</strong>, lalu memberi suara. Bobot suara biasanya sebanding dengan jumlah token tata kelola yang dimiliki.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kuorum dan mayoritas",
+        html: "Agar sebuah proposal sah, sering ada dua syarat: <strong>kuorum</strong> (jumlah suara minimal yang harus ikut, supaya keputusan tidak diambil segelintir orang) dan <strong>mayoritas</strong> (lebih banyak suara setuju daripada menolak). Bila kuorum tak tercapai, proposal gugur meski semua yang ikut setuju.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Banyak treasury DAO dilindungi dompet <strong>multisig</strong>, yang butuh beberapa tanda tangan untuk mencairkan dana. Coba lihat bagaimana ambang tanda tangan memengaruhi keamanan kas bersama.",
+      },
+      { type: "widget", widget: "SimulatorMultisig" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Bobot Suara berdasarkan Token Dimiliki (ilustrasi)",
+        unit: "jumlah token tata kelola",
+        source: "ilustrasi edukatif model satu token satu suara",
+        note: "Pada model satu token satu suara, pemegang token lebih banyak punya pengaruh lebih besar atas keputusan.",
+        data: [
+          { label: "Anggota A", value: 120, color: "#627eea" },
+          { label: "Anggota B", value: 80, color: "#8b5cf6" },
+          { label: "Anggota C", value: 50, color: "#26a17b" },
+          { label: "Anggota D", value: 30, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: The DAO 2016 dan peretasannya",
+        html: "Pada <strong>2016</strong>, sebuah proyek bernama <strong>The DAO</strong> menjadi eksperimen tata kelola terdesentralisasi pertama yang besar di Ethereum, mengumpulkan dana setara puluhan juta dolar AS dari ribuan orang. Namun ada celah pada smart contract-nya yang dieksploitasi penyerang untuk menguras sebagian besar dana. Untuk memulihkan dana, komunitas Ethereum melakukan <strong>hard fork</strong> yang akhirnya memecah jaringan menjadi Ethereum dan Ethereum Classic. Pelajarannya: kode yang mengatur uang harus diaudit ketat, sebab 'kode adalah hukum' juga berarti bug bisa berakibat fatal.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah DAO punya 1.000.000 token tata kelola dan menetapkan kuorum 20%. Berapa token minimal yang harus ikut memberi suara agar sebuah proposal dianggap sah?",
+        answer: 200000,
+        tolerance: 0,
+        suffix: "token",
+        solution:
+          "20% x 1.000.000 = 0,2 x 1.000.000 = <strong>200.000 token</strong>. Jika token yang ikut voting kurang dari ini, proposal gugur karena kuorum tak tercapai.",
+        hint: "Kalikan total token dengan persentase kuorum.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dalam pemungutan suara DAO, ada 300.000 token memilih setuju dan 180.000 token memilih menolak. Berapa persen suara yang setuju (dibulatkan ke bilangan bulat)?",
+        answer: 62.5,
+        tolerance: 0.5,
+        suffix: "%",
+        solution:
+          "Total suara = 300.000 + 180.000 = 480.000. Persen setuju = 300.000 / 480.000 = 0,625 = <strong>62,5%</strong>. Karena lebih dari 50%, sisi setuju menang.",
+        hint: "Bagi suara setuju dengan total suara, lalu kalikan 100%.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan istilah tata kelola DAO dengan artinya.",
+        pairs: [
+          { left: "Smart contract", right: "Kode yang menjalankan aturan organisasi secara otomatis" },
+          { left: "Treasury", right: "Kas aset kripto yang dikuasai bersama" },
+          { left: "Proposal", right: "Usulan keputusan yang akan dipungut suaranya" },
+          { left: "Kuorum", right: "Jumlah suara minimal agar keputusan sah" },
+          { left: "Token tata kelola", right: "Token yang memberi hak suara dalam DAO" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "DAO diatur oleh smart contract dan voting pemegang token, bukan oleh direksi tunggal.",
+          "Treasury adalah kas bersama; perubahan diputuskan lewat proposal dan pemungutan suara.",
+          "Kuorum menjamin keputusan tidak diambil segelintir orang; mayoritas menentukan hasil.",
+          "Bobot suara biasanya sebanding dengan jumlah token tata kelola yang dimiliki.",
+          "The DAO 2016 diretas karena celah kode dan memicu hard fork; audit kode sangat penting.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa yang menjalankan aturan sebuah DAO?",
+            options: [
+              "Dewan direksi terpusat",
+              "Smart contract dan voting pemegang token",
+              "Satu bank penjamin",
+              "Pemerintah penerbit",
+            ],
+            answer: 1,
+            explain: "DAO dijalankan oleh kode (smart contract) dan keputusan suara komunitas, tanpa direksi tunggal.",
+          },
+          {
+            q: "Apa itu treasury dalam DAO?",
+            options: [
+              "Daftar anggota",
+              "Kas aset kripto yang dikuasai bersama",
+              "Nama sebuah bursa",
+              "Biaya transaksi",
+            ],
+            answer: 1,
+            explain: "Treasury adalah kas bersama yang dikelola lewat proposal dan voting.",
+          },
+          {
+            q: "Apa fungsi kuorum dalam pemungutan suara?",
+            options: [
+              "Menaikkan harga token",
+              "Menetapkan jumlah suara minimal agar keputusan sah",
+              "Menghapus proposal otomatis",
+              "Membayar gas fee",
+            ],
+            answer: 1,
+            explain: "Kuorum memastikan cukup banyak suara ikut, sehingga keputusan tidak diambil segelintir orang.",
+          },
+          {
+            q: "Pada model satu token satu suara, apa yang menentukan bobot suara?",
+            options: [
+              "Urutan mendaftar",
+              "Jumlah token tata kelola yang dimiliki",
+              "Lama bergabung",
+              "Lokasi geografis",
+            ],
+            answer: 1,
+            explain: "Semakin banyak token tata kelola, semakin besar bobot suara anggota tersebut.",
+          },
+          {
+            q: "Apa pelajaran utama dari peretasan The DAO 2016?",
+            options: [
+              "DAO selalu aman dari serangan",
+              "Kode yang mengatur uang harus diaudit ketat karena bug bisa fatal",
+              "Voting tidak diperlukan",
+              "Treasury sebaiknya kosong",
+            ],
+            answer: 1,
+            explain: "Celah pada smart contract The DAO dieksploitasi dan memicu hard fork; audit kode sangat penting.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "web3-arsitektur",
+    levelId: "nftweb3",
+    order: 4,
+    title: "Arsitektur Web3",
+    summary:
+      "Menyusun semua kepingan: dompet, smart contract on-chain, penyimpanan terdesentralisasi, dan front-end. Plus beda Web1, Web2, dan Web3.",
+    durationMin: 14,
+    tags: ["web3", "arsitektur", "smart-contract", "ipfs"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Aplikasi Web3 (sering disebut <strong>dApp</strong>, decentralized app) menyusun beberapa lapisan. <strong>Front-end</strong> adalah tampilan yang dilihat pengguna. <strong>Dompet</strong> menjadi identitas sekaligus penanda tangan transaksi. <strong>Smart contract on-chain</strong> menjalankan logika dan menyimpan kepemilikan. <strong>Penyimpanan terdesentralisasi</strong> seperti IPFS menyimpan berkas berat seperti gambar dan metadata.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tumpukan Web3 secara ringkas",
+        html: "<strong>Front-end</strong> (tampilan) berbicara dengan <strong>dompet</strong> (identitas & tanda tangan), yang mengirim transaksi ke <strong>smart contract on-chain</strong> (logika & kepemilikan). Berkas besar diletakkan di <strong>penyimpanan terdesentralisasi</strong> (IPFS), sementara blockchain cukup menyimpan tautannya.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Web1, Web2, Web3: baca, baca-tulis, baca-tulis-miliki",
+        html: "<strong>Web1</strong> adalah web baca saja: halaman statis yang hanya bisa dilihat. <strong>Web2</strong> adalah web baca-tulis: pengguna ikut membuat konten, tapi data dikuasai platform besar. <strong>Web3</strong> adalah web baca-tulis-miliki: pengguna juga <strong>memiliki</strong> aset dan identitasnya lewat blockchain dan dompet.",
+      },
+      {
+        type: "video",
+        comp: "NFTKepemilikanVideo",
+        title: "Kepemilikan di Web3",
+        caption: "Bagaimana kepemilikan aset menempel pada dompet dan dicatat smart contract, bukan pada akun platform.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tiga Era Web dan Hak Penggunanya",
+        unit: "tingkat hak pengguna (ilustrasi)",
+        source: "ilustrasi edukatif perkembangan web",
+        note: "Tiap era menambah satu kemampuan: dari sekadar membaca, ke menulis, lalu ke memiliki.",
+        data: [
+          { label: "Web1: baca", value: 1, color: "#94a3b8" },
+          { label: "Web2: baca-tulis", value: 2, color: "#627eea" },
+          { label: "Web3: baca-tulis-miliki", value: 3, color: "#26a17b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Marketplace NFT dari sisi arsitektur",
+        html: "Sebuah marketplace NFT menampilkan katalog karya di <strong>front-end</strong>. Saat pengguna menekan beli, <strong>dompet</strong> muncul meminta tanda tangan dan persetujuan biaya. Transaksi dikirim ke <strong>smart contract on-chain</strong> yang memindahkan kepemilikan NFT ke address pembeli dan membagi pembayaran (termasuk royalti kreator). Gambar karya sendiri tidak ada di blockchain; ia diambil dari <strong>IPFS</strong> lewat tautan yang dicatat NFT. Empat lapisan bekerja bersama dalam satu pembelian.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Istilah Web3 dipopulerkan sekitar 2014",
+        html: "Istilah <strong>Web3</strong> dipopulerkan sekitar <strong>2014</strong> oleh Gavin Wood, salah satu pendiri Ethereum, untuk menggambarkan web generasi baru yang berbasis blockchain dan kepemilikan pengguna. Gagasannya menanggapi keresahan bahwa di Web2 segelintir platform besar menguasai data dan identitas pengguna. Web3 menawarkan alternatif: pengguna menyimpan aset dan identitas di dompet yang mereka kendalikan sendiri.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan tiap lapisan arsitektur Web3 dengan fungsinya.",
+        pairs: [
+          { left: "Front-end", right: "Tampilan yang dilihat dan dipakai pengguna" },
+          { left: "Dompet", right: "Identitas pengguna dan penanda tangan transaksi" },
+          { left: "Smart contract on-chain", right: "Menjalankan logika dan menyimpan kepemilikan" },
+          { left: "Penyimpanan terdesentralisasi", right: "Menyimpan berkas berat seperti gambar dan metadata" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap ciri ke era web yang tepat.",
+        buckets: ["Web1 (baca)", "Web2 (baca-tulis)", "Web3 (baca-tulis-miliki)"],
+        items: [
+          { text: "Halaman statis yang hanya bisa dibaca", bucket: "Web1 (baca)" },
+          { text: "Pengguna membuat konten, tapi data dikuasai platform", bucket: "Web2 (baca-tulis)" },
+          { text: "Pengguna memiliki aset dan identitas lewat dompet", bucket: "Web3 (baca-tulis-miliki)" },
+          { text: "Kepemilikan dicatat di blockchain", bucket: "Web3 (baca-tulis-miliki)" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah dApp menyimpan berkas gambar 8 MB di IPFS dan hanya mencatat tautan CID sepanjang 0,05 KB di blockchain. Berapa KB berkas yang TIDAK disimpan on-chain? (1 MB = 1.000 KB)",
+        answer: 8000,
+        tolerance: 0,
+        suffix: "KB",
+        solution:
+          "Gambar 8 MB = 8 x 1.000 = 8.000 KB disimpan di IPFS, bukan on-chain. Yang on-chain hanya tautan 0,05 KB. Jadi <strong>8.000 KB</strong> berkas tidak disimpan di blockchain. Inilah alasan berkas berat diletakkan di penyimpanan terdesentralisasi.",
+        hint: "Ubah 8 MB ke KB; itulah bagian yang diletakkan di IPFS, bukan di blockchain.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Aplikasi Web3 (dApp) menyusun front-end, dompet, smart contract on-chain, dan penyimpanan terdesentralisasi.",
+          "Dompet jadi identitas dan penanda tangan; smart contract menyimpan logika dan kepemilikan.",
+          "Berkas berat diletakkan di IPFS; blockchain cukup menyimpan tautannya agar murah.",
+          "Web1 baca, Web2 baca-tulis, Web3 baca-tulis-miliki.",
+          "Web3 menggeser kepemilikan data dan identitas dari platform ke pengguna.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa peran dompet dalam arsitektur Web3?",
+            options: [
+              "Menyimpan halaman web",
+              "Menjadi identitas pengguna dan menandatangani transaksi",
+              "Menambang blok baru",
+              "Menyimpan gambar resolusi tinggi",
+            ],
+            answer: 1,
+            explain: "Dompet adalah identitas pengguna sekaligus penanda tangan transaksi di Web3.",
+          },
+          {
+            q: "Di mana berkas gambar berat sebuah dApp biasanya disimpan?",
+            options: [
+              "Seluruhnya di dalam blockchain",
+              "Di penyimpanan terdesentralisasi seperti IPFS",
+              "Di kunci privat",
+              "Di front-end saja",
+            ],
+            answer: 1,
+            explain: "Berkas berat diletakkan di IPFS; blockchain cukup menyimpan tautannya agar murah.",
+          },
+          {
+            q: "Bagaimana ringkasan Web1, Web2, dan Web3?",
+            options: [
+              "Tulis, baca, hapus",
+              "Baca, baca-tulis, baca-tulis-miliki",
+              "Miliki, baca, tulis",
+              "Statis, statis, statis",
+            ],
+            answer: 1,
+            explain: "Web1 baca, Web2 baca-tulis, Web3 menambahkan kepemilikan (baca-tulis-miliki).",
+          },
+          {
+            q: "Apa yang menjalankan logika dan menyimpan kepemilikan dalam dApp?",
+            options: [
+              "Front-end",
+              "Smart contract on-chain",
+              "Penyimpanan IPFS",
+              "Server email",
+            ],
+            answer: 1,
+            explain: "Smart contract on-chain menjalankan logika dan mencatat siapa pemilik aset.",
+          },
+          {
+            q: "Apa gagasan inti Web3 dibanding Web2?",
+            options: [
+              "Halaman jadi statis kembali",
+              "Pengguna memiliki aset dan identitasnya, bukan dikuasai platform",
+              "Tidak butuh internet",
+              "Semua data dihapus",
+            ],
+            answer: 1,
+            explain: "Web3 menggeser kepemilikan data dan identitas dari platform ke pengguna lewat blockchain dan dompet.",
+          },
+        ],
+      },
+    ],
+  },
+];

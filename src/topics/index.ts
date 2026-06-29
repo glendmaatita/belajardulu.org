@@ -35,10 +35,11 @@ import { listrikStatis } from "./listrik-statis/meta";
 import { arusListrik } from "./arus-listrik/meta";
 import { magnetisme } from "./magnetisme/meta";
 import { optika } from "./optika/meta";
+import { cryptocurrency } from "./cryptocurrency/meta";
 
 // Register topics here. Adding a future topic = create a folder + meta.ts, then
 // import it and add to this array.
-export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, logika, filsafat, akuntansi];
+export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, logika, filsafat, akuntansi];
 
 // ===== Kategori materi =====
 // Mengelompokkan topik ke dalam rumpun yang berkaitan. Topik yang belum
@@ -115,6 +116,14 @@ export const categories: Category[] = [
       "carbon",
       "akuntansi",
     ],
+  },
+  {
+    id: "teknologi-blockchain",
+    title: "Teknologi & Blockchain",
+    tagline: "Uang digital, blockchain, dan ekosistem Web3 dari dasar sampai investasi.",
+    icon: "gears",
+    accent: "from-amber-500 to-orange-600",
+    topicIds: ["cryptocurrency"],
   },
   {
     id: "logika-filsafat",
