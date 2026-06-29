@@ -5,6 +5,7 @@ import { BlockRenderer } from "../components/blocks";
 import { LessonFeedback } from "../components/LessonFeedback";
 import { AuthGate } from "../components/AuthGate";
 import { useProgress } from "../lib/progress";
+import { useActivity } from "../lib/activity";
 import { useAuth } from "../lib/auth";
 import { Icon } from "../components/Icon";
 
@@ -13,11 +14,17 @@ export function LessonPage() {
   const topic = getTopic(topicId);
   const lesson = topic ? getLesson(topic, id) : undefined;
   const { isDone, toggle } = useProgress();
+  const { markStarted } = useActivity();
   const { user, ready } = useAuth();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [topicId, id]);
+
+  // Record that this lesson has been opened (so it shows up in "Materi Saya").
+  useEffect(() => {
+    if (topic && lesson) markStarted(progressKey(topic.id, lesson.id));
+  }, [topic, lesson, markStarted]);
 
   if (!topic || !lesson) {
     return (
@@ -86,7 +93,7 @@ export function LessonPage() {
         <>
           <div>
             {lesson.blocks.map((block, i) => (
-              <BlockRenderer key={i} block={block} />
+              <BlockRenderer key={i} block={block} lessonKey={key} index={i} />
             ))}
           </div>
 

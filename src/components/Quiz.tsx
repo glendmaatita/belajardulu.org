@@ -1,17 +1,35 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { QuizQuestion } from "../types";
+import { useActivity } from "../lib/activity";
 import { Icon } from "./Icon";
 
-export function Quiz({ questions }: { questions: QuizQuestion[] }) {
+export function Quiz({ questions, quizKey }: { questions: QuizQuestion[]; quizKey?: string }) {
+  const { getQuiz, saveQuiz } = useActivity();
   const [answers, setAnswers] = useState<(number | null)[]>(() => questions.map(() => null));
+  const hydrated = useRef(false);
+
+  // Rehydrate previously saved answers (survives page refresh). Only fills in
+  // while the attempt is untouched, so late-arriving server data never
+  // overwrites answers in progress.
+  const stored = quizKey ? getQuiz(quizKey) : undefined;
+  useEffect(() => {
+    if (hydrated.current || !stored) return;
+    if (stored.answers.length !== questions.length) return;
+    const untouched = answers.every((a) => a === null);
+    hydrated.current = true;
+    if (untouched) setAnswers(stored.answers);
+  }, [stored, questions.length, answers]);
 
   function choose(qi: number, oi: number) {
-    setAnswers((a) => {
-      if (a[qi] !== null) return a; // lock after answering
-      const next = [...a];
-      next[qi] = oi;
-      return next;
-    });
+    if (answers[qi] !== null) return; // lock after answering
+    const next = [...answers];
+    next[qi] = oi;
+    setAnswers(next);
+    hydrated.current = true;
+    if (quizKey) {
+      const score = next.filter((v, i) => v === questions[i].answer).length;
+      saveQuiz(quizKey, { score, total: questions.length, answers: next });
+    }
   }
 
   const answered = answers.filter((a) => a !== null).length;

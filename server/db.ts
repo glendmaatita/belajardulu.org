@@ -57,6 +57,30 @@ db.exec(`
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
   );
   CREATE INDEX IF NOT EXISTS suggestion_lesson_idx ON suggestion(lesson_key);
+
+  -- Lessons the user has opened/started (lesson_key = "topicId:lessonId").
+  -- Lets the dashboard show materials taken but not yet finished.
+  CREATE TABLE IF NOT EXISTS lesson_started (
+    user_id    INTEGER NOT NULL,
+    lesson_key TEXT NOT NULL,
+    started_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (user_id, lesson_key),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
+
+  -- Quiz results per quiz block (quiz_key = "topicId:lessonId#blockIndex").
+  -- answers is a JSON array of chosen option indices, so the quiz can be
+  -- rehydrated after a refresh.
+  CREATE TABLE IF NOT EXISTS quiz_result (
+    user_id  INTEGER NOT NULL,
+    quiz_key TEXT NOT NULL,
+    score    INTEGER NOT NULL,
+    total    INTEGER NOT NULL,
+    answers  TEXT,
+    taken_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (user_id, quiz_key),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
 `);
 
 export interface UserRow {
@@ -177,4 +201,83 @@ export function addSuggestion(
   db.prepare(
     "INSERT INTO suggestion (lesson_key, user_id, email, message) VALUES (?, ?, ?, ?)"
   ).run(lessonKey, userId, email, message);
+}
+
+// ---- started lessons & quiz results (learning activity) ----
+
+export interface QuizRow {
+  score: number;
+  total: number;
+  answers: (number | null)[];
+}
+
+export function setStarted(userId: number, lessonKey: string) {
+  db.prepare(
+    "INSERT INTO lesson_started (user_id, lesson_key) VALUES (?, ?) ON CONFLICT DO NOTHING"
+  ).run(userId, lessonKey);
+}
+
+export function listStarted(userId: number): string[] {
+  const rows = db
+    .prepare("SELECT lesson_key FROM lesson_started WHERE user_id = ?")
+    .all(userId) as { lesson_key: string }[];
+  return rows.map((r) => r.lesson_key);
+}
+
+export function mergeStarted(userId: number, lessonKeys: string[]) {
+  const insert = db.prepare(
+    "INSERT INTO lesson_started (user_id, lesson_key) VALUES (?, ?) ON CONFLICT DO NOTHING"
+  );
+  const tx = db.transaction((keys: string[]) => {
+    for (const k of keys) insert.run(userId, k);
+  });
+  tx(lessonKeys);
+}
+
+export function setQuizResult(
+  userId: number,
+  quizKey: string,
+  score: number,
+  total: number,
+  answers: (number | null)[]
+) {
+  db.prepare(
+    `INSERT INTO quiz_result (user_id, quiz_key, score, total, answers)
+     VALUES (?, ?, ?, ?, ?)
+     ON CONFLICT(user_id, quiz_key) DO UPDATE SET
+       score = excluded.score,
+       total = excluded.total,
+       answers = excluded.answers,
+       taken_at = datetime('now')`
+  ).run(userId, quizKey, score, total, JSON.stringify(answers));
+}
+
+export function listQuizResults(userId: number): Record<string, QuizRow> {
+  const rows = db
+    .prepare("SELECT quiz_key, score, total, answers FROM quiz_result WHERE user_id = ?")
+    .all(userId) as { quiz_key: string; score: number; total: number; answers: string | null }[];
+  const out: Record<string, QuizRow> = {};
+  for (const r of rows) {
+    let answers: (number | null)[] = [];
+    try {
+      answers = r.answers ? JSON.parse(r.answers) : [];
+    } catch {
+      answers = [];
+    }
+    out[r.quiz_key] = { score: r.score, total: r.total, answers };
+  }
+  return out;
+}
+
+export function mergeQuizResults(userId: number, items: Record<string, QuizRow>) {
+  const tx = db.transaction((entries: [string, QuizRow][]) => {
+    for (const [key, q] of entries) {
+      // Only fill in quizzes the account does not have yet.
+      const exists = db
+        .prepare("SELECT 1 FROM quiz_result WHERE user_id = ? AND quiz_key = ?")
+        .get(userId, key);
+      if (!exists) setQuizResult(userId, key, q.score, q.total, q.answers ?? []);
+    }
+  });
+  tx(Object.entries(items));
 }

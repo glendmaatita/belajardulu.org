@@ -15,6 +15,12 @@ import {
   setFeedback,
   getFeedbackSummary,
   addSuggestion,
+  setStarted,
+  listStarted,
+  mergeStarted,
+  setQuizResult,
+  listQuizResults,
+  mergeQuizResults,
 } from "./db.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -131,6 +137,39 @@ app.post("/api/progress/merge", requireAuth, (req, res) => {
   const { lessonIds } = req.body ?? {};
   if (Array.isArray(lessonIds)) mergeProgress(uid, lessonIds.filter((x) => typeof x === "string"));
   res.json({ completed: listProgress(uid) });
+});
+
+// ---- learning activity: started lessons + quiz results ----
+app.get("/api/activity", requireAuth, (req, res) => {
+  const uid = (req as express.Request & { uid: number }).uid;
+  res.json({ started: listStarted(uid), quiz: listQuizResults(uid) });
+});
+
+app.post("/api/started", requireAuth, (req, res) => {
+  const uid = (req as express.Request & { uid: number }).uid;
+  const { lessonKey } = req.body ?? {};
+  if (typeof lessonKey !== "string" || !lessonKey) return res.status(400).json({ error: "bad_request" });
+  setStarted(uid, lessonKey);
+  res.json({ ok: true });
+});
+
+app.post("/api/quiz", requireAuth, (req, res) => {
+  const uid = (req as express.Request & { uid: number }).uid;
+  const { quizKey, score, total, answers } = req.body ?? {};
+  if (typeof quizKey !== "string" || !quizKey) return res.status(400).json({ error: "bad_request" });
+  if (typeof score !== "number" || typeof total !== "number") return res.status(400).json({ error: "bad_request" });
+  const ans = Array.isArray(answers) ? answers : [];
+  setQuizResult(uid, quizKey, score, total, ans);
+  res.json({ ok: true });
+});
+
+// Merge guest (localStorage) activity into the account on login.
+app.post("/api/activity/merge", requireAuth, (req, res) => {
+  const uid = (req as express.Request & { uid: number }).uid;
+  const { started, quiz } = req.body ?? {};
+  if (Array.isArray(started)) mergeStarted(uid, started.filter((x) => typeof x === "string"));
+  if (quiz && typeof quiz === "object") mergeQuizResults(uid, quiz);
+  res.json({ started: listStarted(uid), quiz: listQuizResults(uid) });
 });
 
 // ---- feedback (thumbs up / down) ----

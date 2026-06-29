@@ -7,6 +7,7 @@ import {
   getCategoryForTopic,
 } from "../topics";
 import { useProgress } from "../lib/progress";
+import { useActivity } from "../lib/activity";
 import { useAuth } from "../lib/auth";
 import { AuthGate } from "../components/AuthGate";
 import { Icon, type IconName } from "../components/Icon";
@@ -16,6 +17,7 @@ interface TopicProgress {
   total: number;
   done: number;
   pct: number;
+  engaged: boolean;
   nextLessonId: string | null;
   category: ReturnType<typeof getCategoryForTopic>;
 }
@@ -23,6 +25,7 @@ interface TopicProgress {
 export function Dashboard() {
   const { user, ready } = useAuth();
   const { isDone, completedCount } = useProgress();
+  const { hasActivityInTopic } = useActivity();
 
   if (!ready) {
     return (
@@ -56,12 +59,13 @@ export function Dashboard() {
       total,
       done,
       pct: total ? Math.round((done / total) * 100) : 0,
+      engaged: done > 0 || hasActivityInTopic(topic.id),
       nextLessonId: next?.id ?? null,
       category: getCategoryForTopic(topic.id),
     };
   });
 
-  const started = all.filter((t) => t.done > 0).sort((a, b) => b.pct - a.pct || b.done - a.done);
+  const started = all.filter((t) => t.engaged).sort((a, b) => b.pct - a.pct || b.done - a.done);
   const inProgress = started.filter((t) => t.pct < 100);
   const finished = started.filter((t) => t.pct === 100);
   const resume = inProgress[0] ?? null;

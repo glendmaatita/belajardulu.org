@@ -14,7 +14,15 @@ import { Icon, type IconName } from "./Icon";
 // Code-split Remotion (heavy) so it only loads on lessons that have a video.
 const VideoPlayer = lazy(() => import("./VideoPlayer").then((m) => ({ default: m.VideoPlayer })));
 
-export function BlockRenderer({ block }: { block: ContentBlock }) {
+export function BlockRenderer({
+  block,
+  lessonKey,
+  index,
+}: {
+  block: ContentBlock;
+  lessonKey?: string;
+  index?: number;
+}) {
   switch (block.type) {
     case "heading":
       return (
@@ -124,7 +132,12 @@ export function BlockRenderer({ block }: { block: ContentBlock }) {
       );
 
     case "quiz":
-      return <Quiz questions={block.questions} />;
+      return (
+        <Quiz
+          questions={block.questions}
+          quizKey={lessonKey ? `${lessonKey}#${index ?? 0}` : undefined}
+        />
+      );
 
     case "journalExercise":
       return (
