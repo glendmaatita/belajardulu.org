@@ -155,6 +155,15 @@ import { SimulatorPenyebaran } from "./SimulatorPenyebaran";
 import { SimulatorLimit } from "./SimulatorLimit";
 import { SimulatorTurunan } from "./SimulatorTurunan";
 import { SimulatorIntegral } from "./SimulatorIntegral";
+// Fisika Dasar
+import { AngkaPenting } from "./AngkaPenting";
+import { KonversiSatuan } from "./KonversiSatuan";
+import { SimulatorGLBB } from "./SimulatorGLBB";
+import { SimulatorHukumNewton } from "./SimulatorHukumNewton";
+import { KalkulatorUsahaEnergi } from "./KalkulatorUsahaEnergi";
+import { SimulatorTumbukan } from "./SimulatorTumbukan";
+import { SimulatorGelombang } from "./SimulatorGelombang";
+import { KalkulatorOhm } from "./KalkulatorOhm";
 // Filsafat
 import { SimulatorDilemaEtika } from "./SimulatorDilemaEtika";
 import { PencocokAliranFilsafat } from "./PencocokAliranFilsafat";
@@ -308,6 +317,14 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorLimit,
   SimulatorTurunan,
   SimulatorIntegral,
+  AngkaPenting,
+  KonversiSatuan,
+  SimulatorGLBB,
+  SimulatorHukumNewton,
+  KalkulatorUsahaEnergi,
+  SimulatorTumbukan,
+  SimulatorGelombang,
+  KalkulatorOhm,
   SimulatorDilemaEtika,
   PencocokAliranFilsafat,
   PetaCabangFilsafat,

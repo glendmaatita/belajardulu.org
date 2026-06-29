@@ -26,7 +26,6 @@ export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: 
         compositionHeight={VIDEO.height}
         style={{ width: "100%" }}
         controls
-        loop
         acknowledgeRemotionLicense
       />
       {caption && (

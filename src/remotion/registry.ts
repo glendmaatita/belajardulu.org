@@ -179,6 +179,15 @@ import { PenyebaranVideo, PenyebaranVideoDuration } from "./PenyebaranVideo";
 import { LimitVideo, LimitVideoDuration } from "./LimitVideo";
 import { TurunanVideo, TurunanVideoDuration } from "./TurunanVideo";
 import { IntegralVideo, IntegralVideoDuration } from "./IntegralVideo";
+// Fisika Dasar
+import { BesaranSatuan, BesaranSatuanDuration } from "./BesaranSatuan";
+import { AnalisisDimensi, AnalisisDimensiDuration } from "./AnalisisDimensi";
+import { HukumNewtonVideo, HukumNewtonVideoDuration } from "./HukumNewtonVideo";
+import { UsahaEnergiVideo, UsahaEnergiVideoDuration } from "./UsahaEnergiVideo";
+import { MomentumVideo, MomentumVideoDuration } from "./MomentumVideo";
+import { GelombangFisika, GelombangFisikaDuration } from "./GelombangFisika";
+import { HukumOhmVideo, HukumOhmVideoDuration } from "./HukumOhmVideo";
+import { PembiasanCahaya, PembiasanCahayaDuration } from "./PembiasanCahaya";
 import { GarisWaktuFilsafat, GarisWaktuFilsafatDuration } from "./GarisWaktuFilsafat";
 import { DialektikaHegel, DialektikaHegelDuration } from "./DialektikaHegel";
 import { EvolusiPemikiran, EvolusiPemikiranDuration } from "./EvolusiPemikiran";
@@ -371,6 +380,15 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   LimitVideo: { component: LimitVideo, durationInFrames: LimitVideoDuration },
   TurunanVideo: { component: TurunanVideo, durationInFrames: TurunanVideoDuration },
   IntegralVideo: { component: IntegralVideo, durationInFrames: IntegralVideoDuration },
+  // Fisika Dasar
+  BesaranSatuan: { component: BesaranSatuan, durationInFrames: BesaranSatuanDuration },
+  AnalisisDimensi: { component: AnalisisDimensi, durationInFrames: AnalisisDimensiDuration },
+  HukumNewtonVideo: { component: HukumNewtonVideo, durationInFrames: HukumNewtonVideoDuration },
+  UsahaEnergiVideo: { component: UsahaEnergiVideo, durationInFrames: UsahaEnergiVideoDuration },
+  MomentumVideo: { component: MomentumVideo, durationInFrames: MomentumVideoDuration },
+  GelombangFisika: { component: GelombangFisika, durationInFrames: GelombangFisikaDuration },
+  HukumOhmVideo: { component: HukumOhmVideo, durationInFrames: HukumOhmVideoDuration },
+  PembiasanCahaya: { component: PembiasanCahaya, durationInFrames: PembiasanCahayaDuration },
   // Filsafat
   CabangFilsafat: { component: CabangFilsafat, durationInFrames: CabangFilsafatDuration },
   RasionalismeEmpirisme: { component: RasionalismeEmpirisme, durationInFrames: RasionalismeEmpirismeDuration },

@@ -21,10 +21,24 @@ import { fungsiGrafik } from "./fungsi-grafik/meta";
 import { logikaMatematika } from "./logika-matematika/meta";
 import { statistika } from "./statistika/meta";
 import { kalkulus } from "./kalkulus/meta";
+import { pengantarFisika } from "./pengantar-fisika/meta";
+import { kinematika } from "./kinematika/meta";
+import { dinamika } from "./dinamika/meta";
+import { usahaEnergi } from "./usaha-energi/meta";
+import { momentum } from "./momentum/meta";
+import { rotasi } from "./rotasi/meta";
+import { gravitasi } from "./gravitasi/meta";
+import { fluida } from "./fluida/meta";
+import { getaranGelombang } from "./getaran-gelombang/meta";
+import { termodinamika } from "./termodinamika/meta";
+import { listrikStatis } from "./listrik-statis/meta";
+import { arusListrik } from "./arus-listrik/meta";
+import { magnetisme } from "./magnetisme/meta";
+import { optika } from "./optika/meta";
 
 // Register topics here. Adding a future topic = create a folder + meta.ts, then
 // import it and add to this array.
-export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, logika, filsafat, akuntansi];
+export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, logika, filsafat, akuntansi];
 
 // ===== Kategori materi =====
 // Mengelompokkan topik ke dalam rumpun yang berkaitan. Topik yang belum
@@ -54,6 +68,29 @@ export const categories: Category[] = [
       "logika-matematika",
       "statistika",
       "kalkulus",
+    ],
+  },
+  {
+    id: "fisika",
+    title: "Fisika",
+    tagline: "Memahami hukum-hukum alam, dari gerak dan energi sampai listrik dan cahaya.",
+    icon: "flask",
+    accent: "from-sky-500 to-blue-600",
+    topicIds: [
+      "pengantar-fisika",
+      "kinematika",
+      "dinamika",
+      "usaha-energi",
+      "momentum",
+      "rotasi",
+      "gravitasi",
+      "fluida",
+      "getaran-gelombang",
+      "termodinamika",
+      "listrik-statis",
+      "arus-listrik",
+      "magnetisme",
+      "optika",
     ],
   },
   {
