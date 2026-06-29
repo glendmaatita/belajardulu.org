@@ -680,4 +680,176 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "energi-dan-momentum-sudut",
+    levelId: "momentum-energi-sudut",
+    order: 5,
+    title: "Energi dan Momentum Sudut",
+    summary:
+      "Saat penari es menarik tangan, momentum sudutnya kekal tetapi energinya justru bertambah. Dari mana energi itu datang? Kisah dulu, rumus di akhir.",
+    durationMin: 13,
+    tags: ["fisika", "rotasi", "energi rotasi", "momentum sudut", "usaha"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu penari es berputar makin cepat saat menarik tangan, karena momentum sudut kekal. Tetapi ada teka-teki yang lebih dalam: energi rotasinya ternyata <strong>bertambah</strong>, padahal tidak ada torsi dari luar. Bagaimana mungkin energi muncul dari ketiadaan? Jawabannya menyingkap hubungan halus antara energi dan momentum sudut. Ayo telusuri kisahnya sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "MomentumVideo",
+        title: "Video: Dua Wajah Putaran",
+        caption: "Momentum sudut dan energi rotasi adalah dua besaran berbeda yang patuh aturan berbeda.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Saat penari menarik tangan, momen inersianya turun separuh, tetapi kecepatan sudutnya naik dua kali (agar L tetap). Sekarang hitung energinya: energi rotasi bergantung pada ω yang dikuadratkan, jadi ω naik dua kali membuat energi naik dua kali lipat (bukan tetap). <strong>Energi tambahan itu datang dari otot penari</strong> yang bekerja menarik tangan melawan dorongan ke luar. Tidak ada yang gratis.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Satu besaran, dua sudut pandang",
+        html: "Energi rotasi bisa ditulis lewat kecepatan sudut (½Iω²) atau lewat momentum sudut. Karena L = I·ω, kita bisa mengganti ω = L/I, dan energi menjadi <strong>L²/(2I)</strong>. Bentuk ini berguna saat L kekal: bila momen inersia I mengecil sedang L tetap, energi justru naik. Itulah tanda bahwa ada usaha yang dilakukan untuk mengecilkan I.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Energi Rotasi saat Momen Inersia Turun (L kekal = 8 kg·m²/s)",
+        unit: "joule",
+        source: "perhitungan Ek = L²/(2I) dengan L kekal 8 kg·m²/s",
+        note: "Momentum sudut kekal di 8 kg·m²/s, tetapi energi rotasi naik saat I mengecil. Tambahan energi ini berasal dari usaha penari menarik tangan, bukan dari ketiadaan.",
+        data: [
+          { label: "I = 4 kg·m²", value: 8, color: "#f472b6" },
+          { label: "I = 2 kg·m²", value: 16, color: "#e879f9" },
+          { label: "I = 1 kg·m²", value: 32, color: "#c084fc" },
+          { label: "I = 0,5 kg·m²", value: 64, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah roda bermomentum sudut 6 kg·m²/s dan momen inersia 3 kg·m². Berapa energi rotasinya? (Ek = L²/(2I))",
+        answer: 6,
+        tolerance: 0.01,
+        suffix: " J",
+        solution:
+          "Ek = L²/(2I) = 6² / (2 × 3) = 36 / 6 = <strong>6 J</strong>. Bentuk energi memakai momentum sudut.",
+        hint: "Kuadratkan momentum sudut lalu bagi dengan dua kali momen inersia.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Penari es bermomentum sudut kekal 8 kg·m²/s. Awalnya I = 4 kg·m², lalu menarik tangan hingga I = 2 kg·m². Berapa tambahan energi rotasinya? (selisih Ek = L²/(2I))",
+        answer: 8,
+        tolerance: 0.01,
+        suffix: " J",
+        solution:
+          "Ek awal = 8²/(2×4) = 64/8 = 8 J. Ek akhir = 8²/(2×2) = 64/4 = 16 J. Tambahan = 16 − 8 = <strong>8 J</strong>, yaitu usaha otot penari menarik tangan.",
+        hint: "Hitung energi sebelum dan sesudah, lalu cari selisihnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah piringan bermomentum sudut 10 kg·m²/s dengan momen inersia 5 kg·m². Berapa energi rotasinya? (Ek = L²/(2I))",
+        answer: 10,
+        tolerance: 0.01,
+        suffix: " J",
+        solution:
+          "Ek = L²/(2I) = 10² / (2 × 5) = 100 / 10 = <strong>10 J</strong>.",
+        hint: "Kuadratkan 10, bagi dengan 2 kali 5.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan besaran rotasi dengan rumus atau sifatnya.",
+        pairs: [
+          { left: "Energi lewat kecepatan sudut", right: "Ek = ½Iω²" },
+          { left: "Energi lewat momentum sudut", right: "Ek = L²/(2I)" },
+          { left: "Momentum sudut", right: "L = I·ω" },
+          { left: "L kekal, I turun", right: "Ek naik (ada usaha)" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Dengan momentum sudut kekal, kelompokkan peristiwa yang menaikkan atau menurunkan energi rotasi.",
+        buckets: ["Energi rotasi naik", "Energi rotasi turun"],
+        items: [
+          { text: "Penari menarik tangan ke tubuh (I turun)", bucket: "Energi rotasi naik" },
+          { text: "Penari membuka tangan lebar (I naik)", bucket: "Energi rotasi turun" },
+          { text: "Bintang mengerut menjadi padat (I turun)", bucket: "Energi rotasi naik" },
+          { text: "Tanah liat menempel di tepi piringan (I naik)", bucket: "Energi rotasi turun" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Energi Tersembunyi Penari Es",
+        html: "Penari es berputar dengan momentum sudut kekal 8 kg·m²/s. Saat tangan terbuka, I = 4 kg·m² dan energinya L²/(2I) = 64/8 = 8 J. Saat tangan dirapatkan, I turun ke 2 kg·m² dan energinya melonjak ke 64/4 = 16 J. Selisih <strong>8 joule</strong> bukan sihir: itulah usaha yang dilakukan otot penari menarik tangan melawan gaya yang mendorong keluar. Berbeda dengan momentum sudut yang kekal tanpa torsi luar, energi rotasi bisa berubah karena ada kerja internal. Para pelatih tidak menghafal rumus; mereka tahu menarik tangan butuh tenaga, dan tenaga itu menjadi energi putar.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang teka-tekinya terjawab. Energi rotasi bisa ditulis dua cara: <strong>Ek = ½Iω² = L²/(2I)</strong>. Saat momentum sudut kekal (L tetap) dan momen inersia mengecil, energi naik berbanding terbalik dengan I. Kenaikan energi itu sama dengan <strong>usaha</strong> yang dilakukan untuk menarik massa ke dalam. Jadi momentum sudut kekal tidak berarti energi kekal: keduanya besaran berbeda dengan aturan berbeda.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Energi rotasi punya dua bentuk: Ek = ½Iω² = L²/(2I).",
+          "Saat L kekal dan I mengecil, energi rotasi justru naik.",
+          "Tambahan energi itu berasal dari usaha menarik massa ke dalam, bukan dari ketiadaan.",
+          "Momentum sudut kekal tidak menjamin energi kekal; keduanya besaran berbeda.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Energi rotasi dalam bentuk momentum sudut adalah?",
+            options: ["Ek = L·ω", "Ek = L²/(2I)", "Ek = 2I·L", "Ek = ½L·I"],
+            answer: 1,
+            explain: "Karena ω = L/I, energi ½Iω² menjadi L²/(2I).",
+          },
+          {
+            q: "Roda L = 4 kg·m²/s, I = 2 kg·m². Energi rotasinya?",
+            options: ["2 J", "4 J", "8 J", "16 J"],
+            answer: 1,
+            explain: "Ek = L²/(2I) = 4²/(2×2) = 16/4 = 4 J.",
+          },
+          {
+            q: "Saat momentum sudut kekal dan momen inersia mengecil, energi rotasi?",
+            options: ["Tetap", "Naik", "Turun", "Menjadi nol"],
+            answer: 1,
+            explain: "Ek = L²/(2I); bila L tetap dan I mengecil, energi naik.",
+          },
+          {
+            q: "Dari mana datang tambahan energi penari es saat menarik tangan?",
+            options: [
+              "Dari gravitasi",
+              "Dari usaha otot menarik tangan ke dalam",
+              "Dari ketiadaan",
+              "Dari gesekan es",
+            ],
+            answer: 1,
+            explain: "Usaha otot melawan dorongan ke luar berubah menjadi tambahan energi rotasi.",
+          },
+          {
+            q: "Apakah momentum sudut kekal berarti energi rotasi juga kekal?",
+            options: [
+              "Ya, selalu",
+              "Tidak, keduanya besaran berbeda dengan aturan berbeda",
+              "Ya, jika tidak ada gesekan",
+              "Hanya untuk benda berat",
+            ],
+            answer: 1,
+            explain: "Momentum sudut dan energi rotasi patuh aturan berbeda; L bisa kekal sementara Ek berubah.",
+          },
+        ],
+      },
+    ],
+  },
 ];

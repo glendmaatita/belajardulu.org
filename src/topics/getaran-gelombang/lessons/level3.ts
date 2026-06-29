@@ -557,4 +557,136 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "cepat-rambat-tali",
+    levelId: "gelombang",
+    order: 5,
+    title: "Cepat Rambat Gelombang pada Tali",
+    summary:
+      "Mengapa senar gitar yang ditegangkan lebih kencang berbunyi lebih tinggi? Karena gelombang merambat lebih cepat. Kecepatan itu ditentukan tegangan dan kerapatan tali.",
+    durationMin: 14,
+    tags: ["gelombang", "tali", "tegangan", "cepat rambat"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Petik senar gitar, lalu putar pemutarnya hingga senar lebih tegang. Nadanya naik. Ganti dengan senar yang lebih tebal, nadanya turun. Kedua perubahan itu sebenarnya mengubah satu hal yang sama: <strong>seberapa cepat gelombang merambat di sepanjang tali</strong>. Mari kita selidiki apa yang menentukan kecepatan ini.",
+      },
+      {
+        type: "video",
+        comp: "GelombangFisika",
+        title: "Video: Gelombang Berlari di Tali",
+        caption: "Tali yang lebih tegang dan lebih ringan meneruskan gangguan lebih cepat.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua faktor penentu",
+        html: "Cepat rambat gelombang pada tali hanya bergantung pada sifat talinya, bukan pada frekuensi getaran. Dua faktornya: <strong>tegangan tali (F)</strong> yang menariknya kembali ke bentuk lurus, dan <strong>massa per satuan panjang (μ = m/L)</strong> yang menyatakan seberapa berat tali itu. Makin tegang makin cepat, makin berat makin lambat.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Perhatikan: hubungannya akar",
+        html: "Menggandakan tegangan TIDAK menggandakan kecepatan. Karena kecepatan sebanding dengan akar tegangan, melipatempatkan tegangan baru menggandakan kecepatan. Inilah sebabnya menyetel gitar butuh putaran yang makin halus saat nada mendekati pas.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Cepat Rambat terhadap Tegangan Tali (μ = 0,005 kg/m)",
+        unit: "m/s",
+        source: "ilustrasi edukatif (v = √(F/μ))",
+        note: "Kurva melengkung, bukan garis lurus: untuk menggandakan kecepatan dari 40 ke 80 m/s, tegangan harus naik empat kali lipat dari 8 ke 32 N.",
+        data: [
+          { label: "2 N", value: 20, color: "#0ea5e9" },
+          { label: "8 N", value: 40, color: "#0ea5e9" },
+          { label: "18 N", value: 60, color: "#0ea5e9" },
+          { label: "32 N", value: 80, color: "#2563eb" },
+          { label: "50 N", value: 100, color: "#2563eb" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Senar Tegang 50 N",
+        html: "Sebuah senar panjang 2 m bermassa 0,01 kg, jadi μ = m/L = 0,01/2 = 0,005 kg/m. Senar ditegangkan dengan gaya 50 N. Cepat rambat gelombangnya: v = √(F/μ) = √(50/0,005) = √10.000 = <strong>100 m/s</strong>. Jika getaran yang diberikan berfrekuensi 250 Hz, panjang gelombang pada senar adalah λ = v/f = 100/250 = <strong>0,4 m</strong>.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah tali memiliki massa per panjang μ = 0,005 kg/m dan ditegangkan dengan gaya 20 N. Berapa cepat rambat gelombang pada tali ini?",
+        answer: 63.2,
+        tolerance: 0.5,
+        suffix: " m/s",
+        solution:
+          "v = √(F/μ) = √(20/0,005) = √4000 ≈ <strong>63,2 m/s</strong>. Kecepatan ini hanya bergantung pada tegangan dan kerapatan tali.",
+        hint: "Bagi tegangan dengan massa per panjang, lalu akarkan.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan perubahan pada tali dengan pengaruhnya terhadap cepat rambat gelombang.",
+        pairs: [
+          { left: "Tegangan tali diperbesar", right: "Cepat rambat bertambah" },
+          { left: "Tali diganti yang lebih tebal/berat", right: "Cepat rambat berkurang" },
+          { left: "Tegangan dijadikan empat kali", right: "Cepat rambat menjadi dua kali" },
+          { left: "Frekuensi getaran dinaikkan", right: "Cepat rambat tetap" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir",
+        html: "Cepat rambat gelombang pada tali: <strong>v = √(F/μ)</strong>, dengan F tegangan tali (newton) dan μ = m/L massa per satuan panjang (kg/m). Setelah v diketahui, panjang gelombang mengikuti hubungan lama <strong>v = f λ</strong>. Frekuensi tidak mengubah v; ia hanya mengatur berapa λ yang termuat.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Cepat rambat di tali ditentukan tegangan F dan kerapatan μ, bukan frekuensi.",
+          "Rumusnya v = √(F/μ); makin tegang makin cepat, makin berat makin lambat.",
+          "Hubungannya akar: kecepatan dua kali butuh tegangan empat kali.",
+          "Setelah v diketahui, panjang gelombang memakai v = f λ.",
+          "Inilah dasar mengapa senar tegang dan tipis menghasilkan nada tinggi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Cepat rambat gelombang pada tali bergantung pada...",
+            options: [
+              "Frekuensi getaran",
+              "Tegangan dan massa per panjang tali",
+              "Amplitudo gelombang",
+              "Warna tali",
+            ],
+            answer: 1,
+            explain: "v = √(F/μ); hanya tegangan dan kerapatan tali yang menentukannya.",
+          },
+          {
+            q: "Rumus cepat rambat gelombang pada tali adalah...",
+            options: ["v = F μ", "v = √(F/μ)", "v = F/μ", "v = √(μ/F)"],
+            answer: 1,
+            explain: "v = akar dari tegangan dibagi massa per panjang.",
+          },
+          {
+            q: "Jika tegangan tali dijadikan empat kali, cepat rambatnya menjadi...",
+            options: ["Empat kali", "Dua kali", "Setengah", "Tetap"],
+            answer: 1,
+            explain: "Karena v sebanding akar F, empat kali tegangan memberi dua kali kecepatan.",
+          },
+          {
+            q: "Tali μ = 0,005 kg/m ditegangkan 50 N. Cepat rambatnya...",
+            options: ["50 m/s", "100 m/s", "250 m/s", "10 m/s"],
+            answer: 1,
+            explain: "v = √(50/0,005) = √10.000 = 100 m/s.",
+          },
+          {
+            q: "Saat frekuensi getaran dinaikkan (tali sama), cepat rambat gelombang...",
+            options: ["Naik", "Turun", "Tetap", "Menjadi nol"],
+            answer: 2,
+            explain: "v hanya bergantung pada tali; frekuensi mengubah panjang gelombang lewat v = f λ, bukan v.",
+          },
+        ],
+      },
+    ],
+  },
 ];

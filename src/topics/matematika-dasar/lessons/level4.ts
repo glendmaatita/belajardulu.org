@@ -617,4 +617,167 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "berbanding-terbalik",
+    levelId: "perbandingan-perubahan",
+    order: 5,
+    title: "Perbandingan Berbalik Nilai: Makin Banyak, Makin Cepat Selesai",
+    summary:
+      "Kadang menambah satu hal justru mengurangi yang lain. Kita amati pekerja dan waktu kerja dulu, lalu menemukan bahwa hasil kalinya selalu tetap.",
+    durationMin: 13,
+    tags: ["perbandingan", "berbalik nilai", "proporsi", "kehidupan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah pekerjaan mengecat pagar selesai dalam 12 hari kalau dikerjakan seorang diri. Tetapi kalau dua orang bekerja bersama, apakah tetap 12 hari? Tentu tidak, jadi lebih cepat. Di sini terjadi sesuatu yang menarik: <strong>menambah pekerja justru mengurangi waktu</strong>. Sebelum menulis rumus, ayo amati dulu bagaimana keduanya bergerak berlawanan.",
+      },
+      {
+        type: "video",
+        comp: "ProporsiVideo",
+        title: "Video: Saat Dua Rasio Bertemu",
+        caption: "Tidak semua perbandingan searah. Kadang satu naik, yang lain justru turun.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Catat polanya: 1 pekerja butuh 12 hari, 2 pekerja butuh 6 hari, 3 pekerja butuh 4 hari, 4 pekerja butuh 3 hari. Pekerjanya naik, harinya turun. Sekarang coba kalikan jumlah pekerja dengan jumlah hari pada tiap baris: 1 x 12, 2 x 6, 3 x 4, 4 x 3. Apa yang kamu temukan? Hasilnya selalu <strong>12</strong>.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorProporsi",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Berbanding lurus vs berbalik nilai",
+        html: "Pada <strong>perbandingan lurus</strong>, dua besaran naik bersama, misalnya makin banyak beras dibeli makin besar uang dibayar. Pada <strong>perbandingan berbalik nilai</strong>, satu naik maka yang lain turun, misalnya makin banyak pekerja makin sedikit hari. Tandanya: hasil kali kedua besaran tetap.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Jumlah Pekerja Naik, Hari Kerja Turun (hasil kali tetap 12)",
+        unit: "hari kerja",
+        source: "ilustrasi edukatif",
+        note: "1, 2, 3, 4, 6 pekerja membutuhkan 12, 6, 4, 3, 2 hari. Garisnya menurun melengkung, tetapi pekerja dikali hari selalu 12. Itulah ciri berbalik nilai.",
+        data: [
+          { label: "1 pekerja", value: 12, color: "#f472b6" },
+          { label: "2 pekerja", value: 6, color: "#f472b6" },
+          { label: "3 pekerja", value: 4, color: "#a78bfa" },
+          { label: "4 pekerja", value: 3, color: "#a78bfa" },
+          { label: "6 pekerja", value: 2, color: "#60a5fa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pekerjaan selesai 12 hari bila dikerjakan 1 orang. Berapa hari bila dikerjakan 4 orang dengan kecepatan sama?",
+        answer: 3,
+        suffix: " hari",
+        solution:
+          "Hasil kali pekerja dan hari tetap, yaitu 1 x 12 = 12. Maka untuk 4 orang: hari = 12 : 4 = <strong>3 hari</strong>.",
+        hint: "Bagi total hari-orang (12) dengan jumlah pekerja.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "6 mesin menyelesaikan pesanan dalam 8 jam. Berapa jam yang dibutuhkan 12 mesin yang sama cepat?",
+        answer: 4,
+        suffix: " jam",
+        solution:
+          "Hasil kali mesin dan jam tetap: 6 x 8 = 48. Untuk 12 mesin: jam = 48 : 12 = <strong>4 jam</strong>.",
+        hint: "Hitung dulu 6 x 8, lalu bagi dengan 12.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Hubungan ini berbanding lurus atau berbalik nilai?",
+        buckets: ["Berbanding lurus", "Berbalik nilai"],
+        items: [
+          { text: "Makin banyak beras dibeli, makin besar uang dibayar", bucket: "Berbanding lurus" },
+          { text: "Makin banyak pekerja, makin sedikit hari kerja", bucket: "Berbalik nilai" },
+          { text: "Makin cepat mobil melaju, makin singkat waktu tempuh", bucket: "Berbalik nilai" },
+          { text: "Makin lama bekerja, makin besar upah yang diterima", bucket: "Berbanding lurus" },
+          { text: "Makin banyak keran dibuka, makin cepat bak penuh", bucket: "Berbalik nilai" },
+          { text: "Makin banyak bensin diisi, makin jauh jarak yang bisa ditempuh", bucket: "Berbanding lurus" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Sebuah pekerjaan bernilai 24 hari-orang. Pasangkan jumlah pekerja dengan lama harinya.",
+        pairs: [
+          { left: "1 pekerja", right: "24 hari" },
+          { left: "2 pekerja", right: "12 hari" },
+          { left: "3 pekerja", right: "8 hari" },
+          { left: "4 pekerja", right: "6 hari" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Gotong royong membangun jembatan desa",
+        html: "Warga desa hendak membangun jembatan kecil. Bila dikerjakan seorang tukang sendirian, diperkirakan butuh <strong>30 hari</strong>. Karena warga bergotong royong dan datang 6 orang dengan kemampuan setara, hasil kali orang dan hari tetap 30, sehingga waktunya menjadi 30 : 6 = <strong>5 hari</strong>. Inilah sebabnya gotong royong terasa ringan, bukan karena pekerjaannya berkurang, melainkan karena waktunya dibagi banyak tangan. Perlu dicatat, di dunia nyata penambahan orang ada batasnya, sebab tempat kerja bisa terlalu sempit.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir",
+        html: "Setelah mengamati pekerja, mesin, dan gotong royong, polanya jelas. Barulah kita tuliskan perbandingan berbalik nilai: <strong>a1 x b1 = a2 x b2</strong>, artinya hasil kali kedua besaran selalu tetap. Untuk mencari yang belum diketahui, bagi hasil kali yang tetap itu dengan besaran yang sudah diketahui.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pada perbandingan berbalik nilai, satu besaran naik maka pasangannya turun.",
+          "Cirinya: hasil kali kedua besaran selalu tetap.",
+          "Contohnya pekerja dan hari, kecepatan dan waktu, jumlah keran dan waktu mengisi.",
+          "Rumusnya a1 x b1 = a2 x b2 muncul setelah mengamati banyak contoh nyata.",
+          "Di dunia nyata, penambahan ada batasnya karena faktor ruang dan koordinasi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada perbandingan berbalik nilai, jika satu besaran membesar maka pasangannya?",
+            options: ["Ikut membesar", "Mengecil", "Tetap sama", "Menjadi nol"],
+            answer: 1,
+            explain: "Keduanya bergerak berlawanan, sehingga hasil kalinya tetap.",
+          },
+          {
+            q: "4 pekerja menyelesaikan tugas dalam 6 hari. Berapa hari untuk 8 pekerja?",
+            options: ["2 hari", "3 hari", "4 hari", "12 hari"],
+            answer: 1,
+            explain: "4 x 6 = 24, lalu 24 : 8 = 3 hari.",
+          },
+          {
+            q: "Manakah contoh perbandingan berbalik nilai?",
+            options: [
+              "Makin banyak beras, makin mahal harganya",
+              "Makin banyak keran dibuka, makin cepat bak penuh",
+              "Makin lama bekerja, makin besar upah",
+              "Makin banyak bensin, makin jauh perjalanan",
+            ],
+            answer: 1,
+            explain: "Menambah keran mengurangi waktu mengisi, jadi berbalik nilai.",
+          },
+          {
+            q: "Ciri utama perbandingan berbalik nilai adalah?",
+            options: [
+              "Selisih dua besaran tetap",
+              "Hasil kali dua besaran tetap",
+              "Hasil bagi selalu nol",
+              "Keduanya selalu sama",
+            ],
+            answer: 1,
+            explain: "Pada berbalik nilai, a x b selalu menghasilkan angka yang sama.",
+          },
+          {
+            q: "6 mesin butuh 8 jam. Berapa jam yang dibutuhkan 12 mesin yang sama cepat?",
+            options: ["2 jam", "4 jam", "6 jam", "16 jam"],
+            answer: 1,
+            explain: "6 x 8 = 48, lalu 48 : 12 = 4 jam.",
+          },
+        ],
+      },
+    ],
+  },
 ];

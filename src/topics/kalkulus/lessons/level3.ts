@@ -598,4 +598,154 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "turunan-kedua-dan-kecekungan",
+    levelId: "aplikasi-turunan",
+    order: 5,
+    title: "Turunan Kedua dan Kecekungan: Melengkung ke Atas atau ke Bawah",
+    summary:
+      "Sebelum aturannya, kita rasakan beda kurva yang melengkung seperti mangkuk dan yang melengkung seperti payung lewat turunan dari turunan.",
+    durationMin: 15,
+    tags: ["kalkulus", "aplikasi-turunan", "turunan-kedua", "kecekungan", "titik-belok"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dua jalan sama-sama menanjak, tetapi satu terasa makin curam (melengkung seperti mangkuk) dan satu makin landai (melengkung seperti payung). Tanda naik atau turun saja tidak cukup menangkap bedanya. Kita butuh tahu bagaimana kemiringan itu sendiri berubah. Ayo selidiki dulu rasa melengkung ini sebelum menulis aturannya.",
+      },
+      {
+        type: "video",
+        comp: "TurunanVideo",
+        title: "Video: Kurva Mencekung ke Atas dan ke Bawah",
+        caption: "Mengamati bagaimana kemiringan kurva berubah, bukan sekadar arahnya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil f(x) = x pangkat tiga. Turunan pertamanya f'(x) = 3x kuadrat memberi kemiringan. Sekarang turunkan sekali lagi: turunan dari 3x kuadrat adalah 6x. Hitung 6x di x = -2, -1, 0, 1, 2. Perhatikan tandanya berubah dari negatif ke positif. Rasakan kurva berpindah dari mencekung ke bawah menjadi mencekung ke atas.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Turunan Kedua f''(x) = 6x untuk f(x) = x pangkat tiga",
+        unit: "nilai f''(x)",
+        source: "perhitungan turunan kedua dari f(x) = x pangkat tiga",
+        note: "f'' bertanda negatif di kiri (cekung ke bawah) lalu positif di kanan (cekung ke atas). Tepat di x = 0 ia nol, itulah titik belok.",
+        data: [
+          { label: "x=-2", value: -12, color: "#a5b4fc" },
+          { label: "x=-1", value: -6, color: "#818cf8" },
+          { label: "x=0", value: 0, color: "#6366f1" },
+          { label: "x=1", value: 6, color: "#4f46e5" },
+          { label: "x=2", value: 12, color: "#4338ca" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Turunan dari turunan",
+        html: "Turunan kedua adalah turunan dari turunan pertama, ditulis f''(x). Maknanya: seberapa cepat kemiringan berubah. Jika <strong>f''(x) > 0</strong> kurva mencekung ke atas seperti mangkuk; jika <strong>f''(x) < 0</strong> kurva mencekung ke bawah seperti payung. Titik tempat kecekungan berbalik disebut <strong>titik belok</strong>.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Untuk f(x) = x pangkat tiga, turunan keduanya f''(x) = 6x. Berapa nilai f''(2)?",
+        answer: 12,
+        solution:
+          "Masukkan x = 2 ke f''(x) = 6x, didapat 6 x 2 = <strong>12</strong>. Karena positif, kurva mencekung ke atas di x = 2.",
+        hint: "Substitusikan x = 2 ke f''(x) = 6x.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Untuk f(x) = x pangkat tiga dengan f''(x) = 6x, pada nilai x berapa f''(x) = 0 (titik belok)?",
+        answer: 0,
+        solution:
+          "Selesaikan 6x = 0, sehingga x = <strong>0</strong>. Di sinilah kecekungan berbalik dari bawah ke atas, yaitu titik belok.",
+        hint: "Buat 6x sama dengan nol.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Untuk f(x) = x pangkat tiga dengan f''(x) = 6x, kelompokkan kecekungan di tiap titik.",
+        buckets: ["Cekung ke atas (f'' > 0)", "Cekung ke bawah (f'' < 0)"],
+        items: [
+          { text: "di x = 3, karena f''(3) = 18", bucket: "Cekung ke atas (f'' > 0)" },
+          { text: "di x = 1, karena f''(1) = 6", bucket: "Cekung ke atas (f'' > 0)" },
+          { text: "di x = -2, karena f''(-2) = -12", bucket: "Cekung ke bawah (f'' < 0)" },
+          { text: "di x = -4, karena f''(-4) = -24", bucket: "Cekung ke bawah (f'' < 0)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Kurva wabah yang mulai melandai",
+        html: "Saat wabah menyebar, grafik jumlah kasus kumulatif terus naik, jadi turunan pertamanya (kasus baru per hari) positif. Kabar baik datang bukan saat grafik turun, melainkan saat ia mulai <strong>melandai</strong>: kasus baru per hari mencapai puncak lalu menurun. Di titik itu turunan kedua berubah dari positif ke negatif, dan grafik kumulatif melewati titik beloknya. Para ahli epidemiologi memantau tanda turunan kedua ini untuk memastikan wabah mulai terkendali.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah merasakan polanya, baru kita rumuskan: <strong>turunan kedua f''(x) mengukur kecekungan</strong>. Jika f''(x) > 0 kurva cekung ke atas, jika f''(x) < 0 cekung ke bawah, dan titik tempat f''(x) berganti tanda adalah <strong>titik belok</strong>. Turunan kedua juga membantu uji titik stasioner: di titik stasioner, f'' positif berarti minimum dan f'' negatif berarti maksimum.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Turunan kedua f''(x) adalah turunan dari turunan pertama.",
+          "f''(x) > 0 berarti kurva cekung ke atas seperti mangkuk.",
+          "f''(x) < 0 berarti kurva cekung ke bawah seperti payung.",
+          "Titik tempat f''(x) berganti tanda adalah titik belok.",
+          "Tanda turunan kedua di titik stasioner membedakan minimum dari maksimum.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Turunan kedua sebuah fungsi adalah?",
+            options: [
+              "Nilai fungsi dikuadratkan",
+              "Turunan dari turunan pertama",
+              "Dua kali nilai fungsi",
+              "Luas di bawah kurva",
+            ],
+            answer: 1,
+            explain: "Turunan kedua f''(x) adalah turunan dari f'(x).",
+          },
+          {
+            q: "Jika f''(x) > 0 pada suatu selang, kurva di sana?",
+            options: [
+              "Cekung ke bawah",
+              "Cekung ke atas",
+              "Selalu turun",
+              "Datar sempurna",
+            ],
+            answer: 1,
+            explain: "Turunan kedua positif berarti kurva mencekung ke atas seperti mangkuk.",
+          },
+          {
+            q: "Untuk f(x) = x pangkat tiga dengan f''(x) = 6x, di x = -2 kurva?",
+            options: ["Cekung ke atas", "Cekung ke bawah", "Garis lurus", "Titik belok"],
+            answer: 1,
+            explain: "f''(-2) = -12, bernilai negatif, jadi cekung ke bawah.",
+          },
+          {
+            q: "Titik tempat kecekungan berbalik disebut?",
+            options: ["Titik maksimum", "Titik belok", "Asimtot", "Titik potong"],
+            answer: 1,
+            explain: "Tempat f''(x) berganti tanda adalah titik belok.",
+          },
+          {
+            q: "Di sebuah titik stasioner, f''(x) negatif menandakan titik itu?",
+            options: ["Minimum", "Maksimum", "Titik belok", "Bukan titik balik"],
+            answer: 1,
+            explain: "Cekung ke bawah di titik stasioner berarti puncak, yaitu maksimum.",
+          },
+        ],
+      },
+    ],
+  },
 ];

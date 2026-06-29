@@ -627,4 +627,159 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "hidrometer-massa-jenis",
+    levelId: "pascal-archimedes",
+    order: 5,
+    title: "Hidrometer: Mengukur Massa Jenis",
+    summary:
+      "Bagaimana satu alat terapung bisa membaca kesegaran susu atau kondisi aki, dan bagaimana menimbang mahkota raja menentukan kemurniannya? Kita amati dulu, baru cara mengukur massa jenis dengan Archimedes muncul.",
+    durationMin: 14,
+    tags: ["fluida", "archimedes", "hidrometer", "massa jenis"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu gaya apung bergantung pada massa jenis fluida. Gagasan itu bisa dibalik: kalau kita amati seberapa dalam sebuah benda terapung, kita justru bisa <strong>menebak massa jenis cairannya</strong>. Inilah yang dilakukan hidrometer, alat sederhana yang membaca kesegaran susu, kadar gula sirup, sampai kondisi aki mobil. Sebelum bertemu rumus, ayo amati dulu kenapa benda yang sama terapung lebih tinggi di cairan yang lebih padat.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Terapung sebagai Alat Ukur",
+        caption: "Seberapa dalam benda tenggelam menjadi petunjuk massa jenis cairannya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Sebuah hidrometer adalah tabung berpemberat yang terapung tegak. Beratnya tetap, jadi gaya apung yang menahannya juga harus tetap di cairan mana pun. Di cairan <strong>lebih padat</strong>, tiap bagian yang tercelup menyingkirkan lebih banyak massa, sehingga cukup tercelup sedikit saja untuk menghasilkan gaya apung yang sama: hidrometer mengambang lebih tinggi. Di cairan <strong>encer</strong>, ia harus tenggelam lebih dalam. Tinggi muka cairan pada batang berskala langsung menunjukkan massa jenis.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Menimbang untuk mengukur",
+        html: "Cara lain memakai berat semu. Timbang benda di udara, lalu timbang lagi saat tercelup penuh di air. Selisihnya adalah gaya apung, yaitu berat air yang dipindahkan. Dari sini kita peroleh volume benda, dan dengan membagi massa terhadap volume itu, <strong>massa jenis benda</strong> ketahuan tanpa harus mengukur bentuknya yang rumit.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorProporsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Massa Jenis Beberapa Zat Cair yang Dibaca Hidrometer",
+        unit: "kilogram per meter kubik (kg/m^3)",
+        source: "nilai massa jenis terukur pada suhu kamar (dibulatkan)",
+        note: "Hidrometer membedakan cairan dari massa jenisnya. Aki terisi penuh jauh lebih padat daripada air, sedangkan bensin lebih ringan.",
+        data: [
+          { label: "Bensin", value: 740, color: "#38bdf8" },
+          { label: "Air tawar", value: 1000, color: "#22d3ee" },
+          { label: "Susu segar", value: 1030, color: "#2dd4bf" },
+          { label: "Air aki penuh", value: 1280, color: "#60a5fa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah hidrometer berbatang seragam tercelup 8 cm saat di air (1000 kg/m^3). Di sebuah cairan lain ia hanya tercelup 6,4 cm. Berapa massa jenis cairan itu?",
+        answer: 1250,
+        tolerance: 20,
+        suffix: " kg/m^3",
+        solution:
+          "Berat (dan gaya apung) tetap, jadi rho x kedalaman tercelup konstan: rho2 = rho1 x (h1/h2) = 1000 x (8 / 6,4) = <strong>1250 kg/m^3</strong>. Karena lebih padat, hidrometer tercelup lebih dangkal.",
+        hint: "Gaya apung sama berarti rho1 x h1 = rho2 x h2, lalu cari rho2.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebongkah logam beratnya 8 N di udara dan 6 N saat ditimbang tercelup penuh di air (1000 kg/m^3, g = 10). Berapa massa jenis logam itu?",
+        answer: 4000,
+        tolerance: 50,
+        suffix: " kg/m^3",
+        solution:
+          "Gaya apung = 8 - 6 = 2 N. Volume = Fa / (rho_air x g) = 2 / (1000 x 10) = 0,0002 m^3. Massa = 8 / 10 = 0,8 kg. Massa jenis = 0,8 / 0,0002 = <strong>4000 kg/m^3</strong>.",
+        hint: "Selisih berat memberi gaya apung, lalu volume, lalu bagi massa dengan volume.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap penerapan dengan apa yang sebenarnya diukur lewat prinsip Archimedes.",
+        pairs: [
+          { left: "Hidrometer di tangki susu", right: "Kemurnian susu dari massa jenisnya" },
+          { left: "Hidrometer aki mobil", right: "Kondisi muatan aki dari massa jenis cairan" },
+          { left: "Menimbang benda di air", right: "Massa jenis benda tanpa mengukur bentuk" },
+          { left: "Hidrometer pembuat anggur", right: "Kadar gula larutan sebelum fermentasi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Archimedes dan Mahkota Raja",
+        html: "Menurut kisah kuno, Raja Hieron dari Syracuse curiga mahkota emasnya telah dicampur perak oleh pandai emas. Archimedes diminta membuktikannya tanpa merusak mahkota. Saat berendam, ia menyadari tubuhnya menyingkirkan air sebanyak volumenya, dan dari sana lahir gagasannya. Emas murni jauh lebih padat (sekitar 19.300 kg/m^3) daripada perak (sekitar 10.500 kg/m^3). Dengan menimbang mahkota di udara lalu di air, Archimedes bisa menghitung volumenya dari gaya apung, lalu massa jenisnya. Bila massa jenis mahkota lebih kecil dari emas murni, pasti ada campuran perak. Inilah cikal bakal metode pengukuran massa jenis yang masih dipakai sampai sekarang.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan. Untuk hidrometer yang berat tetap, gaya apung tetap, sehingga <strong>rho1 x h1 = rho2 x h2</strong>: kedalaman tercelup berbanding terbalik dengan massa jenis cairan. Untuk menimbang benda: gaya apung = berat udara - berat semu, lalu <strong>V = Fa / (rho_fluida x g)</strong> dan <strong>rho_benda = massa / V</strong>. Keduanya satu akar yang sama, yaitu Hukum Archimedes.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Hidrometer membaca massa jenis cairan dari seberapa dalam ia terapung.",
+          "Di cairan lebih padat, hidrometer mengambang lebih tinggi (tercelup lebih dangkal).",
+          "Kedalaman tercelup berbanding terbalik dengan massa jenis: rho1 x h1 = rho2 x h2.",
+          "Menimbang benda di udara lalu di air memberi massa jenisnya lewat gaya apung.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Di cairan yang lebih padat, sebuah hidrometer akan?",
+            options: [
+              "Tercelup lebih dalam",
+              "Terapung lebih tinggi (tercelup lebih dangkal)",
+              "Tenggelam ke dasar",
+              "Berputar",
+            ],
+            answer: 1,
+            explain: "Cairan padat memberi gaya apung lebih besar per kedalaman, jadi hidrometer tercelup lebih dangkal.",
+          },
+          {
+            q: "Hubungan kedalaman tercelup hidrometer dengan massa jenis cairan adalah?",
+            options: [
+              "Berbanding lurus",
+              "Berbanding terbalik",
+              "Tidak berhubungan",
+              "Sebanding kuadrat",
+            ],
+            answer: 1,
+            explain: "Karena gaya apung tetap, rho x h konstan, jadi kedalaman berbanding terbalik dengan massa jenis.",
+          },
+          {
+            q: "Hidrometer tercelup 10 cm di air (1000) dan 8 cm di cairan X. Massa jenis X?",
+            options: ["800 kg/m^3", "1000 kg/m^3", "1250 kg/m^3", "1280 kg/m^3"],
+            answer: 2,
+            explain: "rho_X = 1000 x (10/8) = 1250 kg/m^3.",
+          },
+          {
+            q: "Benda 10 N di udara, 8 N di air (1000, g 10). Volume benda?",
+            options: ["0,0002 m^3", "0,002 m^3", "0,02 m^3", "0,2 m^3"],
+            answer: 0,
+            explain: "Gaya apung = 2 N, V = 2 / (1000 x 10) = 0,0002 m^3.",
+          },
+          {
+            q: "Bagaimana Archimedes menguji kemurnian mahkota tanpa merusaknya?",
+            options: [
+              "Memanaskannya",
+              "Membandingkan massa jenisnya dengan emas murni lewat gaya apung",
+              "Menimbangnya di udara saja",
+              "Melarutkannya",
+            ],
+            answer: 1,
+            explain: "Gaya apung memberi volume, lalu massa jenis, yang dibandingkan dengan emas murni.",
+          },
+        ],
+      },
+    ],
+  },
 ];

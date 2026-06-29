@@ -531,4 +531,155 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "pertidaksamaan-ganda",
+    levelId: "pertidaksamaan-sistem",
+    order: 5,
+    title: "Dua Batas Sekaligus: Pertidaksamaan Ganda",
+    summary:
+      "Kadang sebuah nilai harus berada di antara dua batas, seperti suhu kulkas vaksin. Kita rasakan dulu lewat aturan nyata sebelum menuliskannya.",
+    durationMin: 13,
+    tags: ["aljabar", "pertidaksamaan", "rentang", "interval"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Vaksin harus disimpan pada suhu antara 2°C dan 8°C. Tidak boleh lebih dingin, tidak boleh lebih panas. Satu syarat saja tidak cukup; ada dua batas sekaligus yang harus dipenuhi. Bagaimana menulis dan menyelesaikan keadaan 'di antara' seperti ini?",
+      },
+      {
+        type: "video",
+        comp: "AljabarVideo",
+        title: "Video: Nilai yang Terjepit di Antara Dua Batas",
+        caption: "Pertidaksamaan ganda menyatakan satu nilai yang harus berada dalam sebuah rentang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Aturan suhu vaksin bisa ditulis ringkas: <strong>2 ≤ s ≤ 8</strong>, dibaca 's paling rendah 2 dan paling tinggi 8'. Coba uji: s = 5 aman (di antara), s = 1 terlalu dingin, s = 10 terlalu panas. Satu baris ini menggabungkan dua syarat s ≥ 2 dan s ≤ 8 sekaligus.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Apa pun untuk satu bagian, kenakan ke tiga bagian",
+        html: "Menyelesaikan pertidaksamaan ganda seperti merawat dua timbangan sekaligus: apa pun yang kamu lakukan pada bagian tengah, lakukan juga pada bagian kiri dan kanan. Dari 2 ≤ x + 1 ≤ 6, kurangi 1 di ketiga bagian menjadi 1 ≤ x ≤ 5.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTimbangan",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Berapa Tiket yang Boleh Dibeli (harga Rp15.000)",
+        unit: "rupiah",
+        source: "ilustrasi total = 15.000 × jumlah tiket",
+        note: "Promo berlaku untuk total Rp50.000 sampai Rp80.000. Hanya 4 tiket (Rp60.000) dan 5 tiket (Rp75.000) yang jatuh di dalam pita itu.",
+        data: [
+          { label: "1 tiket", value: 15000, color: "#a855f7" },
+          { label: "2 tiket", value: 30000, color: "#9333ea" },
+          { label: "3 tiket", value: 45000, color: "#8b5cf6" },
+          { label: "4 tiket", value: 60000, color: "#7c3aed" },
+          { label: "5 tiket", value: 75000, color: "#6d28d9" },
+          { label: "6 tiket", value: 90000, color: "#5b21b6" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Ada berapa bilangan bulat x yang memenuhi 2 ≤ x + 1 ≤ 6?",
+        answer: 5,
+        suffix: " nilai",
+        solution:
+          "Kurangi 1 di ketiga bagian: 1 ≤ x ≤ 5. Bilangan bulatnya 1, 2, 3, 4, 5, jadi ada <strong>5 nilai</strong>.",
+        hint: "Sederhanakan dulu menjadi bentuk a ≤ x ≤ b, lalu hitung bilangan bulat di antaranya.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Promo berlaku untuk belanja Rp50.000 sampai Rp80.000. Jika satu tiket Rp15.000, paling banyak berapa tiket yang masih kena promo?",
+        answer: 5,
+        suffix: " tiket",
+        solution:
+          "Syaratnya 50.000 ≤ 15.000n ≤ 80.000. Bagi 15.000: 3,33 ≤ n ≤ 5,33. Bilangan bulat terbesar yang memenuhi adalah <strong>5 tiket</strong> (Rp75.000).",
+        hint: "Bagi ketiga bagian dengan 15.000, lalu ambil bilangan bulat dalam rentang itu.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap nilai x: memenuhi syarat 3 ≤ x ≤ 7 atau tidak?",
+        buckets: ["Memenuhi 3 ≤ x ≤ 7", "Tidak memenuhi"],
+        items: [
+          { text: "x = 2", bucket: "Tidak memenuhi" },
+          { text: "x = 3", bucket: "Memenuhi 3 ≤ x ≤ 7" },
+          { text: "x = 5", bucket: "Memenuhi 3 ≤ x ≤ 7" },
+          { text: "x = 7", bucket: "Memenuhi 3 ≤ x ≤ 7" },
+          { text: "x = 8", bucket: "Tidak memenuhi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Rantai dingin vaksin",
+        html: "Pedoman penyimpanan banyak vaksin menetapkan suhu 2°C sampai 8°C, ditulis 2 ≤ s ≤ 8. Sebuah kulkas yang menunjukkan 5°C berada di tengah rentang, jadi <strong>aman</strong>. Tetapi bila suhu turun ke 1°C, vaksin bisa rusak karena membeku, dan bila naik ke 10°C, kandungannya bisa menurun. Pertidaksamaan ganda menjaga keduanya: tidak terlalu dingin sekaligus tidak terlalu panas.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah berlatih, baru kita rumuskan: <strong>pertidaksamaan ganda</strong> a ≤ x ≤ b menyatakan satu nilai yang terjepit di antara dua batas. Selesaikan dengan mengenakan operasi yang sama pada <strong>ketiga bagian</strong>. Ingat aturan dari pelajaran sebelumnya: jika ketiga bagian dikali atau dibagi bilangan negatif, kedua tanda pertidaksamaan ikut dibalik.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pertidaksamaan ganda a ≤ x ≤ b menyatakan nilai di antara dua batas.",
+          "Ia menggabungkan dua syarat (x ≥ a dan x ≤ b) dalam satu baris.",
+          "Selesaikan dengan mengenakan operasi sama pada ketiga bagian sekaligus.",
+          "Jika dikali atau dibagi bilangan negatif, kedua tanda ikut dibalik.",
+          "Banyak aturan nyata (suhu, usia, anggaran) berbentuk rentang seperti ini.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bentuk 2 ≤ s ≤ 8 dibaca sebagai?",
+            options: [
+              "s lebih dari 8",
+              "s kurang dari 2",
+              "s antara 2 dan 8, termasuk kedua batas",
+              "s sama dengan 2 atau 8 saja",
+            ],
+            answer: 2,
+            explain: "Tanda ≤ membuat kedua batas ikut termasuk, jadi 2 sampai 8.",
+          },
+          {
+            q: "Penyelesaian dari 1 ≤ x + 2 ≤ 7 adalah?",
+            options: ["-1 ≤ x ≤ 5", "1 ≤ x ≤ 7", "3 ≤ x ≤ 9", "-1 ≤ x ≤ 9"],
+            answer: 0,
+            explain: "Kurangi 2 di ketiga bagian: -1 ≤ x ≤ 5.",
+          },
+          {
+            q: "Mana nilai yang memenuhi 3 ≤ x ≤ 7?",
+            options: ["x = 2", "x = 7", "x = 8", "x = 1"],
+            answer: 1,
+            explain: "Karena pakai ≤, x = 7 termasuk dalam rentang.",
+          },
+          {
+            q: "Saat menyelesaikan pertidaksamaan ganda, operasi dikenakan pada?",
+            options: [
+              "Bagian tengah saja",
+              "Bagian kiri saja",
+              "Ketiga bagian sekaligus",
+              "Bagian kanan saja",
+            ],
+            answer: 2,
+            explain: "Agar tetap setara, operasi yang sama dikenakan ke ketiga bagian.",
+          },
+          {
+            q: "Jika 4 ≤ 2x ≤ 10, maka rentang x adalah?",
+            options: ["2 ≤ x ≤ 5", "4 ≤ x ≤ 10", "1 ≤ x ≤ 5", "2 ≤ x ≤ 10"],
+            answer: 0,
+            explain: "Bagi 2 di ketiga bagian: 2 ≤ x ≤ 5.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -586,4 +586,152 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "cara-menyajikan-fungsi",
+    levelId: "apa-itu-fungsi",
+    order: 5,
+    title: "Empat Cara Menyajikan Fungsi",
+    summary:
+      "Sebelum memilih bentuk favorit, kita lihat dulu satu aturan harga yang sama ditampilkan lewat empat wajah berbeda.",
+    durationMin: 13,
+    tags: ["fungsi", "tabel", "grafik", "representasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah warung menjual nasi bungkus seharga Rp12.000 per porsi. Aturannya satu, tetapi bisa kita tampilkan dalam banyak rupa: sebagai daftar harga, sebagai panah dari pesanan ke total, sebagai titik-titik pada grafik, atau sebagai deretan pasangan angka. Ayo lihat dulu keempat wajah ini sebelum memberi mereka nama resmi.",
+      },
+      {
+        type: "video",
+        comp: "FungsiVideo",
+        title: "Video: Satu Fungsi, Banyak Wajah",
+        caption: "Aturan yang sama bisa ditulis sebagai tabel, panah, grafik, atau pasangan angka.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil aturan total = 12.000 × porsi. Tulis sebagai tabel: 1 porsi 12.000, 2 porsi 24.000, 3 porsi 36.000. Tulis sebagai panah: 1 menunjuk 12.000, 2 menunjuk 24.000. Tulis sebagai pasangan: (1, 12.000), (2, 24.000), (3, 36.000). Gambar tiap pasangan sebagai titik, dan titik-titiknya berbaris lurus. Empat tampilan, satu aturan.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorMesinFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Total Bayar Nasi Bungkus terhadap Jumlah Porsi",
+        unit: "ribu rupiah",
+        source: "ilustrasi edukatif",
+        note: "Inilah wajah grafik dari aturan total = 12.000 × porsi. Karena tiap porsi menambah Rp12.000 tetap, titik-titiknya berbaris pada satu garis lurus.",
+        data: [
+          { label: "1 porsi", value: 12, color: "#34d399" },
+          { label: "2 porsi", value: 24, color: "#34d399" },
+          { label: "3 porsi", value: 36, color: "#34d399" },
+          { label: "4 porsi", value: 48, color: "#34d399" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Wajah berbeda, isi sama",
+        html: "Keempat cara ini menyimpan informasi yang persis sama, hanya berbeda tampilan. <strong>Tabel</strong> enak dibaca angkanya, <strong>grafik</strong> enak dilihat polanya, <strong>diagram panah</strong> menegaskan tiap masukan menunjuk tepat satu keluaran, dan <strong>pasangan berurutan</strong> ringkas untuk ditulis.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah fungsi disajikan sebagai pasangan berurutan {(1, 3), (2, 5), (3, 7)}. Mengikuti pola yang sama, berapa keluaran untuk masukan 4?",
+        answer: 9,
+        solution:
+          "Tiap masukan naik 1, keluaran naik 2 (3, 5, 7, ...). Maka setelah 7 adalah <strong>9</strong>. Aturannya f(x) = 2x + 1, jadi f(4) = 9.",
+        hint: "Lihat selisih keluaran yang berurutan, lalu teruskan polanya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap tampilan ke jenis penyajian fungsinya.",
+        buckets: ["Tabel", "Diagram panah", "Grafik", "Pasangan berurutan"],
+        items: [
+          { text: "Dua kolom berisi nilai x dan nilai y", bucket: "Tabel" },
+          { text: "Panah dari tiap masukan ke keluarannya", bucket: "Diagram panah" },
+          { text: "Titik-titik yang diplot pada bidang koordinat", bucket: "Grafik" },
+          { text: "Daftar (x, y) di dalam kurung kurawal", bucket: "Pasangan berurutan" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan nama penyajian fungsi dengan ciri khasnya.",
+        pairs: [
+          { left: "Tabel", right: "Baris angka masukan dan keluaran" },
+          { left: "Diagram panah", right: "Panah menghubungkan dua himpunan" },
+          { left: "Grafik", right: "Titik pada bidang koordinat" },
+          { left: "Pasangan berurutan", right: "Kumpulan (x, y)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menu warung dalam empat bentuk",
+        html: "Pemilik warung menulis aturan harga es teh, Rp5.000 per gelas, di papan menu sebagai tabel: 1 gelas 5.000, 2 gelas 10.000, 3 gelas 15.000. Kasir menyimpannya sebagai pasangan berurutan (1, 5.000), (2, 10.000), (3, 15.000) di mesin kasir. Saat rapat, manajer menampilkannya sebagai grafik garis untuk melihat polanya. Ketiganya menggambarkan satu fungsi yang sama: total = 5.000 × gelas. Memilih bentuk hanyalah soal kebutuhan, bukan mengubah fungsinya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Sebuah fungsi bisa disajikan lewat empat cara setara: <strong>tabel</strong>, <strong>diagram panah</strong>, <strong>grafik</strong>, dan <strong>pasangan berurutan</strong>. Semua menyimpan aturan yang sama, yaitu tiap masukan dipetakan ke tepat satu keluaran. Memilih bentuk tidak mengubah fungsinya, hanya cara kita melihatnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Fungsi yang sama bisa disajikan sebagai tabel, diagram panah, grafik, atau pasangan berurutan.",
+          "Keempat bentuk menyimpan informasi yang sama, hanya berbeda tampilan.",
+          "Diagram panah menegaskan tiap masukan menunjuk tepat satu keluaran.",
+          "Memilih bentuk penyajian disesuaikan dengan kebutuhan, tanpa mengubah fungsinya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Manakah yang BUKAN cara menyajikan fungsi?",
+            options: ["Tabel", "Diagram panah", "Grafik", "Daftar belanja acak"],
+            answer: 3,
+            explain: "Tabel, diagram panah, grafik, dan pasangan berurutan adalah penyajian fungsi; daftar acak bukan.",
+          },
+          {
+            q: "Pasangan berurutan (3, 8) berarti?",
+            options: [
+              "Masukan 3 memberi keluaran 8",
+              "Masukan 8 memberi keluaran 3",
+              "Hasil kali 3 dan 8",
+              "Dua fungsi berbeda",
+            ],
+            answer: 0,
+            explain: "Pada (x, y), angka pertama masukan dan angka kedua keluaran.",
+          },
+          {
+            q: "Bentuk penyajian mana yang paling mudah memperlihatkan pola naik-turun?",
+            options: ["Grafik", "Daftar kata", "Paragraf panjang", "Nomor antrean"],
+            answer: 0,
+            explain: "Grafik menampilkan pola secara visual sehingga arah perubahan cepat terlihat.",
+          },
+          {
+            q: "Tabel 1 porsi 12.000, 2 porsi 24.000, 3 porsi 36.000 menggambarkan aturan?",
+            options: ["total = 12.000 × porsi", "total = 12.000 + porsi", "total = porsi", "total = 24.000 × porsi"],
+            answer: 0,
+            explain: "Tiap porsi menambah 12.000, jadi total = 12.000 × porsi.",
+          },
+          {
+            q: "Jika sebuah fungsi diubah dari tabel menjadi grafik, fungsinya?",
+            options: [
+              "Tetap sama, hanya tampilannya berbeda",
+              "Berubah menjadi fungsi lain",
+              "Kehilangan sebagian aturannya",
+              "Menjadi bukan fungsi",
+            ],
+            answer: 0,
+            explain: "Penyajian hanya mengubah tampilan, bukan aturan fungsinya.",
+          },
+        ],
+      },
+    ],
+  },
 ];

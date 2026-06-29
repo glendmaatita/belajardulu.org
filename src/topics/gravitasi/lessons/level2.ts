@@ -541,4 +541,144 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "bidang-ekuipotensial-dan-usaha",
+    levelId: "medan-potensial-gravitasi",
+    order: 5,
+    title: "Bidang Ekuipotensial dan Usaha Gravitasi",
+    summary:
+      "Mengapa berjalan menyusuri lereng pada ketinggian sama tidak melelahkan, sementara mendaki tegak lurus menguras tenaga? Kita pahami dulu gagasan garis ketinggian gravitasi, baru rumus usaha W = m dikali selisih potensial muncul.",
+    durationMin: 13,
+    tags: ["fisika", "gravitasi", "ekuipotensial", "usaha"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di peta gunung, garis kontur menandai titik-titik berketinggian sama. Berjalan menyusuri satu garis kontur tidak membuatmu naik atau turun, jadi tidak menabung maupun melepas energi. Gravitasi punya 'garis kontur' serupa, disebut <strong>bidang ekuipotensial</strong>: kumpulan titik dengan potensial gravitasi sama. Sebelum bertemu rumus usahanya, ayo pahami dulu mengapa bergerak di sepanjang bidang ini gratis, tetapi menyeberang antar bidang berbiaya energi.",
+      },
+      {
+        type: "video",
+        comp: "BahasaSemesta",
+        title: "Video: Garis Kontur Gravitasi",
+        caption: "Bidang ekuipotensial adalah permukaan berpotensial sama, tegak lurus arah medan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Di sekitar Bumi, bidang ekuipotensial berbentuk bola-bola yang membungkus pusat Bumi. Bergerak <strong>sepanjang</strong> satu bola (ketinggian tetap) tidak mengubah potensial, jadi gravitasi tidak melakukan usaha. Untuk berpindah ke bola yang lebih luar, kamu harus menyeberang, dan di sinilah energi tertabung sebagai energi potensial. Karena gravitasi adalah <strong>gaya konservatif</strong>, usaha untuk berpindah antar dua titik hanya bergantung pada titik awal dan akhir, bukan pada jalur yang ditempuh.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "area",
+        title: "Usaha Mengangkat 1 kg dari Permukaan Bumi ke Berbagai Jarak",
+        unit: "megajoule",
+        source: "perhitungan W = m dikali selisih V, dengan V = -GM/r",
+        note: "Usaha bertambah saat benda diangkat lebih tinggi, tetapi tidak tanpa batas: ia mendekati 62,6 megajoule, yaitu energi yang dibutuhkan untuk lepas total. Angka inilah yang setara dengan setengah kuadrat kecepatan lepas Bumi.",
+        data: [
+          { label: "ke 2 R", value: 31.3, color: "#fb7185" },
+          { label: "ke 4 R", value: 47.0, color: "#f472b6" },
+          { label: "ke 8 R", value: 54.8, color: "#e879f9" },
+          { label: "lepas (tak hingga)", value: 62.6, color: "#c084fc" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Potensial gravitasi di permukaan Bumi sekitar -62,6 megajoule per kg, dan pada jarak 2 kali jari-jari Bumi sekitar -31,3 megajoule per kg. Berapa usaha untuk mengangkat benda 1 kg dari permukaan ke jarak 2R? Gunakan W = m dikali selisih potensial.",
+        answer: 31.3,
+        tolerance: 0.5,
+        suffix: " megajoule",
+        solution:
+          "Usaha = massa dikali selisih potensial: W = m x (V akhir - V awal) = 1 x (-31,3 - (-62,6)) = 1 x 31,3 = <strong>31,3 megajoule</strong>. Hasil ini sama berapa pun jalur yang dipilih, karena gravitasi gaya konservatif.",
+        hint: "Kurangkan potensial awal dari potensial akhir, lalu kalikan massa.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pernyataan tentang bidang ekuipotensial dan usaha sebagai benar atau keliru.",
+        buckets: ["Benar", "Keliru"],
+        items: [
+          { text: "Bergerak sepanjang bidang ekuipotensial tidak memerlukan usaha gravitasi", bucket: "Benar" },
+          { text: "Bidang ekuipotensial selalu tegak lurus arah medan gravitasi", bucket: "Benar" },
+          { text: "Usaha gravitasi bergantung pada jalur yang ditempuh, bukan titik ujungnya", bucket: "Keliru" },
+          { text: "Di sekitar massa bola, bidang ekuipotensial berbentuk bola-bola", bucket: "Benar" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa Roket Diluncurkan ke Timur dari Dekat Khatulistiwa",
+        html: "Untuk mengangkat wahana ke orbit, roket harus menabung energi melawan potensial gravitasi. Setiap megajoule berharga. Karena itu banyak peluncuran diarahkan <strong>ke timur</strong> dan dilakukan dekat khatulistiwa, agar mendapat 'dorongan gratis' dari rotasi Bumi yang di khatulistiwa melaju sekitar 0,46 km/s ke timur. Energi awal ini mengurangi bahan bakar yang perlu dibakar untuk menyeberangi bidang-bidang ekuipotensial menuju orbit. Indonesia, yang membentang di khatulistiwa, secara geografis sangat menguntungkan untuk gagasan peluncuran semacam ini.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan: usaha untuk memindahkan benda bermassa m antara dua titik adalah <strong>W = m &middot; (V&#8322; &minus; V&#8321;)</strong>, yaitu massa dikali selisih potensial gravitasi. Bila kedua titik berada di bidang ekuipotensial yang sama, V&#8322; = V&#8321; sehingga <strong>W = 0</strong>. Karena gravitasi konservatif, usaha ini tidak bergantung pada jalur. Usaha untuk lepas total (ke jarak tak hingga) sama dengan m dikali besar potensial permukaan, dan itulah yang menentukan kecepatan lepas.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Bidang ekuipotensial adalah kumpulan titik berpotensial gravitasi sama, seperti garis kontur peta.",
+          "Bergerak sepanjang bidang ekuipotensial tidak memerlukan usaha gravitasi (selisih potensial nol).",
+          "Gravitasi adalah gaya konservatif: usaha hanya bergantung pada titik awal dan akhir, bukan jalurnya.",
+          "Usaha memindahkan benda dihitung dengan W = m dikali selisih potensial (V akhir dikurangi V awal).",
+          "Usaha untuk lepas total bernilai berhingga, dan menjadi dasar gagasan kecepatan lepas.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa itu bidang ekuipotensial gravitasi?",
+            options: [
+              "Permukaan dengan kuat medan nol",
+              "Kumpulan titik dengan potensial gravitasi sama",
+              "Garis arah jatuhnya benda",
+              "Tempat gravitasi paling besar",
+            ],
+            answer: 1,
+            explain: "Bidang ekuipotensial menghubungkan titik-titik berpotensial sama, mirip garis kontur peta.",
+          },
+          {
+            q: "Berapa usaha gravitasi saat benda bergerak sepanjang bidang ekuipotensial?",
+            options: ["Nol", "Maksimum", "Negatif besar", "Tak terhingga"],
+            answer: 0,
+            explain: "Potensialnya tidak berubah, jadi W = m dikali selisih potensial = nol.",
+          },
+          {
+            q: "Bidang ekuipotensial selalu berorientasi bagaimana terhadap medan gravitasi?",
+            options: ["Sejajar medan", "Tegak lurus medan", "Membentuk 45 derajat", "Acak"],
+            answer: 1,
+            explain: "Bidang ekuipotensial selalu tegak lurus terhadap arah medan gravitasi.",
+          },
+          {
+            q: "Rumus usaha memindahkan benda antara dua titik dalam medan gravitasi adalah?",
+            options: [
+              "W = m dikali (V akhir dikurangi V awal)",
+              "W = m g",
+              "W = G M / r",
+              "W = 1/2 m v kuadrat",
+            ],
+            answer: 0,
+            explain: "Usaha = massa dikali selisih potensial gravitasi antara titik akhir dan awal.",
+          },
+          {
+            q: "Apa arti gravitasi adalah gaya konservatif?",
+            options: [
+              "Gravitasi selalu menghemat energi",
+              "Usaha hanya bergantung pada titik awal dan akhir, bukan jalurnya",
+              "Gravitasi tidak pernah melakukan usaha",
+              "Gravitasi hanya bekerja di Bumi",
+            ],
+            answer: 1,
+            explain: "Pada gaya konservatif, usaha antara dua titik tak bergantung pada lintasan yang dilalui.",
+          },
+        ],
+      },
+    ],
+  },
 ];

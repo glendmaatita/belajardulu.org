@@ -597,4 +597,155 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kecepatan-sesaat-vs-rata-rata",
+    levelId: "konsep-gerak",
+    order: 5,
+    title: "Kecepatan Sesaat vs Rata-rata",
+    summary:
+      "Speedometer menunjukkan kecepatan pada satu kejapan waktu, tetapi 'rata-rata' sepanjang perjalanan bisa jauh berbeda. Dan rata-rata ternyata bukan sekadar menjumlah lalu membagi dua.",
+    durationMin: 13,
+    tags: ["kinematika", "kecepatan-sesaat", "kecepatan-rata-rata", "perjalanan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dalam satu perjalanan, angka di speedometer naik turun terus: 0 saat berhenti, 60 di jalan lancar, 20 saat macet. Lalu di akhir kamu bertanya, 'tadi rata-rata berapa?' Anehnya, jawabannya sering tidak sama dengan menjumlahkan angka tertinggi dan terendah lalu dibagi dua. Ayo selidiki dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Satu Kejapan vs Seluruh Perjalanan",
+        caption: "Kecepatan sesaat adalah nilai pada satu titik waktu; kecepatan rata-rata merangkum seluruh perjalanan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan menempuh 60 km pertama dengan laju 60 km/jam (butuh 1 jam), lalu 60 km berikutnya terjebak macet pada 20 km/jam (butuh 3 jam). Banyak orang menebak rata-ratanya (60 + 20) / 2 = 40 km/jam. Tetapi total perjalananmu 120 km dalam 4 jam, jadi <strong>rata-rata sebenarnya 30 km/jam</strong>. Rata-rata condong ke yang lebih lambat karena <strong>lebih banyak waktu dihabiskan pelan</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua makna kecepatan",
+        html: "<strong>Kecepatan sesaat</strong> adalah kecepatan pada satu titik waktu (yang dibaca speedometer). <strong>Kecepatan rata-rata</strong> = perpindahan total dibagi waktu total, tanpa peduli naik turunnya di tengah jalan.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorKecepatan",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perjalanan Dua Tahap: 60 km @60 km/jam lalu 60 km @20 km/jam",
+        unit: "km/jam",
+        source: "ilustrasi edukatif",
+        note: "Rata-rata sebenarnya 30 km/jam, lebih dekat ke 20 daripada ke 40, karena 3 dari 4 jam dihabiskan pada laju lambat. Rata-rata diberatkan oleh waktu, bukan oleh jarak.",
+        data: [
+          { label: "Tahap cepat", value: 60, color: "#38bdf8" },
+          { label: "Tahap lambat", value: 20, color: "#f87171" },
+          { label: "Rata-rata sebenarnya", value: 30, color: "#34d399" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah mobil menempuh 60 km dengan laju 60 km/jam, lalu 60 km berikutnya dengan laju 20 km/jam. Berapa kecepatan rata-ratanya?",
+        answer: 30,
+        tolerance: 0.5,
+        suffix: " km/jam",
+        solution:
+          "Waktu tahap 1 = 60 ÷ 60 = 1 jam; waktu tahap 2 = 60 ÷ 20 = 3 jam. Total jarak 120 km dibagi total waktu 4 jam = <strong>30 km/jam</strong>. Bukan 40 km/jam, karena lebih banyak waktu dihabiskan pada laju lambat.",
+        hint: "Hitung waktu tiap tahap dulu, lalu bagi total jarak dengan total waktu.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Posisi sebuah benda adalah 10 m saat t = 2 s dan 40 m saat t = 5 s. Berapa kecepatan rata-ratanya pada selang itu?",
+        answer: 10,
+        tolerance: 0.1,
+        suffix: " m/s",
+        solution:
+          "Kecepatan rata-rata = perpindahan dibagi selang waktu = (40 − 10) ÷ (5 − 2) = 30 ÷ 3 = <strong>10 m/s</strong>. Nilai sesaat di tengah perjalanan bisa berbeda, tetapi rata-ratanya hanya peduli pada titik awal dan akhir.",
+        hint: "Bagi perubahan posisi dengan selang waktunya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pernyataan sebagai ciri kecepatan sesaat atau kecepatan rata-rata.",
+        buckets: ["Kecepatan sesaat", "Kecepatan rata-rata"],
+        items: [
+          { text: "Angka yang ditunjukkan speedometer saat ini", bucket: "Kecepatan sesaat" },
+          { text: "Perpindahan total dibagi waktu total", bucket: "Kecepatan rata-rata" },
+          { text: "Nilai pada satu titik waktu tertentu", bucket: "Kecepatan sesaat" },
+          { text: "Tidak peduli naik turunnya laju di tengah jalan", bucket: "Kecepatan rata-rata" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa Rata-rata Bukan (Cepat + Lambat) Dibagi Dua",
+        html: "Sopir bus antarkota sering heran: separuh rute dilalui 80 km/jam, separuh lagi 40 km/jam, tetapi rata-rata di akhir bukan 60 km/jam. Sebabnya, separuh <strong>jarak</strong> yang lambat memakan lebih banyak <strong>waktu</strong>, sehingga lebih berbobot. Untuk jarak sama d tiap tahap, rata-ratanya 2·80·40 / (80 + 40) ≈ 53 km/jam, bukan 60. Rata-rata kecepatan selalu dihitung sebagai jarak total dibagi waktu total, dan waktulah yang menjadi penimbangnya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya bermakna. <strong>Kecepatan rata-rata = perpindahan total / waktu total</strong> = Δx / Δt. <strong>Kecepatan sesaat</strong> adalah nilai ini ketika selang waktunya dipersempit menjadi sangat kecil (kemiringan garis singgung pada grafik posisi-waktu). Rata-rata bukan rata-rata aritmetika dari angka kecepatan, melainkan rata-rata yang diberatkan oleh waktu.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Kecepatan sesaat adalah kecepatan pada satu titik waktu (dibaca speedometer).",
+          "Kecepatan rata-rata = perpindahan total dibagi waktu total.",
+          "Rata-rata kecepatan diberatkan oleh waktu, bukan oleh jarak.",
+          "Karena itu rata-rata sering condong ke laju yang lebih lambat (yang memakan lebih banyak waktu).",
+          "Kecepatan sesaat = kemiringan garis singgung grafik posisi-waktu.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Kecepatan rata-rata didefinisikan sebagai?",
+            options: [
+              "Rata-rata angka kecepatan tertinggi dan terendah",
+              "Perpindahan total dibagi waktu total",
+              "Kecepatan saat speedometer dibaca",
+              "Jarak dikali waktu",
+            ],
+            answer: 1,
+            explain: "Kecepatan rata-rata = Δx / Δt, yaitu perpindahan total dibagi waktu total.",
+          },
+          {
+            q: "Speedometer kendaraan menunjukkan?",
+            options: ["Kecepatan rata-rata", "Kecepatan sesaat", "Perpindahan", "Percepatan rata-rata"],
+            answer: 1,
+            explain: "Speedometer membaca kecepatan pada saat itu, yaitu kecepatan sesaat.",
+          },
+          {
+            q: "Mobil menempuh 100 km dalam 1 jam lalu 100 km dalam 4 jam. Kecepatan rata-ratanya?",
+            options: ["50 km/jam", "62,5 km/jam", "40 km/jam", "100 km/jam"],
+            answer: 2,
+            explain: "Total 200 km dalam 5 jam = 40 km/jam, bukan rata-rata aritmetika.",
+          },
+          {
+            q: "Mengapa rata-rata sering lebih dekat ke laju yang lambat?",
+            options: [
+              "Karena laju lambat lebih sering terjadi",
+              "Karena tahap lambat memakan lebih banyak waktu",
+              "Karena jaraknya lebih jauh",
+              "Karena speedometer salah",
+            ],
+            answer: 1,
+            explain: "Rata-rata diberatkan oleh waktu; tahap lambat menghabiskan lebih banyak waktu.",
+          },
+          {
+            q: "Posisi 5 m saat t = 1 s dan 35 m saat t = 4 s. Kecepatan rata-ratanya?",
+            options: ["10 m/s", "30 m/s", "40 m/s", "8,75 m/s"],
+            answer: 0,
+            explain: "(35 − 5) ÷ (4 − 1) = 30 ÷ 3 = 10 m/s.",
+          },
+        ],
+      },
+    ],
+  },
 ];

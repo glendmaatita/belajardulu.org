@@ -570,4 +570,162 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "himpunan-bagian-dan-kuasa",
+    levelId: "himpunan",
+    order: 5,
+    title: "Himpunan Bagian dan Himpunan Kuasa",
+    summary:
+      "Dari satu himpunan kecil bisa lahir banyak himpunan bagian. Kita daftarkan dulu semuanya sebelum menemukan pola pertumbuhannya.",
+    durationMin: 13,
+    tags: ["himpunan-bagian", "himpunan-kuasa", "subset", "kardinalitas"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Bayangkan kamu punya dua topping: {keju, sosis}. Berapa banyak pilihan kombinasi yang bisa kamu pesan? Ternyata bukan dua, melainkan empat: tanpa topping, keju saja, sosis saja, atau keduanya. Setiap pilihan itu adalah <em>himpunan bagian</em> dari {keju, sosis}. Sebelum membuat rumus, ayo daftarkan dulu semua kemungkinan dari beberapa himpunan kecil.",
+      },
+      {
+        type: "video",
+        comp: "HimpunanVideo",
+        title: "Video: Himpunan Bagian dan Kuasa",
+        caption: "Himpunan bagian adalah cara memilih sebagian (atau semua) anggota.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Mulai dari himpunan {a}. Daftarkan himpunan bagiannya: { } dan {a}, ada 2. Lalu coba {a, b}: { }, {a}, {b}, {a, b}, ada 4. Sekarang tebak: berapa himpunan bagian dari {a, b, c}? Daftarkan sendiri sebelum melihat polanya, dan perhatikan bagaimana jumlahnya berubah tiap kali satu anggota ditambah.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHimpunan",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Lambang yang dipakai",
+        html: "<strong>A &sube; B</strong> berarti A himpunan bagian dari B (setiap anggota A juga anggota B). Himpunan kosong &empty; adalah himpunan bagian dari <em>setiap</em> himpunan, dan setiap himpunan adalah himpunan bagian dari dirinya sendiri. <strong>Himpunan kuasa</strong> P(A) adalah himpunan yang anggotanya seluruh himpunan bagian A.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Banyak himpunan bagian menurut jumlah anggota",
+        unit: " himpunan bagian",
+        source: "Rumus 2 pangkat n",
+        note: "Tiap penambahan satu anggota melipatgandakan banyaknya himpunan bagian.",
+        data: [
+          { label: "1 anggota", value: 2, color: "#0ea5e9" },
+          { label: "2 anggota", value: 4, color: "#0ea5e9" },
+          { label: "3 anggota", value: 8, color: "#0ea5e9" },
+          { label: "4 anggota", value: 16, color: "#0ea5e9" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Himpunan A = {p, q, r, s} memiliki 4 anggota. Berapa banyak himpunan bagiannya?",
+        answer: 16,
+        suffix: " himpunan bagian",
+        solution:
+          "Banyak himpunan bagian = 2^n = 2^4 = 16. Setiap anggota punya 2 pilihan (ikut atau tidak), dan 4 anggota memberi 2 × 2 × 2 × 2 = 16 kombinasi.",
+        hint: "Gunakan rumus 2 pangkat banyaknya anggota.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Berapa banyak himpunan bagian SEJATI dari himpunan dengan 3 anggota? (himpunan bagian sejati tidak termasuk himpunan itu sendiri)",
+        answer: 7,
+        suffix: " himpunan bagian",
+        solution:
+          "Total himpunan bagian = 2^3 = 8. Himpunan bagian sejati tidak menghitung himpunan itu sendiri, jadi 8 − 1 = 7.",
+        hint: "Hitung semua himpunan bagian dulu (2^n), lalu kurangi 1.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Untuk A = {1, 2, 3}, kelompokkan: mana yang merupakan himpunan bagian A dan mana yang bukan.",
+        buckets: ["Himpunan bagian A", "Bukan himpunan bagian A"],
+        items: [
+          { text: "{1, 2}", bucket: "Himpunan bagian A" },
+          { text: "∅ (himpunan kosong)", bucket: "Himpunan bagian A" },
+          { text: "{2, 4}", bucket: "Bukan himpunan bagian A" },
+          { text: "{1, 2, 3}", bucket: "Himpunan bagian A" },
+          { text: "{3, 5}", bucket: "Bukan himpunan bagian A" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan himpunan dengan banyaknya himpunan bagian yang dimiliki.",
+        pairs: [
+          { left: "{ } (kosong)", right: "1" },
+          { left: "{a}", right: "2" },
+          { left: "{a, b}", right: "4" },
+          { left: "{a, b, c}", right: "8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih topping pizza",
+        html: "Sebuah kedai menawarkan 3 topping tambahan: keju, jamur, dan paprika. Berapa banyak kombinasi pesanan yang mungkin, termasuk pesan polos tanpa tambahan? Setiap kombinasi adalah satu himpunan bagian dari {keju, jamur, paprika}, sehingga ada 2^3 = 8 pilihan. Dengan menambah satu topping saja menjadi 4, pilihannya melonjak jadi 16. Inilah sebabnya menu sederhana bisa menghasilkan begitu banyak variasi: tiap anggota baru melipatgandakan kemungkinan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah mendaftar dan menghitung, baru kita kunci rumusnya: himpunan dengan <strong>n anggota memiliki 2<sup>n</sup> himpunan bagian</strong>. Alasannya, tiap anggota punya dua pilihan, ikut atau tidak, sehingga totalnya 2 dikali sebanyak n. Himpunan bagian sejati ada <strong>2<sup>n</sup> − 1</strong> (tanpa himpunan itu sendiri). Kumpulan semua himpunan bagian disebut <strong>himpunan kuasa</strong> P(A), dengan n(P(A)) = 2<sup>n</sup>.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "A ⊆ B berarti setiap anggota A juga anggota B.",
+          "Himpunan kosong adalah himpunan bagian dari setiap himpunan.",
+          "Himpunan dengan n anggota memiliki 2^n himpunan bagian.",
+          "Himpunan bagian sejati ada 2^n − 1; himpunan kuasa P(A) memuat semua 2^n himpunan bagian.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Himpunan dengan 5 anggota memiliki berapa himpunan bagian?",
+            options: ["10", "25", "32", "16"],
+            answer: 2,
+            explain: "2^5 = 32 himpunan bagian.",
+          },
+          {
+            q: "Manakah yang merupakan himpunan bagian dari {1, 2, 3}?",
+            options: ["{1, 4}", "{2, 3}", "{0, 1}", "{3, 4, 5}"],
+            answer: 1,
+            explain: "Semua anggota {2, 3} ada di {1, 2, 3}, jadi itu himpunan bagian.",
+          },
+          {
+            q: "Himpunan kosong ∅ adalah himpunan bagian dari?",
+            options: [
+              "Tidak ada himpunan",
+              "Hanya himpunan kosong",
+              "Setiap himpunan",
+              "Hanya himpunan berhingga",
+            ],
+            answer: 2,
+            explain: "Himpunan kosong adalah himpunan bagian dari setiap himpunan.",
+          },
+          {
+            q: "Banyak himpunan bagian sejati dari himpunan dengan 4 anggota adalah?",
+            options: ["16", "15", "8", "7"],
+            answer: 1,
+            explain: "2^4 − 1 = 16 − 1 = 15.",
+          },
+          {
+            q: "Himpunan kuasa P(A) adalah?",
+            options: [
+              "Himpunan terbesar di semesta",
+              "Himpunan yang anggotanya semua himpunan bagian A",
+              "Irisan A dengan dirinya",
+              "Himpunan kosong",
+            ],
+            answer: 1,
+            explain: "P(A) memuat seluruh himpunan bagian A, dengan n(P(A)) = 2^n.",
+          },
+        ],
+      },
+    ],
+  },
 ];

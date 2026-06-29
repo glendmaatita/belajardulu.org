@@ -543,4 +543,167 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "diskriminan",
+    levelId: "persamaan-kuadrat",
+    order: 5,
+    title: "Diskriminan: Membaca Jumlah Akar Sebelum Menghitung",
+    summary:
+      "Sebelum repot memakai rumus abc, ada satu angka yang bisa memberi tahu berapa akar yang akan kita temukan. Kita temukan dulu lewat tiga kasus nyata.",
+    durationMin: 14,
+    tags: ["aljabar", "kuadrat", "diskriminan", "akar"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah bola dilempar ke atas. Kadang ia mencapai ketinggian yang kita incar (dua kali: saat naik dan saat turun), kadang hanya menyentuhnya sekali di puncak, kadang tidak pernah sampai. Ternyata persamaan kuadrat punya pola serupa: bisa punya dua akar, satu akar, atau tidak punya akar real. Adakah cara tahu lebih dulu tanpa menghitung penuh?",
+      },
+      {
+        type: "video",
+        comp: "PersamaanVideo",
+        title: "Video: Satu Angka yang Meramal Jumlah Akar",
+        caption: "Bagian di bawah tanda akar pada rumus abc menentukan banyaknya jawaban.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ingat rumus abc: x = (-b ± akar(b² - 4ac)) / 2a. Perhatikan bagian di dalam akar, yaitu <strong>b² - 4ac</strong>. Coba tiga kasus: pada x² - 4x + 3 nilainya 16 - 12 = 4 (positif, dan benar ada dua akar: 1 dan 3). Pada x² - 4x + 4 nilainya 16 - 16 = 0 (dan akarnya hanya satu: 2). Pada x² - 4x + 5 nilainya 16 - 20 = -4 (negatif, dan memang tidak ada akar real).",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tanda sang penentu",
+        html: "Bagian b² - 4ac kita sebut <strong>diskriminan</strong> (lambang D). Aturannya sederhana: jika <strong>D &gt; 0</strong> ada dua akar real berbeda, jika <strong>D = 0</strong> ada satu akar (kembar), dan jika <strong>D &lt; 0</strong> tidak ada akar real. Akar dari bilangan negatif tidak menghasilkan bilangan biasa, itulah sebab kasus ketiga kosong.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Grafik y = x² - 4x + 3 Memotong Sumbu Dua Kali",
+        unit: "nilai y",
+        source: "y dihitung untuk x = 0 sampai 4",
+        note: "Karena diskriminannya 4 (positif), kurva turun di bawah nol lalu naik lagi, memotong sumbu x di dua titik: x = 1 dan x = 3.",
+        data: [
+          { label: "x=0", value: 3, color: "#8b5cf6" },
+          { label: "x=1", value: 0, color: "#7c3aed" },
+          { label: "x=2", value: -1, color: "#6d28d9" },
+          { label: "x=3", value: 0, color: "#7c3aed" },
+          { label: "x=4", value: 3, color: "#8b5cf6" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Hitung diskriminan dari 2x² + 3x - 2 (gunakan D = b² - 4ac).",
+        answer: 25,
+        solution:
+          "a = 2, b = 3, c = -2. D = 3² - 4(2)(-2) = 9 + 16 = <strong>25</strong>. Karena positif, ada dua akar real.",
+        hint: "Hati-hati tanda: -4 × 2 × (-2) menjadi +16.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Agar x² + 6x + c memiliki tepat satu akar (kembar), berapa nilai c?",
+        answer: 9,
+        solution:
+          "Satu akar berarti D = 0. D = 6² - 4(1)(c) = 36 - 4c = 0, jadi 4c = 36 dan c = <strong>9</strong>. Bentuknya menjadi x² + 6x + 9 = (x + 3)².",
+        hint: "Setel diskriminan sama dengan nol, lalu cari c.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Berdasarkan nilai diskriminan D, kelompokkan jumlah akar realnya.",
+        buckets: ["Dua akar real", "Satu akar real", "Tak punya akar real"],
+        items: [
+          { text: "D = 4", bucket: "Dua akar real" },
+          { text: "D = 25", bucket: "Dua akar real" },
+          { text: "D = 0", bucket: "Satu akar real" },
+          { text: "D = -4", bucket: "Tak punya akar real" },
+          { text: "D = -1", bucket: "Tak punya akar real" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap persamaan kuadrat dengan nilai diskriminannya.",
+        pairs: [
+          { left: "x² - 4x + 3", right: "D = 4" },
+          { left: "x² - 4x + 4", right: "D = 0" },
+          { left: "x² - 4x + 5", right: "D = -4" },
+          { left: "x² - 2x - 3", right: "D = 16" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Bola yang tak mencapai 25 meter",
+        html: "Tinggi sebuah bola (dalam meter) didekati h = -5t² + 20t, dengan t dalam detik. Apakah bola pernah mencapai 25 m? Susun -5t² + 20t = 25, lalu rapikan menjadi t² - 4t + 5 = 0. Diskriminannya D = 16 - 20 = <strong>-4</strong>, negatif, jadi <strong>tidak ada</strong> waktu t yang memenuhinya. Memang puncak lintasan bola hanya 20 m (saat t = 2 detik), sehingga 25 m mustahil dicapai. Diskriminan menjawabnya tanpa perlu mencoba banyak nilai t.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah menelusuri, baru kita rumuskan: <strong>diskriminan D = b² - 4ac</strong> meramal jumlah akar persamaan kuadrat ax² + bx + c = 0. D &gt; 0 berarti dua akar real berbeda, D = 0 berarti satu akar kembar, dan D &lt; 0 berarti tak ada akar real. Secara grafik, D menentukan apakah parabola memotong sumbu x dua kali, menyentuhnya sekali, atau tidak sama sekali.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Diskriminan D = b² - 4ac adalah bagian di dalam akar pada rumus abc.",
+          "D > 0 berarti dua akar real berbeda; D = 0 berarti satu akar kembar.",
+          "D < 0 berarti tidak ada akar real, karena akar bilangan negatif bukan bilangan biasa.",
+          "Secara grafik, D menentukan berapa kali parabola memotong sumbu x.",
+          "Diskriminan menjawab 'ada solusinya atau tidak' tanpa menghitung akar penuh.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Diskriminan dari ax² + bx + c adalah?",
+            options: ["b² - 4ac", "b² + 4ac", "4ac - b²", "2b - 4ac"],
+            answer: 0,
+            explain: "Diskriminan D = b² - 4ac, bagian di dalam tanda akar rumus abc.",
+          },
+          {
+            q: "Jika D > 0, persamaan kuadrat punya?",
+            options: [
+              "Satu akar kembar",
+              "Dua akar real berbeda",
+              "Tidak punya akar real",
+              "Tak hingga akar",
+            ],
+            answer: 1,
+            explain: "Diskriminan positif memberi dua akar real yang berbeda.",
+          },
+          {
+            q: "Berapa diskriminan dari x² + 2x + 1?",
+            options: ["0", "4", "8", "-4"],
+            answer: 0,
+            explain: "D = 2² - 4(1)(1) = 4 - 4 = 0, jadi satu akar kembar.",
+          },
+          {
+            q: "Jika D bernilai negatif, maka akar persamaannya?",
+            options: [
+              "Ada dua, keduanya positif",
+              "Ada satu",
+              "Tidak ada akar real",
+              "Selalu nol",
+            ],
+            answer: 2,
+            explain: "Akar dari bilangan negatif bukan bilangan real, jadi tidak ada akar real.",
+          },
+          {
+            q: "Manfaat menghitung diskriminan lebih dulu adalah?",
+            options: [
+              "Mengganti rumus abc sepenuhnya",
+              "Mengetahui jumlah dan jenis akar sebelum menghitung penuh",
+              "Membuat parabola hilang",
+              "Menghapus suku konstanta",
+            ],
+            answer: 1,
+            explain: "Diskriminan memberi tahu banyaknya akar tanpa harus menyelesaikan seluruh rumus.",
+          },
+        ],
+      },
+    ],
+  },
 ];

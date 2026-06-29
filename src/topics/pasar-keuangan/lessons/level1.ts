@@ -505,4 +505,137 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "risiko-dan-imbal-hasil",
+    levelId: "fondasi",
+    order: 5,
+    title: "Risiko dan Imbal Hasil",
+    summary: "Prinsip dasar yang menjiwai seluruh pasar keuangan: imbal hasil lebih tinggi menuntut risiko lebih besar.",
+    durationMin: 13,
+    tags: ["risiko", "imbal hasil", "premi risiko", "trade-off"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Satu prinsip menjiwai seluruh pasar keuangan: <strong>imbal hasil (return)</strong> yang lebih tinggi hampir selalu menuntut <strong>risiko</strong> yang lebih besar. Tidak ada makan siang gratis. Bila sebuah produk menjanjikan imbal hasil tinggi tanpa risiko, itu pertanda untuk waspada.",
+      },
+      {
+        type: "paragraph",
+        html: "<strong>Risiko</strong> adalah kemungkinan hasil nyata berbeda dari yang diharapkan, termasuk kemungkinan rugi. <strong>Premi risiko</strong> adalah tambahan imbal hasil yang diminta investor sebagai kompensasi karena menanggung risiko lebih besar dibanding aset paling aman.",
+      },
+      {
+        type: "video",
+        comp: "AlurPasarKeuangan",
+        title: "Video: Aliran Dana dan Imbal Hasil",
+        caption: "Pemilik dana menyalurkan modal dan menuntut imbal hasil sesuai risiko yang ditanggung.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Trade-off risiko dan imbal hasil",
+        html: "Semakin besar potensi imbal hasil, semakin besar pula potensi kerugian. Deposito aman tetapi imbal hasilnya kecil; saham berpotensi tinggi tetapi harganya bisa turun tajam.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Kelola, bukan hindari",
+        html: "Risiko tidak bisa dihilangkan sepenuhnya, tetapi bisa dikelola lewat <strong>diversifikasi</strong> (menyebar dana ke banyak aset) dan menyesuaikan pilihan dengan jangka waktu serta tujuan.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Waspadai janji manis",
+        html: "Imbal hasil tinggi yang dijanjikan pasti dan tanpa risiko adalah ciri klasik penipuan. Cocokkan selalu tingkat imbal hasil dengan risiko yang masuk akal.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tangga Risiko dan Imbal Hasil per Jenis Aset (ilustrasi)",
+        unit: "% imbal hasil tahunan (perkiraan)",
+        source: "ilustrasi pola umum jangka panjang",
+        note: "Makin tinggi posisi pada tangga, makin besar imbal hasil yang diharapkan dan makin besar risikonya.",
+        data: [
+          { label: "Deposito", value: 6, color: "#10b981" },
+          { label: "Obligasi negara", value: 7, color: "#0ea5e9" },
+          { label: "Obligasi korporasi", value: 9, color: "#f59e0b" },
+          { label: "Saham", value: 12, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Premi risiko saham",
+        html: "Bu Dewi membandingkan dua pilihan. <strong>Deposito</strong> memberi imbal hasil 6% per tahun dengan risiko sangat rendah. <strong>Saham</strong> secara historis memberi rata-rata sekitar 12% per tahun, tetapi nilainya bisa turun tajam dalam setahun tertentu. Selisih 12% - 6% = <strong>6% per tahun</strong> adalah premi risiko, yaitu imbalan tambahan yang dituntut Bu Dewi karena bersedia menanggung naik turunnya harga saham.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Saham diharapkan beri imbal hasil 12% per tahun, deposito 6%. Berapa premi risiko saham (dalam poin persen)?",
+        answer: 6,
+        tolerance: 0,
+        suffix: "%",
+        solution: "Premi risiko = imbal hasil saham - imbal hasil aset aman = 12% - 6% = <strong>6 poin persen</strong>.",
+        hint: "Kurangkan imbal hasil aset paling aman dari imbal hasil aset berisiko.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan instrumen berikut sebagai risiko rendah atau risiko tinggi.",
+        buckets: ["Risiko rendah", "Risiko tinggi"],
+        items: [
+          { text: "Deposito berjangka", bucket: "Risiko rendah" },
+          { text: "Obligasi negara (SBN)", bucket: "Risiko rendah" },
+          { text: "Saham perusahaan kecil", bucket: "Risiko tinggi" },
+          { text: "Obligasi korporasi high yield", bucket: "Risiko tinggi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Krisis 2008 dan ilusi imbal hasil tinggi tanpa risiko",
+        html: "Menjelang <strong>krisis keuangan 2008</strong>, banyak produk berbasis kredit perumahan (KPR subprime) dikemas ulang dan diberi peringkat tertinggi <strong>AAA</strong> sambil menawarkan imbal hasil lebih tinggi dari obligasi negara. Investor mengira mereka mendapat imbal hasil ekstra nyaris tanpa tambahan risiko. Ketika gagal bayar KPR melonjak pada <strong>2007-2008</strong>, nilai produk itu runtuh dan turut menjatuhkan <strong>Lehman Brothers</strong> pada September 2008. Pelajarannya jelas: imbal hasil ekstra selalu membawa risiko ekstra, meski sempat tersembunyi.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Imbal hasil lebih tinggi hampir selalu menuntut risiko lebih besar.",
+          "Premi risiko adalah tambahan imbal hasil sebagai kompensasi risiko.",
+          "Deposito aman dengan imbal hasil kecil; saham berpotensi tinggi tetapi fluktuatif.",
+          "Risiko dikelola lewat diversifikasi dan penyesuaian dengan tujuan.",
+          "Janji imbal hasil tinggi tanpa risiko adalah tanda bahaya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Prinsip dasar yang menjiwai pasar keuangan adalah?",
+            options: ["Imbal hasil tinggi selalu aman", "Imbal hasil lebih tinggi menuntut risiko lebih besar", "Risiko selalu bisa dihilangkan", "Deposito paling menguntungkan"],
+            answer: 1,
+            explain: "Trade-off risiko dan imbal hasil: potensi imbal hasil lebih tinggi diiringi risiko lebih besar.",
+          },
+          {
+            q: "Premi risiko adalah?",
+            options: ["Biaya broker", "Tambahan imbal hasil sebagai kompensasi risiko", "Pajak atas keuntungan", "Bunga deposito"],
+            answer: 1,
+            explain: "Premi risiko adalah imbal hasil ekstra yang dituntut karena menanggung risiko lebih besar.",
+          },
+          {
+            q: "Cara utama mengelola risiko investasi adalah?",
+            options: ["Menaruh semua dana di satu saham", "Diversifikasi ke banyak aset", "Menghindari pasar sepenuhnya", "Mengejar imbal hasil tertinggi"],
+            answer: 1,
+            explain: "Diversifikasi menyebar dana sehingga kerugian satu aset tidak menghancurkan seluruh portofolio.",
+          },
+          {
+            q: "Produk yang menjanjikan imbal hasil tinggi tanpa risiko sebaiknya?",
+            options: ["Langsung dibeli", "Diwaspadai sebagai tanda bahaya", "Disebarkan ke teman", "Dianggap pasti benar"],
+            answer: 1,
+            explain: "Imbal hasil tinggi tanpa risiko bertentangan dengan prinsip pasar dan sering jadi ciri penipuan.",
+          },
+          {
+            q: "Saham diharapkan 11%, deposito 5%. Premi risikonya?",
+            options: ["5%", "6%", "11%", "16%"],
+            answer: 1,
+            explain: "11% - 5% = 6 poin persen.",
+          },
+        ],
+      },
+    ],
+  },
 ];

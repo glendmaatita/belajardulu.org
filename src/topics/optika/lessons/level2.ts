@@ -623,4 +623,175 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "prisma-planparalel",
+    levelId: "pembiasan-lensa",
+    order: 5,
+    title: "Prisma dan Kaca Planparalel",
+    summary:
+      "Sebelum berkutat dengan rumus deviasi, kita amati dulu mengapa kaca jendela tebal hanya menggeser pemandangan, sedangkan prisma membelokkan sekaligus mengurai cahaya.",
+    durationMin: 14,
+    tags: ["optika", "pembiasan", "prisma", "deviasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebatang cahaya yang menembus kaca harus membias <strong>dua kali</strong>: sekali saat masuk, sekali saat keluar. Bentuk kacanya menentukan hasilnya. Pada <strong>kaca planparalel</strong> (balok kaca dengan dua sisi sejajar, seperti kaca jendela), sinar keluar tetap sejajar dengan sinar masuk, hanya <strong>bergeser</strong> sedikit. Tetapi pada <strong>prisma</strong> (kedua sisinya membentuk sudut), sinar dibelokkan tajam dengan sudut deviasi tertentu. Ayo amati dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "PembiasanCahaya",
+        title: "Video: Cahaya Membias saat Berpindah Medium",
+        caption: "Pembiasan ganda di dua permukaan menentukan apakah sinar hanya bergeser atau dibelokkan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Letakkan penggaris di atas tulisan, lalu tindih dengan balok kaca tebal atau gelas berisi air. Tulisan tampak <strong>bergeser</strong> tetapi tetap tegak dan tidak berubah arah, itulah ciri kaca planparalel. Sekarang arahkan seberkas cahaya menembus prisma kaca: berkasnya membelok jelas, dan jika sumbernya cahaya putih, di sisi keluar muncul pelangi tipis. Amati dulu bedanya, jangan buru-buru cari rumus.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Planparalel menggeser, prisma membelokkan",
+        html: "Pada kaca planparalel kedua permukaan sejajar, maka pembiasan saat masuk persis dibatalkan oleh pembiasan saat keluar: arah sinar tidak berubah, hanya bergeser sejauh t. Pada prisma kedua permukaan membentuk <strong>sudut pembias</strong> β, sehingga kedua pembiasan saling menguatkan dan sinar dibelokkan dengan <strong>sudut deviasi</strong> δ. Makin besar indeks bias bahan, makin besar deviasinya.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Deviasi Minimum Prisma (sudut pembias 60 derajat) untuk Beberapa Indeks Bias",
+        unit: "derajat",
+        source: "perhitungan n = sin((β+δ)/2) / sin(β/2) dengan β = 60°",
+        note: "Angka nyata dari rumus deviasi minimum. Makin besar indeks bias bahan, makin besar pembelokannya. Karena tiap warna punya indeks bias sedikit berbeda, prisma membelokkan tiap warna dengan deviasi berbeda, itulah asal uraian warna.",
+        data: [
+          { label: "Air n=1,33", value: 23.4, color: "#34d399" },
+          { label: "Kaca n=1,50", value: 37.2, color: "#22d3ee" },
+          { label: "Flinta n=1,66", value: 52.2, color: "#818cf8" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah prisma kaca punya sudut pembias β = 60° dan indeks bias n = 1,5. Berapa sudut deviasi minimumnya? (gunakan n = sin((β+δ)/2) / sin(β/2))",
+        answer: 37.2,
+        tolerance: 0.6,
+        suffix: "°",
+        solution:
+          "sin((60+δ)/2) = n·sin(β/2) = 1,5 × sin 30° = 1,5 × 0,5 = 0,75. Maka (60+δ)/2 = arcsin 0,75 = 48,6°, sehingga 60 + δ = 97,2° dan δ = <strong>37,2°</strong>. Sinar dibelokkan lebih dari sepertiga sudut siku.",
+        hint: "Hitung n·sin(β/2), ambil arcsin-nya, kalikan 2, lalu kurangi β.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Cahaya datang ke kaca planparalel tebal d = 3 cm dengan sudut datang 60°. Indeks bias kaca n = 1,5 sehingga sudut biasnya r = 35,3°. Berapa pergeseran sinarnya? (gunakan t = d·sin(i−r)/cos r)",
+        answer: 1.54,
+        tolerance: 0.06,
+        suffix: " cm",
+        solution:
+          "Dari hukum Snell, sin r = sin 60°/1,5 = 0,866/1,5 = 0,577, jadi r = 35,3°. Lalu t = d·sin(i−r)/cos r = 3 × sin(24,7°)/cos(35,3°) = 3 × 0,419/0,816 = <strong>1,54 cm</strong>. Sinar keluar sejajar arah semula, hanya bergeser sejauh ini.",
+        hint: "Cari selisih (i − r), masukkan ke t = d·sin(i−r)/cos r.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap ciri sebagai milik kaca planparalel atau prisma.",
+        buckets: ["Kaca planparalel", "Prisma"],
+        items: [
+          { text: "Sinar keluar sejajar dengan sinar masuk", bucket: "Kaca planparalel" },
+          { text: "Arah cahaya tidak berubah, hanya bergeser", bucket: "Kaca planparalel" },
+          { text: "Sinar dibelokkan dengan sudut deviasi", bucket: "Prisma" },
+          { text: "Mengurai cahaya putih menjadi spektrum warna", bucket: "Prisma" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Sudut pembias β", right: "Sudut antara kedua permukaan prisma" },
+          { left: "Sudut deviasi δ", right: "Sudut penyimpangan sinar keluar terhadap arah datang semula" },
+          { left: "Pergeseran t", right: "Jarak geser sinar pada kaca planparalel" },
+          { left: "Deviasi minimum", right: "Terjadi saat jalur sinar simetris di dalam prisma" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Prisma di Dalam Teropong Binokular",
+        html: "Buka teropong binokular dan kamu akan menemukan sepasang <strong>prisma</strong> di tiap tabung. Fungsinya dua: melipat lintasan cahaya agar teropong jadi pendek, dan membalikkan kembali bayangan yang semula terbalik agar tegak. Sebagai contoh hitungan, prisma kaca dengan β = 60° dan n = 1,52 punya deviasi minimum sin((60+δ)/2) = 1,52 × 0,5 = 0,76, sehingga (60+δ)/2 = 49,5° dan δ = <strong>38,9°</strong>. Namun pada prisma teropong, sudut datangnya sengaja dibuat melewati ambang pemantulan total, sehingga cahaya dipantulkan sempurna tanpa kehilangan terang, bukan sekadar dibiaskan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. Kaca planparalel hanya menggeser sinar sejauh <strong>t = d·sin(i−r)/cos r</strong> tanpa mengubah arah. Prisma membelokkan sinar dengan deviasi minimum yang memenuhi <strong>n = sin((β+δ<sub>min</sub>)/2) / sin(β/2)</strong>. Karena n bergantung pada warna, prisma sekaligus membelokkan dan mengurai cahaya. Rumus ini hanya menuliskan rapi pola yang sudah kamu lihat pada balok kaca dan prisma.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Cahaya membias dua kali saat menembus kaca: ketika masuk dan ketika keluar.",
+          "Kaca planparalel menggeser sinar sejauh t = d·sin(i−r)/cos r tanpa mengubah arah.",
+          "Prisma membelokkan sinar dengan sudut deviasi; deviasi minimum terjadi saat jalur simetris.",
+          "Deviasi minimum: n = sin((β+δ)/2) / sin(β/2); makin besar n makin besar deviasi.",
+          "Karena indeks bias berbeda tiap warna, prisma sekaligus mengurai cahaya putih.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada kaca planparalel, sinar yang keluar bersifat?",
+            options: [
+              "Berbelok tajam dari arah semula",
+              "Sejajar dengan sinar masuk, hanya bergeser",
+              "Terbalik arahnya",
+              "Hilang diserap kaca",
+            ],
+            answer: 1,
+            explain: "Kedua permukaan sejajar, sehingga pembiasan masuk dan keluar saling membatalkan arah; sinar hanya bergeser.",
+          },
+          {
+            q: "Apa yang dimaksud sudut deviasi pada prisma?",
+            options: [
+              "Sudut antara dua sisi prisma",
+              "Sudut penyimpangan sinar keluar terhadap arah datang semula",
+              "Sudut bias di permukaan pertama",
+              "Sudut kritis prisma",
+            ],
+            answer: 1,
+            explain: "Deviasi adalah seberapa jauh sinar keluar menyimpang dari arah datang awalnya.",
+          },
+          {
+            q: "Prisma kaca β = 60°, n = 1,5. Deviasi minimumnya kira-kira?",
+            options: ["18,6°", "37,2°", "48,6°", "60°"],
+            answer: 1,
+            explain: "sin((60+δ)/2) = 1,5 × 0,5 = 0,75, arcsin 0,75 = 48,6°, jadi δ = 2×48,6 − 60 = 37,2°.",
+          },
+          {
+            q: "Mengapa prisma bisa mengurai cahaya putih menjadi pelangi?",
+            options: [
+              "Karena prisma memancarkan warna sendiri",
+              "Karena tiap warna punya indeks bias sedikit berbeda sehingga deviasinya berbeda",
+              "Karena cahaya putih terdiri dari satu warna saja",
+              "Karena prisma memantulkan total semua warna",
+            ],
+            answer: 1,
+            explain: "Indeks bias bergantung warna, maka tiap warna dibelokkan dengan deviasi berbeda dan terpisah.",
+          },
+          {
+            q: "Pergeseran sinar pada kaca planparalel akan makin besar bila?",
+            options: [
+              "Kaca makin tipis",
+              "Kaca makin tebal dan sudut datang makin besar",
+              "Sudut datang nol",
+              "Indeks bias kaca makin kecil",
+            ],
+            answer: 1,
+            explain: "t = d·sin(i−r)/cos r membesar saat ketebalan d dan selisih (i−r) bertambah.",
+          },
+        ],
+      },
+    ],
+  },
 ];

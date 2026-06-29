@@ -572,4 +572,163 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kejadian-saling-bebas",
+    levelId: "peluang",
+    order: 5,
+    title: "Peluang Dua Kejadian Saling Bebas",
+    summary:
+      "Saat hasil satu percobaan tidak memengaruhi yang lain, peluang keduanya terjadi bersama cukup dikalikan. Aturan itu lahir dari menghitung kemungkinan.",
+    durationMin: 14,
+    tags: ["statistika", "peluang", "saling bebas", "aturan perkalian"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Pelajaran lalu kita menggabungkan kejadian dengan kata 'atau'. Sekarang kita tanya yang berbeda: berapa peluang dua hal terjadi bersamaan, dihubungkan kata 'dan'? Misalnya, dua koin dilempar, berapa peluang keduanya gambar? Hasil koin pertama tidak memengaruhi koin kedua. Ayo telusuri dulu pola hitungannya sebelum merapikannya jadi aturan.",
+      },
+      {
+        type: "video",
+        comp: "PeluangVideo",
+        title: "Video: Dua Hal Terjadi Bersamaan",
+        caption: "Dari mendaftar pasangan hasil menuju aturan perkalian peluang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Lempar dua koin. Daftar semua hasil: GG, GA, AG, AA, yaitu 4 pasangan yang sama mungkin. Hanya satu yang dua-duanya gambar (GG), jadi peluangnya 1 dari 4. Perhatikan: 1/4 sama dengan 1/2 dikali 1/2, yakni peluang tiap koin gambar dikalikan. Bukan kebetulan. Karena koin pertama tidak memengaruhi koin kedua, peluangnya tinggal dikalikan.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Peluang Semua Koin Muncul Gambar",
+        unit: "peluang",
+        source: "perhitungan aturan perkalian",
+        note: "Tiap tambahan koin mengalikan peluang dengan 1/2: 0,5 lalu 0,25 lalu 0,125 lalu 0,0625. Makin banyak syarat bebas yang harus terpenuhi, makin kecil peluangnya.",
+        data: [
+          { label: "1 koin", value: 0.5, color: "#0ea5e9" },
+          { label: "2 koin", value: 0.25, color: "#38bdf8" },
+          { label: "3 koin", value: 0.125, color: "#3b82f6" },
+          { label: "4 koin", value: 0.0625, color: "#6366f1" },
+        ],
+      },
+      {
+        type: "widget",
+        widget: "SimulatorPeluang",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Bebas atau tidak bebas?",
+        html: "Dua kejadian disebut <strong>saling bebas</strong> jika hasil yang satu tidak mengubah peluang yang lain, seperti dua lemparan dadu. Mengambil dua kelereng <strong>tanpa pengembalian</strong> tidak bebas, sebab kelereng pertama yang diambil mengubah isi kantong untuk pengambilan kedua.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dua koin dilempar bersama. Berapa peluang keduanya muncul gambar? Tulis dalam desimal.",
+        answer: 0.25,
+        tolerance: 0.01,
+        solution:
+          "Karena saling bebas, kalikan peluangnya: 1/2 dikali 1/2 = 1/4 = <strong>0,25</strong>.",
+        hint: "Kalikan peluang gambar koin pertama dengan peluang gambar koin kedua.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah dadu dan sebuah koin dilempar bersama. Berapa peluang muncul angka 6 pada dadu DAN gambar pada koin? Bulatkan ke tiga desimal.",
+        answer: 0.083,
+        tolerance: 0.01,
+        solution:
+          "Keduanya saling bebas: 1/6 dikali 1/2 = 1/12 = 0,0833, dibulatkan <strong>0,083</strong>.",
+        hint: "Kalikan peluang angka 6 pada dadu (1/6) dengan peluang gambar pada koin (1/2).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pasangan kejadian sebagai saling bebas atau tidak saling bebas.",
+        buckets: ["Saling bebas", "Tidak saling bebas"],
+        items: [
+          { text: "Melempar koin lalu melempar dadu", bucket: "Saling bebas" },
+          { text: "Mengambil 2 kelereng tanpa pengembalian dari kantong", bucket: "Tidak saling bebas" },
+          { text: "Hasil lemparan dadu pertama dan dadu kedua", bucket: "Saling bebas" },
+          { text: "Mengambil kartu, menyimpannya, lalu mengambil kartu lagi", bucket: "Tidak saling bebas" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap kejadian gabungan dengan peluangnya.",
+        pairs: [
+          { left: "Dua koin keduanya gambar", right: "1/4" },
+          { left: "Dua dadu keduanya angka 6", right: "1/36" },
+          { left: "Koin gambar dan dadu angka 6", right: "1/12" },
+          { left: "Dua dadu keduanya genap", right: "1/4" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua pengaman pada mesin pabrik",
+        html: "Sebuah mesin dilengkapi dua sensor pengaman yang bekerja sendiri-sendiri. Tiap sensor punya peluang gagal 0,05 dalam sehari, dan keduanya bekerja saling bebas. Peluang keduanya gagal pada saat bersamaan adalah 0,05 dikali 0,05 = 0,0025, yaitu hanya sekitar 1 dari 400. Karena mesin baru benar-benar berbahaya bila kedua sensor gagal serentak, memasang dua pengaman independen membuat risikonya jauh lebih kecil daripada satu sensor saja. Inilah sebabnya sistem penting selalu dirancang berlapis.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah berpetualang, baru kita rumuskan. Untuk dua kejadian yang <strong>saling bebas</strong>, peluang keduanya terjadi bersama adalah <strong>P(A dan B) = P(A) x P(B)</strong>. Aturan perkalian ini hanya sah saat kejadian saling bebas; jika satu memengaruhi yang lain, peluangnya harus dihitung dengan cara lain.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Dua kejadian saling bebas jika hasil yang satu tidak memengaruhi peluang yang lain.",
+          "Untuk kejadian saling bebas: P(A dan B) = P(A) x P(B).",
+          "Makin banyak syarat bebas yang harus terpenuhi bersama, makin kecil peluangnya.",
+          "Pengambilan tanpa pengembalian tidak saling bebas, sebab mengubah isi yang tersisa.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dua kejadian disebut saling bebas jika?",
+            options: [
+              "Keduanya selalu terjadi bersama",
+              "Hasil yang satu tidak memengaruhi peluang yang lain",
+              "Keduanya tidak pernah terjadi",
+              "Peluangnya selalu sama",
+            ],
+            answer: 1,
+            explain: "Bebas berarti satu kejadian tidak mengubah peluang kejadian lainnya.",
+          },
+          {
+            q: "Untuk kejadian saling bebas, P(A dan B) sama dengan?",
+            options: ["P(A) + P(B)", "P(A) x P(B)", "P(A) - P(B)", "1 - P(A)"],
+            answer: 1,
+            explain: "Aturan perkalian: peluang keduanya terjadi adalah hasil kali peluangnya.",
+          },
+          {
+            q: "Peluang dua koin keduanya muncul gambar adalah?",
+            options: ["1/2", "1/4", "1/8", "1"],
+            answer: 1,
+            explain: "1/2 x 1/2 = 1/4.",
+          },
+          {
+            q: "Peluang dua dadu keduanya muncul angka 6 adalah?",
+            options: ["1/6", "1/12", "1/36", "2/6"],
+            answer: 2,
+            explain: "1/6 x 1/6 = 1/36.",
+          },
+          {
+            q: "Mengambil dua kelereng tanpa pengembalian termasuk kejadian?",
+            options: [
+              "Saling bebas",
+              "Tidak saling bebas, karena pengambilan pertama mengubah isi kantong",
+              "Mustahil",
+              "Selalu berpeluang 1",
+            ],
+            answer: 1,
+            explain: "Setelah satu kelereng diambil, isi kantong berubah, jadi tidak bebas.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -5,6 +5,13 @@
 // dan hanya menandai kemunculan PERTAMA tiap istilah dalam satu blok agar tidak ramai.
 
 export const GLOSSARY: Record<string, string> = {
+  // ===== Trigonometri =====
+  "radian": "Satuan sudut yang diukur lewat panjang busur; sudut yang busurnya sepanjang jari-jari sama dengan 1 radian (sekitar 57,3 derajat).",
+  "cosec": "Kebalikan sinus, yaitu sisi miring dibagi sisi depan (cosec = 1 ÷ sin).",
+  "sec": "Kebalikan kosinus, yaitu sisi miring dibagi sisi samping (sec = 1 ÷ cos).",
+  "cot": "Kebalikan tangen, yaitu sisi samping dibagi sisi depan (cot = 1 ÷ tan).",
+  "amplitudo": "Seberapa jauh sebuah gelombang naik atau turun dari posisi tengahnya.",
+  "periode": "Waktu yang dibutuhkan satu gelombang atau gerak berulang untuk menyelesaikan satu putaran penuh.",
   // ===== Umum keuangan & investasi =====
   "bunga majemuk": "Bunga yang dihitung atas pokok plus bunga sebelumnya, sehingga pertumbuhan menumpuk seperti bola salju.",
   "nilai waktu uang": "Konsep bahwa uang hari ini lebih berharga daripada jumlah yang sama di masa depan karena bisa diinvestasikan.",
@@ -67,6 +74,17 @@ export const GLOSSARY: Record<string, string> = {
   "venture capital": "Pendanaan untuk startup tahap awal yang berisiko tinggi namun berpotensi tumbuh berlipat.",
   "private equity": "Investasi pada perusahaan yang tidak tercatat di bursa, sering untuk diperbaiki lalu dijual.",
   "ekuitas": "Modal pemilik dalam perusahaan; aset dikurangi kewajiban.",
+  "anuitas": "Serangkaian pembayaran bernilai sama pada selang waktu tetap selama sejumlah periode tertentu.",
+  "perpetuitas": "Anuitas yang membayar selamanya tanpa batas waktu; nilai kininya = pembayaran dibagi tingkat diskonto.",
+  "analisis sensitivitas": "Menguji bagaimana hasil (mis. NPV) berubah saat satu asumsi diubah, sementara asumsi lain ditahan.",
+  "analisis skenario": "Menyusun beberapa kombinasi asumsi (mis. terbaik, dasar, terburuk) untuk melihat rentang hasil.",
+  "interest rate swap": "Kontrak menukar arus bunga, biasanya dari bunga mengambang menjadi bunga tetap, untuk meredam risiko suku bunga.",
+  "cash waterfall": "Urutan prioritas pembagian arus kas proyek: operasi, cicilan utang, cadangan, lalu sisanya ke sponsor.",
+  "DSRA": "Debt Service Reserve Account, rekening cadangan berisi beberapa bulan cicilan utang sebagai bantalan.",
+  "covenant": "Janji atau syarat dalam perjanjian utang yang membatasi tindakan peminjam, mis. menahan dividen saat rasio memburuk.",
+  "accretive": "Akuisisi yang menaikkan laba per saham (EPS) pembeli setelah penggabungan.",
+  "dilutive": "Akuisisi yang menurunkan laba per saham (EPS) pembeli setelah penggabungan.",
+  "enterprise value": "Nilai seluruh operasi perusahaan bagi pemegang saham dan kreditur; ekuitas ditambah utang bersih.",
 
   // ===== Climate finance & ESG =====
   "climate finance": "Pendanaan untuk kegiatan mitigasi dan adaptasi perubahan iklim.",
@@ -90,12 +108,30 @@ export const GLOSSARY: Record<string, string> = {
   "cap and trade": "Sistem batas emisi (cap) di mana izin emisi dapat diperjualbelikan (trade).",
   "carbon offset": "Pengurangan emisi di satu tempat untuk mengimbangi emisi di tempat lain.",
   "pajak karbon": "Pungutan atas emisi karbon untuk mendorong penurunan emisi.",
+  "harga karbon": "Pemberian biaya pada setiap ton emisi CO2 agar polusi tidak gratis.",
+  "ETS": "Emissions Trading System, sistem perdagangan izin emisi dengan batas total (cap).",
+  "green sukuk": "Obligasi hijau berbasis prinsip syariah, berbasis aset dan tanpa bunga (riba).",
+  "financed emissions": "Emisi perusahaan yang diatribusikan ke pinjaman dan investasi lembaga keuangan.",
+  "emisi terbiayai": "Emisi dari portofolio pinjaman dan investasi sebuah lembaga keuangan.",
+  "PCAF": "Partnership for Carbon Accounting Financials, standar global menghitung emisi terbiayai (sejak 2015).",
+  "materialitas ganda": "Pelaporan dua arah: dampak iklim ke perusahaan dan dampak perusahaan ke dunia.",
+  "CSRD": "Corporate Sustainability Reporting Directive, aturan pelaporan keberlanjutan Uni Eropa (2022).",
+  "loss and damage": "Kerugian dan kerusakan iklim yang tak bisa dicegah maupun diadaptasi.",
 
   // ===== Pajak =====
   "PPN": "Pajak Pertambahan Nilai, pajak atas konsumsi barang dan jasa.",
+  "PDRI": "Pajak Dalam Rangka Impor, yaitu PPN, PPh Pasal 22, dan PPnBM yang dipungut saat impor.",
+  "Nilai Impor": "Dasar pengenaan PPN dan PPh impor, yaitu Nilai Pabean (CIF) ditambah Bea Masuk.",
+  "API": "Angka Pengenal Importir, izin yang menurunkan tarif PPh Pasal 22 impor dari 7,5% menjadi 2,5%.",
+  "PPnBM": "Pajak Penjualan atas Barang Mewah, pajak tambahan atas barang tergolong mewah.",
   "PPh": "Pajak Penghasilan atas penghasilan orang pribadi atau badan.",
   "omzet": "Total nilai penjualan bruto dalam suatu periode.",
   "NPWP": "Nomor Pokok Wajib Pajak, identitas wajib pajak di Indonesia.",
+  "self assessment": "Sistem pajak yang mempercayakan wajib pajak menghitung, menyetor, dan melaporkan pajaknya sendiri.",
+  "pencatatan": "Pengumpulan data peredaran bruto (omzet) secara teratur, lebih sederhana daripada pembukuan penuh.",
+  "TER": "Tarif Efektif Rata-rata, persentase untuk memotong PPh 21 bulanan sejak 2024 (PP 58/2023).",
+  "pembetulan SPT": "Memperbaiki SPT yang sudah dilaporkan, dibolehkan selama belum dilakukan pemeriksaan (UU KUP Pasal 8).",
+  "STP": "Surat Tagihan Pajak, surat untuk menagih pajak dan/atau sanksi administrasi.",
 
   // ===== Akuntansi =====
   "debit": "Sisi kiri pencatatan akuntansi; menambah aset/beban, mengurangi kewajiban/ekuitas.",
@@ -233,6 +269,40 @@ export const GLOSSARY: Record<string, string> = {
   "FOMO": "Fear of Missing Out; dorongan membeli karena takut ketinggalan saat harga melonjak.",
   "FUD": "Fear, Uncertainty, Doubt; penyebaran rasa takut dan ragu yang menekan harga atau sentimen.",
   "DeFi Summer": "Periode 2020 saat protokol DeFi dan yield farming meledak popularitasnya.",
+
+  // ===== Fluida =====
+  "gaya hidrostatis": "Gaya total yang diberikan zat cair diam pada sebuah bidang, sama dengan tekanan rata-rata dikali luas bidang.",
+  "hidrometer": "Alat terapung untuk mengukur massa jenis zat cair; makin dalam ia tenggelam, makin kecil massa jenis cairannya.",
+  "hukum poiseuille": "Aturan bahwa debit fluida kental dalam pipa sebanding dengan pangkat empat jari-jari pipa dan beda tekanan, serta berbanding terbalik dengan panjang dan viskositas.",
+
+  // ===== Magnetisme =====
+  "torsi": "Besaran yang menyebabkan benda berputar, sama dengan gaya dikali lengan; satuannya newton meter (N·m).",
+  "momen magnetik": "Ukuran kekuatan dan arah sebuah kumparan atau magnet kecil, sama dengan jumlah lilitan dikali arus dikali luas (N·I·A).",
+  "permeabilitas relatif": "Angka yang menunjukkan berapa kali sebuah bahan memperkuat medan magnet dibanding ruang hampa; ditulis µr.",
+  "feromagnetik": "Bahan yang sangat kuat ditarik magnet dan bisa dijadikan magnet permanen, seperti besi, nikel, dan kobalt.",
+  "paramagnetik": "Bahan yang ditarik magnet sangat lemah dan tidak menahan kemagnetan, seperti aluminium.",
+  "diamagnetik": "Bahan yang sedikit ditolak magnet karena permeabilitasnya sedikit di bawah satu, seperti tembaga dan bismut.",
+  "galvanometer": "Alat peka yang mengukur arus listrik kecil lewat torsi pada kumparan dalam medan magnet, dasar amperemeter dan voltmeter analog.",
+  "rugi daya": "Energi listrik yang hilang menjadi panas di kawat penghantar, besarnya I²R.",
+
+  // ===== Matematika dasar =====
+  "aljabar": "Cabang matematika yang memakai huruf atau lambang untuk mewakili bilangan, sehingga pola umum bisa ditulis ringkas.",
+  "generalisasi": "Menyimpulkan aturan umum yang berlaku untuk banyak kasus dari beberapa contoh yang diamati.",
+  "bilangan prima": "Bilangan asli lebih dari 1 yang hanya bisa dibagi habis oleh 1 dan dirinya sendiri, seperti 2, 3, 5, 7.",
+  "bilangan komposit": "Bilangan asli lebih dari 1 yang punya faktor selain 1 dan dirinya, jadi bisa dipecah jadi perkalian bilangan lebih kecil.",
+  "faktorisasi prima": "Menulis sebuah bilangan sebagai perkalian dari bilangan-bilangan prima penyusunnya.",
+  "volume": "Banyaknya ruang yang ditempati benda tiga dimensi, diukur dengan satuan kubik seperti cm kubik atau liter.",
+  "perbandingan berbalik nilai": "Hubungan dua besaran yang hasil kalinya tetap, sehingga jika satu membesar yang lain mengecil.",
+  "distribusi normal": "Pola sebaran data berbentuk lonceng, dengan nilai di tengah paling sering muncul dan nilai ekstrem makin jarang.",
+  "kurva lonceng": "Gambaran sebaran data yang menggunung di tengah lalu menurun ke kedua sisi, ciri distribusi normal.",
+  "pasangan berurutan": "Penulisan (x, y) yang menyatakan satu masukan x beserta keluarannya y pada sebuah fungsi.",
+  "diagram panah": "Cara menyajikan fungsi dengan menarik panah dari tiap anggota himpunan masukan ke keluarannya.",
+  "titik impas": "Titik saat dua pilihan berbiaya sama; sebelum titik ini satu pilihan lebih murah, sesudahnya pilihan lain yang lebih murah.",
+  "fungsi kebalikan": "Fungsi berbentuk y = k/x yang menggambarkan hubungan berbanding terbalik, dengan hasil kali x dan y selalu tetap.",
+  "berbanding terbalik": "Hubungan dua besaran yang hasil kalinya tetap, sehingga saat satu naik yang lain turun.",
+  "hiperbola": "Kurva melengkung dari fungsi kebalikan y = k/x yang menurun makin landai dan tidak pernah menyentuh sumbu.",
+  "interpolasi": "Menaksir nilai yang berada di antara data yang sudah diukur.",
+  "ekstrapolasi": "Meramal nilai di luar jangkauan data dengan meneruskan pola atau tren yang ada.",
 };
 
 // escape untuk konten elemen HTML (bukan atribut)

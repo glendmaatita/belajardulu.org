@@ -1,10 +1,26 @@
-import { Player } from "@remotion/player";
+import { Player, type PlayerRef } from "@remotion/player";
+import { useEffect, useRef } from "react";
 import type { VideoComp } from "../types";
 import { videoRegistry, VIDEO } from "../remotion/registry";
 import { Icon } from "./Icon";
 
 export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: string; caption?: string }) {
+  const playerRef = useRef<PlayerRef>(null);
   const entry = videoRegistry[comp];
+  const lastFrame = entry ? entry.durationInFrames - 1 : 0;
+
+  // Saat video selesai, tahan di frame terakhir (jangan kembali ke detik awal).
+  useEffect(() => {
+    const player = playerRef.current;
+    if (!player) return;
+    const onEnded = () => {
+      player.pause();
+      player.seekTo(lastFrame);
+    };
+    player.addEventListener("ended", onEnded);
+    return () => player.removeEventListener("ended", onEnded);
+  }, [lastFrame]);
+
   if (!entry) return null;
   return (
     <figure className="my-6 overflow-hidden rounded-2xl border border-line bg-ink shadow-sm">
@@ -19,6 +35,7 @@ export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: 
         </span>
       </div>
       <Player
+        ref={playerRef}
         component={entry.component}
         durationInFrames={entry.durationInFrames}
         fps={VIDEO.fps}

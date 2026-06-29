@@ -550,4 +550,147 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "limit-di-tak-hingga",
+    levelId: "limit",
+    order: 5,
+    title: "Limit di Tak Hingga: Perilaku Jangka Panjang",
+    summary:
+      "Sebelum aturannya, kita amati ke mana sebuah fungsi menuju saat x dibesarkan terus tanpa batas.",
+    durationMin: 13,
+    tags: ["kalkulus", "limit", "tak hingga", "asimtot"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah tablet obat memberi dosis dalam darah yang naik lalu mendatar di nilai stabil. Saldo tabungan dengan bunga tetap mendekati garis tertentu setelah lama. Banyak hal di dunia nyata 'menuju' suatu nilai ketika waktu atau masukan dibesarkan terus. Ayo selidiki dulu perilaku jangka panjang ini sebelum menulis aturannya.",
+      },
+      {
+        type: "video",
+        comp: "LimitVideo",
+        title: "Video: Saat x Membesar Tanpa Batas",
+        caption: "Mengamati nilai fungsi ketika x dibuat makin besar menuju tak hingga.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil f(x) = 1 / x. Coba x = 1 (hasil 1), lalu x = 10 (hasil 0,1), lalu x = 100 (hasil 0,01), lalu x = 1.000 (hasil 0,001). Ke mana nilainya menuju saat x makin besar? Lalu coba f(x) = (2x) / (x + 1): di x = 1.000 hasilnya sekitar 1,998. Tebak nilai yang didekatinya.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorLimit",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Nilai f(x) = 1 / x saat x Makin Besar",
+        unit: "nilai f(x)",
+        source: "perhitungan 1 / x",
+        note: "Makin besar x, nilai 1 / x makin menempel ke nol. Sumbu x menjadi asimtot datar.",
+        data: [
+          { label: "x=1", value: 1, color: "#a78bfa" },
+          { label: "x=10", value: 0.1, color: "#8b5cf6" },
+          { label: "x=100", value: 0.01, color: "#7c3aed" },
+          { label: "x=1.000", value: 0.001, color: "#6d28d9" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Suku berpangkat tertinggi yang menentukan",
+        html: "Untuk pecahan seperti (2x + 1) / (x + 3), saat x sangat besar suku 1 dan 3 nyaris tak berarti dibanding 2x dan x. Maka nilainya menempel ke 2x / x = <strong>2</strong>. Garis datar y = 2 yang didekati grafik ini disebut <strong>asimtot datar</strong>.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Hitung nilai yang didekati f(x) = (2x) / (x + 1) saat x menuju tak hingga.",
+        answer: 2,
+        solution:
+          "Bagi pembilang dan penyebut dengan x: 2 / (1 + 1/x). Saat x menuju tak hingga, 1/x menuju nol, jadi hasilnya 2 / 1 = <strong>2</strong>.",
+        hint: "Bagi semua suku dengan x, lalu ingat 1/x menuju nol.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Hitung nilai yang didekati f(x) = (3x + 5) / x saat x menuju tak hingga.",
+        answer: 3,
+        solution:
+          "Pisahkan: (3x)/x + 5/x = 3 + 5/x. Saat x menuju tak hingga, 5/x menuju nol, jadi hasilnya <strong>3</strong>.",
+        hint: "Pecah pecahan menjadi 3 + 5/x.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Saat x menuju tak hingga, kelompokkan apakah limitnya menuju nol atau menuju nilai tak nol.",
+        buckets: ["Menuju nol", "Menuju nilai tak nol"],
+        items: [
+          { text: "f(x) = 1 / x", bucket: "Menuju nol" },
+          { text: "f(x) = 7 / x", bucket: "Menuju nol" },
+          { text: "f(x) = (2x) / (x + 1)", bucket: "Menuju nilai tak nol" },
+          { text: "f(x) = (5x + 2) / x", bucket: "Menuju nilai tak nol" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Kadar obat yang stabil dalam darah",
+        html: "Saat seseorang minum obat secara teratur, kadar zat aktif dalam darah naik tetapi tidak selamanya. Karena tubuh juga membuang obat, kadarnya mendekati sebuah nilai stabil yang disebut kadar tunak. Secara matematis, kadar sebagai fungsi waktu memiliki <strong>limit di tak hingga</strong>, yaitu garis datar yang didekati grafik saat waktu berjalan lama. Dokter memakai nilai limit ini untuk menentukan dosis yang aman dan efektif.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah merasakan polanya, baru kita tuliskan: <strong>limit x→tak hingga f(x)</strong> adalah nilai yang didekati f(x) saat x dibesarkan tanpa batas. Untuk f(x) = 1 / x pangkat n (n positif), limitnya nol. Untuk pecahan dua polinomial berderajat sama, limitnya adalah perbandingan koefisien suku berpangkat tertinggi. Nilai yang didekati ini muncul sebagai asimtot datar pada grafik.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Limit di tak hingga melihat ke mana fungsi menuju saat x dibesarkan tanpa batas.",
+          "f(x) = 1 / x dan sejenisnya menuju nol saat x menuju tak hingga.",
+          "Pada pecahan polinomial berderajat sama, limitnya perbandingan koefisien tertinggi.",
+          "Nilai yang didekati ini tampak sebagai asimtot datar pada grafik.",
+          "Perilaku jangka panjang banyak fenomena nyata, seperti kadar obat, dijelaskan oleh limit ini.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Limit di tak hingga mengamati nilai fungsi saat?",
+            options: [
+              "x mendekati nol",
+              "x dibesarkan tanpa batas",
+              "x sama dengan satu",
+              "fungsi bernilai nol",
+            ],
+            answer: 1,
+            explain: "Limit di tak hingga melihat perilaku fungsi saat x menuju tak hingga.",
+          },
+          {
+            q: "Nilai yang didekati f(x) = 1 / x saat x menuju tak hingga adalah?",
+            options: ["1", "Tak hingga", "0", "Tidak ada"],
+            answer: 2,
+            explain: "Makin besar x, nilai 1 / x makin menempel ke nol.",
+          },
+          {
+            q: "Limit (2x) / (x + 1) saat x menuju tak hingga adalah?",
+            options: ["0", "1", "2", "Tak hingga"],
+            answer: 2,
+            explain: "Suku berpangkat tertinggi menentukan: 2x / x = 2.",
+          },
+          {
+            q: "Garis datar yang didekati grafik di jangka panjang disebut?",
+            options: ["Garis singgung", "Asimtot datar", "Titik balik", "Limit kiri"],
+            answer: 1,
+            explain: "Nilai limit di tak hingga muncul sebagai asimtot datar.",
+          },
+          {
+            q: "Limit (3x + 5) / x saat x menuju tak hingga adalah?",
+            options: ["5", "8", "3", "0"],
+            answer: 2,
+            explain: "Pecah menjadi 3 + 5/x; suku 5/x menuju nol sehingga hasilnya 3.",
+          },
+        ],
+      },
+    ],
+  },
 ];

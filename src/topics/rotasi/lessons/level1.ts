@@ -644,4 +644,168 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gaya-sentripetal",
+    levelId: "kinematika-rotasi",
+    order: 5,
+    title: "Percepatan dan Gaya Sentripetal",
+    summary:
+      "Mobil yang menikung, ember air yang diputar, satelit yang mengorbit: semuanya butuh gaya yang menarik ke pusat agar tetap melingkar. Kisah dulu, rumus di akhir.",
+    durationMin: 14,
+    tags: ["fisika", "rotasi", "sentripetal", "gerak melingkar", "gaya"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Saat mobil menikung tajam, tubuhmu serasa terlempar ke luar. Padahal yang sebenarnya terjadi sebaliknya: ada gaya yang menarikmu <strong>ke dalam</strong>, menuju pusat tikungan, agar kamu ikut berbelok bersama mobil. Tanpa gaya itu, kamu akan melaju lurus menembus pintu. Ayo telusuri gaya tersembunyi yang menjaga benda tetap melingkar sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Selalu Berbelok ke Pusat",
+        caption: "Benda yang melingkar terus berbelok, dan berbelok berarti ada percepatan menuju pusat.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan mengikat batu di tali lalu memutarnya mendatar. Tanganmu terus menarik tali ke dalam; begitu tali putus, batu langsung melesat lurus, bukan melingkar. Jadi untuk membuat benda tetap berputar, sesuatu harus <strong>selalu menariknya ke pusat</strong>. Makin cepat putarannya, makin keras tarikan yang kamu rasakan di tali.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Berbelok berarti dipercepat",
+        html: "Walau kecepatan sudut ω tetap, benda yang melingkar tak pernah bergerak lurus: arahnya selalu berubah. Perubahan arah adalah bentuk percepatan, dan percepatan ini menunjuk <strong>ke pusat lingkaran</strong> (sentripetal). Karena ada percepatan, pasti ada gaya yang menyebabkannya: gaya sentripetal. Ia bukan jenis gaya baru, melainkan peran yang dipegang gesekan, gravitasi, atau tegangan tali.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorGLBB",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Percepatan Sentripetal di Tikungan r = 50 m",
+        unit: "m/s²",
+        source: "perhitungan a = v²/r dengan r tetap 50 m",
+        note: "Jari-jari tikungan tetap. Karena a bergantung pada v², menggandakan laju melipatempatkan percepatan: dari 20 ke 40 km/jam, percepatan ke pusat melonjak dari 8 ke 32. Itulah mengapa menikung kencang berbahaya.",
+        data: [
+          { label: "v = 10 m/s", value: 2, color: "#f472b6" },
+          { label: "v = 20 m/s", value: 8, color: "#e879f9" },
+          { label: "v = 30 m/s", value: 18, color: "#c084fc" },
+          { label: "v = 40 m/s", value: 32, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah mobil 1000 kg menikung dengan laju 10 m/s pada jari-jari 50 m. Berapa gaya sentripetal yang dibutuhkan? (F = m·v²/r)",
+        answer: 2000,
+        tolerance: 1,
+        suffix: " N",
+        solution:
+          "F = m·v²/r = 1000 × 10² / 50 = 1000 × 100 / 50 = <strong>2000 N</strong>. Gaya inilah yang harus disediakan gesekan ban agar mobil tidak melaju lurus.",
+        hint: "Kuadratkan laju, kalikan massa, lalu bagi jari-jari.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah benda melingkar dengan laju 8 m/s pada jari-jari 4 m. Berapa percepatan sentripetalnya? (a = v²/r)",
+        answer: 16,
+        tolerance: 0.1,
+        suffix: " m/s²",
+        solution:
+          "a = v²/r = 8² / 4 = 64 / 4 = <strong>16 m/s²</strong>. Selalu mengarah ke pusat lingkaran.",
+        hint: "Kuadratkan laju lalu bagi dengan jari-jari.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah massa 0,5 kg berputar pada jari-jari 0,5 m dengan kecepatan sudut 10 rad/s. Berapa gaya sentripetalnya? (F = m·ω²·r)",
+        answer: 25,
+        tolerance: 0.1,
+        suffix: " N",
+        solution:
+          "F = m·ω²·r = 0,5 × 10² × 0,5 = 0,5 × 100 × 0,5 = <strong>25 N</strong>. Bentuk lain dari F = m·v²/r memakai kecepatan sudut.",
+        hint: "Kuadratkan kecepatan sudut, kalikan massa dan jari-jari.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan situasi melingkar dengan gaya yang berperan sebagai gaya sentripetal.",
+        pairs: [
+          { left: "Mobil menikung di jalan datar", right: "Gaya gesek ban" },
+          { left: "Satelit mengorbit Bumi", right: "Gaya gravitasi" },
+          { left: "Ember air diputar di ujung tali", right: "Tegangan tali" },
+          { left: "Bola melingkar di dinding melengkung", right: "Gaya normal dinding" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan: gaya itu berperan sebagai gaya sentripetal (menuju pusat) atau bukan.",
+        buckets: ["Berperan sentripetal", "Bukan sentripetal"],
+        items: [
+          { text: "Gesekan ban saat mobil menikung", bucket: "Berperan sentripetal" },
+          { text: "Gravitasi yang menahan satelit di orbit", bucket: "Berperan sentripetal" },
+          { text: "Dorongan mesin pada mobil yang melaju lurus", bucket: "Bukan sentripetal" },
+          { text: "Tegangan tali pada bandul yang diputar mendatar", bucket: "Berperan sentripetal" },
+          { text: "Gaya gesek pada mobil yang mengerem di jalan lurus", bucket: "Bukan sentripetal" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Tikungan Jalan dan Batas Aman",
+        html: "Sebuah mobil 1200 kg menikung dengan laju 15 m/s (sekitar 54 km/jam) pada tikungan berjari-jari 45 m. Gaya sentripetal yang dibutuhkan: F = m·v²/r = 1200 × 15² / 45 = 1200 × 225 / 45 = <strong>6000 N</strong>. Seluruh gaya ini harus disediakan oleh gesekan ban dengan aspal. Bila jalan basah dan gesekan tak sanggup memberi 6000 N, mobil akan tergelincir keluar tikungan. Insinyur jalan tidak menghafal rumus; mereka memperlebar jari-jari tikungan dan memiringkan permukaannya agar gaya yang dibutuhkan tetap dalam batas aman.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya jelas. Benda yang melingkar selalu dipercepat menuju pusat: <strong>a = v²/r = ω²·r</strong>. Percepatan ini butuh gaya, yaitu gaya sentripetal: <strong>F = m·v²/r = m·ω²·r</strong>. Gaya ini bukan jenis baru, melainkan peran yang dimainkan gesekan, gravitasi, atau tegangan tali. Hilangkan gaya itu, dan benda langsung melaju lurus sesuai hukum I Newton.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Benda melingkar selalu dipercepat menuju pusat: a = v²/r = ω²·r.",
+          "Gaya sentripetal F = m·v²/r = m·ω²·r adalah penyebab percepatan itu.",
+          "Gaya sentripetal bukan gaya baru, tetapi peran gesekan, gravitasi, atau tegangan tali.",
+          "Karena bergantung pada v², menggandakan laju melipatempatkan gaya yang dibutuhkan.",
+          "Tanpa gaya sentripetal, benda melaju lurus (hukum I Newton).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Ke arah mana percepatan sentripetal menunjuk?",
+            options: ["Menjauhi pusat", "Menuju pusat lingkaran", "Searah gerak", "Ke atas"],
+            answer: 1,
+            explain: "Percepatan sentripetal selalu menunjuk ke pusat lingkaran, menjaga benda tetap melingkar.",
+          },
+          {
+            q: "Rumus gaya sentripetal adalah?",
+            options: ["F = m·v/r", "F = m·v²/r", "F = m·r/v²", "F = m·v²·r"],
+            answer: 1,
+            explain: "Gaya sentripetal F = m·v²/r (= m·ω²·r).",
+          },
+          {
+            q: "Benda 2 kg melingkar v = 4 m/s pada r = 2 m. Gaya sentripetalnya?",
+            options: ["8 N", "16 N", "32 N", "4 N"],
+            answer: 1,
+            explain: "F = m·v²/r = 2 × 4² / 2 = 2 × 16 / 2 = 16 N.",
+          },
+          {
+            q: "Jika laju digandakan pada tikungan yang sama, gaya sentripetal menjadi?",
+            options: ["2 kali", "3 kali", "4 kali", "tetap"],
+            answer: 2,
+            explain: "Karena F bergantung pada v², menggandakan laju membuat gaya 2² = 4 kali lipat.",
+          },
+          {
+            q: "Apa yang berperan sebagai gaya sentripetal pada satelit yang mengorbit Bumi?",
+            options: ["Gaya dorong roket", "Gaya gravitasi", "Gaya gesek udara", "Tegangan tali"],
+            answer: 1,
+            explain: "Gravitasi Bumi menarik satelit ke pusat, berperan sebagai gaya sentripetal.",
+          },
+        ],
+      },
+    ],
+  },
 ];

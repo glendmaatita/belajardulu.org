@@ -62,6 +62,7 @@ import {
   faCircleNotch,
   faArrowRightLong,
   faXmark,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 
@@ -128,6 +129,7 @@ const registry = {
   loading: faCircleNotch,
   "arrow-long": faArrowRightLong,
   close: faXmark,
+  heart: faHeart,
 } satisfies Record<string, IconDefinition>;
 
 export type IconName = keyof typeof registry;

@@ -580,4 +580,152 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "mengisi-mengosongkan-kapasitor",
+    levelId: "kapasitor",
+    order: 5,
+    title: "Mengisi dan Mengosongkan Kapasitor",
+    summary:
+      "Lampu sein mobil berkedip dengan irama teratur berkat kapasitor yang mengisi dan mengosong berulang. Kita amati dulu bagaimana kapasitor terisi perlahan, baru konstanta waktunya kita rangkum di akhir.",
+    durationMin: 14,
+    tags: ["listrik statis", "kapasitor", "konstanta waktu", "RC"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Lampu sein mobil berkedip dengan jeda yang teratur, dan wiper kaca bisa diatur menyapu tiap beberapa detik. Di balik irama itu ada kapasitor yang <strong>mengisi</strong> muatan lewat hambatan lalu <strong>mengosongkannya</strong> kembali, berulang-ulang. Kapasitor tidak terisi seketika, melainkan butuh waktu. Sebelum bertemu rumus, ayo amati dulu bagaimana muatan menumpuk dan menyusut seiring waktu.",
+      },
+      {
+        type: "video",
+        comp: "HukumOhmVideo",
+        title: "Video: Arus, Hambatan, dan Waktu",
+        caption:
+          "Hambatan membatasi laju aliran muatan ke kapasitor, sehingga pengisiannya butuh waktu. Mari pinjam cara berpikir ini.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Hubungkan kapasitor kosong ke baterai lewat hambatan. Di awal, kapasitor kosong sehingga arus mengalir deras dan tegangannya melonjak cepat. Tetapi makin penuh, makin sulit muatan baru masuk, sehingga arus mengecil dan tegangan naik melambat, mendekati nilai baterai tanpa pernah benar-benar 'penuh' seketika. Belum ada rumus, tetapi kita sudah melihat pengisian itu <strong>cepat di awal, lambat di akhir</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Konstanta waktu",
+        html: "Kecepatan mengisi diukur oleh <strong>konstanta waktu</strong> τ = R·C (satuan detik). Setelah waktu satu τ, kapasitor terisi sekitar <strong>63%</strong> dari tegangan penuh; setelah 5τ sudah hampir penuh (sekitar 99%). Saat mengosong, kebalikannya: setelah satu τ, tegangan tersisa sekitar <strong>37%</strong>. Makin besar R atau C, makin lambat prosesnya.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorProporsi",
+      },
+      {
+        type: "chart",
+        variant: "area",
+        title: "Tegangan Kapasitor saat Diisi (V maksimum 10 V, dalam satuan konstanta waktu τ)",
+        unit: "volt",
+        source: "perhitungan V = V_maks·(1 − e^(−t/τ))",
+        note: "Tegangan naik cepat di awal lalu melandai mendekati 10 V. Setelah 1τ sudah 63%, setelah 3τ sudah 95%, tetapi tidak pernah melonjak penuh seketika.",
+        data: [
+          { label: "t = 1τ", value: 6.3, color: "#facc15" },
+          { label: "t = 2τ", value: 8.6, color: "#a3e635" },
+          { label: "t = 3τ", value: 9.5, color: "#4ade80" },
+          { label: "t = 4τ", value: 9.8, color: "#2dd4bf" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah kapasitor 1000 µF (1×10⁻³ F) diisi lewat hambatan 2000 Ω. Berapa konstanta waktunya?",
+        answer: 2,
+        tolerance: 0.05,
+        suffix: " detik",
+        solution:
+          "τ = R·C = 2000 × 1×10⁻³ = <strong>2 detik</strong>. Setelah 2 detik, kapasitor terisi sekitar 63% tegangan penuh.",
+        hint: "Gunakan τ = R·C. Pastikan kapasitansi dalam farad.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah kapasitor terisi penuh 10 V lalu dikosongkan lewat hambatan. Setelah waktu satu konstanta waktu (t = τ), berapa tegangannya? (gunakan e⁻¹ ≈ 0,37)",
+        answer: 3.7,
+        tolerance: 0.15,
+        suffix: " V",
+        solution:
+          "Saat mengosong, V = V_maks·e^(−t/τ). Pada t = τ: V = 10 × e⁻¹ = 10 × 0,37 = <strong>3,7 V</strong>. Tinggal sekitar 37% dari tegangan semula.",
+        hint: "Gunakan V = V_maks·e^(−t/τ). Pada t = τ, faktornya e⁻¹ ≈ 0,37.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap peristiwa ke proses mengisi atau mengosongkan kapasitor.",
+        buckets: ["Saat mengisi", "Saat mengosongkan"],
+        items: [
+          { text: "Tegangan naik dari nol menuju maksimum", bucket: "Saat mengisi" },
+          { text: "Tegangan turun dari maksimum menuju nol", bucket: "Saat mengosongkan" },
+          { text: "Muatan bertambah menuju Q maksimum", bucket: "Saat mengisi" },
+          { text: "Energi tersimpan dilepas ke rangkaian", bucket: "Saat mengosongkan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Wiper Intermiten Mobil",
+        html: "Pada mode wiper intermiten, kapasitor diisi lewat hambatan besar sampai tegangannya mencapai ambang tertentu, lalu memicu satu sapuan wiper dan mengosong kembali. Dengan τ = R·C, memakai R = 100.000 Ω dan C = 10 µF (1×10⁻⁵ F) memberi τ = 1 detik, sehingga jeda antar sapuan sekitar beberapa detik. Memutar tombol pengatur sebenarnya mengubah hambatan R, dan itulah yang mengatur seberapa sering wiper menyapu.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang baru kita tuliskan. Konstanta waktu: <strong>τ = R·C</strong>. Saat mengisi, tegangan naik mengikuti <strong>V = V<sub>maks</sub>·(1 − e^(−t/τ))</strong>; saat mengosong, turun mengikuti <strong>V = V<sub>maks</sub>·e^(−t/τ)</strong>. Setelah 1τ tercapai sekitar 63% (atau tersisa 37%), dan setelah 5τ praktis selesai. Rumus ini hanyalah ringkasan dari pengisian 'cepat di awal, lambat di akhir' yang tadi kita amati.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Kapasitor mengisi dan mengosong secara bertahap, tidak seketika.",
+          "Konstanta waktu τ = R·C menentukan kecepatan prosesnya.",
+          "Setelah 1τ, pengisian mencapai sekitar 63%; pengosongan menyisakan sekitar 37%.",
+          "Setelah sekitar 5τ, kapasitor praktis penuh atau kosong.",
+          "Mengubah R atau C mengatur irama pengisian, dipakai pada lampu sein dan wiper.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Konstanta waktu rangkaian kapasitor dengan hambatan adalah?",
+            options: ["τ = R/C", "τ = C/R", "τ = R·C", "τ = R + C"],
+            answer: 2,
+            explain: "Konstanta waktu τ = R·C, bersatuan detik.",
+          },
+          {
+            q: "Setelah waktu satu konstanta waktu, kapasitor yang diisi mencapai sekitar?",
+            options: ["37%", "50%", "63%", "100%"],
+            answer: 2,
+            explain: "Setelah 1τ, tegangan mencapai sekitar 63% tegangan penuh.",
+          },
+          {
+            q: "Saat kapasitor diisi, tegangannya?",
+            options: [
+              "Naik cepat di awal lalu melandai",
+              "Naik lurus dengan kemiringan tetap",
+              "Langsung penuh seketika",
+              "Turun terus",
+            ],
+            answer: 0,
+            explain: "Pengisian cepat di awal lalu melambat mendekati tegangan penuh.",
+          },
+          {
+            q: "Jika hambatan R diperbesar, proses pengisian kapasitor menjadi?",
+            options: ["Lebih cepat", "Lebih lambat", "Tetap", "Berhenti"],
+            answer: 1,
+            explain: "Karena τ = R·C, R lebih besar memperpanjang konstanta waktu.",
+          },
+          {
+            q: "Setelah sekitar berapa konstanta waktu kapasitor praktis penuh?",
+            options: ["1τ", "2τ", "5τ", "100τ"],
+            answer: 2,
+            explain: "Setelah sekitar 5τ, tegangan sudah mencapai sekitar 99%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

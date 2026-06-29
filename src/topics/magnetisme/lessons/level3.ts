@@ -608,4 +608,163 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "bahan-magnetik-dan-permeabilitas",
+    levelId: "sumber-medan-magnet",
+    order: 5,
+    title: "Bahan Magnetik dan Permeabilitas",
+    summary:
+      "Solenoida kosong menghasilkan medan lemah. Selipkan inti besi, dan medannya melonjak ribuan kali lipat tanpa menambah arus. Mengapa? Jawabannya ada pada sifat bahan: diamagnetik, paramagnetik, dan feromagnetik.",
+    durationMin: 14,
+    tags: ["fisika", "bahan magnetik", "permeabilitas", "feromagnetik"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu arus listrik melahirkan medan magnet. Tapi ada rahasia kedua: medan yang sama bisa jauh lebih kuat hanya dengan mengganti ruang di dalam kumparan dengan bahan tertentu. Selipkan paku besi ke dalam solenoida, dan tiba-tiba ia mampu mengangkat banyak klip. Sebelum menuliskan rumus, ayo kita selidiki mengapa <strong>bahan</strong> begitu menentukan.",
+      },
+      {
+        type: "video",
+        comp: "GelombangFisika",
+        title: "Video: Inti Besi Memperkuat Medan Solenoida",
+        caption: "Tanpa inti, garis medan renggang; dengan inti besi, garis merapat berlipat ganda.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Lilitkan kawat pada paku besi, alirkan arus dari baterai: paku jadi magnet yang mampu mengangkat klip. Cabut paku, hanya sisakan kumparan udara: daya angkatnya anjlok drastis padahal arusnya sama. Bahan di dalam kumparan ternyata ikut 'menguatkan diri' searah medan. Bahan yang bisa menguatkan medan sangat besar disebut <strong>feromagnetik</strong>, seperti besi, nikel, dan kobalt.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tiga jenis bahan magnetik",
+        html: "<strong>Feromagnetik</strong> (besi, nikel, kobalt): sangat kuat ditarik, bisa jadi magnet permanen, permeabilitas relatif µr bisa ribuan. <strong>Paramagnetik</strong> (aluminium): ditarik sangat lemah, µr sedikit di atas 1. <strong>Diamagnetik</strong> (tembaga, bismut, air): justru sedikit ditolak magnet, µr sedikit di bawah 1. Hanya feromagnetik yang berguna sebagai inti magnet praktis.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Permeabilitas Relatif Beberapa Bahan",
+        unit: "µr (tanpa satuan)",
+        source: "nilai tipikal, ilustratif",
+        note: "Inti feromagnetik bisa memperkuat medan ratusan sampai ribuan kali dibanding udara (µr=1). Itu sebabnya elektromagnet, motor, dan trafo memakai inti besi.",
+        data: [
+          { label: "Udara", value: 1, color: "#34d399" },
+          { label: "Nikel", value: 600, color: "#22d3ee" },
+          { label: "Besi lunak", value: 5000, color: "#38bdf8" },
+          { label: "Permalloy", value: 8000, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah solenoida udara dengan 1000 lilitan per meter dialiri arus 2 A. Berapa kuat medan di dalamnya? (µ₀ = 4π×10⁻⁷ T·m/A; jawab dalam mT)",
+        answer: 2.5,
+        tolerance: 0.1,
+        suffix: " mT",
+        solution:
+          "B₀ = µ₀·n·I = (4π×10⁻⁷) × 1000 × 2 = 2,51×10⁻³ T ≈ <strong>2,5 mT</strong>. Medan solenoida udara memang lemah.",
+        hint: "B₀ = µ₀·n·I. Ingat 4π ≈ 12,57 dan 1 T = 1000 mT.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Solenoida tadi (B₀ = 2,5 mT) disisipi inti besi dengan permeabilitas relatif µr = 500. Berapa kuat medan di dalamnya sekarang? (jawab dalam tesla)",
+        answer: 1.25,
+        tolerance: 0.02,
+        suffix: " T",
+        solution:
+          "Inti besi mengalikan medan dengan µr: B = µr × B₀ = 500 × 2,5 mT = 1250 mT = <strong>1,25 T</strong>. Tanpa menambah arus, medan melonjak 500 kali.",
+        hint: "B = µr × B₀, lalu ubah mT ke T (bagi 1000).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap bahan menurut sifat magnetiknya.",
+        buckets: ["Feromagnetik", "Paramagnetik", "Diamagnetik"],
+        items: [
+          { text: "Besi", bucket: "Feromagnetik" },
+          { text: "Nikel", bucket: "Feromagnetik" },
+          { text: "Kobalt", bucket: "Feromagnetik" },
+          { text: "Aluminium", bucket: "Paramagnetik" },
+          { text: "Tembaga", bucket: "Diamagnetik" },
+          { text: "Bismut", bucket: "Diamagnetik" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Feromagnetik", right: "µr sangat besar, bisa jadi magnet permanen" },
+          { left: "Paramagnetik", right: "µr sedikit di atas 1, tarikan sangat lemah" },
+          { left: "Diamagnetik", right: "µr sedikit di bawah 1, sedikit ditolak" },
+          { left: "Permeabilitas relatif", right: "Berapa kali bahan memperkuat medan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Crane Elektromagnet di Tempat Rongsokan",
+        html: "Crane raksasa yang mengangkat mobil bekas di tempat rongsokan memakai elektromagnet, bukan magnet permanen. Sebuah kumparan besar dililitkan pada inti besi lunak; saat arus dialirkan, inti feromagnetik melipatgandakan medan kumparan sehingga mampu menarik bongkahan besi berton-ton. Saat operator memutus arus, inti besi lunak cepat kehilangan kemagnetannya sehingga muatan langsung terlepas. Dipilih besi lunak (mudah dimagnetkan dan mudah hilang) bukan baja keras, justru karena sifatnya yang tidak menyimpan kemagnetan, agar bisa 'dinyalakan' dan 'dimatikan' sesuka hati.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan. Permeabilitas bahan adalah <strong>µ = µr · µ₀</strong>, dengan µ₀ = 4π×10⁻⁷ T·m/A permeabilitas ruang hampa dan µr <strong>permeabilitas relatif</strong> bahan. Medan dalam solenoida berinti menjadi <strong>B = µ · n · I = µr · µ₀ · n · I</strong>. Untuk feromagnetik µr bisa ratusan sampai ribuan, untuk paramagnetik µr sedikit di atas 1, dan untuk diamagnetik µr sedikit di bawah 1. Inilah alasan inti besi mengubah kumparan lemah menjadi magnet kuat.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Bahan terbagi menjadi feromagnetik (kuat ditarik), paramagnetik (lemah ditarik), dan diamagnetik (sedikit ditolak).",
+          "Permeabilitas µ = µr · µ₀; µr menunjukkan berapa kali bahan memperkuat medan.",
+          "Medan solenoida berinti: B = µr · µ₀ · n · I, sehingga inti besi melonjakkan medan ribuan kali.",
+          "Besi lunak dipakai untuk elektromagnet karena mudah dimagnetkan dan cepat hilang saat arus diputus.",
+          "Hanya feromagnetik (besi, nikel, kobalt) yang praktis sebagai inti magnet.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bahan yang paling kuat ditarik magnet dan bisa jadi magnet permanen disebut?",
+            options: ["Diamagnetik", "Paramagnetik", "Feromagnetik", "Isolator"],
+            answer: 2,
+            explain: "Feromagnetik (besi, nikel, kobalt) ditarik sangat kuat dan dapat jadi magnet permanen.",
+          },
+          {
+            q: "Permeabilitas relatif udara (atau ruang hampa) kira-kira bernilai?",
+            options: ["0", "1", "500", "5000"],
+            answer: 1,
+            explain: "µr ruang hampa/udara ≈ 1, menjadi acuan bahan lain.",
+          },
+          {
+            q: "Medan dalam solenoida berinti dirumuskan?",
+            options: ["B = µr · µ₀ · n · I", "B = q · v · B", "B = Φ / A", "B = I · R"],
+            answer: 0,
+            explain: "B = µ·n·I dengan µ = µr·µ₀, jadi B = µr·µ₀·n·I.",
+          },
+          {
+            q: "Solenoida udara bermedan 2 mT disisipi inti µr = 1000. Medan barunya?",
+            options: ["2 mT", "20 mT", "2 T", "0,2 T"],
+            answer: 2,
+            explain: "B = µr × B₀ = 1000 × 2 mT = 2000 mT = 2 T.",
+          },
+          {
+            q: "Mengapa crane elektromagnet memakai inti besi lunak, bukan baja keras?",
+            options: [
+              "Agar lebih murah",
+              "Agar kemagnetan mudah dinyalakan dan dimatikan",
+              "Agar lebih ringan",
+              "Agar tahan panas",
+            ],
+            answer: 1,
+            explain: "Besi lunak mudah dimagnetkan dan cepat hilang saat arus diputus, sehingga muatan bisa dilepas.",
+          },
+        ],
+      },
+    ],
+  },
 ];

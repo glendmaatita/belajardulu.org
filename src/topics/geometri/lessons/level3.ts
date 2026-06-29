@@ -580,4 +580,154 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "jarak-dua-titik-koordinat",
+    levelId: "pythagoras-kesebangunan",
+    order: 5,
+    title: "Jarak Dua Titik pada Bidang Koordinat",
+    summary:
+      "Sebelum menghafal rumus jarak, kita gambar dulu segitiga siku-siku di antara dua titik di peta petak, sampai rumusnya lahir dari Pythagoras.",
+    durationMin: 13,
+    tags: ["geometri", "pythagoras", "koordinat", "jarak"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Aplikasi peta memberi tahu jarak lurus antara dua tempat, padahal jalanannya berkelok. Bagaimana cara menghitung jarak lurus itu? Ternyata kuncinya adalah <strong>teorema Pythagoras</strong>. Sebelum kita pakai rumusnya, ayo amati dulu segitiga siku-siku yang tersembunyi di antara dua titik pada bidang koordinat.",
+      },
+      {
+        type: "video",
+        comp: "PythagorasPetualangan",
+        title: "Video: Petualangan Pythagoras",
+        caption: "Selisih mendatar dan selisih tegak membentuk dua sisi siku-siku, jaraknya adalah sisi miring.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Tandai titik A(1, 2) dan B(4, 6) di kertas berpetak. Hitung selisih mendatar (4 - 1 = 3 petak) dan selisih tegak (6 - 2 = 4 petak). Gambar segitiga siku-siku dengan dua sisi itu. Berapa panjang sisi miring AB? Cocokkan dengan menghitung lewat luas bujur sangkar sisi-sisinya.",
+      },
+      {
+        type: "widget",
+        widget: "EksplorasiPythagoras",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Jarak Lurus vs Jarak Menyusur Petak antara Dua Titik",
+        unit: "panjang (satuan)",
+        source: "ilustrasi edukatif",
+        note: "Untuk selisih 3 dan 4 petak, jarak lurus (sisi miring) 5 selalu lebih pendek daripada menyusur tepi petak 3 + 4 = 7.",
+        data: [
+          { label: "Lurus (3,4)", value: 5, color: "#38bdf8" },
+          { label: "Menyusur (3,4)", value: 7, color: "#94a3b8" },
+          { label: "Lurus (6,8)", value: 10, color: "#22d3ee" },
+          { label: "Menyusur (6,8)", value: 14, color: "#cbd5e1" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Geometri, bukan sekadar berhitung",
+        html: "Berhitung menjawab 'berapa hasil akarnya'. Geometri menjawab 'mengapa jarak lurus selalu sisi miring segitiga siku-siku' dan memakainya untuk mengukur jarak di peta, layar, dan ruang tanpa menarik penggaris.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa jarak antara titik A(1, 2) dan B(4, 6) pada bidang koordinat? (selisih mendatar 3, selisih tegak 4)",
+        answer: 5,
+        suffix: " satuan",
+        solution:
+          "Selisih mendatar 4 - 1 = 3, selisih tegak 6 - 2 = 4. Jarak = akar(3 kuadrat + 4 kuadrat) = akar(9 + 16) = akar 25 = <strong>5 satuan</strong>.",
+        hint: "Pakai Pythagoras: jarak = akar dari (selisih-x kuadrat + selisih-y kuadrat).",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah drone terbang dari titik (0, 0) ke titik (5, 12). Berapa jarak lurus yang ditempuh?",
+        answer: 13,
+        suffix: " satuan",
+        solution:
+          "Selisih mendatar 5, selisih tegak 12. Jarak = akar(5 kuadrat + 12 kuadrat) = akar(25 + 144) = akar 169 = <strong>13 satuan</strong>.",
+        hint: "5, 12, 13 adalah tripel Pythagoras.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap perjalanan dari titik (0,0) dengan jarak lurusnya.",
+        pairs: [
+          { left: "(0,0) ke (3,4)", right: "5 satuan" },
+          { left: "(0,0) ke (6,8)", right: "10 satuan" },
+          { left: "(0,0) ke (5,12)", right: "13 satuan" },
+          { left: "(0,0) ke (8,15)", right: "17 satuan" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Dari selisih (mendatar, tegak) berikut, kelompokkan apakah jaraknya bilangan bulat atau tidak.",
+        buckets: ["Jarak bilangan bulat", "Jarak bukan bilangan bulat"],
+        items: [
+          { text: "Selisih (3, 4)", bucket: "Jarak bilangan bulat" },
+          { text: "Selisih (5, 12)", bucket: "Jarak bilangan bulat" },
+          { text: "Selisih (1, 1)", bucket: "Jarak bukan bilangan bulat" },
+          { text: "Selisih (2, 3)", bucket: "Jarak bukan bilangan bulat" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Jarak antar menara pemancar",
+        html: "Seorang teknisi memetakan dua menara pada peta berskala. Menara A di titik (2, 3) dan menara B di titik (10, 9), dengan tiap satuan mewakili 1 km. Selisih mendatar 8 km dan selisih tegak 6 km. Jarak lurus antar menara = akar(8 kuadrat + 6 kuadrat) = akar(64 + 36) = akar 100 = 10 km. Ia tahu jarak pancar yang dibutuhkan tanpa mengukur langsung di lapangan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menggambar segitiganya, baru rumus jarak lahir dari Pythagoras: jarak antara titik (x1, y1) dan (x2, y2) adalah <strong>akar dari ((x2 - x1) kuadrat + (y2 - y1) kuadrat)</strong>. Selisih mendatar dan selisih tegak adalah dua sisi siku-siku, dan jaraknya adalah sisi miring.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Jarak dua titik adalah sisi miring segitiga siku-siku yang dibentuk selisih koordinatnya.",
+          "Rumusnya: jarak = akar dari (selisih-x kuadrat + selisih-y kuadrat).",
+          "Jarak lurus selalu lebih pendek daripada menyusur tepi petak.",
+          "Tripel Pythagoras (3-4-5, 5-12-13, 8-15-17) memberi jarak bilangan bulat.",
+          "Rumus jarak adalah penerapan langsung teorema Pythagoras pada koordinat.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rumus jarak dua titik diturunkan dari?",
+            options: ["Rumus luas lingkaran", "Teorema Pythagoras", "Kesebangunan", "Sudut berpelurus"],
+            answer: 1,
+            explain: "Selisih koordinat membentuk segitiga siku-siku, jaraknya sisi miring (Pythagoras).",
+          },
+          {
+            q: "Jarak titik (0,0) ke (3,4) adalah?",
+            options: ["5", "7", "12", "25"],
+            answer: 0,
+            explain: "akar(9 + 16) = akar 25 = 5 satuan.",
+          },
+          {
+            q: "Pada selisih mendatar 6 dan tegak 8, jarak lurusnya adalah?",
+            options: ["10", "14", "48", "100"],
+            answer: 0,
+            explain: "akar(36 + 64) = akar 100 = 10 satuan.",
+          },
+          {
+            q: "Jarak lurus dibanding jarak menyusur tepi petak biasanya?",
+            options: ["Lebih panjang", "Sama saja", "Lebih pendek", "Selalu dua kali lipat"],
+            answer: 2,
+            explain: "Sisi miring selalu lebih pendek daripada jumlah dua sisi siku-sikunya.",
+          },
+          {
+            q: "Titik A(2,3) dan B(10,9), tiap satuan 1 km. Jarak A ke B adalah?",
+            options: ["8 km", "10 km", "14 km", "6 km"],
+            answer: 1,
+            explain: "akar(8 kuadrat + 6 kuadrat) = akar 100 = 10 km.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -547,4 +547,150 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "disjungsi-eksklusif",
+    levelId: "operator-tabel",
+    order: 5,
+    title: "Disjungsi Eksklusif: 'Atau' yang Hanya Salah Satu",
+    summary:
+      "Kata 'atau' kadang berarti boleh dua-duanya, kadang hanya salah satu. Kita uji dulu kedua makna ini sebelum merumuskan disjungsi eksklusif.",
+    durationMin: 12,
+    tags: ["logika", "disjungsi eksklusif", "xor", "tabel kebenaran"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di rumah makan tertulis: \"Paket ini gratis teh <strong>atau</strong> kopi.\" Apakah kamu boleh ambil keduanya? Tentu tidak, hanya satu. Tetapi pada \"diskon untuk pelajar <strong>atau</strong> lansia\", seseorang yang kebetulan pelajar sekaligus lansia tetap dapat. Dua kalimat memakai kata 'atau', tetapi maknanya berbeda. Ayo selidiki dulu kapan 'atau' berarti boleh keduanya dan kapan hanya salah satu.",
+      },
+      {
+        type: "video",
+        comp: "TabelKebenaran",
+        title: "Video: Dua Wajah Kata 'Atau'",
+        caption: "Disjungsi inklusif membolehkan keduanya, eksklusif hanya salah satu.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Uji janji 'aku akan menonton film <strong>atau</strong> tidur'. Kalau ternyata kamu melakukan keduanya sekaligus, apakah janji itu masih pas? Bandingkan dengan 'aku bawa payung <strong>atau</strong> jas hujan' yang tetap benar walau kamu bawa keduanya. Catat dulu di kalimat mana 'keduanya sekaligus' membuat pernyataan menjadi salah.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorOperatorLogika",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Membaca lambangnya",
+        html: "Disjungsi inklusif ditulis <strong>p &or; q</strong> dan benar bila minimal satu benar (termasuk keduanya). Disjungsi eksklusif ditulis <strong>p &veebar; q</strong> dan benar hanya bila <em>tepat satu</em> yang benar. Hubungannya: p &veebar; q setara dengan (p &or; q) &and; &not;(p &and; q).",
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Banyak baris BENAR pada disjungsi eksklusif p ⊻ q",
+        unit: " baris",
+        source: "Tabel kebenaran 2 variabel (4 baris)",
+        note: "Eksklusif benar hanya saat nilai p dan q berbeda, yaitu 2 dari 4 baris.",
+        data: [
+          { label: "Baris BENAR", value: 2, color: "#22c55e" },
+          { label: "Baris SALAH", value: 2, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pada tiap pemakaian kata 'atau', mana yang bermakna EKSKLUSIF (hanya salah satu) dan mana INKLUSIF (boleh keduanya)?",
+        buckets: ["Eksklusif (hanya satu)", "Inklusif (boleh keduanya)"],
+        items: [
+          { text: "Lampu lalu lintas: menyala merah atau hijau", bucket: "Eksklusif (hanya satu)" },
+          { text: "Syarat daftar: warga negara Indonesia atau penduduk tetap", bucket: "Inklusif (boleh keduanya)" },
+          { text: "Hasil lempar koin: angka atau gambar", bucket: "Eksklusif (hanya satu)" },
+          { text: "Bonus untuk anggota baru atau pembeli pertama", bucket: "Inklusif (boleh keduanya)" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dari 4 baris tabel kebenaran disjungsi eksklusif p ⊻ q, berapa baris yang bernilai BENAR?",
+        answer: 2,
+        suffix: " baris",
+        solution:
+          "Eksklusif benar hanya bila tepat satu pernyataan benar, yaitu baris (B,S) dan (S,B). Baris (B,B) dan (S,S) bernilai salah. Jadi 2 baris bernilai benar.",
+        hint: "Eksklusif benar ketika nilai p dan q berbeda.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan nilai p dan q dengan hasil disjungsi eksklusif p ⊻ q.",
+        pairs: [
+          { left: "p benar, q benar", right: "p ⊻ q salah" },
+          { left: "p benar, q salah", right: "p ⊻ q benar" },
+          { left: "p salah, q benar", right: "p ⊻ q benar" },
+          { left: "p salah, q salah", right: "p ⊻ q salah" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Saklar tangga dua arah",
+        html: "Sebuah lampu tangga dikendalikan dua saklar, satu di bawah dan satu di atas. Lampu menyala ketika kedua saklar berada pada posisi <strong>berbeda</strong>, dan padam ketika posisinya sama. Itu persis disjungsi eksklusif: benar (menyala) hanya saat satu saklar berbeda dari yang lain. Karena itu, menekan satu saklar mana pun selalu membalik keadaan lampu. Rangkaian sederhana ini membuktikan disjungsi eksklusif bukan teori belaka, melainkan dipakai nyata di rumah.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah menguji semua baris, baru kita rumuskan: <strong>disjungsi eksklusif p &veebar; q bernilai benar hanya ketika tepat satu pernyataan benar</strong>, yakni saat nilai p dan q berbeda. Ia salah bila keduanya benar atau keduanya salah. Bedanya dengan disjungsi inklusif (p &or; q) terletak pada baris (B,B): inklusif tetap benar, eksklusif menjadi salah.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Disjungsi inklusif (p ∨ q) benar bila minimal satu benar, termasuk keduanya.",
+          "Disjungsi eksklusif (p ⊻ q) benar hanya bila tepat satu benar.",
+          "Eksklusif benar ketika nilai p dan q berbeda, dan salah ketika sama.",
+          "p ⊻ q setara dengan (p ∨ q) ∧ ¬(p ∧ q).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Disjungsi eksklusif p ⊻ q bernilai benar ketika?",
+            options: [
+              "Keduanya benar",
+              "Tepat satu yang benar",
+              "Keduanya salah",
+              "Minimal satu benar",
+            ],
+            answer: 1,
+            explain: "Eksklusif benar hanya saat tepat satu pernyataan benar.",
+          },
+          {
+            q: "Pada baris (B,B), nilai p ⊻ q adalah?",
+            options: ["Benar", "Salah", "Tergantung", "Tidak terdefinisi"],
+            answer: 1,
+            explain: "Karena keduanya benar (tidak berbeda), eksklusif bernilai salah.",
+          },
+          {
+            q: "Pemakaian 'atau' yang bermakna eksklusif adalah?",
+            options: [
+              "Hasil lempar koin: angka atau gambar",
+              "Diskon untuk pelajar atau lansia",
+              "Boleh bawa pena atau pensil",
+              "Syarat: KTP atau SIM",
+            ],
+            answer: 0,
+            explain: "Sekeping koin hanya bisa angka atau gambar, tidak mungkin keduanya.",
+          },
+          {
+            q: "Dari 4 baris tabel kebenaran, p ⊻ q bernilai benar di berapa baris?",
+            options: ["1 baris", "2 baris", "3 baris", "4 baris"],
+            answer: 1,
+            explain: "Baris (B,S) dan (S,B), yaitu 2 baris.",
+          },
+          {
+            q: "Perbedaan p ∨ q dan p ⊻ q terletak pada baris?",
+            options: ["(B,S)", "(S,B)", "(B,B)", "(S,S)"],
+            answer: 2,
+            explain: "Saat keduanya benar, inklusif tetap benar tetapi eksklusif menjadi salah.",
+          },
+        ],
+      },
+    ],
+  },
 ];

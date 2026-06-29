@@ -509,4 +509,142 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "pernyataan-tunggal-dan-majemuk",
+    levelId: "pernyataan",
+    order: 5,
+    title: "Pernyataan Tunggal dan Majemuk",
+    summary:
+      "Sebuah kalimat bisa berisi satu gagasan atau beberapa gagasan yang disambung kata hubung. Kita pilah dulu contohnya sebelum merumuskan apa itu pernyataan majemuk.",
+    durationMin: 12,
+    tags: ["logika", "pernyataan tunggal", "pernyataan majemuk", "kata hubung"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "\"Hari ini hujan.\" \"Hari ini hujan <strong>dan</strong> angin kencang.\" Kalimat pertama membawa satu gagasan, kalimat kedua menggabungkan dua. Kata kecil seperti 'dan', 'atau', serta 'jika ... maka' diam-diam menyatukan beberapa pernyataan menjadi satu. Sebelum membuat definisi, ayo pisahkan dulu mana kalimat yang berisi satu gagasan dan mana yang lebih.",
+      },
+      {
+        type: "video",
+        comp: "OperatorLogika",
+        title: "Video: Menyusun Pernyataan dari Kata Hubung",
+        caption: "Kata penghubung menyatukan pernyataan tunggal menjadi pernyataan majemuk.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil kalimat di sekitarmu, lalu coba pecah: 'Adik tidur dan kakak belajar' sebenarnya dua pernyataan, 'adik tidur' serta 'kakak belajar', yang disambung kata 'dan'. Hitung berapa pernyataan tunggal di dalam tiap kalimat sebelum kita beri nama bentuknya.",
+      },
+      {
+        type: "widget",
+        widget: "EvaluatorProposisi",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kata penghubung dan lambangnya",
+        html: "Setiap kata penghubung punya lambang logika tersendiri: <strong>dan</strong> menjadi konjungsi (&and;), <strong>atau</strong> menjadi disjungsi (&or;), <strong>jika ... maka</strong> menjadi implikasi (&rarr;), <strong>jika dan hanya jika</strong> menjadi biimplikasi (&harr;), dan <strong>tidak</strong> menjadi negasi (&not;).",
+      },
+      {
+        type: "table",
+        headers: ["Kata penghubung", "Nama bentuk", "Lambang"],
+        rows: [
+          ["dan", "Konjungsi", "p ∧ q"],
+          ["atau", "Disjungsi", "p ∨ q"],
+          ["jika ... maka ...", "Implikasi", "p → q"],
+          ["... jika dan hanya jika ...", "Biimplikasi", "p ↔ q"],
+          ["tidak / bukan", "Negasi", "¬p"],
+        ],
+        caption: "Setiap kata hubung sehari-hari punya padanan lambang logika yang baku.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap kalimat: pernyataan tunggal (satu gagasan) atau majemuk (gabungan beberapa gagasan)?",
+        buckets: ["Tunggal", "Majemuk"],
+        items: [
+          { text: "Jakarta ibu kota Indonesia", bucket: "Tunggal" },
+          { text: "Andi rajin dan Budi malas", bucket: "Majemuk" },
+          { text: "Jika hari libur maka sekolah tutup", bucket: "Majemuk" },
+          { text: "5 adalah bilangan prima", bucket: "Tunggal" },
+          { text: "Kita naik bus atau naik kereta", bucket: "Majemuk" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan kalimat majemuk dengan nama bentuknya.",
+        pairs: [
+          { left: "Hari panas dan langit cerah", right: "Konjungsi" },
+          { left: "Naik gunung atau ke pantai", right: "Disjungsi" },
+          { left: "Jika belajar maka lulus", right: "Implikasi" },
+          { left: "Lulus jika dan hanya jika nilai cukup", right: "Biimplikasi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memecah aturan menjadi bagian",
+        html: "Sebuah peraturan parkir berbunyi: \"Kendaraan boleh masuk jika punya kartu anggota <strong>dan</strong> tempat masih tersedia.\" Petugas yang cermat memecahnya menjadi dua pernyataan tunggal: 'punya kartu anggota' dan 'tempat masih tersedia', lalu menyadari keduanya disambung 'dan'. Dengan memisahkan pernyataan majemuk menjadi bagian-bagiannya, ia bisa memeriksa tiap syarat satu per satu tanpa salah membaca. Inilah gunanya membedakan tunggal dan majemuk: bukan sekadar tata bahasa, melainkan cara membaca aturan dengan teliti.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah memilah banyak kalimat, baru kita rumuskan: <strong>pernyataan tunggal</strong> memuat satu gagasan yang berdiri sendiri. <strong>Pernyataan majemuk</strong> dibentuk dengan menyambung dua pernyataan atau lebih memakai kata penghubung (dan, atau, jika ... maka, jika dan hanya jika), atau dengan menambah negasi. Nilai kebenaran pernyataan majemuk ditentukan oleh nilai bagian-bagiannya dan jenis penghubungnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pernyataan tunggal memuat satu gagasan yang berdiri sendiri.",
+          "Pernyataan majemuk menyambung dua pernyataan atau lebih dengan kata penghubung.",
+          "Kata hubung 'dan', 'atau', 'jika ... maka', dan 'jika dan hanya jika' membentuk bentuk majemuk yang berbeda.",
+          "Nilai kebenaran pernyataan majemuk bergantung pada bagian-bagiannya dan jenis penghubungnya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Manakah yang merupakan pernyataan majemuk?",
+            options: [
+              "7 adalah bilangan ganjil",
+              "Hujan turun dan jalanan basah",
+              "Bandung ada di Jawa Barat",
+              "Air mendidih pada 100 derajat",
+            ],
+            answer: 1,
+            explain: "Kalimat itu menggabungkan dua pernyataan dengan kata 'dan', jadi majemuk.",
+          },
+          {
+            q: "Kata penghubung 'jika ... maka ...' membentuk pernyataan majemuk berbentuk?",
+            options: ["Konjungsi", "Disjungsi", "Implikasi", "Biimplikasi"],
+            answer: 2,
+            explain: "'Jika ... maka ...' adalah ciri implikasi (p → q).",
+          },
+          {
+            q: "Kalimat 'Tidak benar bahwa 9 prima' termasuk pernyataan majemuk jenis?",
+            options: ["Negasi", "Konjungsi", "Implikasi", "Tunggal murni"],
+            answer: 0,
+            explain: "Kata 'tidak benar bahwa' menambahkan negasi pada sebuah pernyataan.",
+          },
+          {
+            q: "Pernyataan 'Andi suara tinggi dan Budi suara rendah' tersusun dari berapa pernyataan tunggal?",
+            options: ["1", "2", "3", "4"],
+            answer: 1,
+            explain: "Ada dua gagasan: 'Andi suara tinggi' dan 'Budi suara rendah'.",
+          },
+          {
+            q: "Apa yang menentukan nilai kebenaran sebuah pernyataan majemuk?",
+            options: [
+              "Panjang kalimatnya",
+              "Nilai kebenaran bagian-bagiannya dan jenis penghubungnya",
+              "Jumlah kata di dalamnya",
+              "Urutan kata pertama",
+            ],
+            answer: 1,
+            explain: "Pernyataan majemuk dinilai dari nilai komponennya dan operator penghubungnya.",
+          },
+        ],
+      },
+    ],
+  },
 ];

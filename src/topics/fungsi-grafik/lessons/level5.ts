@@ -626,4 +626,158 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "interpolasi-dan-ekstrapolasi",
+    levelId: "membaca-grafik",
+    order: 5,
+    title: "Menebak Nilai: Interpolasi dan Ekstrapolasi",
+    summary:
+      "Dengan grafik tinggi tanaman yang diukur tiap minggu, kita taksir nilai di sela data dan ramal masa depannya, lalu pahami batasnya.",
+    durationMin: 13,
+    tags: ["grafik", "interpolasi", "ekstrapolasi", "memprediksi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Seorang anak mengukur tinggi tanamannya tiap minggu: minggu 0 setinggi 10 cm, minggu 1 jadi 14 cm, minggu 2 jadi 18 cm, minggu 3 jadi 22 cm. Tapi ia lupa mengukur di hari ke pertengahan minggu, dan penasaran berapa tingginya minggu depan. Bisakah kita menebak tanpa mengukur ulang? Ayo coba dulu lewat grafiknya, baru kita beri nama caranya.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Menebak di Sela dan di Luar Data",
+        caption: "Grafik membantu menaksir nilai yang tidak sempat diukur.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Datanya naik tetap 4 cm tiap minggu. Mau tahu tinggi di minggu 1,5 (di antara dua ukuran)? Ambil pertengahan 14 dan 18, yaitu 16 cm. Mau ramal minggu ke-4 (di luar data)? Teruskan polanya: 22 + 4 = 26 cm. Menebak di sela terasa aman, menebak jauh ke depan terasa lebih nekat. Rasakan bedanya dulu.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Tinggi Tanaman yang Diukur Tiap Minggu",
+        unit: "sentimeter",
+        source: "ilustrasi edukatif",
+        note: "Empat titik terukur (minggu 0 sampai 3) naik tetap 4 cm. Nilai di antaranya bisa ditaksir (interpolasi), nilai di luarnya bisa diramal (ekstrapolasi) selama polanya bertahan.",
+        data: [
+          { label: "Minggu 0", value: 10, color: "#38bdf8" },
+          { label: "Minggu 1", value: 14, color: "#38bdf8" },
+          { label: "Minggu 2", value: 18, color: "#38bdf8" },
+          { label: "Minggu 3", value: 22, color: "#38bdf8" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Ekstrapolasi harus hati-hati",
+        html: "Menebak di antara data (interpolasi) cukup aman karena terapit nilai yang sudah diketahui. Menebak jauh di luar data (ekstrapolasi) berisiko: pola bisa berubah. Tanaman tidak akan tumbuh 4 cm tiap minggu selamanya, suatu saat ia berhenti. Makin jauh dari data, makin besar peluang tebakan meleset.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Tinggi minggu 1 adalah 14 cm dan minggu 2 adalah 18 cm. Perkirakan tinggi di pertengahannya (minggu 1,5) dengan interpolasi.",
+        answer: 16,
+        suffix: " cm",
+        solution:
+          "Ambil nilai tengah antara 14 dan 18: (14 + 18) / 2 = <strong>16 cm</strong>. Interpolasi menaksir nilai di sela data yang sudah ada.",
+        hint: "Cari nilai tengah dari dua tinggi yang mengapitnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dengan pola naik tetap 4 cm per minggu, perkirakan tinggi tanaman pada minggu ke-5 (ekstrapolasi).",
+        answer: 30,
+        suffix: " cm",
+        solution:
+          "Dari minggu 3 (22 cm) maju 2 minggu: 22 + 2 × 4 = 22 + 8 = <strong>30 cm</strong>. Ekstrapolasi meneruskan pola ke luar jangkauan data.",
+        hint: "Mulai dari ukuran terakhir, tambahkan 4 cm untuk tiap minggu berikutnya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Data terukur hanya minggu 0 sampai 3. Kelompokkan tiap tebakan.",
+        buckets: ["Interpolasi (di dalam data)", "Ekstrapolasi (di luar data)"],
+        items: [
+          { text: "Menaksir tinggi di minggu 1,5", bucket: "Interpolasi (di dalam data)" },
+          { text: "Menaksir tinggi di minggu 2,5", bucket: "Interpolasi (di dalam data)" },
+          { text: "Meramal tinggi di minggu ke-6", bucket: "Ekstrapolasi (di luar data)" },
+          { text: "Meramal tinggi di minggu ke-10", bucket: "Ekstrapolasi (di luar data)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Interpolasi", right: "Menaksir nilai di antara data yang ada" },
+          { left: "Ekstrapolasi", right: "Meramal nilai di luar jangkauan data" },
+          { left: "Titik data", right: "Nilai yang benar-benar diukur" },
+          { left: "Tren", right: "Pola umum yang dijadikan dasar tebakan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Sensus penduduk Indonesia",
+        html: "Badan Pusat Statistik menghitung penduduk lewat sensus tiap sepuluh tahun: sekitar 206 juta pada 2000, sekitar 238 juta pada 2010, dan sekitar 270 juta pada 2020. Untuk menaksir jumlah penduduk pada 2015 (di antara dua sensus), kita interpolasi: kira-kira 254 juta, di tengah 238 dan 270. Untuk memperkirakan penduduk 2030, kita ekstrapolasi dengan meneruskan tren. Namun para ahli berhati-hati: laju pertumbuhan bisa melambat, sehingga ekstrapolasi jauh ke depan perlu ditinjau ulang tiap sensus baru.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "<strong>Interpolasi</strong> adalah menaksir nilai di antara data yang sudah diukur, dan <strong>ekstrapolasi</strong> adalah meramal nilai di luar jangkauan data. Keduanya bersandar pada pola atau tren yang terbaca dari grafik. Interpolasi relatif aman karena terapit data nyata; ekstrapolasi lebih berisiko dan makin meragukan bila kita melangkah terlalu jauh.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Interpolasi menaksir nilai di antara titik data yang sudah ada.",
+          "Ekstrapolasi meramal nilai di luar jangkauan data dengan meneruskan tren.",
+          "Interpolasi relatif aman karena terapit data nyata di kedua sisi.",
+          "Ekstrapolasi berisiko karena pola bisa berubah; makin jauh, makin tidak pasti.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Menaksir nilai di antara dua data yang sudah diukur disebut?",
+            options: ["Interpolasi", "Ekstrapolasi", "Pembulatan", "Pencerminan"],
+            answer: 0,
+            explain: "Interpolasi adalah menaksir nilai di sela data yang ada.",
+          },
+          {
+            q: "Meramal nilai jauh di luar jangkauan data disebut?",
+            options: ["Interpolasi", "Ekstrapolasi", "Translasi", "Substitusi"],
+            answer: 1,
+            explain: "Ekstrapolasi adalah meramal di luar data yang terukur.",
+          },
+          {
+            q: "Tinggi minggu 2 adalah 18 cm, minggu 3 adalah 22 cm. Taksiran minggu 2,5 (interpolasi)?",
+            options: ["19 cm", "20 cm", "21 cm", "24 cm"],
+            answer: 1,
+            explain: "Nilai tengah (18 + 22) / 2 = 20 cm.",
+          },
+          {
+            q: "Mengapa ekstrapolasi lebih berisiko dari interpolasi?",
+            options: [
+              "Karena pola bisa berubah di luar data",
+              "Karena selalu salah",
+              "Karena tidak memakai grafik",
+              "Karena angkanya lebih kecil",
+            ],
+            answer: 0,
+            explain: "Di luar jangkauan data, tren bisa berubah sehingga tebakan kurang andal.",
+          },
+          {
+            q: "Menaksir penduduk 2015 dari sensus 2010 dan 2020 termasuk?",
+            options: ["Ekstrapolasi", "Interpolasi", "Pembulatan", "Pencerminan"],
+            answer: 1,
+            explain: "2015 berada di antara dua sensus, jadi ini interpolasi.",
+          },
+        ],
+      },
+    ],
+  },
 ];

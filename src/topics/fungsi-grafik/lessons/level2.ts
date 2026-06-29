@@ -569,4 +569,155 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "perpotongan-dua-garis",
+    levelId: "fungsi-linear",
+    order: 5,
+    title: "Titik Potong Dua Garis: Mencari Titik Impas",
+    summary:
+      "Kita bandingkan dua paket pulsa yang sama-sama lurus, lalu temukan menit ajaib saat keduanya berbiaya sama persis.",
+    durationMin: 14,
+    tags: ["linear", "titik potong", "titik impas", "perbandingan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dua paket pulsa bersaing. Paket Hemat tanpa biaya tetap tapi Rp500 per menit. Paket Langganan menarik Rp10.000 di muka, lalu hanya Rp250 per menit. Yang mana lebih murah? Jawabannya tergantung seberapa lama kamu menelepon. Ayo selidiki dulu kapan keduanya berbalik unggul, sebelum menamai titik temunya.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Saat Dua Garis Bertemu",
+        caption: "Dua garis dengan kemiringan berbeda pasti berpotongan di satu titik.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Hitung biaya keduanya. Untuk 20 menit: Hemat 500 × 20 = 10.000, Langganan 10.000 + 250 × 20 = 15.000, Hemat menang. Untuk 60 menit: Hemat 30.000, Langganan 25.000, kini Langganan menang. Pasti ada satu titik di tengah saat biayanya sama persis. Coba raba: di menit berapa keduanya seri?",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Selisih Biaya (Paket Langganan dikurangi Paket Hemat)",
+        unit: "ribu rupiah",
+        source: "ilustrasi edukatif",
+        note: "Selisihnya menyusut sampai nol tepat di menit ke-40. Sebelum itu selisih positif (Hemat lebih murah), sesudahnya negatif (Langganan lebih murah). Titik nol itulah titik impas.",
+        data: [
+          { label: "0 mnt", value: 10, color: "#14b8a6" },
+          { label: "20 mnt", value: 5, color: "#14b8a6" },
+          { label: "40 mnt", value: 0, color: "#f97316" },
+          { label: "60 mnt", value: -5, color: "#14b8a6" },
+          { label: "80 mnt", value: -10, color: "#14b8a6" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Di titik potong, nilai keduanya sama",
+        html: "Pada titik potong dua garis, kedua fungsi memberi <strong>keluaran yang sama untuk masukan yang sama</strong>. Untuk mencarinya, samakan kedua aturan: 500x = 10.000 + 250x. Dari sini selisih kemiringan (500 - 250 = 250) menutup jarak awal 10.000.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Samakan biaya kedua paket: 500x = 10.000 + 250x. Pada menit ke berapa biayanya sama (titik impas)?",
+        answer: 40,
+        suffix: " menit",
+        solution:
+          "500x - 250x = 10.000, jadi 250x = 10.000 dan x = 10.000 / 250 = <strong>40 menit</strong>. Itulah titik impasnya.",
+        hint: "Kumpulkan suku x di satu ruas: 500x - 250x, lalu bagi dengan selisihnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa total biaya (rupiah) tiap paket tepat di titik impas (menit ke-40)?",
+        answer: 20000,
+        prefix: "Rp",
+        solution:
+          "Paket Hemat: 500 × 40 = 20.000. Paket Langganan: 10.000 + 250 × 40 = 10.000 + 10.000 = 20.000. Keduanya <strong>Rp20.000</strong>, persis sama, sebab inilah titik potongnya.",
+        hint: "Masukkan 40 menit ke salah satu aturan; keduanya pasti memberi hasil sama.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Untuk tiap lama pemakaian, paket mana yang lebih murah?",
+        buckets: ["Paket Hemat lebih murah", "Paket Langganan lebih murah", "Biaya sama"],
+        items: [
+          { text: "Pemakaian 10 menit", bucket: "Paket Hemat lebih murah" },
+          { text: "Pemakaian 20 menit", bucket: "Paket Hemat lebih murah" },
+          { text: "Pemakaian 40 menit", bucket: "Biaya sama" },
+          { text: "Pemakaian 60 menit", bucket: "Paket Langganan lebih murah" },
+          { text: "Pemakaian 100 menit", bucket: "Paket Langganan lebih murah" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih keanggotaan gym",
+        html: "Sebuah gym menawarkan dua skema. Skema Bebas: Rp200.000 per bulan, sepuasnya. Skema Bayar Datang: Rp25.000 tiap kunjungan. Kapan keduanya seri? Samakan: 25.000 × n = 200.000, jadi n = 8 kunjungan. Kalau kamu datang kurang dari 8 kali sebulan, Bayar Datang lebih hemat; lebih dari 8 kali, Skema Bebas menang; tepat 8 kali, sama saja. Titik potong dua garis langsung menjawab keputusan sehari-hari.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah membandingkan dan menyamakan biaya, kita rangkum: <strong>titik potong dua garis</strong> adalah nilai masukan yang membuat kedua fungsi berkeluaran sama. Mencarinya berarti <strong>menyamakan kedua persamaan</strong> lalu menyelesaikan x. Dalam dunia nyata, titik ini sering disebut <strong>titik impas</strong>, batas saat satu pilihan berbalik lebih untung dari yang lain.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Titik potong dua garis adalah masukan yang membuat kedua fungsi berkeluaran sama.",
+          "Mencarinya berarti menyamakan kedua persamaan lalu menyelesaikan x.",
+          "Di kehidupan nyata titik ini disebut titik impas, batas berbaliknya keuntungan.",
+          "Sebelum titik impas satu pilihan lebih murah, sesudahnya pilihan lain yang menang.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada titik potong dua garis, kedua fungsi memberi?",
+            options: [
+              "Keluaran yang sama untuk masukan yang sama",
+              "Masukan yang berbeda",
+              "Keluaran yang selalu nol",
+              "Kemiringan yang sama",
+            ],
+            answer: 0,
+            explain: "Titik potong adalah tempat kedua garis bernilai sama.",
+          },
+          {
+            q: "Untuk mencari titik potong y = 500x dan y = 10.000 + 250x kita?",
+            options: [
+              "Menyamakan kedua persamaan",
+              "Menjumlahkan keduanya",
+              "Mengabaikan salah satunya",
+              "Mengalikan keduanya",
+            ],
+            answer: 0,
+            explain: "Samakan 500x = 10.000 + 250x lalu selesaikan x.",
+          },
+          {
+            q: "Hasil 250x = 10.000 memberi x sama dengan?",
+            options: ["20", "30", "40", "50"],
+            answer: 2,
+            explain: "x = 10.000 / 250 = 40.",
+          },
+          {
+            q: "Gym Rp200.000 per bulan vs Rp25.000 per kunjungan. Titik impasnya?",
+            options: ["5 kunjungan", "8 kunjungan", "10 kunjungan", "20 kunjungan"],
+            answer: 1,
+            explain: "25.000 n = 200.000 memberi n = 8 kunjungan.",
+          },
+          {
+            q: "Jika pemakaian jauh di atas titik impas pada contoh pulsa, paket mana yang lebih murah?",
+            options: ["Paket Hemat", "Paket Langganan", "Selalu sama", "Tidak bisa ditentukan"],
+            answer: 1,
+            explain: "Di atas titik impas, biaya per menit yang lebih kecil (Langganan) menang.",
+          },
+        ],
+      },
+    ],
+  },
 ];

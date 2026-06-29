@@ -42,7 +42,11 @@ function useProgress(active: boolean, duration = 900): number {
   return p;
 }
 
-const PALETTE = ["#10b981", "#0ea5e9", "#f59e0b", "#8b5cf6", "#ef4444", "#14b8a6", "#ec4899", "#84cc16"];
+// On-brand "editorial earth" series palette (harmonizes with the warm-paper
+// canvas + Prussian navy + ochre), replacing the generic neon Tailwind set.
+const PALETTE = ["#2b4f78", "#c8841f", "#b5532f", "#2f7d6b", "#6b4f86", "#4f7a54", "#9a6b3f", "#4d6480"];
+// Single-series trend color (line/area) + its label tint.
+const SERIES = "#224066";
 
 function fmt(n: number): string {
   if (Math.abs(n) >= 1_000_000_000) return (n / 1_000_000_000).toLocaleString("id-ID", { maximumFractionDigits: 1 }) + " M";
@@ -161,14 +165,14 @@ function LineChart({ data, p, area }: { data: ChartDatum[]; p: number; area: boo
       )}
       <defs>
         <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#10b981" stopOpacity={0.35} />
-          <stop offset="100%" stopColor="#10b981" stopOpacity={0.02} />
+          <stop offset="0%" stopColor={SERIES} stopOpacity={0.32} />
+          <stop offset="100%" stopColor={SERIES} stopOpacity={0.02} />
         </linearGradient>
       </defs>
       <path
         d={path}
         fill="none"
-        stroke="#10b981"
+        stroke={SERIES}
         strokeWidth={2.5}
         strokeLinejoin="round"
         strokeLinecap="round"
@@ -176,7 +180,7 @@ function LineChart({ data, p, area }: { data: ChartDatum[]; p: number; area: boo
         strokeDashoffset={len * (1 - p)}
       />
       {pts.map((pt, i) => (
-        <circle key={i} cx={pt[0]} cy={pt[1]} r={3} fill="#10b981" opacity={p > 0.85 ? 1 : 0} />
+        <circle key={i} cx={pt[0]} cy={pt[1]} r={3} fill={SERIES} opacity={p > 0.85 ? 1 : 0} />
       ))}
       {data.map((d, i) =>
         i % Math.ceil(data.length / 8) === 0 || i === data.length - 1 ? (
@@ -288,7 +292,7 @@ function StatCard({
 
   return (
     <div className="rounded-2xl border border-line bg-white p-4 shadow-sm">
-      <div className="text-2xl font-extrabold tnum" style={{ color: color || "#0f766e" }}>
+      <div className="text-2xl font-extrabold tnum" style={{ color: color || SERIES }}>
         {shown}
       </div>
       <div className="mt-1 text-sm font-semibold text-ink">{label}</div>

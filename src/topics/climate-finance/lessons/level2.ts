@@ -809,4 +809,151 @@ export const level2: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "green-sukuk",
+    levelId: "instrumen",
+    order: 5,
+    title: "Green Sukuk: Obligasi Hijau Syariah",
+    summary: "Instrumen hijau berbasis prinsip syariah: berbasis aset, berbagi imbal hasil, dananya khusus proyek ramah iklim.",
+    durationMin: 13,
+    tags: ["green sukuk", "syariah", "instrumen"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Green sukuk</strong> adalah versi syariah dari green bond. Alih-alih bunga (riba), sukuk memberi imbal hasil dari <strong>aset atau proyek nyata yang mendasarinya</strong> (berbasis aset), dan dananya wajib dipakai untuk proyek hijau yang memenuhi kriteria. Instrumen ini membuka kolam dana investor syariah untuk aksi iklim.",
+      },
+      {
+        type: "video",
+        comp: "GreenBondFlow",
+        title: "Video: Alur Dana Obligasi Hijau",
+        caption: "Pola alur dana sukuk hijau mirip green bond, tetapi berbasis aset dan imbal hasil syariah.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Bedanya dengan green bond konvensional",
+        html: "Green bond membayar <strong>bunga</strong> dan merupakan surat utang. Green sukuk memberi <strong>imbal hasil dari aset/proyek riil</strong> dan mencerminkan kepemilikan bersama atas aset. Keduanya sama-sama mensyaratkan dana dipakai untuk proyek hijau dan dilaporkan secara transparan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Atur nilai penerbitan dan imbal hasil untuk melihat dana yang terkumpul dan biaya imbal hasil tahunan.",
+      },
+      { type: "widget", widget: "SimulatorGreenBond" },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Alokasi Dana Green Sukuk Negara per Sektor (ilustrasi)",
+        unit: "% dari proceeds",
+        source: "ilustrasi pola alokasi green sukuk",
+        note: "Dana green sukuk negara umumnya mengalir ke transport berkelanjutan, energi, ketahanan iklim, dan pengelolaan limbah, bukan ke proyek umum.",
+        data: [
+          { label: "Transport berkelanjutan", value: 40, color: "#10b981" },
+          { label: "Ketahanan iklim & adaptasi", value: 25, color: "#06b6d4" },
+          { label: "Energi terbarukan & efisiensi", value: 20, color: "#6366f1" },
+          { label: "Pengelolaan limbah", value: 15, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Sukuk membiayai pembangkit dan irigasi",
+        html: "Sebuah negara menerbitkan green sukuk Rp5 triliun dengan imbal hasil 6,75% per tahun. Dananya dialokasikan ke proyek nyata: jalur kereta listrik, irigasi tahan kekeringan, dan PLTS. Karena berbasis aset, investor syariah memperoleh imbal hasil dari kinerja aset tersebut, sementara emiten mendapat modal jangka panjang untuk proyek iklim. Beban imbal hasilnya Rp337,5 miliar per tahun.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Green sukuk Rp5.000 miliar dengan imbal hasil 6,75% per tahun. Berapa miliar rupiah imbal hasil yang dibayar per tahun?",
+        answer: 337.5,
+        tolerance: 0.5,
+        prefix: "Rp",
+        suffix: "miliar",
+        solution: "Imbal hasil = 6,75% x Rp5.000 miliar = 0,0675 x 5.000 = <strong>Rp337,5 miliar</strong> per tahun.",
+        hint: "Kalikan nilai penerbitan dengan tingkat imbal hasil (0,0675).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pernyataan ini cocok untuk green sukuk atau green bond konvensional?",
+        buckets: ["Green sukuk", "Green bond konvensional"],
+        items: [
+          { text: "Membayar bunga sebagai surat utang", bucket: "Green bond konvensional" },
+          { text: "Berbasis aset dan sesuai prinsip syariah", bucket: "Green sukuk" },
+          { text: "Imbal hasil berasal dari aset/proyek riil", bucket: "Green sukuk" },
+          { text: "Menghindari unsur riba", bucket: "Green sukuk" },
+          { text: "Sama-sama mewajibkan dana untuk proyek hijau", bucket: "Green sukuk" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Green sukuk", right: "Obligasi hijau berbasis prinsip syariah" },
+          { left: "Berbasis aset", right: "Imbal hasil dari aset/proyek nyata" },
+          { left: "Riba", right: "Bunga yang dihindari dalam syariah" },
+          { left: "Proceeds", right: "Dana terkumpul yang dipakai untuk proyek hijau" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Green Sukuk Negara Pertama Dunia 2018",
+        html: "Pada <strong>Maret 2018</strong>, <strong>Indonesia menerbitkan green sukuk negara pertama di dunia</strong> senilai <strong>USD 1,25 miliar</strong>. Penerbitan ini membuktikan instrumen syariah dapat memobilisasi dana global untuk proyek iklim, dan Indonesia melanjutkannya dengan penerbitan rutin pada tahun-tahun berikutnya, menjadikan green sukuk bagian penting strategi pendanaan hijau nasional.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Green sukuk adalah obligasi hijau berbasis prinsip syariah.",
+          "Berbasis aset dan memberi imbal hasil, bukan bunga (riba).",
+          "Dananya wajib untuk proyek hijau dan dilaporkan transparan.",
+          "Indonesia menerbitkan green sukuk negara pertama dunia pada 2018.",
+          "Instrumen ini membuka kolam dana investor syariah untuk iklim.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Green sukuk berbeda dari green bond karena?",
+            options: [
+              "Tidak butuh proyek hijau",
+              "Berbasis aset dan sesuai prinsip syariah, bukan bunga",
+              "Selalu bebas risiko",
+              "Hanya untuk pemerintah asing",
+            ],
+            answer: 1,
+            explain: "Green sukuk berbasis aset dan menghindari bunga (riba), sesuai prinsip syariah.",
+          },
+          {
+            q: "Negara pertama yang menerbitkan green sukuk negara di dunia adalah?",
+            options: ["Malaysia", "Indonesia (2018)", "Arab Saudi", "Uni Emirat Arab"],
+            answer: 1,
+            explain: "Indonesia menerbitkan green sukuk negara pertama dunia pada Maret 2018.",
+          },
+          {
+            q: "Imbal hasil green sukuk berasal dari?",
+            options: ["Bunga tetap (riba)", "Aset atau proyek riil yang mendasarinya", "Spekulasi valas", "Pajak"],
+            answer: 1,
+            explain: "Karena berbasis aset, imbal hasil mencerminkan kinerja aset/proyek nyata.",
+          },
+          {
+            q: "Sukuk Rp4.000 miliar dengan imbal hasil 6% per tahun membayar?",
+            options: ["Rp240 miliar", "Rp24 miliar", "Rp2.400 miliar", "Rp60 miliar"],
+            answer: 0,
+            explain: "6% x Rp4.000 miliar = Rp240 miliar per tahun.",
+          },
+          {
+            q: "Kesamaan green sukuk dan green bond adalah?",
+            options: [
+              "Sama-sama membayar bunga",
+              "Dana wajib dipakai untuk proyek hijau dan dilaporkan transparan",
+              "Sama-sama dilarang syariah",
+              "Tidak ada laporan apa pun",
+            ],
+            answer: 1,
+            explain: "Keduanya mensyaratkan penggunaan dana untuk proyek hijau dengan pelaporan transparan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -770,4 +770,145 @@ export const level5: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "loss-and-damage",
+    levelId: "praktik",
+    order: 5,
+    title: "Loss and Damage: Pendanaan Kerugian Iklim",
+    summary: "Saat dampak iklim tak lagi bisa dicegah atau diadaptasi, muncul kerugian. Bagaimana dunia mendanainya.",
+    durationMin: 13,
+    tags: ["loss and damage", "kerugian iklim", "pendanaan internasional"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Mitigasi mencegah, adaptasi mengurangi, tetapi sebagian dampak iklim tetap menimbulkan kerusakan yang tak terhindarkan: rumah hilang akibat naiknya permukaan laut, panen musnah, atau pulau tenggelam. Inilah <strong>loss and damage (kerugian dan kerusakan)</strong>, kategori ketiga yang butuh pendanaan tersendiri.",
+      },
+      {
+        type: "video",
+        comp: "JustTransitionVideo",
+        title: "Video: Just Transition",
+        caption: "Keadilan iklim juga berarti menanggung kerugian negara rentan yang paling sedikit menyumbang emisi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga pilar aksi iklim",
+        html: "<strong>Mitigasi</strong> (cegah emisi), <strong>adaptasi</strong> (kurangi kerentanan), dan <strong>loss and damage</strong> (tanggung kerugian yang sudah terjadi dan tak bisa dihindari). Loss and damage menjadi pilar ketiga yang lama terabaikan dalam pendanaan iklim.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Perkirakan besarnya dampak iklim dalam angka untuk merasakan skala kerugian yang harus didanai.",
+      },
+      { type: "widget", widget: "KalkulatorDampakIklim" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tiga Pilar Aksi Iklim: Porsi Pendanaan (ilustrasi)",
+        unit: "indeks relatif perhatian pendanaan",
+        source: "ilustrasi konsep, pola umum global",
+        note: "Loss and damage paling sedikit didanai meski kerugiannya paling dirasakan negara rentan, sementara mitigasi mendominasi aliran dana.",
+        data: [
+          { label: "Mitigasi", value: 90, color: "#10b981" },
+          { label: "Adaptasi", value: 30, color: "#06b6d4" },
+          { label: "Loss and damage", value: 8, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Negara kepulauan dilanda siklon",
+        html: "Sebuah negara kepulauan kecil dilanda siklon yang menghancurkan infrastruktur senilai <strong>USD 1 miliar</strong>, padahal sumbangan emisinya nyaris nol. Adaptasi tak cukup menahan kerugian sebesar ini. Lewat skema loss and damage, sebuah dana internasional menanggung <strong>30%</strong> kerugian, yaitu USD 300 juta, untuk membantu pemulihan tanpa membebani negara itu dengan utang baru.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Kerugian siklon USD 1.000 juta. Dana loss and damage menanggung 30%. Berapa juta USD yang ditanggung dana tersebut?",
+        answer: 300,
+        tolerance: 0,
+        prefix: "USD ",
+        suffix: "juta",
+        solution: "Ditanggung = 30% x USD 1.000 juta = 0,30 x 1.000 = <strong>USD 300 juta</strong>.",
+        hint: "Kalikan total kerugian dengan 30% (0,30).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Situasi ini paling tepat ditangani lewat mitigasi, adaptasi, atau loss and damage?",
+        buckets: ["Mitigasi", "Adaptasi", "Loss and damage"],
+        items: [
+          { text: "Mengganti PLTU dengan PLTS", bucket: "Mitigasi" },
+          { text: "Membangun tanggul sebelum banjir datang", bucket: "Adaptasi" },
+          { text: "Memulihkan desa yang sudah hancur diterjang siklon", bucket: "Loss and damage" },
+          { text: "Relokasi warga pulau yang sudah tenggelam", bucket: "Loss and damage" },
+          { text: "Menanam mangrove menahan abrasi", bucket: "Adaptasi" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Loss and damage", right: "Kerugian iklim yang tak bisa dihindari" },
+          { left: "Mitigasi", right: "Mencegah emisi" },
+          { left: "Adaptasi", right: "Mengurangi kerentanan sebelum dampak" },
+          { left: "Keadilan iklim", right: "Yang paling sedikit menyumbang emisi paling terdampak" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Dana Loss and Damage COP27 2022 dan COP28 2023",
+        html: "Pada <strong>COP27 di Sharm el-Sheikh, November 2022</strong>, negara-negara akhirnya sepakat membentuk <strong>Dana Loss and Damage</strong> setelah desakan puluhan tahun dari negara berkembang dan negara kepulauan kecil. Dana ini resmi <strong>dioperasikan pada COP28 di Dubai, Desember 2023</strong>, dengan janji awal sekitar <strong>USD 700 juta</strong>. Jumlah ini masih jauh dari kebutuhan, tetapi menandai pengakuan global bahwa kerugian iklim perlu didanai tersendiri.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Loss and damage adalah kerugian iklim yang tak bisa dicegah atau diadaptasi.",
+          "Ia menjadi pilar ketiga aksi iklim, selain mitigasi dan adaptasi.",
+          "Negara rentan paling terdampak meski paling sedikit menyumbang emisi.",
+          "Dana Loss and Damage disepakati COP27 (2022), dioperasikan COP28 (2023).",
+          "Pendanaannya masih jauh di bawah kebutuhan nyata.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Loss and damage merujuk pada?",
+            options: [
+              "Keuntungan dari proyek hijau",
+              "Kerugian iklim yang tak bisa dicegah atau diadaptasi",
+              "Pajak karbon",
+              "Bunga pinjaman",
+            ],
+            answer: 1,
+            explain: "Loss and damage adalah kerusakan iklim yang sudah terjadi dan tak terhindarkan.",
+          },
+          {
+            q: "Loss and damage adalah pilar ketiga selain?",
+            options: ["Pajak dan subsidi", "Mitigasi dan adaptasi", "Saham dan obligasi", "Ekspor dan impor"],
+            answer: 1,
+            explain: "Tiga pilar aksi iklim: mitigasi, adaptasi, dan loss and damage.",
+          },
+          {
+            q: "Dana Loss and Damage disepakati pada?",
+            options: ["COP21 Paris 2015", "COP27 Sharm el-Sheikh 2022", "Protokol Kyoto 1997", "G20 2010"],
+            answer: 1,
+            explain: "Pembentukannya disepakati di COP27 (2022) dan dioperasikan di COP28 (2023).",
+          },
+          {
+            q: "Kerugian USD 800 juta, dana menanggung 25%. Berapa yang ditanggung?",
+            options: ["USD 200 juta", "USD 250 juta", "USD 160 juta", "USD 600 juta"],
+            answer: 0,
+            explain: "25% x USD 800 juta = USD 200 juta.",
+          },
+          {
+            q: "Memulihkan desa yang sudah hancur diterjang siklon termasuk?",
+            options: ["Mitigasi", "Adaptasi", "Loss and damage", "Spekulasi"],
+            answer: 2,
+            explain: "Menanggung kerugian yang sudah terjadi adalah ranah loss and damage.",
+          },
+        ],
+      },
+    ],
+  },
 ];

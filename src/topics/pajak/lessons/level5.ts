@@ -690,4 +690,158 @@ export const level5: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "pembetulan-spt",
+    levelId: "lapor",
+    order: 5,
+    title: "Membetulkan SPT & Surat dari Kantor Pajak",
+    summary: "Salah lapor itu wajar dan bisa diperbaiki. Kenali pembetulan SPT dan arti surat dari DJP.",
+    durationMin: 13,
+    tags: ["pembetulan", "STP", "kepatuhan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Tenang, salah lapor bukan akhir dunia. Sistem pajak menyediakan jalan untuk <strong>memperbaiki SPT</strong> yang keliru. Yang penting adalah memperbaikinya cepat, sebelum masalah membesar.",
+      },
+      {
+        type: "paragraph",
+        html: "Selain itu, kamu perlu paham arti <strong>surat dari kantor pajak</strong>. Tidak semuanya tagihan: ada yang sekadar ajakan mengecek, ada yang benar-benar menetapkan pajak.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Boleh membetulkan sendiri sebelum diperiksa",
+        html: "Selama DJP belum memulai pemeriksaan, kamu boleh <strong>membetulkan SPT</strong> sendiri (UU KUP Pasal 8). Bila pembetulan membuat pajak kurang bayar, ada <strong>sanksi bunga</strong> atas kekurangannya, tetapi biasanya jauh lebih ringan daripada menunggu ditemukan saat pemeriksaan.",
+      },
+      {
+        type: "video",
+        comp: "DendaTumbuh",
+        title: "Video: Denda yang Terus Membesar",
+        caption: "Makin cepat membetulkan kekurangan pajak, makin kecil bunga yang menumpuk.",
+      },
+      {
+        type: "table",
+        caption: "Jenis surat dari kantor pajak",
+        headers: ["Surat", "Artinya"],
+        rows: [
+          ["Surat Himbauan", "Ajakan mengecek/membetulkan SPT, belum penetapan"],
+          ["STP (Surat Tagihan Pajak)", "Menagih pajak dan/atau sanksi administrasi"],
+          ["SKPKB", "Penetapan kurang bayar hasil pemeriksaan"],
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Surat himbauan bukan tagihan",
+        html: "Kalau menerima <strong>surat himbauan</strong>, jangan panik. Itu ajakan mengecek kembali SPT-mu, biasanya karena ada data yang berbeda. Periksa catatanmu; bila memang ada selisih, segera betulkan secara sukarela.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Hitung sanksinya",
+        html: "Gunakan simulator ini untuk melihat berapa bunga bila pembayaran terlambat. Makin cepat dibetulkan dan dibayar, makin kecil bebannya.",
+      },
+      { type: "widget", widget: "SimulatorDendaPajak" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Sanksi Lebih Ringan Bila Cepat Membetulkan (ilustrasi)",
+        unit: "Rp bunga atas kekurangan Rp5 juta",
+        source: "ilustrasi, tarif 1,1% per bulan",
+        note: "Makin cepat membetulkan kekurangan pajak, makin kecil bunga yang menumpuk.",
+        data: [
+          { label: "Betulkan bulan ke-1", value: 55000, color: "#fca5a5" },
+          { label: "Betulkan bulan ke-3", value: 165000, color: "#f87171" },
+          { label: "Betulkan bulan ke-6", value: 330000, color: "#ef4444" },
+          { label: "Betulkan bulan ke-12", value: 660000, color: "#b91c1c" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Salah tulis omzet, segera dibetulkan",
+        html: "Pak Rian sadar ia lupa memasukkan penjualan satu bulan di SPT Tahunannya, sehingga pajaknya kurang Rp600.000. Karena belum ada pemeriksaan, ia langsung <strong>membetulkan SPT</strong>, membayar kekurangan plus bunga kecil. Jauh lebih murah dan tenang dibanding menunggu ditemukan kantor pajak.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menanggapi surat himbauan",
+        html: "CV Cahaya menerima <strong>surat himbauan</strong> karena data omzet di SPT-nya berbeda dengan data marketplace yang diterima DJP. Surat ini bukan tagihan, melainkan ajakan mengecek. CV Cahaya memeriksa catatannya, menemukan selisih, lalu membetulkan SPT secara sukarela. Karena ditanggapi cepat dan benar, masalahnya selesai tanpa berkembang menjadi pemeriksaan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pembetulan SPT menambah pajak kurang bayar Rp5.000.000. Dibetulkan setelah 3 bulan, bunga 1,1% per bulan. Berapa total bunga yang dibayar?",
+        answer: 165000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Bunga = Rp5.000.000 x 1,1% x 3 = Rp55.000 x 3 = <strong>Rp165.000</strong>, dibayar bersama kekurangan pokoknya.",
+        hint: "Pokok x tarif bulanan x jumlah bulan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Surat ini berupa tagihan/penetapan, atau sekadar ajakan mengecek?",
+        buckets: ["Tagihan/penetapan", "Ajakan mengecek"],
+        items: [
+          { text: "Surat Himbauan", bucket: "Ajakan mengecek" },
+          { text: "STP (Surat Tagihan Pajak)", bucket: "Tagihan/penetapan" },
+          { text: "SKPKB hasil pemeriksaan", bucket: "Tagihan/penetapan" },
+          { text: "Imbauan mencocokkan data marketplace", bucket: "Ajakan mengecek" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan artinya.",
+        pairs: [
+          { left: "Pembetulan SPT", right: "Memperbaiki SPT sebelum diperiksa (Pasal 8)" },
+          { left: "Surat Himbauan", right: "Ajakan mengecek/membetulkan, belum penetapan" },
+          { left: "STP", right: "Surat menagih pajak/sanksi administrasi" },
+          { left: "SKPKB", right: "Penetapan kurang bayar hasil pemeriksaan" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Salah lapor bisa diperbaiki lewat pembetulan SPT (UU KUP Pasal 8).",
+          "Pembetulan boleh dilakukan selama DJP belum memulai pemeriksaan.",
+          "Kekurangan bayar kena bunga; makin cepat dibetulkan makin kecil.",
+          "Kenali jenis surat: himbauan (ajakan), STP (tagihan), SKPKB (penetapan).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Memperbaiki SPT yang salah disebut?",
+            options: ["Pembetulan SPT", "Pembatalan NPWP", "Restitusi", "Banding"],
+            answer: 0,
+            explain: "Memperbaiki SPT yang keliru disebut pembetulan SPT (UU KUP Pasal 8).",
+          },
+          {
+            q: "Pembetulan SPT boleh dilakukan selama?",
+            options: ["Kapan pun tanpa batas", "DJP belum memulai pemeriksaan", "Hanya saat untung", "Setelah 10 tahun"],
+            answer: 1,
+            explain: "Pembetulan dibolehkan selama DJP belum memulai tindakan pemeriksaan.",
+          },
+          {
+            q: "Surat Himbauan dari kantor pajak berarti?",
+            options: ["Tagihan final", "Ajakan mengecek/membetulkan SPT", "Sita aset", "Pembekuan usaha"],
+            answer: 1,
+            explain: "Surat himbauan adalah ajakan mengecek/membetulkan SPT, bukan penetapan.",
+          },
+          {
+            q: "STP (Surat Tagihan Pajak) berfungsi untuk?",
+            options: ["Menagih pajak dan/atau sanksi administrasi", "Memberi hadiah", "Menghapus pajak", "Mendaftar NPWP"],
+            answer: 0,
+            explain: "STP digunakan untuk menagih pajak dan/atau sanksi administrasi.",
+          },
+          {
+            q: "Pembetulan menambah kurang bayar Rp5 juta, telat 3 bulan, bunga 1,1%/bln. Bunganya?",
+            options: ["Rp55.000", "Rp165.000", "Rp550.000", "Rp1.650.000"],
+            answer: 1,
+            explain: "Rp5.000.000 x 1,1% x 3 = Rp165.000.",
+          },
+        ],
+      },
+    ],
+  },
 ];

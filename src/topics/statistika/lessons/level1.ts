@@ -613,4 +613,159 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "populasi-dan-sampel",
+    levelId: "data-penyajian",
+    order: 5,
+    title: "Populasi dan Sampel: Mengambil Contoh yang Mewakili",
+    summary:
+      "Sering kita ingin tahu tentang kelompok besar tanpa mendata semuanya. Kita ambil sebagian saja, asalkan contohnya benar-benar mewakili.",
+    durationMin: 14,
+    tags: ["statistika", "data", "populasi", "sampel"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah lembaga ingin tahu pendapat jutaan warga, tetapi mustahil bertanya ke semua orang. Maka mereka memilih beberapa ribu orang saja, lalu menyimpulkan pendapat semua warga dari jawaban kelompok kecil itu. Anehnya, ini bisa sangat akurat, asalkan caranya benar. Sebelum menarik aturan, ayo selidiki dulu kapan 'sebagian' bisa mewakili 'seluruhnya'.",
+      },
+      {
+        type: "video",
+        comp: "StatistikaVideo",
+        title: "Video: Bertanya ke Sebagian, Menyimpulkan Seluruhnya",
+        caption: "Bagaimana segenggam contoh bisa menggambarkan kelompok yang sangat besar.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan kita ingin tahu berapa persen siswa satu sekolah yang suka olahraga. Kalau kita hanya bertanya kepada anak-anak yang sedang main basket di lapangan, jawabannya pasti terlalu tinggi. Tetapi kalau kita memilih siswa <strong>secara acak</strong> dari seluruh kelas, contohnya jauh lebih jujur. Letak masalahnya bukan pada jumlah, melainkan pada cara memilih.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Estimasi Suka Olahraga dari Cara Sampel Berbeda",
+        unit: "persen suka olahraga",
+        source: "ilustrasi edukatif",
+        note: "Nilai sebenarnya seluruh siswa 45%. Sampel acak menebak dekat (46%), tetapi sampel dari lapangan basket berat sebelah dan melonjak ke 82%.",
+        data: [
+          { label: "Seluruh siswa", value: 45, color: "#6366f1" },
+          { label: "Sampel acak 200", value: 46, color: "#3b82f6" },
+          { label: "Sampel di lapangan", value: 82, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "widget",
+        widget: "SimulatorStatistik",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Sampel yang berat sebelah",
+        html: "Sampel disebut <strong>bias</strong> (berat sebelah) jika cara memilihnya membuat sebagian kelompok lebih mungkin terpilih. Sampel besar yang bias justru menyesatkan: banyaknya data tidak menebus cara pemilihan yang keliru.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah sekolah punya 1.200 siswa. Diambil sampel acak 150 siswa, dan 96 di antaranya membawa bekal dari rumah. Berapa persen siswa pembawa bekal menurut sampel ini?",
+        answer: 64,
+        tolerance: 0.5,
+        suffix: "%",
+        solution:
+          "Frekuensi relatif = 96 dibagi 150 = 0,64, jadi <strong>64%</strong> siswa diperkirakan membawa bekal.",
+        hint: "Bagi jumlah pembawa bekal dengan ukuran sampel, lalu kalikan 100.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dari sampel tadi, 64% siswa membawa bekal. Berapa perkiraan banyak siswa pembawa bekal di seluruh sekolah yang berisi 1.200 siswa?",
+        answer: 768,
+        tolerance: 1,
+        suffix: " siswa",
+        solution:
+          "Terapkan persentase sampel ke populasi: 0,64 dikali 1.200 = <strong>768 siswa</strong>. Inilah inti sampel, menebak keseluruhan dari sebagian.",
+        hint: "Kalikan persentase sampel dengan total siswa sekolah.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap hal sebagai populasi (kelompok lengkap) atau sampel (bagian yang diamati).",
+        buckets: ["Populasi", "Sampel"],
+        items: [
+          { text: "Seluruh 1.200 siswa di sekolah", bucket: "Populasi" },
+          { text: "150 siswa yang dipilih acak untuk disurvei", bucket: "Sampel" },
+          { text: "Semua penduduk sebuah kota", bucket: "Populasi" },
+          { text: "500 warga yang ditelepon lembaga survei", bucket: "Sampel" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Jajak pendapat yang keliru tahun 1936",
+        html: "Pada pemilu presiden Amerika 1936, majalah Literary Digest mengirim kartu suara ke jutaan orang dan menerima sekitar 2,3 juta jawaban. Mereka berani meramalkan Alf Landon menang. Kenyataannya Franklin Roosevelt menang telak. Kesalahannya bukan jumlah, sebab sampelnya justru raksasa, melainkan cara memilihnya: nama diambil dari daftar pemilik telepon dan mobil, yang saat itu cenderung orang berada. George Gallup memakai sampel jauh lebih kecil tetapi mewakili semua kalangan, dan tebakannya benar. Sampel yang mewakili mengalahkan sampel yang sekadar besar.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah berpetualang, baru kita rangkum: <strong>populasi</strong> adalah seluruh kelompok yang ingin kita pelajari, sedangkan <strong>sampel</strong> adalah bagian yang benar-benar kita amati. Sampel yang dipilih secara acak cenderung mewakili populasi, tetapi sampel yang bias menyesatkan walaupun besar.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Populasi adalah seluruh kelompok yang ingin dipelajari; sampel adalah bagian yang diamati.",
+          "Sampel dipakai karena mendata seluruh populasi sering mustahil atau mahal.",
+          "Sampel acak cenderung mewakili populasi dengan jujur.",
+          "Sampel yang bias menyesatkan, sebesar apa pun ukurannya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Seluruh kelompok yang ingin kita pelajari disebut?",
+            options: ["Sampel", "Populasi", "Frekuensi", "Median"],
+            answer: 1,
+            explain: "Kelompok lengkap yang menjadi sasaran kajian disebut populasi.",
+          },
+          {
+            q: "Bagian dari populasi yang benar-benar diamati disebut?",
+            options: ["Sampel", "Modus", "Ruang sampel", "Diagram"],
+            answer: 0,
+            explain: "Bagian yang diukur atau ditanyai itulah sampel.",
+          },
+          {
+            q: "Agar sampel mewakili populasi, cara terbaik memilihnya adalah?",
+            options: [
+              "Memilih yang paling mudah ditemui",
+              "Memilih secara acak dari seluruh populasi",
+              "Memilih hanya yang setuju",
+              "Memilih sebanyak-banyaknya tanpa aturan",
+            ],
+            answer: 1,
+            explain: "Pemilihan acak memberi tiap anggota peluang yang adil untuk terpilih.",
+          },
+          {
+            q: "Survei kebiasaan olahraga yang hanya dilakukan di pusat kebugaran akan?",
+            options: [
+              "Mewakili semua orang dengan baik",
+              "Menghasilkan estimasi yang berat sebelah (terlalu tinggi)",
+              "Selalu tepat karena datanya banyak",
+              "Tidak terpengaruh cara memilih",
+            ],
+            answer: 1,
+            explain: "Orang di pusat kebugaran cenderung suka olahraga, jadi sampelnya bias.",
+          },
+          {
+            q: "Jajak pendapat 1936 keliru meramalkan terutama karena?",
+            options: [
+              "Sampelnya terlalu kecil",
+              "Sampelnya berat sebelah, dari pemilik telepon dan mobil",
+              "Tidak ada yang menjawab",
+              "Salah menjumlahkan suara",
+            ],
+            answer: 1,
+            explain: "Sampel raksasa itu tetap bias karena hanya mewakili kalangan berada.",
+          },
+        ],
+      },
+    ],
+  },
 ];

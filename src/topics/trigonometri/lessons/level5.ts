@@ -549,4 +549,163 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "trigonometri-dan-gelombang",
+    levelId: "aturan-aplikasi",
+    order: 5,
+    title: "Trigonometri di Balik Gelombang dan Gerak Berulang",
+    summary:
+      "Pasang surut, listrik PLN, dan kincir ria sama-sama berputar dan berulang. Kita selidiki dulu mengapa sinus menjadi bahasa semua gerak berulang.",
+    durationMin: 14,
+    tags: ["trigonometri", "gelombang", "periodik", "sinus", "aplikasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Air laut pasang dan surut, lampu menyala dari listrik bolak-balik, dan kursi kincir ria naik turun. Ketiganya terasa berbeda, tetapi punya satu kesamaan: mereka berulang dengan pola yang sama persis setiap putaran. Ada satu fungsi yang menggambarkan semuanya. Ayo selidiki dulu sebelum menamai polanya.",
+      },
+      {
+        type: "video",
+        comp: "LingkaranSatuanVideo",
+        title: "Video: Dari Putaran ke Gelombang",
+        caption: "Saat sebuah titik berputar, ketinggiannya menggambar gelombang sinus yang berulang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan kamu duduk di kincir ria berjari-jari 20 meter dengan pusat 22 meter di atas tanah. Saat sudut putar 0 derajat kamu di samping pusat, tingginya 22 meter. Di 90 derajat kamu di puncak, 42 meter. Di 270 derajat kamu di titik terendah, 2 meter. Ketinggianmu mengikuti pola tinggi = 22 + 20 × sin sudut.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorLingkaranSatuan",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Ketinggian Kursi Kincir Ria Selama Satu Putaran",
+        unit: "meter",
+        source: "model ilustrasi (tinggi = 22 + 20 sin sudut)",
+        note: "Naik ke puncak 42 m di 90 derajat, turun ke 2 m di 270 derajat, lalu berulang. Inilah gelombang sinus di dunia nyata.",
+        data: [
+          { label: "0°", value: 22, color: "#10b981" },
+          { label: "90°", value: 42, color: "#10b981" },
+          { label: "180°", value: 22, color: "#10b981" },
+          { label: "270°", value: 2, color: "#10b981" },
+          { label: "360°", value: 22, color: "#10b981" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tiga kata kunci gelombang",
+        html: "Setiap gerak berulang punya <strong>amplitudo</strong> (seberapa jauh naik turun dari tengah), <strong>periode</strong> (waktu satu putaran penuh), dan posisi tengah. Pada kincir ria tadi, amplitudo 20 meter dan tengahnya 22 meter. Sinus memberi bentuk naik turunnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pakai model tinggi = 22 + 20 × sin sudut. Saat sudut putar 30 derajat (sin 30 = 0,5), berapa meter ketinggian kursi?",
+        answer: 32,
+        tolerance: 0.1,
+        suffix: " m",
+        solution:
+          "Tinggi = 22 + 20 × sin 30 derajat = 22 + 20 × 0,5 = 22 + 10 = <strong>32 meter</strong>.",
+        hint: "Masukkan sin 30 = 0,5 ke rumus tinggi = 22 + 20 × sin sudut.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Listrik PLN bolak-balik berfrekuensi 50 hertz, artinya 50 putaran penuh tiap detik. Berapa milidetik waktu satu putaran (periode)?",
+        answer: 20,
+        tolerance: 0.1,
+        suffix: " ms",
+        solution:
+          "Periode = 1 ÷ frekuensi = 1 ÷ 50 detik = 0,02 detik = <strong>20 milidetik</strong>.",
+        hint: "Periode adalah kebalikan frekuensi: 1 ÷ 50 detik.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana gejala yang periodik (berulang teratur) dan mana yang tidak?",
+        buckets: ["Periodik", "Tidak periodik"],
+        items: [
+          { text: "Pasang surut air laut", bucket: "Periodik" },
+          { text: "Tegangan listrik PLN bolak-balik", bucket: "Periodik" },
+          { text: "Ayunan bandul jam", bucket: "Periodik" },
+          { text: "Tinggi badan seseorang seumur hidup", bucket: "Tidak periodik" },
+          { text: "Saldo tabungan yang terus bertambah", bucket: "Tidak periodik" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Listrik PLN yang naik turun 50 kali per detik",
+        html: "Stop kontak di rumah memberi listrik bolak-balik dengan tegangan efektif 220 volt dan frekuensi 50 hertz. Tegangannya tidak diam, melainkan naik turun mengikuti gelombang sinus 50 kali setiap detik, dengan nilai puncak sekitar 220 × 1,414 = sekitar 311 volt. Mata kita tidak melihat lampu berkedip karena pergantiannya jauh lebih cepat daripada yang bisa ditangkap. Gelombang sinus benar-benar mengalir di kabel rumahmu.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah melihat putaran menjadi gelombang, baru polanya kita rapikan: gerak berulang dimodelkan dengan <strong>nilai = tengah + amplitudo × sin (sudut)</strong>, dan <strong>periode = 1 ÷ frekuensi</strong>. Sinus adalah bahasa alami untuk apa pun yang berputar atau berulang, dari pasang surut sampai listrik.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Gerak berulang (pasang surut, listrik, kincir ria) berbagi satu pola: gelombang sinus.",
+          "Modelnya: nilai = tengah + amplitudo × sin sudut.",
+          "Amplitudo adalah jarak naik turun dari tengah; periode adalah waktu satu putaran.",
+          "Periode = 1 ÷ frekuensi; PLN 50 hertz berarti satu putaran 20 milidetik.",
+          "Sinus dari lingkaran satuan menjelaskan gejala nyata di alam dan teknologi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa kesamaan pasang surut, listrik PLN, dan kincir ria?",
+            options: [
+              "Semuanya memakai listrik",
+              "Semuanya gerak berulang yang dimodelkan gelombang sinus",
+              "Semuanya berada di laut",
+              "Semuanya bergerak lurus",
+            ],
+            answer: 1,
+            explain: "Ketiganya periodik dan mengikuti bentuk gelombang sinus.",
+          },
+          {
+            q: "Pada model tinggi = 22 + 20 sin sudut, ketinggian puncak (sin = 1) adalah?",
+            options: ["20 m", "22 m", "42 m", "2 m"],
+            answer: 2,
+            explain: "Tinggi puncak = 22 + 20 × 1 = 42 meter.",
+          },
+          {
+            q: "Amplitudo sebuah gelombang menyatakan?",
+            options: [
+              "Waktu satu putaran",
+              "Seberapa jauh naik turun dari posisi tengah",
+              "Jumlah putaran per detik",
+              "Posisi tengah gelombang",
+            ],
+            answer: 1,
+            explain: "Amplitudo adalah simpangan maksimum dari posisi tengah.",
+          },
+          {
+            q: "Listrik PLN 50 hertz memiliki periode satu putaran sebesar?",
+            options: ["50 detik", "0,02 detik", "1 detik", "100 detik"],
+            answer: 1,
+            explain: "Periode = 1 ÷ 50 = 0,02 detik = 20 milidetik.",
+          },
+          {
+            q: "Hubungan periode dan frekuensi adalah?",
+            options: [
+              "periode = frekuensi",
+              "periode = 1 ÷ frekuensi",
+              "periode = frekuensi × 2",
+              "periode = frekuensi ÷ 2",
+            ],
+            answer: 1,
+            explain: "Periode dan frekuensi saling berkebalikan: T = 1 ÷ f.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -519,4 +519,130 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "valuasi-saham-per-pbv",
+    levelId: "saham",
+    order: 5,
+    title: "Valuasi Saham: PER dan PBV",
+    summary: "Menilai mahal atau murahnya saham dengan rasio PER dan PBV, serta makna earnings yield. Dengan kalkulator return.",
+    durationMin: 15,
+    tags: ["saham", "valuasi", "PER", "PBV", "EPS"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Harga saham yang tinggi belum tentu mahal, dan harga rendah belum tentu murah. Untuk menilainya, investor memakai <strong>rasio valuasi</strong> yang membandingkan harga dengan kinerja perusahaan. Dua yang paling umum adalah <strong>PER</strong> dan <strong>PBV</strong>.",
+      },
+      {
+        type: "paragraph",
+        html: "<strong>PER (Price to Earnings Ratio) = Harga saham / Laba per saham (EPS)</strong>. PER 10 berarti investor membayar Rp10 untuk setiap Rp1 laba tahunan, atau secara kasar butuh 10 tahun laba untuk menutup harga. <strong>PBV (Price to Book Value) = Harga saham / Nilai buku per saham</strong>, membandingkan harga dengan nilai ekuitas bersih per lembar.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Membaca PER dan PBV",
+        html: "PER atau PBV <strong>tinggi</strong> berarti pasar berani membayar mahal, sering karena ekspektasi pertumbuhan tinggi. PER atau PBV <strong>rendah</strong> bisa berarti murah, tetapi bisa juga sinyal masalah. Bandingkan selalu dengan perusahaan sejenis di sektor yang sama.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Earnings yield: kebalikan PER",
+        html: "<strong>Earnings yield = 1 / PER</strong>. PER 10 setara earnings yield 10%, PER 20 setara 5%, PER 40 setara 2,5%. Makin tinggi PER, makin kecil laba tahunan relatif terhadap harga yang dibayar.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Rasio bukan segalanya",
+        html: "PER dan PBV hanya potret sesaat. Perusahaan dengan PER tinggi bisa wajar bila labanya tumbuh cepat; PER rendah bisa jadi jebakan nilai (value trap) bila bisnisnya menurun. Pahami juga prospek dan kualitas labanya.",
+      },
+      { type: "widget", widget: "KalkulatorReturnSaham" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Earnings Yield untuk Berbagai Tingkat PER",
+        unit: "% earnings yield",
+        source: "perhitungan: earnings yield = 1 / PER",
+        note: "Makin tinggi PER, makin rendah laba tahunan relatif terhadap harga (earnings yield kecil).",
+        data: [
+          { label: "PER 8", value: 12.5, color: "#16a34a" },
+          { label: "PER 10", value: 10, color: "#0ea5e9" },
+          { label: "PER 20", value: 5, color: "#f59e0b" },
+          { label: "PER 40", value: 2.5, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua saham, harga sama, PER beda",
+        html: "Saham A dan saham B sama-sama berharga <strong>Rp5.000</strong>. Saham A memiliki EPS Rp1.000, sehingga PER A = 5.000 / 1.000 = <strong>5</strong>. Saham B memiliki EPS Rp250, sehingga PER B = 5.000 / 250 = <strong>20</strong>. Meski harganya identik, saham A jauh lebih murah relatif terhadap labanya. Investor membayar 5 tahun laba untuk A, tetapi 20 tahun laba untuk B.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Harga saham Rp5.000 dan laba per saham (EPS) Rp500. Berapa PER-nya?",
+        answer: 10,
+        tolerance: 0,
+        solution: "PER = Harga / EPS = Rp5.000 / Rp500 = <strong>10</strong>. Artinya investor membayar 10 kali laba tahunan.",
+        hint: "Bagi harga saham dengan laba per saham (EPS).",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah valuasi dengan pengertiannya.",
+        pairs: [
+          { left: "PER", right: "Harga saham dibagi laba per saham" },
+          { left: "PBV", right: "Harga saham dibagi nilai buku per saham" },
+          { left: "EPS", right: "Laba bersih dibagi jumlah saham beredar" },
+          { left: "Earnings yield", right: "Kebalikan PER, laba relatif terhadap harga" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Nifty Fifty dan bahaya PER tinggi 1972-1974",
+        html: "Pada awal 1970-an di Amerika Serikat, sekelompok saham unggulan yang dijuluki <strong>Nifty Fifty</strong> dianggap layak dibeli pada harga berapa pun. Sebagian diperdagangkan pada <strong>PER 40 hingga lebih dari 80</strong>, jauh di atas rata-rata pasar. Ketika pasar beruang <strong>1973-1974</strong> datang, banyak di antaranya jatuh <strong>50% hingga lebih dari 80%</strong>. Pelajarannya: bahkan perusahaan bagus bisa menjadi investasi buruk bila dibeli pada valuasi yang terlalu mahal.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "PER = harga / EPS, mengukur berapa kali laba yang dibayar investor.",
+          "PBV = harga / nilai buku per saham.",
+          "Earnings yield = 1 / PER; PER tinggi berarti earnings yield rendah.",
+          "Bandingkan rasio dengan perusahaan sejenis, bukan lintas sektor.",
+          "PER rendah belum tentu murah; PER tinggi belum tentu mahal.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "PER dihitung dengan rumus?",
+            options: ["EPS dibagi harga", "Harga saham dibagi EPS", "Harga dibagi dividen", "Nilai buku dibagi harga"],
+            answer: 1,
+            explain: "PER = Harga saham dibagi laba per saham (EPS).",
+          },
+          {
+            q: "PER 25 secara kasar berarti?",
+            options: ["Investor membayar 25 kali laba tahunan", "Saham naik 25%", "Dividen 25%", "Nilai buku 25"],
+            answer: 0,
+            explain: "PER 25 berarti harga setara 25 kali laba tahunan per saham.",
+          },
+          {
+            q: "Earnings yield dari saham ber-PER 20 adalah?",
+            options: ["20%", "10%", "5%", "2%"],
+            answer: 2,
+            explain: "Earnings yield = 1 / PER = 1/20 = 5%.",
+          },
+          {
+            q: "PBV membandingkan harga saham dengan?",
+            options: ["Laba per saham", "Nilai buku per saham", "Dividen per saham", "Harga IPO"],
+            answer: 1,
+            explain: "PBV = Harga saham dibagi nilai buku (ekuitas bersih) per saham.",
+          },
+          {
+            q: "Harga Rp8.000, EPS Rp400. Berapa PER-nya?",
+            options: ["10", "20", "4", "32"],
+            answer: 1,
+            explain: "8.000 / 400 = 20.",
+          },
+        ],
+      },
+    ],
+  },
 ];

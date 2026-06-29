@@ -583,4 +583,167 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kesetimbangan-benda",
+    levelId: "diagram-benda-bebas",
+    order: 5,
+    title: "Kesetimbangan Benda (Resultan Gaya Nol)",
+    summary:
+      "Benda yang diam pun penuh gaya, hanya saja semuanya saling meniadakan. Kita pakai diagram benda bebas untuk membuktikan resultannya nol.",
+    durationMin: 14,
+    tags: ["fisika", "dinamika", "kesetimbangan", "diagram-benda-bebas", "resultan-gaya"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Lampu gantung yang diam, buku di atas meja, jembatan yang menahan kendaraan, semuanya tampak tenang. Namun di dalamnya bekerja banyak gaya sekaligus. Karena benda tetap diam, gaya-gaya itu pasti <strong>saling meniadakan</strong> sehingga resultannya nol. Inilah keadaan setimbang, dan diagram benda bebas adalah alat untuk membuktikannya.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Diam Bukan Berarti Tanpa Gaya",
+        caption: "Pada benda setimbang, jumlah seluruh gaya sama dengan nol meski tiap gayanya tidak nol.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Syarat kesetimbangan",
+        html: "Sebuah benda berada dalam kesetimbangan (diam atau bergerak lurus beraturan) bila <strong>resultan gayanya nol</strong>. Artinya jumlah gaya ke kiri sama dengan jumlah gaya ke kanan, dan jumlah gaya ke atas sama dengan jumlah gaya ke bawah. Ini langsung mengikuti Hukum I Newton.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Diam tidak sama dengan tanpa gaya",
+        html: "Jangan tertukar: benda diam bukan berarti tidak ada gaya yang bekerja. Yang benar adalah gaya-gayanya berimbang. Pada buku di meja, berat menarik ke bawah dan gaya normal mendorong ke atas dengan besar sama, sehingga keduanya saling menghapus.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Gunakan simulator gaya untuk menambah atau mengurangi gaya pada benda, lalu cari kombinasi yang membuat resultannya nol dan benda tetap diam.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Tegangan Tiap Tali saat Sudut terhadap Horizontal Mengecil (beban 100 N, dua tali simetris)",
+        unit: "tegangan (N)",
+        source: "perhitungan kesetimbangan: 2 · T · sin(sudut) = berat",
+        note: "Makin mendatar tali, makin besar tegangannya. Pada 30° tegangan tiap tali sudah sebesar seluruh beban; mendekati horizontal, tegangan melonjak tajam.",
+        data: [
+          { label: "90°", value: 50, color: "#d946ef" },
+          { label: "60°", value: 58, color: "#d946ef" },
+          { label: "45°", value: 71, color: "#d946ef" },
+          { label: "30°", value: 100, color: "#d946ef" },
+          { label: "15°", value: 193, color: "#d946ef" },
+        ],
+      },
+      {
+        type: "paragraph",
+        html: "Amati grafik. Dua tali simetris menahan beban 100 N. Saat tali nyaris tegak (90°), tiap tali cukup menanggung setengah beban, yaitu 50 N. Namun saat tali makin mendatar, tegangan melonjak: pada 30° tiap tali menanggung 100 N, dan pada 15° hampir 193 N. Itulah sebabnya tali yang ditarik nyaris lurus mendatar mudah putus.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah lampu seberat 25 N digantung diam pada satu tali vertikal. Berapa tegangan tali itu?",
+        answer: 25,
+        tolerance: 0.1,
+        suffix: " N",
+        solution:
+          "Karena lampu diam, resultan gaya nol: tegangan ke atas = berat ke bawah. Maka tegangan = <strong>25 N</strong>.",
+        hint: "Pada benda setimbang, gaya ke atas sama dengan gaya ke bawah.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dua tali simetris masing-masing membentuk sudut 30° terhadap horizontal menahan beban 80 N. Berapa tegangan tiap tali?",
+        answer: 80,
+        tolerance: 1,
+        suffix: " N",
+        solution:
+          "Komponen vertikal kedua tali menahan beban: 2 · T · sin 30° = 80. Karena sin 30° = 0,5, maka 2 · T · 0,5 = T = <strong>80 N</strong> tiap tali.",
+        hint: "Jumlahkan komponen vertikal kedua tali dan setarakan dengan berat. sin 30° = 0,5.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap keadaan: benda setimbang (resultan nol) atau tidak setimbang?",
+        buckets: ["Setimbang (resultan nol)", "Tidak setimbang"],
+        items: [
+          { text: "Buku diam di atas meja", bucket: "Setimbang (resultan nol)" },
+          { text: "Lampu tergantung diam pada tali", bucket: "Setimbang (resultan nol)" },
+          { text: "Mobil dipercepat dari lampu merah", bucket: "Tidak setimbang" },
+          { text: "Bola jatuh bebas makin cepat", bucket: "Tidak setimbang" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa Tali Jemuran Dibiarkan Sedikit Kendur",
+        html: "Jika tali jemuran ditarik nyaris lurus mendatar lalu kita gantungkan pakaian basah di tengahnya, tali akan menanggung tegangan yang sangat besar, seperti terlihat pada grafik saat sudut mendekati 0°. Tegangan yang melonjak ini bisa menarik lepas paku penyangga atau memutus tali. Karena itu tali jemuran sengaja dibiarkan agak kendur sehingga melengkung; sudut tali terhadap horizontal menjadi lebih besar dan tegangannya turun ke tingkat yang aman.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Inti yang lahir di akhir",
+        html: "Kunci kesetimbangan: <strong>resultan gaya sama dengan nol</strong>. Pisahkan gaya menjadi arah mendatar dan tegak, lalu setarakan yang berlawanan: total kiri = total kanan, total atas = total bawah. Dari syarat sederhana inilah seluruh tegangan tali, gaya normal, dan gaya penyangga pada benda diam dapat dihitung lewat diagram benda bebas.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Benda setimbang bila resultan gayanya nol (Hukum I Newton).",
+          "Diam tidak berarti tanpa gaya, melainkan gaya-gayanya berimbang.",
+          "Pecah gaya ke arah mendatar dan tegak, lalu setarakan yang berlawanan.",
+          "Tali yang makin mendatar menanggung tegangan yang makin besar.",
+          "Diagram benda bebas membuat semua gaya tampak sehingga mudah disetarakan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Syarat sebuah benda berada dalam kesetimbangan adalah?",
+            options: [
+              "Tidak ada gaya yang bekerja",
+              "Resultan gayanya nol",
+              "Hanya ada satu gaya",
+              "Beratnya nol",
+            ],
+            answer: 1,
+            explain: "Benda setimbang bila jumlah seluruh gaya (resultan) sama dengan nol.",
+          },
+          {
+            q: "Sebuah lampu 40 N digantung diam pada satu tali vertikal. Tegangan tali?",
+            options: ["0 N", "20 N", "40 N", "80 N"],
+            answer: 2,
+            explain: "Tegangan ke atas sama dengan berat ke bawah, yaitu 40 N.",
+          },
+          {
+            q: "Pada buku diam di atas meja, gaya normal seimbang dengan?",
+            options: ["Gaya gesek", "Gaya berat", "Tegangan tali", "Gaya pegas"],
+            answer: 1,
+            explain: "Gaya normal ke atas menyeimbangkan gaya berat ke bawah.",
+          },
+          {
+            q: "Saat sudut tali penahan beban terhadap horizontal mengecil, tegangan tali?",
+            options: ["Mengecil", "Tetap", "Membesar", "Menjadi nol"],
+            answer: 2,
+            explain: "Komponen vertikal tiap tali mengecil, sehingga tegangan harus membesar untuk menahan beban.",
+          },
+          {
+            q: "Manakah benda yang TIDAK setimbang?",
+            options: [
+              "Buku diam di meja",
+              "Lampu tergantung diam",
+              "Mobil dipercepat dari diam",
+              "Lemari diam di lantai",
+            ],
+            answer: 2,
+            explain: "Mobil yang dipercepat mengalami resultan gaya tidak nol, jadi tidak setimbang.",
+          },
+        ],
+      },
+    ],
+  },
 ];

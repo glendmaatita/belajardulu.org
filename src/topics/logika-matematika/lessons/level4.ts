@@ -531,4 +531,145 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "silogisme-disjungtif",
+    levelId: "kuantor-penarikan",
+    order: 5,
+    title: "Silogisme Disjungtif: Menyingkirkan Pilihan",
+    summary:
+      "Bila hanya ada dua kemungkinan dan satu gugur, yang tersisa pasti benar. Kita uji dulu pola menyingkirkan pilihan ini sebelum menamainya.",
+    durationMin: 12,
+    tags: ["logika", "penarikan", "silogisme-disjungtif", "disjungsi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kunci motor pasti tertinggal di kamar <strong>atau</strong> di mobil. Setelah kamar diobrak-abrik, kunci tidak ada di sana. Tanpa mengecek mobil pun, kamu sudah yakin kunci ada di mobil. Penalaran ini terasa sangat wajar, tetapi mengapa ia selalu benar? Ayo telusuri dulu polanya sebelum kita beri nama.",
+      },
+      {
+        type: "video",
+        comp: "SilogismeVideo",
+        title: "Video: Menyingkirkan Kemungkinan",
+        caption: "Bila salah satu pilihan gugur, kesimpulan jatuh pada pilihan yang tersisa.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil dua kemungkinan yang dihubungkan 'atau', misalnya 'lewat jalan tol atau jalan biasa'. Gugurkan salah satunya ('ternyata bukan jalan tol'). Apa yang tersisa? Sekarang coba sebaliknya: bila salah satu pilihan justru kamu tahu BENAR, bolehkah kamu menyimpulkan yang lain salah? Catat dugaanmu lebih dulu.",
+      },
+      {
+        type: "widget",
+        widget: "CekValiditasSilogisme",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Awas jebakan: menegaskan satu pilihan",
+        html: "Dari 'p atau q' dan 'p benar', kita TIDAK boleh menyimpulkan 'bukan q'. Sebab 'atau' dalam logika bersifat inklusif: keduanya bisa benar sekaligus. Misalnya 'dia bawa pena atau pensil', ternyata dia bawa pena, itu tidak membuktikan dia tidak bawa pensil. Hanya <em>menyingkirkan</em> satu pilihan (mengingkarinya) yang menjamin pilihan lain.",
+      },
+      {
+        type: "table",
+        headers: ["Nama aturan", "Premis", "Kesimpulan sah"],
+        rows: [
+          ["Modus ponens", "p → q, dan p", "q"],
+          ["Modus tollens", "p → q, dan ¬q", "¬p"],
+          ["Silogisme hipotetis", "p → q, dan q → r", "p → r"],
+          ["Silogisme disjungtif", "p ∨ q, dan ¬p", "q"],
+        ],
+        caption: "Empat pola penarikan kesimpulan yang selalu sah bila premisnya benar.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap penalaran: sah (silogisme disjungtif) atau sesat (menegaskan satu pilihan).",
+        buckets: ["Sah (silogisme disjungtif)", "Sesat (menegaskan pilihan)"],
+        items: [
+          { text: "Hadiahnya buku atau pulpen. Bukan buku. Jadi pulpen.", bucket: "Sah (silogisme disjungtif)" },
+          { text: "Dia naik bus atau kereta. Naik bus. Jadi tidak naik kereta.", bucket: "Sesat (menegaskan pilihan)" },
+          { text: "Lampu merah atau hijau. Bukan merah. Jadi hijau.", bucket: "Sah (silogisme disjungtif)" },
+          { text: "Suka teh atau kopi. Suka teh. Jadi tidak suka kopi.", bucket: "Sesat (menegaskan pilihan)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan premis silogisme disjungtif dengan kesimpulan sahnya.",
+        pairs: [
+          { left: "x genap atau ganjil. x bukan genap.", right: "x ganjil" },
+          { left: "Pergi pagi atau sore. Bukan pagi.", right: "Pergi sore" },
+          { left: "Menang atau seri. Tidak menang.", right: "Seri" },
+          { left: "Jawaban A atau B. Bukan A.", right: "Jawaban B" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Detektif mempersempit tersangka",
+        html: "Seorang detektif yakin pelakunya adalah satu dari dua orang: Tono atau Wira. Lalu terbukti Tono punya alibi kuat, ia sedang berada di kota lain. Dengan silogisme disjungtif, detektif menyimpulkan Wira pelakunya. Namun ia tetap berhati-hati: bila ada kemungkinan ketiga yang belum tercatat, kesimpulannya bisa keliru. Kekuatan pola ini bergantung pada lengkapnya daftar pilihan, jadi premis 'p atau q' harus benar-benar mencakup semua kemungkinan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah menguji banyak kasus, baru kita rumuskan <strong>silogisme disjungtif</strong>: dari premis 'p atau q' dan premis 'bukan p', kita boleh menyimpulkan 'q'. Pola ini sah karena salah satu pilihan disingkirkan. Sebaliknya, dari 'p atau q' dan 'p benar', kita tidak boleh menyimpulkan 'bukan q', sebab 'atau' bersifat inklusif. Pastikan pula daftar pilihannya lengkap agar kesimpulan tetap aman.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Silogisme disjungtif: dari p ∨ q dan ¬p, simpulkan q.",
+          "Pola ini sah karena menyingkirkan satu pilihan, bukan menegaskannya.",
+          "Dari p ∨ q dan p, kita TIDAK boleh menyimpulkan ¬q (karena 'atau' inklusif).",
+          "Kesimpulan hanya aman bila daftar pilihan benar-benar mencakup semua kemungkinan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bentuk silogisme disjungtif yang benar adalah?",
+            options: [
+              "p ∨ q, p, jadi ¬q",
+              "p ∨ q, ¬p, jadi q",
+              "p ∧ q, ¬p, jadi q",
+              "p → q, p, jadi q",
+            ],
+            answer: 1,
+            explain: "Menyingkirkan satu pilihan (¬p) menyisakan pilihan lain (q).",
+          },
+          {
+            q: "'Hadiahnya buku atau pulpen. Ternyata bukan buku.' Kesimpulan sah?",
+            options: ["Buku", "Pulpen", "Keduanya", "Tidak bisa disimpulkan"],
+            answer: 1,
+            explain: "Pilihan 'buku' gugur, maka tersisa 'pulpen'.",
+          },
+          {
+            q: "Mengapa dari 'p atau q' dan 'p benar' tidak boleh disimpulkan 'bukan q'?",
+            options: [
+              "Karena premisnya salah",
+              "Karena 'atau' bersifat inklusif sehingga keduanya bisa benar",
+              "Karena tidak ada kata 'jika'",
+              "Karena q selalu salah",
+            ],
+            answer: 1,
+            explain: "Disjungsi inklusif membolehkan keduanya benar, jadi 'p benar' tidak menggugurkan q.",
+          },
+          {
+            q: "'Lampu merah atau hijau. Bukan hijau.' Kesimpulan sah?",
+            options: ["Hijau", "Merah", "Kuning", "Tidak bisa disimpulkan"],
+            answer: 1,
+            explain: "Pilihan 'hijau' disingkirkan, maka tersisa 'merah'.",
+          },
+          {
+            q: "Agar silogisme disjungtif aman, premis 'p atau q' harus?",
+            options: [
+              "Memuat kata 'jika'",
+              "Mencakup semua kemungkinan yang ada",
+              "Selalu bernilai salah",
+              "Lebih panjang dari kesimpulan",
+            ],
+            answer: 1,
+            explain: "Bila ada kemungkinan ketiga yang terlewat, kesimpulan bisa keliru.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -583,4 +583,157 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "nilai-rata-rata-fungsi",
+    levelId: "integral",
+    order: 5,
+    title: "Nilai Rata-rata Sebuah Fungsi: Meratakan yang Naik Turun",
+    summary:
+      "Sebelum menulis rumusnya, kita cari satu nilai datar yang mewakili seluruh fungsi yang berubah-ubah, lewat luas yang sama.",
+    durationMin: 14,
+    tags: ["kalkulus", "integral", "nilai rata-rata", "aplikasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Suhu sebuah kota naik turun sepanjang hari, tetapi ramalan cuaca tetap bisa menyebut 'suhu rata-rata hari ini 28 derajat'. Bagaimana meratakan sesuatu yang terus berubah setiap saat, bukan cuma beberapa angka? Jawabannya bersandar pada luas di bawah kurva. Ayo selidiki dulu sebelum menulis rumusnya.",
+      },
+      {
+        type: "video",
+        comp: "IntegralVideo",
+        title: "Video: Meratakan Fungsi yang Berubah",
+        caption: "Mencari tinggi datar yang luasnya sama dengan luas di bawah kurva.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil f(x) = 2x dari x = 0 sampai x = 3. Luas di bawahnya berbentuk segitiga: setengah x 3 x 6 = 9. Sekarang bayangkan sebuah persegi panjang dengan lebar 3 yang luasnya juga 9. Berapa tingginya? Tinggi itulah nilai rata-rata fungsi. Coba hitung: 9 dibagi 3.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorIntegral",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Fungsi f(x) = 2x dan Nilai Rata-ratanya pada Selang 0 sampai 3",
+        unit: "nilai f(x)",
+        source: "perhitungan f(x) = 2x; rata-rata = (luas) / lebar = 9 / 3",
+        note: "Garis naik dari 0 ke 6; nilai rata-ratanya 3, yaitu tinggi di titik tengah selang.",
+        data: [
+          { label: "x=0", value: 0, color: "#67e8f9" },
+          { label: "x=1", value: 2, color: "#22d3ee" },
+          { label: "x=1,5 (rata-rata=3)", value: 3, color: "#06b6d4" },
+          { label: "x=2", value: 4, color: "#0891b2" },
+          { label: "x=3", value: 6, color: "#0e7490" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tinggi datar yang luasnya sama",
+        html: "Nilai rata-rata sebuah fungsi adalah <strong>tinggi persegi panjang</strong> yang, dengan lebar selebar selang, memberi luas sama persis dengan luas di bawah kurva. Karena luas itu adalah integral, kita tinggal membagi integral dengan lebar selang untuk mendapatkan tinggi rata-ratanya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa nilai rata-rata f(x) = 2x pada selang x = 0 sampai x = 4? (Antiturunan 2x adalah x kuadrat.)",
+        answer: 4,
+        solution:
+          "Luas (integral) = 4 kuadrat - 0 = 16. Lebar selang = 4 - 0 = 4. Nilai rata-rata = 16 dibagi 4 = <strong>4</strong>.",
+        hint: "Hitung integral lalu bagi dengan lebar selang.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa nilai rata-rata fungsi konstan f(x) = 6 pada selang x = 2 sampai x = 10?",
+        answer: 6,
+        solution:
+          "Fungsi yang sudah datar memiliki rata-rata sama dengan nilainya sendiri, yaitu <strong>6</strong>. Periksa: luas = 6 x 8 = 48, dibagi lebar 8 = 6.",
+        hint: "Fungsi konstan tidak naik turun, jadi rata-ratanya nilainya sendiri.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan fungsi dan selangnya dengan nilai rata-ratanya.",
+        pairs: [
+          { left: "f(x) = 2x pada 0 sampai 3", right: "3" },
+          { left: "f(x) = 2x pada 0 sampai 5", right: "5" },
+          { left: "f(x) = x kuadrat pada 0 sampai 3", right: "3" },
+          { left: "f(x) = 4 pada 0 sampai 10", right: "4" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Kecepatan rata-rata sebuah perjalanan",
+        html: "Seorang pengemudi melaju dengan kecepatan yang naik turun: macet di kota, lancar di tol. Kecepatan rata-rata perjalanan bukan rata-rata sederhana dari beberapa angka, melainkan <strong>total jarak dibagi total waktu</strong>. Karena total jarak adalah luas di bawah grafik kecepatan, yaitu integral kecepatan, maka kecepatan rata-rata sama dengan integral kecepatan dibagi lamanya waktu. Inilah nilai rata-rata sebuah fungsi yang bekerja di dunia nyata.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah merasakan polanya, baru kita tuliskan: <strong>nilai rata-rata f pada selang a sampai b adalah (1 dibagi (b - a)) dikali integral dari a ke b atas f(x) dx</strong>. Artinya luas di bawah kurva dibagi lebar selang. Untuk fungsi linear, nilai rata-rata ini persis sama dengan tinggi kurva di titik tengah selang.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Nilai rata-rata fungsi adalah tinggi datar yang luasnya sama dengan luas di bawah kurva.",
+          "Rumusnya: integral fungsi pada selang dibagi lebar selang.",
+          "Fungsi konstan memiliki rata-rata sama dengan nilainya sendiri.",
+          "Untuk fungsi linear, rata-ratanya sama dengan nilai di titik tengah selang.",
+          "Kecepatan rata-rata perjalanan adalah contoh nyata nilai rata-rata sebuah fungsi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Nilai rata-rata sebuah fungsi pada selang adalah?",
+            options: [
+              "Nilai terbesar fungsi",
+              "Integral fungsi dibagi lebar selang",
+              "Turunan fungsi di titik tengah",
+              "Selisih batas atas dan bawah",
+            ],
+            answer: 1,
+            explain: "Nilai rata-rata = luas di bawah kurva (integral) dibagi lebar selang.",
+          },
+          {
+            q: "Nilai rata-rata f(x) = 2x pada selang 0 sampai 4 adalah?",
+            options: ["2", "4", "8", "16"],
+            answer: 1,
+            explain: "Integral = 16, dibagi lebar 4, menghasilkan 4.",
+          },
+          {
+            q: "Nilai rata-rata fungsi konstan f(x) = 6 adalah?",
+            options: ["0", "3", "6", "12"],
+            answer: 2,
+            explain: "Fungsi datar memiliki rata-rata sama dengan nilainya, yaitu 6.",
+          },
+          {
+            q: "Untuk fungsi linear, nilai rata-ratanya sama dengan?",
+            options: [
+              "Nilai di titik tengah selang",
+              "Nilai di batas kiri",
+              "Nilai terbesar",
+              "Nol",
+            ],
+            answer: 0,
+            explain: "Pada fungsi linear, rata-ratanya tepat tinggi kurva di titik tengah selang.",
+          },
+          {
+            q: "Kecepatan rata-rata sebuah perjalanan dihitung sebagai?",
+            options: [
+              "Total jarak dibagi total waktu",
+              "Kecepatan tertinggi",
+              "Selisih dua kecepatan",
+              "Percepatan dikali waktu",
+            ],
+            answer: 0,
+            explain: "Total jarak (integral kecepatan) dibagi waktu adalah nilai rata-rata kecepatan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

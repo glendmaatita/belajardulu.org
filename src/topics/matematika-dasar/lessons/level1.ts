@@ -633,4 +633,179 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "lambang-mewakili",
+    levelId: "apa-itu-matematika",
+    order: 5,
+    title: "Lambang yang Mewakili: Awal Mula Aljabar",
+    summary:
+      "Kita mainkan dulu sebuah trik tebak angka yang selalu berhasil, lalu menemukan bahwa satu huruf bisa mewakili semua bilangan sekaligus.",
+    durationMin: 13,
+    tags: ["aljabar", "lambang", "generalisasi", "abstraksi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Coba ikuti permainan ini di kepalamu. Pikirkan sebuah bilangan, jangan beri tahu siapa pun. Tambahkan 4. Kalikan hasilnya dengan 2. Kurangi 6. Bagi 2. Lalu kurangi bilangan yang pertama kamu pikirkan. Berapa pun bilangan awalmu, aku berani menebak hasil akhirmu adalah <strong>1</strong>. Bagaimana mungkin aku tahu tanpa melihat angkamu? Ayo selidiki dulu.",
+      },
+      {
+        type: "video",
+        comp: "BerpikirMatematis",
+        title: "Video: Cara Berpikir Matematis",
+        caption: "Amati, tebak, uji, lalu simpulkan. Trik tebak angka pun bisa dibongkar dengan cara ini.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Jangan langsung percaya, ayo uji. Mulai dari 3: tambah 4 jadi 7, kali 2 jadi 14, kurangi 6 jadi 8, bagi 2 jadi 4, kurangi 3 jadi <strong>1</strong>. Coba lagi dari 20: 24, lalu 48, lalu 42, lalu 21, kurangi 20 jadi <strong>1</strong>. Selalu 1. Tahan rasa penasaranmu, kita akan membongkar rahasianya.",
+      },
+      {
+        type: "widget",
+        widget: "PenjelajahPola",
+      },
+      {
+        type: "paragraph",
+        html: "Rahasianya muncul saat kita berhenti memakai angka tertentu dan memakai <strong>lambang</strong>. Sebut saja bilangan awalmu 'n', yang bisa berarti angka berapa pun. Tambah 4 menjadi n+4. Kali 2 menjadi 2n+8. Kurangi 6 menjadi 2n+2. Bagi 2 menjadi n+1. Kurangi n, dan tersisalah <strong>1</strong>. Karena n hilang di langkah terakhir, hasilnya tidak pernah bergantung pada angka awalmu.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Satu huruf mewakili semua bilangan",
+        html: "Inilah lompatan besar: dengan menulis 'n', kita tidak lagi bicara tentang satu angka, melainkan <strong>semua angka sekaligus</strong>. Itulah inti aljabar. Sebuah huruf menjadi wakil dari tak terhingga banyak bilangan, sehingga satu pernyataan bisa membuktikan pola untuk seluruhnya.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Satu Rumus, Tak Terbatas Jawaban: Keliling = 4 x sisi (ilustrasi)",
+        unit: "keliling (cm)",
+        source: "ilustrasi edukatif",
+        note: "Dengan satu lambang sisi, rumus 4 x sisi langsung menjawab keliling untuk persegi ukuran berapa pun. Itulah hemat dan kuatnya lambang.",
+        data: [
+          { label: "sisi 1", value: 4, color: "#34d399" },
+          { label: "sisi 2", value: 8, color: "#34d399" },
+          { label: "sisi 3", value: 12, color: "#60a5fa" },
+          { label: "sisi 4", value: 16, color: "#60a5fa" },
+          { label: "sisi 5", value: 20, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pilih angka 10. Tambah 4, kalikan 2, kurangi 6, bagi 2, lalu kurangi angka awal (10). Berapa hasil akhirnya?",
+        answer: 1,
+        solution:
+          "10 tambah 4 jadi 14, kali 2 jadi 28, kurangi 6 jadi 22, bagi 2 jadi 11, kurangi 10 jadi <strong>1</strong>. Dengan lambang: (((n+4) x 2) - 6) : 2 - n selalu menjadi 1.",
+        hint: "Ikuti langkahnya satu per satu, atau ganti n dengan 10 pada rumusnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dengan rumus keliling persegi = 4 x sisi, berapa keliling persegi yang panjang sisinya 9 cm?",
+        answer: 36,
+        suffix: " cm",
+        solution:
+          "Ganti lambang sisi dengan 9: keliling = 4 x 9 = <strong>36 cm</strong>. Satu rumus dipakai untuk sembarang ukuran sisi.",
+        hint: "Kalikan 4 dengan panjang sisinya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pernyataan ini berlaku untuk semua bilangan (umum) atau hanya satu kasus (khusus)?",
+        buckets: ["Pernyataan umum", "Pernyataan khusus"],
+        items: [
+          { text: "3 + 5 = 8", bucket: "Pernyataan khusus" },
+          { text: "Sebuah bilangan ditambah nol hasilnya bilangan itu sendiri", bucket: "Pernyataan umum" },
+          { text: "7 x 2 = 14", bucket: "Pernyataan khusus" },
+          { text: "Dua bilangan ganjil dijumlahkan hasilnya selalu genap", bucket: "Pernyataan umum" },
+          { text: "Sebuah bilangan dikali satu hasilnya tetap bilangan itu", bucket: "Pernyataan umum" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan kalimat sehari-hari dengan lambang aljabarnya (n adalah sebuah bilangan).",
+        pairs: [
+          { left: "Sebuah bilangan ditambah 5", right: "n + 5" },
+          { left: "Dua kali sebuah bilangan", right: "2 x n" },
+          { left: "Sebuah bilangan dikurangi 3", right: "n - 3" },
+          { left: "Setengah dari sebuah bilangan", right: "n : 2" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Al-Khwarizmi dan lahirnya kata aljabar",
+        html: "Sekitar tahun 820 Masehi di Baghdad, seorang ilmuwan bernama <strong>Al-Khwarizmi</strong> menulis sebuah kitab berjudul yang memuat kata <strong>al-jabr</strong>, bermakna 'menggenapkan' atau memulihkan keseimbangan. Dari kata itulah lahir istilah <strong>aljabar</strong>, sedangkan namanya sendiri menurunkan kata <strong>algoritma</strong>. Gagasan besarnya sederhana namun mengubah dunia: alih-alih menyelesaikan satu soal demi satu soal, ia memakai lambang untuk menyelesaikan seluruh kelompok soal sekaligus. Hari ini lambang itu ada di balik kalkulator, mesin pencari, dan setiap program komputer.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir",
+        html: "Setelah membongkar triknya, baru kita simpulkan: <strong>aljabar adalah memakai lambang untuk mewakili bilangan, sehingga pola umum dapat ditulis dan dibuktikan untuk semua kasus sekaligus</strong>. Lambang bukan untuk menyulitkan, melainkan untuk berbicara tentang tak terhingga banyak bilangan dengan satu kalimat singkat.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Trik tebak angka selalu berhasil karena langkahnya menyederhana menjadi pola tetap.",
+          "Sebuah huruf seperti n bisa mewakili sembarang bilangan, bahkan semua bilangan sekaligus.",
+          "Aljabar memungkinkan kita membuktikan pola umum, bukan hanya satu contoh.",
+          "Kata aljabar berasal dari kitab Al-Khwarizmi sekitar tahun 820 Masehi.",
+          "Lambang membuat matematika ringkas dan kuat, bukan rumit tanpa makna.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mengapa trik tebak angka selalu menghasilkan 1?",
+            options: [
+              "Karena kebetulan saja",
+              "Karena langkahnya menyederhana menjadi n + 1 lalu dikurangi n",
+              "Karena angka awal harus selalu sama",
+              "Karena 1 adalah angka ajaib",
+            ],
+            answer: 1,
+            explain: "Dengan lambang, hasil akhirnya adalah n + 1 dikurangi n, yang selalu 1.",
+          },
+          {
+            q: "Dalam aljabar, huruf seperti n mewakili?",
+            options: [
+              "Hanya angka 1",
+              "Sembarang bilangan, bahkan semua bilangan sekaligus",
+              "Sebuah huruf biasa tanpa makna",
+              "Selalu bilangan genap",
+            ],
+            answer: 1,
+            explain: "Lambang n menjadi wakil dari bilangan apa pun.",
+          },
+          {
+            q: "Manakah yang merupakan pernyataan paling umum?",
+            options: [
+              "4 + 4 = 8",
+              "Sebuah bilangan ditambah nol hasilnya bilangan itu sendiri",
+              "9 x 1 = 9",
+              "10 - 3 = 7",
+            ],
+            answer: 1,
+            explain: "Pernyataan itu berlaku untuk semua bilangan, bukan satu kasus saja.",
+          },
+          {
+            q: "'Dua kali sebuah bilangan, lalu ditambah 3' ditulis sebagai?",
+            options: ["2 + n + 3", "2 x n + 3", "n + 2 + 3", "3 x n + 2"],
+            answer: 1,
+            explain: "Dua kali bilangan adalah 2 x n, lalu ditambah 3.",
+          },
+          {
+            q: "Kata 'aljabar' berasal dari?",
+            options: [
+              "Nama sebuah kota di Yunani",
+              "Kitab al-jabr karya Al-Khwarizmi sekitar tahun 820 Masehi",
+              "Bahasa Latin untuk angka",
+              "Nama seorang raja",
+            ],
+            answer: 1,
+            explain: "Kata al-jabr dalam kitab Al-Khwarizmi menurunkan istilah aljabar.",
+          },
+        ],
+      },
+    ],
+  },
 ];

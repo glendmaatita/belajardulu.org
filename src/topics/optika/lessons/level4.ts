@@ -620,4 +620,166 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "proyektor",
+    levelId: "alat-optik",
+    order: 5,
+    title: "Proyektor dan Layar",
+    summary:
+      "Sebelum memakai rumus lensa, kita pahami dulu mengapa proyektor membuat gambar kecil jadi raksasa di layar, dan mengapa slide harus dipasang terbalik.",
+    durationMin: 13,
+    tags: ["optika", "alat-optik", "proyektor", "lensa-cembung"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Proyektor mengubah gambar sebesar telapak tangan menjadi gambar selebar dinding kelas. Rahasianya hanya satu <strong>lensa cembung</strong> dan satu aturan: benda diletakkan sedikit di luar titik fokus. Tetapi jika kamu masukkan slide menghadap normal, gambar di layar akan <strong>terbalik</strong>. Mengapa membesar, dan mengapa terbalik? Ayo pahami dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "PembiasanCahaya",
+        title: "Video: Lensa Cembung Membentuk Bayangan",
+        caption: "Benda di luar fokus lensa cembung menghasilkan bayangan nyata dan terbalik di sisi seberang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Pakai lup (lensa cembung) dan arahkan ke jendela terang, lalu tangkap bayangannya di kertas pada sisi seberang. Akan muncul gambar pemandangan luar yang <strong>kecil dan terbalik</strong>. Sekarang balik: dekatkan lensa ke sebuah huruf di kertas, sedikit di luar fokus, dan tangkap bayangannya di dinding jauh. Huruf itu kini <strong>raksasa</strong> dan terbalik. Makin dekat benda ke fokus, makin besar dan makin jauh bayangannya. Amati polanya dulu.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Benda di luar fokus, dekat fokus",
+        html: "Proyektor memakai lensa cembung dengan benda (slide) diletakkan <strong>sedikit di luar titik fokus</strong>. Hasilnya bayangan <strong>nyata, terbalik, dan diperbesar</strong> yang ditangkap layar. Makin dekat slide ke fokus, makin besar perbesaran sekaligus makin jauh letak layarnya. Karena bayangannya terbalik, slide sengaja dipasang terbalik agar gambar di layar tampak tegak.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perbesaran Proyektor (lensa f = 10 cm) untuk Tiap Jarak Slide",
+        unit: "kali",
+        source: "perhitungan 1/f = 1/s + 1/s', M = s'/s",
+        note: "Angka nyata dari rumus lensa. Makin dekat slide ke titik fokus (10 cm), makin besar perbesarannya. Itu sebabnya menggeser slide sedikit saja sangat mengubah ukuran gambar di layar.",
+        data: [
+          { label: "slide 10,5 cm", value: 20, color: "#34d399" },
+          { label: "slide 11 cm", value: 10, color: "#22d3ee" },
+          { label: "slide 12 cm", value: 5, color: "#38bdf8" },
+          { label: "slide 15 cm", value: 2, color: "#818cf8" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah proyektor memakai lensa f = 10 cm dan layar dipasang 300 cm dari lensa. Pada jarak berapa slide harus diletakkan dari lensa? (gunakan 1/f = 1/s + 1/s')",
+        answer: 10.34,
+        tolerance: 0.1,
+        suffix: " cm",
+        solution:
+          "1/s = 1/f − 1/s' = 1/10 − 1/300 = 30/300 − 1/300 = 29/300, jadi s = 300/29 = <strong>10,34 cm</strong>. Slide diletakkan tepat sedikit di luar fokus 10 cm.",
+        hint: "Hitung 1/10 − 1/300, lalu balik hasilnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada proyektor yang sama (slide 10,34 cm, layar 300 cm), berapa kali perbesaran gambarnya? (M = s'/s)",
+        answer: 29,
+        tolerance: 1,
+        suffix: "×",
+        solution:
+          "M = s'/s = 300/10,34 = <strong>29×</strong>. Gambar sebesar 2 cm akan menjadi sekitar 58 cm di layar, terbalik, lalu ditegakkan dengan memasang slide terbalik.",
+        hint: "Bagi jarak bayangan (layar) dengan jarak benda (slide).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap alat optik menurut sifat bayangan akhir yang dihasilkannya.",
+        buckets: ["Bayangan nyata, terbalik", "Bayangan maya, tegak"],
+        items: [
+          { text: "Proyektor slide", bucket: "Bayangan nyata, terbalik" },
+          { text: "Lensa objektif kamera", bucket: "Bayangan nyata, terbalik" },
+          { text: "Lup (kaca pembesar)", bucket: "Bayangan maya, tegak" },
+          { text: "Cermin datar", bucket: "Bayangan maya, tegak" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Merancang Gambar Selebar Dinding",
+        html: "Sebuah aula ingin menampilkan slide 3 cm menjadi gambar selebar 150 cm. Perbesaran yang dibutuhkan M = 150/3 = <strong>50×</strong>. Jika lensa proyektor f = 10 cm, maka s' = 50·s dan dari 1/10 = 1/s + 1/(50s) didapat 1/10 = (50 + 1)/(50s) = 51/(50s), sehingga s = 51 × 10/50 = <strong>10,2 cm</strong> dan s' = 50 × 10,2 = <strong>510 cm</strong>. Artinya slide diletakkan 10,2 cm dari lensa (sangat dekat fokus) dan layar dipasang sekitar 5,1 meter di seberangnya. Inilah sebabnya proyektor butuh ruang panjang untuk gambar besar.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. Proyektor adalah lensa cembung dengan benda sedikit di luar fokus, memenuhi <strong>1/f = 1/s + 1/s'</strong> dan perbesaran <strong>M = s'/s</strong>. Bayangannya nyata, terbalik, dan diperbesar, maka slide dipasang terbalik. Makin dekat benda ke fokus, makin besar M dan makin jauh layar. Rumus ini cuma menuliskan rapi pola yang sudah kamu lihat saat memproyeksikan huruf ke dinding.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Proyektor memakai lensa cembung dengan slide diletakkan sedikit di luar titik fokus.",
+          "Bayangannya nyata, terbalik, dan diperbesar; ditangkap pada layar.",
+          "Berlaku 1/f = 1/s + 1/s' dengan perbesaran M = s'/s.",
+          "Makin dekat slide ke fokus, makin besar perbesaran dan makin jauh letak layar.",
+          "Slide dipasang terbalik agar gambar di layar tampak tegak.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Agar proyektor menghasilkan gambar besar di layar, slide harus diletakkan?",
+            options: [
+              "Sangat jauh dari lensa",
+              "Sedikit di luar titik fokus lensa",
+              "Tepat di pusat lensa",
+              "Di dalam fokus lensa",
+            ],
+            answer: 1,
+            explain: "Benda sedikit di luar fokus memberi bayangan nyata, terbalik, dan sangat diperbesar.",
+          },
+          {
+            q: "Sifat bayangan yang dihasilkan proyektor adalah?",
+            options: [
+              "Maya, tegak, diperkecil",
+              "Nyata, terbalik, diperbesar",
+              "Maya, terbalik, sama besar",
+              "Nyata, tegak, diperkecil",
+            ],
+            answer: 1,
+            explain: "Lensa cembung dengan benda di luar fokus selalu memberi bayangan nyata, terbalik, diperbesar.",
+          },
+          {
+            q: "Proyektor f = 10 cm, layar 300 cm. Slide diletakkan kira-kira pada jarak?",
+            options: ["5 cm", "10,3 cm", "30 cm", "100 cm"],
+            answer: 1,
+            explain: "1/s = 1/10 − 1/300 = 29/300, jadi s = 10,3 cm, tepat sedikit di luar fokus.",
+          },
+          {
+            q: "Mengapa slide dipasang terbalik di proyektor?",
+            options: [
+              "Agar lebih hemat cahaya",
+              "Karena bayangannya nanti terbalik, sehingga di layar tampak tegak",
+              "Agar gambar jadi lebih besar",
+              "Karena lensa membalik warna",
+            ],
+            answer: 1,
+            explain: "Bayangan proyektor terbalik, maka slide terbalik membuat hasil di layar kembali tegak.",
+          },
+          {
+            q: "Jika slide digeser makin dekat ke titik fokus, maka?",
+            options: [
+              "Gambar mengecil dan layar didekatkan",
+              "Perbesaran bertambah dan layar harus dijauhkan",
+              "Gambar hilang",
+              "Bayangan jadi maya",
+            ],
+            answer: 1,
+            explain: "Mendekati fokus membuat s' dan M melonjak, sehingga gambar makin besar dan layar makin jauh.",
+          },
+        ],
+      },
+    ],
+  },
 ];

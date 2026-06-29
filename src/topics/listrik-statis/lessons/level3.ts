@@ -560,4 +560,156 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "potensial-beberapa-muatan",
+    levelId: "potensial-listrik",
+    order: 5,
+    title: "Potensial oleh Beberapa Muatan",
+    summary:
+      "Menjumlahkan medan dari banyak muatan merepotkan karena harus memperhatikan arah. Potensial jauh lebih ramah: cukup dijumlah dengan tanda. Kita amati dulu kemudahannya, baru rumusnya kita rangkum di akhir.",
+    durationMin: 14,
+    tags: ["listrik statis", "potensial", "superposisi", "skalar"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Saat menghitung medan dari banyak muatan, kita harus menguraikan tiap medan ke sumbu x dan y, lalu menjumlahkannya sebagai vektor. Melelahkan. Tetapi potensial listrik adalah besaran <strong>skalar</strong>: ia tidak punya arah, jadi cukup dijumlah biasa dengan memperhatikan tanda muatannya. Sebelum menuliskan rumus, ayo amati dulu betapa mudahnya menjumlahkan potensial.",
+      },
+      {
+        type: "video",
+        comp: "HukumOhmVideo",
+        title: "Video: Tegangan sebagai Angka",
+        caption:
+          "Potensial, seperti tegangan, hanyalah sebuah angka di tiap titik. Tanpa arah, ia jauh lebih mudah dijumlahkan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Tempatkan dua muatan +q dan -q sama besar, sama jarak dari sebuah titik P. Medannya tidak nol di sana karena arahnya berbeda. Tetapi potensialnya? Yang positif menyumbang +V, yang negatif menyumbang -V, dan keduanya saling <strong>meniadakan menjadi nol</strong>. Belum ada rumus, tetapi kita sudah melihat potensial cukup dijumlah dengan tanda, tanpa repot arah.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Superposisi skalar",
+        html: "Potensial di sebuah titik akibat banyak muatan adalah <strong>jumlah aljabar</strong> potensial tiap muatan: hitung V = k·q/r untuk tiap muatan, ikut sertakan <strong>tanda</strong> muatannya (positif atau negatif), lalu jumlahkan. Tidak ada sudut, tidak ada penguraian vektor. Inilah keunggulan potensial dibanding medan.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Potensial di Titik Tengah untuk Berbagai Pasangan Muatan (0,1 m dari tiap muatan)",
+        unit: "kV",
+        source: "perhitungan V = k·q/r dengan k = 9×10⁹, r = 0,1 m",
+        note: "Dua muatan +5 µC saling menguatkan menjadi 900 kV. Pasangan +5 dan -5 µC saling meniadakan menjadi nol. Tanda muatan menentukan apakah potensial menambah atau mengurangi.",
+        data: [
+          { label: "+5 & +5 µC", value: 900, color: "#facc15" },
+          { label: "+5 & -3 µC", value: 180, color: "#a3e635" },
+          { label: "+5 & -5 µC", value: 0, color: "#2dd4bf" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Titik P berjarak 0,3 m dari muatan +3 µC dan 0,6 m dari muatan -3 µC. Berapa potensial total di P? (k = 9×10⁹ N·m²/C²)",
+        answer: 45000,
+        tolerance: 500,
+        suffix: " V",
+        solution:
+          "V₁ = k·q₁/r₁ = 9×10⁹ × 3×10⁻⁶ / 0,3 = 90.000 V. V₂ = k·q₂/r₂ = 9×10⁹ × (−3×10⁻⁶) / 0,6 = −45.000 V. Potensial total = 90.000 + (−45.000) = <strong>45.000 V</strong>.",
+        hint: "Hitung V tiap muatan dengan V = k·q/r, ikutkan tanda muatan, lalu jumlahkan biasa.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Tentukan apakah tiap muatan menambah (potensial positif) atau mengurangi (potensial negatif) potensial total di sebuah titik P.",
+        buckets: ["Menambah potensial (positif)", "Mengurangi potensial (negatif)"],
+        items: [
+          { text: "Muatan +5 µC", bucket: "Menambah potensial (positif)" },
+          { text: "Muatan -3 µC", bucket: "Mengurangi potensial (negatif)" },
+          { text: "Proton di dekat P", bucket: "Menambah potensial (positif)" },
+          { text: "Elektron di dekat P", bucket: "Mengurangi potensial (negatif)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap pernyataan dengan sifat potensial atau medan yang tepat.",
+        pairs: [
+          { left: "Potensial listrik", right: "Skalar, dijumlah dengan tanda" },
+          { left: "Medan listrik", right: "Vektor, dijumlah dengan arah" },
+          { left: "Dua muatan +q dan -q sama jarak dari P", right: "Potensial total nol" },
+          { left: "Dua muatan +q sama jarak dari P", right: "Potensial saling menguatkan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Titik Berpotensial Nol",
+        html: "Muatan +4 µC dan -8 µC terpisah 0,3 m. Di mana di antara keduanya potensialnya nol? Misalkan titik itu berjarak x dari muatan +4 µC. Syarat V = 0: k·4/x = k·8/(0,3 − x), sehingga 4(0,3 − x) = 8x, lalu 1,2 = 12x, dan x = <strong>0,1 m</strong> dari muatan +4 µC. Karena potensial skalar, mencari titik nol cukup menyamakan dua angka, tanpa memikirkan arah sama sekali.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang baru kita tuliskan. Potensial total: <strong>V<sub>total</sub> = k·q₁/r₁ + k·q₂/r₂ + k·q₃/r₃ + …</strong>, yaitu jumlah aljabar dengan tanda muatan ikut diperhitungkan. Tidak ada penguraian vektor karena potensial adalah <strong>skalar</strong>. Energi sebuah muatan q di titik itu adalah Ep = q·V<sub>total</sub>. Rumus ini hanyalah ringkasan dari penjumlahan sederhana yang tadi kita amati.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Potensial adalah skalar, jadi dijumlahkan biasa dengan memperhatikan tanda muatan.",
+          "V_total = k·q₁/r₁ + k·q₂/r₂ + …, tanpa penguraian vektor.",
+          "Muatan positif menambah potensial, muatan negatif menguranginya.",
+          "Di titik tengah antara +q dan -q sama besar, potensial total nol meski medannya tidak nol.",
+          "Menjumlahkan potensial jauh lebih mudah daripada menjumlahkan medan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Potensial total di sebuah titik oleh beberapa muatan dihitung dengan?",
+            options: [
+              "Menjumlahkan sebagai vektor",
+              "Menjumlahkan aljabar dengan tanda muatan",
+              "Mengambil yang terbesar",
+              "Menguraikan ke sumbu x dan y",
+            ],
+            answer: 1,
+            explain: "Potensial skalar, jadi cukup dijumlah dengan memperhatikan tanda.",
+          },
+          {
+            q: "Mengapa menjumlahkan potensial lebih mudah daripada medan?",
+            options: [
+              "Karena potensial selalu nol",
+              "Karena potensial skalar dan tidak punya arah",
+              "Karena medan tidak nyata",
+              "Karena potensial selalu positif",
+            ],
+            answer: 1,
+            explain: "Potensial skalar sehingga tidak perlu penguraian arah.",
+          },
+          {
+            q: "Di titik tengah antara +q dan -q sama besar, potensial totalnya?",
+            options: ["Maksimum", "Nol", "Tak terhingga", "Negatif besar"],
+            answer: 1,
+            explain: "Sumbangan +V dan -V sama besar saling meniadakan menjadi nol.",
+          },
+          {
+            q: "Sebuah muatan negatif menyumbang potensial yang?",
+            options: ["Positif", "Negatif", "Nol", "Tak tentu"],
+            answer: 1,
+            explain: "Tanda muatan ikut diperhitungkan, jadi muatan negatif memberi V negatif.",
+          },
+          {
+            q: "Titik P berjarak 0,3 m dari +2 µC dan 0,3 m dari +2 µC lainnya. Potensial total (k = 9×10⁹)?",
+            options: ["60.000 V", "120.000 V", "0 V", "30.000 V"],
+            answer: 1,
+            explain: "Tiap muatan memberi 60.000 V; karena keduanya positif, totalnya 120.000 V.",
+          },
+        ],
+      },
+    ],
+  },
 ];

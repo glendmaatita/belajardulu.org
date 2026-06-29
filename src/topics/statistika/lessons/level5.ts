@@ -633,4 +633,163 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "distribusi-normal",
+    levelId: "distribusi-korelasi",
+    order: 5,
+    title: "Distribusi Normal: Kurva Lonceng",
+    summary:
+      "Banyak ukuran alami, seperti tinggi badan, membentuk lonceng simetris. Dari bentuk ini lahir aturan praktis untuk menebak sebaran data.",
+    durationMin: 14,
+    tags: ["statistika", "distribusi", "normal", "kurva-lonceng"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Ukur tinggi badan ribuan orang dewasa, lalu gambar distribusinya. Anehnya, bentuk yang muncul hampir selalu sama: sebuah lonceng. Sangat sedikit yang amat pendek, sangat sedikit yang amat tinggi, dan mayoritas berkumpul di tengah. Bentuk ini begitu sering muncul di alam sehingga diberi nama khusus. Sebelum memakai aturannya, ayo amati dulu lonceng itu lahir.",
+      },
+      {
+        type: "video",
+        comp: "StatistikaVideo",
+        title: "Video: Mengapa Alam Suka Bentuk Lonceng",
+        caption: "Dari tumpukan data alami menuju kurva normal yang simetris.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan tinggi 1.000 orang dewasa kita kelompokkan per 5 cm. Hitung dan gambar batangnya. Yang muncul bukan sembarang bentuk: batang tertinggi ada di tengah, lalu menurun mulus dan <strong>simetris</strong> ke kiri dan ke kanan. Mayoritas dekat rata-rata, makin jauh dari pusat makin jarang. Inilah ciri distribusi normal yang akan kita beri aturan praktis.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Distribusi Tinggi Badan 1.000 Orang Dewasa",
+        unit: "jumlah orang",
+        source: "ilustrasi edukatif",
+        note: "Total 1.000 orang. Bentuknya lonceng: memuncak di tengah (165-170 cm) dan menipis simetris ke kedua ujung.",
+        data: [
+          { label: "150-155", value: 15, color: "#3b82f6" },
+          { label: "155-160", value: 90, color: "#6366f1" },
+          { label: "160-165", value: 230, color: "#4f46e5" },
+          { label: "165-170", value: 330, color: "#4338ca" },
+          { label: "170-175", value: 230, color: "#4f46e5" },
+          { label: "175-180", value: 90, color: "#6366f1" },
+          { label: "180-185", value: 15, color: "#3b82f6" },
+        ],
+      },
+      {
+        type: "widget",
+        widget: "SimulatorStatistik",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Aturan 68-95-99,7",
+        html: "Pada distribusi normal berlaku pola yang rapi: sekitar <strong>68%</strong> data berada dalam jarak 1 simpangan baku dari rata-rata, sekitar <strong>95%</strong> dalam 2 simpangan baku, dan sekitar <strong>99,7%</strong> dalam 3 simpangan baku. Selain itu, rata-rata, median, dan modus semuanya berimpit tepat di pusat lonceng.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Tinggi badan sebuah kelompok berdistribusi normal dengan rata-rata 165 cm dan simpangan baku 7 cm. Kira-kira berapa persen orang bertinggi antara 158 dan 172 cm (yaitu dalam 1 simpangan baku)?",
+        answer: 68,
+        tolerance: 1,
+        suffix: "%",
+        solution:
+          "Rentang 158 sampai 172 cm adalah rata-rata plus minus 1 simpangan baku (165 plus minus 7). Menurut aturan, sekitar <strong>68%</strong> data ada di sana.",
+        hint: "158 dan 172 berjarak tepat 7 cm (satu simpangan baku) dari rata-rata 165.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada kelompok yang sama (rata-rata 165 cm, simpangan baku 7 cm), kira-kira berapa persen orang bertinggi antara 151 dan 179 cm?",
+        answer: 95,
+        tolerance: 1,
+        suffix: "%",
+        solution:
+          "Rentang 151 sampai 179 cm adalah rata-rata plus minus 2 simpangan baku (165 plus minus 14). Menurut aturan, sekitar <strong>95%</strong> data ada di sana.",
+        hint: "151 dan 179 berjarak 14 cm, yaitu dua simpangan baku, dari rata-rata.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap data: bentuknya cenderung lonceng normal atau bukan?",
+        buckets: ["Cenderung normal (lonceng)", "Bukan normal"],
+        items: [
+          { text: "Tinggi badan orang dewasa", bucket: "Cenderung normal (lonceng)" },
+          { text: "Hasil pelemparan satu dadu (rata)", bucket: "Bukan normal" },
+          { text: "Berat bayi yang baru lahir", bucket: "Cenderung normal (lonceng)" },
+          { text: "Kekayaan penduduk (banyak menengah bawah, sedikit sangat kaya)", bucket: "Bukan normal" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap istilah dengan maknanya pada distribusi normal.",
+        pairs: [
+          { left: "Distribusi normal", right: "berbentuk lonceng dan simetris" },
+          { left: "Aturan 68%", right: "data dalam 1 simpangan baku dari rata-rata" },
+          { left: "Aturan 95%", right: "data dalam 2 simpangan baku dari rata-rata" },
+          { left: "Pusat lonceng", right: "tempat mean, median, dan modus berimpit" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Kontrol mutu pengisian botol",
+        html: "Sebuah pabrik mengisi botol minuman dengan rata-rata 600 ml dan simpangan baku 3 ml, dan isinya berdistribusi normal. Dengan aturan 95%, sekitar 95% botol berisi antara 594 dan 606 ml (yaitu 600 plus minus 6 ml). Botol di luar rentang itu, kira-kira hanya 5%, langsung disisihkan untuk diperiksa. Tanpa memeriksa setiap botol satu per satu, distribusi normal memberi pabrik patokan cepat untuk menjaga mutu. Statistika di sini menjadi alat kerja, bukan sekadar hitungan di kertas.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah mengamati bentuknya, baru kita simpulkan: <strong>distribusi normal</strong> adalah sebaran berbentuk lonceng simetris dengan mean, median, dan modus berimpit di pusat. Aturan <strong>68-95-99,7</strong> memberi cara cepat menebak berapa banyak data yang berada dalam 1, 2, atau 3 simpangan baku dari rata-rata.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Distribusi normal berbentuk lonceng simetris, memuncak di tengah.",
+          "Pada distribusi normal, mean, median, dan modus berimpit di pusat.",
+          "Sekitar 68% data dalam 1 simpangan baku, 95% dalam 2, dan 99,7% dalam 3.",
+          "Banyak ukuran alami, seperti tinggi badan, mendekati distribusi normal.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Distribusi normal memiliki bentuk?",
+            options: ["Mendatar rata", "Lonceng simetris", "Naik terus", "Acak tanpa pola"],
+            answer: 1,
+            explain: "Ciri khas distribusi normal adalah kurva lonceng yang simetris.",
+          },
+          {
+            q: "Pada distribusi normal, mean, median, dan modus?",
+            options: [
+              "Selalu berjauhan",
+              "Berimpit di pusat lonceng",
+              "Tidak bisa dihitung",
+              "Selalu nol",
+            ],
+            answer: 1,
+            explain: "Karena simetris, ketiganya jatuh di titik tengah yang sama.",
+          },
+          {
+            q: "Sekitar berapa persen data berada dalam 1 simpangan baku dari rata-rata?",
+            options: ["50%", "68%", "95%", "99,7%"],
+            answer: 1,
+            explain: "Aturan empiris menyebut sekitar 68% data dalam 1 simpangan baku.",
+          },
+          {
+            q: "Sekitar berapa persen data berada dalam 2 simpangan baku dari rata-rata?",
+            options: ["68%", "95%", "99,7%", "100%"],
+            answer: 1,
+            explain: "Sekitar 95% data berada dalam 2 simpangan baku dari rata-rata.",
+          },
+          {
+            q: "Tinggi rata-rata 165 cm, simpangan baku 7 cm. Rentang 158-172 cm mencakup sekitar?",
+            options: ["34%", "68%", "95%", "99,7%"],
+            answer: 1,
+            explain: "158 sampai 172 adalah 1 simpangan baku dari rata-rata, jadi sekitar 68%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

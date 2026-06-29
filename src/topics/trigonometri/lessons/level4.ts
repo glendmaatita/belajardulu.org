@@ -570,4 +570,147 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "identitas-jumlah-dua-sudut",
+    levelId: "identitas",
+    order: 5,
+    title: "Identitas Jumlah Dua Sudut",
+    summary:
+      "Bagaimana menemukan sin 75 derajat padahal bukan sudut istimewa? Kita selidiki dulu apa yang terjadi saat dua sudut dijumlahkan.",
+    durationMin: 14,
+    tags: ["trigonometri", "identitas", "jumlah-sudut", "sin", "cos"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "sin 30 dan sin 45 derajat sudah kita kenal. Tetapi bagaimana dengan sin 75 derajat, padahal 75 bukan sudut istimewa? Menariknya, 75 = 45 + 30. Apakah sin sebuah jumlah sudut bisa dirakit dari sin dan cos kedua bagiannya? Ayo selidiki dulu sebelum menulis identitasnya.",
+      },
+      {
+        type: "video",
+        comp: "TrigonometriVideo",
+        title: "Video: Menjumlahkan Dua Sudut",
+        caption: "sin sebuah jumlah sudut tidak sama dengan menjumlahkan kedua sin-nya.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Jebakan yang sering terjadi",
+        html: "Banyak yang menebak sin (A + B) = sin A + sin B. Uji dengan A = B = 30 derajat: ruas kanan menjadi 0,5 + 0,5 = 1, padahal sin 60 derajat hanya 0,866. Jelas keliru. Penjumlahan sudut tidak sesederhana itu.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTrigonometri",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "sin (A + B) Bukan sin A + sin B",
+        unit: "nilai",
+        source: "nilai trigonometri eksak",
+        note: "Untuk A = B = 30 derajat, nilai benar sin 60 = 0,866, sedangkan menjumlahkan sin keliru menghasilkan 1.",
+        data: [
+          { label: "sin(30°+30°) benar", value: 0.866, color: "#22c55e" },
+          { label: "sin30° + sin30° keliru", value: 1.0, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Coba rumus yang benar untuk A = B = 30 derajat: sin A cos B + cos A sin B = (0,5)(0,866) + (0,866)(0,5) = 0,433 + 0,433 = 0,866. Hasilnya pas sin 60 derajat. Rakitan sin kali cos inilah yang cocok, bukan penjumlahan langsung.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Hitung sin 75 derajat sebagai sin (45 + 30). Pakai sin45 = cos45 = 0,7071, cos30 = 0,8660, sin30 = 0,5. Rumus: sinA cosB + cosA sinB. Berapa hasilnya?",
+        answer: 0.966,
+        tolerance: 0.005,
+        solution:
+          "sin75 = sin45 cos30 + cos45 sin30 = 0,7071 × 0,8660 + 0,7071 × 0,5 = 0,6124 + 0,3536 = <strong>sekitar 0,966</strong>.",
+        hint: "Pecah 75 menjadi 45 + 30, lalu pakai sinA cosB + cosA sinB.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pernyataan berikut benar atau salah?",
+        buckets: ["Benar", "Salah"],
+        items: [
+          { text: "sin (A + B) = sin A cos B + cos A sin B", bucket: "Benar" },
+          { text: "cos (A + B) = cos A cos B − sin A sin B", bucket: "Benar" },
+          { text: "sin (A + B) = sin A + sin B", bucket: "Salah" },
+          { text: "cos (A + B) = cos A + cos B", bucket: "Salah" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Tabel chord milik Ptolemaios",
+        html: "Sekitar tahun 150 Masehi, astronom Ptolemaios menyusun tabel panjang tali busur untuk meramal posisi bintang. Ia tidak bisa mengukur tiap sudut satu per satu, jadi ia memakai hubungan jumlah dan selisih sudut untuk merakit nilai sudut baru dari yang sudah diketahui. Persis seperti kita merakit sin 75 derajat dari sin 45 dan sin 30. Satu identitas membuka ratusan nilai tanpa pengukuran ulang.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Identitas pun ditemukan di akhir",
+        html: "Setelah mengujinya, baru identitasnya kita tuliskan: <strong>sin (A + B) = sin A cos B + cos A sin B</strong> dan <strong>cos (A + B) = cos A cos B − sin A sin B</strong>. Keduanya merakit nilai sudut gabungan dari sin dan cos bagian-bagiannya, bukan dari penjumlahan langsung.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "sin (A + B) tidak sama dengan sin A + sin B.",
+          "sin (A + B) = sin A cos B + cos A sin B.",
+          "cos (A + B) = cos A cos B − sin A sin B.",
+          "Identitas ini merakit nilai sudut bukan istimewa, misalnya sin 75 = sin (45 + 30).",
+          "Dengan satu identitas, banyak nilai baru lahir tanpa pengukuran ulang.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rumus yang benar untuk sin (A + B) adalah?",
+            options: [
+              "sin A + sin B",
+              "sin A cos B + cos A sin B",
+              "sin A cos B − cos A sin B",
+              "cos A cos B − sin A sin B",
+            ],
+            answer: 1,
+            explain: "sin (A + B) = sin A cos B + cos A sin B.",
+          },
+          {
+            q: "Mengapa sin (30 + 30) bukan sin 30 + sin 30?",
+            options: [
+              "Karena 30 + 30 bukan 60",
+              "Karena sin 60 = 0,866 sedangkan 0,5 + 0,5 = 1",
+              "Karena sin tidak bisa dijumlahkan",
+              "Karena sudutnya terlalu kecil",
+            ],
+            answer: 1,
+            explain: "Nilai benar sin 60 = 0,866, bukan 1, jadi penjumlahan langsung salah.",
+          },
+          {
+            q: "cos (A + B) sama dengan?",
+            options: [
+              "cos A cos B + sin A sin B",
+              "cos A cos B − sin A sin B",
+              "cos A + cos B",
+              "sin A cos B + cos A sin B",
+            ],
+            answer: 1,
+            explain: "cos (A + B) = cos A cos B − sin A sin B.",
+          },
+          {
+            q: "Untuk menghitung sin 75 derajat, pecahan sudut yang tepat adalah?",
+            options: ["75 = 90 − 15", "75 = 45 + 30", "75 = 60 + 5", "75 = 100 − 25"],
+            answer: 1,
+            explain: "45 dan 30 keduanya sudut istimewa, jadi 45 + 30 paling praktis.",
+          },
+          {
+            q: "Nilai sin 75 derajat hasil identitas adalah sekitar?",
+            options: ["0,707", "0,866", "0,966", "1,000"],
+            answer: 2,
+            explain: "sin 75 = 0,6124 + 0,3536 = sekitar 0,966.",
+          },
+        ],
+      },
+    ],
+  },
 ];

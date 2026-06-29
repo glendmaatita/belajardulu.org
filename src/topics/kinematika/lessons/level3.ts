@@ -587,4 +587,154 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gerak-susul-menyusul",
+    levelId: "gerak-lurus",
+    order: 5,
+    title: "Susul-Menyusul dan Berpapasan",
+    summary:
+      "Dua benda bergerak di lintasan yang sama bisa saling menyusul atau berpapasan. Triknya satu: samakan posisi keduanya pada waktu yang sama, lalu pertanyaan 'kapan dan di mana bertemu' terjawab.",
+    durationMin: 14,
+    tags: ["kinematika", "gerak-lurus", "susul-menyusul", "berpapasan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dua mobil berangkat dari kota yang berjauhan dan melaju saling mendekat; kapan mereka berpapasan? Atau, satu mobil mengejar mobil lain yang sudah berangkat lebih dulu; kapan ia berhasil menyusul? Soal-soal klasik ini terlihat menakutkan, padahal kuncinya cuma satu gagasan sederhana. Ayo selidiki dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Dua Gerak, Satu Waktu",
+        caption: "Benda bertemu ketika posisinya sama pada waktu yang sama; itulah syarat susul dan papasan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan dua titik bergerak di garis bilangan. Mereka <strong>bertemu</strong> ketika berada di posisi yang sama pada saat yang sama. Saat <strong>berpapasan</strong> (saling mendekat), keduanya bersama-sama menutup jarak antara mereka, jadi laju penutupan = jumlah kedua laju. Saat <strong>menyusul</strong> (searah), yang mengejar hanya menutup jarak dengan selisih laju. Rasakan bedanya sebelum menulis persamaan.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua skema gerak",
+        html: "<strong>Berpapasan</strong> (saling mendekat): laju penutupan = v₁ + v₂, waktu bertemu = jarak awal / (v₁ + v₂). <strong>Menyusul</strong> (searah): laju penutupan = v₁ − v₂, waktu menyusul = jarak terdepan / (v₁ − v₂).",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorGLBB",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Berpapasan 300 km: A (60 km/jam) vs B (90 km/jam)",
+        unit: "km",
+        source: "ilustrasi edukatif",
+        note: "Mereka bertemu setelah 2 jam. Tiap mobil menempuh jarak sebanding lajunya: A 120 km, B 180 km, jumlahnya pas 300 km (jarak awal). Rasio jarak 2:3 sama dengan rasio laju.",
+        data: [
+          { label: "Jarak A (60 km/jam)", value: 120, color: "#818cf8" },
+          { label: "Jarak B (90 km/jam)", value: 180, color: "#6366f1" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dua mobil berjarak 300 km saling mendekat. A melaju 60 km/jam dan B 90 km/jam. Setelah berapa jam mereka berpapasan?",
+        answer: 2,
+        tolerance: 0.05,
+        suffix: " jam",
+        solution:
+          "Laju penutupan = 60 + 90 = 150 km/jam. Waktu bertemu = jarak awal ÷ laju penutupan = 300 ÷ 150 = <strong>2 jam</strong>.",
+        hint: "Karena saling mendekat, jumlahkan kedua laju lalu bagi jarak awal dengannya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Mobil A berangkat lebih dulu dengan 60 km/jam. Satu jam kemudian mobil B menyusul dari titik yang sama dengan 90 km/jam. Berapa jam B berjalan hingga menyusul A?",
+        answer: 2,
+        tolerance: 0.05,
+        suffix: " jam",
+        solution:
+          "Saat B berangkat, A sudah unggul 60 km (60 km/jam × 1 jam). Laju penutupan = 90 − 60 = 30 km/jam. Waktu menyusul = 60 ÷ 30 = <strong>2 jam</strong>. Cek: dalam 2 jam B menempuh 180 km, dan A menempuh 60 × 3 = 180 km, sama persis.",
+        hint: "Cari jarak unggul A saat B berangkat, lalu bagi dengan selisih laju.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap situasi sebagai berpapasan (laju dijumlah) atau menyusul (laju dikurang).",
+        buckets: ["Berpapasan (laju dijumlah)", "Menyusul (laju dikurang)"],
+        items: [
+          { text: "Dua kereta melaju saling mendekat di rel yang sama", bucket: "Berpapasan (laju dijumlah)" },
+          { text: "Motor cepat mengejar motor lambat searah", bucket: "Menyusul (laju dikurang)" },
+          { text: "Dua pelari start berlawanan arah menuju satu sama lain", bucket: "Berpapasan (laju dijumlah)" },
+          { text: "Mobil patroli mengejar mobil di depannya", bucket: "Menyusul (laju dikurang)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Sistem Anti-Tabrakan Kereta",
+        html: "Sistem persinyalan kereta modern terus menghitung <strong>laju penutupan</strong> antara dua kereta di lintasan yang sama. Bila keduanya melaju saling mendekat, laju penutupan adalah jumlah kedua laju, sehingga waktu hingga bertabrakan menyusut sangat cepat. Komputer membandingkan waktu ini dengan jarak pengereman yang dibutuhkan; jika terlalu pendek, ia otomatis memerintahkan rem darurat. Seluruh keputusan keselamatan ini berakar pada gagasan sederhana 'kapan dua posisi menjadi sama', persis soal berpapasan yang baru kita pelajari.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya jelas. Tulis posisi tiap benda terhadap waktu, lalu samakan: <strong>x₁(t) = x₂(t)</strong>. Untuk dua benda berlaju tetap, ini menghasilkan: <strong>berpapasan</strong> t = jarak awal / (v₁ + v₂), dan <strong>menyusul</strong> t = jarak terdepan / (v₁ − v₂). Prinsipnya sama untuk GLBB, hanya posisinya memakai x = v₀t + ½at². Inti semuanya: bertemu berarti posisi sama pada waktu sama.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Dua benda bertemu ketika posisinya sama pada waktu yang sama.",
+          "Berpapasan (saling mendekat): laju penutupan = v₁ + v₂.",
+          "Menyusul (searah): laju penutupan = v₁ − v₂ (selisih laju).",
+          "Jarak yang ditempuh tiap benda saat berpapasan sebanding dengan lajunya.",
+          "Prinsip sama berlaku untuk GLBB dengan posisi x = v₀t + ½at².",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dua benda bertemu ketika?",
+            options: [
+              "Lajunya sama",
+              "Posisinya sama pada waktu yang sama",
+              "Percepatannya sama",
+              "Jaraknya dari titik awal sama dengan nol",
+            ],
+            answer: 1,
+            explain: "Syarat bertemu adalah posisi keduanya sama pada saat yang sama.",
+          },
+          {
+            q: "Pada kasus berpapasan (saling mendekat), laju penutupannya adalah?",
+            options: ["Selisih laju", "Jumlah kedua laju", "Laju yang lebih besar", "Nol"],
+            answer: 1,
+            explain: "Keduanya bersama menutup jarak, jadi laju penutupan = v₁ + v₂.",
+          },
+          {
+            q: "Dua mobil berjarak 200 km saling mendekat, masing-masing 40 dan 60 km/jam. Waktu berpapasan?",
+            options: ["1 jam", "2 jam", "4 jam", "5 jam"],
+            answer: 1,
+            explain: "200 ÷ (40 + 60) = 200 ÷ 100 = 2 jam.",
+          },
+          {
+            q: "Motor B (80 km/jam) menyusul motor A (60 km/jam) yang unggul 40 km. Waktu menyusul?",
+            options: ["0,5 jam", "1 jam", "2 jam", "4 jam"],
+            answer: 2,
+            explain: "Selisih laju 80 − 60 = 20 km/jam; 40 ÷ 20 = 2 jam.",
+          },
+          {
+            q: "Saat berpapasan, jarak yang ditempuh tiap benda?",
+            options: [
+              "Selalu sama besar",
+              "Sebanding dengan lajunya masing-masing",
+              "Tidak bisa dihitung",
+              "Selalu setengah jarak awal",
+            ],
+            answer: 1,
+            explain: "Karena waktunya sama, jarak tiap benda sebanding dengan lajunya.",
+          },
+        ],
+      },
+    ],
+  },
 ];

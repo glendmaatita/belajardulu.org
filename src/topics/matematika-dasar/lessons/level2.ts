@@ -629,4 +629,170 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "bilangan-prima",
+    levelId: "bilangan-pola",
+    order: 5,
+    title: "Bilangan Prima: Batu Bata Penyusun Bilangan",
+    summary:
+      "Kita coba pecah bilangan menjadi perkalian yang lebih kecil, sampai bertemu bilangan yang tak bisa dipecah lagi, lalu menemukan mengapa ia begitu istimewa.",
+    durationMin: 14,
+    tags: ["bilangan prima", "faktorisasi", "pola", "bilangan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Ambil bilangan 12. Bisakah kamu menuliskannya sebagai perkalian dua bilangan yang lebih kecil? Tentu: 12 = 2 x 6. Lalu 6 masih bisa dipecah menjadi 2 x 3. Sekarang coba bilangan 7. Bisakah kamu memecahnya menjadi perkalian bilangan lebih kecil selain 1 x 7? Ternyata tidak. Ada bilangan yang bisa dipecah, ada yang tidak. Ayo selidiki dulu sebelum menamainya.",
+      },
+      {
+        type: "video",
+        comp: "LahirnyaBilangan",
+        title: "Video: Bagaimana Bilangan Lahir",
+        caption: "Setelah mengenal bilangan, kita temukan bahwa sebagian bilangan adalah penyusun bagi yang lain.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Jadilah pemecah bilangan. Pecah terus tiap bilangan menjadi perkalian sampai tidak bisa lagi: 12 = 2 x 2 x 3, lalu 30 = 2 x 3 x 5, lalu 18 = 2 x 3 x 3. Perhatikan, di ujung pemecahan selalu muncul bilangan yang sama, yaitu 2, 3, 5, 7, dan kawan-kawan yang tak bisa dipecah lagi. Siapa mereka?",
+      },
+      {
+        type: "widget",
+        widget: "PenjelajahPola",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Yang bisa dipecah dan yang tidak",
+        html: "Bilangan yang masih bisa dipecah menjadi perkalian bilangan lebih kecil disebut <strong>bilangan komposit</strong>, misalnya 12, 30, dan 18. Bilangan yang hanya bisa dibagi habis oleh 1 dan dirinya sendiri disebut <strong>bilangan prima</strong>, misalnya 2, 3, 5, dan 7. Catatan penting: angka 1 bukan prima maupun komposit, ia berdiri sendiri.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Banyaknya Bilangan Prima sampai Batas Tertentu",
+        unit: "jumlah bilangan prima",
+        source: "fakta matematika",
+        note: "Sampai 10 ada 4 prima, sampai 20 ada 8, sampai 30 ada 10, sampai 50 ada 15. Jumlahnya terus bertambah, tetapi makin jarang. Prima makin langka saat bilangan membesar.",
+        data: [
+          { label: "sampai 10", value: 4, color: "#34d399" },
+          { label: "sampai 20", value: 8, color: "#60a5fa" },
+          { label: "sampai 30", value: 10, color: "#a78bfa" },
+          { label: "sampai 50", value: 15, color: "#f472b6" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Faktorkan 36 menjadi perkalian bilangan prima. Hasilnya 2 x 2 x 3 x 3. Ada berapa faktor prima jika pengulangan ikut dihitung?",
+        answer: 4,
+        suffix: " faktor",
+        solution:
+          "36 = 4 x 9 = (2 x 2) x (3 x 3) = 2 x 2 x 3 x 3. Ada <strong>4 faktor prima</strong> bila pengulangan dihitung.",
+        hint: "Pecah 36 sampai semua bagiannya bilangan prima, lalu hitung banyaknya.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Berapa banyak bilangan prima antara 1 dan 20?",
+        answer: 8,
+        suffix: " bilangan",
+        solution:
+          "Bilangan prima sampai 20 adalah 2, 3, 5, 7, 11, 13, 17, 19. Jumlahnya <strong>8 bilangan</strong>.",
+        hint: "Daftar bilangan yang hanya habis dibagi 1 dan dirinya, mulai dari 2.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap bilangan: prima atau komposit?",
+        buckets: ["Prima", "Komposit"],
+        items: [
+          { text: "7", bucket: "Prima" },
+          { text: "9", bucket: "Komposit" },
+          { text: "2", bucket: "Prima" },
+          { text: "15", bucket: "Komposit" },
+          { text: "13", bucket: "Prima" },
+          { text: "21", bucket: "Komposit" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap bilangan dengan faktorisasi primanya.",
+        pairs: [
+          { left: "12", right: "2 x 2 x 3" },
+          { left: "30", right: "2 x 3 x 5" },
+          { left: "18", right: "2 x 3 x 3" },
+          { left: "20", right: "2 x 2 x 5" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Saringan Eratosthenes",
+        html: "Lebih dari 2.000 tahun lalu, seorang ilmuwan Yunani bernama <strong>Eratosthenes</strong> menemukan cara rapi untuk memburu bilangan prima. Tulis semua bilangan dari 2 ke atas, lalu coret semua kelipatan 2 (kecuali 2 sendiri), lalu kelipatan 3, lalu kelipatan 5, dan seterusnya. Bilangan yang lolos dari semua coretan itulah bilangan prima. Cara sederhana ini, yang kini disebut <strong>saringan Eratosthenes</strong>, masih dipakai sampai sekarang. Bilangan prima besar bahkan menjadi kunci pengaman transaksi internet dan perbankan, karena sangat sulit memecah bilangan raksasa kembali menjadi faktor primanya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir",
+        html: "Setelah memecah banyak bilangan, polanya jelas. Barulah kita simpulkan: <strong>bilangan prima adalah bilangan asli lebih dari 1 yang hanya habis dibagi 1 dan dirinya sendiri</strong>. Setiap bilangan komposit dapat ditulis sebagai perkalian bilangan prima dengan cara yang tunggal. Itulah sebabnya prima disebut batu bata penyusun semua bilangan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Bilangan prima hanya habis dibagi 1 dan dirinya sendiri, seperti 2, 3, 5, 7.",
+          "Bilangan komposit masih bisa dipecah menjadi perkalian bilangan lebih kecil.",
+          "Setiap bilangan dapat disusun dari perkalian bilangan prima secara tunggal.",
+          "Angka 1 bukan prima maupun komposit.",
+          "Bilangan prima makin langka saat bilangan membesar, dan berguna untuk keamanan data.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bilangan prima adalah bilangan yang?",
+            options: [
+              "Selalu genap",
+              "Lebih dari 1 dan hanya habis dibagi 1 dan dirinya sendiri",
+              "Bisa dipecah menjadi banyak faktor",
+              "Selalu lebih besar dari 100",
+            ],
+            answer: 1,
+            explain: "Prima hanya punya dua pembagi, yaitu 1 dan dirinya sendiri.",
+          },
+          {
+            q: "Manakah yang merupakan bilangan prima?",
+            options: ["9", "15", "17", "21"],
+            answer: 2,
+            explain: "17 hanya habis dibagi 1 dan 17, sedangkan yang lain bisa dipecah.",
+          },
+          {
+            q: "Faktorisasi prima dari 12 adalah?",
+            options: ["2 x 6", "3 x 4", "2 x 2 x 3", "12 x 1"],
+            answer: 2,
+            explain: "Pemecahan lengkap sampai semuanya prima adalah 2 x 2 x 3.",
+          },
+          {
+            q: "Mengapa bilangan prima disebut batu bata penyusun bilangan?",
+            options: [
+              "Karena bentuknya seperti bata",
+              "Karena setiap bilangan bisa disusun dari perkalian bilangan prima",
+              "Karena selalu berjumlah genap",
+              "Karena hanya ada sedikit",
+            ],
+            answer: 1,
+            explain: "Semua bilangan komposit tersusun dari perkalian bilangan prima.",
+          },
+          {
+            q: "Saringan Eratosthenes dipakai untuk?",
+            options: [
+              "Menghitung luas",
+              "Menemukan bilangan prima dengan mencoret kelipatan",
+              "Menggambar lingkaran",
+              "Membagi pecahan",
+            ],
+            answer: 1,
+            explain: "Dengan mencoret semua kelipatan, yang tersisa adalah bilangan prima.",
+          },
+        ],
+      },
+    ],
+  },
 ];

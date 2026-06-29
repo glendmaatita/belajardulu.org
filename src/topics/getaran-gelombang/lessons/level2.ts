@@ -576,4 +576,139 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "susunan-pegas",
+    levelId: "sistem-getaran",
+    order: 5,
+    title: "Susunan Pegas Seri dan Paralel",
+    summary:
+      "Gabungkan dua pegas dan sistemnya berubah sifat. Disusun berjajar jadi lebih kaku, disusun bersambung jadi lebih lentur, dan periode getarannya ikut berubah.",
+    durationMin: 14,
+    tags: ["pegas", "seri", "paralel", "konstanta", "periode"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Satu pegas punya konstanta kekakuan k tertentu. Tetapi di dunia nyata, mulai dari suspensi mobil sampai kasur pegas, sering dipakai banyak pegas sekaligus. Ada dua cara dasar menggabungkannya: <strong>paralel</strong> (berjajar) dan <strong>seri</strong> (bersambung). Keduanya menghasilkan satu pegas pengganti dengan kekakuan yang berbeda.",
+      },
+      {
+        type: "video",
+        comp: "GelombangFisika",
+        title: "Video: Dua Pegas, Dua Watak",
+        caption: "Pegas paralel saling membantu menahan, pegas seri saling mewariskan regangan.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua aturan penggabungan",
+        html: "<strong>Paralel:</strong> k pengganti dijumlahkan, k&#8329; = k&#8321; + k&#8322;. Sistem jadi lebih kaku. <strong>Seri:</strong> kebalikannya yang dijumlahkan, 1/k&#8329; = 1/k&#8321; + 1/k&#8322;. Sistem jadi lebih lentur. Pola ini kebalikan dari aturan susunan hambatan listrik, jadi hati-hati jangan tertukar.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Cara mengingat",
+        html: "Paralel itu seperti banyak orang mengangkat beban bersama-sama, makin banyak makin kuat (k bertambah). Seri itu seperti rantai panjang, makin panjang makin mudah molor (k berkurang). Pegas pengganti seri selalu lebih kecil dari pegas terkecilnya.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Konstanta Pengganti Dua Pegas (k = 200 N/m masing-masing)",
+        unit: "N/m",
+        source: "ilustrasi edukatif",
+        note: "Dengan dua pegas 200 N/m, susunan paralel menghasilkan 400 N/m (dua kali lebih kaku), sedangkan seri hanya 100 N/m (setengahnya).",
+        data: [
+          { label: "Satu pegas", value: 200, color: "#38bdf8" },
+          { label: "Paralel", value: 400, color: "#0ea5e9" },
+          { label: "Seri", value: 100, color: "#7dd3fc" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Periode Berubah karena Susunan",
+        html: "Sebuah massa 1 kg digantung pada dua pegas yang masing-masing k = 200 N/m. Jika disusun <strong>paralel</strong>, k&#8329; = 400 N/m sehingga T = 2π√(m/k) = 2π√(1/400) = <strong>0,314 s</strong>. Jika disusun <strong>seri</strong>, k&#8329; = 100 N/m sehingga T = 2π√(1/100) = <strong>0,628 s</strong>. Susunan seri membuat sistem lebih lentur, jadi ayunannya dua kali lebih lambat.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dua pegas dengan k = 300 N/m dan k = 600 N/m disusun seri. Berapa konstanta pengganti sistem?",
+        answer: 200,
+        tolerance: 1,
+        suffix: " N/m",
+        solution:
+          "Seri: 1/k&#8329; = 1/300 + 1/600 = 2/600 + 1/600 = 3/600 = 1/200, sehingga k&#8329; = <strong>200 N/m</strong>. Hasilnya lebih kecil dari pegas terlemah (300 N/m), sesuai sifat susunan seri.",
+        hint: "Untuk seri, jumlahkan kebalikan tiap k lalu balikkan hasilnya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan pernyataan ini sesuai jenis susunan pegas yang dijelaskannya.",
+        buckets: ["Susunan paralel", "Susunan seri"],
+        items: [
+          { text: "Konstanta pengganti dijumlahkan langsung", bucket: "Susunan paralel" },
+          { text: "Sistem menjadi lebih kaku", bucket: "Susunan paralel" },
+          { text: "Kebalikan konstanta yang dijumlahkan", bucket: "Susunan seri" },
+          { text: "Pegas pengganti lebih lentur dari pegas terlemah", bucket: "Susunan seri" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Ringkasan rumus",
+        html: "<strong>Paralel:</strong> k&#8329; = k&#8321; + k&#8322; + ... <strong>Seri:</strong> 1/k&#8329; = 1/k&#8321; + 1/k&#8322; + ... Periode getaran tetap memakai <strong>T = 2π√(m/k&#8329;)</strong>. Makin besar k, makin singkat periode; makin kecil k, makin panjang periode.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pegas paralel: konstanta dijumlahkan, sistem lebih kaku.",
+          "Pegas seri: kebalikan konstanta dijumlahkan, sistem lebih lentur.",
+          "Konstanta pengganti seri selalu lebih kecil dari pegas terkecilnya.",
+          "Periode getaran mengikuti T = 2π√(m/k); k besar berarti periode singkat.",
+          "Aturan pegas ini kebalikan dari aturan susunan hambatan listrik.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dua pegas identik k = 100 N/m disusun paralel. Konstanta penggantinya...",
+            options: ["50 N/m", "100 N/m", "200 N/m", "400 N/m"],
+            answer: 2,
+            explain: "Paralel: k = 100 + 100 = 200 N/m.",
+          },
+          {
+            q: "Dua pegas identik k = 100 N/m disusun seri. Konstanta penggantinya...",
+            options: ["50 N/m", "100 N/m", "200 N/m", "400 N/m"],
+            answer: 0,
+            explain: "Seri: 1/k = 1/100 + 1/100 = 2/100, jadi k = 50 N/m.",
+          },
+          {
+            q: "Susunan pegas yang membuat sistem lebih kaku adalah...",
+            options: ["Seri", "Paralel", "Keduanya sama", "Tergantung massa"],
+            answer: 1,
+            explain: "Paralel menjumlahkan konstanta, sehingga sistem lebih kaku.",
+          },
+          {
+            q: "Jika konstanta diperbesar (massa tetap), periode getaran akan...",
+            options: ["Bertambah", "Berkurang", "Tetap", "Menjadi nol"],
+            answer: 1,
+            explain: "T = 2π√(m/k); k makin besar membuat T makin kecil.",
+          },
+          {
+            q: "Konstanta pengganti susunan seri selalu...",
+            options: [
+              "Lebih besar dari tiap pegas",
+              "Sama dengan rata-rata",
+              "Lebih kecil dari pegas terlemah",
+              "Nol",
+            ],
+            answer: 2,
+            explain: "Susunan seri membuat sistem lebih lentur, k pengganti lebih kecil dari pegas terlemah.",
+          },
+        ],
+      },
+    ],
+  },
 ];

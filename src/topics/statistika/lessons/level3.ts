@@ -565,4 +565,171 @@ export const level3: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "mendeteksi-pencilan",
+    levelId: "penyebaran",
+    order: 5,
+    title: "Mendeteksi Pencilan dengan Aturan Kuartil",
+    summary:
+      "Sebuah nilai yang jauh menyimpang bisa merusak analisis. Kita pakai kuartil untuk memberi pagar yang menandai mana yang pantas dicurigai sebagai pencilan.",
+    durationMin: 14,
+    tags: ["statistika", "penyebaran", "pencilan", "iqr"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Bayangkan mencatat lama pengiriman paket dalam hari: kebanyakan 2 sampai 5 hari, tetapi satu paket tercatat 50 hari. Angka itu langsung mengganggu rata-rata dan jangkauan. Apakah itu kesalahan catat, atau kejadian luar biasa? Sebelum membuang atau mempercayainya, ayo cari cara objektif untuk menandai nilai yang benar-benar menyimpang.",
+      },
+      {
+        type: "video",
+        comp: "PenyebaranVideo",
+        title: "Video: Menandai Nilai yang Menyimpang",
+        caption: "Memakai kuartil untuk membangun pagar pendeteksi pencilan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil data terurut: 10, 12, 14, 15, 16, 18, 20, 22, 24, 50. Dari pelajaran kuartil, kita peroleh Q1 = 14 dan Q3 = 22, sehingga jangkauan antarkuartil (IQR) = 22 - 14 = 8. Sekarang bentangkan pagar sejauh satu setengah IQR dari tiap kuartil. Nilai yang jatuh di luar pagar itulah yang patut dicurigai sebagai pencilan. Coba tebak: apakah 50 lolos atau tertangkap?",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Data Terurut dengan Satu Pencilan",
+        unit: "nilai data",
+        source: "ilustrasi edukatif",
+        note: "Sembilan nilai berkumpul di 10 sampai 24, lalu satu nilai (50, batang oranye) melompat jauh di atas batas atas 34. Ia tertangkap sebagai pencilan.",
+        data: [
+          { label: "1", value: 10, color: "#06b6d4" },
+          { label: "2", value: 12, color: "#06b6d4" },
+          { label: "3", value: 14, color: "#06b6d4" },
+          { label: "4", value: 15, color: "#06b6d4" },
+          { label: "5", value: 16, color: "#06b6d4" },
+          { label: "6", value: 18, color: "#06b6d4" },
+          { label: "7", value: 20, color: "#06b6d4" },
+          { label: "8", value: 22, color: "#06b6d4" },
+          { label: "9", value: 24, color: "#06b6d4" },
+          { label: "10", value: 50, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "widget",
+        widget: "SimulatorPenyebaran",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Mengapa satu setengah IQR?",
+        html: "Pagar diletakkan pada <strong>Q1 - 1,5 x IQR</strong> dan <strong>Q3 + 1,5 x IQR</strong>. Angka 1,5 adalah kesepakatan yang sudah teruji: cukup longgar untuk membiarkan keragaman wajar, tetapi cukup ketat untuk menangkap nilai yang benar-benar menyimpang. Pencilan tidak otomatis salah, ia hanya pantas <strong>diperiksa ulang</strong>.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Diketahui Q1 = 14 dan Q3 = 22. Hitung batas atas pendeteksi pencilan, yaitu Q3 + 1,5 x IQR.",
+        answer: 34,
+        tolerance: 0,
+        solution:
+          "IQR = 22 - 14 = 8, sehingga 1,5 x 8 = 12. Batas atas = Q3 + 12 = 22 + 12 = <strong>34</strong>.",
+        hint: "Cari IQR dulu (Q3 - Q1), kalikan 1,5, lalu tambahkan ke Q3.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dengan Q1 = 14, Q3 = 22, dan IQR = 8, hitung batas bawah pendeteksi pencilan, yaitu Q1 - 1,5 x IQR.",
+        answer: 2,
+        tolerance: 0,
+        solution:
+          "1,5 x 8 = 12, jadi batas bawah = Q1 - 12 = 14 - 12 = <strong>2</strong>. Nilai data sah berada di rentang 2 sampai 34.",
+        hint: "Kalikan IQR dengan 1,5, lalu kurangkan dari Q1.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Dengan rentang sah 2 sampai 34, kelompokkan tiap nilai sebagai pencilan atau bukan pencilan.",
+        buckets: ["Pencilan", "Bukan pencilan"],
+        items: [
+          { text: "Nilai 50", bucket: "Pencilan" },
+          { text: "Nilai 24", bucket: "Bukan pencilan" },
+          { text: "Nilai 0", bucket: "Pencilan" },
+          { text: "Nilai 16", bucket: "Bukan pencilan" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap istilah dengan cara menghitung atau maknanya.",
+        pairs: [
+          { left: "IQR", right: "Q3 dikurangi Q1" },
+          { left: "Batas atas", right: "Q3 ditambah 1,5 kali IQR" },
+          { left: "Batas bawah", right: "Q1 dikurangi 1,5 kali IQR" },
+          { left: "Pencilan", right: "nilai yang jatuh di luar kedua batas" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Salah ketik tertangkap aturan IQR",
+        html: "Sebuah toko daring mencatat lama pengiriman ratusan pesanan dalam hari. Hampir semuanya 2 sampai 6 hari, tetapi satu pesanan tercatat 40 hari. Saat data diuji dengan aturan IQR, nilai 40 jatuh jauh di atas batas atas, sehingga ditandai sebagai pencilan. Setelah diperiksa, ternyata itu salah ketik dari angka 4. Tanpa pemeriksaan ini, satu angka keliru bisa membuat rata-rata waktu kirim tampak buruk dan menakuti calon pembeli. Aturan IQR menjadi penjaga mutu data yang objektif.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumusnya baru muncul di akhir",
+        html: "Setelah berpetualang, baru kita rangkum. Hitung <strong>IQR = Q3 - Q1</strong>, lalu tetapkan <strong>batas bawah = Q1 - 1,5 x IQR</strong> dan <strong>batas atas = Q3 + 1,5 x IQR</strong>. Nilai di luar rentang itu ditandai sebagai <strong>pencilan</strong> yang pantas diperiksa, bukan langsung dibuang.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pencilan adalah nilai yang jauh menyimpang dari sebagian besar data.",
+          "Aturan IQR menandai nilai di luar Q1 - 1,5 x IQR sampai Q3 + 1,5 x IQR.",
+          "Pencilan pantas diperiksa ulang, bukan otomatis dianggap salah lalu dibuang.",
+          "Aturan ini objektif dan tidak mudah goyah oleh perasaan tentang satu angka.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pencilan adalah?",
+            options: [
+              "Nilai yang paling sering muncul",
+              "Nilai yang jauh menyimpang dari sebagian besar data",
+              "Nilai tengah data",
+              "Selalu nilai terkecil",
+            ],
+            answer: 1,
+            explain: "Pencilan adalah nilai yang menyimpang jauh dari kumpulan data lainnya.",
+          },
+          {
+            q: "Aturan IQR menandai sebuah nilai sebagai pencilan jika ia?",
+            options: [
+              "Berada di antara Q1 dan Q3",
+              "Berada di luar Q1 - 1,5 x IQR sampai Q3 + 1,5 x IQR",
+              "Sama dengan median",
+              "Lebih besar dari rata-rata",
+            ],
+            answer: 1,
+            explain: "Nilai di luar kedua pagar IQR itulah yang dicurigai sebagai pencilan.",
+          },
+          {
+            q: "Jika Q1 = 14 dan Q3 = 22, berapa IQR-nya?",
+            options: ["6", "8", "36", "14"],
+            answer: 1,
+            explain: "IQR = Q3 - Q1 = 22 - 14 = 8.",
+          },
+          {
+            q: "Dengan Q3 = 22 dan IQR = 8, batas atas pencilan adalah?",
+            options: ["30", "34", "44", "22"],
+            answer: 1,
+            explain: "Q3 + 1,5 x 8 = 22 + 12 = 34.",
+          },
+          {
+            q: "Pada data tersebut, nilai 50 dengan batas atas 34 termasuk?",
+            options: ["Median", "Pencilan", "Kuartil ketiga", "Nilai biasa"],
+            answer: 1,
+            explain: "Karena 50 lebih besar dari 34, ia tertangkap sebagai pencilan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

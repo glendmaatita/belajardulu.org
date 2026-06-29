@@ -41,6 +41,27 @@ export default {
           DEFAULT: "#e8dfce",
           strong: "#d9cdb6",
         },
+        // ===== Topik surface palette =====
+        // Earth-tone family that harmonizes on warm paper, replaces the
+        // bright "candy" Tailwind gradients on topic/category/level heroes.
+        // Each hue is deep enough to carry white text. Pair two stops for a
+        // hero gradient (mis. from-earth-navy to-earth-ink).
+        earth: {
+          navy: "#2b4f78",
+          ink: "#1b3252",
+          ochre: "#c8841f",
+          marigold: "#a86916",
+          clay: "#b5532f",
+          brick: "#8f3f24",
+          teal: "#2f7d6b",
+          pine: "#1f5e58",
+          sage: "#4f7a54",
+          moss: "#36603f",
+          plum: "#6b4f86",
+          aubergine: "#473356",
+          slate: "#4d6480",
+          cinnamon: "#9a6b3f",
+        },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],

@@ -679,4 +679,171 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "daya-dan-usaha-rotasi",
+    levelId: "menggelinding",
+    order: 5,
+    title: "Usaha dan Daya pada Rotasi",
+    summary:
+      "Mesin dinilai dari torsi dan putarannya. Gabungan keduanya menentukan daya, ukuran seberapa cepat ia bekerja. Kisah dulu, rumus di akhir.",
+    durationMin: 13,
+    tags: ["fisika", "rotasi", "daya", "usaha", "torsi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Spesifikasi sebuah motor selalu menyebut dua angka: torsi (seberapa kuat memutar) dan putaran per menit (seberapa cepat). Tetapi yang menentukan apakah ia bisa menggerakkan pompa atau mobil adalah gabungan keduanya, yaitu <strong>daya</strong>. Mengapa torsi besar saja tidak cukup, dan putaran tinggi saja juga tidak cukup? Ayo telusuri kisahnya sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Torsi Bertemu Kecepatan",
+        caption: "Daya rotasi lahir dari perkalian torsi dengan kecepatan sudut.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan dua mesin. Mesin A memberi torsi besar tetapi berputar sangat pelan; mesin B berputar cepat tetapi torsinya kecil. Mana yang lebih bertenaga? Tidak bisa dijawab dari satu angka saja. Yang menentukan adalah <strong>hasil kali torsi dan kecepatan putar</strong>. Itulah sebabnya mesin yang sama bisa diatur untuk torsi besar (lewat gigi rendah) atau kecepatan tinggi (gigi tinggi), tetapi dayanya tetap dibatasi.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Cermin dari P = F·v",
+        html: "Pada gerak lurus, daya adalah gaya dikali kecepatan (P = F·v). Pada rotasi, tinggal menukar besarannya: gaya menjadi <strong>torsi</strong>, kecepatan menjadi <strong>kecepatan sudut</strong>. Hasilnya P = τ·ω. Adapun usaha yang dilakukan torsi adalah torsi dikali sudut yang ditempuh: W = τ·θ, cermin dari usaha gaya W = F·s.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Daya dari Torsi 50 N·m pada Berbagai Putaran",
+        unit: "watt",
+        source: "perhitungan P = τ·ω dengan torsi tetap 50 N·m",
+        note: "Torsi tetap 50 N·m. Daya tumbuh lurus dengan kecepatan sudut: putar dua kali lebih cepat, daya pun dua kali lipat. Itulah mengapa torsi besar saja tak berarti tanpa putaran.",
+        data: [
+          { label: "ω = 10 rad/s", value: 500, color: "#f472b6" },
+          { label: "ω = 20 rad/s", value: 1000, color: "#e879f9" },
+          { label: "ω = 30 rad/s", value: 1500, color: "#c084fc" },
+          { label: "ω = 40 rad/s", value: 2000, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah motor memberi torsi 20 N·m sambil berputar 15 rad/s. Berapa dayanya? (P = τ·ω)",
+        answer: 300,
+        tolerance: 1,
+        suffix: " W",
+        solution:
+          "P = τ·ω = 20 × 15 = <strong>300 W</strong>. Daya adalah torsi dikali kecepatan sudut.",
+        hint: "Kalikan torsi dengan kecepatan sudut.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah mesin berdaya 1500 W berputar dengan kecepatan sudut 30 rad/s. Berapa torsi yang dihasilkannya? (τ = P/ω)",
+        answer: 50,
+        tolerance: 0.1,
+        suffix: " N·m",
+        solution:
+          "Dari P = τ·ω, maka τ = P/ω = 1500 / 30 = <strong>50 N·m</strong>. Pada daya tetap, putaran rendah berarti torsi besar.",
+        hint: "Bagi daya dengan kecepatan sudut.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Torsi 10 N·m memutar sebuah poros sejauh 20 radian. Berapa usaha yang dilakukannya? (W = τ·θ)",
+        answer: 200,
+        tolerance: 1,
+        suffix: " J",
+        solution:
+          "W = τ·θ = 10 × 20 = <strong>200 J</strong>. Usaha torsi adalah torsi dikali sudut yang ditempuh.",
+        hint: "Kalikan torsi dengan sudut total dalam radian.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan besaran gerak lurus dengan padanan rotasinya.",
+        pairs: [
+          { left: "Daya translasi P = F·v", right: "Daya rotasi P = τ·ω" },
+          { left: "Usaha W = F·s", right: "Usaha rotasi W = τ·θ" },
+          { left: "Gaya F", right: "Torsi τ" },
+          { left: "Satuan daya", right: "Watt (J/s)" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan keadaan mesin berdasarkan dayanya besar atau kecil.",
+        buckets: ["Daya besar", "Daya kecil"],
+        items: [
+          { text: "Torsi besar pada putaran tinggi", bucket: "Daya besar" },
+          { text: "Torsi kecil pada putaran rendah", bucket: "Daya kecil" },
+          { text: "Mesin mobil pada rpm tinggi saat menyalip", bucket: "Daya besar" },
+          { text: "Motor yang nyaris berhenti berputar", bucket: "Daya kecil" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Spesifikasi Motor Listrik",
+        html: "Sebuah motor listrik tertera memberi torsi 20 N·m pada putaran 1500 rpm. Ubah putaran ke rad/s: 1500/60 = 25 putaran per detik, dikali 2π menjadi sekitar 157 rad/s. Maka dayanya P = τ·ω = 20 × 157 ≈ <strong>3140 watt</strong>, atau sekitar 3,1 kW (kira-kira 4,2 tenaga kuda). Insinyur tidak menghafal rumus; mereka membaca torsi dan rpm dari pelat mesin lalu mengalikannya untuk tahu seberapa berat beban yang sanggup digerakkan. Torsi besar tanpa putaran, atau putaran tinggi tanpa torsi, sama-sama menghasilkan daya kecil.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya jelas. Usaha yang dilakukan torsi adalah <strong>W = τ·θ</strong> (θ dalam radian), cermin dari W = F·s. Daya, yaitu laju melakukan usaha, adalah <strong>P = τ·ω</strong>, cermin dari P = F·v. Inilah mengapa mesin dinilai dari torsi <em>dan</em> putaran sekaligus: keduanya bersama-sama menentukan daya, dan daya itulah yang menggerakkan dunia.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Usaha torsi: W = τ·θ (θ dalam radian), cermin dari W = F·s.",
+          "Daya rotasi: P = τ·ω, cermin dari P = F·v.",
+          "Torsi besar saja atau putaran tinggi saja tidak menjamin daya besar; keduanya dikalikan.",
+          "Pada daya tetap, putaran rendah memberi torsi besar, dan sebaliknya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Daya pada gerak rotasi dirumuskan?",
+            options: ["P = τ/ω", "P = τ·ω", "P = ½τω²", "P = τ + ω"],
+            answer: 1,
+            explain: "Daya rotasi P = τ·ω, cermin dari P = F·v.",
+          },
+          {
+            q: "Motor torsi 30 N·m berputar 10 rad/s. Dayanya?",
+            options: ["3 W", "40 W", "300 W", "3000 W"],
+            answer: 2,
+            explain: "P = τ·ω = 30 × 10 = 300 W.",
+          },
+          {
+            q: "Usaha yang dilakukan torsi adalah?",
+            options: ["W = τ·ω", "W = τ·θ", "W = ½Iω²", "W = τ/θ"],
+            answer: 1,
+            explain: "Usaha rotasi W = τ·θ, dengan θ sudut tempuh dalam radian.",
+          },
+          {
+            q: "Mesin 2000 W berputar 40 rad/s. Torsinya?",
+            options: ["20 N·m", "50 N·m", "80 N·m", "0,02 N·m"],
+            answer: 1,
+            explain: "τ = P/ω = 2000/40 = 50 N·m.",
+          },
+          {
+            q: "Mengapa torsi besar saja tidak menjamin daya besar?",
+            options: [
+              "Karena torsi tidak penting",
+              "Karena daya juga butuh kecepatan putar (P = τ·ω)",
+              "Karena daya hanya bergantung massa",
+              "Karena torsi mengurangi daya",
+            ],
+            answer: 1,
+            explain: "Daya adalah torsi dikali kecepatan sudut; tanpa putaran, dayanya tetap kecil.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -576,4 +576,171 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kecepatan-terminal",
+    levelId: "aplikasi-dinamika",
+    order: 5,
+    title: "Kecepatan Terminal & Hambatan Udara",
+    summary:
+      "Mengapa benda jatuh tidak terus bertambah cepat selamanya? Kita ikuti pertarungan antara berat dan hambatan udara hingga keduanya seimbang.",
+    durationMin: 14,
+    tags: ["fisika", "dinamika", "kecepatan-terminal", "hambatan-udara", "gaya"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Lompat dari pesawat, mula-mula kamu makin cepat. Tetapi kecepatanmu tidak naik tanpa batas. Pada satu titik, gerak menjadi tetap. Penyebabnya adalah <strong>hambatan udara</strong> yang ikut membesar saat kamu makin laju, hingga akhirnya menandingi berat. Ketika kedua gaya itu seimbang, percepatan berhenti dan kecepatan menjadi tetap, itulah kecepatan terminal.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Kecepatan yang Berhenti Bertambah",
+        caption: "Selama hambatan udara lebih kecil dari berat, kecepatan masih naik; saat keduanya sama, kecepatan berhenti berubah.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua gaya yang bertarung",
+        html: "Pada benda jatuh bekerja dua gaya: <strong>berat</strong> menarik ke bawah (tetap besarnya) dan <strong>hambatan udara</strong> mendorong ke atas yang membesar seiring kecepatan. Selisih keduanya menentukan percepatan: saat baru dilepas hambatan masih nol sehingga percepatan maksimum, lalu mengecil hingga nol.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Apa itu kecepatan terminal",
+        html: "Kecepatan terminal adalah kecepatan tetap saat <strong>hambatan udara persis sama dengan berat</strong>, sehingga resultan gaya nol dan percepatan nol. Benda tetap jatuh, tetapi dengan laju yang tidak lagi bertambah.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Mainkan simulator gerak berikut untuk mengamati bagaimana kecepatan berubah terhadap waktu, lalu bayangkan kurva itu mendatar saat kecepatan terminal tercapai.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorGLBB",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perkiraan Kecepatan Terminal Berbagai Benda di Udara",
+        unit: "kecepatan (m/s)",
+        source: "perkiraan fisika, bergantung massa, bentuk, dan luas penampang benda",
+        note: "Benda dengan luas penampang besar dibanding beratnya melambat lebih awal. Posisi tubuh penerjun mengubah hambatan, sehingga kecepatan terminalnya pun berbeda jauh.",
+        data: [
+          { label: "Bulu ringan", value: 1, color: "#ec4899" },
+          { label: "Tetes hujan", value: 9, color: "#ec4899" },
+          { label: "Penerjun (datar)", value: 55, color: "#ec4899" },
+          { label: "Penerjun (menukik)", value: 120, color: "#ec4899" },
+        ],
+      },
+      {
+        type: "paragraph",
+        html: "Amati grafik. Tetes hujan berhenti bertambah cepat pada sekitar 9 m/s, sedangkan penerjun dengan posisi tubuh mendatar mencapai sekitar 55 m/s, kira-kira 200 km/jam. Bila ia menukik kepala lebih dulu, luas penampangnya mengecil, hambatan udara berkurang, dan kecepatan terminalnya melonjak hingga sekitar 120 m/s. Ini bukti bahwa kecepatan terminal bergantung pada bentuk dan luas penampang, bukan hanya berat.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Seorang penerjun bermassa 80 kg jatuh dan akhirnya mencapai kecepatan terminal. Dengan g = 10 m/s², berapa besar hambatan udara saat itu?",
+        answer: 800,
+        tolerance: 1,
+        suffix: " N",
+        solution:
+          "Pada kecepatan terminal hambatan udara sama dengan berat. Berat = m · g = 80 × 10 = 800 N, jadi hambatan udara = <strong>800 N</strong>.",
+        hint: "Saat kecepatan terminal, hambatan udara menyeimbangkan berat. Hitung dulu beratnya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada saat penerjun 80 kg baru saja dilepas (kecepatan masih nol, hambatan udara nol), berapa percepatannya? Pakai g = 10 m/s².",
+        answer: 10,
+        tolerance: 0.1,
+        suffix: " m/s²",
+        solution:
+          "Saat hambatan udara nol, satu-satunya gaya adalah berat. Percepatan = gaya ÷ massa = (m · g) ÷ m = g = <strong>10 m/s²</strong>. Massa tidak memengaruhi percepatan awal ini.",
+        hint: "Tanpa hambatan udara, percepatan benda jatuh sama dengan g.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pernyataan: berlaku saat benda baru dilepas atau saat kecepatan terminal?",
+        buckets: ["Saat baru dilepas (v=0)", "Saat kecepatan terminal"],
+        items: [
+          { text: "Hambatan udara masih nol", bucket: "Saat baru dilepas (v=0)" },
+          { text: "Percepatan paling besar, sama dengan g", bucket: "Saat baru dilepas (v=0)" },
+          { text: "Hambatan udara sama dengan berat", bucket: "Saat kecepatan terminal" },
+          { text: "Percepatan nol, kecepatan tetap", bucket: "Saat kecepatan terminal" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Saat Parasut Terbuka",
+        html: "Sebelum membuka parasut, seorang penerjun bermassa 80 kg (berat 800 N) melaju pada kecepatan terminal sekitar 55 m/s. Ketika parasut mengembang, luas penampangnya melonjak drastis sehingga hambatan udara seketika jauh melebihi berat. Resultan gaya kini mengarah ke atas, penerjun melambat dengan cepat, lalu mencapai kecepatan terminal baru yang jauh lebih kecil, sekitar 5 m/s. Pada kecepatan rendah itulah ia bisa mendarat dengan aman.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Inti yang lahir di akhir",
+        html: "Benda jatuh tidak terus dipercepat karena hambatan udara membesar seiring kecepatan. Saat <strong>hambatan udara = berat</strong>, resultan gaya nol, percepatan nol, dan kecepatan menjadi tetap, itulah kecepatan terminal. Memperbesar luas penampang, misalnya dengan parasut, menambah hambatan dan menurunkan kecepatan terminal.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pada benda jatuh, berat (tetap) bertarung melawan hambatan udara (membesar dengan kecepatan).",
+          "Saat baru dilepas, hambatan nol dan percepatan maksimum, yaitu g.",
+          "Kecepatan terminal tercapai ketika hambatan udara sama dengan berat, percepatan nol.",
+          "Kecepatan terminal bergantung pada massa, bentuk, dan luas penampang benda.",
+          "Parasut memperbesar luas penampang sehingga kecepatan terminal turun ke nilai yang aman.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Kecepatan terminal tercapai ketika?",
+            options: [
+              "Hambatan udara sama dengan berat",
+              "Berat menjadi nol",
+              "Kecepatan menjadi nol",
+              "Hambatan udara menjadi nol",
+            ],
+            answer: 0,
+            explain: "Saat hambatan udara = berat, resultan gaya nol, percepatan nol, kecepatan tetap.",
+          },
+          {
+            q: "Saat benda baru saja dilepas (v = 0), percepatannya?",
+            options: ["Nol", "Sama dengan g (maksimum)", "Lebih kecil dari g", "Tak terhingga"],
+            answer: 1,
+            explain: "Hambatan udara masih nol, jadi percepatan sama dengan g, paling besar.",
+          },
+          {
+            q: "Penerjun 70 kg pada kecepatan terminal, dengan g = 10 m/s², menanggung hambatan udara sebesar?",
+            options: ["70 N", "700 N", "7 N", "70.000 N"],
+            answer: 1,
+            explain: "Hambatan udara = berat = m · g = 70 × 10 = 700 N.",
+          },
+          {
+            q: "Mengapa penerjun yang menukik kepala lebih dulu lebih cepat?",
+            options: [
+              "Massanya bertambah",
+              "Luas penampang mengecil sehingga hambatan udara berkurang",
+              "Gravitasi bertambah",
+              "Beratnya hilang",
+            ],
+            answer: 1,
+            explain: "Luas penampang kecil membuat hambatan udara lebih kecil, sehingga kecepatan terminal lebih tinggi.",
+          },
+          {
+            q: "Apa pengaruh membuka parasut terhadap kecepatan terminal?",
+            options: [
+              "Menaikkannya",
+              "Tidak berpengaruh",
+              "Menurunkannya karena luas penampang membesar",
+              "Membuat berat hilang",
+            ],
+            answer: 2,
+            explain: "Parasut memperbesar luas penampang, menambah hambatan udara, sehingga kecepatan terminal turun.",
+          },
+        ],
+      },
+    ],
+  },
 ];

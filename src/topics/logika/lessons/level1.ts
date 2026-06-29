@@ -632,4 +632,157 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "penalaran-analogi",
+    levelId: "dasar",
+    order: 5,
+    title: "Penalaran Analogi",
+    summary: "Menarik kesimpulan dari kemiripan dua hal, kapan analogi kuat, dan kapan ia jatuh menjadi analogi yang lemah.",
+    durationMin: 13,
+    tags: ["logika", "analogi", "penalaran", "induktif"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Penalaran analogi</strong> menyimpulkan bahwa karena dua hal mirip dalam beberapa sifat yang diketahui, mereka kemungkinan juga mirip dalam sifat lain. Karena kesimpulannya hanya kemungkinan, analogi tergolong penalaran <strong>induktif</strong>, bukan deduktif.",
+      },
+      {
+        type: "paragraph",
+        html: "Kekuatan sebuah analogi tidak ditentukan oleh banyaknya kemiripan apa saja, melainkan oleh kemiripan yang <strong>relevan</strong> dengan kesimpulan. Satu perbedaan relevan bisa meruntuhkan analogi, meski kedua hal tampak serupa di banyak hal lain.",
+      },
+      {
+        type: "video",
+        comp: "DeduktifInduktif",
+        title: "Video: Deduktif vs Induktif",
+        caption: "Analogi adalah saudara induksi: ia memberi kesimpulan yang mungkin benar, bukan kepastian.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Ciri analogi yang kuat",
+        html: "Analogi makin kuat bila: (1) kemiripannya <strong>relevan</strong> dengan kesimpulan, (2) jumlah kemiripan relevan banyak, (3) tidak ada perbedaan relevan yang menyangkal, dan (4) kasus pembandingnya beragam, bukan satu kasus terpencil.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Analogi yang lemah (false analogy)",
+        html: "Sesat pikir <strong>analogi palsu</strong> terjadi saat kesimpulan ditarik dari kemiripan yang tidak relevan. Contoh: 'Otak seperti otot, jadi makin sering dipakai makin besar ukurannya.' Kemiripan 'sama-sama bisa dilatih' tidak berarti otak membesar seperti otot.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Di mana analogi dipakai",
+        html: "Analogi muncul di mana-mana: hakim memutus perkara baru dengan membandingkan perkara serupa (preseden), dokter menduga efek obat dari uji pada hewan, dan kita memilih restoran baru karena mirip restoran yang dulu memuaskan.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Keyakinan Analogi Naik Seiring Jumlah Kemiripan Relevan (ilustrasi)",
+        unit: "% keyakinan",
+        source: "ilustrasi edukatif",
+        note: "Yang menambah keyakinan hanyalah kemiripan yang relevan; menumpuk kemiripan tak relevan tidak memperkuat analogi.",
+        data: [
+          { label: "1 kemiripan relevan", value: 30, color: "#0ea5e9" },
+          { label: "3 kemiripan relevan", value: 55, color: "#0ea5e9" },
+          { label: "5 kemiripan relevan", value: 72, color: "#0ea5e9" },
+          { label: "8 kemiripan relevan", value: 85, color: "#0ea5e9" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih sekolah anak",
+        html: "Sebuah keluarga puas dengan Sekolah A karena kelasnya kecil, gurunya berpengalaman, dan kurikulumnya menekankan praktik. Mereka menimbang Sekolah B yang juga punya kelas kecil, guru berpengalaman, dan kurikulum praktik, lalu menyimpulkan B kemungkinan sama baiknya. Ini analogi yang cukup kuat karena tiga kemiripannya relevan dengan mutu belajar. Namun bila ternyata B berjarak dua jam perjalanan, itu perbedaan relevan yang melemahkan kesimpulan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dua produk dibandingkan atas 8 fitur. Mereka sama pada 6 fitur, dan 5 dari 6 kesamaan itu relevan dengan keawetan. Berapa persen kesamaan yang relevan dari seluruh 8 fitur?",
+        answer: 62.5,
+        tolerance: 0.5,
+        suffix: "%",
+        solution: "5 dibagi 8 sama dengan 0,625, jadi <strong>62,5%</strong> fitur merupakan kesamaan yang relevan. Yang menopang analogi keawetan adalah 5 kesamaan relevan ini, bukan sekadar 6 kesamaan total.",
+        hint: "Bagi jumlah kesamaan relevan dengan total fitur, lalu kalikan 100.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Analogi ini tergolong kuat atau lemah?",
+        buckets: ["Analogi kuat", "Analogi lemah"],
+        items: [
+          { text: "Obat berhasil pada tikus yang fisiologinya mirip manusia, jadi mungkin berhasil pada manusia", bucket: "Analogi kuat" },
+          { text: "Mobil ini merek sama dan tahun sama dengan mobil tetangga yang awet, jadi mungkin awet juga", bucket: "Analogi kuat" },
+          { text: "Negara seperti keluarga, jadi rakyat harus selalu menuruti pemimpin seperti anak menuruti ayah", bucket: "Analogi lemah" },
+          { text: "Buku ini sampulnya biru seperti buku bagus yang dulu kubaca, jadi pasti bagus", bucket: "Analogi lemah" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Analogi", right: "Menyimpulkan kemiripan baru dari kemiripan yang sudah diketahui" },
+          { left: "Kemiripan relevan", right: "Kesamaan yang benar-benar berkaitan dengan kesimpulan" },
+          { left: "Perbedaan relevan", right: "Beda penting yang melemahkan atau membatalkan analogi" },
+          { left: "Analogi palsu", right: "Menarik kesimpulan dari kemiripan yang tidak relevan" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Latihan menilai kekuatan analogi",
+        html: "Analogi pada dasarnya adalah klaim induktif. Gunakan alat di bawah untuk menilai apakah bukti kemiripan yang diajukan tergolong kuat atau lemah sebelum menerima kesimpulannya.",
+      },
+      {
+        type: "widget",
+        widget: "PenilaiKlaim",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Analogi menyimpulkan kemiripan baru dari kemiripan yang sudah diketahui.",
+          "Analogi bersifat induktif: kesimpulannya kemungkinan, bukan kepastian.",
+          "Yang menguatkan analogi adalah kemiripan yang relevan, bukan sekadar banyak kemiripan.",
+          "Satu perbedaan relevan bisa meruntuhkan analogi yang tampak meyakinkan.",
+          "Analogi palsu menarik kesimpulan dari kemiripan yang tidak relevan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Penalaran analogi tergolong jenis penalaran?",
+            options: ["Deduktif, memberi kepastian", "Induktif, memberi kemungkinan", "Tautologi", "Kontradiksi"],
+            answer: 1,
+            explain: "Analogi memberi kesimpulan yang mungkin benar, jadi tergolong induktif.",
+          },
+          {
+            q: "Apa yang paling menentukan kekuatan sebuah analogi?",
+            options: ["Banyaknya kemiripan apa pun", "Kemiripan yang relevan dengan kesimpulan", "Panjang kalimatnya", "Keyakinan pembicara"],
+            answer: 1,
+            explain: "Hanya kemiripan yang relevan dengan kesimpulan yang benar-benar memperkuat analogi.",
+          },
+          {
+            q: "Analogi palsu (false analogy) terjadi ketika?",
+            options: ["Kemiripannya tidak relevan dengan kesimpulan", "Premisnya benar", "Ada banyak bukti", "Memakai kuantor"],
+            answer: 0,
+            explain: "Analogi palsu menarik kesimpulan dari kemiripan yang sebenarnya tidak relevan.",
+          },
+          {
+            q: "Apa yang bisa meruntuhkan analogi yang tampak kuat?",
+            options: ["Menambah kemiripan tak relevan", "Satu perbedaan yang relevan", "Mengulang kesimpulan", "Berbicara lebih yakin"],
+            answer: 1,
+            explain: "Satu perbedaan relevan saja dapat membatalkan kesimpulan analogi.",
+          },
+          {
+            q: "Manakah contoh analogi yang relatif kuat?",
+            options: [
+              "Sampulnya sama-sama biru, jadi sama bagusnya",
+              "Fisiologi tikus mirip manusia, jadi efek obat mungkin serupa",
+              "Namanya mirip, jadi sifatnya sama",
+              "Sama-sama mahal, jadi sama awet",
+            ],
+            answer: 1,
+            explain: "Kemiripan fisiologi relevan dengan efek obat, sehingga analogi ini lebih kuat.",
+          },
+        ],
+      },
+    ],
+  },
 ];

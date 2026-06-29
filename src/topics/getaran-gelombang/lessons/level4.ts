@@ -574,4 +574,141 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "polarisasi-gelombang",
+    levelId: "sifat-gelombang",
+    order: 5,
+    title: "Polarisasi Gelombang",
+    summary:
+      "Sebagian gelombang bisa 'disaring' agar hanya bergetar pada satu arah. Sifat ini cuma dimiliki gelombang transversal, dan jadi cara membedakannya dari longitudinal.",
+    durationMin: 13,
+    tags: ["polarisasi", "transversal", "cahaya", "hukum malus"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kacamata hitam polaroid bisa meredam silau pantulan di air atau aspal jauh lebih baik daripada kaca gelap biasa. Rahasianya adalah <strong>polarisasi</strong>: kemampuan menyaring gelombang agar hanya yang bergetar pada satu arah tertentu yang lolos. Ini sifat istimewa yang tidak dimiliki semua gelombang.",
+      },
+      {
+        type: "video",
+        comp: "GelombangFisika",
+        title: "Video: Menyaring Arah Getar",
+        caption: "Celah penyaring hanya meloloskan getaran yang searah dengannya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Hanya gelombang transversal",
+        html: "Polarisasi <strong>hanya bisa terjadi pada gelombang transversal</strong>, yaitu yang arah getarnya tegak lurus arah rambat (misalnya cahaya dan gelombang tali). Gelombang longitudinal seperti bunyi <strong>tidak bisa dipolarisasi</strong>, karena getarannya searah rambat sehingga tidak ada arah lain untuk disaring. Inilah uji penentu jenis gelombang.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Polarisator dan analisator",
+        html: "Lembar pertama (<strong>polarisator</strong>) mengubah cahaya alami yang bergetar ke segala arah menjadi cahaya yang bergetar satu arah, sekaligus memotong intensitasnya menjadi separuh. Lembar kedua (<strong>analisator</strong>) menyaring lagi sesuai sudut antara sumbunya dan arah getar cahaya yang datang.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorGelombang",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Intensitas Lolos terhadap Sudut Analisator (Hukum Malus)",
+        unit: "I/I₀",
+        source: "ilustrasi edukatif (I = I₀ cos²θ)",
+        note: "Saat sumbu analisator sejajar (0°) semua lolos; saat tegak lurus (90°) tidak ada yang lolos; pada 45° tepat separuh.",
+        data: [
+          { label: "0°", value: 1, color: "#6366f1" },
+          { label: "30°", value: 0.75, color: "#6366f1" },
+          { label: "45°", value: 0.5, color: "#6366f1" },
+          { label: "60°", value: 0.25, color: "#4f46e5" },
+          { label: "90°", value: 0, color: "#4f46e5" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua Lembar Polaroid",
+        html: "Cahaya alami berintensitas 80 W/m² melewati polarisator. Intensitasnya turun jadi separuh, 40 W/m², dan kini terpolarisasi. Cahaya ini lalu melewati analisator yang sumbunya membentuk sudut 60° terhadap arah getar cahaya. Menurut hukum Malus, I = I&#8320; cos²θ = 40 x cos²60° = 40 x (0,5)² = 40 x 0,25 = <strong>10 W/m²</strong>. Jadi dari 80 W/m² semula, hanya 10 W/m² yang akhirnya lolos.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Cahaya terpolarisasi berintensitas 80 W/m² melewati analisator yang sumbunya membentuk sudut 60° terhadap arah getar cahaya. Berapa intensitas yang lolos?",
+        answer: 20,
+        tolerance: 0.5,
+        suffix: " W/m²",
+        solution:
+          "Hukum Malus: I = I&#8320; cos²θ = 80 x cos²60° = 80 x (0,5)² = 80 x 0,25 = <strong>20 W/m²</strong>.",
+        hint: "cos 60° = 0,5; kuadratkan dulu baru kalikan dengan intensitas datang.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan gelombang berikut, mana yang dapat dipolarisasi dan mana yang tidak.",
+        buckets: ["Dapat dipolarisasi", "Tidak dapat dipolarisasi"],
+        items: [
+          { text: "Cahaya tampak", bucket: "Dapat dipolarisasi" },
+          { text: "Gelombang pada tali yang digetarkan ke atas-bawah", bucket: "Dapat dipolarisasi" },
+          { text: "Gelombang bunyi di udara", bucket: "Tidak dapat dipolarisasi" },
+          { text: "Rapatan dan regangan pada slinki yang didorong memanjang", bucket: "Tidak dapat dipolarisasi" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Bukti cahaya itu transversal",
+        html: "Fakta bahwa cahaya bisa dipolarisasi adalah bukti kuat bahwa cahaya merupakan gelombang transversal. Kalau cahaya merambat secara longitudinal seperti bunyi, kacamata polaroid mustahil bekerja.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Polarisasi adalah penyaringan gelombang agar hanya satu arah getar yang lolos.",
+          "Hanya gelombang transversal yang bisa dipolarisasi; longitudinal tidak.",
+          "Polarisator mengubah cahaya alami jadi terpolarisasi dan memotong intensitas jadi separuh.",
+          "Hukum Malus: I = I₀ cos²θ untuk cahaya yang sudah terpolarisasi.",
+          "Pada sudut 90° tidak ada cahaya yang lolos; pada 45° lolos separuh.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Polarisasi hanya dapat terjadi pada gelombang...",
+            options: ["Longitudinal", "Transversal", "Bunyi", "Semua gelombang"],
+            answer: 1,
+            explain: "Hanya gelombang transversal yang punya arah getar tegak lurus untuk disaring.",
+          },
+          {
+            q: "Gelombang bunyi tidak dapat dipolarisasi karena...",
+            options: [
+              "Terlalu cepat",
+              "Bersifat longitudinal, getarannya searah rambat",
+              "Tidak punya energi",
+              "Frekuensinya terlalu tinggi",
+            ],
+            answer: 1,
+            explain: "Getaran longitudinal searah rambat, jadi tidak ada arah lain untuk disaring.",
+          },
+          {
+            q: "Hukum Malus menyatakan intensitas lolos sebanding dengan...",
+            options: ["cos θ", "cos²θ", "sin θ", "θ²"],
+            answer: 1,
+            explain: "I = I₀ cos²θ.",
+          },
+          {
+            q: "Cahaya terpolarisasi 100 W/m² melewati analisator pada sudut 60°. Intensitas lolos...",
+            options: ["25 W/m²", "50 W/m²", "75 W/m²", "100 W/m²"],
+            answer: 0,
+            explain: "I = 100 x cos²60° = 100 x 0,25 = 25 W/m².",
+          },
+          {
+            q: "Cahaya alami yang melewati satu polarisator intensitasnya menjadi...",
+            options: ["Tetap", "Nol", "Separuh", "Dua kali"],
+            answer: 2,
+            explain: "Polarisator meloloskan separuh intensitas cahaya alami dan membuatnya terpolarisasi.",
+          },
+        ],
+      },
+    ],
+  },
 ];

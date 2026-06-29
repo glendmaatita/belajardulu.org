@@ -603,4 +603,170 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gaya-pegas-hooke",
+    levelId: "jenis-gaya",
+    order: 5,
+    title: "Gaya Pegas (Hukum Hooke)",
+    summary:
+      "Mengapa pegas yang ditarik makin jauh melawan makin kuat? Kita amati dulu polanya pada timbangan dan suspensi sebelum menuliskan rumusnya.",
+    durationMin: 14,
+    tags: ["fisika", "dinamika", "gaya-pegas", "hukum-hooke", "elastisitas"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Tarik karet gelang sedikit, ia melawan pelan. Tarik lebih jauh, lawannya makin terasa kuat. Pegas dan benda elastis lain selalu berusaha kembali ke bentuk semula, dan gaya perlawanan itu kita sebut <strong>gaya pegas</strong>. Sebelum menyentuh rumus, ayo amati dulu pola sederhananya: makin jauh ditarik, makin besar gaya lawannya.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Pegas yang Melawan",
+        caption: "Gaya pegas selalu berarah berlawanan dengan arah regangan, mengembalikan benda ke bentuk semula.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Gantungkan beban pada pegas. Tambah satu beban, pegas memanjang sedikit; tambah dua beban, memanjang dua kali lipat; tiga beban, tiga kali lipat. Pertambahan panjang selalu <strong>sebanding</strong> dengan gaya yang menariknya. Rasakan keteraturan ini dulu sebelum rumusnya kita tulis.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Gaya pemulih",
+        html: "Gaya pegas disebut gaya pemulih karena arahnya selalu melawan regangan: bila pegas ditarik memanjang, gaya pegas menarik balik ke dalam; bila ditekan memendek, gaya pegas mendorong keluar. Tujuannya satu, mengembalikan pegas ke panjang alaminya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Mainkan simulator gaya berikut untuk merasakan bagaimana gaya berubah saat besarannya kamu ubah, lalu hubungkan dengan perilaku pegas.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Gaya Pegas terhadap Pertambahan Panjang (pegas k = 200 N/m)",
+        unit: "gaya (N)",
+        source: "perhitungan gaya = konstanta pegas × pertambahan panjang",
+        note: "Titik-titiknya membentuk garis lurus melalui titik asal: setiap tambahan 2 cm regangan menambah 4 N gaya. Kesebandingan lurus inilah inti Hukum Hooke.",
+        data: [
+          { label: "2 cm", value: 4, color: "#a78bfa" },
+          { label: "4 cm", value: 8, color: "#a78bfa" },
+          { label: "6 cm", value: 12, color: "#a78bfa" },
+          { label: "8 cm", value: 16, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "paragraph",
+        html: "Amati grafik. Saat regangan berlipat, gaya pun berlipat dengan kelipatan yang sama, sehingga titik-titiknya jatuh tepat pada satu garis lurus dari titik asal. Kemiringan garis itu, yaitu gaya dibagi pertambahan panjang, selalu bernilai sama. Nilai tetap itulah yang menjadi ciri tiap pegas.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pegas dengan konstanta 150 N/m ditarik sehingga memanjang 0,2 m. Berapa besar gaya pegasnya?",
+        answer: 30,
+        tolerance: 0.1,
+        suffix: " N",
+        solution:
+          "Gaya pegas = konstanta × pertambahan panjang = 150 N/m × 0,2 m = <strong>30 N</strong>. Arah gaya ini menarik balik melawan regangan.",
+        hint: "Kalikan konstanta pegas dengan pertambahan panjang.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pegas memanjang 0,05 m ketika ditarik gaya 10 N. Berapa konstanta pegasnya?",
+        answer: 200,
+        tolerance: 1,
+        suffix: " N/m",
+        solution:
+          "Konstanta = gaya ÷ pertambahan panjang = 10 N ÷ 0,05 m = <strong>200 N/m</strong>. Makin besar konstanta, makin kaku pegasnya.",
+        hint: "Bagi gaya dengan pertambahan panjang.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap istilah pegas dengan maknanya.",
+        pairs: [
+          { left: "Konstanta pegas (k)", right: "Ukuran kekakuan pegas, satuan N/m" },
+          { left: "Pertambahan panjang (x)", right: "Seberapa jauh pegas teregang dari panjang alami" },
+          { left: "Hukum Hooke", right: "Gaya sebanding dengan regangan, F = k · x" },
+          { left: "Batas elastis", right: "Titik ketika pegas tak lagi kembali ke bentuk semula" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Suspensi Mobil Menahan Beban",
+        html: "Suspensi kendaraan memakai pegas baja yang kuat. Misalkan satu pegas memiliki konstanta 30.000 N/m dan menahan beban seperempat bodi mobil sebesar 600 N. Pertambahan panjang pegas adalah 600 N ÷ 30.000 N/m = 0,02 m atau hanya <strong>2 cm</strong>. Karena beban dan kekakuan dirancang sebanding, mobil tidak ambles berlebihan, dan saat melewati lubang pegas meredam guncangan lalu kembali ke posisi semula.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah melihat polanya, rumus muncul dengan sendirinya. Besar gaya pegas sebanding dengan pertambahan panjang: <strong>F = k · x</strong>, dengan k konstanta pegas (N/m) dan x pertambahan panjang (m). Tanda gaya berlawanan arah regangan karena ia gaya pemulih. Hubungan lurus ini hanya berlaku selama pegas belum melewati batas elastisnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Gaya pegas adalah gaya pemulih, arahnya melawan regangan.",
+          "Pertambahan panjang sebanding dengan gaya: grafiknya garis lurus dari titik asal.",
+          "Hukum Hooke dirangkum oleh F = k · x.",
+          "Konstanta pegas k menyatakan kekakuan; makin besar k makin kaku.",
+          "Hubungan lurus hanya berlaku sebelum batas elastis terlampaui.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Hukum Hooke menyatakan bahwa gaya pegas sebanding dengan?",
+            options: [
+              "Massa pegas",
+              "Pertambahan panjang pegas",
+              "Suhu pegas",
+              "Warna pegas",
+            ],
+            answer: 1,
+            explain: "F = k · x, gaya pegas sebanding dengan pertambahan panjang x.",
+          },
+          {
+            q: "Pegas dengan k = 100 N/m ditarik 0,3 m. Gaya pegasnya?",
+            options: ["3 N", "30 N", "300 N", "0,3 N"],
+            answer: 1,
+            explain: "F = k · x = 100 × 0,3 = 30 N.",
+          },
+          {
+            q: "Satuan konstanta pegas adalah?",
+            options: ["N", "N/m", "kg", "m/s"],
+            answer: 1,
+            explain: "Konstanta pegas k bersatuan newton per meter (N/m).",
+          },
+          {
+            q: "Arah gaya pegas pada pegas yang ditarik memanjang adalah?",
+            options: [
+              "Searah tarikan, makin memanjang",
+              "Melawan tarikan, menarik balik ke dalam",
+              "Tegak lurus tarikan",
+              "Tidak ada gaya",
+            ],
+            answer: 1,
+            explain: "Gaya pegas adalah gaya pemulih, melawan regangan untuk kembali ke bentuk semula.",
+          },
+          {
+            q: "Mengapa hubungan F = k · x bisa tidak berlaku lagi?",
+            options: [
+              "Bila pegas ditarik melewati batas elastisnya",
+              "Bila pegas berwarna gelap",
+              "Bila pegas terbuat dari logam",
+              "Hubungan itu selalu berlaku tanpa batas",
+            ],
+            answer: 0,
+            explain: "Melewati batas elastis, pegas tak kembali ke bentuk semula dan hubungan lurus rusak.",
+          },
+        ],
+      },
+    ],
+  },
 ];

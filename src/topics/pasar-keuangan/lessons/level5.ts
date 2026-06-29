@@ -519,4 +519,138 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "diversifikasi-risiko-portofolio",
+    levelId: "derivatif",
+    order: 5,
+    title: "Diversifikasi & Risiko Portofolio",
+    summary: "Mengapa menyebar dana ke banyak aset menurunkan risiko, batasnya pada risiko sistematis, dan menghitung imbal hasil portofolio.",
+    durationMin: 14,
+    tags: ["diversifikasi", "portofolio", "risiko sistematis", "korelasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Diversifikasi</strong> adalah menyebar dana ke banyak aset agar kerugian satu aset tidak menghancurkan seluruh portofolio. Inilah satu-satunya cara mengurangi risiko tanpa harus mengorbankan imbal hasil yang diharapkan, sering disebut satu-satunya makan siang gratis di dunia keuangan.",
+      },
+      {
+        type: "paragraph",
+        html: "Risiko terbagi dua. <strong>Risiko tidak sistematis</strong> (spesifik perusahaan, seperti pabrik terbakar atau gagal produk) bisa dikurangi lewat diversifikasi. <strong>Risiko sistematis</strong> (risiko pasar, seperti resesi atau krisis global) memengaruhi hampir semua aset sekaligus dan tidak hilang meski portofolio sangat tersebar.",
+      },
+      {
+        type: "video",
+        comp: "EfisiensiPasar",
+        title: "Video: Pasar dan Risiko",
+        caption: "Bagaimana informasi dan guncangan pasar memengaruhi banyak aset sekaligus.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Dua jenis risiko",
+        html: "<strong>Risiko tidak sistematis</strong> bisa didiversifikasi (dihilangkan dengan menambah aset berbeda). <strong>Risiko sistematis</strong> melekat pada pasar dan tidak bisa didiversifikasi; ia menjadi lantai risiko portofolio.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Korelasi adalah kuncinya",
+        html: "Manfaat diversifikasi paling besar ketika aset-aset bergerak <strong>tidak searah</strong> (korelasi rendah). Menyebar dana ke sepuluh saham dari satu sektor yang sama jauh kurang efektif dibanding menyebarnya ke sektor dan jenis aset yang berbeda.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Diversifikasi ada batasnya",
+        html: "Saat krisis besar, banyak aset jatuh bersamaan sehingga korelasi melonjak mendekati satu. Diversifikasi meredam guncangan biasa, tetapi tidak menghapus risiko sistematis pasar.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Risiko Portofolio menurut Jumlah Saham (ilustrasi)",
+        unit: "risiko relatif",
+        source: "ilustrasi pola umum manajemen portofolio",
+        note: "Menambah saham menurunkan risiko tidak sistematis dengan cepat, lalu mendatar pada lantai risiko sistematis.",
+        data: [
+          { label: "1 saham", value: 30, color: "#ef4444" },
+          { label: "5 saham", value: 20, color: "#f59e0b" },
+          { label: "10 saham", value: 17, color: "#0ea5e9" },
+          { label: "20 saham", value: 16, color: "#10b981" },
+          { label: "30 saham", value: 15.5, color: "#16a34a" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Imbal hasil portofolio campuran",
+        html: "Bu Lestari menempatkan <strong>60%</strong> dana di saham yang diharapkan beri imbal hasil 12% dan <strong>40%</strong> di obligasi yang diharapkan 6%. Imbal hasil portofolio yang diharapkan = (60% x 12%) + (40% x 6%) = 7,2% + 2,4% = <strong>9,6%</strong>. Dengan menggabungkan dua aset, ia memperoleh imbal hasil di antara keduanya, tetapi dengan ayunan harga yang lebih halus dibanding memegang saham saja.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Portofolio: 60% saham (imbal hasil 12%) dan 40% obligasi (imbal hasil 6%). Berapa imbal hasil portofolio yang diharapkan (dalam %)?",
+        answer: 9.6,
+        tolerance: 0.1,
+        suffix: "%",
+        solution: "Imbal hasil = (0,6 x 12%) + (0,4 x 6%) = 7,2% + 2,4% = <strong>9,6%</strong>.",
+        hint: "Kalikan bobot tiap aset dengan imbal hasilnya, lalu jumlahkan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Risiko ini bisa dikurangi dengan diversifikasi (tidak sistematis) atau melekat pada pasar (sistematis)?",
+        buckets: ["Risiko tidak sistematis", "Risiko sistematis"],
+        items: [
+          { text: "Pabrik satu perusahaan terbakar", bucket: "Risiko tidak sistematis" },
+          { text: "Resesi ekonomi global", bucket: "Risiko sistematis" },
+          { text: "CEO sebuah emiten terlibat skandal", bucket: "Risiko tidak sistematis" },
+          { text: "Kenaikan suku bunga acuan menyeluruh", bucket: "Risiko sistematis" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Runtuhnya LTCM 1998",
+        html: "<strong>Long-Term Capital Management (LTCM)</strong>, dana lindung nilai yang dipimpin para ahli termasuk dua peraih Nobel, yakin model mereka sudah terdiversifikasi dengan aman. Namun saat <strong>Rusia gagal bayar utang pada Agustus 1998</strong>, hampir semua posisi mereka bergerak merugi bersamaan karena korelasi melonjak di tengah kepanikan. Dengan leverage sangat besar, LTCM rugi sekitar <strong>USD 4,6 miliar</strong> dalam hitungan bulan dan harus diselamatkan lewat dana talangan yang dikoordinasi bank sentral AS. Pelajarannya: diversifikasi bisa gagal justru saat paling dibutuhkan, dan leverage memperparahnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Diversifikasi menyebar dana untuk menurunkan risiko tanpa mengorbankan imbal hasil harapan.",
+          "Risiko tidak sistematis bisa didiversifikasi; risiko sistematis tidak.",
+          "Manfaat terbesar muncul saat aset berkorelasi rendah.",
+          "Imbal hasil portofolio adalah rata-rata tertimbang imbal hasil tiap aset.",
+          "Saat krisis, korelasi melonjak sehingga diversifikasi bisa kurang efektif (pelajaran LTCM 1998).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Tujuan utama diversifikasi adalah?",
+            options: ["Menjamin untung", "Menurunkan risiko dengan menyebar dana", "Menghindari pajak", "Memaksimalkan leverage"],
+            answer: 1,
+            explain: "Diversifikasi menyebar dana ke banyak aset agar kerugian satu aset tidak fatal.",
+          },
+          {
+            q: "Risiko yang TIDAK bisa dihilangkan lewat diversifikasi disebut?",
+            options: ["Risiko tidak sistematis", "Risiko sistematis (risiko pasar)", "Risiko spesifik", "Risiko likuiditas"],
+            answer: 1,
+            explain: "Risiko sistematis melekat pada pasar dan memengaruhi hampir semua aset.",
+          },
+          {
+            q: "Manfaat diversifikasi paling besar ketika aset?",
+            options: ["Bergerak searah (korelasi tinggi)", "Bergerak tidak searah (korelasi rendah)", "Semua satu sektor", "Semua satu saham"],
+            answer: 1,
+            explain: "Korelasi rendah membuat kerugian satu aset diimbangi aset lain.",
+          },
+          {
+            q: "Pelajaran utama dari runtuhnya LTCM 1998 adalah?",
+            options: ["Leverage selalu aman", "Korelasi bisa melonjak saat krisis sehingga diversifikasi gagal", "Obligasi tak berisiko", "Nobel menjamin untung"],
+            answer: 1,
+            explain: "Saat panik 1998, korelasi melonjak dan posisi LTCM merugi bersamaan, diperparah leverage.",
+          },
+          {
+            q: "Portofolio 50% saham (10%) dan 50% obligasi (6%). Imbal hasil harapan?",
+            options: ["6%", "8%", "10%", "16%"],
+            answer: 1,
+            explain: "(0,5 x 10%) + (0,5 x 6%) = 5% + 3% = 8%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

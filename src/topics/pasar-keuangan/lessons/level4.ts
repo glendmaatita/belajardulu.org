@@ -518,4 +518,138 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "durasi-sensitivitas-obligasi",
+    levelId: "obligasi",
+    order: 5,
+    title: "Durasi: Sensitivitas Harga Obligasi",
+    summary: "Mengapa obligasi jangka panjang lebih sensitif terhadap perubahan yield, dan bagaimana durasi mengukurnya. Dengan kalkulator obligasi.",
+    durationMin: 14,
+    tags: ["durasi", "risiko suku bunga", "sensitivitas", "obligasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu harga obligasi bergerak berlawanan dengan yield. Tetapi tidak semua obligasi sama sensitifnya. <strong>Durasi</strong> mengukur seberapa besar harga obligasi berubah ketika yield bergerak. Makin panjang durasi, makin tajam harga bereaksi terhadap perubahan suku bunga.",
+      },
+      {
+        type: "paragraph",
+        html: "Aturan praktisnya: <strong>perkiraan persen perubahan harga = -durasi x perubahan yield</strong>. Obligasi dengan durasi 8 akan turun sekitar 8% bila yield naik 1%, dan naik sekitar 8% bila yield turun 1%. Durasi dinyatakan dalam satuan tahun dan dipengaruhi oleh tenor serta besar kupon.",
+      },
+      {
+        type: "video",
+        comp: "YieldCurveVideo",
+        title: "Video: Yield dan Harga Obligasi",
+        caption: "Mengingatkan kembali hubungan terbalik yield dan harga yang menjadi dasar konsep durasi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Apa yang menambah durasi",
+        html: "Durasi <strong>lebih panjang</strong> bila tenor obligasi lebih panjang dan kuponnya lebih kecil. Durasi <strong>lebih pendek</strong> bila tenor pendek dan kupon besar, karena arus kas kembali lebih cepat. Obligasi tanpa kupon (zero coupon) memiliki durasi sama dengan tenornya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba kalkulatornya",
+        html: "Ubah tenor dan kupon pada kalkulator, lalu geser yield pasar untuk merasakan betapa obligasi bertenor panjang berayun lebih jauh harganya.",
+      },
+      { type: "widget", widget: "KalkulatorObligasi" },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Risiko suku bunga itu nyata",
+        html: "Memegang obligasi sampai jatuh tempo memang mengembalikan pokok penuh, tetapi bila harus dijual saat yield naik, kerugian harga bisa besar untuk obligasi berdurasi panjang. Inilah risiko suku bunga.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perkiraan Penurunan Harga saat Yield Naik 0,5%",
+        unit: "% penurunan harga",
+        source: "perhitungan: -durasi x 0,5%",
+        note: "Pada kenaikan yield yang sama, obligasi berdurasi lebih panjang kehilangan harga jauh lebih banyak.",
+        data: [
+          { label: "Durasi 2 th", value: 1, color: "#16a34a" },
+          { label: "Durasi 5 th", value: 2.5, color: "#0ea5e9" },
+          { label: "Durasi 8 th", value: 4, color: "#f59e0b" },
+          { label: "Durasi 12 th", value: 6, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua obligasi, kenaikan yield sama",
+        html: "Yield pasar naik 1%. Obligasi pendek berdurasi <strong>3 tahun</strong> turun sekitar 3 x 1% = <strong>3%</strong>. Obligasi panjang berdurasi <strong>10 tahun</strong> turun sekitar 10 x 1% = <strong>10%</strong>. Untuk investasi Rp100 juta, obligasi pendek rugi sekitar Rp3 juta sedangkan obligasi panjang rugi sekitar Rp10 juta dari pergerakan yield yang persis sama. Durasi menjelaskan perbedaan tajam ini.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Obligasi berdurasi 8 tahun. Yield pasar naik 0,5%. Berapa perkiraan persen penurunan harganya?",
+        answer: 4,
+        tolerance: 0.1,
+        suffix: "%",
+        solution: "Perubahan harga = -durasi x perubahan yield = -8 x 0,5% = <strong>turun sekitar 4%</strong>.",
+        hint: "Kalikan durasi dengan perubahan yield (dalam persen).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Faktor ini cenderung memperpanjang atau memperpendek durasi obligasi?",
+        buckets: ["Memperpanjang durasi", "Memperpendek durasi"],
+        items: [
+          { text: "Tenor 20 tahun", bucket: "Memperpanjang durasi" },
+          { text: "Kupon besar (mis. 12%)", bucket: "Memperpendek durasi" },
+          { text: "Tenor 2 tahun", bucket: "Memperpendek durasi" },
+          { text: "Obligasi tanpa kupon (zero coupon)", bucket: "Memperpanjang durasi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Silicon Valley Bank 2023 dan risiko durasi",
+        html: "<strong>Silicon Valley Bank (SVB)</strong> runtuh pada <strong>Maret 2023</strong> sebagian besar karena risiko durasi. Bank ini menempatkan dana nasabah pada obligasi pemerintah dan surat berbasis KPR <strong>bertenor panjang</strong> saat suku bunga masih rendah. Ketika bank sentral AS menaikkan suku bunga tajam sepanjang <strong>2022-2023</strong>, yield melonjak dan harga obligasi berdurasi panjang itu anjlok, menimbulkan kerugian belum terealisasi yang sangat besar. Saat nasabah menarik dana beramai-ramai, SVB terpaksa menjual obligasi dengan rugi dan kolaps dalam hitungan hari.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Durasi mengukur sensitivitas harga obligasi terhadap perubahan yield.",
+          "Perkiraan perubahan harga = -durasi x perubahan yield.",
+          "Tenor panjang dan kupon kecil memperpanjang durasi.",
+          "Obligasi berdurasi panjang jauh lebih berisiko terhadap kenaikan suku bunga.",
+          "Risiko durasi nyata: ia turut menjatuhkan Silicon Valley Bank pada 2023.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Durasi obligasi mengukur?",
+            options: ["Besar kupon", "Sensitivitas harga terhadap perubahan yield", "Peringkat kredit", "Pajak kupon"],
+            answer: 1,
+            explain: "Durasi menunjukkan seberapa besar harga berubah saat yield bergerak.",
+          },
+          {
+            q: "Obligasi durasi 6, yield naik 1%. Perkiraan perubahan harga?",
+            options: ["Naik 6%", "Turun 6%", "Turun 1%", "Tetap"],
+            answer: 1,
+            explain: "Perubahan = -6 x 1% = turun sekitar 6%.",
+          },
+          {
+            q: "Faktor yang memperpanjang durasi adalah?",
+            options: ["Kupon lebih besar", "Tenor lebih panjang", "Tenor lebih pendek", "Rating lebih tinggi"],
+            answer: 1,
+            explain: "Tenor lebih panjang (dan kupon lebih kecil) memperpanjang durasi.",
+          },
+          {
+            q: "Mengapa SVB merugi besar pada 2023?",
+            options: ["Memegang saham teknologi", "Obligasi berdurasi panjang anjlok saat suku bunga naik", "Gagal bayar nasabah", "Kurs rupiah melemah"],
+            answer: 1,
+            explain: "Kenaikan suku bunga menjatuhkan harga obligasi panjang yang dipegang SVB.",
+          },
+          {
+            q: "Obligasi durasi 10, yield naik 0,5%. Perkiraan penurunan harga?",
+            options: ["2%", "5%", "10%", "0,5%"],
+            answer: 1,
+            explain: "10 x 0,5% = 5%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

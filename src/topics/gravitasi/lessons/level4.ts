@@ -526,4 +526,139 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gelombang-gravitasi",
+    levelId: "energi-orbit",
+    order: 5,
+    title: "Gelombang Gravitasi",
+    summary:
+      "Bisakah dua lubang hitam yang bertabrakan menggetarkan ruang itu sendiri hingga terasa di Bumi? Kita renungkan dulu gagasan riak ruang-waktu, baru penemuan bersejarah LIGO menutup petualangan kita.",
+    durationMin: 15,
+    tags: ["fisika", "gravitasi", "gelombang-gravitasi", "ligo"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Lempar batu ke kolam, dan riak menyebar di permukaan air. Einstein meramalkan sesuatu yang lebih liar: massa yang berakselerasi hebat bisa membuat <strong>ruang-waktu itu sendiri</strong> beriak, mengirim gelombang gravitasi yang merambat dengan kecepatan cahaya. Selama seabad gelombang ini hanya teori, terlalu lemah untuk dideteksi. Lalu pada 2015, dua lubang hitam yang bertabrakan akhirnya tertangkap. Sebelum bertemu angka-angkanya, ayo pahami dulu apa yang sebenarnya bergetar.",
+      },
+      {
+        type: "video",
+        comp: "BahasaSemesta",
+        title: "Video: Riak di Ruang-Waktu",
+        caption: "Dua massa raksasa yang berputar memancarkan gelombang gravitasi.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan dua lubang hitam saling mengorbit makin rapat dan makin cepat, hingga ribuan putaran per detik sebelum bergabung. Tarian dahsyat ini mengaduk ruang-waktu dan memancarkan <strong>gelombang gravitasi</strong>, yaitu peregangan dan pemampatan ruang yang menjalar keluar. Saat gelombang melintasi Bumi, jarak antarbenda meregang lalu memampat sangat amat sedikit. Energi gelombang ini berasal dari massa lubang hitam itu sendiri, lewat kesetaraan massa dan energi <strong>E = m c&sup2;</strong>.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorProporsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Anggaran Massa pada Penggabungan Lubang Hitam GW150914",
+        unit: "massa Matahari",
+        source: "data LIGO 2016",
+        note: "Dua lubang hitam bermassa 36 dan 29 kali Matahari bergabung menjadi 62, bukan 65. Selisih sekitar 3 massa Matahari berubah menjadi energi gelombang gravitasi lewat E = m c kuadrat, terpancar hanya dalam sepersekian detik.",
+        data: [
+          { label: "Lubang hitam 1", value: 36, color: "#fb7185" },
+          { label: "Lubang hitam 2", value: 29, color: "#e879f9" },
+          { label: "Hasil gabungan", value: 62, color: "#a855f7" },
+          { label: "Terpancar sbg energi", value: 3, color: "#7c3aed" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada peristiwa GW150914, dua lubang hitam bermassa 36 dan 29 kali massa Matahari bergabung menjadi sebuah lubang hitam bermassa 62 kali massa Matahari. Berapa massa (dalam satuan massa Matahari) yang berubah menjadi energi gelombang gravitasi?",
+        answer: 3,
+        tolerance: 0.3,
+        suffix: " massa Matahari",
+        solution:
+          "Massa yang hilang = massa awal total - massa akhir = (36 + 29) - 62 = 65 - 62 = <strong>3 massa Matahari</strong>. Selisih ini terpancar sebagai energi gelombang gravitasi sesuai E = m c kuadrat.",
+        hint: "Jumlahkan kedua massa awal, lalu kurangi massa hasil gabungannya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pernyataan tentang gelombang gravitasi sebagai benar atau keliru.",
+        buckets: ["Benar", "Keliru"],
+        items: [
+          { text: "Gelombang gravitasi adalah riak pada ruang-waktu", bucket: "Benar" },
+          { text: "Gelombang gravitasi merambat dengan kecepatan cahaya", bucket: "Benar" },
+          { text: "Energi gelombang berasal dari sebagian massa lubang hitam (E = m c kuadrat)", bucket: "Benar" },
+          { text: "Gelombang gravitasi mudah dirasakan manusia tanpa alat", bucket: "Keliru" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: 14 September 2015, Saat Manusia Pertama Mendengar Ruang Bergetar",
+        html: "Pada 14 September 2015, dua detektor LIGO di Amerika Serikat menangkap getaran kembar berdurasi sepersekian detik, sinyal dari dua lubang hitam yang bergabung sekitar 1,3 miliar tahun cahaya jauhnya. Peregangan ruang yang terukur teramat kecil, jauh lebih kecil daripada seperseribu lebar inti atom, namun cermin-cermin LIGO yang berjarak 4 km cukup peka menangkapnya. Penemuan ini, yang membenarkan ramalan Einstein seabad sebelumnya, dianugerahi Hadiah Nobel Fisika 2017 untuk Rainer Weiss, Barry Barish, dan Kip Thorne. Sejak itu, gelombang gravitasi membuka 'indra' baru untuk mengamati alam semesta.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah seluruh petualangan, kita tutup dengan gagasan terbesar. Massa tidak hanya menarik (Newton), ia juga <strong>melengkungkan ruang-waktu</strong> (Einstein), dan ketika massa raksasa berakselerasi hebat, lengkungan itu menjalar sebagai <strong>gelombang gravitasi</strong> dengan kecepatan cahaya. Energinya datang dari massa lewat <strong>E = m c&sup2;</strong>. Dari apel Newton yang jatuh sampai dua lubang hitam yang menggetarkan ruang, semuanya adalah kisah satu gaya yang sama: gravitasi.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Gelombang gravitasi adalah riak ruang-waktu yang merambat dengan kecepatan cahaya.",
+          "Ia dipancarkan oleh massa raksasa yang berakselerasi hebat, seperti dua lubang hitam yang bergabung.",
+          "Energi gelombang berasal dari sebagian massa benda, lewat kesetaraan E = m c kuadrat.",
+          "Pada GW150914, sekitar 3 massa Matahari berubah menjadi energi gelombang gravitasi.",
+          "LIGO mendeteksinya pertama kali pada 2015, membuka cara baru mengamati alam semesta.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Gelombang gravitasi paling tepat digambarkan sebagai?",
+            options: [
+              "Gelombang suara di luar angkasa",
+              "Riak pada ruang-waktu itu sendiri",
+              "Berkas cahaya dari bintang",
+              "Aliran partikel bermuatan",
+            ],
+            answer: 1,
+            explain: "Gelombang gravitasi adalah riak ruang-waktu yang diramalkan Einstein.",
+          },
+          {
+            q: "Berapa kecepatan rambat gelombang gravitasi?",
+            options: ["Kecepatan suara", "Kecepatan cahaya", "Tak terhingga", "Bergantung sumbernya"],
+            answer: 1,
+            explain: "Gelombang gravitasi merambat dengan kecepatan cahaya.",
+          },
+          {
+            q: "Pada GW150914, dua lubang hitam bermassa 36 dan 29 Matahari bergabung menjadi 62. Berapa yang terpancar sebagai energi?",
+            options: ["3 massa Matahari", "7 massa Matahari", "65 massa Matahari", "Tidak ada"],
+            answer: 0,
+            explain: "(36 + 29) - 62 = 3 massa Matahari berubah menjadi energi gelombang gravitasi.",
+          },
+          {
+            q: "Dari mana energi gelombang gravitasi berasal saat lubang hitam bergabung?",
+            options: [
+              "Dari cahaya bintang di sekitarnya",
+              "Dari sebagian massa lubang hitam lewat E = m c kuadrat",
+              "Dari bahan bakar nuklir",
+              "Dari medan magnet",
+            ],
+            answer: 1,
+            explain: "Selisih massa sebelum dan sesudah penggabungan terpancar sebagai energi sesuai E = m c kuadrat.",
+          },
+          {
+            q: "Detektor apa yang pertama kali menangkap gelombang gravitasi pada 2015?",
+            options: ["Teleskop Hubble", "LIGO", "Teleskop James Webb", "Radar cuaca"],
+            answer: 1,
+            explain: "LIGO mendeteksi gelombang gravitasi pertama kali pada 14 September 2015.",
+          },
+        ],
+      },
+    ],
+  },
 ];

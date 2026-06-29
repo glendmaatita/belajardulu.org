@@ -538,4 +538,147 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "pembagian-muatan-konduktor",
+    levelId: "muatan-coulomb",
+    order: 5,
+    title: "Pembagian Muatan pada Konduktor",
+    summary:
+      "Dua bola logam identik yang bersentuhan selalu berbagi muatan secara adil. Kita amati dulu bagaimana muatan menyebar saat konduktor bertemu, baru aturannya kita rangkum di akhir.",
+    durationMin: 13,
+    tags: ["listrik statis", "muatan", "konduktor", "konduksi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sentuhkan bola logam bermuatan ke bola logam lain yang netral, lalu pisahkan. Sekarang keduanya bermuatan, padahal tadi hanya satu yang bermuatan. Tidak ada muatan baru yang lahir, yang terjadi adalah muatan lama <strong>terbagi</strong> ke kedua bola. Sebelum bertemu rumus, ayo selidiki dulu menurut aturan apa muatan itu membagi diri.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Sebab dan Akibat pada Benda",
+        caption:
+          "Saat dua konduktor bersentuhan, muatan mengalir sampai keduanya seimbang. Mari kita pinjam cara berpikir sebab-akibat ini.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bola A bermuatan 8 µC menyentuh bola identik B yang netral. Muatan negatif (elektron) mengalir sampai kedua bola sama 'penuh', sehingga masing-masing membawa 4 µC. Sentuhkan A (kini 4 µC) ke bola netral identik baru, A menjadi 2 µC. Ulangi terus, muatan A selalu <strong>separuh</strong> dari sebelumnya. Belum ada rumus, tetapi kita sudah melihat bahwa konduktor identik berbagi muatan sama rata.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Bagi rata pada bola identik",
+        html: "Pada konduktor, muatan bebas bergerak sampai potensialnya merata. Untuk dua bola <strong>identik</strong> yang bersentuhan, muatan total terbagi <strong>sama besar</strong> ke keduanya. Jika ukurannya berbeda, muatan terbagi sebanding jari-jari (bola lebih besar menampung lebih banyak), bukan rata.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorProporsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Muatan pada Bola A setelah Tiap Sentuhan dengan Bola Netral Identik Baru",
+        unit: "µC",
+        source: "perhitungan q_baru = q_lama / 2 untuk dua bola identik",
+        note: "Setiap sentuhan dengan bola netral identik membagi muatan menjadi dua sama besar, sehingga muatan A berkurang separuh tiap kali. Inilah cara cepat menurunkan muatan secara terukur.",
+        data: [
+          { label: "Awal", value: 8, color: "#facc15" },
+          { label: "Sentuhan 1", value: 4, color: "#a3e635" },
+          { label: "Sentuhan 2", value: 2, color: "#4ade80" },
+          { label: "Sentuhan 3", value: 1, color: "#2dd4bf" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Bola logam A bermuatan +9 µC menyentuh bola identik B bermuatan +3 µC, lalu dipisahkan. Berapa muatan pada tiap bola sekarang?",
+        answer: 6,
+        tolerance: 0.1,
+        suffix: " µC",
+        solution:
+          "Karena kedua bola identik, muatan total dibagi rata: q_tiap = (q₁ + q₂)/2 = (9 + 3)/2 = <strong>6 µC</strong>. Muatan total tetap kekal: 6 + 6 = 12 µC, sama dengan 9 + 3 sebelumnya.",
+        hint: "Jumlahkan kedua muatan, lalu bagi dua karena bolanya identik.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Bola A disentuhkan ke bola identik B lalu dipisahkan. Tentukan apa yang terjadi pada muatan bola A.",
+        buckets: ["Muatan A bertambah", "Muatan A berkurang", "Muatan A tetap"],
+        items: [
+          { text: "A = +8 µC menyentuh B netral", bucket: "Muatan A berkurang" },
+          { text: "A = +2 µC menyentuh B = +8 µC", bucket: "Muatan A bertambah" },
+          { text: "A = +4 µC menyentuh B = +4 µC", bucket: "Muatan A tetap" },
+          { text: "A netral menyentuh B = +6 µC", bucket: "Muatan A bertambah" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengukur Muatan dengan Bola Pembagi",
+        html: "Seorang siswa ingin tahu muatan sebuah bola logam tanpa alat ukur langsung. Ia menyentuhkan bola itu ke bola identik milik elektroskop yang terkalibrasi, dan alat membaca 4 µC pada bola elektroskop. Karena kedua bola identik, muatan terbagi rata, sehingga sebelum disentuh bola asal membawa 2 × 4 = <strong>8 µC</strong>. Memahami pembagian muatan menjadikan sentuhan sederhana sebagai alat ukur.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. Untuk dua konduktor <strong>identik</strong> yang bersentuhan, muatan terbagi rata: <strong>q_tiap = (q₁ + q₂)/2</strong>. Untuk bola berbeda ukuran, muatan terbagi sebanding jari-jari (q₁/q₂ = r₁/r₂). Pada semua kasus, muatan total tetap <strong>kekal</strong>: yang berpindah hanya elektron sampai potensial merata.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Muatan pada konduktor mengalir bebas sampai potensialnya merata.",
+          "Dua konduktor identik yang bersentuhan berbagi muatan sama besar: q_tiap = (q₁+q₂)/2.",
+          "Bola berbeda ukuran membagi muatan sebanding jari-jari, bukan rata.",
+          "Tiap sentuhan dengan bola netral identik membagi muatan menjadi separuh.",
+          "Muatan total selalu kekal dalam setiap pembagian.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dua bola logam identik bermuatan +10 µC dan +2 µC disentuhkan lalu dipisahkan. Muatan tiap bola menjadi?",
+            options: ["+12 µC", "+6 µC", "+5 µC", "+2 µC"],
+            answer: 1,
+            explain: "Muatan total 12 µC dibagi rata pada dua bola identik, jadi masing-masing 6 µC.",
+          },
+          {
+            q: "Mengapa muatan pada dua konduktor identik terbagi sama besar?",
+            options: [
+              "Karena gravitasi",
+              "Karena muatan mengalir sampai potensial keduanya merata",
+              "Karena udara",
+              "Karena keduanya isolator",
+            ],
+            answer: 1,
+            explain: "Pada konduktor, muatan bergerak bebas sampai potensial seimbang.",
+          },
+          {
+            q: "Bola bermuatan +8 µC menyentuh tiga bola netral identik berturut-turut (satu per satu, bola baru). Muatan akhir bola asal kira-kira?",
+            options: ["8 µC", "4 µC", "2 µC", "1 µC"],
+            answer: 3,
+            explain: "Tiap sentuhan membagi dua: 8 → 4 → 2 → 1 µC.",
+          },
+          {
+            q: "Jika dua bola yang bersentuhan ukurannya berbeda, muatan terbagi?",
+            options: [
+              "Tetap sama rata",
+              "Sebanding jari-jari masing-masing bola",
+              "Semua ke bola kecil",
+              "Hilang ke udara",
+            ],
+            answer: 1,
+            explain: "Bola lebih besar menampung lebih banyak muatan, sebanding jari-jarinya.",
+          },
+          {
+            q: "Saat dua konduktor berbagi muatan, besaran yang selalu tetap adalah?",
+            options: ["Muatan tiap bola", "Muatan total", "Jari-jari bola", "Potensial awal"],
+            answer: 1,
+            explain: "Muatan total kekal; hanya pembagiannya yang berubah.",
+          },
+        ],
+      },
+    ],
+  },
 ];

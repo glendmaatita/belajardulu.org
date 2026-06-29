@@ -640,4 +640,145 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "aturan-inferensi",
+    levelId: "proposisional",
+    order: 5,
+    title: "Aturan Inferensi Proposisional",
+    summary: "Bentuk-bentuk argumen valid: silogisme disjungtif, silogisme hipotetis, dan dilema konstruktif.",
+    durationMin: 14,
+    tags: ["logika proposisional", "inferensi", "silogisme disjungtif", "silogisme hipotetis"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Selain modus ponens dan modus tollens, logika proposisional punya beberapa <strong>aturan inferensi</strong> baku: pola argumen yang selalu valid berapa pun nilai proposisinya. Menghafal polanya membuat kita cepat menilai apakah sebuah kesimpulan benar-benar mengikuti premisnya.",
+      },
+      {
+        type: "paragraph",
+        html: "Tiga pola yang sangat sering dipakai sehari-hari adalah <strong>silogisme disjungtif</strong> (mencoret salah satu pilihan), <strong>silogisme hipotetis</strong> (merantai dua implikasi), dan <strong>dilema konstruktif</strong> (dua jalur yang sama-sama menuju kesimpulan).",
+      },
+      {
+        type: "video",
+        comp: "TabelKebenaran",
+        title: "Video: Tabel Kebenaran",
+        caption: "Setiap aturan inferensi yang valid dapat dibuktikan dengan memeriksa seluruh baris tabel kebenarannya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga aturan inti",
+        html: "<strong>Silogisme disjungtif</strong>: p ATAU q; bukan p; maka q. <strong>Silogisme hipotetis</strong>: jika p maka q; jika q maka r; maka jika p maka r. <strong>Dilema konstruktif</strong>: (jika p maka q) DAN (jika r maka s); p ATAU r; maka q ATAU s.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Disjungsi inklusif",
+        html: "Silogisme disjungtif memakai ATAU dalam arti <strong>inklusif</strong> (minimal satu benar, boleh keduanya). Jika kita mencoret p (bukan p), maka q harus benar agar 'p ATAU q' tetap benar.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Jangan tertukar dengan bentuk keliru",
+        html: "Pada disjungsi inklusif, dari 'p ATAU q' dan 'p benar' kita TIDAK boleh menyimpulkan 'bukan q'. Sebab keduanya bisa sama-sama benar. Yang sah hanyalah mencoret salah satu lalu menyimpulkan sisanya.",
+      },
+      {
+        type: "table",
+        headers: ["Aturan inferensi", "Bentuk", "Contoh sehari-hari"],
+        rows: [
+          ["Silogisme disjungtif", "p ATAU q; bukan p; maka q", "Kunci di saku kiri atau kanan; ternyata tak di kiri; maka di kanan"],
+          ["Silogisme hipotetis", "jika p maka q; jika q maka r; maka jika p maka r", "Jika belajar maka paham; jika paham maka lulus; maka jika belajar maka lulus"],
+          ["Dilema konstruktif", "(jika p maka q) DAN (jika r maka s); p ATAU r; maka q ATAU s", "Jika hujan bawa payung, jika panas bawa topi; hujan atau panas; maka bawa payung atau topi"],
+        ],
+        caption: "Tiga aturan inferensi proposisional yang valid beserta contohnya.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mencari ponsel yang hilang",
+        html: "Rina yakin ponselnya tertinggal di kelas atau di kantin (p ATAU q). Ia mengecek kelas dan tidak menemukannya (bukan p). Dengan silogisme disjungtif, ia menyimpulkan ponsel pasti di kantin (maka q), lalu langsung ke sana. Penalaran ini valid: mencoret satu pilihan dari dua membuat sisanya pasti, asalkan premis 'di kelas atau di kantin' memang benar.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dilema konstruktif memuat 4 proposisi berbeda (p, q, r, s). Berapa baris tabel kebenaran yang diperlukan untuk membuktikannya valid?",
+        answer: 16,
+        tolerance: 0,
+        solution: "Jumlah baris = 2^n = 2^4 = <strong>16</strong> baris. Aturan disebut valid bila pada setiap baris yang membuat semua premis benar, kesimpulannya juga benar.",
+        hint: "Gunakan 2 pangkat banyaknya proposisi.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Argumen valid ini memakai aturan inferensi yang mana?",
+        buckets: ["Silogisme disjungtif", "Silogisme hipotetis", "Dilema konstruktif"],
+        items: [
+          { text: "Lampu mati karena sekring atau kabel; bukan sekring; maka kabel", bucket: "Silogisme disjungtif" },
+          { text: "Jika hujan maka jalan basah; jika jalan basah maka licin; maka jika hujan maka licin", bucket: "Silogisme hipotetis" },
+          { text: "Menu hari ini soto atau bakso; ternyata bukan soto; maka bakso", bucket: "Silogisme disjungtif" },
+          { text: "Jika lulus maka senang, jika gagal maka belajar lagi; lulus atau gagal; maka senang atau belajar lagi", bucket: "Dilema konstruktif" },
+          { text: "Jika rajin maka pintar; jika pintar maka sukses; maka jika rajin maka sukses", bucket: "Silogisme hipotetis" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan nama aturan dengan bentuk simboliknya.",
+        pairs: [
+          { left: "Silogisme disjungtif", right: "p ATAU q; bukan p; maka q" },
+          { left: "Silogisme hipotetis", right: "jika p maka q; jika q maka r; maka jika p maka r" },
+          { left: "Dilema konstruktif", right: "(jika p maka q) DAN (jika r maka s); p ATAU r; maka q ATAU s" },
+          { left: "Modus ponens", right: "jika p maka q; p; maka q" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Buktikan sendiri dengan tabel",
+        html: "Bangun tabel kebenaran untuk premis dan kesimpulan sebuah aturan. Jika di setiap baris yang membuat semua premis benar kesimpulannya ikut benar, aturan itu terbukti valid.",
+      },
+      { type: "widget", widget: "TabelKebenaranBuilder" },
+      {
+        type: "takeaways",
+        items: [
+          "Aturan inferensi adalah pola argumen yang selalu valid.",
+          "Silogisme disjungtif mencoret satu pilihan dari 'p ATAU q' lalu menyimpulkan sisanya.",
+          "Silogisme hipotetis merantai dua implikasi menjadi satu.",
+          "Dilema konstruktif menyatukan dua jalur implikasi yang sama-sama mungkin.",
+          "Setiap aturan dapat dibuktikan valid lewat tabel kebenaran.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "'p ATAU q; bukan p; maka q' adalah aturan?",
+            options: ["Silogisme hipotetis", "Silogisme disjungtif", "Dilema konstruktif", "Modus tollens"],
+            answer: 1,
+            explain: "Mencoret salah satu pilihan dari disjungsi lalu menyimpulkan sisanya adalah silogisme disjungtif.",
+          },
+          {
+            q: "'Jika p maka q; jika q maka r; maka jika p maka r' adalah?",
+            options: ["Silogisme disjungtif", "Silogisme hipotetis", "Dilema konstruktif", "Negasi ganda"],
+            answer: 1,
+            explain: "Merantai dua implikasi menjadi satu adalah silogisme hipotetis.",
+          },
+          {
+            q: "Dalam silogisme disjungtif, ATAU dipakai dalam arti?",
+            options: ["Eksklusif (hanya satu)", "Inklusif (minimal satu)", "Selalu salah", "Tidak relevan"],
+            answer: 1,
+            explain: "Disjungsi inklusif berarti minimal satu benar, sehingga mencoret satu memastikan sisanya benar.",
+          },
+          {
+            q: "Dilema konstruktif menyimpulkan?",
+            options: ["q ATAU s dari dua implikasi dan satu disjungsi", "p DAN q", "bukan p", "satu nilai pasti"],
+            answer: 0,
+            explain: "Dari dua implikasi dan 'p ATAU r', dilema konstruktif menyimpulkan 'q ATAU s'.",
+          },
+          {
+            q: "Sebuah aturan inferensi disebut valid bila?",
+            options: ["Terdengar meyakinkan", "Pada setiap baris yang semua premisnya benar, kesimpulannya juga benar", "Premisnya pendek", "Banyak yang memakai"],
+            answer: 1,
+            explain: "Validitas dibuktikan ketika kesimpulan tak pernah salah saat semua premis benar.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -572,4 +572,163 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "hukum-hooke",
+    levelId: "bentuk-energi",
+    order: 5,
+    title: "Hukum Hooke dan Gaya Pegas",
+    summary:
+      "Makin jauh pegas ditarik, makin keras ia melawan. Gaya pegas dan regangan ternyata sejalan lurus, dan dari sanalah energi pegas lahir.",
+    durationMin: 13,
+    tags: ["fisika", "hukum hooke", "gaya pegas", "konstanta pegas"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Tarik sebuah pegas sedikit, ia menarik balik dengan lembut. Tarik lebih jauh, tarikannya makin kuat. Ada aturan rapi di balik perlawanan ini: selama tidak ditarik berlebihan, gaya pegas berbanding <strong>lurus</strong> dengan seberapa jauh ia direnggangkan. Inilah jantung dari energi yang tersimpan dalam pegas. Sebelum bertemu rumus, ayo amati dulu bagaimana gaya pegas tumbuh seiring tarikan.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Pegas yang Melawan Sebanding Tarikan",
+        caption:
+          "Gaya pegas tumbuh lurus terhadap regangan, selama pegas belum melewati batas elastisnya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Gantungkan karet gelang lalu beri beban satu klip kertas, ukur seberapa molor. Tambah jadi dua klip, lalu tiga klip. Pertambahan molornya kira-kira teratur: tiap klip menambah panjang yang sama. Gaya tarik (berat klip) dan tambahan panjang berjalan beriringan secara lurus. Itulah jejak hukum Hooke.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Konstanta pegas: ukuran kekakuan",
+        html: "Angka <strong>k</strong> pada pegas disebut konstanta pegas, satuannya newton per meter. Ia mengukur kekakuan: pegas kaku punya k besar, sehingga butuh gaya besar untuk meregangkannya sedikit. Pegas lembut punya k kecil dan mudah molor. Nilai k inilah kemiringan grafik gaya terhadap regangan.",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Gaya Pegas (k = 200 N/m) pada Berbagai Regangan",
+        unit: "newton",
+        source: "ilustrasi edukatif",
+        note: "Gaya naik lurus terhadap regangan: tiap tambahan 0,1 m menambah 20 N. Luas segitiga di bawah garis ini sama dengan energi pegas ½ k x².",
+        data: [
+          { label: "0 m", value: 0, color: "#a78bfa" },
+          { label: "0,1 m", value: 20, color: "#a78bfa" },
+          { label: "0,2 m", value: 40, color: "#a78bfa" },
+          { label: "0,3 m", value: 60, color: "#a78bfa" },
+          { label: "0,4 m", value: 80, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pegas dengan konstanta 200 N/m diregangkan sejauh 0,15 m. Berapa besar gaya pegasnya?",
+        answer: 30,
+        tolerance: 0.1,
+        suffix: " N",
+        solution:
+          "F = k x = 200 N/m x 0,15 m = <strong>30 newton</strong>. Inilah gaya yang menarik balik ke posisi semula.",
+        hint: "Kalikan konstanta pegas dengan besar regangan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah gaya 24 N meregangkan pegas sejauh 0,08 m. Berapa konstanta pegasnya?",
+        answer: 300,
+        tolerance: 0.5,
+        suffix: " N/m",
+        solution:
+          "Dari F = k x, maka k = F / x = 24 N / 0,08 m = <strong>300 newton per meter</strong>.",
+        hint: "Bagi gaya dengan besar regangan.",
+      },
+      {
+        type: "matchExercise",
+        prompt:
+          "Untuk pegas dengan konstanta 100 N/m, pasangkan regangan dengan gaya pegas yang muncul.",
+        pairs: [
+          { left: "Regangan 0,1 m", right: "10 N" },
+          { left: "Regangan 0,2 m", right: "20 N" },
+          { left: "Regangan 0,3 m", right: "30 N" },
+          { left: "Regangan 0,5 m", right: "50 N" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Timbangan Pegas di Pasar",
+        html: "Timbangan gantung di pasar bekerja persis dengan hukum Hooke. Saat kamu menggantungkan ikan seberat 5 kg, beratnya sekitar 50 N (dengan g = 10). Jika pegas timbangan memiliki konstanta 500 N/m, ia akan molor sejauh x = F / k = 50 / 500 = <strong>0,1 m</strong> atau 10 cm. Karena gaya dan regangan sebanding lurus, jarak molor itu bisa langsung diberi angka kilogram pada skalanya. Beban dua kali lipat membuat molor dua kali lipat, sehingga skala timbangan berjarak sama rata.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya. <strong>Hukum Hooke</strong>: gaya pegas sebanding dengan regangan, F = k x, dengan k konstanta pegas (N/m) dan x simpangan dari posisi alami. Karena grafik F terhadap x berupa garis lurus, luas segitiga di bawahnya, yaitu ½ x kali (k x), sama dengan ½ k x². Itulah asal rumus energi potensial pegas yang kita pelajari sebelumnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Hukum Hooke: gaya pegas sebanding lurus dengan regangan, F = k x.",
+          "Konstanta pegas k mengukur kekakuan, satuannya newton per meter.",
+          "Grafik gaya terhadap regangan berupa garis lurus dengan kemiringan k.",
+          "Luas di bawah grafik F-x sama dengan energi pegas ½ k x².",
+          "Hukum ini berlaku selama pegas belum melewati batas elastisnya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Hukum Hooke menyatakan gaya pegas sebanding dengan?",
+            options: [
+              "Kuadrat regangan",
+              "Regangan pegas",
+              "Massa pegas",
+              "Waktu tarikan",
+            ],
+            answer: 1,
+            explain: "F = k x, gaya sebanding lurus dengan regangan.",
+          },
+          {
+            q: "Satuan konstanta pegas adalah?",
+            options: ["joule", "newton", "newton per meter", "watt"],
+            answer: 2,
+            explain: "k diukur dalam newton per meter (N/m).",
+          },
+          {
+            q: "Pegas k = 150 N/m diregangkan 0,2 m. Gaya pegasnya?",
+            options: ["30 N", "750 N", "300 N", "3 N"],
+            answer: 0,
+            explain: "F = 150 x 0,2 = 30 N.",
+          },
+          {
+            q: "Pegas mana yang lebih kaku?",
+            options: [
+              "k kecil",
+              "k besar",
+              "Yang lebih panjang",
+              "Yang lebih ringan",
+            ],
+            answer: 1,
+            explain: "Konstanta k besar berarti butuh gaya besar untuk meregang sedikit.",
+          },
+          {
+            q: "Luas di bawah grafik gaya terhadap regangan menyatakan?",
+            options: [
+              "Daya pegas",
+              "Energi potensial pegas",
+              "Massa pegas",
+              "Konstanta pegas",
+            ],
+            answer: 1,
+            explain: "Luas segitiga ½ k x² adalah energi potensial pegas.",
+          },
+        ],
+      },
+    ],
+  },
 ];

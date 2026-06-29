@@ -549,4 +549,147 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "variabel-berpangkat",
+    levelId: "bahasa-simbol",
+    order: 5,
+    title: "Variabel Berpangkat: Saat Sisi Dikali Dirinya",
+    summary:
+      "Kenapa luas ditulis s² tetapi keliling cukup 4s? Kita ukur kebun persegi dulu sampai pangkat terasa alami, baru aturannya dirumuskan.",
+    durationMin: 13,
+    tags: ["aljabar", "pangkat", "kuadrat", "luas"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kamu punya kebun berbentuk persegi. Untuk memagari pinggirnya, kamu butuh tali sepanjang kelilingnya. Untuk menanaminya, kamu butuh tahu luasnya. Kedua hal ini bergantung pada panjang sisi yang sama, tetapi tumbuh dengan cara yang sangat berbeda. Ayo selidiki dulu.",
+      },
+      {
+        type: "video",
+        comp: "MenemukanLuas",
+        title: "Video: Sisi Persegi Bercerita tentang Luas",
+        caption: "Luas persegi adalah sisi dikali sisi, dan dari situ pangkat dua lahir.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Jika sisi kebun kita sebut <strong>s</strong>, kelilingnya = s + s + s + s = 4s. Luasnya = s × s. Coba beberapa nilai: sisi 2 m memberi luas 4, sisi 3 m memberi luas 9, sisi 4 m memberi luas 16. Menulis s × s berulang itu melelahkan, jadi kita singkat menjadi <strong>s²</strong>, dibaca 's pangkat dua' atau 's kuadrat'.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua kelajuan tumbuh yang berbeda",
+        html: "Keliling 4s tumbuh <strong>tetap</strong>: tiap sisi bertambah 1 m, keliling bertambah 4 m. Tetapi luas s² tumbuh <strong>makin cepat</strong>: dari 9 ke 16, ke 25, ke 36, lompatannya membesar. Pangkat dua membuat angka melesat, dan itulah ciri suku kuadrat.",
+      },
+      {
+        type: "widget",
+        widget: "PenemuLuas",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Luas Persegi saat Sisinya Bertambah",
+        unit: "meter persegi",
+        source: "luas = s², sisi 1 sampai 6 meter",
+        note: "Garis melengkung naik makin tajam: itu tanda khas pangkat dua, beda dari keliling 4s yang naik lurus.",
+        data: [
+          { label: "1 m", value: 1, color: "#fb7185" },
+          { label: "2 m", value: 4, color: "#f472b6" },
+          { label: "3 m", value: 9, color: "#e879f9" },
+          { label: "4 m", value: 16, color: "#c084fc" },
+          { label: "5 m", value: 25, color: "#a855f7" },
+          { label: "6 m", value: 36, color: "#9333ea" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Berapa luas kebun persegi yang panjang sisinya 7 meter?",
+        answer: 49,
+        suffix: " m²",
+        solution:
+          "Luas persegi = s² = 7 × 7 = <strong>49 m²</strong>. Bandingkan kelilingnya yang hanya 4 × 7 = 28 m.",
+        hint: "Luas persegi adalah sisi dikali sisi, jadi 7 × 7.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap suku berdasarkan pangkat variabelnya.",
+        buckets: ["Berpangkat 1 (linear)", "Berpangkat 2 (kuadrat)"],
+        items: [
+          { text: "4s (keliling)", bucket: "Berpangkat 1 (linear)" },
+          { text: "s² (luas)", bucket: "Berpangkat 2 (kuadrat)" },
+          { text: "2a", bucket: "Berpangkat 1 (linear)" },
+          { text: "a²", bucket: "Berpangkat 2 (kuadrat)" },
+          { text: "3x", bucket: "Berpangkat 1 (linear)" },
+          { text: "x²", bucket: "Berpangkat 2 (kuadrat)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan panjang sisi dengan luas perseginya (s²).",
+        pairs: [
+          { left: "Sisi 2", right: "4" },
+          { left: "Sisi 3", right: "9" },
+          { left: "Sisi 4", right: "16" },
+          { left: "Sisi 5", right: "25" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pizza yang digandakan",
+        html: "Sebuah pizza berdiameter 20 cm (jari-jari 10 cm) punya luas sekitar 3,14 × 10² = 314 cm². Saat jari-jari digandakan menjadi 20 cm, luasnya menjadi 3,14 × 20² = <strong>1.256 cm²</strong>, yaitu <strong>empat kali</strong> lipat, bukan dua kali. Karena luas memakai pangkat dua, menggandakan sisi membuat luas melonjak empat kali. Itulah mengapa pizza besar terasa jauh lebih banyak isinya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah mengukur, baru kita rumuskan: <strong>pangkat</strong> menyatakan berapa kali sebuah variabel dikali dirinya sendiri. s² = s × s, dan x³ = x × x × x. Pangkat tertinggi pada sebuah suku disebut <strong>derajat</strong>. Suku berderajat 1 (seperti 4s) tumbuh lurus, sedangkan suku berderajat 2 (seperti s²) tumbuh makin cepat.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pangkat menyatakan berapa kali variabel dikali dirinya: s² = s × s.",
+          "Keliling 4s adalah suku berpangkat 1; luas s² adalah suku berpangkat 2.",
+          "Suku berpangkat 2 tumbuh makin cepat, bukan lurus seperti suku berpangkat 1.",
+          "Menggandakan sisi membuat luas menjadi empat kali, bukan dua kali.",
+          "Pangkat tertinggi pada suku disebut derajat suku itu.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bentuk s² berarti?",
+            options: ["s + s", "s × s", "2 × s", "s ÷ 2"],
+            answer: 1,
+            explain: "Pangkat dua berarti dikalikan dirinya sendiri, jadi s × s.",
+          },
+          {
+            q: "Keliling persegi dengan sisi s ditulis sebagai?",
+            options: ["4s", "s²", "2s", "s + 4"],
+            answer: 0,
+            explain: "Keliling = s + s + s + s = 4s, sebuah suku berpangkat 1.",
+          },
+          {
+            q: "Luas persegi dengan sisi 6 adalah?",
+            options: ["36", "12", "24", "18"],
+            answer: 0,
+            explain: "Luas = 6 × 6 = 36.",
+          },
+          {
+            q: "Jika sisi persegi digandakan menjadi dua kali, luasnya menjadi?",
+            options: ["Dua kali", "Empat kali", "Tetap", "Delapan kali"],
+            answer: 1,
+            explain: "Karena luas memakai pangkat dua, (2s)² = 4s², jadi empat kali lipat.",
+          },
+          {
+            q: "Derajat dari suku x² adalah?",
+            options: ["0", "1", "2", "3"],
+            answer: 2,
+            explain: "Pangkat tertinggi variabelnya 2, jadi derajatnya 2.",
+          },
+        ],
+      },
+    ],
+  },
 ];

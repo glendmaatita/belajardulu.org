@@ -595,4 +595,160 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "energi-listrik-kwh",
+    levelId: "efisiensi-konversi",
+    order: 5,
+    title: "Energi Listrik dan kWh",
+    summary:
+      "Tagihan listrik menghitung energi, bukan daya. Satu alat boros yang menyala lama bisa lebih mahal daripada banyak alat hemat. Kita ubah watt jadi rupiah.",
+    durationMin: 13,
+    tags: ["fisika", "energi listrik", "kWh", "daya"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Tagihan listrik di rumahmu tidak menghitung seberapa kuat alatmu, melainkan seberapa banyak <strong>energi</strong> yang dipakai. Energi itu adalah daya dikali lama pemakaian. Lampu kecil yang menyala seharian bisa memakan energi lebih besar daripada setrika kuat yang dipakai sebentar. Sebelum rangkuman, ayo pahami dulu bagaimana watt dan jam berubah menjadi kilowatt-jam, satuan yang muncul di meteran listrik.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Dari Watt Menjadi Rupiah",
+        caption:
+          "Energi listrik adalah daya dikali waktu, dan itulah yang dihitung pada tagihan listrik.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Lihat label daya pada alat di rumahmu: lampu LED mungkin 10 W, kipas 50 W, kulkas 150 W, AC 1000 W. Kalikan dengan kira-kira berapa jam dipakai sehari. Kulkas yang 'hanya' 150 W tetapi menyala 24 jam ternyata memakan energi besar, sedangkan setrika 300 W yang dipakai 20 menit memakan jauh lebih sedikit. Tebak mana alat yang paling boros di rumahmu.",
+      },
+      {
+        type: "widget",
+        widget: "KalkulatorUsahaEnergi",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kilowatt-jam, bukan satuan baru",
+        html: "Satu <strong>kilowatt-jam</strong> (kWh) adalah energi yang dipakai alat berdaya 1000 watt selama 1 jam. Ini tetap energi biasa: 1 kWh sama dengan 1000 watt dikali 3600 sekon, yaitu 3.600.000 joule atau 3,6 megajoule. PLN memakai kWh karena joule terlalu kecil untuk pemakaian rumah.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Daya Khas Beberapa Alat Rumah Tangga",
+        unit: "watt",
+        source: "ilustrasi edukatif",
+        note: "Daya beda jauh antar alat. Tetapi energi (dan biaya) bergantung pada daya dikali lama pakai, bukan daya saja.",
+        data: [
+          { label: "Lampu LED", value: 10, color: "#fbcfe8" },
+          { label: "Kipas", value: 50, color: "#f9a8d4" },
+          { label: "TV", value: 100, color: "#f472b6" },
+          { label: "Kulkas", value: 150, color: "#ec4899" },
+          { label: "Setrika", value: 300, color: "#db2777" },
+          { label: "AC", value: 1000, color: "#be185d" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah setrika berdaya 300 W dipakai selama 2 jam. Berapa energi listrik yang terpakai dalam kWh?",
+        answer: 0.6,
+        tolerance: 0.01,
+        suffix: " kWh",
+        solution:
+          "Energi = daya x waktu = 0,3 kW x 2 jam = <strong>0,6 kWh</strong>. (300 W diubah dulu menjadi 0,3 kW.)",
+        hint: "Ubah watt menjadi kilowatt, lalu kalikan dengan jam.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Jika tarif listrik Rp1.500 per kWh, berapa biaya memakai setrika 0,6 kWh tadi?",
+        answer: 900,
+        tolerance: 1,
+        prefix: "Rp",
+        solution:
+          "Biaya = energi x tarif = 0,6 kWh x Rp1.500 = <strong>Rp900</strong>.",
+        hint: "Kalikan jumlah kWh dengan tarif per kWh.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Berdasarkan dayanya, kelompokkan alat berikut sebagai pemakai daya besar atau kecil.",
+        buckets: ["Daya besar", "Daya kecil"],
+        items: [
+          { text: "AC ruangan", bucket: "Daya besar" },
+          { text: "Pemanas air listrik", bucket: "Daya besar" },
+          { text: "Lampu LED", bucket: "Daya kecil" },
+          { text: "Kipas angin meja", bucket: "Daya kecil" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Kulkas yang Menyala Sepanjang Bulan",
+        html: "Sebuah kulkas berdaya 150 W menyala terus 24 jam sehari. Energi hariannya = 0,15 kW x 24 jam = 3,6 kWh. Dalam sebulan (30 hari) menjadi 3,6 x 30 = <strong>108 kWh</strong>. Dengan tarif Rp1.500 per kWh, biayanya sekitar 108 x Rp1.500 = <strong>Rp162.000</strong> per bulan. Padahal dayanya kecil dibanding AC. Rahasianya ada pada waktu: alat berdaya sedang yang menyala terus-menerus bisa mendominasi tagihan. Inilah mengapa kulkas hemat energi sangat berharga, sebab ia bekerja tanpa henti.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya. <strong>Energi listrik</strong> = daya x waktu, sama seperti W = P x t. Dalam satuan praktis: energi (kWh) = daya (kW) x waktu (jam). <strong>Biaya</strong> = energi (kWh) x tarif (rupiah per kWh). Karena ada faktor waktu, alat berdaya kecil yang menyala lama bisa lebih boros daripada alat berdaya besar yang dipakai sebentar. Untuk mengubah ke joule: 1 kWh = 3,6 juta joule.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Tagihan listrik menghitung energi (kWh), bukan daya (watt).",
+          "Energi (kWh) = daya (kW) x waktu (jam).",
+          "1 kWh = 3,6 juta joule, satuan praktis untuk pemakaian rumah.",
+          "Biaya = jumlah kWh dikali tarif per kWh.",
+          "Alat berdaya kecil yang menyala lama bisa lebih boros daripada alat besar sesaat.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Tagihan listrik rumah menghitung?",
+            options: [
+              "Daya alat (watt)",
+              "Energi yang dipakai (kWh)",
+              "Massa alat",
+              "Suhu kabel",
+            ],
+            answer: 1,
+            explain: "Yang ditagih adalah energi dalam kWh, yaitu daya dikali waktu.",
+          },
+          {
+            q: "Satu kilowatt-jam sama dengan?",
+            options: ["3.600 joule", "1.000 joule", "3.600.000 joule", "60 joule"],
+            answer: 2,
+            explain: "1 kWh = 1000 W x 3600 s = 3.600.000 joule.",
+          },
+          {
+            q: "Lampu 20 W menyala 5 jam. Energinya?",
+            options: ["0,1 kWh", "100 kWh", "1 kWh", "0,4 kWh"],
+            answer: 0,
+            explain: "0,02 kW x 5 jam = 0,1 kWh.",
+          },
+          {
+            q: "Energi 4 kWh dengan tarif Rp1.500 per kWh berbiaya?",
+            options: ["Rp600", "Rp6.000", "Rp375", "Rp4.500"],
+            answer: 1,
+            explain: "4 x Rp1.500 = Rp6.000.",
+          },
+          {
+            q: "Mengapa kulkas bisa mendominasi tagihan meski dayanya sedang?",
+            options: [
+              "Karena dayanya sangat besar",
+              "Karena menyala terus 24 jam",
+              "Karena melanggar kekekalan energi",
+              "Karena tidak butuh listrik",
+            ],
+            answer: 1,
+            explain: "Energi = daya x waktu, dan kulkas menyala sepanjang hari.",
+          },
+        ],
+      },
+    ],
+  },
 ];

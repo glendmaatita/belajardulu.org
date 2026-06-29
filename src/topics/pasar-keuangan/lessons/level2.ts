@@ -508,4 +508,138 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "inflasi-dan-suku-bunga-riil",
+    levelId: "pasaruang",
+    order: 5,
+    title: "Inflasi & Suku Bunga Riil",
+    summary: "Mengapa imbal hasil nominal menyesatkan: daya beli sebenarnya diukur oleh suku bunga riil setelah inflasi.",
+    durationMin: 14,
+    tags: ["inflasi", "suku bunga riil", "daya beli", "nominal"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Angka imbal hasil yang Anda lihat di brosur deposito disebut <strong>suku bunga nominal</strong>. Tetapi yang menentukan apakah kekayaan Anda benar-benar bertambah adalah <strong>suku bunga riil</strong>, yaitu suku bunga nominal setelah dikurangi <strong>inflasi</strong>. Inflasi menggerus daya beli uang dari waktu ke waktu.",
+      },
+      {
+        type: "paragraph",
+        html: "Pendekatan sederhananya: <strong>suku bunga riil = suku bunga nominal - inflasi</strong>. Jika deposito memberi 6% sementara inflasi 4%, daya beli Anda sebenarnya hanya tumbuh sekitar 2% per tahun. Bila inflasi melampaui bunga nominal, suku bunga riil menjadi negatif dan uang Anda kehilangan daya beli meski saldonya bertambah.",
+      },
+      {
+        type: "video",
+        comp: "SukuBungaAcuan",
+        title: "Video: Suku Bunga dan Daya Beli",
+        caption: "Bagaimana suku bunga acuan dan inflasi bersama menentukan imbal hasil riil.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Nominal vs riil",
+        html: "<strong>Nominal</strong> adalah angka di atas kertas. <strong>Riil</strong> adalah nominal dikurangi inflasi, mencerminkan pertambahan daya beli sesungguhnya. Selalu pikirkan dalam istilah riil saat menilai investasi jangka panjang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba kalkulatornya",
+        html: "Hitung bunga bersih deposito, lalu bayangkan menguranginya dengan inflasi untuk melihat berapa pertambahan daya beli yang tersisa.",
+      },
+      { type: "widget", widget: "KalkulatorDeposito" },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Suku bunga riil negatif",
+        html: "Ketika inflasi lebih tinggi dari bunga simpanan, menabung dalam bentuk tunai justru membuat daya beli menyusut. Inilah alasan dana jangka panjang sering dialihkan ke aset yang imbal hasilnya melampaui inflasi.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Suku Bunga Riil Deposito 6% pada Berbagai Tingkat Inflasi",
+        unit: "% riil per tahun",
+        source: "ilustrasi, bunga nominal tetap 6%",
+        note: "Dengan bunga nominal tetap 6%, naiknya inflasi menggerus imbal hasil riil hingga bisa negatif.",
+        data: [
+          { label: "Inflasi 2%", value: 4, color: "#16a34a" },
+          { label: "Inflasi 4%", value: 2, color: "#0ea5e9" },
+          { label: "Inflasi 6%", value: 0, color: "#f59e0b" },
+          { label: "Inflasi 8%", value: -2, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Deposito kalah inflasi",
+        html: "Pak Andi menaruh Rp100 juta di deposito berbunga 5% per tahun, sehingga saldonya menjadi Rp105 juta setahun kemudian. Namun inflasi tahun itu 7%, sehingga harga barang yang dulu Rp100 juta kini menjadi Rp107 juta. Secara nominal Pak Andi untung Rp5 juta, tetapi suku bunga riilnya 5% - 7% = <strong>negatif 2%</strong>. Daya belinya justru menyusut meski saldo rekening bertambah.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Deposito memberi bunga nominal 6% per tahun, inflasi 4% per tahun. Berapa perkiraan suku bunga riilnya (dalam %)?",
+        answer: 2,
+        tolerance: 0,
+        suffix: "%",
+        solution: "Suku bunga riil = nominal - inflasi = 6% - 4% = <strong>2%</strong>. Inilah pertambahan daya beli yang sebenarnya.",
+        hint: "Kurangkan inflasi dari suku bunga nominal.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Berdasarkan bunga nominal dan inflasi, suku bunga riilnya positif atau negatif?",
+        buckets: ["Riil positif", "Riil negatif"],
+        items: [
+          { text: "Bunga 7%, inflasi 4%", bucket: "Riil positif" },
+          { text: "Bunga 5%, inflasi 8%", bucket: "Riil negatif" },
+          { text: "Bunga 6%, inflasi 3%", bucket: "Riil positif" },
+          { text: "Bunga 4%, inflasi 6%", bucket: "Riil negatif" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Hiperinflasi Indonesia pertengahan 1960-an",
+        html: "Indonesia pernah mengalami <strong>hiperinflasi</strong> pada pertengahan 1960-an. Inflasi melonjak hingga sekitar <strong>635% pada 1966</strong>, membuat suku bunga riil sangat negatif dan menguapkan nilai tabungan masyarakat dalam hitungan bulan. Untuk memulihkan kepercayaan terhadap rupiah, pemerintah kemudian menempuh program stabilisasi ketat. Peristiwa ini menegaskan bahwa tanpa pengendalian inflasi, bunga nominal setinggi apa pun tak menjamin daya beli terjaga.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Suku bunga nominal adalah angka tertera; suku bunga riil sudah dikurangi inflasi.",
+          "Suku bunga riil = nominal - inflasi (pendekatan sederhana).",
+          "Inflasi menggerus daya beli uang dari waktu ke waktu.",
+          "Bila inflasi melampaui bunga, suku bunga riil negatif dan daya beli menyusut.",
+          "Untuk jangka panjang, nilai investasi dari imbal hasil riilnya, bukan nominal.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Suku bunga riil adalah?",
+            options: ["Bunga sebelum pajak", "Bunga nominal dikurangi inflasi", "Bunga ditambah inflasi", "Bunga acuan BI"],
+            answer: 1,
+            explain: "Suku bunga riil mengukur pertambahan daya beli, yaitu nominal dikurangi inflasi.",
+          },
+          {
+            q: "Jika bunga deposito 5% dan inflasi 7%, suku bunga riilnya?",
+            options: ["+12%", "+2%", "-2%", "0%"],
+            answer: 2,
+            explain: "5% - 7% = -2%, sehingga daya beli menyusut meski saldo bertambah.",
+          },
+          {
+            q: "Apa dampak inflasi terhadap uang tunai?",
+            options: ["Menambah daya belinya", "Menggerus daya belinya", "Tidak berpengaruh", "Membuatnya bebas pajak"],
+            answer: 1,
+            explain: "Inflasi menaikkan harga barang sehingga daya beli sejumlah uang yang sama menurun.",
+          },
+          {
+            q: "Kapan suku bunga riil menjadi negatif?",
+            options: ["Saat inflasi lebih tinggi dari bunga nominal", "Saat bunga nominal lebih tinggi dari inflasi", "Saat inflasi nol", "Saat bunga acuan turun"],
+            answer: 0,
+            explain: "Bila inflasi melampaui bunga nominal, hasilnya negatif dan daya beli berkurang.",
+          },
+          {
+            q: "Bunga nominal 8%, inflasi 5%. Suku bunga riilnya kira-kira?",
+            options: ["3%", "13%", "5%", "8%"],
+            answer: 0,
+            explain: "8% - 5% = 3%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -605,4 +605,171 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "mesin-uap-revolusi-industri",
+    levelId: "mesin-kalor",
+    order: 5,
+    title: "Mesin Uap dan Lahirnya Revolusi Industri",
+    summary:
+      "Mesin uap pertama hanya mengubah sekitar 1% panas menjadi gerak, tetapi mengubah dunia. Perbaikannya selama dua abad mengikuti satu hukum: efisiensi dibatasi suhu. Kita telusuri dulu sebelum berumus.",
+    durationMin: 14,
+    tags: ["fisika", "termodinamika", "mesin uap", "efisiensi", "sejarah"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Pada awal 1700-an, mesin uap pertama dibuat untuk memompa air keluar dari tambang. Mesin itu sangat boros: dari seluruh kalor batu bara yang dibakar, hanya sekitar 1% berubah menjadi gerak. Namun penemuan ini memicu <strong>Revolusi Industri</strong>. Selama dua abad berikutnya, efisiensinya naik puluhan kali lipat, tetapi tidak pernah lepas dari batas yang ditetapkan termodinamika. Ayo telusuri perjalanannya dulu sebelum bertemu rumusnya.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Kalor Pembakaran Menjadi Gerak",
+        caption: "Mesin uap memanaskan air menjadi uap bertekanan yang mendorong piston atau memutar turbin.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan mesin uap: batu bara memanaskan air menjadi uap panas (sumber panas T<sub>h</sub>), uap mendorong piston melakukan usaha, lalu uap mendingin dan mengembun di kondensor (sumber dingin T<sub>c</sub>). Amati polanya: makin panas uapnya dan makin dingin kondensornya, makin besar fraksi kalor yang bisa jadi gerak. Mesin awal boros karena uapnya tidak terlalu panas dan banyak kalor bocor. Setiap perbaikan sejarah pada dasarnya menaikkan T<sub>h</sub> atau menurunkan T<sub>c</sub>.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dari 1% menuju 60%",
+        html: "Mesin uap Newcomen (1712) hanya berefisiensi sekitar 1%. James Watt menambahkan <strong>kondensor terpisah</strong> pada 1769 sehingga silinder tetap panas, menaikkan efisiensi jadi sekitar 3%. Mesin pembakaran dan turbin modern, dengan suhu kerja jauh lebih tinggi, kini mencapai 30 sampai 60%. Semua peningkatan ini tetap tunduk pada batas Carnot: tidak ada mesin yang melampaui <strong>1 − T<sub>c</sub>/T<sub>h</sub></strong>.",
+      },
+      {
+        type: "widget",
+        widget: "KalkulatorUsahaEnergi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Efisiensi Mesin Kalor Sepanjang Sejarah",
+        unit: "%",
+        source: "ilustrasi data historis efisiensi mesin",
+        note: "Efisiensi naik dari sekitar 1% pada mesin Newcomen menjadi sekitar 60% pada pembangkit siklus gabungan modern, terutama berkat suhu uap yang makin tinggi.",
+        data: [
+          { label: "Newcomen 1712", value: 1, color: "#a16207" },
+          { label: "Watt 1780", value: 3, color: "#fb923c" },
+          { label: "Bensin modern", value: 30, color: "#fbbf24" },
+          { label: "Diesel modern", value: 42, color: "#34d399" },
+          { label: "Siklus gabungan", value: 60, color: "#38bdf8" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah mesin uap awal menyerap 10.000 J kalor dari pembakaran dan menghasilkan usaha 400 J. Berapa efisiensinya (dalam persen)?",
+        answer: 4,
+        tolerance: 0.2,
+        suffix: " %",
+        solution:
+          "Efisiensi η = W / Q<sub>h</sub> = 400 / 10.000 = 0,04 = <strong>4%</strong>. Sangat boros: 9.600 J terbuang sebagai panas. Mesin uap awal memang seperti ini, tetapi tetap berguna karena tenaga kuda dan air sangat mahal saat itu.",
+        hint: "Efisiensi = usaha keluar dibagi kalor masuk, lalu kali 100%.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Mesin uap itu bekerja antara uap 450 K dan kondensor 300 K. Berapa efisiensi maksimum Carnot-nya (dalam persen)? Pakai η = 1 − Tc/Th.",
+        answer: 33.3,
+        tolerance: 0.5,
+        suffix: " %",
+        solution:
+          "η = 1 − T<sub>c</sub>/T<sub>h</sub> = 1 − 300/450 = 1 − 0,667 = 0,333 = <strong>33,3%</strong>. Bandingkan dengan efisiensi nyata 4% tadi: mesin awal jauh di bawah batas Carnot, jadi ada ruang besar untuk perbaikan, dan memang teknologi terus menutup jaraknya.",
+        hint: "Pakai η = 1 − Tc/Th dengan suhu dalam kelvin, lalu bandingkan dengan efisiensi nyata.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap mesin atau era dengan efisiensinya kira-kira.",
+        pairs: [
+          { left: "Mesin Newcomen (1712)", right: "Sekitar 1%" },
+          { left: "Mesin uap Watt (1780)", right: "Sekitar 3%" },
+          { left: "Mesin diesel modern", right: "Sekitar 40%" },
+          { left: "Pembangkit siklus gabungan", right: "Sekitar 60%" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap tindakan: menaikkan atau menurunkan efisiensi mesin uap.",
+        buckets: ["Menaikkan efisiensi", "Menurunkan efisiensi"],
+        items: [
+          { text: "Menaikkan suhu uap dari boiler (Th lebih tinggi)", bucket: "Menaikkan efisiensi" },
+          { text: "Menambah kondensor terpisah agar Tc lebih rendah", bucket: "Menaikkan efisiensi" },
+          { text: "Membiarkan banyak kalor bocor ke lingkungan", bucket: "Menurunkan efisiensi" },
+          { text: "Menjalankan mesin dengan gesekan besar tanpa pelumas", bucket: "Menurunkan efisiensi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Kondensor Terpisah Watt dan Revolusi Industri",
+        html: "Mesin Newcomen memanaskan lalu mendinginkan silinder yang sama setiap langkah, sehingga banyak kalor terbuang sia-sia. Pada 1769 James Watt menambahkan <strong>kondensor terpisah</strong>: uap mengembun di wadah lain yang dingin, sementara silinder utama tetap panas. Inovasi ini melipatgandakan efisiensi dan menghemat batu bara secara drastis. Mesin Watt menggerakkan pabrik tekstil, tambang, dan kemudian lokomotif, menjadi mesin pendorong utama Revolusi Industri. Satu perbaikan termodinamika sederhana mengubah arah sejarah ekonomi dunia.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menelusuri sejarahnya, rumusnya jelas. Efisiensi nyata mesin: <strong>η = W / Q<sub>h</sub></strong>. Batas tertinggi yang tak bisa dilampaui adalah efisiensi Carnot <strong>η<sub>maks</sub> = 1 − T<sub>c</sub>/T<sub>h</sub></strong> (suhu dalam kelvin). Seluruh sejarah perbaikan mesin uap, dari Newcomen ke Watt hingga turbin modern, pada intinya adalah usaha menaikkan T<sub>h</sub>, menurunkan T<sub>c</sub>, dan mengurangi kebocoran agar mesin nyata mendekati batas Carnot.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Mesin uap mengubah kalor pembakaran menjadi usaha, memicu Revolusi Industri.",
+          "Efisiensi naik dari sekitar 1% (Newcomen) menjadi 60% (siklus gabungan modern).",
+          "Inovasi kunci Watt adalah kondensor terpisah yang menjaga silinder tetap panas.",
+          "Semua mesin nyata tetap di bawah batas Carnot, η = 1 − Tc/Th.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mesin uap pada dasarnya mengubah kalor pembakaran menjadi?",
+            options: ["Listrik secara langsung", "Usaha mekanik (gerak)", "Cahaya", "Suara"],
+            answer: 1,
+            explain: "Mesin uap mengubah sebagian kalor menjadi usaha mekanik yang menggerakkan piston atau turbin.",
+          },
+          {
+            q: "Inovasi besar James Watt yang menaikkan efisiensi mesin uap adalah?",
+            options: [
+              "Memakai bensin",
+              "Menambahkan kondensor terpisah",
+              "Mendinginkan boiler",
+              "Menghilangkan piston",
+            ],
+            answer: 1,
+            explain: "Kondensor terpisah menjaga silinder tetap panas, menaikkan efisiensi.",
+          },
+          {
+            q: "Efisiensi mesin uap awal Newcomen kira-kira?",
+            options: ["1%", "33%", "60%", "100%"],
+            answer: 0,
+            explain: "Mesin Newcomen sangat boros, efisiensinya sekitar 1%.",
+          },
+          {
+            q: "Mesin nyata seefisien apa pun selalu di bawah batas?",
+            options: [
+              "Hukum Boyle",
+              "Efisiensi Carnot (1 − Tc/Th)",
+              "Massa jenis air",
+              "Hukum Dalton",
+            ],
+            answer: 1,
+            explain: "Carnot menetapkan batas tertinggi yang tak bisa dilampaui mesin apa pun.",
+          },
+          {
+            q: "Mengapa pembangkit modern jauh lebih efisien daripada mesin Newcomen?",
+            options: [
+              "Karena memakai lebih banyak batu bara",
+              "Karena suhu uapnya jauh lebih tinggi dan kebocoran kalornya kecil",
+              "Karena tidak membuang kalor sama sekali",
+              "Karena melanggar Hukum II",
+            ],
+            answer: 1,
+            explain: "Th yang tinggi dan rekayasa lebih baik mendekatkan mesin ke batas Carnot.",
+          },
+        ],
+      },
+    ],
+  },
 ];

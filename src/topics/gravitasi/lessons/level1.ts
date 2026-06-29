@@ -536,4 +536,160 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "pasang-surut-laut",
+    levelId: "hukum-gravitasi",
+    order: 5,
+    title: "Pasang Surut Laut",
+    summary:
+      "Mengapa laut naik dan turun dua kali sehari, dan mengapa Bulan yang kecil lebih berkuasa atas pasang daripada Matahari yang raksasa? Kita susuri dulu gagasan tarikan yang tak merata, baru polanya muncul.",
+    durationMin: 14,
+    tags: ["fisika", "gravitasi", "pasang-surut", "bulan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dua kali sehari, air laut naik membasahi pantai lalu surut kembali. Selama berabad-abad orang menduga-duga penyebabnya, sampai Newton menunjukkan biang keladinya: gravitasi Bulan yang menarik sisi Bumi yang dekat lebih kuat daripada sisi yang jauh. Anehnya, Matahari yang jauh lebih masif justru kalah pengaruh dibanding Bulan yang mungil. Sebelum bertemu polanya, ayo pahami dulu mengapa yang penting bukan kuat tarikan, melainkan <strong>selisih</strong> tarikan.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Tarikan yang Tak Merata Mengangkat Lautan",
+        caption: "Pasang surut lahir dari selisih gravitasi antara sisi dekat dan sisi jauh Bumi.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan Bulan menarik Bumi. Air di sisi yang menghadap Bulan ditarik <strong>lebih kuat</strong> daripada pusat Bumi, sehingga menggembung ke arah Bulan. Air di sisi seberang ditarik <strong>lebih lemah</strong> daripada pusat Bumi, sehingga seakan tertinggal dan menggembung menjauhi Bulan. Hasilnya dua tonjolan air di dua sisi. Karena Bumi berputar di bawah dua tonjolan ini, satu titik pantai melewati keduanya dalam sehari, jadi pasang naik dua kali.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kenapa Bulan menang melawan Matahari?",
+        html: "Gaya gravitasi biasa melemah mengikuti 1 dibagi jarak kuadrat, tetapi gaya <strong>pasang surut</strong> (selisih tarikan antarsisi Bumi) melemah lebih tajam, mengikuti 1 dibagi jarak <strong>pangkat tiga</strong>. Matahari memang jauh lebih masif, tetapi jaraknya sekitar 390 kali jarak Bulan. Karena pangkat tiga menghukum jarak jauh dengan sangat keras, pengaruh pasang surut Bulan menjadi sekitar 2,2 kali pengaruh Matahari.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Kekuatan Pembangkit Pasang Surut",
+        unit: "kekuatan relatif",
+        source: "perhitungan gaya pasang surut sebanding M dibagi d pangkat tiga",
+        note: "Bulan mengalahkan Matahari karena gaya pasang surut melemah mengikuti pangkat tiga jarak. Saat Bulan, Bumi, dan Matahari sejajar (purnama atau bulan baru), keduanya menjumlah menjadi pasang purnama; saat tegak lurus, keduanya saling mengurangi menjadi pasang perbani.",
+        data: [
+          { label: "Matahari saja", value: 1.0, color: "#fbbf24" },
+          { label: "Bulan saja", value: 2.2, color: "#fb7185" },
+          { label: "Pasang perbani (selisih)", value: 1.2, color: "#e879f9" },
+          { label: "Pasang purnama (jumlah)", value: 3.2, color: "#c084fc" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Gaya pembangkit pasang surut sebuah benda sebanding dengan 1 dibagi jarak pangkat tiga. Jika jarak Bulan ke Bumi tiba-tiba digandakan menjadi dua kali, gaya pasang surutnya menjadi berapa kali semula?",
+        answer: 0.125,
+        tolerance: 0.005,
+        suffix: " kali",
+        solution:
+          "Gaya pasang surut sebanding dengan 1 dibagi jarak pangkat tiga. Jika jarak menjadi 2 kali, gaya menjadi 1 dibagi 2 pangkat tiga = 1 dibagi 8 = <strong>0,125 kali</strong> semula. Inilah sebabnya jarak sangat menentukan pasang surut.",
+        hint: "Pangkatkan tiga faktor perubahan jaraknya, lalu balik (1 dibaginya).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pernyataan tentang pasang surut sebagai benar atau keliru.",
+        buckets: ["Benar", "Keliru"],
+        items: [
+          { text: "Pasang surut disebabkan oleh selisih tarikan gravitasi pada sisi Bumi", bucket: "Benar" },
+          { text: "Hanya ada satu tonjolan air, di sisi yang menghadap Bulan", bucket: "Keliru" },
+          { text: "Pengaruh pasang surut Bulan lebih besar daripada Matahari", bucket: "Benar" },
+          { text: "Pasang purnama terjadi saat Matahari, Bumi, dan Bulan sejajar", bucket: "Benar" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Banjir Rob saat Bulan Purnama di Pesisir Jawa",
+        html: "Warga pesisir Semarang dan Jakarta utara mengenal 'banjir rob', yaitu genangan air laut yang naik ke daratan walau tak ada hujan. Rob paling parah biasanya muncul saat <strong>bulan purnama atau bulan baru</strong>, ketika Matahari dan Bulan sejajar dan pasang menjadi pasang purnama yang lebih tinggi. Dipadu penurunan muka tanah dan kenaikan permukaan laut, pasang astronomis yang tertinggi ini cukup melimpahi tanggul. Memahami pasang purnama membantu warga dan pemerintah memperkirakan kapan rob akan datang.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. Yang membangkitkan pasang surut bukan gaya gravitasi itu sendiri, melainkan <strong>selisihnya</strong> antara dua sisi Bumi, yang sebanding dengan <strong>M dibagi d&sup3;</strong> (massa benda dibagi jarak pangkat tiga). Karena pangkat tiga ini, Bulan yang dekat mengalahkan Matahari yang masif. Dua tonjolan air di sisi dekat dan sisi jauh, ditambah rotasi Bumi, menghasilkan dua pasang naik tiap hari, dengan pasang purnama saat ketiga benda sejajar.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pasang surut lahir dari selisih tarikan gravitasi, bukan dari kuat tarikannya secara keseluruhan.",
+          "Ada dua tonjolan air, di sisi dekat dan sisi jauh Bumi, sehingga pasang naik dua kali sehari.",
+          "Gaya pasang surut sebanding dengan M dibagi jarak pangkat tiga, jadi jarak sangat menentukan.",
+          "Bulan mengalahkan Matahari karena lebih dekat, sekitar 2,2 kali lebih berpengaruh.",
+          "Pasang purnama terjadi saat Matahari, Bumi, dan Bulan sejajar (purnama atau bulan baru).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa penyebab utama pasang surut laut?",
+            options: [
+              "Angin yang meniup permukaan laut",
+              "Selisih tarikan gravitasi Bulan pada sisi-sisi Bumi",
+              "Putaran arus laut dalam",
+              "Panas Matahari yang memuaikan air",
+            ],
+            answer: 1,
+            explain: "Pasang surut berasal dari selisih gravitasi antara sisi dekat dan sisi jauh Bumi terhadap Bulan.",
+          },
+          {
+            q: "Mengapa pasang naik terjadi dua kali sehari?",
+            options: [
+              "Karena ada dua tonjolan air di sisi dekat dan sisi jauh",
+              "Karena Bulan mengelilingi Bumi dua kali sehari",
+              "Karena Matahari terbit dua kali",
+              "Karena air laut bergetar",
+            ],
+            answer: 0,
+            explain: "Ada dua tonjolan air, dan Bumi yang berputar membuat satu titik melewati keduanya tiap hari.",
+          },
+          {
+            q: "Gaya pembangkit pasang surut sebanding dengan?",
+            options: [
+              "1 dibagi jarak",
+              "1 dibagi jarak kuadrat",
+              "1 dibagi jarak pangkat tiga",
+              "Jarak pangkat tiga",
+            ],
+            answer: 2,
+            explain: "Gaya pasang surut sebanding dengan M dibagi jarak pangkat tiga.",
+          },
+          {
+            q: "Mengapa Bulan lebih berpengaruh pada pasang surut daripada Matahari?",
+            options: [
+              "Karena Bulan lebih masif daripada Matahari",
+              "Karena Bulan jauh lebih dekat, dan pasang surut melemah mengikuti pangkat tiga jarak",
+              "Karena Matahari tidak punya gravitasi",
+              "Karena Bulan memantulkan cahaya",
+            ],
+            answer: 1,
+            explain: "Walau Matahari lebih masif, jaraknya jauh, dan pangkat tiga jarak membuat Bulan menang.",
+          },
+          {
+            q: "Pasang tertinggi (pasang purnama) terjadi saat?",
+            options: [
+              "Bulan tegak lurus terhadap Matahari",
+              "Matahari, Bumi, dan Bulan kira-kira sejajar",
+              "Bulan sedang sabit",
+              "Tidak ada Bulan di langit",
+            ],
+            answer: 1,
+            explain: "Saat ketiganya sejajar (purnama atau bulan baru), pengaruh Bulan dan Matahari menjumlah.",
+          },
+        ],
+      },
+    ],
+  },
 ];

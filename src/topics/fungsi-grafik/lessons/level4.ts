@@ -585,4 +585,166 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "fungsi-kebalikan",
+    levelId: "jenis-fungsi",
+    order: 5,
+    title: "Fungsi Kebalikan: Saat Satu Naik, yang Lain Turun",
+    summary:
+      "Sebelum menulis y = k/x, kita bagi-bagi kue dan atur kecepatan sampai pola berbanding terbalik terasa.",
+    durationMin: 14,
+    tags: ["fungsi", "kebalikan", "berbanding terbalik", "hiperbola"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah perjalanan sejauh 120 km harus ditempuh. Kalau melaju 20 km/jam butuh 6 jam, kalau 40 km/jam cukup 3 jam, kalau 60 km/jam hanya 2 jam. Makin cepat, makin singkat. Tidak seperti hubungan linear yang sama-sama naik, di sini saat satu naik yang lain malah turun. Ayo rasakan dulu pola berlawanan ini sebelum kita beri rumus.",
+      },
+      {
+        type: "video",
+        comp: "FungsiVideo",
+        title: "Video: Saat Satu Naik, yang Lain Turun",
+        caption: "Bila hasil kali dua besaran tetap, keduanya bergerak berlawanan arah.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Perhatikan hasil kalinya: 20 × 6 = 120, 40 × 3 = 120, 60 × 2 = 120, 120 × 1 = 120. Selalu 120, yaitu jaraknya. Di hubungan linear, yang tetap adalah selisih. Di sini yang tetap adalah <strong>hasil kali</strong>. Maka kalau kecepatan dilipatgandakan, waktunya pasti separuh. Coba: pada 80 km/jam, berapa jam?",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Lama Perjalanan terhadap Kecepatan (jarak tetap 120 km)",
+        unit: "jam",
+        source: "perhitungan waktu = 120 / kecepatan",
+        note: "Kurva menurun makin landai: menggandakan kecepatan memangkas waktu menjadi separuh. Hasil kali kecepatan dan waktu selalu 120.",
+        data: [
+          { label: "20 km/j", value: 6, color: "#22d3ee" },
+          { label: "40 km/j", value: 3, color: "#22d3ee" },
+          { label: "60 km/j", value: 2, color: "#22d3ee" },
+          { label: "80 km/j", value: 1.5, color: "#22d3ee" },
+          { label: "120 km/j", value: 1, color: "#22d3ee" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Berbanding lurus vs berbanding terbalik",
+        html: "Pada hubungan <strong>berbanding lurus</strong>, dua besaran naik bersama dan perbandingannya tetap (y/x tetap). Pada hubungan <strong>berbanding terbalik</strong>, saat satu naik yang lain turun dan <strong>hasil kalinya</strong> yang tetap (x · y tetap). Fungsi kebalikan menggambarkan yang kedua.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Perjalanan 120 km. Pada kecepatan 48 km/jam, berapa jam waktu tempuhnya?",
+        answer: 2.5,
+        suffix: " jam",
+        tolerance: 0.05,
+        solution:
+          "Waktu = 120 / kecepatan = 120 / 48 = <strong>2,5 jam</strong>. Hasil kali 48 × 2,5 = 120, sesuai jaraknya.",
+        hint: "Bagi jarak 120 dengan kecepatannya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pekerjaan butuh 72 jam-orang. Jika dikerjakan 8 pekerja, berapa hari selesai (anggap 1 hari kerja per orang per hari)?",
+        answer: 9,
+        suffix: " hari",
+        solution:
+          "Total kerja tetap 72 jam-orang. Dengan 8 pekerja: 72 / 8 = <strong>9 hari</strong>. Makin banyak pekerja, makin sedikit harinya, itulah berbanding terbalik.",
+        hint: "Bagi total 72 dengan jumlah pekerja.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap hubungan: berbanding lurus atau berbanding terbalik?",
+        buckets: ["Berbanding lurus", "Berbanding terbalik"],
+        items: [
+          { text: "Makin banyak bensin, makin jauh jarak tempuh", bucket: "Berbanding lurus" },
+          { text: "Makin cepat berlari, makin singkat waktu tiba", bucket: "Berbanding terbalik" },
+          { text: "Makin banyak pekerja, makin singkat waktu kerja", bucket: "Berbanding terbalik" },
+          { text: "Makin banyak jam lembur, makin besar upah", bucket: "Berbanding lurus" },
+          { text: "Makin banyak orang berbagi kue, makin kecil bagian tiap orang", bucket: "Berbanding terbalik" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Untuk fungsi kebalikan y = 12/x, pasangkan tiap masukan dengan keluarannya.",
+        pairs: [
+          { left: "x = 2", right: "y = 6" },
+          { left: "x = 3", right: "y = 4" },
+          { left: "x = 4", right: "y = 3" },
+          { left: "x = 6", right: "y = 2" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membagi kue ulang tahun",
+        html: "Sebuah loyang berisi 24 potong kue dibagi rata. Untuk 2 anak, tiap anak dapat 12 potong; untuk 3 anak, 8 potong; untuk 4 anak, 6 potong; untuk 6 anak, 4 potong. Jumlah anak dikali bagian per anak selalu 24, yaitu total potongnya. Maka bagian per anak = 24 / jumlah anak. Inilah fungsi kebalikan: makin banyak yang berbagi, makin kecil bagian masing-masing, dan hasil kalinya tetap.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Baru sekarang rumusnya muncul",
+        html: "Setelah merasakan polanya, kita beri nama: <strong>fungsi kebalikan f(x) = k/x</strong>, yang menggambarkan hubungan <strong>berbanding terbalik</strong>. Cirinya: <strong>hasil kali x · y selalu tetap (= k)</strong>, grafiknya melengkung turun makin landai (disebut <strong>hiperbola</strong>), dan <strong>x tidak boleh nol</strong> karena pembagian dengan nol tak terdefinisi.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Fungsi kebalikan f(x) = k/x menggambarkan hubungan berbanding terbalik.",
+          "Cirinya hasil kali x · y selalu tetap, sebesar k.",
+          "Saat satu besaran naik, yang lain turun; menggandakan satu memangkas yang lain jadi separuh.",
+          "Domainnya x tidak boleh nol, dan grafiknya berupa kurva menurun (hiperbola).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada hubungan berbanding terbalik, yang selalu tetap adalah?",
+            options: ["Hasil kali kedua besaran", "Selisih keduanya", "Jumlah keduanya", "Perbandingan y/x"],
+            answer: 0,
+            explain: "Berbanding terbalik berarti x · y tetap.",
+          },
+          {
+            q: "Bentuk umum fungsi kebalikan adalah?",
+            options: ["y = mx + c", "y = k/x", "y = ax² + bx + c", "y = a·b^x"],
+            answer: 1,
+            explain: "Fungsi kebalikan berbentuk y = k/x.",
+          },
+          {
+            q: "Jika y = 12/x, maka nilai y saat x = 4 adalah?",
+            options: ["2", "3", "4", "6"],
+            answer: 1,
+            explain: "12 / 4 = 3.",
+          },
+          {
+            q: "Mengapa x tidak boleh nol pada y = k/x?",
+            options: [
+              "Pembagian dengan nol tak terdefinisi",
+              "Karena k selalu negatif",
+              "Karena y harus nol",
+              "Karena grafiknya garis lurus",
+            ],
+            answer: 0,
+            explain: "Membagi dengan nol tidak terdefinisi, jadi x = 0 dikecualikan.",
+          },
+          {
+            q: "Perjalanan 120 km. Jika kecepatan digandakan dari 30 menjadi 60 km/jam, waktunya?",
+            options: [
+              "Menjadi separuh",
+              "Menjadi dua kali",
+              "Tetap sama",
+              "Bertambah sedikit",
+            ],
+            answer: 0,
+            explain: "Berbanding terbalik: kecepatan dua kali membuat waktu separuh, dari 4 jam jadi 2 jam.",
+          },
+        ],
+      },
+    ],
+  },
 ];

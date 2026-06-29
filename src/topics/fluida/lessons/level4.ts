@@ -631,4 +631,156 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "hukum-poiseuille",
+    levelId: "fluida-nyata",
+    order: 5,
+    title: "Aliran Kental dalam Pipa: Hukum Poiseuille",
+    summary:
+      "Kenapa pipa air yang sedikit berkerak bisa kehilangan banyak debit, dan kenapa jarum infus yang lebih kecil menetes jauh lebih lambat? Kita amati dulu, baru hukum Poiseuille muncul.",
+    durationMin: 14,
+    tags: ["fluida nyata", "viskositas", "poiseuille", "debit"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Untuk fluida ideal tanpa kekentalan, pipa lurus mengalirkan air sebebasnya. Tetapi fluida nyata itu kental, dan kekentalan menahan aliran. Lapisan fluida yang menempel di dinding pipa hampir diam, sedangkan di tengah mengalir paling cepat. Berapa banyak fluida kental yang sanggup lewat tiap detik? Sebelum bertemu rumus, ayo amati dulu satu kejutan: betapa besar pengaruh <strong>jari-jari pipa</strong>.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Fluida Kental Mengalir di Pipa",
+        caption: "Kekentalan membuat fluida mengalir paling cepat di tengah dan diam di dinding.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Debit fluida kental dalam pipa sangat peka terhadap jari-jari. Bukan sebanding jari-jari, bukan pula kuadratnya, melainkan <strong>pangkat empat</strong> jari-jari. Artinya bila jari-jari pipa dijadikan dua kali, debitnya melonjak 2 pangkat 4 = 16 kali. Sebaliknya bila jari-jari menyusut separuh, debit anjlok menjadi seperenam belas. Inilah sebabnya penyempitan kecil pada pipa atau pembuluh berakibat besar pada aliran.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Apa lagi yang menentukan",
+        html: "Selain jari-jari, debit fluida kental bertambah bila <strong>beda tekanan</strong> antara ujung pipa membesar (mendorong lebih kuat), dan berkurang bila pipa makin <strong>panjang</strong> atau fluida makin <strong>kental</strong>. Pipa dua kali lebih panjang mengalirkan setengah debit; fluida dua kali lebih kental juga memberi setengah debit.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Debit Relatif vs Jari-jari Pipa (Hukum Poiseuille)",
+        unit: "debit relatif (kali)",
+        source: "hitungan Q sebanding r^4, dinormalkan terhadap pipa berjari-jari 1 satuan",
+        note: "Karena debit sebanding pangkat empat jari-jari, kurvanya melonjak sangat curam. Jari-jari 2 kali memberi debit 16 kali, jari-jari 4 kali memberi 256 kali.",
+        data: [
+          { label: "r = 1", value: 1, color: "#60a5fa" },
+          { label: "r = 2", value: 16, color: "#818cf8" },
+          { label: "r = 3", value: 81, color: "#a78bfa" },
+          { label: "r = 4", value: 256, color: "#c084fc" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada beda tekanan dan panjang pipa yang tetap, jari-jari pipa diperkecil menjadi setengahnya. Debit fluida menjadi berapa kali debit semula? (debit sebanding pangkat empat jari-jari)",
+        answer: 0.0625,
+        tolerance: 0.005,
+        suffix: " kali",
+        solution:
+          "Faktor debit = (1/2)^4 = 1/16 = <strong>0,0625 kali</strong>. Mengecilkan jari-jari separuh memangkas debit menjadi seperenam belasnya.",
+        hint: "Hitung (1/2) pangkat 4.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pipa diganti dengan pipa lain yang panjangnya 2 kali, sementara jari-jari, beda tekanan, dan jenis fluida tetap. Debit menjadi berapa kali debit semula? (debit berbanding terbalik dengan panjang)",
+        answer: 0.5,
+        tolerance: 0.02,
+        suffix: " kali",
+        solution:
+          "Karena debit berbanding terbalik dengan panjang, panjang 2 kali memberi debit 1/2 = <strong>0,5 kali</strong>. Pipa lebih panjang menahan aliran lebih lama.",
+        hint: "Debit berbanding terbalik dengan panjang pipa.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Tentukan tindakan yang MEMPERBESAR debit fluida kental dalam pipa dan yang MEMPERKECILnya.",
+        buckets: ["Memperbesar debit", "Memperkecil debit"],
+        items: [
+          { text: "Memperbesar jari-jari pipa", bucket: "Memperbesar debit" },
+          { text: "Menaikkan beda tekanan", bucket: "Memperbesar debit" },
+          { text: "Memakai pipa yang lebih panjang", bucket: "Memperkecil debit" },
+          { text: "Memakai fluida yang lebih kental", bucket: "Memperkecil debit" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pipa Berkerak dan Pembuluh Menyempit",
+        html: "Pipa air rumah yang lama sering berkerak endapan kapur di dinding bagian dalam, memperkecil jari-jari salurannya. Karena debit sebanding pangkat empat jari-jari, penyempitan yang tampak kecil berakibat besar: jari-jari berkurang 20 persen saja sudah memangkas debit hampir 60 persen, sehingga air di keran mengecil drastis walau tekanan kota tidak berubah. Prinsip yang sama berlaku pada tubuh. Bila pembuluh darah menyempit karena timbunan lemak, jantung harus menaikkan tekanan jauh lebih besar untuk mempertahankan aliran darah, sebab debit sangat sensitif terhadap jari-jari pembuluh. Itulah mengapa penyempitan pembuluh ringan pun bisa memberatkan kerja jantung.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan <strong>Hukum Poiseuille</strong> untuk aliran laminar fluida kental dalam pipa: <strong>Q = (pi x r^4 x beda_tekanan) / (8 x eta x L)</strong>, dengan r jari-jari, eta viskositas, dan L panjang pipa. Kuncinya ada pada r^4: debit melonjak atau anjlok sangat cepat saat jari-jari berubah. Beda tekanan menambah debit secara lurus, sedangkan panjang dan viskositas menguranginya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Hukum Poiseuille: Q = (pi x r^4 x beda_tekanan) / (8 x eta x L).",
+          "Debit sebanding pangkat empat jari-jari: jari-jari 2 kali memberi debit 16 kali.",
+          "Debit bertambah lurus dengan beda tekanan.",
+          "Debit berkurang bila pipa lebih panjang atau fluida lebih kental.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Menurut hukum Poiseuille, debit sebanding dengan jari-jari pipa pangkat?",
+            options: ["Satu", "Dua", "Tiga", "Empat"],
+            answer: 3,
+            explain: "Q sebanding r^4, jadi jari-jari berpengaruh sangat kuat pada debit.",
+          },
+          {
+            q: "Jari-jari pipa dijadikan 2 kali (tekanan, panjang, fluida tetap). Debit menjadi?",
+            options: ["2 kali", "4 kali", "8 kali", "16 kali"],
+            answer: 3,
+            explain: "Faktor = 2^4 = 16 kali.",
+          },
+          {
+            q: "Apa yang terjadi pada debit bila pipa dibuat dua kali lebih panjang?",
+            options: [
+              "Menjadi 2 kali",
+              "Menjadi setengah",
+              "Tetap",
+              "Menjadi seperempat",
+            ],
+            answer: 1,
+            explain: "Debit berbanding terbalik dengan panjang, jadi panjang 2 kali memberi debit setengah.",
+          },
+          {
+            q: "Fluida diganti yang viskositasnya dua kali lebih besar. Debitnya?",
+            options: ["Dua kali", "Setengah", "Tetap", "Empat kali"],
+            answer: 1,
+            explain: "Debit berbanding terbalik dengan viskositas, jadi menjadi setengah.",
+          },
+          {
+            q: "Mengapa pipa air yang sedikit berkerak bisa kehilangan banyak debit?",
+            options: [
+              "Karena kerak menambah tekanan",
+              "Karena debit sangat peka terhadap jari-jari (pangkat empat)",
+              "Karena air menjadi lebih kental",
+              "Karena pipa memanjang",
+            ],
+            answer: 1,
+            explain: "Penyempitan kecil memangkas r^4 secara tajam, sehingga debit turun jauh.",
+          },
+        ],
+      },
+    ],
+  },
 ];

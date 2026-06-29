@@ -535,4 +535,149 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "manuver-bantuan-gravitasi",
+    levelId: "orbit-satelit",
+    order: 5,
+    title: "Manuver Bantuan Gravitasi",
+    summary:
+      "Bagaimana wahana Voyager bisa menjelajah hingga tepi tata surya dengan bahan bakar terbatas? Kita pahami dulu trik 'mencuri' sedikit laju dari planet, baru batas teoretisnya muncul.",
+    durationMin: 14,
+    tags: ["fisika", "gravitasi", "orbit", "voyager"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Wahana Voyager 2 yang diluncurkan pada 1977 menjelajahi Jupiter, Saturnus, Uranus, dan Neptunus, lalu terus melaju keluar tata surya, semuanya dengan bahan bakar yang sangat sedikit. Rahasianya bukan mesin raksasa, melainkan sebuah trik gravitasi cerdik bernama <strong>bantuan gravitasi</strong> atau ketapel gravitasi. Wahana 'meminjam' sedikit laju dari planet yang dilewatinya. Sebelum bertemu batas hitungannya, ayo pahami dulu bagaimana mungkin mendapat laju tanpa membakar bahan bakar.",
+      },
+      {
+        type: "video",
+        comp: "BahasaSemesta",
+        title: "Video: Ketapel Gravitasi Antarplanet",
+        caption: "Wahana melengkung di dekat planet dan keluar lebih cepat dalam kerangka Matahari.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan melempar bola tenis ke arah kereta yang melaju mendekatimu. Bola memantul kembali jauh lebih cepat, karena 'mencuri' sedikit laju kereta. Wahana antariksa melakukan hal serupa: ia jatuh mendekati planet yang sedang bergerak mengelilingi Matahari, melengkung tajam, lalu keluar dengan laju yang <strong>lebih besar dalam kerangka Matahari</strong>. Planet kehilangan energi orbit teramat kecil, tetapi wahana yang jauh lebih ringan mendapat dorongan besar. Tak ada yang melanggar kekekalan energi, hanya berpindah tangan.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Laju Orbit Planet Raksasa Mengelilingi Matahari",
+        unit: "km/s",
+        source: "data astronomi",
+        note: "Bantuan gravitasi paling efektif di planet yang melaju kencang mengelilingi Matahari. Secara teoretis, tambahan laju maksimum bagi wahana adalah dua kali laju orbit planet itu. Jupiter, dengan laju orbit tertinggi di antara planet raksasa, memberi dorongan paling besar.",
+        data: [
+          { label: "Jupiter", value: 13.1, color: "#fb7185" },
+          { label: "Saturnus", value: 9.7, color: "#f472b6" },
+          { label: "Uranus", value: 6.8, color: "#e879f9" },
+          { label: "Neptunus", value: 5.4, color: "#c084fc" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Laju orbit Jupiter mengelilingi Matahari sekitar 13,1 km/s. Batas teoretis tambahan laju dari bantuan gravitasi adalah dua kali laju orbit planet. Berapa tambahan laju maksimum yang bisa diperoleh wahana dari Jupiter?",
+        answer: 26.2,
+        tolerance: 0.5,
+        suffix: " km/s",
+        solution:
+          "Batas teoretis tambahan laju = 2 dikali laju orbit planet = 2 x 13,1 = <strong>26,2 km/s</strong>. Angka ini adalah batas atas ideal; pada praktiknya tambahannya lebih kecil karena geometri lintasan tidak sempurna.",
+        hint: "Kalikan laju orbit planet dengan dua.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap pernyataan tentang bantuan gravitasi sebagai benar atau keliru.",
+        buckets: ["Benar", "Keliru"],
+        items: [
+          { text: "Wahana bisa menambah laju dalam kerangka Matahari tanpa membakar bahan bakar", bucket: "Benar" },
+          { text: "Energi diam-diam dipinjam dari gerak orbit planet", bucket: "Benar" },
+          { text: "Bantuan gravitasi melanggar kekekalan energi", bucket: "Keliru" },
+          { text: "Planet yang melaju lebih cepat memberi dorongan yang lebih besar", bucket: "Benar" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Grand Tour Voyager 2 ke Empat Planet Raksasa",
+        html: "Pada akhir 1970-an, keempat planet raksasa kebetulan sejajar dalam susunan yang hanya terjadi sekitar tiap 175 tahun. NASA memanfaatkannya: Voyager 2 melompat dari Jupiter ke Saturnus, lalu Uranus, lalu Neptunus, memakai gravitasi tiap planet untuk melontarkan dirinya ke planet berikutnya. Tanpa rangkaian bantuan gravitasi ini, perjalanan ke Neptunus akan butuh puluhan tahun lebih lama dan bahan bakar yang mustahil dibawa. Voyager 2 menjadi satu-satunya wahana yang pernah mengunjungi Uranus dan Neptunus, dan kini melaju di ruang antarbintang.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. Dalam kerangka <strong>planet</strong>, wahana keluar dengan laju yang sama seperti saat masuk, seperti tumbukan lenting. Tetapi planet itu sendiri sedang bergerak mengelilingi Matahari, sehingga dalam kerangka <strong>Matahari</strong> wahana bisa keluar lebih cepat (atau lebih lambat, tergantung arah). Tambahan laju maksimumnya secara teoretis adalah <strong>2 kali laju orbit planet</strong>. Energinya dipinjam dari orbit planet, jadi kekekalan energi tetap terjaga, hanya berpindah ke wahana yang jauh lebih ringan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Bantuan gravitasi menambah laju wahana dengan meminjam energi gerak orbit planet.",
+          "Dalam kerangka planet laju keluar sama dengan laju masuk; dalam kerangka Matahari bisa bertambah.",
+          "Tambahan laju maksimum secara teoretis adalah dua kali laju orbit planet yang dilewati.",
+          "Planet yang melaju lebih cepat mengelilingi Matahari, seperti Jupiter, memberi dorongan terbesar.",
+          "Voyager 2 memakai rangkaian bantuan gravitasi untuk menjelajah empat planet raksasa.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa inti dari manuver bantuan gravitasi?",
+            options: [
+              "Membakar bahan bakar ekstra di dekat planet",
+              "Meminjam sedikit energi gerak orbit planet untuk menambah laju wahana",
+              "Menabrak planet untuk memantul",
+              "Mematikan mesin agar melambat",
+            ],
+            answer: 1,
+            explain: "Wahana meminjam energi dari gerak orbit planet, menambah lajunya dalam kerangka Matahari.",
+          },
+          {
+            q: "Dalam kerangka acuan planet, laju wahana saat keluar dibanding saat masuk?",
+            options: ["Jauh lebih besar", "Kira-kira sama", "Selalu nol", "Selalu setengahnya"],
+            answer: 1,
+            explain: "Seperti tumbukan lenting, dalam kerangka planet laju keluar hampir sama dengan laju masuk.",
+          },
+          {
+            q: "Tambahan laju maksimum secara teoretis dari bantuan gravitasi adalah?",
+            options: [
+              "Setengah laju orbit planet",
+              "Sama dengan laju orbit planet",
+              "Dua kali laju orbit planet",
+              "Sepuluh kali laju orbit planet",
+            ],
+            answer: 2,
+            explain: "Batas teoretisnya adalah dua kali laju orbit planet yang dilewati.",
+          },
+          {
+            q: "Apakah bantuan gravitasi melanggar kekekalan energi?",
+            options: [
+              "Ya, energi muncul dari ketiadaan",
+              "Tidak, energi hanya berpindah dari orbit planet ke wahana",
+              "Ya, tetapi hanya sedikit",
+              "Tidak berlaku di luar angkasa",
+            ],
+            answer: 1,
+            explain: "Energi dipinjam dari gerak orbit planet, jadi kekekalan energi tetap terpenuhi.",
+          },
+          {
+            q: "Mengapa Voyager 2 bisa mengunjungi empat planet raksasa sekaligus?",
+            options: [
+              "Karena membawa bahan bakar sangat banyak",
+              "Karena memanfaatkan kesejajaran planet dan rangkaian bantuan gravitasi",
+              "Karena melaju lebih cepat dari cahaya",
+              "Karena ditarik tali dari Bumi",
+            ],
+            answer: 1,
+            explain: "Kesejajaran langka empat planet raksasa memungkinkan rangkaian bantuan gravitasi berurutan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -786,4 +786,148 @@ export const level4: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "materialitas-ganda-csrd",
+    levelId: "pengungkapan",
+    order: 5,
+    title: "Materialitas Ganda & CSRD Eropa",
+    summary: "Dua arah materialitas: bagaimana iklim memengaruhi perusahaan, dan bagaimana perusahaan memengaruhi iklim. Standar pelaporan Eropa.",
+    durationMin: 13,
+    tags: ["materialitas ganda", "CSRD", "pengungkapan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Pengungkapan keberlanjutan bisa dilihat dari dua arah. <strong>Materialitas keuangan</strong>: bagaimana isu iklim memengaruhi nilai dan arus kas perusahaan. <strong>Materialitas dampak</strong>: bagaimana perusahaan memengaruhi iklim dan masyarakat. Bila keduanya wajib dilaporkan, itu disebut <strong>materialitas ganda (double materiality)</strong>.",
+      },
+      {
+        type: "video",
+        comp: "TaksonomiHijauVideo",
+        title: "Video: Taksonomi Hijau",
+        caption: "Taksonomi dan pengungkapan materialitas ganda sama-sama alat menjaga transparansi modal hijau.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "ISSB vs CSRD",
+        html: "Standar <strong>ISSB (IFRS S2)</strong> berfokus pada <strong>materialitas keuangan</strong> (untuk investor). <strong>CSRD Eropa</strong> dengan standar ESRS mewajibkan <strong>materialitas ganda</strong>: dampak ke perusahaan dan dampak perusahaan ke dunia. Cakupan CSRD lebih luas.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Lihat bagaimana komponen E, S, dan G membentuk skor ESG keseluruhan, bahan dasar pelaporan keberlanjutan.",
+      },
+      { type: "widget", widget: "SimulatorESGRating" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perusahaan Wajib Lapor: NFRD vs CSRD (perkiraan)",
+        unit: "ribu perusahaan",
+        source: "perkiraan Komisi Eropa",
+        note: "CSRD memperluas cakupan dari sekitar 11,7 ribu perusahaan (di bawah NFRD) menjadi sekitar 50 ribu, lonjakan besar transparansi keberlanjutan di Eropa.",
+        data: [
+          { label: "NFRD (lama)", value: 11.7, color: "#94a3b8" },
+          { label: "CSRD (baru)", value: 50, color: "#0ea5e9" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Satu isu, dua sisi materialitas",
+        html: "Sebuah pabrik berada di daerah rawan banjir dan juga membuang limbah ke sungai. Dari sisi <strong>materialitas keuangan</strong>, risiko banjir mengancam asetnya dan relevan bagi investor. Dari sisi <strong>materialitas dampak</strong>, pencemaran sungai merugikan masyarakat dan lingkungan. Di bawah CSRD, perusahaan wajib melaporkan <strong>kedua sisi</strong> ini, bukan hanya yang menyangkut uangnya sendiri.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Cakupan wajib lapor naik dari sekitar 11,7 ribu (NFRD) menjadi sekitar 50 ribu perusahaan (CSRD). Kira-kira berapa kali lipat kenaikannya? (bulatkan satu desimal)",
+        answer: 4.3,
+        tolerance: 0.2,
+        suffix: "kali",
+        solution: "50 / 11,7 = sekitar <strong>4,3 kali</strong> lipat lebih banyak perusahaan yang wajib melapor.",
+        hint: "Bagi jumlah baru dengan jumlah lama.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Pertimbangan ini tergolong materialitas keuangan atau materialitas dampak?",
+        buckets: ["Materialitas keuangan", "Materialitas dampak"],
+        items: [
+          { text: "Banjir mengancam pabrik dan menurunkan laba", bucket: "Materialitas keuangan" },
+          { text: "Limbah perusahaan mencemari sungai warga", bucket: "Materialitas dampak" },
+          { text: "Pajak karbon menaikkan biaya produksi", bucket: "Materialitas keuangan" },
+          { text: "Emisi perusahaan menambah pemanasan global", bucket: "Materialitas dampak" },
+          { text: "Harga energi naik menekan margin", bucket: "Materialitas keuangan" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Materialitas keuangan", right: "Dampak isu iklim ke nilai perusahaan" },
+          { left: "Materialitas dampak", right: "Dampak perusahaan ke iklim dan masyarakat" },
+          { left: "Materialitas ganda", right: "Mewajibkan kedua arah dilaporkan" },
+          { left: "CSRD", right: "Aturan pelaporan keberlanjutan Uni Eropa" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: CSRD Eropa 2022",
+        html: "Pada <strong>2022</strong>, Uni Eropa mengadopsi <strong>Corporate Sustainability Reporting Directive (CSRD)</strong> yang mulai berlaku <strong>Januari 2023</strong>, menggantikan aturan lama <strong>NFRD (2014)</strong>. CSRD mewajibkan <strong>materialitas ganda</strong> lewat standar ESRS dan memperluas jumlah perusahaan wajib lapor secara drastis, dengan laporan pertama untuk tahun buku 2024. Ini menjadi tonggak transparansi keberlanjutan paling ambisius di dunia.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Materialitas keuangan: dampak iklim ke perusahaan.",
+          "Materialitas dampak: dampak perusahaan ke iklim dan masyarakat.",
+          "Materialitas ganda mewajibkan kedua arah dilaporkan.",
+          "ISSB fokus materialitas keuangan; CSRD Eropa mewajibkan keduanya.",
+          "CSRD (2022) memperluas cakupan wajib lapor secara besar.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Materialitas ganda (double materiality) berarti melaporkan?",
+            options: [
+              "Hanya dampak iklim ke perusahaan",
+              "Dampak iklim ke perusahaan dan dampak perusahaan ke dunia",
+              "Hanya laba rugi",
+              "Hanya emisi kantor",
+            ],
+            answer: 1,
+            explain: "Materialitas ganda mencakup arah keuangan dan arah dampak sekaligus.",
+          },
+          {
+            q: "Perbedaan fokus ISSB dan CSRD?",
+            options: [
+              "ISSB materialitas ganda, CSRD hanya keuangan",
+              "ISSB fokus materialitas keuangan, CSRD mewajibkan materialitas ganda",
+              "Keduanya identik",
+              "Keduanya melarang pelaporan",
+            ],
+            answer: 1,
+            explain: "ISSB (IFRS S2) berfokus pada investor/keuangan; CSRD mewajibkan kedua sisi materialitas.",
+          },
+          {
+            q: "Pencemaran sungai oleh pabrik termasuk materialitas?",
+            options: ["Keuangan", "Dampak", "Tidak relevan", "Pajak"],
+            answer: 1,
+            explain: "Dampak perusahaan ke lingkungan dan masyarakat adalah materialitas dampak.",
+          },
+          {
+            q: "CSRD menggantikan aturan lama bernama?",
+            options: ["TCFD", "NFRD", "GAAP", "Basel"],
+            answer: 1,
+            explain: "CSRD (2022) menggantikan Non-Financial Reporting Directive (NFRD, 2014).",
+          },
+          {
+            q: "Banjir yang mengancam aset dan laba perusahaan termasuk materialitas?",
+            options: ["Dampak", "Keuangan", "Sosial murni", "Tidak ada"],
+            answer: 1,
+            explain: "Risiko yang memengaruhi nilai dan arus kas perusahaan adalah materialitas keuangan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

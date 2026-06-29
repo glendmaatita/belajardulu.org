@@ -561,4 +561,150 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "mengkuadratkan-bentuk",
+    levelId: "operasi-bentuk",
+    order: 5,
+    title: "Mengkuadratkan Bentuk: (a + b)²",
+    summary:
+      "Kenapa (a + b)² bukan a² + b²? Kita potong-potong sebuah persegi besar dulu sampai suku tengah yang sering terlupakan muncul sendiri.",
+    durationMin: 14,
+    tags: ["aljabar", "kuadrat", "luas", "perkalian"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Banyak orang buru-buru menulis (a + b)² = a² + b². Sebelum percaya, ayo uji dengan angka: (10 + 3)² jelas sama dengan 13² = 169. Tetapi a² + b² = 100 + 9 = 109. Ada 60 yang hilang. Ke mana perginya? Sebuah gambar persegi akan menjawabnya.",
+      },
+      {
+        type: "video",
+        comp: "MenemukanLuas",
+        title: "Video: Memotong Persegi Besar Menjadi Empat Bagian",
+        caption: "Persegi sisi (a + b) terbagi empat: a², dua kotak ab, dan b².",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Gambar persegi besar bersisi (a + b). Garis pemisah membaginya menjadi empat ubin: kotak besar a × a = a², kotak kecil b × b = b², dan <strong>dua</strong> kotak panjang a × b. Jumlahkan luasnya: a² + ab + ab + b² = a² + <strong>2ab</strong> + b². Suku 2ab itulah 60 yang tadi hilang pada (10 + 3)².",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua kotak silang yang sering dilupakan",
+        html: "Kuadrat suku dua punya tiga bagian, bukan dua: kuadrat suku pertama, <strong>dua kali</strong> hasil kali kedua suku, dan kuadrat suku kedua. Untuk selisih, tanda tengahnya berubah: (a - b)² = a² - 2ab + b².",
+      },
+      {
+        type: "widget",
+        widget: "PenemuLuas",
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Dari Mana Datangnya 13² = 169",
+        unit: "satuan luas",
+        source: "(10 + 3)² dipotong empat bagian",
+        note: "Dua kotak silang (30 + 30 = 60) adalah bagian yang hilang jika keliru menulis (a + b)² = a² + b².",
+        data: [
+          { label: "10 × 10 = 100", value: 100, color: "#c084fc" },
+          { label: "10 × 3 = 30", value: 30, color: "#e879f9" },
+          { label: "3 × 10 = 30", value: 30, color: "#f472b6" },
+          { label: "3 × 3 = 9", value: 9, color: "#fb7185" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Gunakan (a + b)² untuk menghitung 21². (petunjuk: 21 = 20 + 1)",
+        answer: 441,
+        solution:
+          "21² = (20 + 1)² = 20² + 2(20)(1) + 1² = 400 + 40 + 1 = <strong>441</strong>.",
+        hint: "Hitung a², lalu 2ab, lalu b², kemudian jumlahkan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pada hasil penjabaran (x + 6)² = x² + ___ x + 36, berapa koefisien suku tengahnya?",
+        answer: 12,
+        solution:
+          "Suku tengah (a + b)² adalah 2ab. Di sini a = x dan b = 6, jadi 2 × 6 = <strong>12</strong>, sehingga (x + 6)² = x² + 12x + 36.",
+        hint: "Suku tengah adalah dua kali hasil kali kedua suku.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap bentuk kuadrat dengan penjabarannya.",
+        pairs: [
+          { left: "(x + 1)²", right: "x² + 2x + 1" },
+          { left: "(x + 2)²", right: "x² + 4x + 4" },
+          { left: "(x + 3)²", right: "x² + 6x + 9" },
+          { left: "(x + 5)²", right: "x² + 10x + 25" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap hasil penjabaran: berasal dari kuadrat jumlah atau kuadrat selisih?",
+        buckets: ["Kuadrat jumlah (a + b)²", "Kuadrat selisih (a - b)²"],
+        items: [
+          { text: "x² + 6x + 9", bucket: "Kuadrat jumlah (a + b)²" },
+          { text: "x² - 6x + 9", bucket: "Kuadrat selisih (a - b)²" },
+          { text: "x² + 10x + 25", bucket: "Kuadrat jumlah (a + b)²" },
+          { text: "x² - 4x + 4", bucket: "Kuadrat selisih (a - b)²" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memperluas kebun persegi",
+        html: "Sebuah kebun persegi bersisi 10 m hendak diperluas 3 m ke kanan dan 3 m ke atas, menjadi sisi 13 m. Luas baru = (10 + 3)² = 169 m². Tambahan luasnya 169 - 100 = <strong>69 m²</strong>, yang persis berasal dari dua jalur tepi 2(10)(3) = 60 m² ditambah pojok kecil 3² = 9 m². Rumus (a + b)² menjelaskan tepat di mana tambahan luas itu berada.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah memotong persegi, baru kita rumuskan: <strong>(a + b)² = a² + 2ab + b²</strong> dan <strong>(a - b)² = a² - 2ab + b²</strong>. Inti yang sering dilupakan adalah suku tengah 2ab, yaitu dua kotak silang pada gambar. Ini hanya sifat distributif yang dipakai pada (a + b)(a + b).",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "(a + b)² bukan a² + b²; ada suku tengah 2ab yang sering dilupakan.",
+          "(a + b)² = a² + 2ab + b² dan (a - b)² = a² - 2ab + b².",
+          "Suku tengah berasal dari dua kotak silang a × b pada persegi.",
+          "Rumus ini mempercepat hitungan seperti 21² = 400 + 40 + 1 = 441.",
+          "Rumusnya tetap sifat distributif (a + b)(a + b), bukan aturan baru.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Penjabaran (a + b)² yang benar adalah?",
+            options: ["a² + b²", "a² + 2ab + b²", "a² + ab + b²", "2a + 2b"],
+            answer: 1,
+            explain: "Ada suku tengah 2ab dari dua kotak silang.",
+          },
+          {
+            q: "Hasil dari (x + 4)² adalah?",
+            options: ["x² + 16", "x² + 8x + 16", "x² + 4x + 16", "x² + 4x + 8"],
+            answer: 1,
+            explain: "2 × 4 = 8 untuk suku tengah dan 4² = 16, jadi x² + 8x + 16.",
+          },
+          {
+            q: "Suku tengah pada (a - b)² bertanda?",
+            options: ["Positif", "Negatif", "Selalu nol", "Tidak ada"],
+            answer: 1,
+            explain: "(a - b)² = a² - 2ab + b², suku tengahnya bertanda negatif.",
+          },
+          {
+            q: "Dengan rumus kuadrat, 19² = (20 - 1)² sama dengan?",
+            options: ["361", "400", "399", "381"],
+            answer: 0,
+            explain: "400 - 2(20)(1) + 1 = 400 - 40 + 1 = 361.",
+          },
+          {
+            q: "Kesalahan menulis (a + b)² = a² + b² melupakan?",
+            options: ["a²", "b²", "Suku tengah 2ab", "Tanda kurang"],
+            answer: 2,
+            explain: "Yang hilang adalah suku tengah 2ab.",
+          },
+        ],
+      },
+    ],
+  },
 ];

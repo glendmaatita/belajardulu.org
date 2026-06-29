@@ -577,4 +577,148 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kebalikan-cosec-sec-cot",
+    levelId: "perbandingan-segitiga",
+    order: 5,
+    title: "Tiga Kawan Kebalikan: Cosec, Sec, Cot",
+    summary:
+      "Kabel penyangga harus menjangkau puncak tiang. Berapa panjangnya? Kita selidiki dulu apa yang terjadi saat perbandingan dibalik.",
+    durationMin: 13,
+    tags: ["trigonometri", "cosecan", "secan", "cotangen", "kebalikan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah kabel penyangga harus dibentang dari tanah ke puncak tiang. Kita tahu tinggi tiang dan sudut kabel, tetapi yang dicari justru sisi miringnya. Memakai sin berarti membagi, padahal akan lebih ringkas jika ada perbandingan yang langsung mengalikan. Sebelum menamai rumus, ayo selidiki dulu apa yang terjadi saat sin, cos, dan tan kita balik.",
+      },
+      {
+        type: "video",
+        comp: "TrigonometriVideo",
+        title: "Video: Membalik Perbandingan",
+        caption: "Saat sin, cos, dan tan dibalik, lahir tiga perbandingan kawan: cosec, sec, dan cot.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil segitiga 3, 4, 5. Untuk sudut yang sisi depannya 3 dan sisi sampingnya 4: sin = 3 ÷ 5 = 0,6, cos = 4 ÷ 5 = 0,8, tan = 3 ÷ 4 = 0,75. Sekarang balik tiap pecahan: 5 ÷ 3 = 1,667, 5 ÷ 4 = 1,25, 4 ÷ 3 = 1,333. Tiga angka baru ini punya nama sendiri.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTrigonometri",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Nilai cosec Mengecil Menuju 1 saat Sudut Menuju 90 Derajat",
+        unit: "nilai cosec",
+        source: "ilustrasi edukatif",
+        note: "cosec adalah kebalikan sin. Karena sin tumbuh menuju 1, kebalikannya menyusut menuju 1.",
+        data: [
+          { label: "cosec 30°", value: 2.0, color: "#fb923c" },
+          { label: "cosec 45°", value: 1.414, color: "#f59e0b" },
+          { label: "cosec 60°", value: 1.155, color: "#eab308" },
+          { label: "cosec 90°", value: 1.0, color: "#facc15" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kenapa kebalikan ini membantu",
+        html: "Saat yang dicari adalah sisi miring sedangkan yang diketahui sisi depan, memakai sin memaksa kita membagi. Dengan cosec kita cukup mengalikan: sisi miring = sisi depan × cosec sudut. Banyak rumus fisika dan teknik ditulis dengan sec atau cosec agar tetap berupa perkalian.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada segitiga dengan sisi samping = 4 dan sisi miring = 5, berapa nilai sec sudut itu (miring dibagi samping)?",
+        answer: 1.25,
+        tolerance: 0.01,
+        solution:
+          "sec = miring ÷ samping = 5 ÷ 4 = <strong>1,25</strong>. Nilai ini adalah kebalikan dari cos = 0,8.",
+        hint: "sec adalah kebalikan cos, yaitu miring dibagi samping.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Kabel penyangga menuju puncak tiang setinggi 12 m dengan sudut 40 derajat terhadap tanah. Panjang kabel = 12 × cosec 40 derajat (cosec 40 sekitar 1,556). Berapa meter?",
+        answer: 18.67,
+        tolerance: 0.2,
+        suffix: " m",
+        solution:
+          "Panjang kabel = sisi depan × cosec 40 derajat = 12 × 1,556 = <strong>sekitar 18,67 meter</strong>. Sama saja dengan 12 ÷ sin 40 derajat.",
+        hint: "cosec = 1 ÷ sin; panjang miring = tinggi × cosec sudut.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan perbandingan kebalikan dengan definisinya.",
+        pairs: [
+          { left: "cosec", right: "miring ÷ depan (kebalikan sin)" },
+          { left: "sec", right: "miring ÷ samping (kebalikan cos)" },
+          { left: "cot", right: "samping ÷ depan (kebalikan tan)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Tabel cotangen para pengukur tanah",
+        html: "Sebelum kalkulator ada, para pengukur tanah membawa tabel cotangen. Untuk menghitung jarak mendatar dari tinggi dan sudut, mereka cukup mengalikan tinggi dengan cotangen sudut, bukan membagi dengan tangen yang merepotkan di lapangan. Misalnya tinggi menara 50 m terlihat dengan sudut elevasi 25 derajat: jarak = 50 × cot 25 derajat = 50 × 2,145 = sekitar 107 meter. Satu kali perkalian, hasil langsung jadi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah membalik tiap perbandingan, baru namanya kita tetapkan: <strong>cosec θ = 1 ÷ sin θ = miring ÷ depan</strong>, <strong>sec θ = 1 ÷ cos θ = miring ÷ samping</strong>, dan <strong>cot θ = 1 ÷ tan θ = samping ÷ depan</strong>. Ketiganya bukan fungsi baru, hanya sin, cos, dan tan yang dibalik.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "cosec, sec, dan cot adalah kebalikan dari sin, cos, dan tan.",
+          "cosec θ = miring ÷ depan, sec θ = miring ÷ samping, cot θ = samping ÷ depan.",
+          "Memakai kebalikan mengubah pembagian menjadi perkalian yang lebih ringkas.",
+          "Karena sin maksimal 1, nilai cosec selalu 1 atau lebih besar.",
+          "Banyak rumus teknik ditulis dengan sec atau cosec demi kerapian.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "cosec sebuah sudut didefinisikan sebagai?",
+            options: ["samping ÷ depan", "miring ÷ depan", "depan ÷ miring", "miring ÷ samping"],
+            answer: 1,
+            explain: "cosec = 1 ÷ sin = miring ÷ depan.",
+          },
+          {
+            q: "Jika cos sebuah sudut = 0,5, maka sec sudut itu adalah?",
+            options: ["0,5", "1,5", "2", "0,25"],
+            answer: 2,
+            explain: "sec = 1 ÷ cos = 1 ÷ 0,5 = 2.",
+          },
+          {
+            q: "cot adalah kebalikan dari?",
+            options: ["sin", "cos", "tan", "sec"],
+            answer: 2,
+            explain: "cot = 1 ÷ tan = samping ÷ depan.",
+          },
+          {
+            q: "Mengapa nilai cosec tidak pernah kurang dari 1?",
+            options: [
+              "Karena sin tidak pernah lebih dari 1",
+              "Karena cosec selalu bulat",
+              "Karena sudutnya kecil",
+              "Hanya kebetulan",
+            ],
+            answer: 0,
+            explain: "Nilai sin paling besar 1, jadi kebalikannya paling kecil 1.",
+          },
+          {
+            q: "Untuk mencari sisi miring saat sisi depan dan sudut diketahui, paling ringkas pakai?",
+            options: ["sisi depan × cosec", "sisi depan × sin", "sisi depan ÷ cosec", "sisi depan × cos"],
+            answer: 0,
+            explain: "miring = depan × cosec sudut, sama dengan depan ÷ sin sudut.",
+          },
+        ],
+      },
+    ],
+  },
 ];

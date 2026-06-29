@@ -582,4 +582,167 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "torsi-pada-kumparan",
+    levelId: "gaya-magnetik",
+    order: 5,
+    title: "Torsi pada Kumparan Berarus",
+    summary:
+      "Satu kawat berarus dalam medan magnet didorong lurus. Tapi bila kawat itu dibentuk gelung, kedua sisinya didorong ke arah berlawanan dan kumparan pun berputar. Inilah jantung motor dan alat ukur listrik.",
+    durationMin: 14,
+    tags: ["fisika", "torsi", "kumparan", "momen magnetik"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu kawat lurus berarus dalam medan magnet akan didorong ke satu arah. Sekarang tekuk kawat itu menjadi sebuah gelung. Sisi kiri membawa arus ke satu arah, sisi kanan ke arah berlawanan, sehingga gaya magnetik pada kedua sisi juga berlawanan. Dua gaya yang berlawanan dengan jarak di antaranya tidak menggeser benda, melainkan <strong>memutarnya</strong>. Sebelum menuliskan rumus, ayo kita rasakan dulu mengapa gelung berputar.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Gelung Kawat Berputar di Antara Kutub Magnet",
+        caption: "Sisi yang berlawanan arah arus didorong ke arah berlawanan, kumparan pun berputar.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan kumparan persegi diletakkan di antara dua kutub magnet. Sisi kiri terdorong ke atas, sisi kanan terdorong ke bawah. Karena keduanya menempel pada satu bingkai, bingkai itu berputar. Putaran terbesar terjadi saat bidang kumparan <strong>sejajar</strong> medan; begitu bidang tegak lurus medan, kedua gaya hanya menarik bingkai meregang dan tak lagi memutarnya. Itu sebabnya motor sederhana butuh trik agar arusnya berbalik tepat waktu agar terus berputar.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Apa yang memperbesar putaran",
+        html: "Kekuatan memutar (torsi) makin besar bila: jumlah <strong>lilitan N</strong> bertambah, <strong>arus I</strong> diperbesar, <strong>luas bidang A</strong> diperbesar, dan medan <strong>B</strong> lebih kuat. Itu sebabnya kumparan motor dibuat banyak lilitan dan diberi inti agar medannya kuat. Sudut θ diukur antara medan dan garis tegak lurus bidang (garis normal), persis seperti pada fluks.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Torsi Kumparan vs Sudut Bidang terhadap Medan",
+        unit: "newton meter (N·m)",
+        source: "N=100, I=2 A, A=0,01 m², B=0,5 T, τ = N·B·I·A·sin θ",
+        note: "Torsi mengikuti sin θ: maksimum saat bidang kumparan sejajar medan (θ=90°), dan nol saat bidang tegak lurus medan (θ=0°).",
+        data: [
+          { label: "0°", value: 0, color: "#34d399" },
+          { label: "30°", value: 0.5, color: "#22d3ee" },
+          { label: "60°", value: 0.866, color: "#38bdf8" },
+          { label: "90°", value: 1.0, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah kumparan 100 lilitan berluas 0,01 m² dialiri arus 2 A dalam medan magnet 0,5 T. Berapa torsi maksimum yang dialaminya? (jawab dalam N·m)",
+        answer: 1.0,
+        tolerance: 0.01,
+        suffix: " N·m",
+        solution:
+          "Torsi maksimum saat sin θ = 1: τ = N·B·I·A = 100 × 0,5 × 2 × 0,01 = <strong>1,0 N·m</strong>.",
+        hint: "τ = N·B·I·A·sin θ, dan torsi maksimum saat sin θ = 1.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Kumparan yang sama (torsi maksimum 1,0 N·m) kini berhenti pada posisi dengan sudut θ = 30° antara medan dan garis normal bidang. Berapa torsinya sekarang? (jawab dalam N·m)",
+        answer: 0.5,
+        tolerance: 0.01,
+        suffix: " N·m",
+        solution:
+          "τ = τmaks · sin θ = 1,0 × sin 30° = 1,0 × 0,5 = <strong>0,5 N·m</strong>. Torsi mengecil saat bidang menjauh dari posisi sejajar medan.",
+        hint: "sin 30° = 0,5.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap tindakan: memperbesar atau memperkecil torsi kumparan.",
+        buckets: ["Memperbesar torsi", "Memperkecil torsi"],
+        items: [
+          { text: "Menambah jumlah lilitan kumparan", bucket: "Memperbesar torsi" },
+          { text: "Memperbesar arus listrik", bucket: "Memperbesar torsi" },
+          { text: "Memakai magnet yang lebih kuat", bucket: "Memperbesar torsi" },
+          { text: "Mengurangi luas bidang kumparan", bucket: "Memperkecil torsi" },
+          { text: "Mengurangi arus listrik", bucket: "Memperkecil torsi" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap lambang pada rumus torsi τ = N·B·I·A·sin θ dengan maknanya.",
+        pairs: [
+          { left: "N", right: "Jumlah lilitan kumparan" },
+          { left: "I", right: "Kuat arus listrik" },
+          { left: "A", right: "Luas bidang kumparan" },
+          { left: "B", right: "Kuat medan magnet" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Galvanometer, Jarum yang Membaca Arus",
+        html: "Amperemeter dan voltmeter analog di laboratorium memakai galvanometer: sebuah kumparan kecil yang digantung di antara kutub magnet dan ditahan oleh pegas spiral lembut. Saat arus mengalir, kumparan mengalami torsi yang memutarnya, sampai dilawan setimbang oleh torsi balik pegas. Karena torsi sebanding dengan arus, sudut putar jarum pun sebanding dengan arus, sehingga skala bisa dibaca langsung. Makin besar arus, makin jauh jarum menyimpang. Prinsip torsi pada kumparan inilah yang membuat listrik bisa 'ditunjuk' oleh sebuah jarum.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan. Torsi pada kumparan berarus dalam medan magnet adalah <strong>τ = N·B·I·A·sin θ</strong>, dengan N jumlah lilitan, B kuat medan, I arus, A luas bidang, dan θ sudut antara medan dan garis normal bidang. Hasil kali <strong>N·I·A</strong> disebut <strong>momen magnetik</strong> kumparan. Torsi maksimum saat θ = 90° (bidang sejajar medan) dan nol saat θ = 0° (bidang tegak lurus medan). Inilah dasar kerja motor listrik dan alat ukur listrik analog.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Gelung kawat berarus dalam medan magnet mengalami torsi karena kedua sisinya didorong berlawanan arah.",
+          "τ = N·B·I·A·sin θ; torsi membesar dengan N, B, I, dan A.",
+          "Hasil kali N·I·A disebut momen magnetik kumparan.",
+          "Torsi maksimum saat bidang kumparan sejajar medan (θ=90°), nol saat tegak lurus medan (θ=0°).",
+          "Prinsip ini menjadi dasar motor listrik dan galvanometer (alat ukur analog).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rumus torsi pada kumparan berarus dalam medan magnet adalah?",
+            options: ["τ = N·B·I·A·sin θ", "τ = q·v·B", "τ = B·I·L", "τ = µ₀·n·I"],
+            answer: 0,
+            explain: "Torsi pada kumparan τ = N·B·I·A·sin θ.",
+          },
+          {
+            q: "Mengapa gelung kawat berputar, bukan bergeser lurus?",
+            options: [
+              "Karena gravitasi menariknya",
+              "Karena kedua sisinya didorong ke arah berlawanan",
+              "Karena arusnya nol",
+              "Karena medannya berputar",
+            ],
+            answer: 1,
+            explain: "Dua gaya berlawanan dengan jarak di antaranya menghasilkan putaran (torsi).",
+          },
+          {
+            q: "Hasil kali N·I·A pada rumus torsi disebut?",
+            options: ["Fluks magnetik", "Momen magnetik", "Gaya Lorentz", "Permeabilitas"],
+            answer: 1,
+            explain: "N·I·A adalah momen magnetik kumparan.",
+          },
+          {
+            q: "Torsi kumparan bernilai maksimum ketika bidang kumparan?",
+            options: ["Tegak lurus medan", "Sejajar medan", "Membentuk 0° dengan normal", "Diam total"],
+            answer: 1,
+            explain: "Torsi maksimum saat bidang sejajar medan, yaitu θ=90° antara medan dan normal.",
+          },
+          {
+            q: "Galvanometer mengukur arus dengan memanfaatkan?",
+            options: [
+              "Pemuaian kawat",
+              "Torsi pada kumparan yang dilawan pegas",
+              "Perubahan warna",
+              "Gaya gravitasi",
+            ],
+            answer: 1,
+            explain: "Torsi sebanding arus, dilawan pegas, sehingga sudut jarum menunjukkan besar arus.",
+          },
+        ],
+      },
+    ],
+  },
 ];

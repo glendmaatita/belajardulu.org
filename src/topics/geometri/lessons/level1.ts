@@ -556,4 +556,146 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "sudut-putaran-jam-arah",
+    levelId: "garis-sudut",
+    order: 5,
+    title: "Sudut Putaran: Jam dan Arah Mata Angin",
+    summary:
+      "Sebelum menghafal rumus, kita amati dulu sudut yang terbentuk jarum jam dan arah mata angin, sampai pola 'satu putaran 360 derajat' muncul sendiri.",
+    durationMin: 12,
+    tags: ["geometri", "sudut", "jam", "arah mata angin"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Jarum jam berputar pelan, kompas menunjuk arah, dan kincir angin berputar penuh lalu kembali ke posisi semula. Semua itu adalah <strong>sudut putaran</strong>, yaitu sudut yang diukur dari satu arah acuan. Sebelum kita pakai rumus, ayo amati dulu berapa derajat tiap langkah putaran pada benda sehari-hari.",
+      },
+      {
+        type: "video",
+        comp: "SudutVideo",
+        title: "Video: Sudut sebagai Putaran",
+        caption: "Satu putaran penuh adalah 360 derajat, setengah putaran 180 derajat.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Lihat jam dinding. Tepat pukul 3, kedua jarum membentuk sudut siku-siku. Tepat pukul 6, keduanya lurus berlawanan. Coba tebak: tiap berpindah satu angka jam, berapa derajat jarum bergeser? Bagi 360 dengan 12 angka, lalu cocokkan dengan amatanmu.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorSudut",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Sudut antara Kedua Jarum Jam Tepat Pukul (jam:00)",
+        unit: "sudut (derajat)",
+        source: "ilustrasi edukatif",
+        note: "Tiap angka jam berjarak 30 derajat (360 dibagi 12), jadi sudutnya bertambah 30 derajat tiap jam.",
+        data: [
+          { label: "Pukul 1", value: 30, color: "#2dd4bf" },
+          { label: "Pukul 2", value: 60, color: "#22d3ee" },
+          { label: "Pukul 3", value: 90, color: "#38bdf8" },
+          { label: "Pukul 4", value: 120, color: "#818cf8" },
+          { label: "Pukul 6", value: 180, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Geometri, bukan sekadar melihat jam",
+        html: "Melihat jam menjawab 'pukul berapa'. Geometri menjawab 'berapa derajat jarum sudah berputar' dan memakainya untuk menghitung arah, posisi kincir, atau sudut antena tanpa menebak.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Tepat pukul 5:00, berapa besar sudut yang dibentuk jarum pendek dan jarum panjang (diukur yang lebih kecil)?",
+        answer: 150,
+        suffix: " derajat",
+        solution:
+          "Tiap angka jam berjarak 360 / 12 = 30 derajat. Pukul 5, jarum pendek 5 angka dari jarum panjang, jadi 5 x 30 = <strong>150 derajat</strong>.",
+        hint: "Hitung berapa angka jam jaraknya, lalu kalikan 30 derajat.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Arah mata angin dibagi rata jadi 8 penjuru (Utara, Timur Laut, Timur, dan seterusnya). Berapa derajat sudut antara dua arah yang bersebelahan?",
+        answer: 45,
+        suffix: " derajat",
+        solution:
+          "Satu putaran penuh 360 derajat dibagi 8 arah = 360 / 8 = <strong>45 derajat</strong> tiap arah bersebelahan.",
+        hint: "Bagi 360 dengan banyaknya arah.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Tepat pada jam berikut, kelompokkan sudut antara kedua jarum menurut jenisnya.",
+        buckets: ["Lancip", "Siku-siku", "Tumpul", "Lurus"],
+        items: [
+          { text: "Pukul 1:00 (30 derajat)", bucket: "Lancip" },
+          { text: "Pukul 2:00 (60 derajat)", bucket: "Lancip" },
+          { text: "Pukul 3:00 (90 derajat)", bucket: "Siku-siku" },
+          { text: "Pukul 4:00 (120 derajat)", bucket: "Tumpul" },
+          { text: "Pukul 6:00 (180 derajat)", bucket: "Lurus" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pelaut membaca arah angin",
+        html: "Seorang nahkoda kecil memakai kompas yang terbagi 360 derajat. Ia mencatat angin datang dari arah 90 derajat (Timur) lalu berputar ke 135 derajat (Tenggara). Karena tahu tiap arah utama berjarak 90 derajat dan tiap arah antara 45 derajat, ia langsung paham angin bergeser 45 derajat searah jarum jam. Membaca sudut putaran membuat ia menyetel layar dengan tepat tanpa menebak.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah mengamati, baru kita simpulkan: satu putaran penuh adalah <strong>360 derajat</strong>. Pada jam, tiap angka berjarak 360 / 12 = <strong>30 derajat</strong>. Pada arah mata angin 8 penjuru, tiap arah bersebelahan berjarak 360 / 8 = <strong>45 derajat</strong>. Sudut putaran selalu dihitung dari satu arah acuan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Sudut putaran diukur dari satu arah acuan; satu putaran penuh 360 derajat.",
+          "Pada jam, tiap angka berjarak 30 derajat (360 dibagi 12).",
+          "Arah mata angin 8 penjuru berjarak 45 derajat tiap arah bersebelahan.",
+          "Empat arah utama (U, T, S, B) berjarak 90 derajat satu sama lain.",
+          "Memahami sudut putaran membantu membaca jam, kompas, dan arah secara pasti.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada jam dinding, sudut antara dua angka yang bersebelahan adalah?",
+            options: ["15 derajat", "30 derajat", "45 derajat", "60 derajat"],
+            answer: 1,
+            explain: "360 dibagi 12 angka = 30 derajat tiap angka.",
+          },
+          {
+            q: "Tepat pukul 3:00, sudut antara kedua jarum jam adalah?",
+            options: ["60 derajat", "90 derajat", "120 derajat", "180 derajat"],
+            answer: 1,
+            explain: "Jarak 3 angka x 30 derajat = 90 derajat, sudut siku-siku.",
+          },
+          {
+            q: "Pada arah mata angin 8 penjuru, sudut antara dua arah bersebelahan adalah?",
+            options: ["30 derajat", "45 derajat", "60 derajat", "90 derajat"],
+            answer: 1,
+            explain: "360 dibagi 8 arah = 45 derajat.",
+          },
+          {
+            q: "Sudut antara arah Utara dan arah Timur pada kompas adalah?",
+            options: ["45 derajat", "90 derajat", "135 derajat", "180 derajat"],
+            answer: 1,
+            explain: "Utara dan Timur adalah arah utama yang berjarak 90 derajat.",
+          },
+          {
+            q: "Tepat pukul 6:00, kedua jarum jam membentuk sudut?",
+            options: ["Lancip", "Siku-siku", "Tumpul", "Lurus (180 derajat)"],
+            answer: 3,
+            explain: "6 angka x 30 derajat = 180 derajat, yaitu sudut lurus.",
+          },
+        ],
+      },
+    ],
+  },
 ];

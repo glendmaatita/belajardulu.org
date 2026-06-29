@@ -577,4 +577,158 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "literasi-digital-hoaks",
+    levelId: "terapan",
+    order: 5,
+    title: "Berpikir Kritis di Era Digital",
+    summary: "Memeriksa klaim viral: membaca lateral, menelusuri sumber asli, dan mengapa kabar palsu menyebar lebih cepat daripada yang benar.",
+    durationMin: 14,
+    tags: ["berpikir kritis", "hoaks", "literasi digital", "verifikasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di era digital, masalahnya bukan kekurangan informasi melainkan kelebihannya, bercampur dengan hoaks dan misinformasi. <strong>Literasi digital</strong> adalah keterampilan menilai klaim sebelum mempercayai atau menyebarkannya, memakai logika dan bukti yang sama seperti berpikir kritis di dunia nyata.",
+      },
+      {
+        type: "paragraph",
+        html: "Kuncinya adalah <strong>membaca lateral</strong> (lateral reading): alih-alih menelaah dalam-dalam satu halaman yang meragukan, buka tab lain dan periksa apa kata sumber tepercaya tentang halaman itu dan klaimnya. Pemeriksa fakta profesional justru sering meninggalkan halaman aslinya lebih dahulu.",
+      },
+      {
+        type: "video",
+        comp: "BerpikirKritis",
+        title: "Video: Langkah Berpikir Kritis",
+        caption: "Lima langkah menilai klaim juga berlaku untuk kabar viral: perjelas, periksa sumber, uji logika, cari pembanding, simpulkan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Langkah cepat verifikasi (SIFT)",
+        html: "<strong>Stop</strong>: jangan langsung sebar, tahan dulu. <strong>Investigate the source</strong>: siapa yang berkata dan apa rekam jejaknya. <strong>Find better coverage</strong>: cari liputan dari sumber tepercaya lain. <strong>Trace</strong>: telusuri kutipan, gambar, dan data ke sumber aslinya.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Kabar palsu menyebar lebih cepat",
+        html: "Studi MIT (Vosoughi dkk., jurnal Science, 2018) atas jutaan twit menemukan kabar palsu sekitar <strong>70% lebih mungkin</strong> dibagikan ulang daripada kabar benar, dan kabar benar butuh kira-kira <strong>6 kali lebih lama</strong> untuk menjangkau 1.500 orang. Yang viral belum tentu yang benar.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Mengapa hoaks menggoda",
+        html: "Hoaks dirancang membangkitkan emosi kuat (marah, takut, kaget) yang mendorong berbagi tanpa berpikir. Bias konfirmasi memperparah: kita lebih mudah percaya kabar yang cocok dengan keyakinan kita. Jeda sejenak sebelum membagikan adalah perlawanan paling sederhana.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Waktu Relatif Menjangkau 1.500 Orang: Kabar Benar vs Palsu",
+        unit: "waktu relatif",
+        source: "Vosoughi, Roy & Aral, Science 2018 (MIT)",
+        note: "Kabar benar perlu kira-kira 6 kali lebih lama daripada kabar palsu untuk menjangkau 1.500 orang. Kecepatan viral bukan tanda kebenaran.",
+        data: [
+          { label: "Kabar palsu", value: 1, color: "#ef4444" },
+          { label: "Kabar benar", value: 6, color: "#10b981" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Foto banjir yang viral",
+        html: "Sebuah pesan berantai memuat foto banjir besar dengan keterangan 'banjir di kotamu kemarin'. Pemikir kritis menahan diri membagikan (Stop), lalu menelusuri gambarnya lewat pencarian gambar terbalik (Trace) dan menemukan foto itu sebenarnya dari peristiwa di negara lain tiga tahun lalu. Ia juga mengecek situs berita tepercaya (Find better coverage) yang tidak memberitakan banjir di kotanya. Klaim runtuh hanya dalam dua menit pemeriksaan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Dari 40 pesan berantai yang diperiksa sebuah komunitas, 28 ternyata hoaks atau menyesatkan. Berapa persen pesan yang terbukti tidak tepercaya?",
+        answer: 70,
+        tolerance: 0,
+        suffix: "%",
+        solution: "28 dibagi 40 sama dengan 0,7, jadi <strong>70%</strong> pesan tidak tepercaya. Angka tinggi ini menegaskan pentingnya memeriksa sebelum menyebar.",
+        hint: "Bagi jumlah pesan hoaks dengan total pesan, lalu kalikan 100.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Tindakan ini memperkuat verifikasi atau justru memperburuk?",
+        buckets: ["Langkah verifikasi yang baik", "Kebiasaan yang memperburuk"],
+        items: [
+          { text: "Menelusuri foto lewat pencarian gambar terbalik", bucket: "Langkah verifikasi yang baik" },
+          { text: "Membagikan dulu, memeriksa belakangan", bucket: "Kebiasaan yang memperburuk" },
+          { text: "Mengecek apakah sumber tepercaya lain memberitakan hal sama", bucket: "Langkah verifikasi yang baik" },
+          { text: "Percaya karena pesannya membuat marah dan terdengar masuk akal", bucket: "Kebiasaan yang memperburuk" },
+          { text: "Memeriksa tanggal dan konteks asli sebuah kutipan", bucket: "Langkah verifikasi yang baik" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan langkah SIFT dengan tindakannya.",
+        pairs: [
+          { left: "Stop", right: "Tahan diri, jangan langsung membagikan" },
+          { left: "Investigate the source", right: "Periksa siapa pembuatnya dan rekam jejaknya" },
+          { left: "Find better coverage", right: "Cari liputan dari sumber tepercaya lain" },
+          { left: "Trace", right: "Telusuri kutipan, gambar, atau data ke sumber aslinya" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Latihan menilai kekuatan klaim",
+        html: "Sebelum mempercayai kabar viral, nilai dulu bukti pendukungnya. Gunakan alat di bawah untuk menimbang apakah bukti sebuah klaim tergolong kuat atau lemah.",
+      },
+      { type: "widget", widget: "PenilaiKlaim" },
+      {
+        type: "takeaways",
+        items: [
+          "Literasi digital menerapkan logika dan bukti pada kabar daring.",
+          "Membaca lateral: periksa sumber lewat tab lain, jangan terpaku satu halaman.",
+          "SIFT: Stop, Investigate the source, Find better coverage, Trace.",
+          "Kabar palsu menyebar lebih cepat; viral bukan tanda kebenaran.",
+          "Jeda sejenak sebelum membagikan adalah perlawanan paling sederhana terhadap hoaks.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Membaca lateral (lateral reading) berarti?",
+            options: [
+              "Menelaah dalam-dalam hanya satu halaman",
+              "Membuka tab lain untuk memeriksa sumber dan klaimnya",
+              "Membaca dari kanan ke kiri",
+              "Langsung mempercayai judulnya",
+            ],
+            answer: 1,
+            explain: "Membaca lateral memeriksa apa kata sumber lain tentang halaman dan klaimnya, bukan terpaku pada halaman itu.",
+          },
+          {
+            q: "Huruf 'S' pertama dalam metode SIFT berarti?",
+            options: ["Share", "Stop", "Search", "Sure"],
+            answer: 1,
+            explain: "Stop: tahan diri dan jangan langsung membagikan sebelum memeriksa.",
+          },
+          {
+            q: "Menurut studi MIT 2018, kabar palsu cenderung?",
+            options: [
+              "Lebih lambat menyebar daripada kabar benar",
+              "Menyebar lebih cepat dan lebih mungkin dibagikan ulang",
+              "Tidak pernah viral",
+              "Selalu mudah dikenali",
+            ],
+            answer: 1,
+            explain: "Studi itu menemukan kabar palsu menyebar lebih cepat dan sekitar 70% lebih mungkin dibagikan ulang.",
+          },
+          {
+            q: "Cara memeriksa foto yang diduga menyesatkan adalah?",
+            options: ["Pencarian gambar terbalik untuk melacak asalnya", "Memperbesar fotonya", "Menghitung jumlah suka", "Membagikan agar ada yang mengoreksi"],
+            answer: 0,
+            explain: "Pencarian gambar terbalik dapat mengungkap sumber dan konteks asli sebuah foto.",
+          },
+          {
+            q: "Dari 40 pesan, 28 terbukti hoaks. Berapa persennya?",
+            options: ["70%", "28%", "40%", "50%"],
+            answer: 0,
+            explain: "28 / 40 = 0,7 = 70%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

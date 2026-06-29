@@ -582,4 +582,166 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "amperemeter-dan-voltmeter",
+    levelId: "rangkaian-hambatan",
+    order: 5,
+    title: "Amperemeter dan Voltmeter",
+    summary:
+      "Bagaimana kita 'melihat' arus dan tegangan yang tak kasat mata? Dari cara memasang alat ukur, lahir aturan seri untuk arus dan paralel untuk tegangan.",
+    durationMin: 14,
+    tags: ["fisika", "listrik", "amperemeter", "voltmeter", "alat-ukur"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Arus dan tegangan tidak bisa dilihat mata, tapi kita butuh mengukurnya. Untuk itu ada dua alat: <strong>amperemeter</strong> untuk arus dan <strong>voltmeter</strong> untuk tegangan. Yang menarik, keduanya dipasang dengan cara berbeda, satu seri dan satu paralel, dan alasannya berasal langsung dari sifat seri-paralel yang sudah kita pelajari. Mari amati cara memasangnya dulu, baru aturannya kita rangkum.",
+      },
+      {
+        type: "video",
+        comp: "HukumOhmVideo",
+        title: "Video: Mengukur Arus dan Tegangan",
+        caption: "Amperemeter masuk ke jalur arus, voltmeter menjembatani dua titik.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Untuk mengukur <strong>arus</strong> yang lewat sebuah lampu, kamu harus membuat arus itu melewati alatnya. Maka amperemeter dipotong masuk ke jalur, dipasang <strong>seri</strong> dengan lampu. Untuk mengukur <strong>tegangan</strong> di ujung-ujung lampu, kamu tinggal menempelkan dua probe ke dua ujungnya tanpa memutus apa pun, itu pemasangan <strong>paralel</strong>. Amati: arus harus 'lewat', tegangan cukup 'dijembatani'. Belum ada aturan formal, baru cara memasang.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Alat ukur ideal",
+        html: "<strong>Amperemeter ideal</strong> berhambatan sangat kecil (mendekati nol) supaya tidak menambah hambatan jalur yang diukur. <strong>Voltmeter ideal</strong> berhambatan sangat besar (mendekati tak hingga) supaya nyaris tidak menarik arus dari cabang yang diukur. Keduanya dirancang agar kehadirannya tidak mengganggu rangkaian.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Jangan terbalik",
+        html: "Memasang <strong>amperemeter paralel</strong> langsung ke sumber sangat berbahaya: karena hambatannya nyaris nol, arus melonjak besar seperti korsleting dan alat bisa rusak. Sebaliknya, voltmeter yang keliru dipasang seri akan memutus arus karena hambatannya sangat besar. Ingat: amperemeter seri, voltmeter paralel.",
+      },
+      {
+        type: "widget",
+        widget: "KalkulatorOhm",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Memperluas Jangkauan Amperemeter dengan Shunt",
+        unit: "ampere",
+        source: "perhitungan pembagi arus (Hukum I Kirchhoff)",
+        note: "Galvanometer hanya tahan 0,05 A. Dengan hambatan shunt yang dipasang paralel, sisa arus 0,95 A dialihkan lewat shunt sehingga alat sanggup membaca 1 A penuh. Inilah penerapan pembagi arus.",
+        data: [
+          { label: "Lewat galvanometer", value: 0.05, color: "#a3e635" },
+          { label: "Lewat shunt", value: 0.95, color: "#34d399" },
+          { label: "Total terbaca", value: 1, color: "#22d3ee" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah galvanometer hanya tahan dilewati arus maksimum 0,05 A, tetapi dipakai mengukur arus total 1 A lewat hambatan shunt paralel. Berapa arus yang harus dialihkan lewat shunt?",
+        answer: 0.95,
+        tolerance: 0.001,
+        suffix: " A",
+        solution:
+          "Sesuai Hukum I Kirchhoff, arus total terbagi: yang lewat shunt = arus total - arus galvanometer = 1 - 0,05 = <strong>0,95 ampere</strong>. Shunt menampung kelebihan arus agar galvanometer tetap aman.",
+        hint: "Kurangi arus total dengan arus maksimum yang boleh lewat galvanometer.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah amperemeter ideal (hambatan dianggap nol) dipasang seri pada rangkaian baterai 12 V dengan resistor 6 Ω. Berapa arus yang akan ditunjukkannya?",
+        answer: 2,
+        tolerance: 0.01,
+        suffix: " A",
+        solution:
+          "Karena amperemeter ideal tidak menambah hambatan, arus tetap I = V / R = 12 / 6 = <strong>2 ampere</strong>. Itulah sebabnya hambatannya dibuat sekecil mungkin agar bacaan tidak terganggu.",
+        hint: "Pakai Hukum Ohm; amperemeter ideal tidak mengubah hambatan total.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap istilah alat ukur dengan keterangannya.",
+        pairs: [
+          { left: "Amperemeter", right: "dipasang seri untuk mengukur arus" },
+          { left: "Voltmeter", right: "dipasang paralel untuk mengukur tegangan" },
+          { left: "Hambatan shunt", right: "memperluas jangkauan amperemeter" },
+          { left: "Hambatan depan (pengali)", right: "memperluas jangkauan voltmeter" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap ciri ke alat ukur yang tepat.",
+        buckets: ["Amperemeter", "Voltmeter"],
+        items: [
+          { text: "Dipasang seri dengan komponen", bucket: "Amperemeter" },
+          { text: "Dipasang paralel dengan komponen", bucket: "Voltmeter" },
+          { text: "Idealnya berhambatan sangat kecil", bucket: "Amperemeter" },
+          { text: "Idealnya berhambatan sangat besar", bucket: "Voltmeter" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengubah Galvanometer Menjadi Amperemeter",
+        html: "Sebuah galvanometer dengan hambatan dalam 19 Ω hanya tahan arus maksimum 0,05 A. Untuk dijadikan amperemeter berjangkauan 1 A, dipasang <strong>hambatan shunt</strong> paralel. Tegangan pada galvanometer saat penuh = 0,05 A × 19 Ω = 0,95 V. Karena shunt paralel, tegangannya juga 0,95 V, sedangkan arus yang harus dialihkannya 0,95 A. Maka hambatan shunt = 0,95 V / 0,95 A = <strong>1 Ω</strong>. Dengan satu resistor kecil, alat lemah berubah menjadi amperemeter yang kuat, semuanya berkat aturan paralel.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Dari cara memasang tadi, aturannya kita rangkum. <strong>Amperemeter</strong> dipasang <strong>seri</strong> (agar dilewati arus yang diukur) dan dibuat berhambatan sangat kecil. <strong>Voltmeter</strong> dipasang <strong>paralel</strong> (menjembatani dua titik) dan dibuat berhambatan sangat besar. Jangkauan amperemeter diperluas dengan shunt paralel, jangkauan voltmeter diperluas dengan hambatan depan (pengali) seri. Semua ini turunan langsung sifat seri-paralel, bukan hafalan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Amperemeter mengukur arus, dipasang seri, dan idealnya berhambatan sangat kecil.",
+          "Voltmeter mengukur tegangan, dipasang paralel, dan idealnya berhambatan sangat besar.",
+          "Salah pasang berbahaya: amperemeter paralel ke sumber memicu lonjakan arus seperti korsleting.",
+          "Hambatan shunt (paralel) memperluas jangkauan amperemeter; hambatan depan (seri) memperluas jangkauan voltmeter.",
+          "Pembagian arus pada shunt mengikuti Hukum I Kirchhoff: arus total = arus galvanometer + arus shunt.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Amperemeter dipasang dengan cara?",
+            options: ["Paralel dengan komponen", "Seri dengan komponen", "Tegak lurus arus", "Tanpa menyentuh rangkaian"],
+            answer: 1,
+            explain: "Agar dilewati arus yang diukur, amperemeter dipasang seri.",
+          },
+          {
+            q: "Voltmeter dipasang dengan cara?",
+            options: ["Seri dengan komponen", "Paralel dengan komponen", "Menggantikan baterai", "Memotong jalur arus"],
+            answer: 1,
+            explain: "Voltmeter menjembatani dua titik, jadi dipasang paralel.",
+          },
+          {
+            q: "Hambatan dalam amperemeter ideal sebaiknya?",
+            options: ["Sangat besar", "Sangat kecil (mendekati nol)", "Sama dengan beban", "Tak terhingga"],
+            answer: 1,
+            explain: "Hambatan kecil agar amperemeter tidak mengganggu arus yang diukur.",
+          },
+          {
+            q: "Galvanometer tahan maksimum 0,05 A dipakai mengukur 1 A. Berapa arus lewat shunt?",
+            options: ["1,05 A", "0,95 A", "0,05 A", "20 A"],
+            answer: 1,
+            explain: "Arus shunt = 1 - 0,05 = 0,95 A (Hukum I Kirchhoff).",
+          },
+          {
+            q: "Mengapa amperemeter berbahaya bila dipasang paralel langsung ke sumber?",
+            options: [
+              "Karena tegangannya naik",
+              "Karena hambatannya kecil, arus melonjak seperti korsleting",
+              "Karena tidak ada arus yang lewat",
+              "Karena hambatannya terlalu besar",
+            ],
+            answer: 1,
+            explain: "Hambatan amperemeter nyaris nol, sehingga arus melonjak besar dan merusak alat.",
+          },
+        ],
+      },
+    ],
+  },
 ];

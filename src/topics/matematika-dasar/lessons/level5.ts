@@ -621,4 +621,177 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kurva-lonceng",
+    levelId: "bahasa-semesta",
+    order: 5,
+    title: "Kurva Lonceng: Pola Tersembunyi dalam Keacakan",
+    summary:
+      "Kita lempar dua dadu berulang kali dan amati jumlahnya, lalu menemukan bahwa keacakan pun punya bentuk yang teratur, yaitu kurva lonceng.",
+    durationMin: 14,
+    tags: ["distribusi normal", "kurva lonceng", "peluang", "data"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Lempar satu dadu, hasilnya benar-benar acak: 1 sampai 6 sama mungkinnya. Tetapi lempar <strong>dua dadu</strong> sekaligus lalu jumlahkan angkanya. Apakah semua jumlah dari 2 sampai 12 sama mungkinnya? Ternyata tidak. Di balik keacakan ternyata bersembunyi sebuah bentuk yang teratur. Ayo lempar dulu dan amati polanya.",
+      },
+      {
+        type: "video",
+        comp: "StatistikaVideo",
+        title: "Video: Membaca Dunia lewat Data",
+        caption: "Dari banyak angka acak yang berserakan, muncul satu bentuk sebaran yang teratur.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Pikirkan jumlah 2: hanya bisa dari 1 dan 1, jadi satu cara saja. Sekarang jumlah 7: bisa dari 1+6, 2+5, 3+4, 4+3, 5+2, dan 6+1, yaitu enam cara. Karena lebih banyak cara, jumlah 7 jauh lebih sering muncul daripada jumlah 2 atau 12. Coba lempar berkali-kali di simulator dan amati angka mana yang menumpuk di tengah.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorPeluang",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Banyaknya Cara Memperoleh Tiap Jumlah dari Dua Dadu",
+        unit: "banyak cara (dari 36)",
+        source: "fakta matematika",
+        note: "Jumlah 7 punya 6 cara sehingga paling sering, sedangkan ujung 2 dan 12 hanya 1 cara. Batangnya menggunung di tengah lalu menurun ke kedua sisi, itulah bentuk lonceng.",
+        data: [
+          { label: "2", value: 1, color: "#60a5fa" },
+          { label: "3", value: 2, color: "#60a5fa" },
+          { label: "4", value: 3, color: "#34d399" },
+          { label: "5", value: 4, color: "#34d399" },
+          { label: "6", value: 5, color: "#a78bfa" },
+          { label: "7", value: 6, color: "#f43f5e" },
+          { label: "8", value: 5, color: "#a78bfa" },
+          { label: "9", value: 4, color: "#34d399" },
+          { label: "10", value: 3, color: "#34d399" },
+          { label: "11", value: 2, color: "#60a5fa" },
+          { label: "12", value: 1, color: "#60a5fa" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Keacakan yang punya bentuk",
+        html: "Aneh tetapi nyata: tiap lemparan tak bisa ditebak, namun bila diulang banyak kali, sebaran hasilnya sangat teratur. Nilai-nilai di tengah muncul paling sering, nilai ekstrem makin jarang. Pola menggunung ini muncul karena jumlah dua dadu adalah <strong>gabungan banyak kemungkinan kecil</strong> yang saling menyeimbangkan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pada lemparan dua dadu, ada berapa cara untuk memperoleh jumlah 7?",
+        answer: 6,
+        suffix: " cara",
+        solution:
+          "Pasangan yang berjumlah 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). Ada <strong>6 cara</strong>, paling banyak di antara semua jumlah.",
+        hint: "Daftar pasangan dadu yang totalnya 7.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Peluang jumlah dua dadu sama dengan 2 (kedua dadu menunjukkan 1). Tulis dalam persen.",
+        answer: 2.8,
+        tolerance: 0.3,
+        suffix: "%",
+        solution:
+          "Hanya ada 1 cara (1 dan 1) dari 36 kemungkinan. Peluang = 1/36 = 0,0278 atau sekitar <strong>2,8%</strong>. Itulah sebabnya jumlah 2 sangat jarang.",
+        hint: "Bagi 1 dengan 36, lalu kalikan 100.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan jumlah dua dadu dengan banyaknya cara memperolehnya.",
+        pairs: [
+          { left: "Jumlah 2", right: "1 cara" },
+          { left: "Jumlah 5", right: "4 cara" },
+          { left: "Jumlah 7", right: "6 cara" },
+          { left: "Jumlah 10", right: "3 cara" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Sebaran data ini menggunung di tengah (lonceng) atau tersebar merata?",
+        buckets: ["Menggunung di tengah", "Tersebar merata"],
+        items: [
+          { text: "Tinggi badan orang dewasa di sebuah kota", bucket: "Menggunung di tengah" },
+          { text: "Angka yang keluar pada satu lemparan satu dadu", bucket: "Tersebar merata" },
+          { text: "Nilai ujian satu kelas besar", bucket: "Menggunung di tengah" },
+          { text: "Nomor yang keluar pada roda undian yang seimbang", bucket: "Tersebar merata" },
+          { text: "Berat buah apel dari satu kebun", bucket: "Menggunung di tengah" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Papan Galton",
+        html: "Sekitar tahun 1870-an, ilmuwan bernama <strong>Francis Galton</strong> membuat papan berpaku. Bola-bola dijatuhkan dari atas, dan tiap kali membentur paku, bola memantul ke kiri atau ke kanan secara acak. Setelah ratusan bola jatuh, tumpukan di bawah membentuk gunungan: paling tinggi di tengah dan makin pendek ke tepi. Padahal tiap bola bergerak acak. Inilah bukti nyata bahwa banyak peristiwa acak kecil yang dijumlahkan menghasilkan <strong>kurva lonceng</strong>, pola yang sama dengan sebaran jumlah dua dadu tadi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir",
+        html: "Setelah melempar dadu dan melihat papan Galton, polanya jelas. Barulah kita simpulkan: <strong>banyak hal acak yang merupakan gabungan dari banyak faktor kecil cenderung menumpuk di tengah membentuk kurva lonceng</strong>. Bentuk sebaran ini disebut <strong>distribusi normal</strong>, dan ia muncul di mana-mana, dari tinggi badan sampai nilai ujian. Keteraturan di balik keacakan inilah salah satu kalimat terindah dari bahasa semesta.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Satu dadu memberi hasil merata, tetapi jumlah dua dadu menumpuk di tengah.",
+          "Jumlah 7 paling sering (6 cara), jumlah 2 dan 12 paling jarang (1 cara).",
+          "Banyak peristiwa acak kecil yang digabung menghasilkan bentuk kurva lonceng.",
+          "Bentuk lonceng ini disebut distribusi normal dan muncul di banyak data nyata.",
+          "Di balik keacakan sering tersembunyi keteraturan yang bisa dibaca matematika.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Jumlah dua dadu yang paling sering muncul adalah?",
+            options: ["2", "6", "7", "12"],
+            answer: 2,
+            explain: "Jumlah 7 punya 6 cara, terbanyak di antara semua jumlah.",
+          },
+          {
+            q: "Ada berapa cara memperoleh jumlah 7 dari dua dadu?",
+            options: ["3", "4", "5", "6"],
+            answer: 3,
+            explain: "Pasangannya (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), yaitu 6 cara.",
+          },
+          {
+            q: "Bentuk sebaran jumlah dua dadu menyerupai?",
+            options: [
+              "Garis lurus mendatar",
+              "Gunungan yang tinggi di tengah dan rendah di tepi",
+              "Lingkaran",
+              "Tangga yang naik terus",
+            ],
+            answer: 1,
+            explain: "Sebarannya menggunung di tengah, itulah bentuk kurva lonceng.",
+          },
+          {
+            q: "Manakah data yang paling mungkin mengikuti kurva lonceng?",
+            options: [
+              "Angka pada satu lemparan satu dadu",
+              "Tinggi badan orang dewasa di sebuah kota",
+              "Nomor pada roda undian seimbang",
+              "Sisi koin yang dilempar sekali",
+            ],
+            answer: 1,
+            explain: "Tinggi badan menumpuk di sekitar rata-rata, ciri distribusi normal.",
+          },
+          {
+            q: "Papan Galton menunjukkan bahwa?",
+            options: [
+              "Keacakan tidak punya pola sama sekali",
+              "Banyak peristiwa acak kecil yang digabung membentuk kurva lonceng",
+              "Bola selalu jatuh ke satu sisi",
+              "Dadu lebih akurat daripada koin",
+            ],
+            answer: 1,
+            explain: "Tumpukan bola membentuk lonceng meski tiap bola bergerak acak.",
+          },
+        ],
+      },
+    ],
+  },
 ];

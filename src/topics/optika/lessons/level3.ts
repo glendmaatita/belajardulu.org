@@ -610,4 +610,171 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "interferensi-lapisan-tipis",
+    levelId: "optika-fisis",
+    order: 5,
+    title: "Interferensi Lapisan Tipis",
+    summary:
+      "Sebelum mengenal rumus ketebalan, kita amati dulu mengapa gelembung sabun dan genangan minyak di aspal berkilau warna-warni padahal bahannya bening tak berwarna.",
+    durationMin: 14,
+    tags: ["optika", "interferensi", "lapisan-tipis", "warna"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Tiup gelembung sabun dan amati permukaannya: muncul pita warna yang berubah-ubah saat lapisannya menipis. Lihat juga genangan air yang tertetesi minyak di jalan, ia berkilau seperti pelangi. Air sabun dan minyak sebenarnya <strong>bening tak berwarna</strong>. Dari mana warnanya? Bukan dari pigmen, melainkan dari <strong>interferensi</strong> cahaya yang memantul di dua permukaan lapisan yang sangat tipis. Ayo amati dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "GelombangFisika",
+        title: "Video: Cahaya sebagai Gelombang yang Berinterferensi",
+        caption: "Dua gelombang pantul yang bertemu bisa saling menguatkan atau meniadakan, bergantung beda lintasannya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Pegang bingkai kawat berlapis air sabun secara tegak, lalu amati dengan cahaya dari jendela. Di bagian atas, lapisan yang paling menipis tampak <strong>hitam</strong> tepat sebelum pecah, sedangkan di bawah muncul pita warna mendatar. Saat air mengalir turun dan lapisan menebal, warna pitanya bergeser. Rasakan dulu bahwa warna bergantung pada <strong>ketebalan</strong> lapisan, jangan buru-buru cari rumus.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua pantulan yang berinterferensi",
+        html: "Sebagian cahaya memantul di permukaan <strong>atas</strong> lapisan, sebagian lagi menembus lalu memantul di permukaan <strong>bawah</strong>. Kedua berkas pantul ini bertemu kembali dengan beda lintasan sekitar 2nt (t ketebalan, n indeks bias lapisan). Pantulan di permukaan atas mengalami pembalikan fase setara setengah gelombang. Akibatnya untuk lapisan sabun di udara, pantulan <strong>terkuat</strong> (warna tampak terang) terjadi saat 2nt = (m + ½)λ.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorGelombang",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Ketebalan Minimum Lapisan Sabun untuk Pantulan Terkuat (n = 1,33)",
+        unit: "nanometer",
+        source: "perhitungan t = λ/(4n) dengan n = 1,33",
+        note: "Angka nyata dari rumus. Lapisan yang lebih tebal memantulkan warna dengan panjang gelombang lebih besar. Itu sebabnya warna gelembung bergeser dari biru ke merah saat lapisannya menebal.",
+        data: [
+          { label: "Biru 450 nm", value: 84.6, color: "#60a5fa" },
+          { label: "Hijau 550 nm", value: 103.4, color: "#34d399" },
+          { label: "Merah 650 nm", value: 122.2, color: "#f87171" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Lapisan sabun (n = 1,33) di udara memantulkan cahaya hijau λ = 532 nm paling terang. Berapa ketebalan minimum lapisan itu? (pantulan terkuat: 2nt = ½λ, sehingga t = λ/(4n))",
+        answer: 100,
+        tolerance: 2,
+        suffix: " nm",
+        solution:
+          "Ketebalan minimum (orde m = 0): t = λ/(4n) = 532/(4 × 1,33) = 532/5,32 = <strong>100 nm</strong>. Lapisan setipis ini, sekitar 1/5000 milimeter, sudah cukup menghasilkan warna terang.",
+        hint: "Bagi panjang gelombang dengan 4 dikali indeks bias.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada lapisan sabun yang sama (n = 1,33, λ = 532 nm), berapa ketebalan berikutnya yang juga memberi pantulan terkuat? (orde m = 1: 2nt = 3/2 λ, sehingga t = 3λ/(4n))",
+        answer: 300,
+        tolerance: 5,
+        suffix: " nm",
+        solution:
+          "Untuk m = 1: t = 3λ/(4n) = 3 × 532/(4 × 1,33) = 3 × 100 = <strong>300 nm</strong>. Pantulan terkuat berulang tiap kelipatan ganjil dari 100 nm, itulah sebabnya satu warna bisa muncul di beberapa ketebalan berbeda.",
+        hint: "Kali tiga ketebalan minimum sebelumnya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Kelompokkan tiap pernyataan tentang warna lapisan tipis sebagai benar atau salah.",
+        buckets: ["Benar", "Salah"],
+        items: [
+          { text: "Warnanya berasal dari interferensi, bukan pigmen", bucket: "Benar" },
+          { text: "Warna bergantung pada ketebalan lapisan", bucket: "Benar" },
+          { text: "Air sabun mengandung zat warna-warni", bucket: "Salah" },
+          { text: "Lapisan yang sangat tipis (mendekati nol) tampak terang menyala", bucket: "Salah" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah interferensi lapisan tipis dengan maknanya.",
+        pairs: [
+          { left: "Beda lintasan 2nt", right: "Selisih jarak tempuh dua berkas pantul" },
+          { left: "Pembalikan fase", right: "Setengah gelombang ekstra saat memantul ke medium lebih rapat" },
+          { left: "Interferensi konstruktif", right: "Dua gelombang sefase saling menguatkan, warna terang" },
+          { left: "Lapisan antirefleksi", right: "Lapisan tipis yang justru meniadakan pantulan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Lapisan Antirefleksi pada Lensa Kamera",
+        html: "Lensa kamera modern dilapisi selaput tipis seperti magnesium fluorida (n = 1,38) agar pantulan berkurang dan cahaya yang diteruskan lebih banyak. Caranya kebalikan dari gelembung: ketebalan diatur agar kedua pantulan justru <strong>saling meniadakan</strong>. Untuk meredam warna hijau yang paling peka di mata, λ = 550 nm, ketebalan minimum t = λ/(4n) = 550/(4 × 1,38) = 550/5,52 = <strong>99,6 nm</strong>, hampir 100 nm. Karena hanya satu warna yang diredam sempurna, sisa pantulan tampak keunguan, itulah kilau ungu-hijau yang sering kamu lihat pada lensa berlapis.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. Warna lapisan tipis lahir dari interferensi dua pantulan dengan beda lintasan <strong>2nt</strong> ditambah pembalikan fase setengah gelombang. Untuk lapisan sabun di udara, pantulan terkuat terjadi saat <strong>2nt = (m + ½)λ</strong>, sehingga ketebalan minimumnya <strong>t = λ/(4n)</strong>. Lapisan antirefleksi memakai syarat kebalikannya untuk meniadakan pantulan. Rumus ini hanya menuliskan rapi pola warna yang sudah kamu lihat pada gelembung dan lensa.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Warna gelembung sabun dan lapisan minyak berasal dari interferensi, bukan pigmen.",
+          "Cahaya memantul di dua permukaan lapisan lalu berinterferensi dengan beda lintasan 2nt.",
+          "Pantulan di permukaan ke medium lebih rapat membalik fase setengah gelombang.",
+          "Lapisan sabun di udara memantul terkuat saat 2nt = (m + ½)λ; ketebalan minimum t = λ/(4n).",
+          "Lapisan antirefleksi memakai prinsip yang sama untuk justru meniadakan pantulan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dari mana warna gelembung sabun berasal?",
+            options: [
+              "Pigmen dalam sabun",
+              "Interferensi cahaya yang memantul di dua permukaan lapisan",
+              "Pembiasan tunggal di satu permukaan",
+              "Penyerapan cahaya oleh air",
+            ],
+            answer: 1,
+            explain: "Air sabun bening; warnanya muncul dari interferensi dua berkas pantul, bukan dari zat warna.",
+          },
+          {
+            q: "Beda lintasan utama antara dua berkas pantul pada lapisan tipis kira-kira?",
+            options: ["nt", "2nt", "t/2", "4nt"],
+            answer: 1,
+            explain: "Berkas kedua menembus dan kembali menempuh ketebalan t dua kali di medium berindeks n, jadi sekitar 2nt.",
+          },
+          {
+            q: "Ketebalan minimum lapisan sabun (n = 1,33) untuk memantulkan terkuat cahaya 532 nm adalah?",
+            options: ["50 nm", "100 nm", "200 nm", "400 nm"],
+            answer: 1,
+            explain: "t = λ/(4n) = 532/5,32 = 100 nm.",
+          },
+          {
+            q: "Mengapa lapisan sabun paling tipis (mendekati nol) tampak gelap, bukan terang?",
+            options: [
+              "Karena menyerap semua cahaya",
+              "Karena pembalikan fase membuat kedua pantulan saling meniadakan saat lapisan sangat tipis",
+              "Karena tidak ada cahaya yang sampai ke sana",
+              "Karena lapisan tipis memancarkan warna hitam",
+            ],
+            answer: 1,
+            explain: "Saat t mendekati nol, beda lintasan hanya tinggal pembalikan fase setengah gelombang, sehingga interferensinya destruktif.",
+          },
+          {
+            q: "Lapisan antirefleksi pada lensa bekerja dengan cara?",
+            options: [
+              "Menguatkan pantulan agar lensa berkilau",
+              "Mengatur ketebalan agar kedua pantulan saling meniadakan",
+              "Menyerap seluruh cahaya datang",
+              "Memantulkan total cahaya",
+            ],
+            answer: 1,
+            explain: "Ketebalannya dipilih agar pantulan dari dua permukaan berinterferensi destruktif, sehingga lebih banyak cahaya diteruskan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

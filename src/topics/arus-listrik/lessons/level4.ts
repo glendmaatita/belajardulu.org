@@ -645,4 +645,151 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "efek-pemanasan-joule",
+    levelId: "energi-daya-listrik",
+    order: 5,
+    title: "Efek Pemanasan Joule",
+    summary:
+      "Kenapa kawat yang dialiri arus selalu menghangat, dari setrika sampai sekring? Dari pengamatan panas itu, lahir Hukum Joule tentang kalor.",
+    durationMin: 14,
+    tags: ["fisika", "listrik", "joule", "kalor", "pemanasan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Charger yang hangat, setrika yang membara, lampu pijar yang panas: setiap kali arus melewati hambatan, sebagian energi listrik berubah menjadi <strong>kalor</strong> (panas). Kadang panas ini kita inginkan (pemanas), kadang terbuang percuma (kabel). James Prescott Joule mengukur dengan teliti berapa kalor yang muncul. Mari amati apa yang menentukan besar panas ini dulu, baru Hukum Joule kita rangkum di akhir.",
+      },
+      {
+        type: "video",
+        comp: "HukumOhmVideo",
+        title: "Video: Arus yang Berubah Jadi Panas",
+        caption: "Saat muatan menembus hambatan, energinya terlepas sebagai kalor.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Pegang kawat elemen pemanas. Saat arus kecil, hangat saja; saat arus digandakan, panasnya melonjak jauh lebih dari dua kali lipat. Ternyata kalor bergantung pada <strong>kuadrat arus</strong>: gandakan arus, kalornya empat kali lipat. Panas juga bertambah jika hambatannya lebih besar dan jika waktu menyalanya lebih lama. Tiga hal inilah, arus, hambatan, dan waktu, yang menentukan kalor. Belum ada rumus, baru pengamatan.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kalor, joule, dan kalori",
+        html: "<strong>Kalor (Q)</strong> adalah energi panas yang dihasilkan, satuannya joule (J). Karena kalor adalah energi, ia juga bisa dinyatakan dalam <strong>kalori</strong>: 1 kalori kira-kira 4,2 joule, sehingga 1 joule kira-kira 0,24 kalori. Kalor yang muncul di hambatan tidak hilang, ia menyebar ke sekitar sebagai panas.",
+      },
+      {
+        type: "widget",
+        widget: "KalkulatorOhm",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Kalor vs Arus pada Hambatan 10 Ω selama 1 sekon",
+        unit: "joule",
+        source: "perhitungan Q = I²·R·t",
+        note: "Arus 1, 2, 3, 4 A menghasilkan kalor 10, 40, 90, 160 J. Perhatikan: menggandakan arus melipatempatkan kalor, karena kalor sebanding kuadrat arus. Pola melengkung ini nyata, bukan persen karangan.",
+        data: [
+          { label: "1 A", value: 10, color: "#a3e635" },
+          { label: "2 A", value: 40, color: "#4ade80" },
+          { label: "3 A", value: 90, color: "#fb923c" },
+          { label: "4 A", value: 160, color: "#f87171" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Arus 2 A mengalir melalui hambatan 5 Ω selama 10 sekon. Berapa kalor yang dihasilkan? (gunakan Q = I² × R × t)",
+        answer: 200,
+        tolerance: 0.5,
+        suffix: " J",
+        solution:
+          "Q = I² × R × t = 2² × 5 × 10 = 4 × 5 × 10 = <strong>200 joule</strong>. Kuadrat arus membuat panas naik cepat saat arus bertambah.",
+        hint: "Kuadratkan arus dulu, lalu kalikan dengan hambatan dan waktu.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah hambatan menghasilkan kalor 1000 joule. Berapa kira-kira nilainya dalam kalori? (gunakan 1 joule = 0,24 kalori)",
+        answer: 240,
+        tolerance: 5,
+        suffix: " kalori",
+        solution:
+          "Q = 1000 J × 0,24 = <strong>240 kalori</strong> (sekitar segitu, karena 1 kalori kira-kira 4,2 joule). Kalor dan energi listrik adalah hal yang sama dalam satuan berbeda.",
+        hint: "Kalikan jumlah joule dengan 0,24.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap perubahan: menaikkan atau menurunkan kalor Joule yang dihasilkan.",
+        buckets: ["Menaikkan kalor", "Menurunkan kalor"],
+        items: [
+          { text: "Arus digandakan (R dan t tetap)", bucket: "Menaikkan kalor" },
+          { text: "Waktu menyala diperpanjang", bucket: "Menaikkan kalor" },
+          { text: "Hambatan diperkecil pada arus tetap", bucket: "Menurunkan kalor" },
+          { text: "Arus diputus menjadi nol", bucket: "Menurunkan kalor" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pemanas Celup Memanaskan Air",
+        html: "Sebuah pemanas celup berdaya 350 watt dicelupkan ke segelas air dan dinyalakan 5 menit (300 sekon). Karena daya adalah laju energi, kalor yang dilepasnya: Q = P × t = 350 × 300 = <strong>105.000 joule</strong> (105 kJ). Energi sebesar ini berpindah ke air dan menaikkan suhunya. Inilah efek pemanasan Joule yang berguna: seluruh daya listrik sengaja diubah menjadi kalor. Pada kabel biasa, kalor seperti ini justru kerugian yang ingin ditekan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Pengukuran Joule tadi punya nama: <strong>Hukum Joule</strong>. Kalor yang dihasilkan hambatan: <strong>Q = I² × R × t</strong> (dalam joule). Karena V = IR dan P = VI, bentuk ini setara dengan Q = V·I·t = P·t. Dalam satuan kalori, Q = 0,24 × I² × R × t. Rumus ini lahir dari pengamatan 'panas naik seiring kuadrat arus', bukan dari hafalan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Efek pemanasan Joule: arus yang melewati hambatan mengubah energi listrik menjadi kalor.",
+          "Hukum Joule: Q = I² × R × t (joule), setara dengan Q = P × t.",
+          "Kalor sebanding kuadrat arus: menggandakan arus melipatempatkan panas.",
+          "Dalam kalori: Q = 0,24 × I² × R × t, karena 1 joule kira-kira 0,24 kalori.",
+          "Panas ini berguna pada pemanas, tetapi merupakan kerugian pada kabel penghantar.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Hukum Joule menyatakan kalor Q sama dengan?",
+            options: ["I × R × t", "I² × R × t", "I × R² × t", "I² × R / t"],
+            answer: 1,
+            explain: "Kalor pada hambatan: Q = I² × R × t.",
+          },
+          {
+            q: "Jika arus digandakan (R dan t tetap), kalor menjadi?",
+            options: ["Dua kali", "Empat kali", "Setengahnya", "Tetap"],
+            answer: 1,
+            explain: "Kalor sebanding kuadrat arus, jadi 2² = 4 kali lipat.",
+          },
+          {
+            q: "Arus 3 A melewati hambatan 4 Ω selama 5 sekon. Kalornya?",
+            options: ["60 J", "180 J", "360 J", "20 J"],
+            answer: 1,
+            explain: "Q = I²Rt = 9 × 4 × 5 = 180 joule.",
+          },
+          {
+            q: "Satu joule kira-kira sama dengan berapa kalori?",
+            options: ["4,2 kalori", "0,24 kalori", "1 kalori", "24 kalori"],
+            answer: 1,
+            explain: "1 kalori kira-kira 4,2 joule, sehingga 1 joule kira-kira 0,24 kalori.",
+          },
+          {
+            q: "Mengapa kawat sekring meleleh saat arus berlebih?",
+            options: [
+              "Karena tegangannya hilang",
+              "Karena kalor Joule (Q = I²Rt) melonjak dan melelehkan kawat",
+              "Karena hambatannya menjadi nol",
+              "Karena arus berhenti mengalir",
+            ],
+            answer: 1,
+            explain: "Arus besar membuat kalor I²Rt melonjak, cukup untuk melelehkan kawat sekring.",
+          },
+        ],
+      },
+    ],
+  },
 ];

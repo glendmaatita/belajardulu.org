@@ -595,4 +595,154 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "usaha-dari-gaya-berubah",
+    levelId: "aplikasi-integral",
+    order: 5,
+    title: "Usaha dari Gaya yang Berubah: Menjumlah Dorongan Sepanjang Jarak",
+    summary:
+      "Sebelum menulis rumusnya, kita jumlahkan dorongan kecil di tiap jengkal jarak saat gaya tidak tetap.",
+    durationMin: 14,
+    tags: ["kalkulus", "integral", "usaha", "gaya"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Menarik per (pegas) makin jauh terasa makin berat: gayanya tidak tetap, melainkan bertambah seiring tarikan. Lalu berapa usaha yang kita keluarkan untuk meregangkannya? Saat gaya berubah di sepanjang jarak, kita tidak bisa sekadar mengali gaya dengan jarak. Ayo selidiki dulu caranya sebelum menulis rumusnya.",
+      },
+      {
+        type: "video",
+        comp: "IntegralVideo",
+        title: "Video: Usaha sebagai Luas di Bawah Grafik Gaya",
+        caption: "Menjumlahkan gaya kali jarak kecil di sepanjang lintasan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Sebuah per menuruti gaya F(x) = 2x newton saat diregangkan sejauh x meter. Di awal (x = 0) gayanya 0, di x = 1 gayanya 2, di x = 3 gayanya 6. Bagi jarak menjadi potongan kecil; di tiap potongan usaha kecil adalah gaya kali jarak kecil, yaitu luas satu pita tipis. Jumlahkan semua pita dari 0 sampai 3.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorIntegral",
+      },
+      {
+        type: "chart",
+        variant: "area",
+        title: "Gaya Pegas F(x) = 2x terhadap Jarak Regangan (newton)",
+        unit: "gaya (newton)",
+        source: "perhitungan gaya pegas F(x) = 2x",
+        note: "Usaha sama dengan luas segitiga di bawah grafik gaya ini: setengah x 3 x 6 = 9 joule.",
+        data: [
+          { label: "x=0 m", value: 0, color: "#2dd4bf" },
+          { label: "x=1 m", value: 2, color: "#14b8a6" },
+          { label: "x=2 m", value: 4, color: "#0d9488" },
+          { label: "x=3 m", value: 6, color: "#0f766e" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Gaya kali jarak, potongan demi potongan",
+        html: "Saat gaya tetap, usaha cukup gaya dikali jarak, sebuah persegi panjang. Saat gaya berubah, kita potong jaraknya menjadi langkah kecil; di tiap langkah gaya hampir tetap, jadi usaha kecil adalah gaya kali langkah kecil itu, yaitu <strong>luas satu pita tipis</strong>. Total usaha adalah jumlah semua pita, yakni luas di bawah grafik gaya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah per dengan gaya F(x) = 4x newton diregangkan dari x = 0 sampai x = 2 meter. Berapa usaha yang dilakukan? (Antiturunan 4x adalah 2x kuadrat.)",
+        answer: 8,
+        suffix: " joule",
+        solution:
+          "Usaha = integral 4x dari 0 sampai 2 = 2x kuadrat dievaluasi di batas = 2 x 2 kuadrat - 0 = 2 x 4 = <strong>8 joule</strong>. Sama dengan luas segitiga setengah x 2 x 8.",
+        hint: "Integralkan gaya: antiturunan 4x adalah 2x kuadrat, lalu pakai batas 0 dan 2.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah kotak didorong dengan gaya tetap 6 newton sejauh 5 meter. Berapa usaha yang dilakukan?",
+        answer: 30,
+        suffix: " joule",
+        solution:
+          "Gaya tetap, jadi usaha = gaya x jarak = 6 x 5 = <strong>30 joule</strong>. Ini luas persegi panjang di bawah grafik gaya yang datar.",
+        hint: "Untuk gaya tetap, usaha = gaya dikali jarak.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan bentuk daerah di bawah grafik gaya terhadap jarak.",
+        buckets: ["Persegi panjang", "Segitiga"],
+        items: [
+          { text: "Gaya tetap 10 newton sepanjang jarak", bucket: "Persegi panjang" },
+          { text: "Mendorong meja dengan gaya tetap 8 newton", bucket: "Persegi panjang" },
+          { text: "Gaya pegas F = 2x yang naik lurus dari nol", bucket: "Segitiga" },
+          { text: "Gaya pegas F = 5x yang naik lurus dari nol", bucket: "Segitiga" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Usaha menimba air dari sumur",
+        html: "Untuk menarik ember air dari sumur dalam, gaya yang diperlukan bisa berubah karena panjang tali yang menggantung ikut berkurang seiring tarikan, sehingga beban yang terangkat berubah. Insinyur menghitung usaha total dengan menjumlahkan gaya dikali tiap potongan jarak angkat yang sangat kecil, yaitu <strong>integral gaya terhadap jarak</strong>. Hasilnya adalah energi yang dibutuhkan, dipakai untuk memilih motor pompa yang tepat. Gaya yang berubah berubah menjadi satu angka usaha lewat integral.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah merasakan polanya, baru kita tuliskan: <strong>usaha oleh gaya F(x) sepanjang jarak dari x = a sampai b adalah integral dari a ke b atas F(x) dx</strong>. Untuk gaya tetap, integral ini menjadi gaya dikali jarak. Untuk gaya pegas yang naik lurus, hasilnya luas segitiga di bawah grafik gaya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Saat gaya berubah, usaha dihitung dengan menjumlahkan gaya kali jarak kecil.",
+          "Usaha sama dengan luas di bawah grafik gaya terhadap jarak.",
+          "Untuk gaya tetap, usaha = gaya dikali jarak (persegi panjang).",
+          "Untuk gaya pegas yang naik lurus, usaha berbentuk luas segitiga.",
+          "Secara umum, usaha = integral F(x) dx dari a sampai b.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Saat gaya berubah sepanjang jarak, usaha sama dengan?",
+            options: [
+              "Gaya terbesar dikali jarak",
+              "Luas di bawah grafik gaya terhadap jarak",
+              "Gaya dibagi jarak",
+              "Turunan gaya",
+            ],
+            answer: 1,
+            explain: "Usaha adalah jumlah gaya kali jarak kecil, yaitu luas di bawah grafik gaya.",
+          },
+          {
+            q: "Untuk gaya tetap 6 newton sejauh 5 meter, usahanya?",
+            options: ["11 joule", "30 joule", "1,2 joule", "15 joule"],
+            answer: 1,
+            explain: "Gaya tetap: usaha = 6 x 5 = 30 joule, luas persegi panjang.",
+          },
+          {
+            q: "Untuk gaya pegas F = 4x dari 0 sampai 2 meter, usahanya?",
+            options: ["4 joule", "8 joule", "16 joule", "2 joule"],
+            answer: 1,
+            explain: "Integral 4x adalah 2x kuadrat; di x = 2 bernilai 8 joule.",
+          },
+          {
+            q: "Grafik gaya pegas yang naik lurus dari nol membentuk daerah berbentuk?",
+            options: ["Persegi panjang", "Segitiga", "Lingkaran", "Trapesium tegak"],
+            answer: 1,
+            explain: "Gaya yang naik lurus dari nol membentuk segitiga di bawah grafiknya.",
+          },
+          {
+            q: "Rumus umum usaha oleh gaya F(x) dari a sampai b adalah?",
+            options: [
+              "Integral F(x) dx dari a ke b",
+              "Turunan F(x)",
+              "F(b) dikurangi F(a)",
+              "F(x) dibagi jarak",
+            ],
+            answer: 0,
+            explain: "Usaha = integral gaya terhadap jarak pada selang itu.",
+          },
+        ],
+      },
+    ],
+  },
 ];

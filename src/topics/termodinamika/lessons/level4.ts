@@ -587,4 +587,154 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kapasitas-kalor-molar-gas",
+    levelId: "hukum-termodinamika",
+    order: 5,
+    title: "Kapasitas Kalor Molar: Cv, Cp, dan Relasi Mayer",
+    summary:
+      "Memanaskan gas dalam tabung kaku berbeda dari memanaskannya sambil membiarkan memuai. Pada tekanan tetap dibutuhkan kalor lebih banyak, dan selisihnya bukan kebetulan. Kita amati dulu sebelum berumus.",
+    durationMin: 14,
+    tags: ["fisika", "termodinamika", "kapasitas kalor", "mayer", "gas ideal"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Panaskan gas dalam tabung baja kaku yang volumenya tidak bisa berubah, lalu panaskan gas yang sama dalam silinder berpiston yang bebas memuai. Untuk menaikkan suhu sebanyak yang sama, ternyata cara kedua menelan <strong>kalor lebih banyak</strong>. Ke mana kelebihan kalor itu pergi? Ayo amati dulu apa yang terjadi sebelum kita rumuskan dua macam kapasitas kalor gas.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Kalor, Energi Dalam, dan Usaha",
+        caption: "Kalor yang masuk bisa terpecah menjadi kenaikan energi dalam dan usaha memuai.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan dua percobaan menaikkan suhu gas 1 derajat. Pada <strong>volume tetap</strong>, piston dikunci sehingga gas tidak melakukan usaha; seluruh kalor menjadi tambahan energi dalam. Pada <strong>tekanan tetap</strong>, gas memuai mendorong piston, jadi sebagian kalor terpakai untuk usaha, dan sisanya barulah menaikkan suhu. Amati: karena ada usaha ekstra ini, memanaskan gas pada tekanan tetap selalu butuh kalor lebih banyak.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua kapasitas kalor",
+        html: "Gas punya dua kapasitas kalor molar. <strong>Cv</strong> (volume tetap): kalor untuk menaikkan suhu 1 mol gas sebesar 1 kelvin tanpa memuai. <strong>Cp</strong> (tekanan tetap): kalor untuk hal sama tetapi gas dibiarkan memuai. Karena pada tekanan tetap gas juga melakukan usaha, selalu <strong>Cp lebih besar daripada Cv</strong>. Untuk gas ideal monoatomik, Cv = (3/2)R dan Cp = (5/2)R.",
+      },
+      {
+        type: "widget",
+        widget: "KalkulatorUsahaEnergi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Kapasitas Kalor Molar Gas Ideal",
+        unit: "J/mol·K",
+        source: "dihitung dari kelipatan R = 8,314 J/mol·K",
+        note: "Pada tiap jenis gas, Cp selalu lebih tinggi daripada Cv tepat sebesar R. Gas diatomik menyimpan energi lebih banyak karena molekulnya bisa berputar.",
+        data: [
+          { label: "Cv monoatomik", value: 12.47, color: "#38bdf8" },
+          { label: "Cp monoatomik", value: 20.79, color: "#34d399" },
+          { label: "Cv diatomik", value: 20.79, color: "#fbbf24" },
+          { label: "Cp diatomik", value: 29.10, color: "#f87171" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa kalor (joule) untuk memanaskan 2 mol gas monoatomik sebesar 50 K pada volume tetap? Pakai Cv = (3/2)R = 12,47 J/mol·K.",
+        answer: 1247,
+        tolerance: 5,
+        suffix: " J",
+        solution:
+          "Pada volume tetap, Q = n·Cv·ΔT = 2 × 12,47 × 50 = <strong>1247 J</strong>. Karena gas tidak memuai, seluruh kalor ini menjadi tambahan energi dalam, jadi Q sama dengan ΔU.",
+        hint: "Pakai Q = n·Cv·ΔT dengan Cv = 12,47 J/mol·K.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa kalor (joule) untuk memanaskan 2 mol gas monoatomik yang sama sebesar 50 K, kali ini pada tekanan tetap? Pakai Cp = (5/2)R = 20,79 J/mol·K.",
+        answer: 2079,
+        tolerance: 5,
+        suffix: " J",
+        solution:
+          "Pada tekanan tetap, Q = n·Cp·ΔT = 2 × 20,79 × 50 = <strong>2079 J</strong>. Selisihnya dengan kasus volume tetap, 2079 − 1247 = 832 J, persis sama dengan usaha memuai n·R·ΔT = 2 × 8,314 × 50 = 831 J. Itulah relasi Mayer.",
+        hint: "Pakai Q = n·Cp·ΔT, lalu bandingkan selisihnya dengan n·R·ΔT.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap istilah dengan maknanya.",
+        pairs: [
+          { left: "Cv gas monoatomik", right: "(3/2)R, sekitar 12,47 J/mol·K" },
+          { left: "Cp gas monoatomik", right: "(5/2)R, sekitar 20,79 J/mol·K" },
+          { left: "Selisih Cp − Cv", right: "Sama dengan R (relasi Mayer)" },
+          { left: "Pemanasan volume tetap", right: "Usaha nol, Q seluruhnya jadi ΔU" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Mayer dan Setara Mekanik Kalor",
+        html: "Pada 1842, dokter Jerman Julius Robert von Mayer memperhatikan bahwa memanaskan gas pada tekanan tetap butuh kalor lebih banyak daripada pada volume tetap. Ia menyadari kelebihan kalor itu, yaitu selisih <strong>Cp dikurangi Cv</strong>, justru dipakai gas untuk melakukan usaha memuai. Dari sini Mayer memperkirakan berapa joule yang setara dengan satu satuan kalor, salah satu rumusan awal kekekalan energi. Selisih dua kapasitas kalor gas menjadi jembatan antara panas dan usaha mekanik.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah memahami asalnya, rumus jadi padat. Kalor pada volume tetap: <strong>Q = n·Cv·ΔT</strong> (seluruhnya jadi ΔU). Kalor pada tekanan tetap: <strong>Q = n·Cp·ΔT</strong> (jadi ΔU plus usaha P·ΔV). Selisihnya adalah relasi Mayer: <strong>Cp − Cv = R</strong>. Untuk gas monoatomik Cv = (3/2)R dan Cp = (5/2)R; untuk diatomik Cv = (5/2)R dan Cp = (7/2)R.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Cv adalah kapasitas kalor molar pada volume tetap; Cp pada tekanan tetap.",
+          "Cp selalu lebih besar dari Cv karena gas juga melakukan usaha saat memuai.",
+          "Relasi Mayer untuk gas ideal: Cp − Cv = R.",
+          "Gas monoatomik: Cv = (3/2)R, Cp = (5/2)R; diatomik lebih besar karena bisa berotasi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Relasi Mayer untuk gas ideal menyatakan?",
+            options: ["Cp − Cv = R", "Cp + Cv = R", "Cp · Cv = R", "Cp = Cv"],
+            answer: 0,
+            explain: "Selisih kapasitas kalor molar tekanan tetap dan volume tetap sama dengan R.",
+          },
+          {
+            q: "Mengapa Cp lebih besar daripada Cv?",
+            options: [
+              "Karena tekanan lebih berbahaya",
+              "Karena pada tekanan tetap gas juga melakukan usaha memuai",
+              "Karena volume tetap melepas kalor",
+              "Karena Cv tidak nyata",
+            ],
+            answer: 1,
+            explain: "Pada tekanan tetap, sebagian kalor jadi usaha, jadi butuh kalor lebih banyak.",
+          },
+          {
+            q: "Kapasitas kalor molar Cv gas monoatomik adalah?",
+            options: ["(3/2)R", "(5/2)R", "(7/2)R", "R"],
+            answer: 0,
+            explain: "Gas monoatomik: Cv = (3/2)R, sekitar 12,47 J/mol·K.",
+          },
+          {
+            q: "Memanaskan 1 mol gas monoatomik 1 K pada volume tetap perlu kalor sekitar?",
+            options: ["8,3 J", "12,5 J", "20,8 J", "100 J"],
+            answer: 1,
+            explain: "Q = Cv × 1 = (3/2)R ≈ 12,47 J.",
+          },
+          {
+            q: "Pada pemanasan volume tetap, kalor yang masuk seluruhnya menjadi?",
+            options: [
+              "Usaha memuai",
+              "Tambahan energi dalam (suhu naik)",
+              "Kalor laten",
+              "Radiasi",
+            ],
+            answer: 1,
+            explain: "Volume tetap berarti usaha nol, jadi Q seluruhnya menambah energi dalam.",
+          },
+        ],
+      },
+    ],
+  },
 ];

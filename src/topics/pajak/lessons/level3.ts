@@ -700,4 +700,152 @@ export const level3: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "barang-jasa-bebas-ppn",
+    levelId: "ppn",
+    order: 5,
+    title: "Barang & Jasa yang Bebas PPN",
+    summary: "Tidak semua barang dan jasa kena PPN. Kebutuhan pokok dan jasa tertentu dibebaskan agar terjangkau.",
+    durationMin: 12,
+    tags: ["PPN", "bebas PPN", "kebutuhan pokok"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kabar baik untuk pembeli: <strong>tidak semua barang dan jasa dikenai PPN</strong>. Kebutuhan pokok dan sejumlah jasa penting sengaja <strong>dibebaskan</strong> agar harganya tetap terjangkau masyarakat.",
+      },
+      {
+        type: "paragraph",
+        html: "Ini diatur dalam UU PPN (sebagaimana diubah UU HPP). Mengenali mana yang bebas PPN penting agar kamu, sebagai penjual maupun pembeli, tidak salah menetapkan atau membayar harga.",
+      },
+      {
+        type: "video",
+        comp: "AlurPPN",
+        title: "Video: Ke Mana Uang PPN Mengalir?",
+        caption: "PPN dipungut hanya atas barang/jasa kena pajak. Yang dibebaskan tidak ikut dipungut.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Yang umumnya tidak dikenai PPN",
+        html: "<strong>Barang kebutuhan pokok</strong> (beras, jagung, kedelai, daging, telur, susu, sayur, buah, gula konsumsi) dan <strong>jasa tertentu</strong> (kesehatan medis, pendidikan, pelayanan sosial, keuangan, angkutan umum, keagamaan) tidak dipungut PPN.",
+      },
+      {
+        type: "table",
+        caption: "Contoh status PPN barang dan jasa",
+        headers: ["Barang/Jasa", "Status PPN"],
+        rows: [
+          ["Beras, telur, sayur, gula konsumsi", "Dibebaskan (tidak dipungut)"],
+          ["Jasa kesehatan & pendidikan", "Tidak dikenai PPN"],
+          ["Jasa angkutan umum", "Tidak dikenai PPN"],
+          ["Elektronik, pakaian, furnitur (penjual PKP)", "Dikenai PPN 11%"],
+        ],
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Dampak PPN pada Harga: Barang Bebas vs Kena PPN (ilustrasi)",
+        unit: "Rp harga ke pembeli",
+        source: "ilustrasi perhitungan",
+        note: "Barang kebutuhan pokok dibebaskan agar harga tidak naik 11%.",
+        data: [
+          { label: "Beras Rp15.000 (bebas)", value: 15000, color: "#10b981" },
+          { label: "Barang biasa Rp15.000 + PPN", value: 16650, color: "#0ea5e9" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Hitung PPN barang kena pajak",
+        html: "Untuk barang yang memang kena PPN, pakai simulator ini guna melihat berapa PPN yang ditambahkan dan disetor.",
+      },
+      { type: "widget", widget: "SimulatorPPN" },
+      {
+        type: "case",
+        title: "Studi Kasus: Toko bahan pokok tak perlu pungut PPN",
+        html: "Toko Bu Ani menjual beras, telur, dan sayur, semuanya termasuk barang kebutuhan pokok yang <strong>dibebaskan dari PPN</strong>. Maka meski suatu saat ia menjadi PKP, atas penjualan bahan pokok itu ia tidak memungut PPN, sehingga harga ke pembeli tetap terjangkau.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Les privat dan jasa pendidikan",
+        html: "Pak Hadi membuka bimbingan belajar. Jasa pendidikan termasuk yang <strong>tidak dikenai PPN</strong>, sehingga ia tidak menambahkan 11% pada biaya lesnya. Berbeda dengan menjual buku komersial atau alat tulis yang dapat dikenai PPN bila ia PKP. Mengenali mana yang bebas membantu menetapkan harga dengan benar.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Umumnya dikenai PPN, atau dibebaskan/tidak dikenai PPN?",
+        buckets: ["Kena PPN", "Bebas/tidak dikenai PPN"],
+        items: [
+          { text: "Laptop dan elektronik", bucket: "Kena PPN" },
+          { text: "Beras dan kebutuhan pokok", bucket: "Bebas/tidak dikenai PPN" },
+          { text: "Jasa pelayanan kesehatan medis", bucket: "Bebas/tidak dikenai PPN" },
+          { text: "Pakaian di toko ritel (penjual PKP)", bucket: "Kena PPN" },
+          { text: "Jasa pendidikan/sekolah", bucket: "Bebas/tidak dikenai PPN" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pembeli belanja beras Rp200.000 (bebas PPN) dan setrika Rp300.000 (kena PPN 11%) di toko PKP. Berapa total PPN yang ditambahkan?",
+        answer: 33000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPN hanya atas barang kena pajak: beras bebas (Rp0), setrika 11% x Rp300.000 = <strong>Rp33.000</strong>. Total PPN Rp33.000.",
+        hint: "Hanya barang kena PPN yang dihitung; bahan pokok dibebaskan.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan barang/jasa dengan status PPN-nya.",
+        pairs: [
+          { left: "Beras & kebutuhan pokok", right: "Dibebaskan dari PPN" },
+          { left: "Jasa kesehatan & pendidikan", right: "Tidak dikenai PPN" },
+          { left: "Elektronik & pakaian (penjual PKP)", right: "Dikenai PPN 11%" },
+          { left: "Jasa angkutan umum", right: "Tidak dikenai PPN" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Tidak semua barang/jasa dikenai PPN.",
+          "Kebutuhan pokok dibebaskan agar harga tetap terjangkau.",
+          "Jasa kesehatan, pendidikan, sosial, keuangan, dan angkutan umum tidak dikenai PPN.",
+          "Mengenali yang bebas PPN membantu menetapkan harga dengan benar.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Manakah yang umumnya DIBEBASKAN dari PPN?",
+            options: ["Laptop", "Beras dan kebutuhan pokok", "Mobil", "Parfum"],
+            answer: 1,
+            explain: "Barang kebutuhan pokok seperti beras dibebaskan dari PPN.",
+          },
+          {
+            q: "Jasa berikut umumnya TIDAK dikenai PPN, kecuali?",
+            options: ["Jasa kesehatan medis", "Jasa pendidikan", "Jasa angkutan umum", "Jasa sewa alat berat komersial"],
+            answer: 3,
+            explain: "Kesehatan, pendidikan, dan angkutan umum tidak dikenai PPN; sewa alat berat komersial dapat dikenai PPN.",
+          },
+          {
+            q: "Tujuan membebaskan kebutuhan pokok dari PPN adalah?",
+            options: ["Menambah penerimaan", "Menjaga harga tetap terjangkau", "Mempersulit pedagang", "Tidak ada tujuan"],
+            answer: 1,
+            explain: "Pembebasan menjaga harga kebutuhan pokok tetap terjangkau masyarakat.",
+          },
+          {
+            q: "Toko PKP menjual beras Rp100.000 dan kipas Rp200.000. PPN dihitung atas?",
+            options: ["Keduanya", "Hanya kipas (Rp200.000)", "Hanya beras", "Tidak ada"],
+            answer: 1,
+            explain: "Beras dibebaskan, jadi PPN hanya atas kipas (barang kena pajak).",
+          },
+          {
+            q: "PPN 11% atas setrika Rp300.000 adalah?",
+            options: ["Rp3.000", "Rp33.000", "Rp30.000", "Rp333.000"],
+            answer: 1,
+            explain: "11% x Rp300.000 = Rp33.000.",
+          },
+        ],
+      },
+    ],
+  },
 ];

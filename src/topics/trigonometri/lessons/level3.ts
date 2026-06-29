@@ -590,4 +590,145 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "mengukur-sudut-dengan-radian",
+    levelId: "lingkaran-satuan",
+    order: 5,
+    title: "Mengukur Sudut dengan Radian",
+    summary:
+      "Mengapa kalkulator dan ilmuwan jarang memakai derajat? Kita selidiki dulu cara mengukur sudut memakai panjang busur lingkaran.",
+    durationMin: 14,
+    tags: ["trigonometri", "radian", "lingkaran-satuan", "busur", "pi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Derajat membagi lingkaran menjadi 360 bagian, sebuah angka yang dipilih bangsa Babilonia ribuan tahun lalu. Tetapi alam tidak tahu soal angka 360. Ada cara mengukur sudut yang lahir langsung dari lingkaran itu sendiri, yaitu dengan panjang busur. Ayo selidiki dulu sebelum menamai satuannya.",
+      },
+      {
+        type: "video",
+        comp: "LingkaranSatuanVideo",
+        title: "Video: Sudut yang Diukur dengan Busur",
+        caption: "Pada lingkaran satuan, panjang busur yang ditempuh adalah ukuran sudut itu sendiri.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan berjalan di tepi lingkaran berjari-jari 1. Saat kamu berjalan sejauh 1 satuan di tepinya, sudut yang kamu sapu dari pusat disebut 1 radian, kira-kira 57,3 derajat. Berjalan setengah keliling berarti menempuh busur sepanjang pi (sekitar 3,14), dan itu sama dengan 180 derajat. Satu putaran penuh adalah 2 pi.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorLingkaranSatuan",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Panjang Busur (Radian) pada Lingkaran Satuan untuk Tiap Sudut",
+        unit: "radian (panjang busur)",
+        source: "nilai eksak",
+        note: "Pada jari-jari 1, ukuran radian sebuah sudut sama persis dengan panjang busur yang ditempuh.",
+        data: [
+          { label: "30°", value: 0.524, color: "#a3e635" },
+          { label: "90°", value: 1.571, color: "#84cc16" },
+          { label: "180°", value: 3.142, color: "#65a30d" },
+          { label: "360°", value: 6.283, color: "#4d7c0f" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Jembatan derajat dan radian",
+        html: "Karena setengah putaran sama dengan 180 derajat sekaligus pi radian, kita punya jembatan: <strong>180 derajat = pi radian</strong>. Untuk mengubah derajat ke radian, kalikan dengan pi ÷ 180. Untuk arah sebaliknya, kalikan dengan 180 ÷ pi.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Ubah 60 derajat ke radian. Kalikan dengan pi ÷ 180 (pakai pi sekitar 3,1416). Berapa radian?",
+        answer: 1.047,
+        tolerance: 0.01,
+        solution:
+          "60 × pi ÷ 180 = pi ÷ 3 = 3,1416 ÷ 3 = <strong>sekitar 1,047 radian</strong>.",
+        hint: "60 derajat adalah sepertiga dari 180 derajat, jadi sepertiga pi.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah roda berjari-jari 0,3 meter berputar sebesar 2 radian. Jarak yang ditempuh satu titik di tepinya = jari-jari × sudut. Berapa meter?",
+        answer: 0.6,
+        tolerance: 0.01,
+        suffix: " m",
+        solution:
+          "Panjang busur = jari-jari × sudut radian = 0,3 × 2 = <strong>0,6 meter</strong>. Inilah keunggulan radian: panjang busur langsung jadi tanpa faktor tambahan.",
+        hint: "Panjang busur = r × θ, dengan θ dalam radian.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan sudut dalam derajat dengan ukuran radiannya.",
+        pairs: [
+          { left: "30 derajat", right: "pi ÷ 6" },
+          { left: "45 derajat", right: "pi ÷ 4" },
+          { left: "90 derajat", right: "pi ÷ 2" },
+          { left: "180 derajat", right: "pi" },
+          { left: "360 derajat", right: "2 pi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa rumus fisika memakai radian",
+        html: "Rumus panjang busur s = r × θ dan kecepatan sudut hanya rapi bila θ memakai radian. Jika dipaksa memakai derajat, setiap rumus harus menyelipkan faktor pi ÷ 180 yang mengganggu. Karena itu satelit, mesin, dan kalkulator ilmiah memakai radian sebagai bawaan. Misalnya busur sepanjang 5 meter pada jari-jari 10 meter membentuk sudut 5 ÷ 10 = 0,5 radian, tanpa konversi apa pun.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturannya muncul di akhir",
+        html: "Setelah mengukur sudut lewat busur, baru satuannya kita tetapkan: <strong>1 radian adalah sudut yang busurnya sepanjang jari-jari</strong>. Konversinya: <strong>180 derajat = pi radian</strong>, sehingga derajat ke radian dikali pi ÷ 180 dan radian ke derajat dikali 180 ÷ pi. Panjang busur s = r × θ dengan θ dalam radian.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Radian mengukur sudut lewat panjang busur, bukan membagi lingkaran jadi 360.",
+          "Satu radian adalah sudut yang busurnya sepanjang jari-jari, sekitar 57,3 derajat.",
+          "Jembatan utamanya: 180 derajat = pi radian.",
+          "Derajat ke radian dikali pi ÷ 180; radian ke derajat dikali 180 ÷ pi.",
+          "Panjang busur s = r × θ hanya berlaku rapi bila θ dalam radian.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Satu putaran penuh sama dengan berapa radian?",
+            options: ["pi", "2 pi", "180", "360"],
+            answer: 1,
+            explain: "Satu putaran penuh = 360 derajat = 2 pi radian.",
+          },
+          {
+            q: "180 derajat sama dengan?",
+            options: ["pi ÷ 2 radian", "pi radian", "2 pi radian", "pi ÷ 4 radian"],
+            answer: 1,
+            explain: "Setengah putaran adalah pi radian.",
+          },
+          {
+            q: "Untuk mengubah derajat menjadi radian, dikalikan?",
+            options: ["180 ÷ pi", "pi ÷ 180", "pi × 180", "360 ÷ pi"],
+            answer: 1,
+            explain: "Derajat ke radian: kalikan dengan pi ÷ 180.",
+          },
+          {
+            q: "Pada jari-jari 4, sudut 1,5 radian menyapu busur sepanjang?",
+            options: ["1,5", "4", "6", "5,5"],
+            answer: 2,
+            explain: "s = r × θ = 4 × 1,5 = 6 satuan.",
+          },
+          {
+            q: "Kira-kira berapa derajat satu radian?",
+            options: ["30 derajat", "45 derajat", "57,3 derajat", "90 derajat"],
+            answer: 2,
+            explain: "1 radian = 180 ÷ pi = sekitar 57,3 derajat.",
+          },
+        ],
+      },
+    ],
+  },
 ];

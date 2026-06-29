@@ -594,4 +594,154 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "tekanan-parsial-dalton",
+    levelId: "gas-ideal",
+    order: 5,
+    title: "Tekanan Parsial dan Hukum Dalton",
+    summary:
+      "Udara yang kita hirup bukan satu gas, melainkan campuran. Tiap jenis gas menyumbang tekanannya sendiri, dan jumlahnya membentuk tekanan total. Kita amati dulu sebelum berumus.",
+    durationMin: 13,
+    tags: ["fisika", "termodinamika", "gas ideal", "tekanan parsial", "hukum dalton"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Udara di sekitarmu bukan satu zat tunggal, melainkan campuran: sebagian besar nitrogen, lalu oksigen, sedikit argon, dan sangat sedikit karbon dioksida. Tekanan udara 1 atmosfer yang menekan tubuhmu sebenarnya adalah <strong>jumlah sumbangan</strong> tiap jenis gas. Ayo amati bagaimana gas-gas berbagi tekanan dalam satu wadah dulu sebelum kita tulis rumusnya.",
+      },
+      {
+        type: "video",
+        comp: "BahasaSemesta",
+        title: "Video: Banyak Jenis Molekul dalam Satu Ruang",
+        caption: "Tiap jenis molekul menumbuk dinding sendiri-sendiri, dan tumbukannya berjumlah menjadi tekanan total.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan sebuah tabung berisi nitrogen saja, lalu kamu tambahkan oksigen ke dalamnya tanpa mengubah suhu atau volume. Molekul oksigen ikut menumbuk dinding, menambah tekanan, seolah nitrogennya tidak ada. Amati polanya: tiap gas berperilaku seakan <strong>sendirian mengisi seluruh wadah</strong>, dan tekanan totalnya adalah jumlah dari semua tekanan masing-masing. Gas yang fraksi molnya lebih besar menyumbang tekanan lebih besar.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tekanan parsial",
+        html: "<strong>Tekanan parsial</strong> sebuah gas adalah tekanan yang akan diberikannya jika ia sendirian mengisi seluruh wadah pada suhu yang sama. Untuk gas ideal, tekanan parsial sebanding dengan <strong>fraksi mol</strong> gas itu. Hukum Dalton menyatakan tekanan total campuran sama dengan jumlah semua tekanan parsial: gas yang lebih banyak molnya menekan lebih kuat, dan totalnya membentuk tekanan yang kita ukur.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tekanan Parsial Gas Penyusun Udara pada 101,3 kPa",
+        unit: "kPa",
+        source: "dihitung dari fraksi mol udara kering × 101,3 kPa",
+        note: "Nitrogen menyumbang hampir empat perlima tekanan udara, oksigen sekitar seperlima, sisanya sangat kecil. Jumlah keempatnya kembali menjadi 101,3 kPa.",
+        data: [
+          { label: "Nitrogen", value: 79.1, color: "#38bdf8" },
+          { label: "Oksigen", value: 21.2, color: "#34d399" },
+          { label: "Argon", value: 0.94, color: "#fbbf24" },
+          { label: "CO₂", value: 0.04, color: "#f87171" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Udara bertekanan total 100 kPa mengandung oksigen dengan fraksi mol 21%. Berapa tekanan parsial oksigennya (kPa)?",
+        answer: 21,
+        tolerance: 0.5,
+        suffix: " kPa",
+        solution:
+          "Tekanan parsial = fraksi mol × tekanan total = 0,21 × 100 = <strong>21 kPa</strong>. Inilah 'jatah' tekanan dari oksigen; sisanya berasal dari nitrogen dan gas lain.",
+        hint: "Tekanan parsial = fraksi mol gas × tekanan total.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah tabung berisi 3 mol nitrogen dan 1 mol oksigen, dengan tekanan total 200 kPa. Berapa tekanan parsial oksigennya (kPa)?",
+        answer: 50,
+        tolerance: 0.5,
+        suffix: " kPa",
+        solution:
+          "Total mol = 3 + 1 = 4. Fraksi mol oksigen = 1/4 = 0,25. Tekanan parsial oksigen = 0,25 × 200 = <strong>50 kPa</strong>. Sisanya, 150 kPa, adalah tekanan parsial nitrogen.",
+        hint: "Hitung fraksi mol oksigen = mol O2 / total mol, lalu kalikan tekanan total.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap gas penyusun udara kering dengan fraksinya kira-kira.",
+        pairs: [
+          { left: "Nitrogen", right: "Sekitar 78%" },
+          { left: "Oksigen", right: "Sekitar 21%" },
+          { left: "Argon", right: "Sekitar 1%" },
+          { left: "Karbon dioksida", right: "Sekitar 0,04%" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa Pendaki Everest Sesak Napas",
+        html: "Di puncak Everest, tekanan udara hanya sekitar 34 kPa, kira-kira sepertiga tekanan di permukaan laut. Komposisi udara tetap 21% oksigen, tetapi karena tekanan totalnya jauh lebih kecil, tekanan parsial oksigen turun menjadi sekitar 0,21 × 34 = <strong>7 kPa</strong>, dibanding 21 kPa di permukaan laut. Paru-paru menyerap oksigen sebanding dengan tekanan parsialnya, jadi pendaki kekurangan oksigen meski persentasenya sama. Itulah sebabnya mereka membawa tabung oksigen tambahan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah mengamati polanya, lahir Hukum Dalton: tekanan total campuran sama dengan jumlah tekanan parsial, <strong>P<sub>total</sub> = P₁ + P₂ + P₃ + ...</strong>. Tekanan parsial tiap gas sebanding dengan fraksi molnya: <strong>P<sub>i</sub> = x<sub>i</sub> · P<sub>total</sub></strong>, dengan x<sub>i</sub> = n<sub>i</sub> / n<sub>total</sub>. Tiap gas ideal berperilaku seolah sendirian mengisi seluruh wadah.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Tekanan parsial = tekanan yang diberikan satu gas seolah sendirian mengisi wadah.",
+          "Hukum Dalton: P total = jumlah semua tekanan parsial.",
+          "Tekanan parsial sebanding fraksi mol: P_i = x_i · P_total.",
+          "Di ketinggian, persentase oksigen tetap tetapi tekanan parsialnya turun, menyebabkan sesak.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Hukum Dalton menyatakan tekanan total campuran gas sama dengan?",
+            options: [
+              "Tekanan gas terbanyak saja",
+              "Jumlah semua tekanan parsial",
+              "Selisih tekanan parsial",
+              "Rata-rata tekanan parsial",
+            ],
+            answer: 1,
+            explain: "P total = jumlah seluruh tekanan parsial gas penyusunnya.",
+          },
+          {
+            q: "Tekanan parsial sebuah gas ideal sebanding dengan?",
+            options: ["Massa molekulnya", "Fraksi molnya", "Warnanya", "Suhu kritisnya"],
+            answer: 1,
+            explain: "Tekanan parsial = fraksi mol × tekanan total.",
+          },
+          {
+            q: "Udara 100 kPa mengandung 21% oksigen. Tekanan parsial oksigennya?",
+            options: ["21 kPa", "79 kPa", "100 kPa", "4,2 kPa"],
+            answer: 0,
+            explain: "P O2 = 0,21 × 100 = 21 kPa.",
+          },
+          {
+            q: "Mengapa di puncak gunung tinggi sulit bernapas?",
+            options: [
+              "Persentase oksigen turun drastis",
+              "Tekanan total turun sehingga tekanan parsial oksigen ikut turun",
+              "Oksigen menghilang dari udara",
+              "Nitrogen menggantikan oksigen",
+            ],
+            answer: 1,
+            explain: "Persentase tetap, tetapi tekanan total rendah membuat tekanan parsial O2 kecil.",
+          },
+          {
+            q: "Gas apa yang paling banyak di atmosfer Bumi?",
+            options: ["Oksigen", "Karbon dioksida", "Nitrogen", "Argon"],
+            answer: 2,
+            explain: "Nitrogen sekitar 78%, jauh lebih banyak daripada oksigen 21%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

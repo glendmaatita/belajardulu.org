@@ -660,4 +660,171 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "teorema-sumbu-sejajar",
+    levelId: "dinamika-rotasi",
+    order: 5,
+    title: "Teorema Sumbu Sejajar",
+    summary:
+      "Benda yang sama bisa punya momen inersia berbeda, tergantung di mana porosnya. Memutar di pusat selalu paling mudah. Kisah dulu, rumus di akhir.",
+    durationMin: 13,
+    tags: ["fisika", "rotasi", "momen inersia", "sumbu sejajar", "pusat massa"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Pegang penggaris panjang di tengahnya lalu putar bolak-balik: ringan. Sekarang pegang ujungnya dan putar dengan cara sama: terasa lebih berat. Penggarisnya sama persis, massanya sama, tetapi <strong>di mana kita memegangnya</strong> mengubah betapa sulit ia diputar. Ada aturan rapi yang menghubungkan momen inersia di pusat dengan di poros mana pun. Ayo telusuri kisahnya sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Poros yang Berpindah",
+        caption: "Memindahkan poros menjauhi pusat massa selalu menambah momen inersia.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan memutar sebuah benda. Bila porosnya melewati <strong>pusat massa</strong>, massa tersebar paling merata dekat poros, jadi paling mudah diputar. Geser poros menjauh, dan tiba-tiba seluruh massa berada lebih jauh dari sumbu, sehingga lebih sulit diputar. Makin jauh poros dari pusat massa, makin besar tambahan momen inersianya, dan tambahannya bertambah cepat (sebanding kuadrat jarak).",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Poros pusat selalu paling mudah",
+        html: "Untuk semua benda, momen inersia <strong>paling kecil</strong> terjadi ketika porosnya melewati pusat massa. Memindahkan poros sejauh d secara sejajar selalu menambah momen inersia sebesar M·d², yaitu seolah seluruh massa benda berkumpul di pusat massa dan ikut berputar pada jarak d. Itulah sebabnya gagang palu atau penggaris terasa berat diputar dari ujung.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Momen Inersia saat Poros Bergeser (I_pusat = 1 kg·m², M = 2 kg)",
+        unit: "kg·m²",
+        source: "perhitungan I = I_pusat + M·d² dengan I_pusat 1 kg·m² dan M 2 kg",
+        note: "Benda sama, hanya posisi porosnya bergeser sejauh d dari pusat massa. Karena tambahannya M·d², momen inersia naik makin curam saat poros menjauh: dari 1 di pusat menjadi 5,5 saat poros 1,5 m dari pusat.",
+        data: [
+          { label: "d = 0 m", value: 1, color: "#f472b6" },
+          { label: "d = 0,5 m", value: 1.5, color: "#e879f9" },
+          { label: "d = 1 m", value: 3, color: "#c084fc" },
+          { label: "d = 1,5 m", value: 5.5, color: "#a78bfa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah benda 4 kg punya momen inersia 2 kg·m² terhadap pusat massanya. Berapa momen inersianya bila porosnya digeser 0,5 m sejajar? (I = I_pusat + M·d²)",
+        answer: 3,
+        tolerance: 0.01,
+        suffix: " kg·m²",
+        solution:
+          "I = I_pusat + M·d² = 2 + 4 × 0,5² = 2 + 4 × 0,25 = 2 + 1 = <strong>3 kg·m²</strong>. Menggeser poros menambah momen inersia.",
+        hint: "Tambahkan M·d² ke momen inersia di pusat massa.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah batang homogen bermassa 6 kg dan panjang 2 m. Berapa momen inersianya terhadap poros di tengah? (batang di pusat: I = M·L²/12)",
+        answer: 2,
+        tolerance: 0.01,
+        suffix: " kg·m²",
+        solution:
+          "I_pusat = M·L²/12 = 6 × 2² / 12 = 6 × 4 / 12 = 24/12 = <strong>2 kg·m²</strong>. Inilah momen inersia minimum batang itu.",
+        hint: "Pakai rumus batang di pusat M·L²/12.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Momen inersia sebuah cakram terhadap pusatnya 0,5 kg·m², massanya 2 kg. Berapa momen inersianya terhadap poros 1 m dari pusat? (I = I_pusat + M·d²)",
+        answer: 2.5,
+        tolerance: 0.01,
+        suffix: " kg·m²",
+        solution:
+          "I = I_pusat + M·d² = 0,5 + 2 × 1² = 0,5 + 2 = <strong>2,5 kg·m²</strong>. Lima kali lipat momen inersia di pusat.",
+        hint: "Tambahkan M·d² dengan d = 1 m ke momen inersia pusat.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah teorema sumbu sejajar dengan maknanya.",
+        pairs: [
+          { left: "Teorema sumbu sejajar", right: "I = I_pusat + M·d²" },
+          { left: "Batang diputar di tengah", right: "I = M·L²/12" },
+          { left: "Batang diputar di ujung", right: "I = M·L²/3" },
+          { left: "Jarak d", right: "Pergeseran poros dari pusat massa" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Untuk benda yang sama, kelompokkan poros mana memberi momen inersia lebih besar atau lebih kecil.",
+        buckets: ["Momen inersia lebih besar", "Momen inersia lebih kecil"],
+        items: [
+          { text: "Batang diputar di salah satu ujung", bucket: "Momen inersia lebih besar" },
+          { text: "Batang diputar tepat di tengah", bucket: "Momen inersia lebih kecil" },
+          { text: "Pintu berputar pada engsel di tepi", bucket: "Momen inersia lebih besar" },
+          { text: "Cakram diputar pada poros di pusatnya", bucket: "Momen inersia lebih kecil" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Batang yang Diputar dari Ujung",
+        html: "Sebuah batang homogen bermassa 3 kg dan panjang 2 m diputar dari ujungnya. Lewat teorema sumbu sejajar: I_pusat = M·L²/12 = 3 × 4 / 12 = 1 kg·m², dan poros di ujung berjarak d = L/2 = 1 m dari pusat. Maka I_ujung = I_pusat + M·d² = 1 + 3 × 1² = <strong>4 kg·m²</strong>, persis sama dengan rumus baku batang di ujung M·L²/3 = 3 × 4 / 3 = 4 kg·m². Dua jalan, satu jawaban. Perancang ayunan pemukul dan tongkat tidak menghafal tiap rumus; mereka memakai teorema sumbu sejajar untuk poros mana pun.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya jelas. Teorema sumbu sejajar: <strong>I = I_pusat + M·d²</strong>, dengan I_pusat momen inersia terhadap poros yang melewati pusat massa, M massa total, dan d jarak pergeseran poros. Karena tambahannya selalu positif (M·d² ≥ 0), momen inersia <strong>minimum</strong> selalu di poros pusat massa. Inilah yang membuat memutar benda dari tengahnya selalu paling ringan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Teorema sumbu sejajar: I = I_pusat + M·d².",
+          "Momen inersia paling kecil selalu pada poros yang melewati pusat massa.",
+          "Menggeser poros sejauh d menambah momen inersia sebesar M·d².",
+          "Tambahannya sebanding kuadrat jarak, jadi naik makin curam saat poros menjauh.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Teorema sumbu sejajar dinyatakan sebagai?",
+            options: ["I = I_pusat + M·d²", "I = M·R²", "I = ½M·R²", "I = I_pusat − M·d²"],
+            answer: 0,
+            explain: "I = I_pusat + M·d²: momen inersia di poros baru sama dengan di pusat ditambah M·d².",
+          },
+          {
+            q: "Momen inersia sebuah benda paling kecil bila porosnya melewati?",
+            options: ["Salah satu ujung", "Pusat massa", "Titik terjauh", "Permukaan luar"],
+            answer: 1,
+            explain: "Karena M·d² ≥ 0, momen inersia minimum terjadi pada poros melalui pusat massa (d = 0).",
+          },
+          {
+            q: "Benda 2 kg, I_pusat = 1 kg·m². Porosnya digeser 2 m. Momen inersia baru?",
+            options: ["5 kg·m²", "9 kg·m²", "4 kg·m²", "1 kg·m²"],
+            answer: 1,
+            explain: "I = 1 + 2 × 2² = 1 + 8 = 9 kg·m².",
+          },
+          {
+            q: "Bila jarak pergeseran poros digandakan, tambahan momen inersianya menjadi?",
+            options: ["2 kali", "3 kali", "4 kali", "tetap"],
+            answer: 2,
+            explain: "Tambahan M·d² bergantung pada d², jadi menggandakan d membuatnya 2² = 4 kali.",
+          },
+          {
+            q: "Mengapa batang lebih berat diputar dari ujung daripada dari tengah?",
+            options: [
+              "Karena massanya bertambah",
+              "Karena poros menjauh dari pusat massa, momen inersia bertambah M·d²",
+              "Karena gravitasi berbeda",
+              "Karena panjangnya berubah",
+            ],
+            answer: 1,
+            explain: "Poros di ujung berjarak d dari pusat, menambah M·d² pada momen inersia.",
+          },
+        ],
+      },
+    ],
+  },
 ];

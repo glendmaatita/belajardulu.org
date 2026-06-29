@@ -557,4 +557,160 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "perambatan-ketidakpastian",
+    levelId: "ketelitian-pengukuran",
+    order: 5,
+    title: "Perambatan Ketidakpastian",
+    summary:
+      "Kalau dua hasil ukur yang sama-sama ragu kita jumlah atau kalikan, keraguannya tidak hilang. Justru ia ikut menjalar ke hasil akhir. Ada aturan sederhana untuk melacaknya.",
+    durationMin: 13,
+    tags: ["fisika", "ketidakpastian", "perambatan", "ralat"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kamu mengukur panjang dan lebar meja, masing-masing dengan sedikit keraguan. Lalu kamu kalikan keduanya untuk mendapat luas. Pertanyaannya: seberapa ragu hasil luas itu? Keraguan dari kedua pengukuran tidak lenyap saat dikalikan, ia <strong>merambat</strong> ke hasil akhir. Sebelum menghafal rumusnya, mari pahami dulu bagaimana ralat menjalar.",
+      },
+      {
+        type: "video",
+        comp: "MatematikaVsBerhitung",
+        title: "Video: Ketika Keraguan Ikut Menjalar",
+        caption: "Setiap data yang ragu menularkan keraguannya ke hasil hitungan.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Pikirkan dua aturan yang masuk akal. Saat kamu <strong>menjumlah atau mengurangkan</strong> hasil ukur, ketidakpastian mutlaknya (&Delta;) yang dijumlahkan. Saat kamu <strong>mengali atau membagi</strong>, ketidakpastian relatifnya (dalam persen) yang dijumlahkan. Coba rasakan: makin banyak data ragu yang kita gabung, makin besar pula keraguan hasilnya. Kejujuran data harus dibawa sampai akhir.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua aturan perambatan",
+        html: "Untuk <strong>penjumlahan dan pengurangan</strong>: ketidakpastian mutlak dijumlahkan, &Delta;(A&plusmn;B) = &Delta;A + &Delta;B. Untuk <strong>perkalian dan pembagian</strong>: ketidakpastian relatif dijumlahkan, (&Delta;hasil / hasil) = (&Delta;A / A) + (&Delta;B / B). Ketidakpastian relatif paling mudah dihitung dalam persen.",
+      },
+      {
+        type: "widget",
+        widget: "AngkaPenting",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Sumbangan Ketidakpastian Relatif pada Luas Pelat",
+        unit: "%",
+        source: "ilustrasi perhitungan perambatan",
+        note: "Saat panjang dan lebar dikalikan, ketidakpastian relatifnya dijumlahkan: 2% + 2% menjadi 4% pada luas.",
+        data: [
+          { label: "Panjang", value: 2, color: "#2dd4bf" },
+          { label: "Lebar", value: 2, color: "#34d399" },
+          { label: "Luas (total)", value: 4, color: "#10b981" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dua panjang dijumlahkan: (12,0 ± 0,2) cm dan (8,0 ± 0,3) cm. Berapa ketidakpastian mutlak pada hasil penjumlahannya (dalam cm)?",
+        answer: 0.5,
+        tolerance: 0.01,
+        suffix: " cm",
+        solution:
+          "Pada penjumlahan, ketidakpastian mutlak dijumlahkan: ΔA + ΔB = 0,2 + 0,3 = <strong>0,5 cm</strong>. Jadi hasilnya ditulis (20,0 ± 0,5) cm.",
+        hint: "Jumlahkan kedua ketidakpastian mutlaknya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pelat berukuran panjang (10,0 ± 0,2) cm dan lebar (5,0 ± 0,1) cm. Berapa persen ketidakpastian relatif pada luasnya?",
+        answer: 4,
+        tolerance: 0.2,
+        suffix: " %",
+        solution:
+          "Pada perkalian, ketidakpastian relatif dijumlahkan: (0,2/10,0) + (0,1/5,0) = 0,02 + 0,02 = 0,04 = <strong>4%</strong>. Luasnya 50 cm², jadi ketidakpastian mutlaknya 4% × 50 = 2 cm².",
+        hint: "Hitung Δp/p dan Δl/l dalam persen, lalu jumlahkan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Kelompokkan tiap operasi: ketidakpastian MUTLAK yang dijumlahkan, atau ketidakpastian RELATIF yang dijumlahkan?",
+        buckets: ["Jumlahkan ketidakpastian mutlak", "Jumlahkan ketidakpastian relatif"],
+        items: [
+          { text: "Menjumlahkan dua massa terukur", bucket: "Jumlahkan ketidakpastian mutlak" },
+          { text: "Mengalikan panjang dengan lebar", bucket: "Jumlahkan ketidakpastian relatif" },
+          { text: "Selisih dua waktu terukur", bucket: "Jumlahkan ketidakpastian mutlak" },
+          { text: "Membagi jarak dengan waktu (kelajuan)", bucket: "Jumlahkan ketidakpastian relatif" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Rapat Jenis Logam Beserta Ralatnya",
+        html: "Seorang siswa mengukur sebuah balok logam: massanya (50,0 &plusmn; 0,5) g dan volumenya (20,0 &plusmn; 0,5) cm&sup3;. Ia menghitung rapat jenis = massa / volume = 50,0 / 20,0 = 2,50 g/cm&sup3;. Karena ini pembagian, ketidakpastian relatifnya dijumlahkan: (0,5/50,0) + (0,5/20,0) = 0,01 + 0,025 = 0,035, yaitu <strong>3,5%</strong>. Maka ketidakpastian mutlaknya 0,035 &times; 2,50 &asymp; 0,09 g/cm&sup3;, dan hasil dilaporkan (2,50 &plusmn; 0,09) g/cm&sup3;. Pelajarannya: angka hasil saja tidak cukup, kita wajib membawa ralatnya sampai garis akhir.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. <strong>Penjumlahan dan pengurangan: ketidakpastian mutlak dijumlahkan (&Delta;A + &Delta;B). Perkalian dan pembagian: ketidakpastian relatif dijumlahkan (&Delta;A/A + &Delta;B/B).</strong> Ketidakpastian mutlak hasil akhir didapat dengan mengalikan ketidakpastian relatif total dengan nilai hasilnya. Keraguan tiap data selalu ikut menjalar, tidak pernah hilang sendiri.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pada penjumlahan/pengurangan, ketidakpastian mutlak dijumlahkan.",
+          "Pada perkalian/pembagian, ketidakpastian relatif (persen) dijumlahkan.",
+          "Ketidakpastian mutlak hasil = ketidakpastian relatif total × nilai hasil.",
+          "Keraguan data selalu merambat ke hasil akhir, jadi harus selalu dilaporkan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Saat dua hasil ukur dijumlahkan, ketidakpastian hasilnya diperoleh dengan...",
+            options: [
+              "menjumlahkan ketidakpastian mutlaknya",
+              "menjumlahkan ketidakpastian relatifnya",
+              "mengalikan keduanya",
+              "mengabaikan ketidakpastian",
+            ],
+            answer: 0,
+            explain: "Pada penjumlahan dan pengurangan, ketidakpastian mutlak (Δ) yang dijumlahkan.",
+          },
+          {
+            q: "Saat dua besaran dikalikan, yang dijumlahkan adalah...",
+            options: [
+              "ketidakpastian mutlaknya",
+              "ketidakpastian relatifnya (persen)",
+              "nilai ukurnya",
+              "satuannya",
+            ],
+            answer: 1,
+            explain: "Pada perkalian dan pembagian, ketidakpastian relatif yang dijumlahkan.",
+          },
+          {
+            q: "Pelat (10,0 ± 0,2) cm × (5,0 ± 0,1) cm memiliki ketidakpastian relatif luas sekitar...",
+            options: ["2%", "3%", "4%", "6%"],
+            answer: 2,
+            explain: "(0,2/10,0) + (0,1/5,0) = 0,02 + 0,02 = 0,04 = 4%.",
+          },
+          {
+            q: "Hasil (12,0 ± 0,2) cm + (8,0 ± 0,3) cm memiliki ketidakpastian...",
+            options: ["0,1 cm", "0,5 cm", "0,6 cm", "0,06 cm"],
+            answer: 1,
+            explain: "Ketidakpastian mutlak dijumlahkan: 0,2 + 0,3 = 0,5 cm.",
+          },
+          {
+            q: "Mengapa hasil olahan umumnya lebih ragu daripada satu data tunggalnya?",
+            options: [
+              "Karena ketidakpastian tiap data ikut menjalar dan berakumulasi",
+              "Karena alat ukur rusak",
+              "Karena angka penting bertambah",
+              "Karena satuan berubah",
+            ],
+            answer: 0,
+            explain: "Setiap data ragu menularkan keraguannya, sehingga ralat hasil akhir menumpuk.",
+          },
+        ],
+      },
+    ],
+  },
 ];

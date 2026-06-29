@@ -569,4 +569,165 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gaya-sentripetal",
+    levelId: "gerak-melingkar",
+    order: 5,
+    title: "Gaya Sentripetal",
+    summary:
+      "Percepatan sentripetal butuh penyebab, dan penyebabnya adalah gaya yang menarik benda ke pusat. Tetapi gaya ini bukan jenis baru; ia hanyalah tegangan tali, gesekan, atau gravitasi yang kebetulan mengarah ke dalam.",
+    durationMin: 14,
+    tags: ["kinematika", "gerak-melingkar", "gaya-sentripetal", "newton"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu benda yang berputar selalu dipercepat ke pusat. Tetapi hukum Newton bilang percepatan butuh gaya. Lalu gaya apa yang terus menarik benda ke pusat lingkaran? Apakah ada 'gaya melingkar' khusus, atau ini gaya biasa yang menyamar? Ayo selidiki dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Gaya yang Menahan Benda di Lintasan",
+        caption: "Gaya sentripetal adalah gaya total yang menuju pusat, penyebab benda tetap melingkar.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Putar batu yang diikat tali di atas kepala. Tanganmu terus <strong>menarik tali ke dalam</strong>, dan tarikan itulah yang membuatnya melingkar. Lepaskan tali, gaya hilang, dan batu langsung melesat lurus. Perhatikan, tidak ada gaya 'baru'; yang bekerja hanyalah <strong>tegangan tali</strong> yang kebetulan mengarah ke pusat. Pada mobil yang membelok, perannya diambil <strong>gesekan ban</strong>; pada planet, oleh <strong>gravitasi</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Bukan gaya jenis baru",
+        html: "<strong>Gaya sentripetal</strong> adalah nama peran, bukan jenis gaya. Ia adalah gaya total yang menuju pusat, besarnya <strong>F = m·a = m·v²/r = m·ω²·r</strong>. Dalam praktik, perannya diisi tegangan tali, gesekan, gaya normal, atau gravitasi.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorPi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Gaya Sentripetal vs Jari-jari Tikungan (mobil 1000 kg, 10 m/s)",
+        unit: "newton",
+        source: "ilustrasi edukatif (F = m·v²/r)",
+        note: "Pada laju sama, tikungan yang lebih tajam (r kecil) menuntut gaya jauh lebih besar. Itulah mengapa tikungan ketat berbahaya saat kecepatan tinggi.",
+        data: [
+          { label: "r = 25 m", value: 4000, color: "#f59e0b" },
+          { label: "r = 50 m", value: 2000, color: "#f59e0b" },
+          { label: "r = 100 m", value: 1000, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah mobil 1000 kg membelok pada tikungan berjari-jari 50 m dengan laju 10 m/s. Berapa gaya sentripetal yang dibutuhkan?",
+        answer: 2000,
+        tolerance: 5,
+        suffix: " N",
+        solution:
+          "F = m·v²/r = 1000 × 10² ÷ 50 = 1000 × 100 ÷ 50 = 100000 ÷ 50 = <strong>2000 N</strong>. Gaya ini disediakan oleh gesekan ban dengan jalan.",
+        hint: "Gunakan F = m·v²/r.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bola 0,5 kg diputar dengan tali pada laju 4 m/s dan jari-jari 2 m. Berapa tegangan tali (gaya sentripetal)?",
+        answer: 4,
+        tolerance: 0.1,
+        suffix: " N",
+        solution:
+          "F = m·v²/r = 0,5 × 4² ÷ 2 = 0,5 × 16 ÷ 2 = 8 ÷ 2 = <strong>4 N</strong>. Tegangan tali inilah yang berperan sebagai gaya sentripetal.",
+        hint: "Gunakan F = m·v²/r dengan m = 0,5 kg.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap gerak melingkar dengan gaya yang berperan sebagai gaya sentripetalnya.",
+        pairs: [
+          { left: "Mobil membelok di jalan datar", right: "Gaya gesek ban" },
+          { left: "Batu diputar dengan tali", right: "Tegangan tali" },
+          { left: "Bulan mengelilingi Bumi", right: "Gaya gravitasi" },
+          { left: "Besar gaya sentripetal", right: "F = m·v²/r" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Tentukan apakah pernyataan tentang gaya sentripetal benar atau salah.",
+        buckets: ["Benar", "Salah"],
+        items: [
+          { text: "Gaya sentripetal selalu mengarah ke pusat lingkaran", bucket: "Benar" },
+          { text: "Gaya sentripetal adalah jenis gaya baru yang khusus", bucket: "Salah" },
+          { text: "Besarnya F = m·v²/r = m·ω²·r", bucket: "Benar" },
+          { text: "Pada mobil membelok, perannya diisi gaya gesek ban", bucket: "Benar" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Ember Berisi Air Diputar Vertikal",
+        html: "Ember berisi air yang diputar cepat dalam lingkaran vertikal tidak menumpahkan airnya, bahkan saat berada di titik teratas. Rahasianya gaya sentripetal: di puncak, air membutuhkan gaya ke bawah (menuju pusat) sebesar m·v²/r untuk tetap melingkar, dan berat air sendiri (m·g) menyediakannya. Asalkan lajunya cukup besar sehingga v²/r minimal sama dengan g, air tetap 'tertahan'. Untuk r = 1 m, laju minimum di puncak adalah akar(g·r) = akar(10 × 1) ≈ <strong>3,2 m/s</strong>. Di bawah laju itu, air mulai tumpah karena gravitasi melebihi kebutuhan sentripetal.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya menutup rangkaian. Dari hukum kedua Newton F = m·a dan percepatan sentripetal a = v²/r, lahir <strong>gaya sentripetal F = m·v²/r = m·ω²·r</strong>, selalu menuju pusat. Ini bukan gaya baru, melainkan peran yang diisi tegangan, gesekan, gaya normal, atau gravitasi. Bila gaya menuju pusat hilang, benda berhenti melingkar dan melesat lurus menurut hukum pertama Newton.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Percepatan sentripetal butuh gaya menuju pusat: itulah gaya sentripetal.",
+          "Gaya sentripetal bukan jenis baru; ia diisi tegangan, gesekan, gravitasi, atau gaya normal.",
+          "Besarnya F = m·v²/r = m·ω²·r, selalu mengarah ke pusat.",
+          "Jika gaya ke pusat hilang, benda melesat lurus (hukum pertama Newton).",
+          "Pada laju sama, tikungan tajam (r kecil) menuntut gaya jauh lebih besar.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Gaya sentripetal adalah?",
+            options: [
+              "Jenis gaya baru yang hanya muncul saat berputar",
+              "Gaya total yang menuju pusat, perannya diisi gaya biasa",
+              "Gaya yang mendorong benda keluar lingkaran",
+              "Gaya gravitasi saja",
+            ],
+            answer: 1,
+            explain: "Gaya sentripetal adalah peran (gaya menuju pusat), bukan jenis gaya baru.",
+          },
+          {
+            q: "Rumus gaya sentripetal adalah?",
+            options: ["F = m·g", "F = m·v²/r", "F = r/v²", "F = m·v·r"],
+            answer: 1,
+            explain: "F = m·v²/r = m·ω²·r.",
+          },
+          {
+            q: "Mobil 800 kg membelok pada r = 40 m dengan laju 10 m/s. Gaya sentripetalnya?",
+            options: ["200 N", "2000 N", "8000 N", "20000 N"],
+            answer: 1,
+            explain: "F = m·v²/r = 800 × 100 ÷ 40 = 80000 ÷ 40 = 2000 N.",
+          },
+          {
+            q: "Pada mobil yang membelok di jalan datar, gaya sentripetal disediakan oleh?",
+            options: ["Gaya gesek ban", "Berat mobil", "Gaya mesin", "Hambatan udara"],
+            answer: 0,
+            explain: "Gesekan ban dengan jalan yang mengarah ke pusat tikungan berperan sebagai gaya sentripetal.",
+          },
+          {
+            q: "Jika tali yang memutar batu tiba-tiba putus, batu akan?",
+            options: [
+              "Berhenti seketika",
+              "Melesat lurus menyinggung lingkaran",
+              "Bergerak ke pusat",
+              "Tetap melingkar",
+            ],
+            answer: 1,
+            explain: "Tanpa gaya ke pusat, batu melanjutkan gerak lurus sesuai hukum pertama Newton.",
+          },
+        ],
+      },
+    ],
+  },
 ];

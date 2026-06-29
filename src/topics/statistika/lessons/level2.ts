@@ -550,4 +550,149 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "rata-rata-berbobot",
+    levelId: "pemusatan",
+    order: 5,
+    title: "Rata-rata Berbobot: Saat Tiap Nilai Punya Bobot",
+    summary:
+      "Kadang tidak semua data sama pentingnya. Kita timbang dulu tiap nilai sesuai bobotnya, lalu rata-rata yang lebih adil pun lahir.",
+    durationMin: 14,
+    tags: ["statistika", "pemusatan", "rata-rata", "berbobot"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Seorang siswa punya tiga nilai: tugas 90, ujian tengah semester 70, dan ujian akhir 80. Kalau dirata-rata biasa, hasilnya 80. Tetapi guru menetapkan ujian akhir lebih menentukan daripada tugas. Apakah adil memperlakukan ketiganya sama? Sebelum menyentuh rumus, ayo coba timbang dulu tiap nilai sesuai kepentingannya.",
+      },
+      {
+        type: "video",
+        comp: "StatistikaVideo",
+        title: "Video: Tidak Semua Nilai Sama Beratnya",
+        caption: "Mengapa kadang satu nilai harus lebih menentukan daripada yang lain.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Misalkan bobotnya: tugas 20%, UTS 30%, UAS 50%. Bayangkan tiap nilai menyumbang sesuai bobotnya. Tugas menyumbang 0,2 dikali 90 = 18. UTS menyumbang 0,3 dikali 70 = 21. UAS menyumbang 0,5 dikali 80 = 40. Jumlahkan: 18 + 21 + 40 = <strong>79</strong>. Sedikit di bawah rata-rata biasa (80), karena nilai terbesar (90) justru berbobot paling kecil.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Sumbangan Tiap Komponen ke Nilai Akhir (Total 79)",
+        unit: "poin yang disumbang",
+        source: "perhitungan rata-rata berbobot",
+        note: "UAS menyumbang 40 poin walau nilainya 80, karena bobotnya 50%. Tugas hanya menyumbang 18 walau nilainya 90, karena bobotnya cuma 20%.",
+        data: [
+          { label: "Tugas (20%)", value: 18, color: "#06b6d4" },
+          { label: "UTS (30%)", value: 21, color: "#3b82f6" },
+          { label: "UAS (50%)", value: 40, color: "#6366f1" },
+        ],
+      },
+      {
+        type: "widget",
+        widget: "SimulatorStatistik",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Saat bobotnya sama",
+        html: "Jika semua data diberi bobot yang sama, rata-rata berbobot kembali menjadi <strong>rata-rata biasa</strong>. Jadi rata-rata biasa sebenarnya kasus khusus dari rata-rata berbobot, yaitu saat setiap data dianggap sama penting.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Nilai siswa: tugas 90 (bobot 20%), UTS 70 (bobot 30%), UAS 80 (bobot 50%). Berapa nilai akhirnya?",
+        answer: 79,
+        tolerance: 0.5,
+        solution:
+          "Kalikan tiap nilai dengan bobotnya: 0,2(90) + 0,3(70) + 0,5(80) = 18 + 21 + 40 = <strong>79</strong>.",
+        hint: "Kalikan tiap nilai dengan bobotnya, lalu jumlahkan semuanya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pedagang mencampur 30 kg beras seharga Rp12.000 per kg dengan 20 kg beras seharga Rp10.000 per kg. Berapa harga rata-rata per kg campurannya?",
+        answer: 11200,
+        tolerance: 10,
+        prefix: "Rp",
+        solution:
+          "Total harga = 30(12.000) + 20(10.000) = 360.000 + 200.000 = 560.000, untuk 50 kg. Rata-rata berbobot = 560.000 dibagi 50 = <strong>Rp11.200</strong> per kg, bukan Rp11.000 seperti rata-rata biasa.",
+        hint: "Bobotnya adalah jumlah kilogram. Jumlahkan total harga, lalu bagi total kilogram.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap situasi: perlu rata-rata berbobot atau cukup rata-rata biasa?",
+        buckets: ["Perlu rata-rata berbobot", "Cukup rata-rata biasa"],
+        items: [
+          { text: "Nilai akhir dengan bobot tugas, UTS, dan UAS berbeda", bucket: "Perlu rata-rata berbobot" },
+          { text: "Rata-rata tinggi badan lima teman", bucket: "Cukup rata-rata biasa" },
+          { text: "IPK dari mata kuliah dengan jumlah SKS berbeda", bucket: "Perlu rata-rata berbobot" },
+          { text: "Harga rata-rata campuran beras dengan jumlah kg berbeda", bucket: "Perlu rata-rata berbobot" },
+          { text: "Rata-rata lima nilai ulangan yang setara", bucket: "Cukup rata-rata biasa" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menghitung IPK mahasiswa",
+        html: "Seorang mahasiswa mengambil tiga mata kuliah: nilai 4 dengan 3 SKS, nilai 3 dengan 4 SKS, dan nilai 2 dengan 2 SKS. Jika dirata-rata biasa, hasilnya 3. Tetapi IPK menimbang tiap nilai dengan jumlah SKS, sebab mata kuliah berbobot besar lebih menentukan. Hitungannya: (4 kali 3 + 3 kali 4 + 2 kali 2) dibagi (3 + 4 + 2) = 28 dibagi 9 = sekitar 3,11. Rata-rata berbobot membuat ukuran prestasi mencerminkan beban tiap mata kuliah, bukan sekadar menghitung nilai apa adanya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menimbang dengan tangan, rumusnya tinggal menuliskannya: <strong>rata-rata berbobot = jumlah (nilai dikali bobotnya) dibagi jumlah seluruh bobot</strong>. Bila semua bobot sama, ia menyusut menjadi rata-rata biasa. Bobot membuat data yang lebih penting berbicara lebih lantang.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Rata-rata berbobot dipakai saat tiap data punya tingkat kepentingan berbeda.",
+          "Cara menghitung: jumlahkan nilai dikali bobotnya, lalu bagi jumlah seluruh bobot.",
+          "Bila semua bobot sama, rata-rata berbobot sama dengan rata-rata biasa.",
+          "Nilai akhir, IPK, dan harga campuran adalah contoh nyata rata-rata berbobot.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rata-rata berbobot dipakai ketika?",
+            options: [
+              "Semua data pasti sama nilainya",
+              "Tiap data punya tingkat kepentingan (bobot) berbeda",
+              "Datanya hanya satu",
+              "Data berupa kategori",
+            ],
+            answer: 1,
+            explain: "Bobot membedakan data yang lebih penting dari yang kurang penting.",
+          },
+          {
+            q: "Tugas 90 (20%), UTS 70 (30%), UAS 80 (50%). Nilai akhirnya?",
+            options: ["80", "79", "82", "78"],
+            answer: 1,
+            explain: "0,2(90) + 0,3(70) + 0,5(80) = 18 + 21 + 40 = 79.",
+          },
+          {
+            q: "Jika semua bobot dibuat sama, rata-rata berbobot menjadi?",
+            options: ["Selalu nol", "Rata-rata biasa", "Median", "Modus"],
+            answer: 1,
+            explain: "Bobot yang sama membuatnya kembali ke rata-rata biasa.",
+          },
+          {
+            q: "IPK dihitung sebagai rata-rata berbobot dengan bobot berupa?",
+            options: ["Jumlah SKS tiap mata kuliah", "Banyak mahasiswa", "Nomor urut mata kuliah", "Tahun ajaran"],
+            answer: 0,
+            explain: "Mata kuliah ber-SKS besar lebih menentukan, jadi SKS menjadi bobotnya.",
+          },
+          {
+            q: "30 kg beras Rp12.000 dicampur 20 kg beras Rp10.000. Harga rata-rata per kg?",
+            options: ["Rp11.000", "Rp11.200", "Rp22.000", "Rp10.800"],
+            answer: 1,
+            explain: "560.000 dibagi 50 kg = Rp11.200, condong ke harga yang jumlahnya lebih banyak.",
+          },
+        ],
+      },
+    ],
+  },
 ];

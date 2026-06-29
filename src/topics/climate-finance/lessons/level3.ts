@@ -790,4 +790,153 @@ export const level3: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "emisi-terbiayai",
+    levelId: "risiko",
+    order: 5,
+    title: "Emisi Terbiayai (Financed Emissions)",
+    summary: "Emisi terbesar bank bukan dari kantornya, melainkan dari pinjaman dan investasinya. Cara menghitung dan mengelolanya.",
+    durationMin: 14,
+    tags: ["financed emissions", "jejak karbon", "risiko transisi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Jejak karbon sebuah lembaga keuangan sebagian besar bukan dari listrik kantornya, melainkan dari <strong>emisi perusahaan yang dibiayainya</strong> lewat pinjaman dan investasi. Inilah <strong>emisi terbiayai (financed emissions)</strong>, bagian dari Scope 3 yang sering ratusan kali lebih besar daripada emisi operasional bank itu sendiri.",
+      },
+      {
+        type: "video",
+        comp: "RisikoFisikTransisi",
+        title: "Video: Risiko Fisik vs Risiko Transisi",
+        caption: "Emisi terbiayai adalah pintu masuk risiko transisi ke neraca lembaga keuangan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus atribusi sederhana",
+        html: "Emisi terbiayai = <strong>faktor atribusi x emisi perusahaan</strong>. Faktor atribusi = <strong>nilai pembiayaan / nilai perusahaan</strong> (utang + ekuitas). Jadi bila bank membiayai 20% nilai sebuah perusahaan, ia menanggung 20% emisinya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Lihat bagaimana porsi sektor berkarbon tinggi dalam portofolio memengaruhi paparan risiko transisi.",
+      },
+      { type: "widget", widget: "SimulatorRisikoTransisi" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Emisi Operasional vs Emisi Terbiayai Sebuah Bank (ilustrasi)",
+        unit: "indeks relatif (operasional = 1)",
+        source: "ilustrasi konsep, pola umum sektor keuangan",
+        note: "Emisi dari portofolio pinjaman dan investasi jauh melampaui emisi gedung dan operasi bank, sehingga di sanalah fokus dekarbonisasi seharusnya berada.",
+        data: [
+          { label: "Operasional (gedung, listrik)", value: 1, color: "#10b981" },
+          { label: "Terbiayai (pinjaman & investasi)", value: 700, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Bank menghitung jatah emisinya",
+        html: "Sebuah bank meminjamkan Rp200 miliar ke perusahaan dengan <strong>nilai perusahaan Rp1.000 miliar</strong> (utang + ekuitas) yang melepas <strong>50.000 ton CO2 per tahun</strong>. Faktor atribusinya 200/1.000 = 0,2, sehingga emisi terbiayai bank dari pinjaman ini = 0,2 x 50.000 = <strong>10.000 ton CO2</strong>. Bila bank ingin menurunkan jejak karbonnya, ia bisa mendorong nasabah berdekarbonisasi atau menggeser portofolio ke sektor rendah karbon.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Bank meminjamkan Rp200 miliar ke perusahaan bernilai Rp1.000 miliar yang melepas 50.000 ton CO2/tahun. Berapa ton CO2 emisi terbiayai bank dari pinjaman ini?",
+        answer: 10000,
+        tolerance: 0,
+        suffix: "ton CO2",
+        solution: "Faktor atribusi = 200/1.000 = 0,2. Emisi terbiayai = 0,2 x 50.000 = <strong>10.000 ton CO2</strong>.",
+        hint: "Hitung faktor atribusi (pinjaman / nilai perusahaan) lalu kalikan dengan emisi.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Emisi ini tergolong emisi operasional atau emisi terbiayai bank?",
+        buckets: ["Operasional bank", "Terbiayai (portofolio)"],
+        items: [
+          { text: "Listrik kantor pusat bank", bucket: "Operasional bank" },
+          { text: "Emisi pabrik semen yang dipinjami bank", bucket: "Terbiayai (portofolio)" },
+          { text: "Perjalanan dinas pegawai bank", bucket: "Operasional bank" },
+          { text: "Emisi PLTU dalam portofolio investasi bank", bucket: "Terbiayai (portofolio)" },
+          { text: "Emisi perusahaan sawit yang dibiayai kredit", bucket: "Terbiayai (portofolio)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Financed emissions", right: "Emisi dari pinjaman dan investasi" },
+          { left: "Faktor atribusi", right: "Pembiayaan dibagi nilai perusahaan" },
+          { left: "Scope 3", right: "Emisi tidak langsung di rantai nilai" },
+          { left: "Nilai perusahaan", right: "Jumlah utang dan ekuitas" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Berdirinya PCAF 2015",
+        html: "Pada <strong>2015</strong>, sejumlah lembaga keuangan Belanda membentuk <strong>PCAF (Partnership for Carbon Accounting Financials)</strong> untuk menyepakati cara menghitung emisi terbiayai. Inisiatif ini meluas ke skala global pada <strong>2019</strong> dan menerbitkan standar akuntansi emisi terbiayai pada <strong>2020</strong>, yang kini menjadi rujukan utama bank dan investor saat melaporkan jejak karbon portofolionya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Emisi terbesar lembaga keuangan berasal dari yang dibiayainya.",
+          "Emisi terbiayai = faktor atribusi x emisi perusahaan.",
+          "Faktor atribusi = nilai pembiayaan dibagi nilai perusahaan.",
+          "Mengukurnya membuka jalan menetapkan target dekarbonisasi portofolio.",
+          "PCAF (2015) menjadi standar global menghitung emisi terbiayai.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Emisi terbiayai (financed emissions) adalah?",
+            options: [
+              "Emisi dari gedung kantor bank",
+              "Emisi perusahaan yang dibiayai lewat pinjaman dan investasi",
+              "Pajak karbon bank",
+              "Emisi negara",
+            ],
+            answer: 1,
+            explain: "Emisi terbiayai adalah emisi yang diatribusikan ke pinjaman dan investasi lembaga keuangan.",
+          },
+          {
+            q: "Faktor atribusi dihitung dari?",
+            options: [
+              "Laba bank dibagi aset",
+              "Nilai pembiayaan dibagi nilai perusahaan (utang + ekuitas)",
+              "Emisi dibagi pendapatan",
+              "Jumlah pegawai",
+            ],
+            answer: 1,
+            explain: "Faktor atribusi = nilai pembiayaan / nilai perusahaan yang dibiayai.",
+          },
+          {
+            q: "Pinjaman Rp100 miliar ke perusahaan bernilai Rp500 miliar yang melepas 40.000 ton CO2. Emisi terbiayainya?",
+            options: ["8.000 ton", "20.000 ton", "4.000 ton", "40.000 ton"],
+            answer: 0,
+            explain: "Faktor = 100/500 = 0,2; 0,2 x 40.000 = 8.000 ton CO2.",
+          },
+          {
+            q: "Mengapa emisi terbiayai penting bagi bank?",
+            options: [
+              "Karena kecil dan bisa diabaikan",
+              "Karena jauh lebih besar dari emisi operasional dan membawa risiko transisi",
+              "Karena dilarang dihitung",
+              "Karena tidak ada kaitannya dengan risiko",
+            ],
+            answer: 1,
+            explain: "Emisi terbiayai mendominasi jejak karbon bank dan menjadi pintu masuk risiko transisi.",
+          },
+          {
+            q: "Standar global untuk menghitung emisi terbiayai dikembangkan oleh?",
+            options: ["OJK", "PCAF", "OPEC", "WTO"],
+            answer: 1,
+            explain: "PCAF (dibentuk 2015) menyusun standar akuntansi emisi terbiayai.",
+          },
+        ],
+      },
+    ],
+  },
 ];

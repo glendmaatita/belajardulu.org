@@ -578,4 +578,140 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "pola-akar-sudut-istimewa",
+    levelId: "sudut-istimewa",
+    order: 5,
+    title: "Pola Akar di Balik Sudut Istimewa",
+    summary:
+      "Menghafal tabel itu melelahkan. Tetapi ada satu pola tersembunyi yang membuat semua nilai sin istimewa muncul sendiri.",
+    durationMin: 13,
+    tags: ["trigonometri", "sudut-istimewa", "pola", "akar", "menghafal"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Banyak orang menyerah menghafal nilai sin 0, 30, 45, 60, dan 90 derajat. Padahal kelima nilai itu tersusun dalam satu pola yang sangat rapi. Begitu pola itu terlihat, kamu tidak perlu menghafal apa pun, cukup menuliskannya. Ayo selidiki dulu deret angkanya sebelum menyebut aturannya.",
+      },
+      {
+        type: "video",
+        comp: "TrigonometriVideo",
+        title: "Video: Deret Tersembunyi Sudut Istimewa",
+        caption: "Nilai sin sudut istimewa ternyata mengikuti deret akar yang teratur.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Tuliskan nilai sin dari 0, 30, 45, 60, 90 derajat secara berurutan: 0, lalu 0,5, lalu 0,707, lalu 0,866, lalu 1. Sekilas acak. Sekarang tulis ulang sebagai akar dibagi dua: akar 0 ÷ 2, akar 1 ÷ 2, akar 2 ÷ 2, akar 3 ÷ 2, akar 4 ÷ 2. Yang di dalam akar hanya menghitung naik: 0, 1, 2, 3, 4.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTrigonometri",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Nilai sin Sudut Istimewa Naik Mulus dari 0 ke 1",
+        unit: "nilai sin",
+        source: "nilai trigonometri eksak",
+        note: "Kelima nilai adalah akar 0, 1, 2, 3, 4 dibagi 2. Kenaikannya melambat menjelang 90 derajat.",
+        data: [
+          { label: "sin 0°", value: 0, color: "#fbbf24" },
+          { label: "sin 30°", value: 0.5, color: "#f59e0b" },
+          { label: "sin 45°", value: 0.707, color: "#eab308" },
+          { label: "sin 60°", value: 0.866, color: "#facc15" },
+          { label: "sin 90°", value: 1.0, color: "#fde047" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Cos hanya membaca terbalik",
+        html: "Karena cos sebuah sudut sama dengan sin pelengkapnya, nilai cos memakai deret akar yang sama tetapi dibaca dari belakang: cos 0 derajat = akar 4 ÷ 2 = 1, lalu menurun sampai cos 90 derajat = akar 0 ÷ 2 = 0. Satu pola memuat sin dan cos sekaligus.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pakai pola akar: sin 60 derajat = akar 3 ÷ 2. Dengan akar 3 sekitar 1,732, berapa nilai sin 60 derajat?",
+        answer: 0.866,
+        tolerance: 0.005,
+        solution:
+          "sin 60 derajat = akar 3 ÷ 2 = 1,732 ÷ 2 = <strong>sekitar 0,866</strong>. Inilah angka ke-4 dalam deret.",
+        hint: "Yang di dalam akar untuk 60 derajat adalah 3, lalu bagi 2.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan sudut istimewa dengan bentuk akar nilai sin-nya.",
+        pairs: [
+          { left: "sin 0°", right: "akar 0 ÷ 2" },
+          { left: "sin 30°", right: "akar 1 ÷ 2" },
+          { left: "sin 45°", right: "akar 2 ÷ 2" },
+          { left: "sin 60°", right: "akar 3 ÷ 2" },
+          { left: "sin 90°", right: "akar 4 ÷ 2" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membangun ulang tabel tanpa menghafal",
+        html: "Seorang siswa lupa nilai cos 30 derajat saat ujian. Daripada panik, ia menulis deret akar 0, 1, 2, 3, 4 dibagi 2 untuk sin, lalu ingat bahwa cos membacanya terbalik. cos 30 derajat sejajar dengan sin 60 derajat, yaitu akar 3 ÷ 2 = sekitar 0,866. Ia menyelesaikan soal tanpa pernah menghafal satu pun angka, hanya menyimpan satu pola.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Nilai pun muncul di akhir",
+        html: "Setelah deret terlihat, aturannya kita tuliskan: untuk sudut 0, 30, 45, 60, 90 derajat, <strong>sin = akar n ÷ 2</strong> dengan n berturut-turut 0, 1, 2, 3, 4. Nilai cos memakai deret yang sama dibaca terbalik. Satu pola menggantikan seluruh tabel hafalan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Nilai sin sudut istimewa adalah akar 0, 1, 2, 3, 4 dibagi 2.",
+          "Angka di dalam akar hanya naik teratur seiring sudut membesar.",
+          "Nilai cos memakai deret yang sama tetapi dibaca dari belakang.",
+          "Pola ini menggantikan hafalan dan mudah ditulis ulang kapan saja.",
+          "Kenaikan nilai sin melambat saat mendekati 90 derajat.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dalam pola akar, nilai sin sudut istimewa berbentuk?",
+            options: ["akar n ÷ 2", "n ÷ 2", "akar n", "2 ÷ akar n"],
+            answer: 0,
+            explain: "sin = akar n ÷ 2, dengan n = 0, 1, 2, 3, 4.",
+          },
+          {
+            q: "Angka di dalam akar untuk sin 45 derajat adalah?",
+            options: ["1", "2", "3", "4"],
+            answer: 1,
+            explain: "sin 45 derajat = akar 2 ÷ 2, jadi n = 2.",
+          },
+          {
+            q: "sin 90 derajat menurut pola akar bernilai?",
+            options: ["0", "0,5", "0,866", "1"],
+            answer: 3,
+            explain: "sin 90 = akar 4 ÷ 2 = 2 ÷ 2 = 1.",
+          },
+          {
+            q: "Nilai cos sudut istimewa diperoleh dengan?",
+            options: [
+              "Pola akar dibaca terbalik",
+              "Pola akar dikali dua",
+              "Pola yang sama sama persis",
+              "Tidak ada polanya",
+            ],
+            answer: 0,
+            explain: "Karena cos θ = sin (90 − θ), deret akarnya dibaca dari belakang.",
+          },
+          {
+            q: "cos 60 derajat sama dengan sin 30 derajat, yaitu?",
+            options: ["akar 1 ÷ 2 = 0,5", "akar 3 ÷ 2", "akar 2 ÷ 2", "akar 4 ÷ 2"],
+            answer: 0,
+            explain: "cos 60 = sin 30 = akar 1 ÷ 2 = 0,5.",
+          },
+        ],
+      },
+    ],
+  },
 ];

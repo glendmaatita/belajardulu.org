@@ -575,4 +575,154 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "perjalanan-bertahap-grafik",
+    levelId: "grafik-gerak",
+    order: 5,
+    title: "Membaca Perjalanan Bertahap",
+    summary:
+      "Perjalanan nyata jarang satu pola. Grafik kecepatan-waktu sebuah perjalanan terdiri atas beberapa tahap, dan jarak total adalah jumlah seluruh luas di bawahnya.",
+    durationMin: 14,
+    tags: ["kinematika", "grafik", "kecepatan-waktu", "luas-total"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah kereta berangkat dari stasiun: mula-mula dipercepat, lalu melaju tetap di tengah, lalu mengerem hingga berhenti di stasiun berikutnya. Pada grafik kecepatan-waktu, ketiga tahap ini tampak sebagai tanjakan, garis datar, lalu turunan. Bagaimana cara membaca jarak total dari grafik bertahap seperti ini? Ayo telusuri dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Menjumlah Luas Tiap Tahap",
+        caption: "Jarak total sebuah perjalanan adalah jumlah luas di bawah grafik v-t pada setiap tahap.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bagi grafik kecepatan-waktu menjadi potongan-potongan rapi: tanjakan awal berbentuk <strong>segitiga</strong>, bagian tengah yang datar berbentuk <strong>persegi panjang</strong>, dan turunan akhir berbentuk <strong>segitiga</strong> lagi. Hitung luas tiap potongan, lalu jumlahkan. Hasilnya adalah <strong>jarak total</strong> yang ditempuh. Satu grafik bisa menyimpan seluruh kisah perjalanan dari berangkat sampai berhenti.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Pecah lalu jumlahkan",
+        html: "Perpindahan total = jumlah luas semua tahap. Tahap dipercepat dari nol berbentuk segitiga (½ × t × v); tahap kecepatan tetap berbentuk persegi panjang (v × t); tahap diperlambat hingga berhenti berbentuk segitiga lagi.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Perjalanan Kereta: Dipercepat, Tetap, lalu Diperlambat",
+        unit: "m/s",
+        source: "ilustrasi edukatif",
+        note: "0-4 s naik 0 ke 20 m/s (segitiga, 40 m). 4-10 s tetap 20 m/s (persegi panjang, 120 m). 10-14 s turun 20 ke 0 (segitiga, 40 m). Total 200 m.",
+        data: [
+          { label: "0 s", value: 0, color: "#22d3ee" },
+          { label: "2 s", value: 10, color: "#22d3ee" },
+          { label: "4 s", value: 20, color: "#22d3ee" },
+          { label: "6 s", value: 20, color: "#22d3ee" },
+          { label: "8 s", value: 20, color: "#22d3ee" },
+          { label: "10 s", value: 20, color: "#22d3ee" },
+          { label: "12 s", value: 10, color: "#22d3ee" },
+          { label: "14 s", value: 0, color: "#22d3ee" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada tahap awal, kecepatan naik lurus dari 0 ke 20 m/s dalam 4 s. Berapa jarak yang ditempuh pada tahap ini (luas segitiga)?",
+        answer: 40,
+        tolerance: 0.5,
+        suffix: " m",
+        solution:
+          "Luas segitiga = ½ × alas × tinggi = ½ × 4 s × 20 m/s = <strong>40 m</strong>. Itulah jarak yang ditempuh selama dipercepat.",
+        hint: "Tahap dipercepat dari nol berbentuk segitiga: ½ × waktu × kecepatan akhir.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Untuk seluruh perjalanan (segitiga 40 m + persegi panjang 20 m/s selama 6 s + segitiga 40 m), berapa jarak total yang ditempuh?",
+        answer: 200,
+        tolerance: 1,
+        suffix: " m",
+        solution:
+          "Jumlahkan luas tiap tahap: 40 m (segitiga awal) + (20 × 6 = 120 m persegi panjang) + 40 m (segitiga akhir) = <strong>200 m</strong>. Jarak total adalah jumlah seluruh luas di bawah grafik.",
+        hint: "Hitung tiap luas: segitiga + persegi panjang + segitiga, lalu jumlahkan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap tahap perjalanan kereta sesuai jenis geraknya pada grafik v-t.",
+        buckets: ["Dipercepat", "Kecepatan tetap", "Diperlambat"],
+        items: [
+          { text: "Garis menanjak 0 ke 20 m/s di awal", bucket: "Dipercepat" },
+          { text: "Garis mendatar di 20 m/s di tengah", bucket: "Kecepatan tetap" },
+          { text: "Garis menurun 20 ke 0 m/s di akhir", bucket: "Diperlambat" },
+          { text: "Tahap berbentuk persegi panjang pada grafik", bucket: "Kecepatan tetap" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Profil Kecepatan Lift Gedung Tinggi",
+        html: "Lift gedung pencakar langit memakai <strong>profil kecepatan</strong> tiga tahap agar penumpang nyaman: percepatan halus saat berangkat, kecepatan jelajah tetap di tengah, lalu perlambatan halus menjelang lantai tujuan. Insinyur menghitung jarak antarlantai sebagai <strong>luas total</strong> di bawah grafik kecepatan-waktu ini. Dengan mengatur tinggi dan lebar tiap tahap, mereka memastikan lift berhenti tepat di lantai yang diminta tanpa sentakan. Membaca grafik bertahap adalah keterampilan harian para perancang sistem gerak.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya menyatu. <strong>Perpindahan total = jumlah luas semua tahap di bawah grafik v-t.</strong> Segitiga = ½ × t × v, persegi panjang = v × t, dan trapesium = ½ × (v₀ + v) × t. Untuk perjalanan apa pun, pecah grafik menjadi bentuk-bentuk sederhana, hitung luasnya, lalu jumlahkan. Itulah cara grafik menyimpan seluruh jarak perjalanan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Perjalanan nyata terdiri atas beberapa tahap pada grafik kecepatan-waktu.",
+          "Jarak total = jumlah luas di bawah grafik pada semua tahap.",
+          "Tahap dipercepat/diperlambat berbentuk segitiga; tahap tetap berbentuk persegi panjang.",
+          "Pecah grafik rumit menjadi bentuk sederhana, hitung luasnya, lalu jumlahkan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Jarak total sebuah perjalanan pada grafik v-t sama dengan?",
+            options: ["Kemiringan total", "Jumlah luas semua tahap", "Tinggi grafik", "Lebar grafik"],
+            answer: 1,
+            explain: "Perpindahan total adalah jumlah seluruh luas di bawah grafik kecepatan-waktu.",
+          },
+          {
+            q: "Tahap kecepatan tetap pada grafik v-t berbentuk?",
+            options: ["Segitiga", "Persegi panjang", "Lingkaran", "Trapesium miring"],
+            answer: 1,
+            explain: "Kecepatan tetap berarti garis mendatar, sehingga luasnya persegi panjang (v × t).",
+          },
+          {
+            q: "Kecepatan naik lurus 0 ke 12 m/s dalam 3 s. Jarak tahap ini?",
+            options: ["36 m", "18 m", "4 m", "15 m"],
+            answer: 1,
+            explain: "Luas segitiga = ½ × 3 × 12 = 18 m.",
+          },
+          {
+            q: "Segitiga awal 30 m, persegi panjang tengah 80 m, segitiga akhir 30 m. Jarak total?",
+            options: ["110 m", "140 m", "80 m", "200 m"],
+            answer: 1,
+            explain: "30 + 80 + 30 = 140 m.",
+          },
+          {
+            q: "Mengapa lift memakai profil kecepatan tiga tahap?",
+            options: [
+              "Agar lebih cepat sampai",
+              "Agar penumpang nyaman tanpa sentakan dan berhenti tepat",
+              "Agar hemat listrik saja",
+              "Agar grafiknya rapi",
+            ],
+            answer: 1,
+            explain: "Percepatan dan perlambatan halus membuat nyaman, dan luas total mengatur jarak tepat.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -590,4 +590,144 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "fase-getaran",
+    levelId: "getaran-ghs",
+    order: 5,
+    title: "Fase dan Sudut Fase Getaran",
+    summary:
+      "Dua ayunan bisa bergerak bersamaan atau berlawanan. Kita pelajari 'fase', penanda sudah sampai mana sebuah getaran dalam satu putaran iramanya.",
+    durationMin: 13,
+    tags: ["getaran", "fase", "sudut fase", "beda fase"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Bayangkan dua ayunan identik. Saat keduanya dilepas bersamaan, mereka maju dan mundur serempak, seolah saling bercermin. Tetapi jika satu dilepas belakangan, geraknya tertinggal. Untuk menjelaskan 'sudah sampai mana' sebuah getaran dalam satu putaran iramanya, fisikawan memakai kata <strong>fase</strong>.",
+      },
+      {
+        type: "video",
+        comp: "GelombangFisika",
+        title: "Video: Membaca Fase Getaran",
+        caption: "Fase menandai posisi getaran dalam satu siklus penuh, dari 0 sampai satu periode.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Anggap satu getaran penuh seperti satu putaran jarum jam. <strong>Fase</strong> adalah pecahan putaran yang sudah dilewati: di awal fase 0, seperempat jalan fase 1/4, separuh jalan fase 1/2. Jangan hafalkan rumus dulu, cukup rasakan bahwa fase itu seperti penunjuk 'sudah berapa persen' satu getaran berlangsung.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Fase, sudut fase, dan beda fase",
+        html: "<strong>Fase (φ)</strong> dinyatakan sebagai pecahan periode, φ = t/T. <strong>Sudut fase (θ)</strong> mengubahnya menjadi sudut: θ = 2π(t/T) radian atau (t/T) x 360°. <strong>Beda fase</strong> adalah selisih fase dua getaran; jika nol mereka sefase (serempak), jika 1/2 mereka berlawanan fase.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Simpangan terhadap Sudut Fase",
+        unit: "y/A",
+        source: "ilustrasi edukatif (y = A sin θ)",
+        note: "Simpangan maksimum terjadi saat sudut fase 90° dan 270°; getaran melewati titik seimbang pada 0°, 180°, dan 360°.",
+        data: [
+          { label: "0°", value: 0, color: "#22d3ee" },
+          { label: "45°", value: 0.71, color: "#22d3ee" },
+          { label: "90°", value: 1, color: "#22d3ee" },
+          { label: "135°", value: 0.71, color: "#22d3ee" },
+          { label: "180°", value: 0, color: "#0ea5e9" },
+          { label: "225°", value: -0.71, color: "#0ea5e9" },
+          { label: "270°", value: -1, color: "#0ea5e9" },
+          { label: "315°", value: -0.71, color: "#0ea5e9" },
+          { label: "360°", value: 0, color: "#0ea5e9" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah getaran berperiode T = 4 s mulai dari titik seimbang. Berapa sudut fasenya (dalam derajat) saat t = 1 s?",
+        answer: 90,
+        tolerance: 0.5,
+        suffix: "°",
+        solution:
+          "Sudut fase θ = (t/T) x 360° = (1/4) x 360° = <strong>90°</strong>. Pada saat ini getaran tepat berada di simpangan maksimum.",
+        hint: "Bagi waktu dengan periode, lalu kalikan 360 derajat.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan fase getaran (pecahan periode) dengan posisi yang sedang dilewati (getaran mulai dari titik seimbang menuju arah positif).",
+        pairs: [
+          { left: "Fase 0", right: "Titik seimbang, mulai bergerak" },
+          { left: "Fase 1/4", right: "Simpangan maksimum positif (+A)" },
+          { left: "Fase 1/2", right: "Titik seimbang, arah berbalik" },
+          { left: "Fase 3/4", right: "Simpangan maksimum negatif (-A)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua Bandul yang Tertinggal Setengah Langkah",
+        html: "Dua bandul identik berperiode 2 s. Bandul kedua dilepas 0,5 s setelah yang pertama. Beda fasenya adalah Δφ = Δt/T = 0,5/2 = <strong>1/4</strong>, atau sudut fase 90°. Akibatnya saat bandul pertama berada di simpangan maksimum, bandul kedua justru sedang melewati titik seimbang. Mereka tidak pernah serempak; selisih seperempat langkah itu terus terbawa selama keduanya berayun.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah merasakan iramanya, rumus fase muncul. Simpangan getaran: <strong>y = A sin(2π(t/T) + θ&#8320;)</strong> dengan θ&#8320; fase awal. Beda fase dua getaran: <strong>Δφ = Δt/T</strong>. Dua getaran <em>sefase</em> bila Δφ = 0, 1, 2, ... dan <em>berlawanan fase</em> bila Δφ = 1/2, 3/2, ...",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Fase menandai posisi sebuah getaran dalam satu siklus penuh.",
+          "Sudut fase θ = (t/T) x 360° atau 2π(t/T) radian.",
+          "Beda fase dua getaran adalah Δφ = Δt/T.",
+          "Sefase berarti serempak (Δφ bilangan bulat); berlawanan fase berarti Δφ = 1/2.",
+          "Simpangan maksimum terjadi pada sudut fase 90° dan 270°.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Fase sebuah getaran dinyatakan sebagai...",
+            options: [
+              "Amplitudo dibagi periode",
+              "Pecahan periode yang sudah dilalui, t/T",
+              "Frekuensi dikali waktu",
+              "Energi getaran",
+            ],
+            answer: 1,
+            explain: "Fase φ = t/T menyatakan sudah sampai mana getaran dalam satu siklus.",
+          },
+          {
+            q: "Getaran berperiode 2 s. Berapa sudut fase saat t = 0,5 s?",
+            options: ["45°", "90°", "180°", "270°"],
+            answer: 1,
+            explain: "θ = (0,5/2) x 360° = 90°.",
+          },
+          {
+            q: "Dua getaran disebut berlawanan fase bila beda fasenya...",
+            options: ["0", "1/4", "1/2", "1"],
+            answer: 2,
+            explain: "Beda fase 1/2 (setengah periode) membuat kedua getaran berlawanan arah.",
+          },
+          {
+            q: "Pada sudut fase berapa simpangan getaran bernilai maksimum positif?",
+            options: ["0°", "90°", "180°", "360°"],
+            answer: 1,
+            explain: "y = A sin θ bernilai maksimum saat θ = 90°.",
+          },
+          {
+            q: "Bandul kedua dilepas 0,25 s setelah bandul pertama yang berperiode 1 s. Beda fasenya...",
+            options: ["1/4", "1/2", "1", "0"],
+            answer: 0,
+            explain: "Δφ = Δt/T = 0,25/1 = 1/4.",
+          },
+        ],
+      },
+    ],
+  },
 ];

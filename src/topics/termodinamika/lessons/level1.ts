@@ -612,4 +612,161 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "anomali-air",
+    levelId: "suhu-kalor",
+    order: 5,
+    title: "Anomali Air: Mengapa Es Mengapung",
+    summary:
+      "Hampir semua zat menyusut saat didinginkan, tetapi air justru memuai saat membeku, dan paling padat bukan saat beku melainkan di 4 derajat. Kita amati keanehan ini dulu sebelum berumus.",
+    durationMin: 13,
+    tags: ["fisika", "termodinamika", "anomali air", "massa jenis"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Es batu mengapung di gelas, gunung es mengambang di laut, dan pipa air bisa pecah saat membeku di musim dingin. Ketiganya melawan akal sehat: bukankah benda padat biasanya lebih berat dan tenggelam? Air ternyata <strong>aneh</strong>: ia memuai saat membeku, dan kerapatannya paling tinggi bukan saat beku, melainkan pada 4 derajat celsius. Ayo amati keganjilan ini dulu sebelum kita rumuskan.",
+      },
+      {
+        type: "video",
+        comp: "UsahaEnergiVideo",
+        title: "Video: Wujud Zat dan Susunan Molekulnya",
+        caption: "Susunan molekul menentukan apakah suatu zat memadat dengan menyusut atau justru mengembang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan mendinginkan air dari 20 derajat. Awalnya ia menyusut seperti zat biasa, makin padat. Tetapi setelah lewat 4 derajat, ia mulai <strong>memuai kembali</strong>, dan saat membeku jadi es ia mengembang cukup banyak. Amati akibatnya: es lebih ringan per satuan volume daripada air, sehingga mengapung. Air paling dingin yang masih cair justru naik ke permukaan, sedangkan air terpadat (4 derajat) tenggelam ke dasar.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kerapatan maksimum di 4 derajat",
+        html: "<strong>Massa jenis (kerapatan)</strong> adalah massa per satuan volume. Untuk hampir semua zat, mendinginkan berarti menambah kerapatan. Air mematuhi aturan ini hanya sampai <strong>4 derajat celsius</strong>; di bawah itu, ikatan hidrogen memaksa molekul menyusun diri lebih renggang, sehingga air memuai lagi. Akibatnya kerapatan air puncaknya di 4 derajat (sekitar 1000 kg/m3), dan es jauh lebih ringan (sekitar 917 kg/m3).",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Massa Jenis Air dan Es pada Berbagai Suhu",
+        unit: "kg/m³",
+        source: "nilai massa jenis air acuan",
+        note: "Perhatikan dua hal: es jauh lebih ringan daripada air (maka mengapung), dan air paling padat justru pada 4 derajat, bukan saat beku. Itulah anomali air.",
+        data: [
+          { label: "Es 0 °C", value: 917, color: "#bae6fd" },
+          { label: "Air 0 °C", value: 999.8, color: "#38bdf8" },
+          { label: "Air 4 °C", value: 1000.0, color: "#0ea5e9" },
+          { label: "Air 25 °C", value: 997.0, color: "#22d3ee" },
+          { label: "Air 100 °C", value: 958.4, color: "#f87171" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Massa jenis es 917 kg/m³ dan air 1000 kg/m³. Berapa persen volume gunung es yang muncul di atas permukaan air?",
+        answer: 8.3,
+        tolerance: 0.3,
+        suffix: " %",
+        solution:
+          "Bagian yang tenggelam memikul beratnya sendiri, sehingga fraksi tercelup = massa jenis es dibagi massa jenis air = 917/1000 = 0,917 (91,7% tenggelam). Maka yang muncul = 1 − 0,917 = 0,083 = <strong>8,3%</strong>. Itulah sebabnya hanya 'puncak gunung es' yang terlihat, sisanya tersembunyi di bawah air.",
+        hint: "Fraksi tercelup = massa jenis es / massa jenis air; sisanya muncul di atas.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Air bermassa jenis 1000 kg/m³ membeku menjadi es bermassa jenis 917 kg/m³. Berapa persen pertambahan volumenya?",
+        answer: 9.05,
+        tolerance: 0.3,
+        suffix: " %",
+        solution:
+          "Untuk massa sama, volume berbanding terbalik dengan massa jenis. Pertambahan = (1000/917) − 1 = 1,0905 − 1 = 0,0905 = <strong>9,05%</strong>. Pemuaian inilah yang mendorong dinding pipa hingga pecah saat air di dalamnya membeku.",
+        hint: "Volume berbanding terbalik dengan massa jenis: bandingkan 1000/917 dengan 1.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap peristiwa: akibat anomali air atau pemuaian biasa.",
+        buckets: ["Akibat anomali air", "Pemuaian biasa"],
+        items: [
+          { text: "Es batu mengapung di atas air", bucket: "Akibat anomali air" },
+          { text: "Pipa air pecah saat airnya membeku", bucket: "Akibat anomali air" },
+          { text: "Danau membeku dari permukaan, dasarnya tetap cair", bucket: "Akibat anomali air" },
+          { text: "Rel baja bertambah panjang saat siang panas", bucket: "Pemuaian biasa" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Ikan Bertahan Hidup di Danau yang Permukaannya Beku",
+        html: "Di negara empat musim, danau membeku di permukaan tetapi ikan tetap hidup di bawahnya. Anomali air menjelaskannya: saat udara mendingin, air permukaan yang mencapai 4 derajat menjadi paling padat lalu tenggelam ke dasar, sementara air lebih dingin naik dan membeku di atas. Lapisan es yang mengapung itu lalu bertindak sebagai <strong>selimut isolasi</strong>, memperlambat pembekuan lebih lanjut. Dasar danau tetap sekitar 4 derajat dan cair, sehingga ekosistem air bertahan sepanjang musim dingin.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah mengamati keanehannya, polanya jadi jelas. Massa jenis adalah <strong>massa dibagi volume</strong>. Hampir semua zat makin padat saat didinginkan, tetapi air mencapai kerapatan maksimum pada <strong>4 derajat celsius</strong>, lalu memuai lagi dan mengembang sekitar 9% ketika membeku. Karena es lebih ringan daripada air, ia mengapung, dan fraksi yang muncul = 1 − (massa jenis es / massa jenis air).",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Massa jenis air mencapai puncak pada 4 derajat celsius, bukan saat membeku.",
+          "Air memuai sekitar 9% saat membeku, sehingga es lebih ringan dan mengapung.",
+          "Fraksi benda terapung yang tercelup = massa jenis benda / massa jenis air.",
+          "Anomali air menjaga dasar danau tetap cair sehingga ikan bertahan hidup.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Air mencapai massa jenis maksimum pada suhu berapa?",
+            options: ["0 °C", "4 °C", "25 °C", "100 °C"],
+            answer: 1,
+            explain: "Karena anomali air, kerapatan puncaknya pada 4 derajat celsius.",
+          },
+          {
+            q: "Mengapa es mengapung di atas air?",
+            options: [
+              "Karena es lebih panas",
+              "Karena massa jenis es lebih kecil daripada air",
+              "Karena es tidak punya massa",
+              "Karena air menolak es",
+            ],
+            answer: 1,
+            explain: "Es (917 kg/m3) lebih ringan daripada air (1000 kg/m3), jadi mengapung.",
+          },
+          {
+            q: "Berapa kira-kira persen gunung es yang muncul di atas air (es 917, air 1000)?",
+            options: ["Sekitar 8%", "Sekitar 50%", "Sekitar 92%", "Sekitar 17%"],
+            answer: 0,
+            explain: "Muncul = 1 − 917/1000 = 8,3%, sisanya tersembunyi di bawah air.",
+          },
+          {
+            q: "Mengapa pipa air bisa pecah saat membeku?",
+            options: [
+              "Karena air menyusut menjadi es",
+              "Karena air memuai sekitar 9% saat membeku",
+              "Karena es menyerap pipa",
+              "Karena suhu pipa naik",
+            ],
+            answer: 1,
+            explain: "Air mengembang saat membeku, mendorong dinding pipa hingga pecah.",
+          },
+          {
+            q: "Mengapa ikan bertahan hidup di danau yang permukaannya beku?",
+            options: [
+              "Karena seluruh danau membeku merata",
+              "Karena air 4 derajat terpadat tenggelam ke dasar dan es mengapung sebagai isolasi",
+              "Karena ikan tahan beku",
+              "Karena air tidak pernah dingin",
+            ],
+            answer: 1,
+            explain: "Air terpadat (4 derajat) di dasar tetap cair, es di atas jadi selimut isolasi.",
+          },
+        ],
+      },
+    ],
+  },
 ];

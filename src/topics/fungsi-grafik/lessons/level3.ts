@@ -575,4 +575,146 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "nilai-maksimum-dan-minimum",
+    levelId: "fungsi-kuadrat",
+    order: 5,
+    title: "Nilai Maksimum dan Minimum: Mencari yang Terbaik",
+    summary:
+      "Dengan 40 meter pagar, kita coba-coba bentuk kandang sampai luasnya paling besar, lalu sadar titik puncak parabola yang menjawabnya.",
+    durationMin: 15,
+    tags: ["fungsi kuadrat", "maksimum", "minimum", "optimasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kamu punya pagar sepanjang 40 meter untuk mengelilingi kandang berbentuk persegi panjang. Lebar boleh kamu pilih sendiri. Lebar terlalu kecil bikin kandang sempit memanjang, terlalu besar juga sempit ke arah lain. Pasti ada satu lebar yang memberi luas paling besar. Ayo cari dulu lewat coba-coba, sebelum titik puncak parabola menjelaskannya.",
+      },
+      {
+        type: "video",
+        comp: "PolaAlam",
+        title: "Video: Mencari Titik Terbaik",
+        caption: "Banyak persoalan nyata bermuara pada satu titik puncak atau lembah.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Keliling 40 m berarti lebar tambah panjang = 20 m. Jadi luas = lebar × (20 - lebar). Coba lebar 5: luas 5 × 15 = 75. Lebar 8: 8 × 12 = 96. Lebar 10: 10 × 10 = 100. Lebar 12: 12 × 8 = 96. Lihat, naik sampai lebar 10 lalu turun lagi. Luas terbesar ada di lebar 10, saat kandangnya berbentuk persegi.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Luas Kandang terhadap Lebar (keliling tetap 40 m)",
+        unit: "meter persegi",
+        source: "perhitungan luas = lebar × (20 - lebar)",
+        note: "Luas naik sampai puncak di lebar 10 m (luas 100), lalu menurun simetris. Titik tertinggi parabola inilah luas maksimumnya.",
+        data: [
+          { label: "Lebar 2", value: 36, color: "#2dd4bf" },
+          { label: "Lebar 5", value: 75, color: "#2dd4bf" },
+          { label: "Lebar 8", value: 96, color: "#2dd4bf" },
+          { label: "Lebar 10", value: 100, color: "#0ea5e9" },
+          { label: "Lebar 12", value: 96, color: "#2dd4bf" },
+          { label: "Lebar 15", value: 75, color: "#2dd4bf" },
+          { label: "Lebar 18", value: 36, color: "#2dd4bf" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Puncak untuk maksimum, lembah untuk minimum",
+        html: "Karena luas = 20·lebar - lebar², bentuknya parabola dengan a = -1 (membuka ke bawah), jadi titik baliknya adalah <strong>maksimum</strong>. Bila a > 0 parabola membuka ke atas dan titik baliknya <strong>minimum</strong>, misalnya saat mencari biaya terendah. Nilai terbaik selalu berada di titik puncak.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Luas = 20·lebar - lebar² (a = -1, b = 20). Pada lebar berapa luas mencapai maksimum? Gunakan x = -b/(2a).",
+        answer: 10,
+        suffix: " m",
+        solution:
+          "x = -b/(2a) = -20 / (2 × -1) = -20 / -2 = <strong>10 m</strong>. Di lebar 10 m kandang berbentuk persegi dan luasnya maksimum.",
+        hint: "Masukkan a = -1 dan b = 20 ke rumus sumbu simetri.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa luas maksimum kandang itu (dalam meter persegi)?",
+        answer: 100,
+        suffix: " m persegi",
+        solution:
+          "Masukkan lebar 10: luas = 10 × (20 - 10) = 10 × 10 = <strong>100 m persegi</strong>. Itulah nilai puncak parabolanya.",
+        hint: "Substitusikan lebar maksimum ke luas = lebar × (20 - lebar).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap fungsi: punya nilai maksimum atau nilai minimum?",
+        buckets: ["Punya nilai maksimum (a < 0)", "Punya nilai minimum (a > 0)"],
+        items: [
+          { text: "y = -x² + 4x", bucket: "Punya nilai maksimum (a < 0)" },
+          { text: "y = x² - 6x + 5", bucket: "Punya nilai minimum (a > 0)" },
+          { text: "y = -2x² + 8x", bucket: "Punya nilai maksimum (a < 0)" },
+          { text: "y = x² + 2x", bucket: "Punya nilai minimum (a > 0)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Tinggi maksimum roket air",
+        html: "Sebuah roket air diluncurkan dan tingginya mengikuti h = -5t² + 20t (t dalam detik, h dalam meter). Karena a = -5 negatif, parabola membuka ke bawah dan punya tinggi maksimum. Saat tertinggi terjadi di t = -b/(2a) = -20 / (2 × -5) = 2 detik. Tinggi maksimumnya h = -5 × 2² + 20 × 2 = -20 + 40 = 20 meter. Tim peluncur memakai titik puncak ini untuk memperkirakan ketinggian tanpa mengukur di lapangan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah coba-coba dan melihat puncaknya, kita rangkum: <strong>nilai maksimum atau minimum sebuah fungsi kuadrat selalu terjadi di titik puncak</strong>, pada x = -b/(2a). Jika a < 0 parabola membuka ke bawah dan titik itu memberi <strong>nilai maksimum</strong>; jika a > 0 ia memberi <strong>nilai minimum</strong>. Banyak persoalan terbaik dan terhemat di dunia nyata diselesaikan dengan mencari titik puncak ini.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Nilai maksimum atau minimum fungsi kuadrat terjadi di titik puncak, pada x = -b/(2a).",
+          "Jika a < 0 parabola membuka ke bawah dan titik puncak memberi nilai maksimum.",
+          "Jika a > 0 parabola membuka ke atas dan titik puncak memberi nilai minimum.",
+          "Banyak persoalan optimasi nyata, seperti luas dan tinggi terbesar, dijawab oleh titik puncak.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Nilai maksimum atau minimum fungsi kuadrat terjadi di?",
+            options: ["Titik puncak", "Titik potong sumbu-y", "Salah satu akar", "x = 0 selalu"],
+            answer: 0,
+            explain: "Nilai ekstrem selalu berada di titik puncak parabola.",
+          },
+          {
+            q: "Fungsi kuadrat dengan a < 0 memiliki?",
+            options: ["Nilai minimum", "Nilai maksimum", "Tidak punya nilai ekstrem", "Dua maksimum"],
+            answer: 1,
+            explain: "a < 0 membuat parabola membuka ke bawah, titik puncaknya maksimum.",
+          },
+          {
+            q: "Untuk luas = 20·lebar - lebar², lebar yang memberi luas maksimum adalah?",
+            options: ["5 m", "8 m", "10 m", "20 m"],
+            answer: 2,
+            explain: "x = -b/(2a) = -20 / -2 = 10 m.",
+          },
+          {
+            q: "Roket h = -5t² + 20t mencapai puncak pada t = ?",
+            options: ["1 detik", "2 detik", "4 detik", "5 detik"],
+            answer: 1,
+            explain: "t = -20 / (2 × -5) = 2 detik.",
+          },
+          {
+            q: "Dengan keliling tetap, persegi panjang berluas terbesar berbentuk?",
+            options: ["Persegi", "Sangat panjang", "Sangat tipis", "Segitiga"],
+            answer: 0,
+            explain: "Luas maksimum tercapai saat lebar sama dengan panjang, yaitu bentuk persegi.",
+          },
+        ],
+      },
+    ],
+  },
 ];

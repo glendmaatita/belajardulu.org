@@ -595,4 +595,152 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "volume-bola",
+    levelId: "bangun-ruang",
+    order: 5,
+    title: "Volume Bola",
+    summary:
+      "Sebelum menghafal rumus bola, kita amati dulu perbandingan bola dengan tabung pembungkusnya, sampai rumus 'dua per tiga tabung' muncul sendiri.",
+    durationMin: 13,
+    tags: ["geometri", "volume", "bola", "tabung"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Bola sepak, kelereng, dan globe semuanya bulat sempurna tanpa satu pun sisi datar. Lalu bagaimana mengukur isi ruang di dalamnya? Sejak zaman Archimedes, orang menemukan hubungan indah antara bola dan <strong>tabung</strong> yang pas membungkusnya. Sebelum kita pakai rumus, ayo amati dulu perbandingan itu.",
+      },
+      {
+        type: "video",
+        comp: "VolumeVideo",
+        title: "Video: Menuang Bola ke dalam Tabung",
+        caption: "Bola yang pas dalam tabung mengisi tepat dua per tiga ruang tabung itu.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan sebuah bola dimasukkan ke tabung yang pas, yaitu tinggi tabung sama dengan diameter bola dan jari-jari keduanya sama. Jika kita isi bola dengan air lalu tuang ke tabung, ternyata air hanya mengisi dua per tiga tabung. Coba pikirkan: berapa bagian tabung yang tersisa kosong?",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorVolume",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Volume Kerucut, Bola, dan Tabung dengan Jari-jari Sama (r = 3, tinggi = 2r)",
+        unit: "volume (sentimeter kubik)",
+        source: "ilustrasi edukatif (pi = 3,14)",
+        note: "Untuk jari-jari sama dan tinggi 2r, perbandingan kerucut : bola : tabung selalu 1 : 2 : 3.",
+        data: [
+          { label: "Kerucut", value: 56.52, color: "#818cf8" },
+          { label: "Bola", value: 113.04, color: "#38bdf8" },
+          { label: "Tabung", value: 169.56, color: "#22d3ee" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Geometri, bukan sekadar berhitung",
+        html: "Berhitung menjawab 'berapa hasil kalinya'. Geometri menjawab 'mengapa bola selalu dua per tiga tabung pembungkusnya' dan memakainya untuk menghitung isi tangki bulat, balon, atau bandul tanpa harus menuang air.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bola berjari-jari 3 cm. Berapa volumenya? (pakai pi = 3,14)",
+        answer: 113.04,
+        tolerance: 0.5,
+        suffix: " sentimeter kubik",
+        solution:
+          "Volume bola = (4/3) x pi x r pangkat tiga = (4/3) x 3,14 x 27 = <strong>113,04 sentimeter kubik</strong>.",
+        hint: "Pakai (4/3) x pi x r x r x r dengan r = 3.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bola berjari-jari 6 cm. Berapa volumenya? (pakai pi = 3,14)",
+        answer: 904.32,
+        tolerance: 1,
+        suffix: " sentimeter kubik",
+        solution:
+          "Volume bola = (4/3) x 3,14 x 6 pangkat tiga = (4/3) x 3,14 x 216 = <strong>904,32 sentimeter kubik</strong>.",
+        hint: "6 pangkat tiga = 216, lalu kalikan (4/3) x pi.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan bangun ruang menurut apakah rumus volumenya memakai pi.",
+        buckets: ["Rumus pakai pi", "Rumus tanpa pi"],
+        items: [
+          { text: "Bola", bucket: "Rumus pakai pi" },
+          { text: "Tabung", bucket: "Rumus pakai pi" },
+          { text: "Kerucut", bucket: "Rumus pakai pi" },
+          { text: "Kubus", bucket: "Rumus tanpa pi" },
+          { text: "Balok", bucket: "Rumus tanpa pi" },
+          { text: "Prisma segitiga", bucket: "Rumus tanpa pi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengisi tangki air berbentuk bola",
+        html: "Sebuah menara air memakai tangki berbentuk bola berjari-jari 1,5 m. Volumenya = (4/3) x 3,14 x 1,5 pangkat tiga = (4/3) x 3,14 x 3,375 = sekitar 14,13 meter kubik, yaitu sekitar 14.130 liter. Dengan rumus bola, pengelola tahu kapasitas tangki tanpa perlu mengisinya penuh lebih dulu, sehingga jadwal pasokan air bisa direncanakan dengan tepat.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah mengamati perbandingannya, baru rumus bola lahir: volume bola = <strong>(4/3) x pi x r pangkat tiga</strong>. Karena tabung pembungkus (tinggi 2r) bervolume 2 x pi x r pangkat tiga, bola tepat <strong>dua per tiga</strong> volume tabung itu, persis seperti temuan Archimedes.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Volume bola = (4/3) x pi x r pangkat tiga.",
+          "Bola mengisi tepat dua per tiga volume tabung yang pas membungkusnya.",
+          "Perbandingan kerucut : bola : tabung (jari-jari sama, tinggi 2r) adalah 1 : 2 : 3.",
+          "Menggandakan jari-jari membuat volume bola jadi delapan kali lipat.",
+          "Rumus ini dipakai menghitung isi tangki bulat, balon, dan bandul.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rumus volume bola yang benar adalah?",
+            options: [
+              "pi x r kuadrat x t",
+              "(4/3) x pi x r pangkat tiga",
+              "(1/3) x pi x r kuadrat x t",
+              "4 x pi x r kuadrat",
+            ],
+            answer: 1,
+            explain: "Volume bola = (4/3) x pi x r pangkat tiga.",
+          },
+          {
+            q: "Bola yang pas dalam tabung mengisi berapa bagian volume tabung itu?",
+            options: ["Setengah", "Dua per tiga", "Tiga per empat", "Penuh"],
+            answer: 1,
+            explain: "Bola mengisi tepat dua per tiga volume tabung pembungkusnya.",
+          },
+          {
+            q: "Perbandingan volume kerucut : bola : tabung (jari-jari sama, tinggi 2r) adalah?",
+            options: ["1 : 1 : 1", "1 : 2 : 3", "1 : 3 : 5", "2 : 3 : 4"],
+            answer: 1,
+            explain: "Archimedes menemukan perbandingannya 1 : 2 : 3.",
+          },
+          {
+            q: "Volume bola berjari-jari 3 cm (pi = 3,14) adalah sekitar?",
+            options: ["56,52", "113,04", "169,56", "339,12"],
+            answer: 1,
+            explain: "(4/3) x 3,14 x 27 = 113,04 sentimeter kubik.",
+          },
+          {
+            q: "Jika jari-jari bola digandakan, volumenya menjadi?",
+            options: ["2 kali", "4 kali", "8 kali", "6 kali"],
+            answer: 2,
+            explain: "Karena r pangkat tiga, menggandakan r membuat volume 2 pangkat tiga = 8 kali lipat.",
+          },
+        ],
+      },
+    ],
+  },
 ];

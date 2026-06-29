@@ -712,4 +712,155 @@ export const level1: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "self-assessment",
+    levelId: "dasar",
+    order: 5,
+    title: "Self Assessment: Hitung, Setor, Lapor Sendiri",
+    summary: "Sistem pajak Indonesia mempercayakan perhitungan pada wajib pajak. Kenali tiga langkah HSL dan tanggung jawabnya.",
+    durationMin: 12,
+    tags: ["self assessment", "HSL", "pemula"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Pernah bertanya, siapa yang menghitung pajakmu? Di Indonesia jawabannya: <strong>kamu sendiri</strong>. Sistem kita bernama <strong>self assessment</strong>, artinya wajib pajak diberi kepercayaan untuk menghitung, menyetor, dan melaporkan pajaknya sendiri.",
+      },
+      {
+        type: "paragraph",
+        html: "Tiga langkah itu sering disingkat <strong>HSL: Hitung, Setor, Lapor</strong>. Kantor pajak (DJP) tidak menagih satu per satu, melainkan bertugas <strong>mengawasi</strong> dan menguji kebenaran lewat data dan pemeriksaan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga langkah HSL",
+        html: "<strong>Hitung</strong> pajak dari catatanmu (mis. 0,5% dari omzet). <strong>Setor</strong> lewat kode billing sebelum tenggat. <strong>Lapor</strong> lewat SPT. Selama tiga langkah ini benar dan tepat waktu, urusan pajakmu aman.",
+      },
+      {
+        type: "video",
+        comp: "PetaPajakUMKM",
+        title: "Video: Peta Pajak UMKM",
+        caption: "Kenali dulu pajak apa saja yang jadi kewajibanmu sebelum menghitung sendiri.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kepercayaan disertai pengawasan",
+        html: "Karena kamu yang menghitung, kamu juga bertanggung jawab atas kebenarannya. DJP bisa mencocokkan dengan data pihak ketiga (bank, marketplace, lawan transaksi). Maka catat omzet dengan jujur dan rapi.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Seberapa Sering Kamu Menjalankan Self Assessment dalam Setahun",
+        unit: "kali per tahun",
+        source: "ketentuan masa & tahun pajak",
+        note: "Setor dan lapor bulanan berulang 12 kali; SPT Tahunan sekali. Inilah ritme yang kamu jalankan sendiri.",
+        data: [
+          { label: "Setor PPh final (bulanan)", value: 12, color: "#f59e0b" },
+          { label: "Lapor SPT Masa (jika PKP)", value: 12, color: "#0ea5e9" },
+          { label: "Lapor SPT Tahunan", value: 1, color: "#10b981" },
+        ],
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "3 langkah", label: "Hitung, Setor, Lapor", sub: "inti self assessment", color: "#f59e0b" },
+          { value: "Kamu", label: "yang menghitung pajak", sub: "bukan kantor pajak", color: "#0ea5e9" },
+          { value: "DJP", label: "berperan mengawasi", sub: "lewat data & pemeriksaan", color: "#10b981" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Cek kewajibanmu dulu",
+        html: "Sebelum menghitung, pastikan jenis pajak apa yang menjadi kewajibanmu lewat alat ini.",
+      },
+      { type: "widget", widget: "CekStatusPajak" },
+      {
+        type: "case",
+        title: "Studi Kasus: Bu Lina menghitung sendiri",
+        html: "Bu Lina punya toko kelontong dengan omzet Mei Rp35 juta (sudah lewat batas bebas). Tanpa menunggu tagihan, ia menghitung sendiri: 0,5% x Rp35 juta = <strong>Rp175.000</strong>. Ia buat kode billing, bayar sebelum 15 Juni, lalu simpan NTPN. Itulah self assessment: ia yang hitung, setor, dan lapor, bukan menunggu kantor pajak.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Reformasi Perpajakan 1983",
+        html: "Sebelum 1983, Indonesia memakai <strong>official assessment</strong> warisan masa kolonial: petugas pajak yang menghitung dan menetapkan pajak tiap orang. Lewat <strong>Reformasi Perpajakan 1983</strong> (paket UU KUP, UU PPh, dan UU PPN), Indonesia beralih ke <strong>self assessment</strong>. Kepercayaan menghitung diserahkan kepada wajib pajak, sementara negara fokus mengawasi. Sistem inilah yang kita pakai sampai sekarang.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Dalam self assessment, tugas ini dijalankan oleh wajib pajak atau DJP?",
+        buckets: ["Wajib Pajak", "DJP (mengawasi)"],
+        items: [
+          { text: "Menghitung sendiri pajak terutang", bucket: "Wajib Pajak" },
+          { text: "Menyetor lewat kode billing", bucket: "Wajib Pajak" },
+          { text: "Melaporkan lewat SPT", bucket: "Wajib Pajak" },
+          { text: "Memeriksa kebenaran lewat data pihak ketiga", bucket: "DJP (mengawasi)" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Self assessment: hitung sendiri. Omzet bulan ini Rp35.000.000 (sudah lewat batas bebas), PPh Final 0,5%. Berapa yang kamu setor?",
+        answer: 175000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "0,5% x Rp35.000.000 = <strong>Rp175.000</strong>. Kamu hitung sendiri, lalu setor sebelum tanggal 15 bulan berikutnya.",
+        hint: "Kalikan omzet dengan 0,5% (0,005).",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan langkah HSL dengan kegiatannya.",
+        pairs: [
+          { left: "Hitung", right: "Menentukan pajak dari catatan omzet" },
+          { left: "Setor", right: "Membayar lewat kode billing" },
+          { left: "Lapor", right: "Menyampaikan SPT" },
+          { left: "Self assessment", right: "Sistem: wajib pajak menghitung sendiri" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Indonesia memakai sistem self assessment sejak Reformasi 1983.",
+          "Wajib pajak menghitung, menyetor, dan melapor sendiri (HSL).",
+          "DJP berperan mengawasi lewat data dan pemeriksaan.",
+          "Karena kamu yang menghitung, catat omzet dengan jujur dan rapi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Sistem perpajakan Indonesia disebut?",
+            options: ["Official assessment", "Self assessment", "Withholding penuh", "Tanpa sistem"],
+            answer: 1,
+            explain: "Indonesia memakai self assessment: wajib pajak menghitung, menyetor, dan melapor sendiri.",
+          },
+          {
+            q: "HSL adalah singkatan dari?",
+            options: ["Hitung, Setor, Lapor", "Hemat, Simpan, Lunas", "Hitung, Simpan, Laba", "Hak, Sanksi, Lapor"],
+            answer: 0,
+            explain: "HSL adalah Hitung, Setor, Lapor, tiga langkah inti self assessment.",
+          },
+          {
+            q: "Dalam self assessment, siapa yang menghitung pajak?",
+            options: ["Kantor pajak", "Wajib pajak sendiri", "Bank", "Notaris"],
+            answer: 1,
+            explain: "Wajib pajak yang menghitung pajaknya sendiri, bukan ditetapkan kantor pajak.",
+          },
+          {
+            q: "Peran utama DJP dalam sistem ini adalah?",
+            options: ["Menghitungkan pajak tiap orang", "Mengawasi & menguji kebenaran", "Menjual barang", "Menggaji wajib pajak"],
+            answer: 1,
+            explain: "DJP mengawasi dan menguji kebenaran lewat data dan pemeriksaan.",
+          },
+          {
+            q: "Sejak kapan Indonesia memakai self assessment?",
+            options: ["Sejak masa kolonial", "Sejak Reformasi Perpajakan 1983", "Sejak 2022", "Belum pernah"],
+            answer: 1,
+            explain: "Reformasi Perpajakan 1983 mengubah sistem dari official assessment ke self assessment.",
+          },
+        ],
+      },
+    ],
+  },
 ];

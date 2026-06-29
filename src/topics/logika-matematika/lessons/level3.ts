@@ -506,4 +506,150 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "ekuivalensi-implikasi",
+    levelId: "implikasi",
+    order: 5,
+    title: "Mengubah Implikasi Menjadi 'Atau'",
+    summary:
+      "Ternyata 'jika p maka q' bisa dituliskan ulang tanpa kata 'jika'. Kita cocokkan dulu kolom tabelnya sebelum menyimpulkan bentuk setaranya.",
+    durationMin: 13,
+    tags: ["logika", "implikasi", "ekuivalensi", "disjungsi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "\"Jika kamu melanggar, maka kamu kena sanksi.\" Petugas berkata ulang: \"Kamu tidak melanggar, atau kamu kena sanksi.\" Anehnya, kedua kalimat itu berlaku sama persis. Bisakah setiap implikasi 'jika-maka' diubah menjadi kalimat ber-'atau'? Sebelum menyimpulkan, ayo cocokkan dulu kolom tabel kebenaran keduanya.",
+      },
+      {
+        type: "video",
+        comp: "TabelKebenaran",
+        title: "Video: Membandingkan Dua Kolom Tabel",
+        caption: "Dua pernyataan disebut setara bila kolom hasil tabelnya sama persis.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Susun dua tabel berdampingan: satu untuk p &rarr; q, satu untuk &not;p &or; q. Isi keempat baris (B,B), (B,S), (S,B), (S,S) pada masing-masing. Lalu bandingkan baris demi baris. Tebak dulu: apakah kolom hasilnya benar-benar sama di setiap baris, atau ada yang berbeda?",
+      },
+      {
+        type: "widget",
+        widget: "TabelKebenaranBuilder",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Apa arti 'setara'",
+        html: "Dua pernyataan disebut <strong>ekuivalen</strong> (setara) bila kolom hasil tabel kebenarannya identik di setiap baris. Ditulis dengan tanda <strong>&equiv;</strong>. Yang akan kita uji: apakah <strong>p &rarr; q &equiv; &not;p &or; q</strong>.",
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Banyak baris BENAR pada implikasi p → q",
+        unit: " baris",
+        source: "Tabel kebenaran 2 variabel (4 baris)",
+        note: "Implikasi salah hanya di baris (B,S), jadi benar di 3 baris, sama seperti ¬p ∨ q.",
+        data: [
+          { label: "Baris BENAR", value: 3, color: "#22c55e" },
+          { label: "Baris SALAH", value: 1, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan nilai p dan q dengan nilai ¬p ∨ q, lalu perhatikan bahwa hasilnya sama dengan p → q.",
+        pairs: [
+          { left: "p benar, q benar", right: "¬p ∨ q benar" },
+          { left: "p benar, q salah", right: "¬p ∨ q salah" },
+          { left: "p salah, q benar", right: "¬p ∨ q benar" },
+          { left: "p salah, q salah", right: "¬p ∨ q benar" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana penulisan ulang implikasi yang BENAR (setara) dan mana yang KELIRU?",
+        buckets: ["Setara", "Keliru"],
+        items: [
+          { text: "'Jika hujan maka basah' = 'tidak hujan atau basah'", bucket: "Setara" },
+          { text: "'Jika lulus maka senang' = 'tidak lulus atau senang'", bucket: "Setara" },
+          { text: "'Jika hujan maka basah' = 'hujan atau basah'", bucket: "Keliru" },
+          { text: "'Jika p maka q' = 'p dan tidak q'", bucket: "Keliru" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pada tabel kebenaran implikasi p → q, berapa baris yang bernilai BENAR dari 4 baris?",
+        answer: 3,
+        suffix: " baris",
+        solution:
+          "Implikasi salah hanya pada baris (B,S), yaitu 1 baris. Sisanya 4 − 1 = 3 baris bernilai benar. Bentuk setaranya ¬p ∨ q juga benar di 3 baris yang sama.",
+        hint: "Implikasi hanya salah ketika hipotesis benar tetapi konklusi salah.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menegasikan sebuah janji",
+        html: "Seseorang berjanji: \"Jika kamu kerja lembur, maka kamu dapat bonus.\" Bagaimana cara menyatakan bahwa janji ini diingkari? Karena p &rarr; q setara dengan &not;p &or; q, ingkarannya adalah &not;(&not;p &or; q), yang dengan hukum De Morgan menjadi <strong>p &and; &not;q</strong>: 'kamu kerja lembur tetapi tidak dapat bonus'. Mengubah implikasi menjadi bentuk 'atau' membuat kita bisa menegasikannya dengan tepat, bukan asal menambah kata 'tidak'.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah mencocokkan tabelnya, baru kita kunci: <strong>p &rarr; q &equiv; &not;p &or; q</strong>. Setiap implikasi dapat ditulis ulang sebagai disjungsi dengan menegasikan hipotesis. Akibatnya, ingkaran implikasi adalah <strong>&not;(p &rarr; q) &equiv; p &and; &not;q</strong>, yaitu hipotesis benar tetapi konklusi salah. Inilah satu-satunya keadaan yang membuat implikasi gagal.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Dua pernyataan setara bila kolom hasil tabel kebenarannya sama di setiap baris.",
+          "p → q setara dengan ¬p ∨ q (negasikan hipotesis, lalu pakai 'atau').",
+          "Ingkaran implikasi: ¬(p → q) setara dengan p ∧ ¬q.",
+          "Implikasi gagal hanya ketika hipotesis benar tetapi konklusi salah.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bentuk yang setara dengan p → q adalah?",
+            options: ["p ∧ q", "¬p ∨ q", "p ∨ ¬q", "¬p ∧ q"],
+            answer: 1,
+            explain: "Implikasi setara dengan disjungsi: negasikan hipotesis lalu 'atau' konklusi.",
+          },
+          {
+            q: "'Jika lapar maka makan' setara dengan?",
+            options: [
+              "Tidak lapar atau makan",
+              "Lapar atau makan",
+              "Lapar dan tidak makan",
+              "Tidak lapar dan makan",
+            ],
+            answer: 0,
+            explain: "p → q ≡ ¬p ∨ q, yaitu 'tidak lapar atau makan'.",
+          },
+          {
+            q: "Ingkaran dari p → q adalah?",
+            options: ["¬p → ¬q", "p ∧ ¬q", "q → p", "¬p ∨ q"],
+            answer: 1,
+            explain: "¬(p → q) ≡ p ∧ ¬q: hipotesis benar tetapi konklusi salah.",
+          },
+          {
+            q: "Implikasi p → q bernilai salah pada berapa baris dari 4 baris tabel?",
+            options: ["0", "1", "2", "3"],
+            answer: 1,
+            explain: "Hanya satu baris, yaitu (B,S).",
+          },
+          {
+            q: "Dua pernyataan disebut ekuivalen bila?",
+            options: [
+              "Jumlah katanya sama",
+              "Kolom hasil tabel kebenarannya sama di setiap baris",
+              "Keduanya memakai kata 'jika'",
+              "Keduanya selalu benar",
+            ],
+            answer: 1,
+            explain: "Ekuivalensi berarti nilai kebenarannya identik untuk setiap kemungkinan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

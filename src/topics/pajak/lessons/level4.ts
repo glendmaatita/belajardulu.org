@@ -656,4 +656,166 @@ export const level4: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "ter-pph21",
+    levelId: "karyawan",
+    order: 5,
+    title: "PPh 21 Bulanan: Skema TER Sejak 2024",
+    summary: "Sejak 2024 potongan PPh 21 bulanan memakai TER. Pahami cara kerjanya dan perhitungan ulang Desember.",
+    durationMin: 14,
+    tags: ["PPh 21", "TER", "PP 58/2023"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Mulai tahun 2024 cara memotong PPh 21 tiap bulan berubah. Pemerintah memperkenalkan <strong>TER (Tarif Efektif Rata-rata)</strong>: cukup kalikan penghasilan bruto bulanan dengan satu persentase, tanpa hitungan menyetahunkan yang rumit.",
+      },
+      {
+        type: "paragraph",
+        html: "TER hanya alat untuk potongan bulanan. Di <strong>bulan Desember</strong>, pajak setahun dihitung ulang dengan tarif progresif <strong>Pasal 17</strong>, lalu selisihnya disesuaikan. Total pajak setahun tetap sama, hanya cara membaginya yang lebih praktis.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Cara kerja singkat",
+        html: "Tiap bulan: PPh 21 = <strong>bruto bulanan x TER</strong> (sesuai kategori A/B/C). Bulan Desember: hitung ulang setahun penuh dengan tarif Pasal 17, lalu sesuaikan kelebihan/kekurangannya.",
+      },
+      {
+        type: "video",
+        comp: "TarifProgresif",
+        title: "Video: Tarif Progresif PPh",
+        caption: "Di Desember, TER bertemu tarif progresif Pasal 17 untuk perhitungan setahun.",
+      },
+      {
+        type: "table",
+        caption: "Kategori TER berdasarkan status PTKP",
+        headers: ["Kategori TER", "Untuk status PTKP"],
+        rows: [
+          ["TER A", "TK/0, TK/1, K/0 (PTKP Rp54 & Rp58,5 jt)"],
+          ["TER B", "TK/2, TK/3, K/1, K/2 (PTKP Rp63 & Rp67,5 jt)"],
+          ["TER C", "K/3 (PTKP Rp72 jt)"],
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Ambang bebas potong kategori A",
+        html: "Untuk <strong>TER kategori A</strong>, penghasilan bruto bulanan sampai <strong>Rp5,4 juta</strong> dikenai tarif 0%, sehingga PPh 21-nya Rp0. Banyak karyawan bergaji UMR berada di posisi ini.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Geser gaji bulanan dan pilih status untuk melihat perkiraan potongan PPh 21 bulananmu.",
+      },
+      { type: "widget", widget: "SimulatorPPh21" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "PPh 21 Setahun Tetap Sama, Hanya Pembagiannya yang Berubah (ilustrasi)",
+        unit: "Rp",
+        source: "ilustrasi, anggap TER 2% per bulan",
+        note: "Ilustrasi: potongan TER Jan-Nov terkumpul Rp1,76 juta; di Desember disesuaikan agar pas Rp1,86 juta (tarif Pasal 17).",
+        data: [
+          { label: "Target setahun (Pasal 17)", value: 1860000, color: "#10b981" },
+          { label: "Terkumpul Jan-Nov (TER)", value: 1760000, color: "#0ea5e9" },
+          { label: "Penyesuaian Desember", value: 100000, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Gaji UMR, potongan bulanan Rp0",
+        html: "Mbak Dina (TK/0) bergaji Rp5 juta per bulan dan masuk <strong>TER kategori A</strong>. Karena gajinya di bawah ambang Rp5,4 juta, TER-nya 0%, sehingga potongan PPh 21-nya <strong>Rp0</strong> tiap bulan. Sejak skema TER 2024, slip gajinya menampilkan potongan PPh 21 nol secara langsung.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Lahirnya skema TER 2024",
+        html: "Sebelum 2024, perhitungan PPh 21 bulanan cukup rumit karena harus menyetahunkan penghasilan tiap bulan. Lewat <strong>PP 58/2023</strong> yang berlaku <strong>1 Januari 2024</strong>, pemerintah memperkenalkan <strong>Tarif Efektif Rata-rata (TER)</strong>: cukup kalikan bruto bulanan dengan satu persentase, lalu hitung ulang di Desember. Tujuannya menyederhanakan, bukan menambah pajak; total setahun tetap memakai tarif Pasal 17.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Karyawan TK/0 bergaji Rp5.000.000/bulan masuk TER kategori A (tarif 0% sampai bruto Rp5,4 juta). Berapa PPh 21 yang dipotong bulan ini?",
+        answer: 0,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Gaji Rp5 juta masih di bawah ambang Rp5,4 juta untuk TER kategori A, sehingga tarifnya 0% dan PPh 21 = <strong>Rp0</strong>.",
+        hint: "Bandingkan gaji dengan ambang Rp5,4 juta TER A.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Anggap TER bulan ini 2% dan gaji bruto Rp9.000.000. Berapa PPh 21 yang dipotong bulan ini dengan skema TER?",
+        answer: 180000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "PPh 21 bulanan = bruto x TER = 2% x Rp9.000.000 = <strong>Rp180.000</strong>. (Persentase TER sebenarnya mengikuti tabel PP 58/2023 sesuai kategori dan penghasilan.)",
+        hint: "Kalikan bruto dengan persentase TER yang diberikan.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Status PTKP ini masuk kategori TER yang mana?",
+        buckets: ["TER A", "TER B", "TER C"],
+        items: [
+          { text: "TK/0 (lajang tanpa tanggungan)", bucket: "TER A" },
+          { text: "K/0 (kawin tanpa tanggungan)", bucket: "TER A" },
+          { text: "K/2 (kawin, 2 tanggungan)", bucket: "TER B" },
+          { text: "K/3 (kawin, 3 tanggungan)", bucket: "TER C" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah TER dengan artinya.",
+        pairs: [
+          { left: "TER", right: "Tarif Efektif Rata-rata, untuk potong bulanan" },
+          { left: "PP 58/2023", right: "Dasar hukum TER, berlaku 2024" },
+          { left: "Desember", right: "Bulan perhitungan ulang dengan Pasal 17" },
+          { left: "TER kategori A", right: "0% untuk bruto sampai Rp5,4 juta/bulan" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Sejak 2024, PPh 21 bulanan dipotong dengan TER (PP 58/2023).",
+          "TER = bruto bulanan x persentase tarif efektif, sesuai kategori A/B/C.",
+          "TER kategori A: 0% untuk gaji sampai Rp5,4 juta per bulan.",
+          "Desember dihitung ulang dengan tarif Pasal 17; total setahun tetap sama.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Skema TER PPh 21 bulanan berlaku sejak?",
+            options: ["2018", "2022", "1 Januari 2024", "2026"],
+            answer: 2,
+            explain: "TER diatur PP 58/2023 dan berlaku mulai 1 Januari 2024.",
+          },
+          {
+            q: "TER adalah singkatan dari?",
+            options: ["Tarif Efektif Rata-rata", "Tarif Ekspor Resmi", "Total Edar Rutin", "Tarif Eceran"],
+            answer: 0,
+            explain: "TER adalah Tarif Efektif Rata-rata, dipakai untuk potongan PPh 21 bulanan.",
+          },
+          {
+            q: "Pada bulan apa pajak setahun dihitung ulang dengan tarif Pasal 17?",
+            options: ["Januari", "Juni", "Desember", "Tidak pernah"],
+            answer: 2,
+            explain: "Bulan Desember dilakukan perhitungan ulang setahun penuh dengan tarif Pasal 17.",
+          },
+          {
+            q: "TER kategori A memberi tarif 0% untuk gaji bulanan sampai?",
+            options: ["Rp4,5 juta", "Rp5,4 juta", "Rp10 juta", "Rp54 juta"],
+            answer: 1,
+            explain: "Untuk TER kategori A, bruto bulanan sampai Rp5,4 juta dikenai 0%.",
+          },
+          {
+            q: "Tujuan utama skema TER adalah?",
+            options: ["Menaikkan pajak karyawan", "Menyederhanakan perhitungan bulanan", "Menghapus PTKP", "Mengganti SPT"],
+            answer: 1,
+            explain: "TER menyederhanakan perhitungan bulanan; total pajak setahun tetap sama.",
+          },
+        ],
+      },
+    ],
+  },
 ];

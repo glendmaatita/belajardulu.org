@@ -618,4 +618,157 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "kekekalan-momentum-dua-dimensi",
+    levelId: "kekekalan-momentum",
+    order: 5,
+    title: "Kekekalan Momentum Dua Dimensi",
+    summary:
+      "Bola sodok yang membentur kumpulan bola biliar memencar ke segala arah, namun ada keteraturan tersembunyi di baliknya. Momentum kekal pada setiap arah, terpisah. Kita selami dulu.",
+    durationMin: 13,
+    tags: ["fisika", "kekekalan momentum", "dua dimensi", "vektor"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Pukulan pembuka biliar membuat bola-bola memencar ke segala arah dengan sudut yang tampak acak. Tabrakan dua mobil di persimpangan menyisakan jejak yang menyimpang dari arah datang masing-masing. Gerak setelah tumbukan tidak lagi sebaris dengan gerak sebelumnya, jadi apakah kekekalan momentum masih berlaku? Ayo berpetualang dulu sebelum kita rumuskan, dan kita akan menemukan trik yang membuat masalah dua dimensi sesederhana dua masalah satu dimensi.",
+      },
+      {
+        type: "video",
+        comp: "MomentumVideo",
+        title: "Video: Momentum yang Memencar ke Segala Arah",
+        caption: "Walau benda menyebar ke berbagai arah, momentum total tetap terjaga sebagai vektor.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Dorong dua bola gundu agar bertabrakan menyerong di lantai. Setelah bertumbukan, keduanya berpencar ke arah yang berbeda. Sekarang amati bayangannya pada dua arah: gerak ke kanan-kiri (sumbu x) dan gerak ke depan-belakang (sumbu y). Yang menakjubkan, jumlah momentum pada arah kanan-kiri tetap, dan jumlah momentum pada arah depan-belakang juga tetap, masing-masing berdiri sendiri. Amati: dua dimensi cukup ditangani sebagai dua perhitungan satu dimensi yang terpisah.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Momentum kekal pada tiap sumbu secara terpisah",
+        html: "Karena momentum adalah vektor, kekekalannya berlaku komponen demi komponen. Jumlah momentum arah x sebelum tumbukan sama dengan jumlah momentum arah x sesudahnya, dan hal yang sama berlaku untuk arah y. Inilah kunci yang menyederhanakan semua persoalan tumbukan dua dimensi.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTumbukan",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Momentum Tiap Sumbu: Dua Bola Tanah Liat Menempel",
+        unit: "kg.m/s",
+        source: "Bola A 1 kg @ 4 m/s ke timur menabrak bola B 1 kg @ 3 m/s ke utara, lalu menempel",
+        note: "Momentum arah timur (x) kekal di angka 4 kg.m/s, dan momentum arah utara (y) kekal di angka 3 kg.m/s, masing-masing terpisah. Tiap sumbu punya neracanya sendiri.",
+        data: [
+          { label: "px sebelum", value: 4, color: "#a78bfa" },
+          { label: "px sesudah", value: 4, color: "#7c3aed" },
+          { label: "py sebelum", value: 3, color: "#f472b6" },
+          { label: "py sesudah", value: 3, color: "#34d399" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Bola tanah liat A 1 kg melaju 4 m/s ke timur menabrak bola B 1 kg yang melaju 3 m/s ke utara, lalu keduanya menempel. Berapa kelajuan gabungannya?",
+        answer: 2.5,
+        tolerance: 0.01,
+        suffix: " m/s",
+        solution:
+          "Momentum arah timur (x) = 1 x 4 = 4 kg.m/s; arah utara (y) = 1 x 3 = 3 kg.m/s. Massa gabungan 2 kg, jadi vx = 4 / 2 = 2 m/s dan vy = 3 / 2 = 1,5 m/s. Kelajuan = akar(2^2 + 1,5^2) = akar(6,25) = <strong>2,5 m/s</strong>. Komponen dijumlah per sumbu, lalu digabung dengan Pythagoras.",
+        hint: "Hitung momentum x dan y terpisah, bagi massa gabungan, lalu gabungkan dengan akar(vx^2 + vy^2).",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Benda A 3 kg melaju 4 m/s ke timur menabrak benda B 2 kg yang melaju 5 m/s ke utara, lalu menempel. Berapa komponen kecepatan gabungan pada arah timur (x)?",
+        answer: 2.4,
+        tolerance: 0.01,
+        suffix: " m/s",
+        solution:
+          "Hanya benda A yang punya momentum arah timur: px = 3 x 4 = 12 kg.m/s. Massa gabungan = 3 + 2 = 5 kg. Maka vx = 12 / 5 = <strong>2,4 m/s</strong>. Momentum arah utara benda B tidak memengaruhi komponen timur sama sekali.",
+        hint: "Pada sumbu x, hanya benda yang bergerak ke timur yang menyumbang momentum.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan pernyataan berikut tentang tumbukan dua dimensi: benar atau salah?",
+        buckets: ["Benar", "Salah"],
+        items: [
+          { text: "Momentum arah x dan arah y kekal secara terpisah", bucket: "Benar" },
+          { text: "Kelajuan gabungan dihitung dengan akar(vx^2 + vy^2)", bucket: "Benar" },
+          { text: "Momentum total adalah penjumlahan vektor, bukan penjumlahan kelajuan", bucket: "Benar" },
+          { text: "Momentum arah x bisa berkurang asal momentum arah y bertambah", bucket: "Salah" },
+          { text: "Kelajuan sebelum dan sesudah selalu sama pada tumbukan menempel", bucket: "Salah" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Rekonstruksi Tabrakan di Persimpangan",
+        html: "Penyidik kecelakaan memakai kekekalan momentum dua dimensi untuk merekonstruksi tabrakan di persimpangan. Misalkan sebuah mobil melaju ke timur dan menabrak mobil lain yang melaju ke utara, lalu keduanya terseret menyatu ke arah timur laut. Dari arah dan jarak seretan setelah tumbukan, penyidik menghitung mundur kecepatan tiap mobil sebelum tabrakan: momentum arah timur sebelum tumbukan harus sama dengan momentum arah timur sesudahnya, begitu pula arah utara. Dua persamaan terpisah ini cukup untuk mengungkap siapa yang melaju terlalu kencang, walau tak seorang pun melihat angka spidometernya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya jelas. Karena momentum vektor, kekekalannya dipecah per sumbu: <strong>Sigma px sebelum = Sigma px sesudah</strong> dan <strong>Sigma py sebelum = Sigma py sesudah</strong>. Selesaikan tiap sumbu seperti soal satu dimensi biasa, lalu gabungkan komponen kecepatan dengan Pythagoras: <strong>v = akar(vx^2 + vy^2)</strong>, dan arahnya tan(theta) = vy / vx. Satu konsep, dua perhitungan terpisah, semua persoalan dua dimensi jadi mudah.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Momentum adalah vektor, sehingga kekal pada arah x dan arah y secara terpisah.",
+          "Selesaikan tiap sumbu seperti soal satu dimensi: Sigma px tetap dan Sigma py tetap.",
+          "Gabungkan komponen kecepatan dengan Pythagoras: v = akar(vx^2 + vy^2).",
+          "Arah gerak setelah tumbukan dari tan(theta) = vy / vx.",
+          "Penyidik kecelakaan memakai prinsip ini untuk menghitung kecepatan sebelum tabrakan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada tumbukan dua dimensi, kekekalan momentum berlaku?",
+            options: [
+              "Hanya pada arah gerak terkuat",
+              "Pada arah x dan arah y secara terpisah",
+              "Hanya jika benda menempel",
+              "Hanya untuk kelajuan, bukan arah",
+            ],
+            answer: 1,
+            explain: "Momentum vektor, jadi komponen x dan y masing-masing kekal secara terpisah.",
+          },
+          {
+            q: "Bola 1 kg @ 6 m/s ke timur menabrak bola 1 kg @ 8 m/s ke utara lalu menempel. Kelajuan gabungannya?",
+            options: ["5 m/s", "7 m/s", "14 m/s", "2 m/s"],
+            answer: 0,
+            explain: "vx = 6/2 = 3, vy = 8/2 = 4, kelajuan = akar(9+16) = akar(25) = 5 m/s.",
+          },
+          {
+            q: "Kelajuan akhir dari komponen vx dan vy dihitung dengan?",
+            options: ["vx + vy", "akar(vx^2 + vy^2)", "vx x vy", "vx - vy"],
+            answer: 1,
+            explain: "Kecepatan adalah vektor, besarnya dari Pythagoras: akar(vx^2 + vy^2).",
+          },
+          {
+            q: "Benda A 2 kg @ 5 m/s ke timur menabrak benda B 3 kg @ 4 m/s ke utara lalu menempel. Komponen kecepatan timur (x) gabungan?",
+            options: ["2 m/s", "1 m/s", "5 m/s", "2,4 m/s"],
+            answer: 0,
+            explain: "px = 2x5 = 10, massa gabungan 5 kg, vx = 10/5 = 2 m/s.",
+          },
+          {
+            q: "Mengapa penyidik bisa menghitung kecepatan dua mobil sebelum tabrakan di persimpangan?",
+            options: [
+              "Karena momentum total selalu nol",
+              "Karena momentum arah timur dan arah utara masing-masing kekal, memberi dua persamaan",
+              "Karena kelajuan selalu sama sebelum dan sesudah",
+              "Karena energi kinetik selalu kekal",
+            ],
+            answer: 1,
+            explain: "Dua persamaan kekekalan (sumbu x dan y) cukup untuk menemukan dua kecepatan awal.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -612,4 +612,145 @@ export const level1: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "harga-karbon-pasar-karbon",
+    levelId: "fondasi",
+    order: 5,
+    title: "Harga Karbon & Pasar Karbon",
+    summary: "Memberi harga pada emisi agar polusi punya biaya, sekaligus menjadi sumber dana iklim. Pajak karbon vs perdagangan emisi.",
+    durationMin: 13,
+    tags: ["harga karbon", "pasar karbon", "sumber dana"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Selama emisi gratis, tidak ada yang terdorong menguranginya. <strong>Harga karbon (carbon pricing)</strong> memberi biaya pada setiap ton CO2 yang dilepas, sesuai prinsip <strong>pencemar membayar (polluter pays)</strong>. Selain mendorong penurunan emisi, penerimaannya bisa menjadi sumber dana iklim.",
+      },
+      {
+        type: "video",
+        comp: "AlurClimateFinance",
+        title: "Video: Bagaimana Climate Finance Mengalir",
+        caption: "Harga karbon menambah satu keran sumber dana publik untuk aksi iklim.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Dua cara utama memberi harga karbon",
+        html: "<strong>Pajak karbon</strong>: pemerintah menetapkan tarif tetap per ton CO2 (harga pasti, jumlah emisi tidak dibatasi). <strong>Perdagangan emisi (ETS/cap-and-trade)</strong>: pemerintah membatasi total emisi (cap) lalu izin emisi diperjualbelikan, sehingga harga terbentuk di pasar.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Di Indonesia",
+        html: "Indonesia menetapkan <strong>pajak karbon Rp30 per kilogram CO2e</strong> (setara Rp30.000 per ton) dan meluncurkan <strong>Bursa Karbon Indonesia (IDXCarbon)</strong> pada <strong>September 2023</strong> sebagai tempat memperdagangkan unit karbon.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Harga Karbon Sangat Berbeda Antar Yurisdiksi (ilustrasi, perkiraan)",
+        unit: "USD per ton CO2",
+        source: "ilustrasi, kisaran perkiraan 2023-2024",
+        note: "Harga karbon belum seragam: pasar Eropa puluhan kali lebih mahal daripada tarif awal di banyak negara berkembang, sehingga sinyal penurunan emisinya pun berbeda.",
+        data: [
+          { label: "EU ETS", value: 85, color: "#6366f1" },
+          { label: "California (AS)", value: 30, color: "#06b6d4" },
+          { label: "ETS Nasional Tiongkok", value: 10, color: "#10b981" },
+          { label: "Pajak karbon Indonesia", value: 2, color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pabrik memilih pasang efisiensi atau bayar pajak",
+        html: "Sebuah pabrik melepas <strong>10.000 ton CO2 per tahun</strong>. Dengan pajak karbon Rp30.000 per ton, tagihannya Rp300 juta per tahun. Bila investasi efisiensi energi senilai Rp800 juta bisa memangkas emisi separuhnya, pabrik menghemat Rp150 juta pajak per tahun dan balik modal dalam beberapa tahun. Harga karbon mengubah pengurangan emisi dari sekadar amal menjadi keputusan keuangan.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pabrik melepas 10.000 ton CO2 setahun. Dengan pajak karbon Rp30.000 per ton, berapa juta rupiah pajak karbon setahun?",
+        answer: 300,
+        tolerance: 0,
+        prefix: "Rp",
+        suffix: "juta",
+        solution: "Pajak = 10.000 ton x Rp30.000 = Rp300.000.000 = <strong>Rp300 juta</strong> per tahun.",
+        hint: "Kalikan jumlah ton dengan tarif per ton.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Ciri ini milik pajak karbon atau perdagangan emisi (ETS)?",
+        buckets: ["Pajak karbon", "Perdagangan emisi (ETS)"],
+        items: [
+          { text: "Tarif per ton ditetapkan tetap oleh pemerintah", bucket: "Pajak karbon" },
+          { text: "Total emisi dibatasi lewat cap", bucket: "Perdagangan emisi (ETS)" },
+          { text: "Harga terbentuk dari jual-beli izin emisi", bucket: "Perdagangan emisi (ETS)" },
+          { text: "Jumlah emisi yang dihasilkan tidak dibatasi langsung", bucket: "Pajak karbon" },
+          { text: "Izin emisi bisa diperdagangkan antar perusahaan", bucket: "Perdagangan emisi (ETS)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Polluter pays", right: "Yang mencemari menanggung biayanya" },
+          { left: "Pajak karbon", right: "Tarif tetap per ton CO2" },
+          { left: "Cap-and-trade", right: "Batas emisi dengan izin yang diperdagangkan" },
+          { left: "IDXCarbon", right: "Bursa karbon Indonesia sejak 2023" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Peluncuran EU ETS 2005",
+        html: "Pada <strong>2005</strong>, Uni Eropa meluncurkan <strong>EU Emissions Trading System (EU ETS)</strong>, pasar karbon wajib berskala besar pertama di dunia dengan sistem <strong>cap-and-trade</strong>. Awalnya harga sempat anjlok mendekati nol karena izin emisi terlalu banyak, tetapi setelah pengetatan cap, harganya naik menjadi puluhan euro per ton. EU ETS menjadi acuan utama bagaimana harga karbon bisa menggerakkan keputusan investasi.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Harga karbon memberi biaya pada emisi sesuai prinsip pencemar membayar.",
+          "Dua bentuk utama: pajak karbon (harga tetap) dan ETS (cap-and-trade).",
+          "Penerimaannya bisa menjadi sumber dana iklim publik.",
+          "Indonesia memakai pajak karbon Rp30.000 per ton dan Bursa Karbon (2023).",
+          "Harga karbon mengubah pengurangan emisi menjadi keputusan keuangan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Prinsip dasar harga karbon adalah?",
+            options: ["Penerima manfaat membayar", "Pencemar membayar", "Negara maju membayar semua", "Tidak ada yang membayar"],
+            answer: 1,
+            explain: "Harga karbon menerapkan prinsip pencemar membayar (polluter pays).",
+          },
+          {
+            q: "Perbedaan pokok pajak karbon dan ETS?",
+            options: [
+              "Pajak karbon membatasi total emisi, ETS menetapkan harga tetap",
+              "Pajak karbon menetapkan harga tetap, ETS membatasi total emisi (cap)",
+              "Keduanya sama persis",
+              "ETS melarang emisi sepenuhnya",
+            ],
+            answer: 1,
+            explain: "Pajak karbon mengunci harga; ETS mengunci jumlah emisi lewat cap dan harga terbentuk di pasar.",
+          },
+          {
+            q: "Tarif pajak karbon di Indonesia kira-kira?",
+            options: ["Rp30 per kilogram CO2e", "Rp3.000 per kilogram CO2e", "Rp300.000 per ton", "Gratis"],
+            answer: 0,
+            explain: "Tarifnya Rp30 per kg CO2e, setara Rp30.000 per ton.",
+          },
+          {
+            q: "Pasar karbon wajib berskala besar pertama di dunia adalah?",
+            options: ["IDXCarbon", "EU ETS (2005)", "Bursa New York", "GCF"],
+            answer: 1,
+            explain: "EU ETS yang diluncurkan 2005 adalah pasar karbon cap-and-trade besar pertama.",
+          },
+          {
+            q: "Emisi 5.000 ton, pajak Rp30.000 per ton. Tagihannya?",
+            options: ["Rp150 juta", "Rp15 juta", "Rp1,5 miliar", "Rp50 juta"],
+            answer: 0,
+            explain: "5.000 x Rp30.000 = Rp150 juta.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -755,4 +755,155 @@ export const level2: Lesson[] = [
       },
     ],
   },
+
+  // ============================================================
+  {
+    id: "pencatatan-omzet",
+    levelId: "pphfinal",
+    order: 5,
+    title: "Mencatat Omzet & Sejarah Tarif Final UMKM",
+    summary: "Skema 0,5% mengandalkan catatan omzet yang rapi. Kenali kewajiban pencatatan dan perjalanan tarifnya.",
+    durationMin: 13,
+    tags: ["pencatatan", "omzet", "sejarah"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Karena PPh final dihitung dari <strong>omzet</strong>, catatan penjualan yang rapi adalah pondasinya. Tanpa catatan, kamu tidak tahu kapan omzet melewati batas bebas Rp500 juta, atau berapa pajak yang harus disetor.",
+      },
+      {
+        type: "paragraph",
+        html: "Kabar baiknya, kamu cukup melakukan <strong>pencatatan</strong>, bukan pembukuan lengkap. Cukup catat peredaran bruto (omzet) harian, tanpa perlu menyusun neraca atau laporan laba rugi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Pencatatan, bukan pembukuan penuh",
+        html: "Wajib pajak yang memakai PPh final cukup melakukan <strong>pencatatan</strong> peredaran bruto (UU KUP Pasal 28). Catat penjualan tiap hari dan rekap omzet kumulatif tiap bulan. Itu sudah memenuhi syarat.",
+      },
+      {
+        type: "video",
+        comp: "AlurPajakUMKM",
+        title: "Video: Pajak UMKM Cuma 4 Langkah",
+        caption: "Catat omzet, kali 0,5%, bayar, lapor. Catatan rapi membuat langkah pertama gampang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Lacak omzet kumulatifmu",
+        html: "Geser omzet tiap bulan di simulator ini dan lihat kapan omzet kumulatifmu melewati Rp500 juta dan pajak mulai berlaku.",
+      },
+      { type: "widget", widget: "SimulatorOmzetKumulatif" },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Perjalanan Tarif PPh Final UMKM",
+        unit: "% dari omzet",
+        source: "PP 46/2013, PP 23/2018, PP 55/2022",
+        note: "Tarif turun dari 1% (2013) menjadi 0,5% (2018) dan dipertahankan PP 55/2022, makin meringankan UMKM.",
+        data: [
+          { label: "2013 (PP 46)", value: 1, color: "#ef4444" },
+          { label: "2018 (PP 23)", value: 0.5, color: "#f59e0b" },
+          { label: "2022 (PP 55)", value: 0.5, color: "#10b981" },
+        ],
+      },
+      {
+        type: "stats",
+        items: [
+          { value: "1% -> 0,5%", label: "Tarif final turun", sub: "sejak PP 23/2018", color: "#10b981" },
+          { value: "Pencatatan", label: "kewajiban catat omzet", sub: "harian, bukan pembukuan penuh", color: "#0ea5e9" },
+          { value: "10 tahun", label: "lama simpan dokumen", sub: "ketentuan UU KUP", color: "#f59e0b" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Cukup buku penjualan yang rapi",
+        html: "Kamu tidak perlu software akuntansi mahal. Buku catatan penjualan, aplikasi kasir sederhana, atau spreadsheet sudah cukup, asalkan setiap penjualan tercatat dan bisa direkap per bulan.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Catatan rapi menyelamatkan Bu Yani",
+        html: "Bu Yani mencatat penjualan harian di buku sederhana. Saat omzet kumulatifnya menembus Rp500 juta di bulan September, ia langsung tahu mulai bulan itu PPh final 0,5% berlaku atas kelebihannya. Tanpa catatan, ia bisa salah hitung atau telat menyetor. Pencatatan yang tertib membuat self assessment berjalan mulus.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Dari 1% ke 0,5%",
+        html: "Skema PPh final UMKM lahir lewat <strong>PP 46/2013</strong> dengan tarif <strong>1% dari omzet</strong>. Karena dirasa masih memberatkan usaha kecil, pemerintah menurunkannya menjadi <strong>0,5%</strong> lewat <strong>PP 23/2018</strong>. Aturan terbaru, <strong>PP 55/2022</strong>, mempertahankan tarif 0,5% dan menambah fasilitas Rp500 juta bebas pajak untuk orang pribadi. Tren ini menunjukkan keberpihakan pada UMKM.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Catatan Bu Yani (orang pribadi): omzet Januari sampai Agustus total Rp480 juta, lalu September Rp60 juta. Berapa omzet yang kena PPh final (di atas Rp500 juta) sampai akhir September?",
+        answer: 40000000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution: "Kumulatif akhir September = Rp480 juta + Rp60 juta = Rp540 juta. Yang kena pajak hanya kelebihan di atas Rp500 juta = Rp540 juta - Rp500 juta = <strong>Rp40.000.000</strong>. PPh-nya 0,5% x Rp40 juta = Rp200.000.",
+        hint: "Hitung omzet kumulatif, lalu kurangi Rp500 juta.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Termasuk kewajiban pencatatan PPh final, atau bagian dari pembukuan penuh?",
+        buckets: ["Pencatatan (cukup untuk PPh final)", "Pembukuan penuh"],
+        items: [
+          { text: "Mencatat penjualan harian (peredaran bruto)", bucket: "Pencatatan (cukup untuk PPh final)" },
+          { text: "Merekap omzet kumulatif tiap bulan", bucket: "Pencatatan (cukup untuk PPh final)" },
+          { text: "Menyusun neraca dan laporan laba rugi", bucket: "Pembukuan penuh" },
+          { text: "Menghitung penyusutan aset tetap", bucket: "Pembukuan penuh" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan aturan dengan isinya.",
+        pairs: [
+          { left: "PP 46/2013", right: "Tarif final 1% (skema awal)" },
+          { left: "PP 23/2018", right: "Tarif final turun jadi 0,5%" },
+          { left: "PP 55/2022", right: "0,5% + fasilitas Rp500 juta (OP)" },
+          { left: "Pencatatan", right: "Mencatat omzet harian, tanpa pembukuan penuh" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "WP PPh final cukup melakukan pencatatan omzet, bukan pembukuan penuh.",
+          "Catatan harian memudahkan tahu kapan omzet melewati Rp500 juta.",
+          "Tarif final turun dari 1% (2013) ke 0,5% (2018), dipertahankan PP 55/2022.",
+          "Simpan dokumen dan catatan sesuai ketentuan UU KUP.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "WP yang memakai PPh final UMKM wajib melakukan?",
+            options: ["Pembukuan lengkap (neraca & laba rugi)", "Pencatatan peredaran bruto", "Audit tahunan", "Tidak ada catatan"],
+            answer: 1,
+            explain: "Cukup pencatatan peredaran bruto (omzet), tidak perlu pembukuan lengkap.",
+          },
+          {
+            q: "Skema PPh final UMKM pertama kali diatur oleh?",
+            options: ["PP 46/2013", "PP 23/2018", "PP 55/2022", "UU HPP"],
+            answer: 0,
+            explain: "PP 46/2013 memperkenalkan skema final UMKM dengan tarif 1%.",
+          },
+          {
+            q: "Tarif final UMKM turun menjadi 0,5% sejak?",
+            options: ["PP 46/2013", "PP 23/2018", "PP 55/2022", "2010"],
+            answer: 1,
+            explain: "PP 23/2018 menurunkan tarif dari 1% menjadi 0,5%.",
+          },
+          {
+            q: "Manfaat utama mencatat omzet harian bagi UMKM adalah?",
+            options: ["Wajib diaudit", "Tahu kapan omzet melewati Rp500 juta & menghitung pajak dengan benar", "Membuat pajak jadi nol", "Menggantikan SPT"],
+            answer: 1,
+            explain: "Catatan rapi membuat perhitungan dan pelaporan pajak akurat.",
+          },
+          {
+            q: "Kumulatif September Rp540 juta (OP). Bagian yang kena PPh final 0,5% adalah?",
+            options: ["Seluruh Rp540 juta", "Rp40 juta (kelebihan di atas Rp500 juta)", "Rp500 juta", "Rp0"],
+            answer: 1,
+            explain: "Hanya kelebihan di atas Rp500 juta, yaitu Rp40 juta, yang dikenai 0,5%.",
+          },
+        ],
+      },
+    ],
+  },
 ];

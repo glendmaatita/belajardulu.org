@@ -557,4 +557,153 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "luas-bangun-gabungan",
+    levelId: "bangun-datar",
+    order: 5,
+    title: "Luas Bangun Gabungan",
+    summary:
+      "Sebelum memakai rumus rumit, kita potong-potong dulu denah yang bentuknya tak beraturan jadi bangun sederhana, sampai cara menggabung luas muncul sendiri.",
+    durationMin: 13,
+    tags: ["geometri", "luas", "bangun gabungan", "denah"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Denah rumah jarang berbentuk persegi sempurna. Sering ada ruangan berbentuk huruf L, taman dengan teras menjorok, atau lapangan dengan sudut terpotong. Bentuk seperti ini disebut <strong>bangun gabungan</strong>. Sebelum kita pusing dengan rumus baru, ayo amati dulu bahwa bentuk rumit selalu bisa dipecah jadi bangun sederhana yang sudah kita kenal.",
+      },
+      {
+        type: "video",
+        comp: "MenemukanLuas",
+        title: "Video: Memotong Bentuk Menjadi Bagian Sederhana",
+        caption: "Bentuk rumit dipecah jadi persegi panjang dan segitiga yang luasnya mudah dihitung.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Gambar ruangan berbentuk huruf L di kertas berpetak. Coba bagi dengan satu garis menjadi dua persegi panjang, lalu hitung luas tiap bagian dan jumlahkan. Sekarang coba cara lain: bayangkan persegi panjang besar utuh lalu kurangi bagian yang 'hilang'. Apakah hasilnya sama?",
+      },
+      {
+        type: "widget",
+        widget: "PenemuLuas",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Luas Ruangan Bentuk L: Dipecah Dua Bagian",
+        unit: "luas (meter persegi)",
+        source: "ilustrasi edukatif",
+        note: "Ruangan L dipecah jadi bagian bawah (6 x 3) dan bagian atas (3 x 2); jumlahnya sama dengan luas totalnya.",
+        data: [
+          { label: "Bagian bawah 6x3", value: 18, color: "#22d3ee" },
+          { label: "Bagian atas 3x2", value: 6, color: "#38bdf8" },
+          { label: "Total gabungan", value: 24, color: "#2dd4bf" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Geometri, bukan sekadar berhitung",
+        html: "Berhitung menjawab 'berapa hasil kalinya'. Geometri menjawab 'mengapa bentuk apa pun bisa dipecah jadi bagian sederhana' dan memakainya untuk mengukur lahan, lantai, atau kain yang bentuknya tak beraturan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah ruangan berbentuk L. Bayangkan persegi panjang utuh berukuran 8 m x 5 m, lalu satu sudutnya terpotong persegi panjang 3 m x 2 m. Berapa luas ruangan itu?",
+        answer: 34,
+        suffix: " meter persegi",
+        solution:
+          "Luas utuh 8 x 5 = 40, dikurangi bagian yang hilang 3 x 2 = 6. Jadi 40 - 6 = <strong>34 meter persegi</strong>.",
+        hint: "Hitung luas persegi panjang besar lalu kurangi bagian yang terpotong.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah taman dipecah jadi sebuah persegi panjang 10 m x 4 m dan sebuah segitiga dengan alas 4 m dan tinggi 3 m yang menempel di ujungnya. Berapa luas total taman?",
+        answer: 46,
+        suffix: " meter persegi",
+        solution:
+          "Luas persegi panjang 10 x 4 = 40. Luas segitiga (4 x 3) / 2 = 6. Total 40 + 6 = <strong>46 meter persegi</strong>.",
+        hint: "Jumlahkan luas persegi panjang dan luas segitiga.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Untuk mencari luas tiap bangun gabungan, kelompokkan strategi yang paling cocok.",
+        buckets: ["Jumlahkan bagian", "Kurangi dari bentuk utuh"],
+        items: [
+          { text: "Ruangan L dipecah jadi dua persegi panjang", bucket: "Jumlahkan bagian" },
+          { text: "Persegi besar dengan satu pojok terpotong", bucket: "Kurangi dari bentuk utuh" },
+          { text: "Rumah dengan teras segitiga menempel", bucket: "Jumlahkan bagian" },
+          { text: "Pelat logam berlubang persegi di tengah", bucket: "Kurangi dari bentuk utuh" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memasang keramik ruang tamu bentuk L",
+        html: "Pak Budi memasang keramik di ruang tamu berbentuk L. Ia memecah ruangan jadi dua persegi panjang: 4 m x 3 m dan 2 m x 2 m. Luasnya 12 + 4 = 16 meter persegi. Jika satu dus keramik menutup 1 meter persegi, ia butuh 16 dus ditambah cadangan. Dengan memecah bentuk, ia menghitung kebutuhan tepat tanpa kelebihan atau kekurangan.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah mencoba, baru kita simpulkan caranya: <strong>pecah bangun gabungan menjadi bangun sederhana</strong> (persegi panjang, segitiga, setengah lingkaran), hitung luas tiap bagian, lalu <strong>jumlahkan</strong>. Bila ada bagian yang berlubang atau terpotong, hitung luas bentuk utuh lalu <strong>kurangi</strong> bagian yang hilang.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Bangun gabungan adalah gabungan beberapa bangun sederhana.",
+          "Pecah jadi persegi panjang, segitiga, atau setengah lingkaran lalu jumlahkan luasnya.",
+          "Untuk bagian berlubang, hitung luas utuh lalu kurangi bagian yang hilang.",
+          "Dua cara pemecahan yang benar selalu memberi hasil luas yang sama.",
+          "Teknik ini dipakai menghitung luas lahan, lantai, dan kain tak beraturan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Cara umum mencari luas bangun gabungan adalah?",
+            options: [
+              "Mengukur kelilingnya saja",
+              "Memecahnya jadi bangun sederhana lalu menjumlah luasnya",
+              "Mengalikan semua sisinya",
+              "Membaginya dengan 2",
+            ],
+            answer: 1,
+            explain: "Bangun gabungan dipecah jadi bangun sederhana, lalu luasnya dijumlahkan.",
+          },
+          {
+            q: "Persegi panjang 8 x 5 dengan pojok terpotong 3 x 2 memiliki luas?",
+            options: ["40", "34", "46", "6"],
+            answer: 1,
+            explain: "40 - 6 = 34 meter persegi.",
+          },
+          {
+            q: "Untuk pelat berlubang persegi di tengahnya, strategi terbaik adalah?",
+            options: [
+              "Menjumlahkan luas lubang dan pelat",
+              "Menghitung luas pelat utuh lalu mengurangi luas lubang",
+              "Mengabaikan lubang",
+              "Mengukur diagonalnya",
+            ],
+            answer: 1,
+            explain: "Luas utuh dikurangi luas lubang memberi luas pelat sebenarnya.",
+          },
+          {
+            q: "Ruang L dipecah jadi 4x3 dan 2x2. Total luasnya?",
+            options: ["10", "14", "16", "20"],
+            answer: 2,
+            explain: "12 + 4 = 16 meter persegi.",
+          },
+          {
+            q: "Dua cara memecah bangun gabungan yang sama-sama benar akan memberi luas?",
+            options: ["Berbeda", "Sama", "Selalu lebih besar", "Selalu lebih kecil"],
+            answer: 1,
+            explain: "Luas total tidak berubah oleh cara pemecahan; hasilnya pasti sama.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -601,4 +601,158 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "energi-lemparan-ke-atas",
+    levelId: "kekekalan-energi",
+    order: 5,
+    title: "Energi pada Lemparan ke Atas",
+    summary:
+      "Lempar bola lurus ke atas, ia melambat lalu berhenti sejenak di puncak. Energi geraknya tidak hilang, hanya menabung diri jadi ketinggian.",
+    durationMin: 13,
+    tags: ["fisika", "gerak vertikal", "kekekalan energi", "ketinggian"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Lempar bola lurus ke atas. Ia mulai cepat, lalu makin lambat, sampai diam sejenak di titik tertinggi, lalu jatuh kembali makin cepat. Saat naik, energi geraknya seolah lenyap, tetapi sebenarnya ia berubah menjadi energi posisi. Di puncak, seluruh energi gerak telah menabung diri menjadi ketinggian. Sebelum rumus, ayo amati dulu pertukaran energi pada gerak naik dan turun ini.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Energi Gerak Menabung Jadi Ketinggian",
+        caption:
+          "Saat benda dilempar ke atas, energi kinetik berubah menjadi energi potensial, lalu kembali lagi saat turun.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Lempar bola kecil lurus ke atas pelan, lalu lempar lagi dua kali lebih kencang. Pada lemparan yang lebih kencang, bola naik jauh lebih tinggi, bukan sekadar dua kali. Energi gerak yang lebih besar menabung menjadi ketinggian yang jauh lebih besar. Perhatikan: di titik tertinggi bola sejenak diam, di sanalah seluruh energi geraknya sudah berubah menjadi energi posisi.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorGLBB",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Di puncak diam, di dasar tercepat",
+        html: "Tepat di titik tertinggi, kecepatan benda nol sesaat, sehingga energinya seluruhnya <strong>potensial</strong>. Saat dilempar dan saat kembali ke ketinggian awal, energinya seluruhnya <strong>kinetik</strong>. Tanpa hambatan udara, laju saat kembali ke titik lempar sama persis dengan laju saat dilempar, karena energi mekaniknya kekal.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Energi Bola 0,5 kg Dilempar ke Atas dengan 10 m/s (g = 10)",
+        unit: "joule",
+        source: "ilustrasi edukatif",
+        note: "Di titik lempar: seluruh 25 J berupa kinetik. Di puncak (5 m): seluruh 25 J menjadi potensial. Total energi mekanik tetap 25 J.",
+        data: [
+          { label: "Ek di dasar", value: 25, color: "#a78bfa" },
+          { label: "Ep di dasar", value: 0, color: "#c084fc" },
+          { label: "Ek di puncak", value: 0, color: "#d8b4fe" },
+          { label: "Ep di puncak", value: 25, color: "#818cf8" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bola 0,5 kg dilempar lurus ke atas dengan kecepatan 10 m/s. Berapa energi kinetik awalnya?",
+        answer: 25,
+        tolerance: 0.1,
+        suffix: " J",
+        solution:
+          "Ek = ½ m v² = ½ x 0,5 x 10² = ½ x 0,5 x 100 = <strong>25 joule</strong>.",
+        hint: "Gunakan setengah massa kali kecepatan kuadrat.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dari soal sebelumnya, berapa ketinggian maksimum yang dicapai bola (g = 10 m/s²)?",
+        answer: 5,
+        tolerance: 0.1,
+        suffix: " m",
+        solution:
+          "Di puncak seluruh energi kinetik 25 J menjadi potensial: m g h = 25, jadi 0,5 x 10 x h = 25, berarti 5 h = 25 dan h = <strong>5 meter</strong>.",
+        hint: "Samakan energi kinetik awal dengan energi potensial di puncak.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Saat bola sedang naik (setelah dilempar, sebelum mencapai puncak), bagaimana tiap besaran berubah?",
+        buckets: ["Bertambah", "Berkurang"],
+        items: [
+          { text: "Energi potensial", bucket: "Bertambah" },
+          { text: "Energi kinetik", bucket: "Berkurang" },
+          { text: "Ketinggian", bucket: "Bertambah" },
+          { text: "Kecepatan", bucket: "Berkurang" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pancaran Air Mancur",
+        html: "Air mancur menyemburkan air lurus ke atas dengan kecepatan tertentu dari nozelnya. Energi kinetik air saat keluar berubah menjadi energi potensial saat naik, sampai di titik tertinggi air sejenak diam lalu jatuh kembali. Tinggi semburan ditentukan oleh kecepatan keluarnya: dari m g h = ½ m v², diperoleh h = v² / (2 g). Air yang keluar 10 m/s mencapai sekitar <strong>5 meter</strong>, sedangkan yang keluar 20 m/s mencapai sekitar 20 meter, empat kali lebih tinggi. Itulah mengapa pompa yang sedikit lebih kuat membuat air mancur melonjak jauh lebih tinggi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya. Pada lemparan ke atas tanpa hambatan udara, energi mekanik kekal: di titik lempar seluruhnya kinetik (½ m v²), di puncak seluruhnya potensial (m g h). Maka ½ m v² = m g h, sehingga ketinggian maksimum h = v² / (2 g). Tinggi puncak bergantung pada <strong>kuadrat kecepatan lempar</strong>, bukan pada massanya. Saat kembali ke ketinggian awal, lajunya sama dengan laju lempar.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Saat naik, energi kinetik berubah menjadi energi potensial.",
+          "Di titik tertinggi benda sejenak diam, energinya seluruhnya potensial.",
+          "Ketinggian maksimum h = v² / (2 g), bergantung kuadrat kecepatan lempar.",
+          "Tanpa hambatan udara, laju saat kembali sama dengan laju lempar.",
+          "Ketinggian puncak tidak bergantung pada massa benda.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Saat benda dilempar ke atas, energi kinetiknya berubah menjadi?",
+            options: [
+              "Energi potensial",
+              "Energi listrik",
+              "Massa",
+              "Gaya",
+            ],
+            answer: 0,
+            explain: "Energi kinetik berubah menjadi energi potensial saat naik.",
+          },
+          {
+            q: "Di titik tertinggi lemparan, energi benda seluruhnya?",
+            options: ["Kinetik", "Potensial", "Panas", "Nol"],
+            answer: 1,
+            explain: "Di puncak kecepatan nol, energinya seluruhnya potensial.",
+          },
+          {
+            q: "Bola 0,5 kg dilempar 6 m/s ke atas (g = 10). Tinggi maksimumnya?",
+            options: ["1,8 m", "3,6 m", "0,6 m", "6 m"],
+            answer: 0,
+            explain: "h = v² / (2 g) = 36 / 20 = 1,8 m.",
+          },
+          {
+            q: "Jika kecepatan lempar digandakan, tinggi puncaknya menjadi?",
+            options: ["Dua kali", "Empat kali", "Setengah", "Tetap"],
+            answer: 1,
+            explain: "h sebanding v², jadi 2² = 4 kali lipat.",
+          },
+          {
+            q: "Tanpa hambatan udara, laju benda saat kembali ke titik lempar?",
+            options: [
+              "Lebih kecil dari laju lempar",
+              "Sama dengan laju lempar",
+              "Lebih besar dari laju lempar",
+              "Selalu nol",
+            ],
+            answer: 1,
+            explain: "Energi mekanik kekal, jadi lajunya sama dengan saat dilempar.",
+          },
+        ],
+      },
+    ],
+  },
 ];

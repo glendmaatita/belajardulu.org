@@ -547,4 +547,157 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "variabel-di-kedua-ruas",
+    levelId: "persamaan-linear",
+    order: 5,
+    title: "Variabel di Kedua Ruas Timbangan",
+    summary:
+      "Bagaimana jika huruf x muncul di kiri dan kanan sekaligus? Kita bandingkan dua paket data dulu sampai langkahnya terasa wajar.",
+    durationMin: 14,
+    tags: ["aljabar", "persamaan", "kedua ruas", "linear"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dua paket data bersaing. Paket Hemat: biaya tetap Rp20.000 ditambah Rp2.000 per GB. Paket Bebas: biaya tetap Rp5.000 ditambah Rp5.000 per GB. Pertanyaannya: pada berapa GB kedua paket berbiaya sama? Di sinilah huruf yang sama muncul di dua sisi sekaligus.",
+      },
+      {
+        type: "video",
+        comp: "PersamaanVideo",
+        title: "Video: Menyeimbangkan Dua Sisi yang Berisi x",
+        caption: "Memindahkan suku variabel ke satu ruas membuat timbangan kembali sederhana.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Tulis biaya kedua paket: <strong>20.000 + 2.000x = 5.000 + 5.000x</strong>, dengan x jumlah GB. Kedua sisi punya x. Bayangkan timbangan: kalau kita ambil 2.000x dari kedua sisi, keseimbangan tetap terjaga. Sisi kiri tinggal 20.000, sisi kanan menjadi 5.000 + 3.000x. Variabel pun berkumpul di satu sisi.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kumpulkan yang sejenis di sisi yang sama",
+        html: "Aturannya: pindahkan semua suku <strong>variabel</strong> ke satu ruas dan semua <strong>konstanta</strong> ke ruas lain, sambil menjaga timbangan tetap seimbang. Dari 20.000 = 5.000 + 3.000x, kurangi 5.000 di kedua sisi menjadi 15.000 = 3.000x, lalu bagi 3.000, sehingga x = 5.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTimbangan",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Total Biaya Paket Bebas seiring Pemakaian",
+        unit: "rupiah",
+        source: "Paket Bebas: 5.000 + 5.000 per GB",
+        note: "Paket Bebas mulai lebih murah, tetapi naik Rp5.000/GB sehingga menyusul Paket Hemat (mulai Rp20.000, naik Rp2.000/GB) tepat di 5 GB pada Rp30.000.",
+        data: [
+          { label: "1 GB", value: 10000, color: "#f472b6" },
+          { label: "2 GB", value: 15000, color: "#ec4899" },
+          { label: "3 GB", value: 20000, color: "#e879f9" },
+          { label: "4 GB", value: 25000, color: "#d946ef" },
+          { label: "5 GB", value: 30000, color: "#c026d3" },
+          { label: "6 GB", value: 35000, color: "#a21caf" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt: "Selesaikan persamaan 3x + 2 = x + 10. Berapa nilai x?",
+        answer: 4,
+        solution:
+          "Kurangi x dari kedua ruas: 2x + 2 = 10. Kurangi 2: 2x = 8. Bagi 2: x = <strong>4</strong>. Cek: 3(4) + 2 = 14 dan 4 + 10 = 14, cocok.",
+        hint: "Pindahkan x ke kiri dan angka ke kanan, lalu bagi.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Pada berapa GB Paket Hemat (20.000 + 2.000x) sama dengan Paket Bebas (5.000 + 5.000x)?",
+        answer: 5,
+        suffix: " GB",
+        solution:
+          "20.000 + 2.000x = 5.000 + 5.000x. Kurangi 2.000x: 20.000 = 5.000 + 3.000x. Kurangi 5.000: 15.000 = 3.000x, jadi x = <strong>5 GB</strong>. Keduanya berbiaya Rp30.000.",
+        hint: "Kumpulkan x di kanan dan angka di kiri.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap persamaan dengan nilai x yang menyelesaikannya.",
+        pairs: [
+          { left: "2x + 5 = x + 9", right: "x = 4" },
+          { left: "3x - 1 = x + 9", right: "x = 5" },
+          { left: "x + 8 = 4x + 2", right: "x = 2" },
+          { left: "5x - 3 = 3x + 9", right: "x = 6" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih taksi argo",
+        html: "Taksi A memasang buka pintu Rp10.000 lalu Rp4.000 per km. Taksi B buka pintu Rp25.000 lalu Rp2.500 per km. Persamaannya 10.000 + 4.000d = 25.000 + 2.500d. Kumpulkan d: 1.500d = 15.000, jadi d = <strong>10 km</strong>, di mana keduanya sama-sama Rp50.000. Untuk jarak di bawah 10 km Taksi A lebih murah, di atas 10 km Taksi B lebih hemat.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah berlatih, baru kita rumuskan langkahnya: untuk persamaan dengan variabel di kedua ruas, <strong>kurangi suku variabel yang lebih kecil</strong> dari kedua sisi agar variabel berkumpul di satu ruas, lalu pindahkan konstanta ke ruas lain, dan terakhir bagi dengan koefisiennya. Timbangan tetap seimbang asal setiap langkah dikenakan pada kedua sisi.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Saat x ada di dua ruas, kumpulkan dulu semua suku variabel ke satu ruas.",
+          "Konstanta dipindahkan ke ruas lain, lalu bagi dengan koefisien akhir.",
+          "Setiap operasi harus dikenakan pada kedua sisi agar timbangan tetap seimbang.",
+          "Titik di mana dua biaya sama persis adalah solusi persamaannya.",
+          "Selalu cek jawaban dengan memasukkannya kembali ke kedua ruas.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Langkah pertama yang paling rapi untuk 4x + 1 = 2x + 9 adalah?",
+            options: [
+              "Membagi semua dengan 4",
+              "Mengurangi 2x dari kedua ruas",
+              "Menambah 9 ke kiri saja",
+              "Mengalikan kedua ruas dengan x",
+            ],
+            answer: 1,
+            explain: "Mengurangi 2x dari kedua ruas mengumpulkan variabel di satu sisi: 2x + 1 = 9.",
+          },
+          {
+            q: "Solusi dari 5x = 2x + 12 adalah?",
+            options: ["x = 2", "x = 3", "x = 4", "x = 6"],
+            answer: 2,
+            explain: "5x - 2x = 12, jadi 3x = 12 dan x = 4.",
+          },
+          {
+            q: "Pada persamaan 20.000 + 2.000x = 5.000 + 5.000x, mengurangi 2.000x dari kedua ruas membuat sisi kanan menjadi?",
+            options: ["5.000 + 3.000x", "5.000 + 7.000x", "25.000x", "3.000x"],
+            answer: 0,
+            explain: "5.000 + 5.000x - 2.000x = 5.000 + 3.000x.",
+          },
+          {
+            q: "Jika dua paket sama biaya pada 5 GB, maka di bawah 5 GB?",
+            options: [
+              "Paket yang naik lebih lambat selalu lebih mahal",
+              "Paket dengan biaya tetap lebih rendah lebih murah",
+              "Keduanya selalu sama",
+              "Tidak bisa dibandingkan",
+            ],
+            answer: 1,
+            explain: "Di bawah titik temu, paket dengan biaya tetap awal lebih rendah (Paket Bebas) lebih murah.",
+          },
+          {
+            q: "Mengapa kita boleh mengurangi suku yang sama dari kedua ruas?",
+            options: [
+              "Karena variabel boleh dihapus kapan saja",
+              "Karena mengurangi hal sama di dua sisi menjaga keseimbangan",
+              "Karena konstanta tidak penting",
+              "Karena x selalu positif",
+            ],
+            answer: 1,
+            explain: "Seperti timbangan, mengambil berat sama dari kedua sisi menjaga kesetaraan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

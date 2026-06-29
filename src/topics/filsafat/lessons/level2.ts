@@ -698,4 +698,140 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "masalah-gettier",
+    levelId: "epistemologi",
+    order: 5,
+    title: "Masalah Gettier: Retaknya Definisi Pengetahuan",
+    summary: "Edmund Gettier menantang definisi klasik 'keyakinan benar yang terjustifikasi' lewat kasus tandingan, dan bagaimana epistemologi menambalnya.",
+    durationMin: 13,
+    tags: ["epistemologi", "Gettier", "justified true belief", "justifikasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di pelajaran awal kita mengenal definisi klasik: pengetahuan adalah <strong>keyakinan benar yang terjustifikasi</strong> (justified true belief / JTB). Definisi ini bertahan sejak dialog <em>Theaetetus</em> karya <strong>Plato</strong> selama lebih dari dua ribu tahun, hampir tanpa gugatan serius.",
+      },
+      {
+        type: "paragraph",
+        html: "Pada 1963, filsuf <strong>Edmund Gettier</strong> menerbitkan makalah yang sangat pendek (hanya sekitar tiga halaman) namun mengguncang. Ia menunjukkan kasus di mana seseorang punya keyakinan yang <strong>benar</strong> dan <strong>terjustifikasi</strong>, tetapi kita ragu menyebutnya tahu, karena benarnya hanya karena <strong>keberuntungan</strong>.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Plato_Silanion_Musei_Capitolini_MC1377.jpg?width=400",
+        alt: "Potret patung Plato",
+        caption: "Plato, yang dalam Theaetetus merintis gagasan pengetahuan sebagai keyakinan benar yang berdasar.",
+        credit: "Sumber: Wikimedia Commons, domain publik",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Anatomi kasus Gettier",
+        html: "Sebuah keyakinan bisa memenuhi ketiga syarat JTB (diyakini, benar, terjustifikasi) tetapi tetap bukan pengetahuan bila kebenarannya tersambung lewat <strong>keberuntungan</strong>, bukan lewat justifikasinya. Justifikasi dan kebenaran 'kebetulan bertemu', bukan saling terhubung.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tesis, antitesis, lalu tambalan",
+        html: "Ini contoh dialektika dalam epistemologi. <strong>Tesis</strong>: pengetahuan = JTB. <strong>Antitesis</strong>: kasus Gettier menunjukkan JTB tidak cukup. <strong>Sintesis</strong>: para filsuf menambah syarat keempat, misalnya 'tanpa premis palsu' atau <strong>reliabilisme</strong> (keyakinan harus lahir dari proses yang andal).",
+      },
+      {
+        type: "video",
+        comp: "TeoriKebenaran",
+        title: "Video: Apa Artinya Benar",
+        caption: "Kasus Gettier mempertajam hubungan antara kebenaran, keyakinan, dan justifikasi.",
+      },
+      { type: "widget", widget: "TebakFilsuf" },
+      {
+        type: "table",
+        caption: "Kasus domba di padang dipetakan ke tiga syarat JTB",
+        headers: ["Syarat JTB", "Terpenuhi?", "Dalam kasus domba"],
+        rows: [
+          ["Keyakinan (belief)", "Ya", "Andi yakin ada domba di padang"],
+          ["Benar (true)", "Ya", "Memang ada domba, tersembunyi di balik bukit"],
+          ["Terjustifikasi (justified)", "Ya", "Ia melihat sesuatu yang tampak persis seperti domba"],
+          ["Tetap pengetahuan?", "Tidak", "Benarnya hanya karena keberuntungan, bukan dari yang ia lihat"],
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Domba di padang (Chisholm)",
+        html: "Andi memandang padang dan melihat dari jauh benda putih berbulu, lalu yakin 'ada domba di padang itu'. Ternyata benda yang ia lihat adalah <strong>anjing berbulu putih</strong>, bukan domba. Namun, kebetulan di balik bukit yang tak terlihat, memang ada <strong>seekor domba sungguhan</strong>. Keyakinan Andi <strong>benar</strong> (ada domba) dan <strong>terjustifikasi</strong> (ia melihat sesuatu yang meyakinkan), tetapi kita enggan menyebutnya tahu, sebab ia benar hanya karena beruntung.",
+      },
+      {
+        type: "calcExercise",
+        prompt: "Definisi klasik pengetahuan (JTB) memiliki tiga syarat. Dalam kasus Gettier, berapa syarat yang tetap terpenuhi sebelum kita menyimpulkan itu bukan pengetahuan?",
+        answer: 3,
+        tolerance: 0,
+        solution: "Ketiganya terpenuhi: <strong>keyakinan</strong>, <strong>benar</strong>, dan <strong>terjustifikasi</strong>. Justru karena ketiganya terpenuhi tetapi tetap bukan pengetahuan, definisi JTB dianggap kurang.",
+        hint: "Hitung syarat dalam 'justified true belief'.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kasus berikut tergolong pengetahuan sejati atau sekadar keyakinan benar yang beruntung (kasus Gettier)?",
+        buckets: ["Pengetahuan sejati", "Beruntung (Gettier)"],
+        items: [
+          { text: "Aku melihat domba asli di padang, lalu yakin ada domba", bucket: "Pengetahuan sejati" },
+          { text: "Aku menyangka anjing putih itu domba, tapi kebetulan ada domba lain tak terlihat", bucket: "Beruntung (Gettier)" },
+          { text: "Jam yang akurat menunjukkan pukul tiga dan memang pukul tiga", bucket: "Pengetahuan sejati" },
+          { text: "Jam yang berhenti kebetulan menunjuk pukul tiga saat memang pukul tiga", bucket: "Beruntung (Gettier)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan penjelasannya.",
+        pairs: [
+          { left: "Justified true belief", right: "Definisi klasik pengetahuan dengan tiga syarat" },
+          { left: "Kasus Gettier", right: "Keyakinan benar dan terjustifikasi tetapi benar karena keberuntungan" },
+          { left: "Syarat keempat", right: "Tambahan seperti larangan bersandar pada premis palsu" },
+          { left: "Reliabilisme", right: "Pengetahuan harus lahir dari proses yang andal" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Definisi klasik JTB bertahan sejak Plato selama ribuan tahun.",
+          "Gettier (1963) menunjukkan JTB belum cukup untuk pengetahuan.",
+          "Kasus Gettier: keyakinan benar dan terjustifikasi tetapi benar karena keberuntungan.",
+          "Tanggapan: tambah syarat keempat atau beralih ke reliabilisme.",
+          "Justifikasi dan kebenaran harus saling terhubung, bukan kebetulan bertemu.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Definisi pengetahuan yang ditantang Gettier adalah?",
+            options: ["Keyakinan saja", "Keyakinan benar yang terjustifikasi", "Tebakan beruntung", "Pendapat mayoritas"],
+            answer: 1,
+            explain: "Gettier menggugat definisi justified true belief.",
+          },
+          {
+            q: "Inti kasus Gettier adalah keyakinan yang?",
+            options: ["Salah dan tak berdasar", "Benar dan terjustifikasi tetapi benar karena keberuntungan", "Tidak diyakini", "Tanpa justifikasi"],
+            answer: 1,
+            explain: "Ketiga syarat terpenuhi, tetapi kebenarannya bertumpu pada keberuntungan.",
+          },
+          {
+            q: "Pada tahun berapa Gettier menerbitkan makalahnya?",
+            options: ["1781", "1859", "1963", "2001"],
+            answer: 2,
+            explain: "Makalah singkat Gettier terbit pada 1963.",
+          },
+          {
+            q: "Salah satu tanggapan atas masalah Gettier adalah?",
+            options: ["Menghapus syarat kebenaran", "Menambah syarat keempat atau beralih ke reliabilisme", "Menolak semua pengetahuan", "Mengandalkan mayoritas"],
+            answer: 1,
+            explain: "Para filsuf menambah syarat baru atau menekankan proses yang andal.",
+          },
+          {
+            q: "Pelajaran utama dari kasus Gettier adalah?",
+            options: ["Justifikasi tidak penting", "Justifikasi dan kebenaran harus terhubung, bukan kebetulan bertemu", "Kebenaran tidak ada", "Keyakinan selalu salah"],
+            answer: 1,
+            explain: "Pengetahuan menuntut hubungan yang tepat antara justifikasi dan kebenaran.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -566,4 +566,155 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "besaran-tak-berdimensi",
+    levelId: "dimensi",
+    order: 5,
+    title: "Besaran Tak Berdimensi",
+    summary:
+      "Tidak semua besaran punya dimensi. Saat dua besaran sejenis dibandingkan, dimensinya saling mencoret, dan lahirlah angka murni yang justru sangat berkuasa.",
+    durationMin: 12,
+    tags: ["fisika", "dimensi", "tak berdimensi", "rasio"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sejauh ini setiap besaran punya 'sidik jari' dimensi. Tetapi coba bandingkan dua panjang, misalnya pertambahan panjang kawat dibagi panjang awalnya. Satuan meter di atas dan di bawah <strong>saling mencoret</strong>, dan yang tersisa hanya angka murni tanpa dimensi. Sebelum melihat lambangnya, mari rasakan dulu mengapa angka tanpa satuan ini begitu istimewa.",
+      },
+      {
+        type: "video",
+        comp: "AnalisisDimensi",
+        title: "Video: Ketika Dimensi Saling Mencoret",
+        caption: "Membandingkan dua besaran sejenis melahirkan angka murni tanpa dimensi.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil sudut. Satu radian didefinisikan sebagai panjang busur dibagi jari-jari, yaitu panjang dibagi panjang. Dimensinya [L]/[L] saling mencoret menjadi <strong>tak berdimensi</strong>. Coba rasakan: indeks bias (rasio dua kelajuan), regangan (rasio dua panjang), dan koefisien gesekan (rasio dua gaya) semuanya angka murni. Walau tanpa satuan, mereka membawa makna fisika yang dalam.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Bagaimana sebuah besaran jadi tak berdimensi",
+        html: "Sebuah besaran <strong>tak berdimensi</strong> bila ia merupakan perbandingan dua besaran yang dimensinya sama, sehingga dimensinya saling mencoret menjadi [1]. Contohnya regangan (&Delta;L/L), indeks bias (c/v), koefisien gesekan (f/N), dan sudut radian (s/r). Karena tak bersatuan, nilainya sama di sistem satuan mana pun.",
+      },
+      {
+        type: "widget",
+        widget: "KonversiSatuan",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Indeks Bias Beberapa Medium",
+        unit: "tak bersatuan",
+        source: "nilai pendekatan untuk cahaya tampak",
+        note: "Indeks bias tak berdimensi karena rasio dua kelajuan (c/v). Makin besar nilainya, makin lambat cahaya merambat di medium itu.",
+        data: [
+          { label: "Udara", value: 1.0, color: "#a5b4fc" },
+          { label: "Air", value: 1.33, color: "#818cf8" },
+          { label: "Kaca", value: 1.52, color: "#6366f1" },
+          { label: "Intan", value: 2.42, color: "#4f46e5" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah kawat panjang 2,5 m ditarik hingga bertambah panjang 5,0 mm. Berapa regangannya (regangan = pertambahan panjang / panjang awal, tak bersatuan)?",
+        answer: 0.002,
+        tolerance: 0.0002,
+        solution:
+          "Ubah dulu satuannya sama: 5,0 mm = 0,005 m. Regangan = 0,005 m / 2,5 m = <strong>0,002</strong>. Karena meter dibagi meter, hasilnya tak berdimensi, hanya angka murni.",
+        hint: "Samakan satuan (mm ke m), lalu bagi pertambahan panjang dengan panjang awal.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah busur lingkaran panjangnya 12 cm pada jari-jari 4 cm. Berapa sudutnya dalam radian (sudut = panjang busur / jari-jari)?",
+        answer: 3,
+        tolerance: 0.05,
+        suffix: " rad",
+        solution:
+          "Sudut = s / r = 12 cm / 4 cm = <strong>3 radian</strong>. Sentimeter dibagi sentimeter saling mencoret, jadi radian sebenarnya tak berdimensi, sekadar penanda bahwa kita sedang bicara sudut.",
+        hint: "Bagi panjang busur dengan jari-jari; satuannya saling mencoret.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap besaran: tak berdimensi (angka murni) atau berdimensi?",
+        buckets: ["Tak berdimensi", "Berdimensi"],
+        items: [
+          { text: "Koefisien gesekan (gaya / gaya)", bucket: "Tak berdimensi" },
+          { text: "Indeks bias (kelajuan / kelajuan)", bucket: "Tak berdimensi" },
+          { text: "Regangan (panjang / panjang)", bucket: "Tak berdimensi" },
+          { text: "Massa jenis (massa / volume)", bucket: "Berdimensi" },
+          { text: "Kecepatan (panjang / waktu)", bucket: "Berdimensi" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Bilangan Reynolds, Angka Tanpa Satuan yang Menentukan",
+        html: "Insinyur perlu tahu apakah aliran fluida bersifat tenang (laminar) atau bergolak (turbulen). Jawabannya tersimpan dalam sebuah <strong>angka tak berdimensi</strong> bernama bilangan Reynolds, Re = &rho;vD/&mu;. Untuk air (&rho; = 1000 kg/m&sup3;) mengalir 1 m/s dalam pipa berdiameter 0,05 m dengan kekentalan &mu; = 0,001 Pa&middot;s, didapat Re = 1000 &times; 1 &times; 0,05 / 0,001 = 50.000. Karena jauh di atas sekitar 4000, alirannya turbulen. Semua satuan pada Re saling mencoret menjadi angka murni, dan justru angka murni itulah yang meramalkan watak aliran, tak peduli memakai satuan SI atau lainnya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Kesimpulan pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita rangkum. <strong>Besaran tak berdimensi lahir dari perbandingan dua besaran berdimensi sama, sehingga dimensinya saling mencoret menjadi [1].</strong> Contohnya regangan, indeks bias, koefisien gesekan, sudut radian, dan bilangan Reynolds. Karena tak bersatuan, nilainya berlaku universal, dan banyak hukum fisika justru dirumuskan lewat angka-angka tak berdimensi ini.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Besaran tak berdimensi adalah perbandingan dua besaran berdimensi sama.",
+          "Dimensinya saling mencoret menjadi [1], jadi tak bersatuan.",
+          "Contoh: regangan, indeks bias, koefisien gesekan, sudut radian, bilangan Reynolds.",
+          "Nilainya sama di sistem satuan mana pun, sehingga bermakna universal.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Sebuah besaran tak berdimensi biasanya terbentuk dari...",
+            options: [
+              "perbandingan dua besaran berdimensi sama",
+              "hasil kali dua panjang",
+              "massa dibagi volume",
+              "panjang dibagi waktu",
+            ],
+            answer: 0,
+            explain: "Dua besaran sejenis yang dibandingkan membuat dimensinya saling mencoret menjadi [1].",
+          },
+          {
+            q: "Regangan (ΔL / L) bersifat...",
+            options: ["berdimensi [L]", "berdimensi [L]⁻¹", "tak berdimensi", "berdimensi [T]"],
+            answer: 2,
+            explain: "Panjang dibagi panjang saling mencoret, jadi regangan tak berdimensi.",
+          },
+          {
+            q: "Mengapa indeks bias n = c/v tak bersatuan?",
+            options: [
+              "Karena ia rasio dua kelajuan yang satuannya saling mencoret",
+              "Karena cahaya tidak punya satuan",
+              "Karena nilainya selalu 1",
+              "Karena diukur dengan mikrometer",
+            ],
+            answer: 0,
+            explain: "c dan v sama-sama kelajuan, sehingga satuannya saling mencoret menjadi angka murni.",
+          },
+          {
+            q: "Sudut 1 radian berasal dari panjang busur dibagi jari-jari, sehingga dimensinya...",
+            options: ["[L]", "[L]²", "[L]/[L] = tak berdimensi", "[T]"],
+            answer: 2,
+            explain: "Panjang dibagi panjang membuat radian tak berdimensi.",
+          },
+          {
+            q: "Manakah besaran berikut yang TAK berdimensi?",
+            options: ["Gaya", "Koefisien gesekan", "Massa jenis", "Percepatan"],
+            answer: 1,
+            explain: "Koefisien gesekan adalah rasio dua gaya (f/N), jadi tak berdimensi.",
+          },
+        ],
+      },
+    ],
+  },
 ];

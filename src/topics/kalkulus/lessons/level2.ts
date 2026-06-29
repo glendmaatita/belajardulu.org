@@ -547,4 +547,151 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "persamaan-garis-singgung",
+    levelId: "turunan",
+    order: 5,
+    title: "Persamaan Garis Singgung: Menempelkan Garis Lurus pada Kurva",
+    summary:
+      "Sebelum menulis rumusnya, kita pakai turunan untuk menemukan garis lurus yang menempel pada kurva di satu titik.",
+    durationMin: 14,
+    tags: ["kalkulus", "turunan", "garis singgung", "hampiran linear"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kalau kamu memperbesar peta digital di satu lokasi terus menerus, jalan yang tadinya melengkung tampak makin lurus. Begitu pula kurva: didekati cukup rapat di satu titik, bentuknya nyaris seperti garis lurus. Garis lurus itu adalah garis singgung, dan turunan memberi kita kemiringannya. Ayo selidiki dulu sebelum menulis persamaannya.",
+      },
+      {
+        type: "video",
+        comp: "TurunanVideo",
+        title: "Video: Garis Lurus yang Menempel pada Kurva",
+        caption: "Turunan memberi kemiringan, satu titik memberi posisi, dan garis singgung pun terbentuk.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Ambil f(x) = x kuadrat di titik x = 2. Nilai fungsinya f(2) = 4, jadi titiknya (2, 4). Turunannya f'(x) = 2x, sehingga kemiringan di sana f'(2) = 4. Sekarang bayangkan sebuah garis berkemiringan 4 yang lewat titik (2, 4). Coba hitung tingginya di x = 2,5 dan bandingkan dengan kurva. Hampir sama, bukan?",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorTurunan",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Selisih Kurva x kuadrat dan Garis Singgungnya y = 4x - 4",
+        unit: "selisih (kurva - garis)",
+        source: "perhitungan (x kuadrat) - (4x - 4) = (x - 2) kuadrat",
+        note: "Tepat di titik singgung x = 2 selisihnya nol; makin jauh, garis makin meleset mengikuti (x - 2) kuadrat.",
+        data: [
+          { label: "x=2", value: 0, color: "#a78bfa" },
+          { label: "x=2,5", value: 0.25, color: "#8b5cf6" },
+          { label: "x=3", value: 1, color: "#7c3aed" },
+          { label: "x=3,5", value: 2.25, color: "#6d28d9" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua bahan: satu titik dan satu kemiringan",
+        html: "Untuk menulis garis lurus kita hanya butuh dua hal: sebuah <strong>titik</strong> yang dilewati dan sebuah <strong>kemiringan</strong>. Titiknya kita ambil dari nilai fungsi, yaitu (a, f(a)). Kemiringannya kita ambil dari turunan, yaitu f'(a). Turunan inilah jembatan yang membuat garis itu menempel pas pada kurva.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Untuk f(x) = x kuadrat, berapa kemiringan garis singgung di titik x = 3? (Ingat f'(x) = 2x.)",
+        answer: 6,
+        solution:
+          "Kemiringan garis singgung adalah f'(3) = 2 x 3 = <strong>6</strong>. Titik singgungnya (3, 9).",
+        hint: "Masukkan x = 3 ke f'(x) = 2x.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Garis singgung f(x) = x kuadrat di titik x = 2 adalah y = 4x - 4. Berapa nilai y garis itu saat x = 5?",
+        answer: 16,
+        solution:
+          "Masukkan x = 5 ke y = 4x - 4, didapat 4 x 5 - 4 = 20 - 4 = <strong>16</strong>.",
+        hint: "Substitusikan x = 5 ke persamaan garis y = 4x - 4.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan fungsi dan titiknya dengan kemiringan garis singgungnya.",
+        pairs: [
+          { left: "f(x) = x kuadrat di x = 1", right: "2" },
+          { left: "f(x) = x kuadrat di x = 3", right: "6" },
+          { left: "f(x) = x pangkat tiga di x = 1", right: "3" },
+          { left: "f(x) = 5x di sembarang titik", right: "5" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: GPS yang melinierkan jalan melengkung",
+        html: "Perangkat navigasi sering menghampiri lintasan melengkung dengan potongan garis lurus pendek untuk menghitung arah dan jarak sesaat. Di setiap titik, arah kendaraan ditentukan oleh <strong>garis singgung</strong> lintasan, yaitu kemiringan kurva di titik itu. Karena dekat titik singgung kurva nyaris lurus, hampiran garis singgung sangat akurat untuk langkah pendek. Inilah sebabnya turunan menjadi alat utama dalam menghampiri kurva dengan garis lurus.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah merasakan polanya, baru kita tuliskan: <strong>garis singgung kurva y = f(x) di titik x = a adalah y = f(a) + f'(a)(x - a)</strong>. Kemiringannya f'(a) dari turunan, dan titiknya (a, f(a)) dari nilai fungsi. Dekat titik singgung, garis ini menjadi hampiran linear terbaik untuk kurva.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Garis singgung butuh satu titik (a, f(a)) dan satu kemiringan f'(a).",
+          "Kemiringan garis singgung di x = a adalah nilai turunan f'(a).",
+          "Persamaannya y = f(a) + f'(a)(x - a).",
+          "Dekat titik singgung, garis ini adalah hampiran linear terbaik untuk kurva.",
+          "Hampiran ini dipakai luas, misalnya pada navigasi yang melinierkan lintasan melengkung.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dua bahan untuk menulis persamaan garis singgung adalah?",
+            options: [
+              "Dua kemiringan",
+              "Satu titik dan satu kemiringan",
+              "Dua titik saja",
+              "Luas dan kemiringan",
+            ],
+            answer: 1,
+            explain: "Garis lurus ditentukan oleh sebuah titik dan sebuah kemiringan.",
+          },
+          {
+            q: "Kemiringan garis singgung kurva y = f(x) di x = a adalah?",
+            options: ["f(a)", "f'(a)", "a", "f(a) dibagi a"],
+            answer: 1,
+            explain: "Kemiringan garis singgung adalah nilai turunan f'(a).",
+          },
+          {
+            q: "Untuk f(x) = x kuadrat, kemiringan garis singgung di x = 3 adalah?",
+            options: ["3", "6", "9", "2"],
+            answer: 1,
+            explain: "f'(x) = 2x sehingga f'(3) = 6.",
+          },
+          {
+            q: "Persamaan umum garis singgung di x = a adalah?",
+            options: [
+              "y = f(a) + f'(a)(x - a)",
+              "y = f'(a) + f(a)x",
+              "y = f(a) dikali (x - a)",
+              "y = f(x) - f(a)",
+            ],
+            answer: 0,
+            explain: "Garis singgung: y = f(a) + f'(a)(x - a).",
+          },
+          {
+            q: "Pada garis singgung y = 4x - 4, nilai y saat x = 5 adalah?",
+            options: ["12", "16", "20", "24"],
+            answer: 1,
+            explain: "4 x 5 - 4 = 16.",
+          },
+        ],
+      },
+    ],
+  },
 ];

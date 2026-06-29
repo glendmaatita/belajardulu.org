@@ -589,4 +589,159 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "pusat-massa-dan-kekekalan-momentum",
+    levelId: "pusat-massa",
+    order: 5,
+    title: "Pusat Massa dan Kekekalan Momentum",
+    summary:
+      "Saat kamu berjalan di atas perahu yang mengambang, perahu melata mundur di bawah kakimu. Pusat massa kalian berdua menolak bergeser. Inilah pertemuan dua ide besar. Kita susuri dulu.",
+    durationMin: 13,
+    tags: ["fisika", "pusat massa", "kekekalan momentum", "perahu"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Cobalah berjalan dari ujung ke ujung sebuah perahu kecil yang mengambang di air tenang. Aneh: perahu justru melata mundur di bawah kakimu, seolah menolak kamu maju. Saat kamu sampai di ujung lain, perahu sudah bergeser ke belakang. Tidak ada gaya dari luar yang mendorong perahu, lalu mengapa ia bergerak? Jawabannya menyatukan dua ide yang sudah kita pelajari: pusat massa dan kekekalan momentum. Ayo berpetualang dulu sebelum menulis rumus.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Pusat Massa yang Menolak Bergeser",
+        caption: "Tanpa gaya luar, pusat massa sistem tetap di tempatnya walau bagian-bagiannya berpindah.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan kamu dan perahu mula-mula diam, jadi momentum total nol dan pusat massa kalian diam di satu titik. Begitu kamu melangkah maju, kamu memperoleh momentum maju, sehingga perahu wajib memperoleh momentum mundur yang sama besar agar totalnya tetap nol. Maka perahu melata ke belakang. Amati: selama tak ada gaya dari luar, pusat massa kalian berdua tetap terpaku di titik semula, dan perpindahan kalian harus saling mengimbangi.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Pusat massa tetap, perpindahan saling mengimbangi",
+        html: "Karena pusat massa tidak bergeser, perpindahan tiap bagian ditimbang massanya harus saling meniadakan: <strong>m_orang x perpindahan_orang = m_perahu x perpindahan_perahu</strong>, dengan arah berlawanan. Yang lebih berat bergeser lebih sedikit. Itu sebabnya perahu berat hanya melata sedikit, sedangkan kamu yang lebih ringan berpindah lebih jauh.",
+      },
+      {
+        type: "widget",
+        widget: "SimulatorHukumNewton",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Seberapa Jauh Perahu Melata saat Orang 50 kg Berjalan 5 m di Atasnya",
+        unit: "meter",
+        source: "Orang 50 kg berjalan 5 m relatif terhadap perahu; air dianggap licin tanpa gesekan",
+        note: "Untuk langkah yang sama (5 m relatif perahu), perahu yang lebih berat melata makin sedikit. Perahu = 5 m x m_orang / (m_orang + m_perahu). Massa besar menahan perpindahan.",
+        data: [
+          { label: "Perahu 50 kg", value: 2.5, color: "#fb7185" },
+          { label: "Perahu 150 kg", value: 1.25, color: "#f59e0b" },
+          { label: "Perahu 450 kg", value: 0.5, color: "#34d399" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Seorang anak 60 kg berdiri di ujung perahu 240 kg yang diam di air licin, lalu berjalan 5 m relatif terhadap perahu. Seberapa jauh perahu melata mundur?",
+        answer: 1,
+        tolerance: 0.01,
+        suffix: " m",
+        solution:
+          "Pusat massa tetap, jadi perpindahan perahu = jarak jalan x m_orang / (m_orang + m_perahu) = 5 x 60 / (60 + 240) = 300 / 300 = <strong>1 m</strong>. Anak berpindah 5 - 1 = 4 m relatif air. Cek: 60 x 4 = 240 dan 240 x 1 = 240, sama besar berlawanan arah.",
+        hint: "Perpindahan perahu = jarak jalan dikali massa orang dibagi massa total.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Seorang nelayan 50 kg berjalan 4 m relatif terhadap perahunya yang bermassa 150 kg di air licin. Seberapa jauh ia berpindah relatif terhadap air (tanah)?",
+        answer: 3,
+        tolerance: 0.01,
+        suffix: " m",
+        solution:
+          "Perpindahan orang relatif air = jarak jalan x m_perahu / (m_orang + m_perahu) = 4 x 150 / (50 + 150) = 600 / 200 = <strong>3 m</strong>. Perahu sendiri mundur 4 - 3 = 1 m. Cek: 50 x 3 = 150 dan 150 x 1 = 150, seimbang.",
+        hint: "Perpindahan orang relatif air = jarak jalan dikali massa perahu dibagi massa total.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan peristiwa dengan penjelasan pusat massa dan kekekalan momentumnya.",
+        pairs: [
+          { left: "Orang berjalan di perahu mengambang", right: "Perahu melata mundur agar pusat massa tetap" },
+          { left: "Orang berat di perahu ringan", right: "Perahu berpindah jauh, orang sedikit" },
+          { left: "Melangkah turun dari perahu ke dermaga", right: "Perahu tersentak mundur, kaki bisa terpeleset" },
+          { left: "Astronaut melempar alat di ruang hampa", right: "Astronaut melayang mundur, pusat massa tetap" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa Melangkah dari Perahu Sering Bikin Tercebur",
+        html: "Banyak orang tercebur saat mencoba melangkah dari perahu kecil ke dermaga. Penyebabnya bukan kecerobohan semata, melainkan fisika pusat massa. Saat kamu mendorong kaki untuk melompat maju ke dermaga, perahu yang ringan dan mengambang langsung tersentak mundur agar pusat massa sistem tetap. Akibatnya jarak antara kaki dan dermaga melebar tiba-tiba, dan tubuhmu kurang maju dari yang diperkirakan, lalu jatuh ke air. Pelaut berpengalaman tahu trik ini: melangkah perlahan dan rendah, atau menambatkan perahu dulu agar tali memberi gaya luar yang menahan perahu tetap di tempat.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya menyatu. Tanpa gaya luar dan mula-mula diam, pusat massa tidak bergeser, sehingga perpindahan saling mengimbangi: <strong>m1 . d1 = m2 . d2</strong> dengan arah berlawanan. Bila orang berjalan sejauh L relatif perahu, maka perpindahan perahu = <strong>L . m_orang / (m_orang + m_perahu)</strong> dan perpindahan orang relatif air = <strong>L . m_perahu / (m_orang + m_perahu)</strong>. Ini hanyalah kekekalan momentum (total nol) yang dibaca lewat letak pusat massa yang setia di tempatnya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Tanpa gaya luar dan mula-mula diam, pusat massa sistem tidak bergeser sama sekali.",
+          "Perpindahan saling mengimbangi: m1 . d1 = m2 . d2 dengan arah berlawanan.",
+          "Yang lebih berat berpindah lebih sedikit; perahu berat hanya melata sedikit.",
+          "Perpindahan perahu = L . m_orang / (m_orang + m_perahu) untuk langkah L relatif perahu.",
+          "Prinsip yang sama menjelaskan astronaut yang melayang mundur saat melempar benda di ruang hampa.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Saat orang berjalan di perahu mengambang yang mula-mula diam, pusat massa sistem?",
+            options: [
+              "Ikut maju bersama orang",
+              "Tetap di tempatnya karena tidak ada gaya luar",
+              "Bergerak mundur bersama perahu",
+              "Hilang",
+            ],
+            answer: 1,
+            explain: "Tanpa gaya luar dan momentum awal nol, pusat massa tetap diam di titik semula.",
+          },
+          {
+            q: "Mengapa perahu melata mundur saat orang berjalan maju?",
+            options: [
+              "Karena air mendorong perahu",
+              "Agar momentum total tetap nol dan pusat massa tetap",
+              "Karena gravitasi menarik perahu",
+              "Karena perahu lebih ringan dari air",
+            ],
+            answer: 1,
+            explain: "Momentum maju orang harus diimbangi momentum mundur perahu agar totalnya tetap nol.",
+          },
+          {
+            q: "Orang 70 kg dan perahu 210 kg. Jika orang berpindah 3 m relatif air, perahu berpindah?",
+            options: ["1 m", "3 m", "9 m", "0,3 m"],
+            answer: 0,
+            explain: "70 x 3 = 210 x d, maka d = 210/210 = 1 m ke arah berlawanan.",
+          },
+          {
+            q: "Orang 50 kg berjalan 6 m relatif perahu 150 kg di air licin. Perahu melata mundur sejauh?",
+            options: ["1,5 m", "3 m", "6 m", "4,5 m"],
+            answer: 0,
+            explain: "Perpindahan perahu = 6 x 50/(50+150) = 6 x 0,25 = 1,5 m.",
+          },
+          {
+            q: "Mengapa melangkah dari perahu kecil ke dermaga sering membuat orang tercebur?",
+            options: [
+              "Karena dermaga licin",
+              "Karena perahu tersentak mundur sehingga jarak ke dermaga melebar mendadak",
+              "Karena air menarik kaki",
+              "Karena perahu terlalu berat",
+            ],
+            answer: 1,
+            explain: "Saat kaki mendorong maju, perahu mundur menjaga pusat massa, dan jaraknya melebar tiba-tiba.",
+          },
+        ],
+      },
+    ],
+  },
 ];

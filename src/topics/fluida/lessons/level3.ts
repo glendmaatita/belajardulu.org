@@ -625,4 +625,156 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "bernoulli-beda-ketinggian",
+    levelId: "fluida-dinamis",
+    order: 5,
+    title: "Bernoulli dan Beda Ketinggian Pipa",
+    summary:
+      "Kenapa tekanan air melemah saat pipa naik ke lantai atas, dan setinggi apa air mancur menyembur? Kita amati dulu suku ketinggian dalam Bernoulli, baru rumusnya lengkap.",
+    durationMin: 14,
+    tags: ["fluida", "bernoulli", "ketinggian", "air mancur"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Selama ini kita memakai Bernoulli untuk pipa mendatar, tempat suku ketinggian bisa diabaikan. Tetapi air sering harus naik: ke lantai atas gedung, ke pucuk air mancur, ke tandon di atap. Persamaan Bernoulli punya satu suku yang belum kita sentuh, yaitu <strong>energi ketinggian</strong> rho x g x h. Sebelum bertemu rumus lengkapnya, ayo amati dulu bagaimana tekanan dan ketinggian saling menukar tempat.",
+      },
+      {
+        type: "video",
+        comp: "BahasaSemesta",
+        title: "Video: Tiga Tabungan Energi Aliran",
+        caption: "Energi tekanan, energi gerak, dan energi ketinggian saling bertukar di sepanjang pipa.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan air mengalir naik dalam pipa berdiameter tetap, sehingga kecepatannya tidak berubah (kontinuitas). Apa yang terjadi pada tekanannya? Untuk memanjat melawan gravitasi, air harus 'membayar' dengan energi tekanan. Maka makin tinggi air naik, makin <strong>rendah</strong> tekanannya. Energi ketinggian bertambah, energi tekanan berkurang, sementara energi gerak tetap. Inilah sebabnya keran di lantai atas mengalir lebih lemah daripada di lantai bawah.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Suku ketinggian dalam Bernoulli",
+        html: "Persamaan lengkap Bernoulli punya tiga suku: <strong>P</strong> (energi tekanan), <strong>0,5 x rho x v^2</strong> (energi gerak), dan <strong>rho x g x h</strong> (energi ketinggian). Totalnya tetap di sepanjang aliran ideal. Ketika air naik (h bertambah), salah satu dari dua suku lain harus berkurang agar totalnya kekal.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Tekanan Air vs Ketinggian dalam Pipa Berdiameter Tetap",
+        unit: "pascal (Pa)",
+        source: "hitungan P = P0 - rho x g x h, air 1000 kg/m^3, g 10, P0 300.000 Pa",
+        note: "Karena kecepatan tetap (diameter tetap), kenaikan ketinggian langsung menurunkan tekanan secara lurus. Tiap naik 1 meter, tekanan turun 10.000 Pa.",
+        data: [
+          { label: "0 m", value: 300000, color: "#38bdf8" },
+          { label: "5 m", value: 250000, color: "#22d3ee" },
+          { label: "10 m", value: 200000, color: "#2dd4bf" },
+          { label: "15 m", value: 150000, color: "#60a5fa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Air mengalir dalam pipa berdiameter tetap. Di titik bawah tekanannya 200.000 Pa. Titik lain berada 5 m lebih tinggi (rho 1000, g = 10). Berapa tekanan di titik atas? (kecepatan sama di kedua titik)",
+        answer: 150000,
+        tolerance: 1000,
+        suffix: " Pa",
+        solution:
+          "Karena diameter tetap, kecepatan sama, jadi suku gerak hilang dari kedua sisi. Sisa: P_atas = P_bawah - rho x g x h = 200.000 - 1000 x 10 x 5 = <strong>150.000 Pa</strong>. Tekanan turun 50.000 Pa untuk naik 5 meter.",
+        hint: "P_atas = P_bawah - rho x g x (selisih tinggi).",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Air menyembur tegak lurus ke atas dari mulut air mancur dengan kecepatan 10 m/s (g = 10). Setinggi apa puncak semburan air itu? (energi gerak berubah penuh menjadi energi ketinggian, h = v^2 / (2 x g))",
+        answer: 5,
+        tolerance: 0.2,
+        suffix: " m",
+        solution:
+          "Di puncak kecepatan menjadi nol, energi gerak berubah jadi energi ketinggian: h = v^2 / (2 x g) = 100 / 20 = <strong>5 m</strong>. Persis seperti benda dilempar ke atas dengan laju 10 m/s.",
+        hint: "Samakan 0,5 x rho x v^2 dengan rho x g x h, lalu cari h.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Air mengalir naik dalam pipa berdiameter tetap. Tentukan keadaan tiap suku energi di titik yang lebih tinggi.",
+        buckets: ["Bertambah", "Berkurang", "Tetap"],
+        items: [
+          { text: "Energi ketinggian (rho x g x h)", bucket: "Bertambah" },
+          { text: "Energi tekanan (P)", bucket: "Berkurang" },
+          { text: "Energi gerak (0,5 x rho x v^2)", bucket: "Tetap" },
+          { text: "Jumlah ketiga suku", bucket: "Tetap" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memompa Air ke Lantai Atas Gedung",
+        html: "Gedung bertingkat tidak bisa mengandalkan tekanan air kota untuk mengisi keran di lantai atas. Tiap naik 10 meter, tekanan air berkurang sekitar 100.000 Pa, hampir satu atmosfer, hanya untuk melawan gravitasi. Sebuah gedung 30 lantai setinggi sekitar 100 meter membutuhkan tambahan tekanan sekitar 1.000.000 Pa hanya agar air sampai ke atas, belum termasuk tekanan untuk mengalir keluar dari keran. Itulah sebabnya gedung tinggi memakai pompa bertenaga atau tandon di atap yang diisi bertahap. Bernoulli menjelaskan dengan tepat: energi ketinggian yang besar harus dibayar oleh energi tekanan, dan pompa-lah yang menambah tabungan energi itu.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan persamaan Bernoulli lengkap: <strong>P + 0,5 x rho x v^2 + rho x g x h = konstan</strong>. Untuk pipa berdiameter tetap (v tetap), ia menyusut menjadi <strong>P + rho x g x h = konstan</strong>, sehingga naik 1 meter berarti tekanan turun rho x g x 1. Untuk semburan ke atas, energi gerak berubah penuh menjadi energi ketinggian: <strong>h = v^2 / (2 x g)</strong>.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Persamaan Bernoulli lengkap: P + 0,5 x rho x v^2 + rho x g x h = konstan.",
+          "Pada pipa berdiameter tetap, naik ketinggian membuat tekanan turun lurus.",
+          "Tiap naik 1 meter, tekanan air berkurang sekitar 10.000 Pa.",
+          "Semburan air ke atas mencapai tinggi h = v^2 / (2 x g).",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Suku ketinggian dalam persamaan Bernoulli adalah?",
+            options: [
+              "0,5 x rho x v^2",
+              "rho x g x h",
+              "P x A",
+              "rho / V",
+            ],
+            answer: 1,
+            explain: "Energi ketinggian per satuan volume adalah rho x g x h.",
+          },
+          {
+            q: "Pada pipa berdiameter tetap yang naik, tekanan airnya?",
+            options: ["Bertambah", "Berkurang", "Tetap", "Menjadi nol"],
+            answer: 1,
+            explain: "Kecepatan tetap, jadi naik ketinggian membuat tekanan turun agar total kekal.",
+          },
+          {
+            q: "Tekanan bawah 250.000 Pa, titik lain 8 m lebih tinggi (rho 1000, g 10), diameter tetap. Tekanan atas?",
+            options: ["330.000 Pa", "170.000 Pa", "250.000 Pa", "80.000 Pa"],
+            answer: 1,
+            explain: "P_atas = 250.000 - 1000 x 10 x 8 = 250.000 - 80.000 = 170.000 Pa.",
+          },
+          {
+            q: "Air menyembur ke atas dengan laju 20 m/s (g 10). Tinggi puncaknya?",
+            options: ["10 m", "20 m", "40 m", "2 m"],
+            answer: 1,
+            explain: "h = v^2 / (2 x g) = 400 / 20 = 20 m.",
+          },
+          {
+            q: "Mengapa keran lantai atas gedung mengalir lebih lemah daripada lantai bawah?",
+            options: [
+              "Pipanya lebih sempit",
+              "Energi tekanan terpakai untuk menambah energi ketinggian",
+              "Air lebih dingin di atas",
+              "Gravitasi lebih besar di atas",
+            ],
+            answer: 1,
+            explain: "Naik ketinggian menukar energi tekanan menjadi energi ketinggian, jadi tekanan keran turun.",
+          },
+        ],
+      },
+    ],
+  },
 ];

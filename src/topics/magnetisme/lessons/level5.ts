@@ -600,4 +600,173 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "transmisi-daya-listrik",
+    levelId: "aplikasi-magnet",
+    order: 5,
+    title: "Transmisi Daya Listrik Jarak Jauh",
+    summary:
+      "Pembangkit ada ratusan kilometer dari kota. Bagaimana listrik dikirim sejauh itu tanpa habis jadi panas di kawat? Jawabannya: trafo menaikkan tegangan, dan rugi daya pun terjun bebas.",
+    durationMin: 14,
+    tags: ["fisika", "transmisi daya", "transformator", "rugi daya"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Listrik di rumahmu mungkin lahir di pembangkit yang jauhnya ratusan kilometer. Sepanjang perjalanan itu, kawat penghantar punya hambatan, dan setiap arus yang lewat memanaskannya, membuang sebagian energi. Anehnya, jaringan listrik justru mengirim daya pada <strong>tegangan sangat tinggi</strong>, ratusan ribu volt. Sebelum menuliskan rumus, ayo kita pahami mengapa tegangan tinggi malah menyelamatkan energi.",
+      },
+      {
+        type: "video",
+        comp: "HukumOhmVideo",
+        title: "Video: Perjalanan Listrik dari Pembangkit ke Rumah",
+        caption: "Trafo step-up menaikkan tegangan untuk transmisi, trafo step-down menurunkannya dekat rumah.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Daya yang dikirim P = V × I. Untuk daya yang sama, bila tegangan <strong>V dinaikkan</strong>, maka arus <strong>I mengecil</strong>. Padahal energi yang terbuang jadi panas di kawat adalah I²R, bergantung pada <strong>kuadrat arus</strong>. Jadi memperkecil arus dua kali memperkecil rugi daya empat kali. Itu sebabnya transmisi memakai tegangan setinggi mungkin, lalu menurunkannya lagi dekat rumah agar aman dipakai.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Yang menentukan rugi daya adalah arus, bukan tegangan",
+        html: "Rugi daya di saluran adalah <strong>P<sub>hilang</sub> = I²R</strong>, dengan I arus saluran dan R hambatan kawat. Perhatikan: tegangan transmisi tidak muncul langsung di rumus rugi daya. Tegangan tinggi membantu hanya karena ia menurunkan I untuk daya yang sama. Jangan keliru mengira tegangan tinggi sendiri yang membuang energi.",
+      },
+      {
+        type: "widget",
+        widget: "KalkulatorOhm",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Rugi Daya Saluran vs Tegangan Transmisi",
+        unit: "kilowatt (kW)",
+        source: "daya kirim P=100 kW, hambatan saluran R=4 Ω, P_hilang = (P/V)²·R",
+        note: "Menaikkan tegangan menurunkan rugi daya secara kuadratik: dari 1 kV ke 20 kV, rugi daya jatuh dari 40 kW menjadi 0,1 kW.",
+        data: [
+          { label: "1 kV", value: 40, color: "#f87171" },
+          { label: "2 kV", value: 10, color: "#fbbf24" },
+          { label: "5 kV", value: 1.6, color: "#38bdf8" },
+          { label: "10 kV", value: 0.4, color: "#22d3ee" },
+          { label: "20 kV", value: 0.1, color: "#34d399" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pembangkit mengirim daya 100 kW melalui saluran berhambatan 4 Ω pada tegangan 5000 V. Berapa daya yang hilang menjadi panas di saluran? (jawab dalam watt)",
+        answer: 1600,
+        tolerance: 1,
+        suffix: " W",
+        solution:
+          "Arus saluran I = P/V = 100.000 / 5000 = 20 A. Rugi daya = I²R = 20² × 4 = 400 × 4 = <strong>1600 W</strong> (1,6 kW).",
+        hint: "Cari arus dulu (I = P/V), lalu rugi daya = I²R.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Daya dan saluran yang sama (P=100 kW, R=4 Ω), tetapi tegangan dinaikkan menjadi 20.000 V (4 kali lipat). Berapa daya yang hilang sekarang? (jawab dalam watt)",
+        answer: 100,
+        tolerance: 1,
+        suffix: " W",
+        solution:
+          "I = 100.000 / 20.000 = 5 A. Rugi daya = I²R = 5² × 4 = 25 × 4 = <strong>100 W</strong>. Tegangan 4 kali membuat arus 1/4 dan rugi daya 1/16 (dari 1600 W jadi 100 W).",
+        hint: "Tegangan 4 kali membuat arus 1/4, dan rugi daya bergantung kuadrat arus.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap tindakan pada saluran transmisi: mengurangi atau menambah rugi daya.",
+        buckets: ["Mengurangi rugi daya", "Menambah rugi daya"],
+        items: [
+          { text: "Menaikkan tegangan transmisi", bucket: "Mengurangi rugi daya" },
+          { text: "Memakai kawat berpenampang besar (hambatan kecil)", bucket: "Mengurangi rugi daya" },
+          { text: "Menurunkan arus pada saluran", bucket: "Mengurangi rugi daya" },
+          { text: "Menurunkan tegangan transmisi", bucket: "Menambah rugi daya" },
+          { text: "Memakai kawat tipis panjang berhambatan tinggi", bucket: "Menambah rugi daya" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap bagian jaringan listrik dengan perannya.",
+        pairs: [
+          { left: "Trafo step-up", right: "Menaikkan tegangan sebelum transmisi" },
+          { left: "Trafo step-down", right: "Menurunkan tegangan dekat rumah" },
+          { left: "Saluran tegangan tinggi", right: "Mengangkut daya dengan arus kecil" },
+          { left: "Rugi daya I²R", right: "Energi hilang jadi panas di kawat" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Perang Arus, AC Mengalahkan DC",
+        html: "Pada akhir 1880-an terjadi 'Perang Arus' antara Thomas Edison yang membela arus searah (DC) dan George Westinghouse bersama Nikola Tesla yang membela arus bolak-balik (AC). Kelemahan DC saat itu fatal: tegangannya sulit dinaikkan, sehingga transmisi jarak jauh boros karena rugi daya I²R yang besar, dan pembangkit harus berdiri tiap beberapa kilometer. AC menang justru karena transformator dapat menaikkan tegangannya dengan mudah untuk transmisi lalu menurunkannya lagi dekat konsumen. Puncaknya, pembangkit air terjun Niagara mulai memasok listrik AC pada 1895, dan sejak itu jaringan listrik dunia memakai AC tegangan tinggi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan. Daya yang dikirim <strong>P = V · I</strong>, sehingga untuk daya tetap, arus <strong>I = P / V</strong>. Rugi daya di saluran <strong>P<sub>hilang</sub> = I²R = (P/V)²·R</strong>. Karena rugi daya berbanding terbalik dengan kuadrat tegangan, menaikkan tegangan n kali menurunkan rugi daya n² kali. Itulah peran transformator: menaikkan tegangan untuk transmisi hemat, lalu menurunkannya lagi agar aman di rumah. Transformator sendiri bekerja berkat induksi elektromagnetik.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Daya P = V·I, jadi pada daya tetap, menaikkan tegangan menurunkan arus.",
+          "Rugi daya saluran = I²R, bergantung kuadrat arus, bukan tegangan langsung.",
+          "Menaikkan tegangan n kali menurunkan rugi daya n² kali (P_hilang = (P/V)²·R).",
+          "Trafo step-up menaikkan tegangan untuk transmisi, trafo step-down menurunkannya dekat rumah.",
+          "AC menang atas DC dalam Perang Arus karena trafo memudahkan transmisi tegangan tinggi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Rugi daya pada saluran transmisi dirumuskan?",
+            options: ["P = V·I", "P_hilang = I²R", "P = V²/R saja", "P = µ₀·n·I"],
+            answer: 1,
+            explain: "Rugi daya di kawat adalah I²R, bergantung kuadrat arus saluran.",
+          },
+          {
+            q: "Mengapa transmisi listrik memakai tegangan sangat tinggi?",
+            options: [
+              "Agar lampu lebih terang",
+              "Agar arus kecil sehingga rugi daya I²R kecil",
+              "Agar kawat lebih murah",
+              "Agar tegangan di rumah tinggi",
+            ],
+            answer: 1,
+            explain: "Tegangan tinggi membuat arus kecil untuk daya sama, sehingga rugi I²R turun.",
+          },
+          {
+            q: "Jika tegangan transmisi dinaikkan 2 kali (daya tetap), rugi daya menjadi?",
+            options: ["2 kali", "Setengah", "Seperempat", "Tetap"],
+            answer: 2,
+            explain: "Arus jadi 1/2, dan rugi daya bergantung kuadrat arus, jadi 1/4.",
+          },
+          {
+            q: "Trafo step-down pada jaringan listrik berfungsi?",
+            options: [
+              "Menaikkan tegangan untuk transmisi",
+              "Menurunkan tegangan agar aman dipakai di rumah",
+              "Menyimpan energi",
+              "Mengubah AC jadi DC",
+            ],
+            answer: 1,
+            explain: "Step-down menurunkan tegangan tinggi transmisi menjadi tegangan rumah yang aman.",
+          },
+          {
+            q: "Dalam Perang Arus, AC unggul atas DC terutama karena?",
+            options: [
+              "AC lebih murah dibuat",
+              "Tegangan AC mudah dinaikkan-turunkan dengan transformator",
+              "DC berbahaya bagi manusia",
+              "AC tidak butuh kawat",
+            ],
+            answer: 1,
+            explain: "Transformator memudahkan AC ditransmisikan pada tegangan tinggi lalu diturunkan lagi.",
+          },
+        ],
+      },
+    ],
+  },
 ];

@@ -162,6 +162,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
             Materi bersifat edukatif. Angka, tarif, dan regulasi dapat berubah, selalu rujuk sumber resmi sebelum
             mengambil keputusan nyata.
           </p>
+          <div className="mt-6 flex flex-col gap-1 border-t border-line pt-4 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
+            <p className="flex items-center gap-1.5">
+              Made with <Icon name="heart" className="text-rose-500" /> by Glend Maatita{" "}
+              <a href="mailto:glend@yukbelajar.org" className="font-medium text-ink-soft hover:text-accent-600">
+                (glend@yukbelajar.org)
+              </a>
+            </p>
+            <p>&copy; {new Date().getFullYear()} YukBelajar. Semua hak dilindungi.</p>
+          </div>
         </div>
       </footer>
     </div>

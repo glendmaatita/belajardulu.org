@@ -570,4 +570,170 @@ export const level3: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "menemukan-volume",
+    levelId: "bentuk-ruang",
+    order: 5,
+    title: "Dari Bidang ke Ruang: Menemukan Volume",
+    summary:
+      "Setelah menghitung petak untuk luas, kita isi sebuah kotak dengan kubus satuan dan menemukan sendiri bahwa volume adalah panjang kali lebar kali tinggi.",
+    durationMin: 14,
+    tags: ["geometri", "volume", "ruang", "kubus satuan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebelumnya kita menghitung petak untuk menemukan luas sebuah bidang datar. Sekarang naik satu tingkat: berapa banyak air yang muat dalam sebuah akuarium? Atau berapa kubus mainan yang bisa memenuhi sebuah kardus? Pertanyaan ini bukan lagi soal bidang, melainkan soal <strong>ruang</strong>. Jangan pakai rumus dulu, ayo isi kotaknya bersama.",
+      },
+      {
+        type: "video",
+        comp: "MenemukanLuas",
+        title: "Video: Menemukan Luas",
+        caption: "Gagasan menghitung petak untuk luas menuntun kita menghitung kubus satuan untuk volume.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan kardus berukuran 4 x 3 x 2 satuan. Isi dasarnya dengan kubus 1 x 1 x 1. Satu lapis dasar memuat 4 x 3 = 12 kubus, persis seperti menghitung luas alas. Sekarang tumpuk lapis itu sebanyak tinggi kotak, yaitu 2 lapis. Jumlah kubusnya 12 + 12 = 24. Apakah kamu mulai melihat polanya?",
+      },
+      {
+        type: "widget",
+        widget: "PenemuLuas",
+      },
+      {
+        type: "paragraph",
+        html: "Ternyata mengisi ruang sama seperti mengisi bidang, hanya bertambah satu arah. Banyak kubus dalam satu lapis adalah luas alas, yaitu panjang kali lebar. Lalu lapis itu ditumpuk setinggi kotaknya. Jadi cukup kalikan luas alas dengan tinggi, tanpa perlu menghitung kubus satu per satu.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Panjang, luas, dan volume itu beda dimensi",
+        html: "<strong>Panjang</strong> mengukur satu arah (cm). <strong>Luas</strong> mengukur dua arah, panjang kali lebar (cm persegi). <strong>Volume</strong> mengukur tiga arah, panjang kali lebar kali tinggi (cm kubik). Setiap kali kita naik satu dimensi, kita mengalikan satu ukuran lagi.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Saat Sisi Kubus Digandakan, Volume Melonjak Pangkat Tiga",
+        unit: "volume (kubus satuan)",
+        source: "fakta matematika",
+        note: "Sisi 1, 2, 3, 4 menghasilkan volume 1, 8, 27, 64. Menggandakan sisi dari 1 ke 2 membuat volume melonjak 8 kali lipat, bukan 2 kali. Inilah kekuatan dimensi ketiga.",
+        data: [
+          { label: "sisi 1", value: 1, color: "#34d399" },
+          { label: "sisi 2", value: 8, color: "#60a5fa" },
+          { label: "sisi 3", value: 27, color: "#a78bfa" },
+          { label: "sisi 4", value: 64, color: "#f472b6" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah kardus berukuran 5 x 4 x 3 satuan diisi penuh kubus 1 x 1 x 1. Tanpa menghitung satu per satu, berapa kubus yang muat?",
+        answer: 60,
+        suffix: " kubus",
+        solution:
+          "Luas alas = 5 x 4 = 20 kubus per lapis. Tinggi 3 lapis, jadi 20 x 3 = <strong>60 kubus</strong>. Itulah panjang kali lebar kali tinggi.",
+        hint: "Hitung kubus di satu lapis alas, lalu kalikan dengan tinggi.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah akuarium berukuran 40 cm x 30 cm x 20 cm. Berapa liter air yang muat? (1 liter = 1.000 cm kubik)",
+        answer: 24,
+        suffix: " liter",
+        solution:
+          "Volume = 40 x 30 x 20 = 24.000 cm kubik. Dibagi 1.000 menjadi <strong>24 liter</strong>.",
+        hint: "Kalikan ketiga ukuran, lalu bagi 1.000 untuk mendapat liter.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan ukuran balok dengan volumenya (dalam kubus satuan).",
+        pairs: [
+          { left: "2 x 2 x 2", right: "8" },
+          { left: "3 x 3 x 1", right: "9" },
+          { left: "4 x 2 x 2", right: "16" },
+          { left: "5 x 2 x 3", right: "30" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Besaran yang dicari pada tiap situasi termasuk panjang, luas, atau volume?",
+        buckets: ["Panjang", "Luas", "Volume"],
+        items: [
+          { text: "Panjang tali untuk mengikat kotak", bucket: "Panjang" },
+          { text: "Cat untuk menutup satu sisi tembok", bucket: "Luas" },
+          { text: "Air yang mengisi akuarium", bucket: "Volume" },
+          { text: "Banyak ubin untuk menutup lantai", bucket: "Luas" },
+          { text: "Pasir yang memenuhi bak truk", bucket: "Volume" },
+          { text: "Keliling pagar kebun", bucket: "Panjang" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengisi bak penampung air",
+        html: "Sebuah bak penampung berbentuk balok berukuran panjang 1 meter, lebar 0,8 meter, dan tinggi 0,5 meter. Berapa air yang muat? Volume = 1 x 0,8 x 0,5 = 0,4 meter kubik. Karena 1 meter kubik sama dengan 1.000 liter, maka kapasitasnya 0,4 x 1.000 = <strong>400 liter</strong>. Dengan menemukan rumus volume dari kotak kecil tadi, kita bisa menghitung kebutuhan air sebuah keluarga tanpa harus menuangkannya ember demi ember.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menumpuk banyak kubus, polanya jelas. Barulah kita tuliskan: <strong>Volume balok = panjang x lebar x tinggi</strong>, atau sama dengan luas alas dikali tinggi. Rumus ini bukan hafalan, melainkan ringkasan dari menghitung kubus satuan yang berlapis-lapis.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Volume adalah banyaknya kubus satuan yang mengisi sebuah ruang.",
+          "Satu lapis berisi luas alas (panjang kali lebar), lalu ditumpuk setinggi bendanya.",
+          "Volume balok = panjang x lebar x tinggi = luas alas x tinggi.",
+          "Menggandakan sisi kubus melipatkan volume hingga delapan kali, karena tiga dimensi.",
+          "Satu meter kubik sama dengan 1.000 liter, memudahkan menghitung kapasitas air.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Volume sebuah benda mengukur?",
+            options: [
+              "Panjang tepinya",
+              "Ruang tiga dimensi yang ditempatinya",
+              "Jumlah sudutnya",
+              "Luas satu sisinya",
+            ],
+            answer: 1,
+            explain: "Volume adalah banyaknya ruang yang diisi benda tiga dimensi.",
+          },
+          {
+            q: "Balok berukuran 4 x 3 x 2 memiliki volume?",
+            options: ["9", "14", "24", "48"],
+            answer: 2,
+            explain: "4 x 3 x 2 = 24 kubus satuan.",
+          },
+          {
+            q: "Jika panjang sisi sebuah kubus digandakan, volumenya menjadi?",
+            options: ["2 kali", "4 kali", "6 kali", "8 kali"],
+            answer: 3,
+            explain: "Karena tiga dimensi, 2 x 2 x 2 = 8 kali lipat.",
+          },
+          {
+            q: "Rumus volume balok adalah?",
+            options: [
+              "panjang + lebar + tinggi",
+              "panjang x lebar",
+              "panjang x lebar x tinggi",
+              "2 x (panjang + lebar)",
+            ],
+            answer: 2,
+            explain: "Volume balok = panjang x lebar x tinggi.",
+          },
+          {
+            q: "Satu meter kubik sama dengan berapa liter?",
+            options: ["10 liter", "100 liter", "1.000 liter", "10.000 liter"],
+            answer: 2,
+            explain: "1 meter kubik = 1.000 liter, sehingga mudah menghitung kapasitas air.",
+          },
+        ],
+      },
+    ],
+  },
 ];

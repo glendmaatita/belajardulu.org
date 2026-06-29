@@ -624,4 +624,161 @@ export const level1: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gaya-hidrostatis-bendungan",
+    levelId: "fluida-statis-tekanan",
+    order: 5,
+    title: "Gaya Hidrostatis pada Dinding Bendungan",
+    summary:
+      "Tekanan air berubah-ubah di tiap kedalaman, lalu bagaimana menghitung satu gaya total yang menekan dinding bendungan? Kita amati dulu sebaran tekanan, baru rumus gaya hidrostatis muncul.",
+    durationMin: 14,
+    tags: ["fluida", "hidrostatis", "gaya", "bendungan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Kita sudah tahu tekanan hidrostatis bertambah seiring kedalaman. Tetapi dinding bendungan tidak hanya merasakan tekanan di satu titik, ia ditekan di seluruh permukaannya, dari nol di permukaan air sampai paling kuat di dasar. Bagaimana menjumlahkan semua tekanan yang berbeda-beda itu menjadi satu <strong>gaya total</strong>? Sebelum bertemu rumus, ayo amati dulu bentuk sebaran tekanannya.",
+      },
+      {
+        type: "video",
+        comp: "BesaranSatuan",
+        title: "Video: Dari Tekanan ke Gaya Total",
+        caption: "Tekanan yang berubah dengan kedalaman dijumlahkan menjadi satu gaya pada bidang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Bayangkan dinding bendungan dibagi menjadi banyak pita mendatar. Pita paling atas hampir tak ditekan, pita paling bawah ditekan paling kuat. Karena tekanan naik lurus dari nol di permukaan menjadi rho x g x H di dasar, tekanan <strong>rata-ratanya</strong> persis di tengah, yaitu rho x g x (H/2). Gaya total cukup dihitung dari tekanan rata-rata ini dikali seluruh luas dinding yang tercelup.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Mengapa pakai tekanan rata-rata",
+        html: "Karena tekanan bertambah lurus terhadap kedalaman, sebarannya berbentuk segitiga: kecil di atas, besar di bawah. Nilai rata-rata sebaran lurus selalu jatuh di tengah. Jadi untuk dinding tegak yang puncaknya tepat di permukaan air, tekanan rata-rata = <strong>setengah tekanan di dasar</strong>.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Gaya Hidrostatis Total vs Kedalaman Air (dinding selebar 1 m)",
+        unit: "newton (N)",
+        source: "hitungan F = 0,5 x rho x g x w x H^2, air 1000 kg/m^3, g 10 m/s^2, lebar 1 m",
+        note: "Tidak seperti tekanan yang naik lurus, gaya total tumbuh mengikuti kuadrat kedalaman. Menggandakan kedalaman air melipatgandakan gaya empat kali.",
+        data: [
+          { label: "1 m", value: 5000, color: "#38bdf8" },
+          { label: "2 m", value: 20000, color: "#22d3ee" },
+          { label: "3 m", value: 45000, color: "#2dd4bf" },
+          { label: "4 m", value: 80000, color: "#60a5fa" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bendungan menahan air sedalam 4 m. Dinding yang tercelup selebar 5 m (air 1000 kg/m^3, g = 10 m/s^2). Berapa gaya hidrostatis total pada dinding itu? (F = 0,5 x rho x g x lebar x H^2)",
+        answer: 400000,
+        tolerance: 2000,
+        suffix: " N",
+        solution:
+          "F = 0,5 x 1000 x 10 x 5 x 4^2 = 0,5 x 1000 x 10 x 5 x 16 = <strong>400.000 N</strong>. Tekanan rata-ratanya rho x g x (H/2) = 20.000 Pa, dikali luas 5 x 4 = 20 m^2, menghasilkan 400.000 N.",
+        hint: "Hitung tekanan rata-rata rho x g x (H/2), lalu kalikan dengan luas dinding tercelup (lebar x H).",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah pintu air tegak selebar 2 m menahan air setinggi 3 m, puncak pintu tepat di permukaan air (rho 1000, g = 10). Berapa gaya hidrostatis total yang mendorong pintu?",
+        answer: 90000,
+        tolerance: 1000,
+        suffix: " N",
+        solution:
+          "Tekanan rata-rata = rho x g x (H/2) = 1000 x 10 x 1,5 = 15.000 Pa. Luas pintu = 2 x 3 = 6 m^2. Gaya = 15.000 x 6 = <strong>90.000 N</strong>.",
+        hint: "Tekanan rata-rata di setengah kedalaman dikali luas pintu.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Tentukan apa yang MEMPERBESAR gaya hidrostatis total pada dinding dan apa yang TIDAK.",
+        buckets: ["Memperbesar gaya", "Tidak memperbesar gaya"],
+        items: [
+          { text: "Kedalaman air bertambah", bucket: "Memperbesar gaya" },
+          { text: "Dinding dibuat lebih lebar", bucket: "Memperbesar gaya" },
+          { text: "Fluida diganti yang lebih padat", bucket: "Memperbesar gaya" },
+          { text: "Bendungan dibuat lebih tebal", bucket: "Tidak memperbesar gaya" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa Titik Tekan Bendungan Ada di Sepertiga Bawah",
+        html: "Insinyur bendungan tidak cukup tahu besar gaya total, mereka juga perlu tahu di mana gaya itu seakan terpusat, disebut titik tangkap gaya. Karena tekanan paling kuat menumpuk di dekat dasar, titik tangkap gaya hidrostatis bukan di tengah dinding, melainkan lebih rendah, tepat pada sepertiga tinggi dari dasar. Itulah sebabnya dasar bendungan dibuat sangat tebal dan dijangkar kuat ke fondasi: di sanalah dorongan terbesar bekerja. Pada waduk besar seperti Jatiluhur, gaya air yang menekan dinding mencapai jutaan newton, sehingga perhitungan titik tangkap gaya menjadi penentu keselamatan struktur.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Setelah menjelajah, baru kita tuliskan. Gaya hidrostatis pada bidang tegak yang puncaknya di permukaan: <strong>F = P_rata x A = rho x g x (H/2) x (lebar x H)</strong>, yang menyatu menjadi <strong>F = 0,5 x rho x g x lebar x H^2</strong>. Perhatikan H^2: gaya tumbuh mengikuti kuadrat kedalaman, jauh lebih cepat daripada tekanannya sendiri. Titik tangkap gaya berada di sepertiga tinggi dari dasar.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Tekanan pada dinding naik lurus dari nol di permukaan ke rho x g x H di dasar.",
+          "Tekanan rata-rata jatuh di tengah: rho x g x (H/2).",
+          "Gaya total F = 0,5 x rho x g x lebar x H^2, tumbuh mengikuti kuadrat kedalaman.",
+          "Titik tangkap gaya hidrostatis ada di sepertiga tinggi dari dasar, bukan di tengah.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Tekanan rata-rata pada dinding tegak yang puncaknya di permukaan air adalah?",
+            options: [
+              "Sama dengan tekanan di dasar",
+              "Setengah tekanan di dasar",
+              "Nol",
+              "Dua kali tekanan di dasar",
+            ],
+            answer: 1,
+            explain: "Karena tekanan naik lurus dari nol ke nilai dasar, rata-ratanya di tengah, yaitu setengahnya.",
+          },
+          {
+            q: "Gaya hidrostatis total pada dinding bergantung pada kedalaman secara?",
+            options: ["Lurus (H)", "Kuadrat (H^2)", "Akar (akar H)", "Tidak bergantung"],
+            answer: 1,
+            explain: "F = 0,5 x rho x g x lebar x H^2, jadi gaya sebanding kuadrat kedalaman.",
+          },
+          {
+            q: "Dinding selebar 3 m menahan air sedalam 2 m (rho 1000, g 10). Gaya totalnya?",
+            options: ["30.000 N", "60.000 N", "120.000 N", "6.000 N"],
+            answer: 1,
+            explain: "F = 0,5 x 1000 x 10 x 3 x 2^2 = 0,5 x 1000 x 10 x 3 x 4 = 60.000 N.",
+          },
+          {
+            q: "Di mana titik tangkap gaya hidrostatis pada dinding tegak?",
+            options: [
+              "Di permukaan air",
+              "Tepat di tengah",
+              "Pada sepertiga tinggi dari dasar",
+              "Di dasar tepat",
+            ],
+            answer: 2,
+            explain: "Karena tekanan menumpuk di bawah, gaya terpusat pada sepertiga tinggi dari dasar.",
+          },
+          {
+            q: "Mengapa dasar bendungan dibuat lebih tebal daripada puncaknya?",
+            options: [
+              "Agar lebih indah",
+              "Karena gaya dan tekanan air terbesar bekerja di dekat dasar",
+              "Karena air lebih dingin di bawah",
+              "Karena gravitasi lebih besar di bawah",
+            ],
+            answer: 1,
+            explain: "Tekanan dan titik tangkap gaya terpusat di bagian bawah, sehingga dasar perlu paling kuat.",
+          },
+        ],
+      },
+    ],
+  },
 ];

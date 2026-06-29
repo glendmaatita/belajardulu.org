@@ -530,4 +530,153 @@ export const level5: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "komposisi-transformasi",
+    levelId: "transformasi",
+    order: 5,
+    title: "Komposisi Transformasi: Menggabungkan Gerak",
+    summary:
+      "Sebelum menghafal aturannya, kita rangkai dulu dua gerakan berturut-turut dan amati hasil akhirnya, sampai pola penggabungan transformasi muncul sendiri.",
+    durationMin: 14,
+    tags: ["geometri", "transformasi", "komposisi", "translasi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Motif ubin lantai dan kain batik dibuat dengan mengulang satu pola: digeser, lalu dicerminkan, lalu diputar. Jarang hanya satu gerakan. Saat dua transformasi atau lebih dilakukan berturut-turut, kita menyebutnya <strong>komposisi transformasi</strong>. Sebelum kita hafalkan aturannya, ayo amati dulu apa hasil akhir dari merangkai dua gerakan.",
+      },
+      {
+        type: "video",
+        comp: "PolaAlam",
+        title: "Video: Pola Berulang dari Gerakan Bertingkat",
+        caption: "Pola rumit lahir dari mengulang dan menggabungkan gerakan sederhana.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Letakkan dua cermin sejajar berdekatan, lalu taruh sebuah benda di antaranya. Amati bayangan benda itu yang dipantulkan bolak-balik. Bandingkan posisi bayangan akhir dengan benda asli. Apakah bayangan tampak bergeser? Coba ubah jarak antar cermin dan lihat seberapa jauh bayangan berpindah.",
+      },
+      {
+        type: "widget",
+        widget: "PenjelajahPola",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Dua Pencerminan terhadap Cermin Sejajar: Jarak Geser Bayangan",
+        unit: "jarak geser (cm)",
+        source: "ilustrasi edukatif",
+        note: "Dua pencerminan terhadap dua cermin sejajar menghasilkan translasi sejauh dua kali jarak antar cermin.",
+        data: [
+          { label: "Cermin 2 cm", value: 4, color: "#818cf8" },
+          { label: "Cermin 3 cm", value: 6, color: "#a78bfa" },
+          { label: "Cermin 5 cm", value: 10, color: "#c4b5fd" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Geometri, bukan sekadar menggerakkan",
+        html: "Menggerakkan menjawab 'ke mana bendanya pindah'. Geometri menjawab 'mengapa dua pencerminan sejajar selalu sama dengan satu pergeseran' dan memakainya untuk merancang pola, animasi, dan gerak robot secara efisien.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dua cermin dipasang sejajar berjarak 4 cm. Sebuah titik dicerminkan ke cermin pertama lalu ke cermin kedua. Sejauh berapa bayangan akhir bergeser dari titik asli?",
+        answer: 8,
+        suffix: " cm",
+        solution:
+          "Dua pencerminan terhadap cermin sejajar menghasilkan translasi sejauh dua kali jarak antar cermin, jadi 2 x 4 = <strong>8 cm</strong>.",
+        hint: "Hasilnya adalah translasi sejauh dua kali jarak antar cermin.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bangun diputar 90 derajat lalu diputar lagi 90 derajat terhadap pusat yang sama dan arah yang sama. Berapa total sudut putarnya?",
+        answer: 180,
+        suffix: " derajat",
+        solution:
+          "Pada pusat yang sama, sudut rotasi dijumlahkan: 90 + 90 = <strong>180 derajat</strong>.",
+        hint: "Rotasi terhadap pusat yang sama saling menjumlahkan sudutnya.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap komposisi menurut jenis transformasi tunggal yang menjadi hasilnya.",
+        buckets: ["Hasilnya translasi", "Hasilnya rotasi"],
+        items: [
+          { text: "Dua pencerminan terhadap dua cermin sejajar", bucket: "Hasilnya translasi" },
+          { text: "Dua pencerminan terhadap dua cermin berpotongan", bucket: "Hasilnya rotasi" },
+          { text: "Geser ke kanan lalu geser ke atas", bucket: "Hasilnya translasi" },
+          { text: "Putar 30 derajat lalu putar 50 derajat (pusat sama)", bucket: "Hasilnya rotasi" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan tiap komposisi transformasi dengan satu transformasi yang setara.",
+        pairs: [
+          { left: "Translasi (3,2) lalu translasi (1,4)", right: "Translasi (4,6)" },
+          { left: "Rotasi 90 lalu rotasi 90 (pusat sama)", right: "Rotasi 180" },
+          { left: "Dua cermin sejajar berjarak 3 cm", right: "Translasi 6 cm" },
+          { left: "Dilatasi faktor 2 lalu faktor 3 (pusat sama)", right: "Dilatasi faktor 6" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Merancang motif ubin lantai",
+        html: "Seorang perancang membuat motif ubin: satu pola dasar digeser 10 cm ke kanan, lalu digeser lagi 10 cm ke kanan untuk mengisi baris. Dua translasi itu setara dengan satu translasi 20 cm. Untuk baris berikutnya, ia mencerminkan pola terhadap dua garis sejajar berjarak 5 cm, yang hasilnya geseran 10 cm rapi ke samping. Dengan memahami komposisi, ia merancang pola tak berujung hanya dari beberapa aturan sederhana.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Aturan pun lahir di akhir",
+        html: "Setelah merangkai gerakan, baru kita simpulkan: dua <strong>translasi</strong> berturut-turut setara satu translasi yang komponennya dijumlahkan; dua <strong>rotasi</strong> sepusat setara satu rotasi yang sudutnya dijumlahkan; dua <strong>pencerminan terhadap cermin sejajar</strong> setara satu translasi sejauh dua kali jarak cermin; dua <strong>dilatasi</strong> sepusat setara satu dilatasi yang faktornya dikalikan.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Komposisi transformasi adalah dua gerakan atau lebih yang dilakukan berturut-turut.",
+          "Dua translasi setara satu translasi yang komponennya dijumlahkan.",
+          "Dua rotasi sepusat setara satu rotasi yang sudutnya dijumlahkan.",
+          "Dua pencerminan terhadap cermin sejajar setara translasi sejauh dua kali jarak cermin.",
+          "Memahami komposisi memudahkan merancang pola ubin, batik, dan animasi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Melakukan dua transformasi berturut-turut disebut?",
+            options: ["Translasi", "Komposisi transformasi", "Dilatasi", "Refleksi tunggal"],
+            answer: 1,
+            explain: "Rangkaian dua gerakan atau lebih disebut komposisi transformasi.",
+          },
+          {
+            q: "Translasi (3,2) dilanjutkan translasi (1,4) setara dengan translasi?",
+            options: ["(2,2)", "(4,6)", "(3,8)", "(4,2)"],
+            answer: 1,
+            explain: "Komponen translasi dijumlahkan: (3+1, 2+4) = (4,6).",
+          },
+          {
+            q: "Dua pencerminan terhadap dua cermin sejajar menghasilkan?",
+            options: ["Rotasi", "Dilatasi", "Translasi", "Bangun yang sama persis di tempat"],
+            answer: 2,
+            explain: "Hasilnya translasi sejauh dua kali jarak antar cermin.",
+          },
+          {
+            q: "Rotasi 90 derajat lalu 90 derajat lagi (pusat dan arah sama) setara rotasi?",
+            options: ["45 derajat", "90 derajat", "180 derajat", "360 derajat"],
+            answer: 2,
+            explain: "Sudut rotasi sepusat dijumlahkan: 90 + 90 = 180 derajat.",
+          },
+          {
+            q: "Dilatasi faktor 2 dilanjutkan dilatasi faktor 3 (pusat sama) setara dilatasi faktor?",
+            options: ["5", "6", "1", "8"],
+            answer: 1,
+            explain: "Faktor dilatasi sepusat dikalikan: 2 x 3 = 6.",
+          },
+        ],
+      },
+    ],
+  },
 ];

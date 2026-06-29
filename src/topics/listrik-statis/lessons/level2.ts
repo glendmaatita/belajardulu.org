@@ -555,4 +555,158 @@ export const level2: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "gerak-muatan-medan-seragam",
+    levelId: "medan-listrik",
+    order: 5,
+    title: "Gerak Muatan dalam Medan Seragam",
+    summary:
+      "Printer inkjet menembakkan tetesan tinta bermuatan, lalu membelokkannya dengan medan listrik agar mendarat tepat di huruf yang benar. Kita amati dulu gerak muatan dalam medan, baru rumusnya kita rangkum di akhir.",
+    durationMin: 14,
+    tags: ["listrik statis", "medan listrik", "gaya", "gerak"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di dalam printer inkjet, tetesan tinta yang sangat kecil diberi muatan lalu dilewatkan di antara dua keping bermedan listrik. Medan itu mendorong tiap tetesan ke samping, menentukan di mana ia mendarat pada kertas. Sebuah muatan di dalam medan listrik selalu merasakan gaya, dan gaya itu menentukan geraknya. Sebelum bertemu rumus, ayo amati dulu bagaimana muatan bergerak di dalam medan seragam.",
+      },
+      {
+        type: "video",
+        comp: "HukumNewtonVideo",
+        title: "Video: Gaya Mengubah Gerak",
+        caption:
+          "Gaya tetap pada sebuah benda menghasilkan percepatan tetap. Aturan yang sama berlaku untuk muatan di dalam medan listrik.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Letakkan muatan positif diam di dalam medan seragam yang menunjuk ke kanan. Ia merasakan gaya tetap ke kanan dan mulai dipercepat, makin lama makin cepat, persis seperti benda jatuh dalam gravitasi. Tembakkan muatan itu menyilang medan, dan lintasannya melengkung menjadi <strong>parabola</strong>. Belum ada rumus, tetapi kita sudah melihat medan seragam berperan seperti 'gravitasi listrik'.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Gaya dan percepatan",
+        html: "Muatan q di dalam medan E merasakan gaya <strong>F = q·E</strong>. Muatan <strong>positif</strong> terdorong searah medan, muatan <strong>negatif</strong> berlawanan arah medan. Karena gaya menghasilkan percepatan (F = m·a), percepatannya <strong>a = q·E/m</strong>. Medan seragam memberi gaya tetap, sehingga geraknya seperti gerak peluru.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Simpangan Tetesan Tinta saat Melintasi Medan terhadap Jarak Tempuh",
+        unit: "mm",
+        source: "ilustrasi gerak parabola y = ½·a·(x/v)², simpangan sebanding kuadrat jarak",
+        note: "Karena gaya medan tetap dan kecepatan maju tetap, simpangan ke samping naik sebagai kuadrat jarak tempuh: lintasannya parabola, bukan garis lurus.",
+        data: [
+          { label: "x = 1 cm", value: 0.1, color: "#facc15" },
+          { label: "x = 2 cm", value: 0.4, color: "#a3e635" },
+          { label: "x = 3 cm", value: 0.9, color: "#4ade80" },
+          { label: "x = 4 cm", value: 1.6, color: "#2dd4bf" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah muatan 5 µC (5×10⁻⁶ C) berada di dalam medan listrik seragam 2000 N/C. Berapa besar gaya yang dialaminya?",
+        answer: 0.01,
+        tolerance: 0.0005,
+        suffix: " N",
+        solution:
+          "F = q·E = 5×10⁻⁶ × 2000 = 1×10⁻² = <strong>0,01 N</strong>. Gaya pada muatan dalam medan hanyalah hasil kali muatan dengan kuat medan.",
+        hint: "Gunakan F = q·E. Kalikan muatan dengan kuat medannya.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah partikel bermassa 0,001 kg dan bermuatan 2 µC berada di medan seragam 5000 N/C. Berapa percepatannya?",
+        answer: 10,
+        tolerance: 0.3,
+        suffix: " m/s²",
+        solution:
+          "Gaya: F = q·E = 2×10⁻⁶ × 5000 = 0,01 N. Percepatan: a = F/m = 0,01 / 0,001 = <strong>10 m/s²</strong>. Jadi a = q·E/m.",
+        hint: "Hitung dulu F = q·E, lalu bagi dengan massa: a = F/m.",
+      },
+      {
+        type: "classifyExercise",
+        prompt:
+          "Sebuah medan listrik seragam menunjuk ke kanan. Tentukan arah gaya pada tiap muatan berikut.",
+        buckets: ["Searah medan (ke kanan)", "Berlawanan medan (ke kiri)"],
+        items: [
+          { text: "Muatan +3 µC", bucket: "Searah medan (ke kanan)" },
+          { text: "Muatan -3 µC", bucket: "Berlawanan medan (ke kiri)" },
+          { text: "Proton", bucket: "Searah medan (ke kanan)" },
+          { text: "Elektron", bucket: "Berlawanan medan (ke kiri)" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Printer Inkjet",
+        html: "Kepala printer inkjet menembakkan ribuan tetesan tinta per detik. Tiap tetesan diberi muatan terukur, lalu melewati dua keping yang bermedan listrik kuat. Dengan F = q·E, medan membelokkan tetesan ke atas atau ke bawah sesuai besar muatannya, dan tetesan tanpa muatan lurus saja ke penampung. Dengan mengatur muatan tiap tetesan, printer 'melukis' huruf pada kertas. Memahami gerak muatan dalam medan membuat cetakan setajam ini mungkin.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang baru kita tuliskan. Gaya pada muatan dalam medan: <strong>F = q·E</strong>. Percepatannya: <strong>a = q·E/m</strong>. Muatan positif terdorong searah medan, negatif berlawanan. Pada medan seragam, gaya tetap, jadi muatan yang ditembakkan menyilang medan menempuh lintasan <strong>parabola</strong> seperti gerak peluru. Rumus ini hanyalah ringkasan dari gerak melengkung yang tadi kita amati.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Muatan dalam medan listrik merasakan gaya F = q·E.",
+          "Muatan positif terdorong searah medan, muatan negatif berlawanan arah.",
+          "Percepatan muatan adalah a = q·E/m.",
+          "Dalam medan seragam, muatan yang melintasi medan bergerak parabola seperti gerak peluru.",
+          "Tetesan tanpa muatan tidak dibelokkan oleh medan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Gaya pada muatan q di dalam medan listrik E adalah?",
+            options: ["F = q/E", "F = E/q", "F = q·E", "F = q·E²"],
+            answer: 2,
+            explain: "Gaya pada muatan dalam medan adalah F = q·E.",
+          },
+          {
+            q: "Sebuah muatan negatif di dalam medan listrik akan terdorong?",
+            options: [
+              "Searah medan",
+              "Berlawanan arah medan",
+              "Tegak lurus medan",
+              "Tidak terdorong",
+            ],
+            answer: 1,
+            explain: "Muatan negatif merasakan gaya berlawanan arah medan.",
+          },
+          {
+            q: "Percepatan muatan q bermassa m dalam medan E adalah?",
+            options: ["a = q·E·m", "a = q·E/m", "a = m/(q·E)", "a = E/(q·m)"],
+            answer: 1,
+            explain: "Karena F = q·E dan F = m·a, maka a = q·E/m.",
+          },
+          {
+            q: "Muatan yang ditembakkan menyilang medan seragam menempuh lintasan?",
+            options: ["Garis lurus", "Lingkaran", "Parabola", "Zig-zag"],
+            answer: 2,
+            explain: "Gaya tetap menyamping membuat lintasannya parabola seperti gerak peluru.",
+          },
+          {
+            q: "Pada printer inkjet, tetesan tanpa muatan akan?",
+            options: [
+              "Dibelokkan paling kuat",
+              "Lurus saja tanpa dibelokkan",
+              "Berhenti di udara",
+              "Berbalik arah",
+            ],
+            answer: 1,
+            explain: "Tanpa muatan, F = q·E = 0, jadi tetesan tidak dibelokkan.",
+          },
+        ],
+      },
+    ],
+  },
 ];

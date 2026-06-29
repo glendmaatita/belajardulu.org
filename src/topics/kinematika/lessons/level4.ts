@@ -582,4 +582,157 @@ export const level4: Lesson[] = [
       },
     ],
   },
+  // ============================================================
+  {
+    id: "peluru-mendatar-ketinggian",
+    levelId: "gerak-parabola",
+    order: 5,
+    title: "Peluru Mendatar dari Ketinggian",
+    summary:
+      "Tembakkan benda mendatar dari tepi tebing dan ia melengkung jatuh. Kejutannya: waktu jatuhnya sama persis dengan benda yang dijatuhkan lurus dari ketinggian yang sama.",
+    durationMin: 14,
+    tags: ["kinematika", "gerak-peluru", "tembakan-mendatar", "ketinggian"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sebuah bola digelindingkan kencang dari meja dan melayang sebelum mendarat di lantai. Pada saat yang sama, bola kedua hanya dijatuhkan lurus dari tepi meja. Mana yang menyentuh lantai lebih dulu? Jawaban yang mengejutkan: keduanya mendarat bersamaan. Mengapa kecepatan mendatar tidak memperlambat jatuhnya? Ayo selidiki dulu sebelum bertemu rumus.",
+      },
+      {
+        type: "video",
+        comp: "LajuPerubahan",
+        title: "Video: Mendatar dan Jatuh Berjalan Sendiri-sendiri",
+        caption: "Pada tembakan mendatar, gerak tegak (jatuh) tidak dipengaruhi gerak mendatar sama sekali.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Ayo berpetualang dulu",
+        html: "Benda yang ditembakkan mendatar punya kecepatan awal tegak <strong>nol</strong>, persis seperti benda yang dijatuhkan. Jadi gerak jatuhnya adalah <strong>jatuh bebas murni</strong>: waktu jatuh hanya ditentukan oleh ketinggian, bukan oleh kecepatan mendatar. Sementara itu, arah mendatar melaju <strong>tetap</strong> (GLB) tanpa gangguan. Dua gerak yang berjalan sendiri-sendiri, berpadu menjadi setengah parabola.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Dua langkah hitung",
+        html: "<strong>Waktu jatuh</strong> dari tinggi h: dari h = ½·g·t² didapat t = akar(2h/g), hanya bergantung pada h. <strong>Jarak mendatar</strong>: x = v·t, dengan v kecepatan tembak mendatar. Kecepatan mendatar tidak memengaruhi waktu jatuh.",
+      },
+      {
+        type: "widget",
+        widget: "PlotterFungsi",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Lintasan Bola Ditembak Mendatar 15 m/s dari Tinggi 20 m (g = 10 m/s²)",
+        unit: "meter (tinggi)",
+        source: "ilustrasi edukatif",
+        note: "Ketinggian berkurang ½·g·t² sementara jarak mendatar bertambah tetap (x = 15t). Hasilnya setengah parabola yang menukik makin curam.",
+        data: [
+          { label: "x = 0 m", value: 20, color: "#f472b6" },
+          { label: "x = 7,5 m", value: 18.75, color: "#f472b6" },
+          { label: "x = 15 m", value: 15, color: "#f472b6" },
+          { label: "x = 22,5 m", value: 8.75, color: "#f472b6" },
+          { label: "x = 30 m", value: 0, color: "#f472b6" },
+        ],
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah bola ditembak mendatar dari ketinggian 20 m (g = 10 m/s²). Berapa lama waktu jatuhnya sampai menyentuh tanah?",
+        answer: 2,
+        tolerance: 0.1,
+        suffix: " s",
+        solution:
+          "Gerak tegak adalah jatuh bebas: h = ½·g·t², jadi 20 = ½ × 10 × t² = 5t². Maka t² = 4, sehingga t = <strong>2 s</strong>. Kecepatan mendatar tidak ikut menentukan waktu jatuh.",
+        hint: "Pakai h = ½·g·t² dan abaikan kecepatan mendatar.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Bola tadi ditembak mendatar 15 m/s dan jatuh selama 2 s. Berapa jarak mendatar yang ditempuhnya saat mendarat?",
+        answer: 30,
+        tolerance: 0.5,
+        suffix: " m",
+        solution:
+          "Arah mendatar adalah GLB: x = v · t = 15 × 2 = <strong>30 m</strong>. Inilah jarak dari kaki tebing ke titik jatuh.",
+        hint: "Arah mendatar GLB, jadi x = v · t dengan t dari soal sebelumnya.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan besaran pada tembakan mendatar dengan rumus atau sifatnya.",
+        pairs: [
+          { left: "Waktu jatuh", right: "t = akar(2h/g), hanya dari ketinggian" },
+          { left: "Jarak mendatar", right: "x = v · t" },
+          { left: "Kecepatan tegak saat mendarat", right: "vᵧ = g · t" },
+          { left: "Bentuk lintasan", right: "Setengah parabola" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Tentukan faktor yang memengaruhi waktu jatuh pada tembakan mendatar.",
+        buckets: ["Memengaruhi waktu jatuh", "Tidak memengaruhi waktu jatuh"],
+        items: [
+          { text: "Ketinggian tembak h", bucket: "Memengaruhi waktu jatuh" },
+          { text: "Percepatan gravitasi g", bucket: "Memengaruhi waktu jatuh" },
+          { text: "Kecepatan mendatar v", bucket: "Tidak memengaruhi waktu jatuh" },
+          { text: "Massa benda", bucket: "Tidak memengaruhi waktu jatuh" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menjatuhkan Paket Bantuan dari Pesawat",
+        html: "Pesawat yang menjatuhkan paket bantuan tidak melepaskannya tepat di atas sasaran, melainkan jauh sebelumnya. Sebabnya tembakan mendatar: paket mewarisi kecepatan mendatar pesawat dan terus melaju ke depan selama jatuh. Untuk pesawat 50 m/s pada ketinggian 80 m, waktu jatuh t = akar(2 × 80 / 10) = akar(16) = 4 s, sehingga paket meluncur mendatar x = 50 × 4 = <strong>200 m</strong> sebelum mendarat. Pilot harus melepas paket sekitar 200 m sebelum target. Gerak tegak dan mendatar yang saling bebas menentukan titik jatuh.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus pun lahir di akhir",
+        html: "Sekarang rumusnya bermakna. Tembakan mendatar dari tinggi h dengan laju v: <strong>waktu jatuh t = akar(2h/g)</strong> (sama dengan jatuh bebas), <strong>jarak mendatar x = v · t</strong>, dan <strong>kecepatan tegak saat mendarat vᵧ = g · t</strong>. Kecepatan saat mendarat adalah gabungan vektor: v_darat = akar(v² + vᵧ²). Gerak mendatar dan tegak tetap saling bebas, hanya berbagi waktu.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Tembakan mendatar memiliki kecepatan awal tegak nol, jadi gerak jatuhnya = jatuh bebas.",
+          "Waktu jatuh t = akar(2h/g), hanya bergantung pada ketinggian dan g.",
+          "Jarak mendatar x = v · t, dihitung dari kecepatan tembak dan waktu jatuh.",
+          "Benda ditembak mendatar dan benda dijatuhkan dari tinggi sama mendarat bersamaan.",
+          "Lintasannya berbentuk setengah parabola yang menukik makin curam.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Pada tembakan mendatar, kecepatan awal arah tegak adalah?",
+            options: ["Sama dengan kecepatan mendatar", "Nol", "Maksimum", "Tak terhingga"],
+            answer: 1,
+            explain: "Karena ditembak mendatar, komponen tegak awal nol, jadi gerak jatuhnya jatuh bebas.",
+          },
+          {
+            q: "Waktu jatuh benda yang ditembak mendatar bergantung pada?",
+            options: ["Kecepatan mendatar", "Ketinggian dan g", "Massa benda", "Arah angin saja"],
+            answer: 1,
+            explain: "t = akar(2h/g), hanya dari ketinggian dan percepatan gravitasi.",
+          },
+          {
+            q: "Benda A dijatuhkan dan benda B ditembak mendatar dari tinggi sama. Mana mendarat dulu?",
+            options: ["Benda A", "Benda B", "Bersamaan", "Tergantung massanya"],
+            answer: 2,
+            explain: "Gerak tegak keduanya identik (jatuh bebas), jadi mendarat bersamaan.",
+          },
+          {
+            q: "Benda ditembak mendatar dari tinggi 45 m (g = 10 m/s²). Waktu jatuhnya?",
+            options: ["2 s", "3 s", "4,5 s", "9 s"],
+            answer: 1,
+            explain: "45 = 5t², jadi t² = 9, t = 3 s.",
+          },
+          {
+            q: "Bola ditembak mendatar 20 m/s dan jatuh 2 s. Jarak mendatarnya?",
+            options: ["10 m", "22 m", "40 m", "80 m"],
+            answer: 2,
+            explain: "x = v · t = 20 × 2 = 40 m (gerak mendatar GLB).",
+          },
+        ],
+      },
+    ],
+  },
 ];
