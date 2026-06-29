@@ -34,6 +34,19 @@ export const level3: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorHashKripto" },
       {
+        type: "video",
+        comp: "MerkleTreeVideo",
+        title: "Hash Menyusun Pohon Bukti",
+        caption: "Bagaimana banyak hash digabung berlapis menjadi satu sidik jari ringkas yang menjaga keutuhan ribuan data.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/SHA-2.svg?width=400",
+        alt: "Diagram satu putaran kompresi fungsi hash SHA-2/SHA-256",
+        caption: "Skema kerja satu putaran SHA-2: data diaduk berulang lewat operasi bit sehingga keluaran sulit ditebak balik.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Panjang Keluaran Beberapa Fungsi Hash",
@@ -184,6 +197,13 @@ export const level3: Lesson[] = [
         html: "Berbeda dari private key, <strong>public key dan address aman dibagikan</strong>. Orang lain memakai address Anda untuk mengirim dana, tetapi mereka tetap tidak bisa menebak private key Anda darinya.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Public_key_encryption.svg?width=400",
+        alt: "Diagram enkripsi kunci publik dengan sepasang kunci",
+        caption: "Sepasang kunci yang berbeda fungsi: yang satu dibagikan, yang lain dirahasiakan, tetapi keduanya saling terkait.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "donut",
         title: "Mana yang Boleh Dibagikan, Mana yang Wajib Dirahasiakan",
@@ -221,6 +241,11 @@ export const level3: Lesson[] = [
           { left: "Address", right: "Alamat dompet untuk menerima dana" },
           { left: "Seed phrase", right: "Rangkaian kata cadangan yang menurunkan kunci" },
         ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Lahirnya kriptografi kunci publik",
+        html: "Sebelum 1976, mengamankan pesan selalu butuh kedua pihak berbagi satu kunci rahasia yang sama, sebuah masalah besar. Pada <strong>1976</strong>, Whitfield Diffie dan Martin Hellman memublikasikan gagasan <strong>kriptografi kunci publik</strong>: sepasang kunci berbeda, satu dibagikan dan satu dirahasiakan. Setahun kemudian, <strong>1977</strong>, algoritma <strong>RSA</strong> (Rivest, Shamir, Adleman) mewujudkannya secara praktis. Tanpa terobosan inilah, dompet kripto yang memakai pasangan private key dan public key tidak akan pernah ada.",
       },
       {
         type: "takeaways",
@@ -325,6 +350,13 @@ export const level3: Lesson[] = [
         tone: "info",
         title: "Mengapa ECC lebih efisien daripada RSA",
         html: "Untuk tingkat keamanan setara, <strong>ECC butuh kunci jauh lebih pendek</strong> daripada RSA. Kunci ECC 256 bit kira-kira sebanding dengan kunci RSA 3072 bit. Kunci lebih pendek berarti tanda tangan lebih kecil, hitungan lebih ringan, dan blok lebih hemat ruang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Digital_Signature_diagram.svg?width=400",
+        alt: "Diagram alur pembuatan dan verifikasi tanda tangan digital",
+        caption: "Penanda tangan memakai private key untuk membentuk tanda tangan; verifikator memeriksanya cukup dengan public key.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
@@ -459,6 +491,19 @@ export const level3: Lesson[] = [
         html: "HD wallet (Hierarchical Deterministic) memakai <strong>satu seed</strong> untuk menurunkan deret kunci tak terbatas secara berurutan. Cukup cadangkan seed sekali, dan seluruh address masa depan otomatis ikut terlindungi.",
       },
       {
+        type: "video",
+        comp: "SeedPhraseVideo",
+        title: "Satu Frasa, Seluruh Dompet",
+        caption: "Bagaimana 12 atau 24 kata menjadi benih yang menurunkan semua kunci dan address dompet Anda.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_paper_wallet_generated_at_bitaddress.jpg?width=400",
+        alt: "Paper wallet Bitcoin yang memuat address publik dan private key",
+        caption: "Contoh paper wallet: address publik di satu sisi untuk menerima, private key di sisi lain yang wajib dirahasiakan.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Entropi Seed Phrase BIP-39 menurut Jumlah Kata",
@@ -553,6 +598,324 @@ export const level3: Lesson[] = [
             ],
             answer: 2,
             explain: "Seed phrase wajib disimpan luring dan rahasia karena menguasai seluruh aset.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "simetris-asimetris",
+    levelId: "kriptografi",
+    order: 5,
+    title: "Enkripsi Simetris vs Asimetris",
+    summary:
+      "Satu kunci tunggal yang dipakai bersama, atau sepasang kunci yang berbeda peran. Pahami bedanya dan mengapa kripto memilih kriptografi asimetris.",
+    durationMin: 14,
+    tags: ["kriptografi", "simetris", "asimetris", "kunci publik"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Ada dua keluarga besar cara mengamankan data. <strong>Enkripsi simetris</strong> memakai <strong>satu kunci tunggal</strong> yang sama untuk mengunci (enkripsi) dan membuka (dekripsi). <strong>Enkripsi asimetris</strong> memakai <strong>sepasang kunci</strong> berbeda yang saling terkait: satu untuk mengunci, satu lagi untuk membuka.",
+      },
+      {
+        type: "paragraph",
+        html: "Pada simetris, kedua pihak harus lebih dulu <strong>berbagi kunci rahasia yang sama</strong>. Di situ letak masalahnya: bagaimana mengirim kunci itu dengan aman tanpa disadap? Pada asimetris, tiap orang cukup menyebarkan <strong>public key</strong>-nya dan menyimpan <strong>private key</strong> sendiri, sehingga tidak ada rahasia yang perlu dipertukarkan lebih dulu.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Inti perbedaannya",
+        html: "Simetris: <strong>satu kunci</strong>, cepat, tetapi sulit dibagikan dengan aman. Asimetris: <strong>sepasang kunci</strong>, lebih lambat menghitung, tetapi memecahkan masalah pembagian kunci karena public key boleh disebar bebas.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Symmetric_key_encryption.svg?width=400",
+        alt: "Diagram enkripsi simetris dengan satu kunci yang sama untuk mengunci dan membuka",
+        caption: "Enkripsi simetris: kunci yang sama dipakai untuk mengenkripsi dan mendekripsi, jadi harus dibagikan lebih dulu.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Asymmetric_cryptography_-_step_2.svg?width=400",
+        alt: "Diagram kriptografi asimetris dengan sepasang kunci publik dan privat",
+        caption: "Enkripsi asimetris: public key mengunci, hanya private key pasangannya yang bisa membuka.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "video",
+        comp: "KunciKriptoVideo",
+        title: "Mengapa Kripto Memakai Sepasang Kunci",
+        caption: "Menelusuri bagaimana sepasang kunci yang berbeda peran menyelesaikan masalah berbagi rahasia.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kenapa cryptocurrency memilih asimetris",
+        html: "Di jaringan publik yang dipakai jutaan orang asing, mustahil tiap pasang orang lebih dulu bertukar kunci rahasia. Kripto memakai <strong>asimetris</strong> agar siapa pun bisa menerima dana lewat public key/address, sementara hak membelanjakan dijaga oleh private key yang tak pernah dibagikan.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Masalah Pembagian Kunci: Kunci Rahasia yang Dibutuhkan untuk N Orang",
+        unit: "kunci rahasia bersama",
+        source: "rumus pasangan N(N-1)/2, ilustrasi edukatif",
+        note: "Skema simetris butuh satu kunci rahasia untuk tiap pasang orang, sehingga meledak; skema asimetris butuh 0 kunci rahasia bersama.",
+        data: [
+          { label: "5 orang", value: 10, color: "#ef4444" },
+          { label: "10 orang", value: 45, color: "#f59e0b" },
+          { label: "20 orang", value: 190, color: "#f7931a" },
+          { label: "50 orang", value: 1225, color: "#627eea" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengamankan obrolan grup",
+        html: "Sebuah grup berisi <strong>10 orang</strong> ingin saling berkirim pesan rahasia secara berpasangan. Dengan skema <strong>simetris</strong>, tiap pasang butuh kunci rahasia sendiri, yaitu 10 x 9 / 2 = <strong>45 kunci</strong> yang semuanya harus dipertukarkan diam-diam. Dengan skema <strong>asimetris</strong>, tiap orang cukup mengumumkan satu public key, total 10 public key terbuka, dan <strong>tidak ada satu pun kunci rahasia</strong> yang perlu dikirim. Itulah kenapa asimetris menang di jaringan terbuka.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Pada skema simetris, tiap pasang orang butuh satu kunci rahasia bersama. Untuk 10 orang, berapa kunci rahasia yang harus dibuat dan dibagikan? (gunakan rumus pasangan N x (N-1) / 2)",
+        answer: 45,
+        tolerance: 0,
+        suffix: "kunci",
+        solution:
+          "10 x 9 / 2 = <strong>45 kunci</strong>. Jumlah ini tumbuh sangat cepat seiring bertambahnya orang, dan itulah masalah pembagian kunci yang dipecahkan kriptografi asimetris.",
+        hint: "Masukkan N = 10 ke rumus N x (N-1) / 2.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan ciri berikut: termasuk enkripsi simetris atau asimetris?",
+        buckets: ["Simetris", "Asimetris"],
+        items: [
+          { text: "Memakai satu kunci yang sama untuk mengunci dan membuka", bucket: "Simetris" },
+          { text: "Memakai sepasang kunci publik dan privat", bucket: "Asimetris" },
+          { text: "Public key boleh disebar bebas, private key dirahasiakan", bucket: "Asimetris" },
+          { text: "Kedua pihak harus lebih dulu berbagi kunci rahasia yang sama", bucket: "Simetris" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Diffie-Hellman 1976 dan RSA 1977 membuka era kunci publik",
+        html: "Hingga pertengahan 1970-an, hampir semua kriptografi bersifat simetris dan terganjal masalah berbagi kunci. Pada <strong>1976</strong>, Whitfield Diffie dan Martin Hellman menerbitkan makalah <strong>New Directions in Cryptography</strong> yang memperkenalkan gagasan <strong>pertukaran kunci Diffie-Hellman</strong>, cara dua pihak menyepakati rahasia bersama tanpa pernah mengirimnya utuh. Setahun kemudian, pada <strong>1977</strong>, Rivest, Shamir, dan Adleman merancang algoritma <strong>RSA</strong>, sistem kunci publik praktis pertama. Dua tonggak inilah yang melahirkan kriptografi kunci publik, fondasi yang puluhan tahun kemudian dipakai oleh cryptocurrency.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Enkripsi simetris memakai satu kunci yang sama untuk mengunci dan membuka.",
+          "Enkripsi asimetris memakai sepasang kunci publik dan privat yang berbeda peran.",
+          "Simetris cepat tetapi sulit membagikan kunci dengan aman di jaringan terbuka.",
+          "Asimetris memecahkan masalah pembagian kunci sehingga cocok untuk kripto.",
+          "Diffie-Hellman (1976) dan RSA (1977) membuka era kriptografi kunci publik.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa ciri utama enkripsi simetris?",
+            options: [
+              "Memakai sepasang kunci berbeda",
+              "Memakai satu kunci yang sama untuk mengunci dan membuka",
+              "Tidak memakai kunci sama sekali",
+              "Hanya bisa mengunci, tidak bisa membuka",
+            ],
+            answer: 1,
+            explain: "Simetris memakai satu kunci tunggal yang sama untuk enkripsi dan dekripsi.",
+          },
+          {
+            q: "Mengapa cryptocurrency memilih kriptografi asimetris?",
+            options: [
+              "Karena lebih lambat",
+              "Karena tidak perlu kunci",
+              "Karena public key bisa disebar bebas tanpa membagikan rahasia",
+              "Karena hanya bekerja luring",
+            ],
+            answer: 2,
+            explain: "Asimetris memungkinkan menerima dana lewat public key tanpa pernah membagikan private key.",
+          },
+          {
+            q: "Apa kelemahan utama skema simetris di jaringan terbuka?",
+            options: [
+              "Tidak bisa mengenkripsi",
+              "Sulit membagikan kunci rahasia dengan aman",
+              "Selalu salah hitung",
+              "Tidak punya kunci",
+            ],
+            answer: 1,
+            explain: "Kedua pihak harus berbagi kunci rahasia lebih dulu, dan itu rawan disadap.",
+          },
+          {
+            q: "Untuk 10 orang dengan skema simetris berpasangan, berapa kunci rahasia dibutuhkan?",
+            options: ["10 kunci", "20 kunci", "45 kunci", "100 kunci"],
+            answer: 2,
+            explain: "10 x 9 / 2 = 45 kunci, sedangkan asimetris butuh 0 kunci rahasia bersama.",
+          },
+          {
+            q: "Dua tonggak yang membuka era kriptografi kunci publik adalah?",
+            options: [
+              "AES dan DES",
+              "Diffie-Hellman 1976 dan RSA 1977",
+              "SHA-1 dan MD5",
+              "Bitcoin dan Ethereum",
+            ],
+            answer: 1,
+            explain: "Pertukaran kunci Diffie-Hellman (1976) dan algoritma RSA (1977) memulai era kunci publik.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "alamat-dari-kunci",
+    levelId: "kriptografi",
+    order: 6,
+    title: "Dari Private Key ke Address",
+    summary:
+      "Menelusuri alur lengkap private key menjadi address: turunkan public key, lalu padatkan lewat hashing SHA-256 dan RIPEMD-160 menjadi alamat dompet.",
+    durationMin: 15,
+    tags: ["kriptografi", "address", "public key", "hashing", "bitcoin"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Address dompet yang Anda bagikan bukan public key mentah, melainkan hasil <strong>memadatkan</strong> public key lewat beberapa langkah hashing. Alurnya satu arah: <strong>private key &rarr; public key &rarr; hash &rarr; address</strong>. Tiap langkah memberi keamanan atau keringkasan tambahan.",
+      },
+      {
+        type: "paragraph",
+        html: "Di Bitcoin, public key tidak langsung dijadikan address. Ia dihash dulu dengan <strong>SHA-256</strong>, lalu hasilnya dihash lagi dengan <strong>RIPEMD-160</strong> menjadi sidik jari 160 bit. Sidik jari itu diberi byte versi dan checksum, lalu dikodekan menjadi rangkaian huruf-angka yang kita kenal sebagai <strong>address</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Empat langkah, satu arah",
+        html: "<strong>1)</strong> Private key menurunkan public key lewat ECDSA secp256k1. <strong>2)</strong> Public key dihash SHA-256. <strong>3)</strong> Hasilnya dihash RIPEMD-160 jadi 20 byte. <strong>4)</strong> Ditambah versi + checksum lalu dikodekan jadi address. Tidak ada langkah yang bisa dibalik.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Public_key_encryption.svg?width=400",
+        alt: "Diagram sepasang kunci publik dan privat yang menjadi titik awal pembentukan address",
+        caption: "Address berakar dari public key, yang sendiri diturunkan dari private key; arah turunan selalu maju.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "video",
+        comp: "KunciKriptoVideo",
+        title: "Dari Private Key ke Address",
+        caption: "Menelusuri alur private key menurunkan public key, lalu dipadatkan lewat hashing menjadi address.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Ketik sebuah teks lalu ubah satu huruf dan amati hash-nya berubah total. Itulah langkah hashing yang sama yang memadatkan public key menjadi sidik jari pembentuk address.",
+      },
+      { type: "widget", widget: "SimulatorHashKripto" },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kenapa dipadatkan dengan hash",
+        html: "Memakai hash public key, bukan public key mentah, membuat address <strong>lebih pendek</strong> dan menambah satu lapis perlindungan: public key asli baru terungkap saat dana dibelanjakan, bukan saat sekadar menerima.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Data Menyusut di Sepanjang Pipa: Private Key ke Hash Address",
+        unit: "ukuran (byte)",
+        source: "spesifikasi Bitcoin P2PKH",
+        note: "Public key dipadatkan SHA-256 lalu RIPEMD-160 menjadi 20 byte, jauh lebih ringkas sebelum menjadi address.",
+        data: [
+          { label: "Private key", value: 32, color: "#ef4444" },
+          { label: "Public key (terkompres)", value: 33, color: "#f59e0b" },
+          { label: "Hasil SHA-256", value: 32, color: "#f7931a" },
+          { label: "Hasil RIPEMD-160", value: 20, color: "#22c55e" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menghitung panjang muatan address P2PKH",
+        html: "Sebuah address Bitcoin tipe <strong>P2PKH</strong> dibangun dari sidik jari public key sepanjang <strong>20 byte</strong> (hasil RIPEMD-160). Di depannya ditambah <strong>1 byte versi</strong> dan di belakangnya <strong>4 byte checksum</strong>. Total muatan sebelum dikodekan Base58 menjadi 1 + 20 + 4 = <strong>25 byte</strong>. Checksum inilah yang membuat salah ketik satu huruf address hampir selalu langsung tertolak dompet.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Muatan address Bitcoin P2PKH terdiri dari 1 byte versi, 20 byte hasil RIPEMD-160, dan 4 byte checksum. Berapa total byte muatan sebelum dikodekan menjadi address?",
+        answer: 25,
+        tolerance: 0,
+        suffix: "byte",
+        solution:
+          "1 + 20 + 4 = <strong>25 byte</strong>. Muatan 25 byte inilah yang lalu dikodekan dengan Base58 menjadi address yang kita salin dan bagikan.",
+        hint: "Jumlahkan byte versi, byte hasil RIPEMD-160, dan byte checksum.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan istilah dengan perannya dalam alur private key ke address.",
+        pairs: [
+          { left: "Private key", right: "Rahasia awal, menurunkan public key" },
+          { left: "Public key", right: "Diturunkan dari private key, lalu dihash" },
+          { left: "RIPEMD-160", right: "Memadatkan hash menjadi sidik jari 20 byte" },
+          { left: "Checksum", right: "Bit pemeriksa agar salah ketik address tertolak" },
+          { left: "Base58 / Bech32", right: "Cara mengkodekan muatan menjadi address terbaca" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Format address Bitcoin berkembang ke Bech32 SegWit 2017",
+        html: "Address Bitcoin paling awal memakai format <strong>P2PKH</strong> berbasis pengkodean <strong>Base58</strong>, dikenali dari awalan angka <strong>1</strong>. Sekitar <strong>2012</strong> hadir format P2SH berawalan <strong>3</strong> untuk skrip yang lebih rumit. Lalu pada <strong>2017</strong>, bersama pengaktifan <strong>SegWit</strong>, diperkenalkan format <strong>Bech32</strong> (standar BIP-173) berawalan <strong>bc1</strong>. Bech32 lebih ramah ketik, lebih kuat mendeteksi salah ketik, dan lebih hemat biaya transaksi, sehingga kini banyak dipakai walau format lama tetap berlaku.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Address adalah public key yang dipadatkan lewat hashing, bukan public key mentah.",
+          "Alurnya satu arah: private key, public key, hash, lalu address.",
+          "Bitcoin memakai SHA-256 lalu RIPEMD-160 menjadi sidik jari 20 byte.",
+          "Muatan address P2PKH = 1 versi + 20 hash + 4 checksum = 25 byte.",
+          "Format berkembang dari Base58 P2PKH ke Bech32 SegWit sejak 2017.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa urutan alur pembentukan address yang benar?",
+            options: [
+              "Address menurunkan public key menurunkan private key",
+              "Private key menurunkan public key, dihash, menjadi address",
+              "Public key langsung menjadi private key",
+              "Checksum menurunkan public key",
+            ],
+            answer: 1,
+            explain: "Arahnya satu arah: private key, public key, hash, lalu address.",
+          },
+          {
+            q: "Dua fungsi hash apa yang dipakai Bitcoin untuk membentuk sidik jari address?",
+            options: [
+              "MD5 lalu SHA-1",
+              "SHA-256 lalu RIPEMD-160",
+              "RIPEMD-160 lalu MD5",
+              "Hanya SHA-512",
+            ],
+            answer: 1,
+            explain: "Public key dihash SHA-256, lalu hasilnya dihash RIPEMD-160 menjadi 20 byte.",
+          },
+          {
+            q: "Berapa byte sidik jari hasil RIPEMD-160?",
+            options: ["4 byte", "20 byte", "32 byte", "64 byte"],
+            answer: 1,
+            explain: "RIPEMD-160 menghasilkan 160 bit, yaitu 20 byte.",
+          },
+          {
+            q: "Berapa total muatan address P2PKH sebelum dikodekan?",
+            options: ["20 byte", "24 byte", "25 byte", "33 byte"],
+            answer: 2,
+            explain: "1 byte versi + 20 byte hash + 4 byte checksum = 25 byte.",
+          },
+          {
+            q: "Format address apa yang diperkenalkan bersama SegWit pada 2017?",
+            options: ["Base58 P2PKH", "P2SH", "Bech32 (awalan bc1)", "Hex mentah"],
+            answer: 2,
+            explain: "Bech32 (BIP-173) berawalan bc1 hadir bersama pengaktifan SegWit pada 2017.",
           },
         ],
       },

@@ -48,6 +48,19 @@ export const level4: Lesson[] = [
         ],
       },
       {
+        type: "video",
+        comp: "UTXOVideo",
+        title: "Cara Kerja UTXO",
+        caption: "Bagaimana kepingan koin dipakai sebagai input dan terurai menjadi output baru plus kembalian.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_Transaction_Visual.svg?width=400",
+        alt: "Diagram alur input dan output sebuah transaksi Bitcoin",
+        caption: "Alur transaksi Bitcoin: beberapa input masuk, lalu terurai menjadi output penerima dan kembalian.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "case",
         title: "Studi Kasus: Membelanjakan dua keping koin",
         html: "Andi memiliki dua UTXO di dompetnya, masing-masing <strong>0,5 BTC</strong> dan <strong>0,3 BTC</strong>, total 0,8 BTC. Ia ingin mengirim <strong>0,6 BTC</strong> ke temannya dengan biaya transaksi <strong>0,001 BTC</strong>. Karena tidak ada satu UTXO pun yang cukup besar sendirian untuk menutup 0,6 BTC plus fee, dompet menggabungkan kedua UTXO sebagai input (0,8 BTC). Hasilnya: 0,6 BTC ke teman, 0,001 BTC menjadi fee, dan sisanya 0,199 BTC kembali ke Andi sebagai UTXO change.",
@@ -183,6 +196,13 @@ export const level4: Lesson[] = [
         comp: "HalvingVideo",
         title: "Jadwal Pasokan & Halving",
         caption: "Bagaimana pemangkasan hadiah berkala membentuk kelangkaan Bitcoin menuju 21 juta koin.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_mining_farm.jpg?width=400",
+        alt: "Ladang penambangan Bitcoin berisi banyak mesin ASIC tersusun di rak",
+        caption: "Ladang penambangan Bitcoin: ribuan mesin ASIC bekerja menebak nonce siang malam.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
@@ -321,6 +341,20 @@ export const level4: Lesson[] = [
         html: "Gunakan kalkulator untuk merasakan bagaimana ukuran transaksi dan tarif sat/vByte menentukan biaya yang harus dibayar.",
       },
       { type: "widget", widget: "KalkulatorGasFee" },
+      { type: "widget", widget: "SimulatorFeeMarket" },
+      {
+        type: "video",
+        comp: "MiningVideo",
+        title: "Penambang & Pasar Biaya",
+        caption: "Mengapa penambang mengutamakan transaksi dengan fee per byte tertinggi saat blok penuh.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_Block_Data.png?width=400",
+        alt: "Visual struktur data sebuah block Bitcoin berisi kumpulan transaksi",
+        caption: "Ruang sebuah block terbatas; transaksi bersaing mengisi tempat yang langka ini.",
+        credit: "Sumber: Wikimedia Commons",
+      },
       {
         type: "chart",
         variant: "bar",
@@ -456,6 +490,19 @@ export const level4: Lesson[] = [
         html: "Blockchain utama Bitcoin mengutamakan keamanan, bukan kecepatan, sehingga kurang cocok untuk transaksi recehan sehari-hari. Lightning membuka kanal antar dua pihak, mencatat banyak pembayaran secara cepat di luar rantai, lalu hanya menyetorkan hasil akhirnya ke blockchain.",
       },
       {
+        type: "video",
+        comp: "RantaiBlokVideo",
+        title: "Rantai Blok yang Terus Diperbaiki",
+        caption: "Bagaimana peningkatan seperti SegWit dan Taproot menyempurnakan jaringan tanpa mengubah inti rantai.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Lightning_Network.svg?width=400",
+        alt: "Diagram topologi Lightning Network sebagai jaringan kanal pembayaran layer-2",
+        caption: "Topologi Lightning Network: kanal pembayaran layer-2 yang menghubungkan banyak pihak.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "line",
         title: "Garis waktu peningkatan Bitcoin",
@@ -566,6 +613,474 @@ export const level4: Lesson[] = [
             ],
             answer: 1,
             explain: "Lightning mencatat pembayaran kecil di kanal layer-2 dengan biaya sangat rendah.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "anatomi-transaksi-bitcoin",
+    levelId: "bitcoin",
+    order: 5,
+    title: "Anatomi Transaksi Bitcoin",
+    summary:
+      "Membongkar isi sebuah transaksi: input, output, change, serta script pengunci dan pembuka. Memahami mengapa transaksi yang sudah dikonfirmasi tidak bisa dibatalkan.",
+    durationMin: 14,
+    tags: ["bitcoin", "transaksi", "script", "utxo"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Setiap transaksi Bitcoin sebenarnya adalah sebuah pesan terstruktur yang isinya bisa kita bedah. Inti pesan itu terdiri dari dua daftar: kumpulan <strong>input</strong> (UTXO yang akan dibelanjakan) dan kumpulan <strong>output</strong> (UTXO baru yang akan dibuat). Tidak ada saldo, hanya input yang menunjuk koin lama dan output yang melahirkan koin baru.",
+      },
+      {
+        type: "paragraph",
+        html: "Setiap output dikunci oleh sepotong program kecil bernama <strong>locking script</strong> (sering disebut <em>scriptPubKey</em>). Untuk membelanjakan output itu kelak, pemiliknya harus menyodorkan <strong>unlocking script</strong> (<em>scriptSig</em> atau witness) yang membuktikan ia memegang kunci privat yang sah. Bila bukti cocok, koin boleh dipindahkan; bila tidak, jaringan menolak.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Empat bagian yang wajib dikenal",
+        html: "<strong>Input</strong>: menunjuk UTXO lama yang dibelanjakan. <strong>Output</strong>: UTXO baru untuk penerima. <strong>Change</strong>: output kembalian ke address pengirim sendiri. <strong>Script</strong>: pasangan kunci-buka yang menentukan siapa boleh membelanjakan output.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Tidak ada tombol batal",
+        html: "Begitu transaksi masuk blok dan disusul beberapa blok lagi, ia terkubur dalam rantai. Membatalkannya berarti menulis ulang blok-blok di atasnya, dan itu butuh menyaingi seluruh daya komputasi jaringan. Karena itulah transaksi Bitcoin praktis <strong>tidak bisa dibatalkan</strong>.",
+      },
+      {
+        type: "video",
+        comp: "UTXOVideo",
+        title: "Membedah Sebuah Transaksi",
+        caption: "Menelusuri perjalanan koin dari input, melewati script pengunci, hingga lahir sebagai output baru.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_Transaction_Visual.svg?width=400",
+        alt: "Diagram alur input dan output sebuah transaksi Bitcoin",
+        caption: "Anatomi transaksi: input di kiri terurai menjadi output penerima dan change di kanan.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Anatomi nilai sebuah transaksi (contoh hitung)",
+        unit: "BTC",
+        source: "ilustrasi edukatif berdasarkan contoh hitung",
+        note: "Satu input 1 BTC terurai menjadi kiriman, change, dan fee; jumlah output selalu input dikurangi fee.",
+        data: [
+          { label: "Input", value: 1.0, color: "#f7931a" },
+          { label: "Kiriman", value: 0.7, color: "#627eea" },
+          { label: "Change", value: 0.2998, color: "#26a17b" },
+          { label: "Fee", value: 0.0002, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membedah satu transaksi",
+        html: "Rina membelanjakan satu UTXO bernilai <strong>1 BTC</strong>. Ia mengirim <strong>0,7 BTC</strong> ke penjual dan menyisihkan fee <strong>0,0002 BTC</strong> untuk penambang. Transaksi ini punya satu input (1 BTC) dan dua output: 0,7 BTC ke penjual serta change <strong>0,2998 BTC</strong> kembali ke address Rina. Output penjual dikunci oleh script yang hanya bisa dibuka kunci privat penjual, sedangkan output change dikunci untuk Rina sendiri.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Rina membelanjakan input 1 BTC, mengirim 0,7 BTC, dan membayar fee 0,0002 BTC. Berapa BTC change yang kembali ke Rina?",
+        answer: 0.2998,
+        tolerance: 0.0001,
+        suffix: "BTC",
+        solution:
+          "Change = input - kiriman - fee = 1 - 0,7 - 0,0002 = <strong>0,2998 BTC</strong>. Sisa ini menjadi output baru yang dikunci untuk address Rina sendiri.",
+        hint: "Kurangi input dengan kiriman lalu dengan fee.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap bagian sebagai komponen input, output, atau script.",
+        buckets: ["Input", "Output", "Script"],
+        items: [
+          { text: "UTXO lama 1 BTC yang ditunjuk untuk dibelanjakan", bucket: "Input" },
+          { text: "0,7 BTC yang diterima penjual", bucket: "Output" },
+          { text: "0,2998 BTC change ke pengirim", bucket: "Output" },
+          { text: "Locking script yang mengunci output ke address penerima", bucket: "Script" },
+          { text: "Unlocking script yang membuktikan kepemilikan kunci privat", bucket: "Script" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Bitcoin Pizza, 22 Mei 2010",
+        html: "Pada <strong>22 Mei 2010</strong>, programmer Laszlo Hanyecz membayar <strong>10.000 BTC</strong> untuk dua pizza, transaksi nyata pertama memakai Bitcoin untuk membeli barang fisik. Secara anatomi, transaksi itu mengambil UTXO milik Laszlo sebagai input dan menghasilkan output ke address orang yang memesankan pizza. Saat itu 10.000 BTC bernilai sekitar 41 dolar AS. Begitu output itu tercatat dan terkonfirmasi, tidak ada cara membatalkannya, sebuah pelajaran abadi tentang sifat final transaksi Bitcoin.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Transaksi Bitcoin berisi daftar input (UTXO lama) dan daftar output (UTXO baru).",
+          "Change adalah output kembalian ke address pengirim sendiri.",
+          "Locking script mengunci output; unlocking script membuktikan hak membelanjakannya.",
+          "Jumlah output selalu sama dengan jumlah input dikurangi fee.",
+          "Setelah dikonfirmasi beberapa blok, transaksi praktis tidak bisa dibatalkan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dua daftar inti apa yang menyusun sebuah transaksi Bitcoin?",
+            options: ["Saldo dan bunga", "Input dan output", "Kunci dan password", "Blok dan hash"],
+            answer: 1,
+            explain: "Transaksi terdiri dari daftar input (UTXO lama) dan daftar output (UTXO baru).",
+          },
+          {
+            q: "Apa fungsi locking script pada sebuah output?",
+            options: [
+              "Menghapus transaksi",
+              "Mengunci output sehingga hanya pemilik kunci sah yang bisa membelanjakannya",
+              "Menaikkan fee",
+              "Mempercepat konfirmasi",
+            ],
+            answer: 1,
+            explain: "Locking script menentukan syarat yang harus dipenuhi unlocking script untuk membelanjakan output.",
+          },
+          {
+            q: "Apa itu output change?",
+            options: [
+              "Biaya untuk penambang",
+              "Kembalian yang kembali ke address pengirim sendiri",
+              "Bonus jaringan",
+              "Pajak transaksi",
+            ],
+            answer: 1,
+            explain: "Karena UTXO dibelanjakan utuh, sisanya dikunci kembali untuk pengirim sebagai change.",
+          },
+          {
+            q: "Mengapa transaksi Bitcoin yang sudah terkubur beberapa blok sulit dibatalkan?",
+            options: [
+              "Karena bank menolak",
+              "Karena membatalkannya berarti menyaingi seluruh daya komputasi jaringan",
+              "Karena fee terlalu mahal",
+              "Karena address terkunci",
+            ],
+            answer: 1,
+            explain: "Menulis ulang blok di atasnya butuh daya komputasi melebihi seluruh jaringan, hampir mustahil.",
+          },
+          {
+            q: "Input 1 BTC, kiriman 0,7 BTC, fee 0,0002 BTC. Berapa change-nya?",
+            options: ["0,3 BTC", "0,2998 BTC", "0,7002 BTC", "1 BTC"],
+            answer: 1,
+            explain: "1 - 0,7 - 0,0002 = 0,2998 BTC kembali sebagai change.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "ekonomi-mining",
+    levelId: "bitcoin",
+    order: 6,
+    title: "Ekonomi Penambangan & Energi",
+    summary:
+      "Penambangan adalah bisnis bermargin tipis: pendapatan dari hadiah blok dan fee melawan biaya listrik dan perangkat ASIC. Mengupas hashrate, mining pool, dan perdebatan energi.",
+    durationMin: 15,
+    tags: ["bitcoin", "mining", "energi", "asic", "hashrate"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di balik setiap blok baru ada perhitungan bisnis yang dingin. Penambang menerima <strong>pendapatan</strong> berupa hadiah blok ditambah fee transaksi, lalu menguranginya dengan <strong>biaya</strong> terbesar mereka: listrik dan perangkat keras. Bila harga Bitcoin turun atau biaya listrik naik, banyak penambang berhenti karena tidak lagi untung.",
+      },
+      {
+        type: "paragraph",
+        html: "Mesin penambang modern bukan komputer biasa, melainkan <strong>ASIC</strong> (<em>Application-Specific Integrated Circuit</em>), chip yang dirancang khusus hanya untuk menghitung hash secepat mungkin. Kekuatan sebuah mesin diukur dalam <strong>hashrate</strong>, yaitu jumlah tebakan hash per detik. Karena satu mesin sulit menang sendirian, banyak penambang bergabung dalam <strong>mining pool</strong>: menggabungkan hashrate, lalu membagi hadiah sesuai kontribusi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Untung = pendapatan - biaya listrik",
+        html: "Pendapatan penambang = hadiah blok + fee. Biaya terbesarnya = <strong>konsumsi listrik</strong> ASIC yang menyala 24 jam. Karena itu penambang berburu listrik termurah di dunia, dan margin mereka sangat sensitif terhadap harga Bitcoin maupun tarif listrik.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Mengapa bergabung ke pool?",
+        html: "Sendirian, seorang penambang kecil mungkin butuh bertahun-tahun untuk menang satu blok. Dalam <strong>mining pool</strong>, ribuan mesin menyatukan hashrate sehingga sering menang blok, lalu hadiahnya dibagi rata sesuai sumbangan masing-masing. Pendapatan jadi lebih kecil tapi stabil.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Geser parameter biaya listrik, hashrate, dan harga Bitcoin untuk melihat kapan sebuah operasi penambangan masih untung dan kapan merugi.",
+      },
+      { type: "widget", widget: "SimulatorMining" },
+      {
+        type: "video",
+        comp: "MiningVideo",
+        title: "Ekonomi Penambangan",
+        caption: "Bagaimana hadiah blok, biaya listrik, dan hashrate menentukan untung-rugi seorang penambang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_mining_farm.jpg?width=400",
+        alt: "Ladang penambangan Bitcoin dengan rak-rak mesin ASIC",
+        caption: "Ladang penambangan: rak mesin ASIC yang haus listrik dan butuh pendinginan terus-menerus.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Komponen biaya operasi penambangan (ilustrasi)",
+        unit: "% dari total biaya",
+        source: "ilustrasi edukatif pola yang umum diamati",
+        note: "Listrik biasanya mendominasi biaya operasi, jauh melampaui perangkat dan komponen lain.",
+        data: [
+          { label: "Listrik", value: 70, color: "#f7931a" },
+          { label: "Perangkat ASIC", value: 18, color: "#fbbf24" },
+          { label: "Pendinginan", value: 8, color: "#627eea" },
+          { label: "Lainnya", value: 4, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Biaya listrik satu mesin sehari",
+        html: "Sebuah ASIC menyedot daya <strong>3 kW</strong> dan menyala sepanjang hari. Dalam sehari ia memakai 3 kW x 24 jam = <strong>72 kWh</strong>. Bila tarif listrik Rp1.500 per kWh, biaya listriknya 72 x Rp1.500 = <strong>Rp108.000 per hari</strong>. Agar untung, pendapatan harian dari hadiah dan fee yang menjadi bagian mesin ini harus melebihi Rp108.000.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah ASIC berdaya 3 kW menyala 24 jam. Dengan tarif listrik Rp1.500 per kWh, berapa rupiah biaya listriknya dalam sehari?",
+        answer: 108000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution:
+          "Konsumsi = 3 kW x 24 jam = 72 kWh. Biaya = 72 x Rp1.500 = <strong>Rp108.000</strong> per hari.",
+        hint: "Hitung kWh per hari dulu (daya x jam), lalu kalikan tarif.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan istilah penambangan dengan artinya.",
+        pairs: [
+          { left: "ASIC", right: "Chip khusus yang hanya menghitung hash" },
+          { left: "Hashrate", right: "Jumlah tebakan hash per detik" },
+          { left: "Mining pool", right: "Gabungan penambang yang berbagi hadiah" },
+          { left: "Biaya listrik", right: "Komponen biaya terbesar penambangan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Larangan mining di China 2021",
+        html: "Pada pertengahan <strong>2021</strong>, pemerintah China melarang penambangan Bitcoin di wilayahnya. Padahal sebelumnya China sempat menampung mayoritas hashrate dunia. Akibatnya hashrate jaringan anjlok tajam dalam hitungan minggu, lalu para penambang memindahkan mesin mereka ke luar negeri, terutama <strong>Amerika Serikat</strong> dan <strong>Kazakhstan</strong>. Dalam beberapa bulan hashrate pulih, dan AS muncul sebagai pusat penambangan terbesar yang baru. Peristiwa ini membuktikan jaringan Bitcoin bisa bertahan meski satu negara besar menariknya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Penambangan adalah bisnis: pendapatan (hadiah + fee) melawan biaya (listrik + perangkat).",
+          "ASIC adalah chip khusus penghitung hash; kekuatannya diukur sebagai hashrate.",
+          "Mining pool menggabungkan hashrate agar pendapatan lebih stabil meski lebih kecil.",
+          "Listrik biasanya jadi biaya terbesar, sehingga penambang memburu energi termurah.",
+          "Larangan China 2021 memindahkan hashrate ke AS dan Kazakhstan tanpa mematikan jaringan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Dari mana pendapatan utama seorang penambang?",
+            options: [
+              "Bunga bank",
+              "Hadiah blok ditambah fee transaksi",
+              "Penjualan ASIC",
+              "Pajak jaringan",
+            ],
+            answer: 1,
+            explain: "Penambang menerima hadiah blok plus fee dari transaksi yang ia masukkan ke blok.",
+          },
+          {
+            q: "Apa itu ASIC dalam penambangan Bitcoin?",
+            options: [
+              "Sebuah bursa kripto",
+              "Chip khusus yang dirancang hanya untuk menghitung hash",
+              "Jenis dompet",
+              "Protokol layer-2",
+            ],
+            answer: 1,
+            explain: "ASIC adalah perangkat keras khusus yang jauh lebih cepat menghitung hash daripada komputer biasa.",
+          },
+          {
+            q: "Mengapa penambang bergabung ke mining pool?",
+            options: [
+              "Agar hadiah lebih besar tiap blok",
+              "Agar pendapatan lebih stabil meski porsinya lebih kecil",
+              "Untuk menghindari listrik",
+              "Untuk menaikkan harga Bitcoin",
+            ],
+            answer: 1,
+            explain: "Pool menyatukan hashrate sehingga sering menang blok, lalu hadiah dibagi sesuai kontribusi.",
+          },
+          {
+            q: "Komponen biaya apa yang biasanya terbesar dalam operasi penambangan?",
+            options: ["Pendinginan", "Listrik", "Internet", "Gaji"],
+            answer: 1,
+            explain: "Konsumsi listrik mesin yang menyala 24 jam biasanya mendominasi biaya operasi.",
+          },
+          {
+            q: "Apa dampak larangan mining di China pada 2021?",
+            options: [
+              "Bitcoin berhenti total",
+              "Hashrate anjlok lalu pulih saat penambang pindah ke AS dan Kazakhstan",
+              "Pasokan naik di atas 21 juta",
+              "Halving dibatalkan",
+            ],
+            answer: 1,
+            explain: "Hashrate sempat jatuh, tetapi penambang bermigrasi ke luar negeri dan jaringan pulih.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "bitcoin-emas-digital",
+    levelId: "bitcoin",
+    order: 7,
+    title: "Bitcoin: Emas Digital & Adopsi",
+    summary:
+      "Narasi Bitcoin sebagai penyimpan nilai: pasokan terbatas yang langka, laju inflasi yang terus mengecil, hingga gelombang adopsi institusi dan negara.",
+    durationMin: 14,
+    tags: ["bitcoin", "store-of-value", "emas-digital", "adopsi"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Selain dipakai untuk transaksi, Bitcoin sering disebut <strong>emas digital</strong> (<em>digital gold</em>). Julukan ini muncul karena Bitcoin punya sifat yang mirip emas: pasokannya terbatas, sulit diproduksi, dan tidak bisa dicetak sesuka hati oleh siapa pun. Bagi banyak orang, Bitcoin menjadi <strong>penyimpan nilai</strong> (<em>store of value</em>), tempat menaruh kekayaan agar tak tergerus pencetakan uang.",
+      },
+      {
+        type: "paragraph",
+        html: "Kunci narasi ini adalah <strong>kelangkaan</strong>. Pasokan Bitcoin dibatasi <strong>21 juta</strong> koin, dan laju koin baru terus dipangkas tiap halving. Setelah halving 2024, hanya sekitar <strong>450 BTC</strong> baru tercipta per hari. Laju inflasi pasokannya kini bahkan lebih rendah daripada pertumbuhan pasokan emas tahunan, sebuah kelangkaan yang dijaga oleh aturan kode, bukan janji manusia.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Mengapa disebut emas digital",
+        html: "<strong>Langka</strong>: pasokan dibatasi 21 juta. <strong>Tahan lama</strong>: hidup selama jaringan ada. <strong>Bisa dibagi</strong>: 1 BTC = 100.000.000 satoshi. <strong>Mudah dipindah</strong>: bisa dikirim lintas negara dalam menit, jauh lebih praktis daripada memindahkan emas batangan.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Emas digital, tetap bergejolak",
+        html: "Meski disebut penyimpan nilai, harga Bitcoin masih sangat <strong>fluktuatif</strong> dalam jangka pendek dan bisa turun puluhan persen. Narasi emas digital bicara soal kelangkaan jangka panjang, bukan jaminan harga selalu naik. Jangan menaruh dana yang kamu butuhkan dalam waktu dekat.",
+      },
+      {
+        type: "video",
+        comp: "HalvingVideo",
+        title: "Kelangkaan & Penyimpan Nilai",
+        caption: "Bagaimana pasokan terbatas dan halving membentuk narasi Bitcoin sebagai emas digital.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin.svg?width=400",
+        alt: "Logo Bitcoin berwarna oranye",
+        caption: "Bitcoin, aset langka yang kerap dijuluki emas digital karena pasokannya dibatasi 21 juta koin.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Laju inflasi pasokan Bitcoin menurun tiap halving",
+        unit: "% pasokan baru per tahun (perkiraan)",
+        source: "ilustrasi berdasarkan jadwal halving Bitcoin",
+        note: "Tiap halving membelah laju koin baru; lama-lama inflasi pasokan Bitcoin turun mendekati nol.",
+        data: [
+          { label: "2013", value: 12 },
+          { label: "2017", value: 4 },
+          { label: "2021", value: 1.8 },
+          { label: "2025", value: 0.85 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Berapa BTC baru tercipta setahun",
+        html: "Setelah halving 2024, hadiah blok menjadi 3,125 BTC dan jaringan mencetak sekitar <strong>450 BTC</strong> per hari (144 blok x 3,125). Dalam setahun penuh: 450 x 365 = <strong>164.250 BTC</strong> baru. Dibandingkan pasokan yang sudah beredar sekitar 19,7 juta BTC, tambahan ini cuma sekitar 0,8 persen, laju yang sangat kecil dan akan terus mengecil.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Setelah halving 2024 jaringan mencetak sekitar 450 BTC per hari. Berapa BTC baru yang tercipta dalam satu tahun (365 hari)?",
+        answer: 164250,
+        tolerance: 0,
+        suffix: "BTC",
+        solution:
+          "450 BTC/hari x 365 hari = <strong>164.250 BTC</strong> per tahun. Jumlah ini terus turun tiap halving berikutnya.",
+        hint: "Kalikan jumlah BTC harian dengan jumlah hari setahun.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana yang mendukung narasi Bitcoin sebagai emas digital dan mana yang melemahkannya?",
+        buckets: ["Mendukung", "Melemahkan"],
+        items: [
+          { text: "Pasokan dibatasi 21 juta dan tak bisa ditambah", bucket: "Mendukung" },
+          { text: "Laju inflasi pasokan terus turun tiap halving", bucket: "Mendukung" },
+          { text: "Bisa dipindah lintas negara dalam hitungan menit", bucket: "Mendukung" },
+          { text: "Harga jangka pendek masih sangat fluktuatif", bucket: "Melemahkan" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: El Salvador 2021 dan ETF spot 2024",
+        html: "Pada <strong>September 2021</strong>, El Salvador menjadi negara pertama yang menjadikan Bitcoin sebagai <strong>alat pembayaran sah</strong>, berdampingan dengan dolar AS. Langkah ini memantik perdebatan global soal peran negara dan kripto. Lalu pada <strong>Januari 2024</strong>, regulator Amerika Serikat (SEC) menyetujui sejumlah <strong>ETF Bitcoin spot</strong>, membuka pintu bagi investor institusi besar untuk memegang Bitcoin lewat produk yang teregulasi. Dua peristiwa ini menandai lompatan adopsi, dari negara kecil sampai pasar modal terbesar dunia.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Bitcoin disebut emas digital karena langka, tahan lama, bisa dibagi, dan mudah dipindah.",
+          "Pasokan dibatasi 21 juta dan laju koin baru terus dipangkas tiap halving.",
+          "Setelah 2024, hanya sekitar 450 BTC baru per hari, laju inflasi pasokan di bawah 1 persen.",
+          "El Salvador (September 2021) jadi negara pertama yang menjadikan Bitcoin alat pembayaran sah.",
+          "Persetujuan ETF Bitcoin spot di AS (Januari 2024) membuka adopsi oleh investor institusi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mengapa Bitcoin dijuluki emas digital?",
+            options: [
+              "Karena warnanya kuning",
+              "Karena langka, tahan lama, bisa dibagi, dan mudah dipindah",
+              "Karena dijamin pemerintah",
+              "Karena harganya selalu naik",
+            ],
+            answer: 1,
+            explain: "Sifat-sifat itu menyerupai emas, terutama kelangkaan pasokan yang dibatasi 21 juta.",
+          },
+          {
+            q: "Apa yang terjadi pada laju pasokan baru Bitcoin dari waktu ke waktu?",
+            options: [
+              "Terus naik",
+              "Terus turun karena halving",
+              "Tetap sama selamanya",
+              "Melebihi pertumbuhan uang kertas",
+            ],
+            answer: 1,
+            explain: "Tiap halving membelah laju koin baru, sehingga inflasi pasokan terus mengecil.",
+          },
+          {
+            q: "Berapa kira-kira BTC baru tercipta per hari setelah halving 2024?",
+            options: ["900 BTC", "450 BTC", "144 BTC", "3,125 BTC"],
+            answer: 1,
+            explain: "144 blok x 3,125 BTC = 450 BTC per hari.",
+          },
+          {
+            q: "Negara mana yang pertama menjadikan Bitcoin alat pembayaran sah?",
+            options: ["Amerika Serikat", "El Salvador", "Jepang", "Indonesia"],
+            answer: 1,
+            explain: "El Salvador menjadikan Bitcoin alat pembayaran sah pada September 2021.",
+          },
+          {
+            q: "Apa makna persetujuan ETF Bitcoin spot di AS pada Januari 2024?",
+            options: [
+              "Bitcoin dilarang",
+              "Investor institusi bisa memegang Bitcoin lewat produk teregulasi",
+              "Pasokan dinaikkan",
+              "Halving dipercepat",
+            ],
+            answer: 1,
+            explain: "ETF spot membuka jalan bagi institusi besar masuk lewat instrumen yang teregulasi.",
           },
         ],
       },

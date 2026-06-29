@@ -53,6 +53,19 @@ export const level14: Lesson[] = [
         ],
       },
       {
+        type: "video",
+        comp: "RantaiBlokVideo",
+        title: "Membaca Jejak di Rantai Blok",
+        caption: "Setiap transaksi tercatat permanen di blockchain publik, inilah bahan baku analisis on-chain.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang saling terhubung",
+        caption: "Karena setiap blok terhubung dan terbuka, aktivitas jaringan bisa dibaca siapa saja.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "case",
         title: "Studi Kasus: Membedakan adopsi nyata dari sekadar ramai",
         html: "Dua proyek sama-sama harganya naik 50 persen dalam sebulan. Proyek A: alamat aktif harian naik dari 600 ribu ke 1 juta dan transaksi nyata meningkat. Proyek B: harga naik tetapi alamat aktif justru turun dan hampir semua volume hanya di bursa, bukan pemakaian. Lewat data on-chain, proyek A menunjukkan adopsi yang nyata, sementara kenaikan proyek B lebih rapuh karena tidak ditopang pemakaian. Catatan penting: ini tetap bukan jaminan harga akan naik.",
@@ -203,6 +216,19 @@ export const level14: Lesson[] = [
           { label: "Market cap", value: 2, color: "#26a17b" },
           { label: "FDV", value: 10, color: "#f7931a" },
         ],
+      },
+      {
+        type: "video",
+        comp: "VestingEmisiVideo",
+        title: "Vesting & Emisi Token",
+        caption: "Bagaimana token terkunci dilepas bertahap dan menambah pasokan beredar dari waktu ke waktu.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin.svg?width=400",
+        alt: "Logo Bitcoin sebagai contoh aset dengan pasokan maksimal yang pasti",
+        caption: "Bitcoin punya pasokan maksimal 21 juta keping, contoh tokenomics dengan batas pasokan yang jelas.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "case",
@@ -364,6 +390,19 @@ export const level14: Lesson[] = [
           { label: "Turun 75%", value: 300 },
           { label: "Turun 90%", value: 900 },
         ],
+      },
+      {
+        type: "video",
+        comp: "RugPullVideo",
+        title: "Saat Sebuah Proyek Menuju Nol",
+        caption: "Sebagian proyek bisa runtuh total; ukuran posisi yang disiplin menjaga kerugian tetap terbatas.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/FTX_logo.svg?width=400",
+        alt: "Logo bursa FTX yang runtuh pada 2022",
+        caption: "FTX, bursa besar yang runtuh pada November 2022, mengingatkan risiko memusatkan aset di satu pihak.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "case",
@@ -528,6 +567,13 @@ export const level14: Lesson[] = [
         caption: "Bagaimana membeli dengan nominal tetap secara berkala menghaluskan harga rata-rata pembelianmu.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tether_Logo.svg?width=400",
+        alt: "Logo stablecoin Tether (USDT)",
+        caption: "Stablecoin seperti USDT dipatok ke dolar, berguna untuk memarkir dana sambil menunggu.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Nominal Tetap Membeli Lebih Banyak Saat Murah (ilustrasi)",
@@ -576,6 +622,11 @@ export const level14: Lesson[] = [
           { text: "Menanamkan disiplin dan meredam emosi", bucket: "Keunggulan DCA" },
           { text: "Bisa kalah dari lump sum saat pasar terus menanjak", bucket: "Keterbatasan DCA" },
         ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: DCA menembus badai 2018 dan 2022",
+        html: "Pasar kripto pernah anjlok dalam pada <strong>2018</strong> dan lagi pada <strong>2022</strong> (saat Terra, Celsius, dan bursa FTX berjatuhan). Investor yang panik dan menjual di dasar mengunci kerugian. Sebaliknya, mereka yang menjalankan <strong>DCA</strong> secara disiplin terus membeli nominal tetap selama harga murah, sehingga harga rata-rata mereka turun dan posisi pulih lebih cepat ketika pasar bangkit. Pelajaran historisnya: di pasar yang sangat fluktuatif, disiplin sering mengalahkan upaya menebak waktu. Catatan: ini edukasi, bukan saran finansial, dan masa lalu tidak menjamin hasil masa depan.",
       },
       {
         type: "takeaways",
@@ -639,6 +690,340 @@ export const level14: Lesson[] = [
             options: ["Rp 12.000", "Rp 10.000", "Rp 9.600", "Rp 8.000"],
             answer: 2,
             explain: "Total Rp 2 juta untuk 208,33 keping menghasilkan rata-rata sekitar Rp 9.600 per keping.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "psikologi-pasar",
+    levelId: "investasi",
+    order: 5,
+    title: "Psikologi Pasar & Manajemen Emosi",
+    summary:
+      "Mengenali FOMO, FUD, keserakahan, ketakutan, dan perilaku ikut-ikutan yang membuat banyak orang membeli di puncak dan menjual di dasar. Disiplin mengalahkan emosi.",
+    durationMin: 14,
+    tags: ["investasi", "psikologi", "emosi", "disiplin"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Musuh terbesar seorang investor sering kali bukan pasar, melainkan <strong>emosinya sendiri</strong>. Pada kripto yang harganya bisa berayun tajam, perasaan takut dan serakah mudah mengambil alih akal sehat. Memahami psikologi pasar membantu kita tidak terseret arus.",
+      },
+      {
+        type: "paragraph",
+        html: "Pola yang berulang sangat klasik: saat harga meroket, orang takut ketinggalan lalu memburu di harga tinggi; saat harga jatuh, orang panik lalu menjual di harga rendah. Hasilnya kebalikan dari niat semula, yaitu beli mahal jual murah.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Empat emosi yang menggerakkan pasar",
+        html: "<strong>FOMO</strong> (fear of missing out) mendorong membeli karena takut ketinggalan. <strong>FUD</strong> (fear, uncertainty, doubt) menyebarkan ketakutan yang memicu jual panik. <strong>Greed</strong> (keserakahan) membuat orang mengejar lebih saat sudah untung. <strong>Fear</strong> (ketakutan) membuat menyerah di titik terburuk.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Perilaku ikut-ikutan (herd behavior)",
+        html: "Manusia cenderung meniru kerumunan. Saat semua orang membeli, kita ikut membeli; saat semua menjual, kita ikut menjual. <strong>Herd behavior</strong> inilah yang membentuk gelembung dan keruntuhan. Mengikuti kerumunan terasa aman, padahal sering membawa ke harga yang paling buruk.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Ini edukasi, bukan saran finansial",
+        html: "Tidak ada yang bisa menebak arah harga secara pasti. Tujuan pelajaran ini adalah mengenali jebakan emosi, bukan memberi nasihat investasi. Tetap pakai hanya dana yang sanggup direlakan hilang.",
+      },
+      {
+        type: "video",
+        comp: "SiklusPasarVideo",
+        title: "Siklus Emosi dalam Pasar",
+        caption: "Dari optimisme, euforia, ketakutan, hingga putus asa: bagaimana emosi bergerak mengikuti harga.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin.svg?width=400",
+        alt: "Logo Bitcoin sebagai aset yang dikenal sangat volatil",
+        caption: "Bitcoin yang volatil sering menjadi panggung utama drama emosi pasar kripto.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Indeks Fear and Greed: Ayunan Emosi Pasar (ilustrasi edukatif)",
+        unit: "skala 0 (takut ekstrem) sampai 100 (serakah ekstrem)",
+        source: "ilustrasi edukatif pola yang umum diamati pada indeks sentimen",
+        note: "Saat indeks mendekati serakah ekstrem pasar sering memuncak; saat mendekati takut ekstrem pasar sering mendasar.",
+        data: [
+          { label: "Bulan 1", value: 20 },
+          { label: "Bulan 2", value: 45 },
+          { label: "Bulan 3", value: 75 },
+          { label: "Bulan 4", value: 90 },
+          { label: "Bulan 5", value: 50 },
+          { label: "Bulan 6", value: 15 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua reaksi atas berita buruk yang sama",
+        html: "Sebuah koin yang dipegang Andi dan Budi tiba-tiba turun 30 persen dalam sehari karena berita negatif. Andi panik (FUD dan fear), menjual seluruhnya di harga rendah, lalu menyesal ketika harga pulih sebulan kemudian. Budi sudah menetapkan rencana sejak awal, ukuran posisinya kecil dan ia tidak bergantung pada dana itu, sehingga ia tenang dan tidak menjual karena panik. Bukan kecerdasan yang membedakan keduanya, melainkan <strong>disiplin emosi</strong> dan rencana yang dibuat sebelum panik datang. Catatan: ini ilustrasi, bukan jaminan harga selalu pulih.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Euforia 2017 lalu bear 2018, euforia 2021 lalu bear 2022",
+        html: "Pola psikologi pasar berulang dengan jelas di kripto. Pada akhir <strong>2017</strong>, euforia mendorong Bitcoin mendekati 20.000 dolar AS di tengah FOMO besar-besaran, lalu sepanjang <strong>2018</strong> pasar memasuki bear market dalam dan harga anjlok sekitar 80 persen dari puncaknya. Pola yang sama terulang: pada akhir <strong>2021</strong> Bitcoin mencatat rekor sekitar 69.000 dolar AS, lalu sepanjang <strong>2022</strong> kembali jatuh tajam disertai keruntuhan Terra, Celsius, dan FTX. Dua siklus ini memperlihatkan euforia dan ketakutan yang berulang. Sejarah masa lalu tidak menjamin pola yang sama terjadi lagi.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah aset memuncak di harga 100 (saat indeks serakah ekstrem), lalu jatuh ke 20 (saat indeks takut ekstrem). Berapa persen penurunannya dari puncak?",
+        answer: 80,
+        tolerance: 0.5,
+        suffix: "%",
+        solution:
+          "(100 - 20) / 100 x 100 persen = 80 / 100 x 100 persen = <strong>80 persen</strong>. Penurunan sedalam ini khas terjadi saat euforia berubah menjadi ketakutan, seperti dari 2017 ke 2018.",
+        hint: "Selisih puncak dan dasar dibagi nilai puncak, lalu kali 100 persen.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap emosi pasar dengan tindakan keliru yang umumnya dipicunya.",
+        buckets: ["Beli mahal karena emosi", "Jual murah karena emosi"],
+        items: [
+          { text: "FOMO saat melihat harga meroket tiap hari", bucket: "Beli mahal karena emosi" },
+          { text: "Panik karena FUD setelah berita buruk", bucket: "Jual murah karena emosi" },
+          { text: "Serakah menambah posisi besar di puncak euforia", bucket: "Beli mahal karena emosi" },
+          { text: "Takut berlebihan lalu menyerah di dasar pasar", bucket: "Jual murah karena emosi" },
+          { text: "Ikut kerumunan membeli karena semua orang membeli", bucket: "Beli mahal karena emosi" },
+          { text: "Ikut kerumunan menjual karena semua orang menjual", bucket: "Jual murah karena emosi" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Musuh terbesar investor sering kali emosinya sendiri, bukan pasar.",
+          "FOMO dan keserakahan mendorong beli mahal; FUD dan ketakutan mendorong jual murah.",
+          "Herd behavior membentuk gelembung dan keruntuhan; mengikuti kerumunan sering berujung di harga terburuk.",
+          "Pola euforia lalu bear berulang: 2017 ke 2018 dan 2021 ke 2022.",
+          "Rencana dan disiplin yang dibuat sebelum panik datang mengalahkan reaksi emosi.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa arti FOMO dalam psikologi pasar?",
+            options: [
+              "Rasa takut ketinggalan yang mendorong membeli di harga tinggi",
+              "Strategi membeli rutin",
+              "Indikator teknikal",
+              "Jenis dompet kripto",
+            ],
+            answer: 0,
+            explain: "FOMO (fear of missing out) membuat orang memburu aset karena takut ketinggalan, sering di harga puncak.",
+          },
+          {
+            q: "Apa yang biasanya dipicu oleh FUD?",
+            options: [
+              "Membeli lebih banyak dengan tenang",
+              "Jual panik di harga rendah",
+              "Menahan posisi tanpa emosi",
+              "Menambah pasokan token",
+            ],
+            answer: 1,
+            explain: "FUD (fear, uncertainty, doubt) menyebarkan ketakutan yang memicu penjualan panik.",
+          },
+          {
+            q: "Apa itu herd behavior?",
+            options: [
+              "Strategi diversifikasi",
+              "Kecenderungan meniru tindakan kerumunan",
+              "Cara menghitung market cap",
+              "Jadwal unlock token",
+            ],
+            answer: 1,
+            explain: "Herd behavior adalah meniru kerumunan, yang ikut membentuk gelembung dan keruntuhan.",
+          },
+          {
+            q: "Pola psikologi pasar kripto yang berulang ditunjukkan oleh?",
+            options: [
+              "Harga yang selalu datar",
+              "Euforia 2017 lalu bear 2018, dan euforia 2021 lalu bear 2022",
+              "Tidak adanya siklus sama sekali",
+              "Kenaikan tanpa henti",
+            ],
+            answer: 1,
+            explain: "Dua siklus itu memperlihatkan euforia yang disusul bear market secara berulang.",
+          },
+          {
+            q: "Apa cara terbaik melawan jebakan emosi menurut pelajaran ini?",
+            options: [
+              "Mengikuti kerumunan",
+              "Membuat rencana dan disiplin sebelum panik datang",
+              "Menebak titik terbawah",
+              "Membeli saat semua orang membeli",
+            ],
+            answer: 1,
+            explain: "Rencana yang dibuat saat tenang membantu kita tidak bereaksi karena emosi saat pasar bergejolak.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "regulasi-pajak-indonesia",
+    levelId: "investasi",
+    order: 6,
+    title: "Regulasi & Pajak Kripto di Indonesia",
+    summary:
+      "Memahami status hukum kripto di Indonesia sebagai komoditas di bawah Bappebti yang beralih ke OJK, serta pajak yang merujuk PMK 68/2022. Tarif dan aturan bisa berubah, rujuk sumber resmi.",
+    durationMin: 14,
+    tags: ["investasi", "regulasi", "pajak", "indonesia"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Di Indonesia, kripto <strong>bukan</strong> alat pembayaran yang sah. Rupiah tetap satu-satunya alat pembayaran yang diakui. Namun kripto diizinkan untuk <strong>diperdagangkan sebagai komoditas</strong> (aset kripto), sehingga jual belinya legal di bursa yang terdaftar resmi.",
+      },
+      {
+        type: "paragraph",
+        html: "Karena diperlakukan sebagai komoditas dan objek investasi, transaksi kripto juga <strong>dikenai pajak</strong>. Memahami status hukum dan kewajiban pajak ini penting agar kamu berinvestasi secara tertib dan tidak terkejut oleh potongan biaya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Status hukum: komoditas di bawah pengawasan yang beralih",
+        html: "Kripto di Indonesia diatur sebagai <strong>aset kripto (komoditas)</strong>, awalnya di bawah <strong>Bappebti</strong> (Badan Pengawas Perdagangan Berjangka Komoditi). Sesuai <strong>UU P2SK</strong>, pengawasan aset kripto beralih ke <strong>OJK</strong> (Otoritas Jasa Keuangan), yang efektif berlaku sekitar awal 2025. Hanya berdagang di exchange yang terdaftar resmi.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Pajak merujuk PMK 68/2022",
+        html: "Pajak kripto di Indonesia <strong>merujuk PMK 68/2022</strong> (PMK-68/PMK.03/2022) yang berlaku sejak <strong>1 Mei 2022</strong>. Dikenakan <strong>PPN final</strong> atas pembelian dan <strong>PPh Pasal 22 final</strong> atas penjualan aset kripto. Besarnya tergantung apakah exchange terdaftar di Bappebti atau tidak.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Tarif bisa berubah, rujuk sumber resmi",
+        html: "Angka pajak di pelajaran ini merujuk PMK 68/2022 saat ditulis. Aturan dan tarif <strong>bisa berubah</strong>, apalagi setelah pengawasan beralih ke OJK. Selalu rujuk sumber resmi (DJP, Bappebti, OJK) untuk angka terbaru. Materi ini edukasi, bukan saran finansial atau nasihat pajak.",
+      },
+      {
+        type: "video",
+        comp: "LahirnyaBitcoinVideo",
+        title: "Aset Digital yang Kini Diatur",
+        caption: "Bitcoin lahir tanpa otoritas pusat; kini di banyak negara, termasuk Indonesia, diperdagangkan dengan aturan resmi.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin.svg?width=400",
+        alt: "Logo Bitcoin sebagai contoh aset kripto yang diatur sebagai komoditas di Indonesia",
+        caption: "Di Indonesia, aset kripto seperti Bitcoin diperdagangkan sebagai komoditas, bukan alat pembayaran sah.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tarif Pajak Kripto Indonesia (merujuk PMK 68/2022)",
+        unit: "persen dari nilai transaksi",
+        source: "PMK-68/PMK.03/2022, berlaku sejak 1 Mei 2022 (rujuk sumber resmi untuk angka terbaru)",
+        note: "Bertransaksi di exchange terdaftar Bappebti dikenai tarif lebih rendah daripada yang tidak terdaftar.",
+        data: [
+          { label: "PPN beli (terdaftar)", value: 0.11, color: "#26a17b" },
+          { label: "PPN beli (tidak terdaftar)", value: 0.22, color: "#f7931a" },
+          { label: "PPh jual (terdaftar)", value: 0.1, color: "#2775ca" },
+          { label: "PPh jual (tidak terdaftar)", value: 0.2, color: "#e74c3c" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menghitung pajak satu siklus beli dan jual",
+        html: "Sari membeli aset kripto senilai Rp 10.000.000 lewat exchange yang terdaftar di Bappebti. Atas pembelian itu ia dikenai <strong>PPN final 0,11 persen</strong> = Rp 11.000. Beberapa waktu kemudian ia menjual aset senilai Rp 12.000.000 di exchange yang sama. Atas penjualan itu ia dikenai <strong>PPh Pasal 22 final 0,1 persen</strong> = Rp 12.000. Biaya pajak ini relatif kecil per transaksi, tetapi penting dicatat agar perhitungan untung-rugimu akurat. Angka merujuk PMK 68/2022 dan bisa berubah.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Pajak kripto Indonesia mulai berlaku 1 Mei 2022",
+        html: "Indonesia mulai mengenakan pajak atas transaksi aset kripto sejak <strong>1 Mei 2022</strong>, melalui <strong>PMK-68/PMK.03/2022</strong>. Sejak saat itu, setiap pembelian aset kripto di exchange dikenai PPN final dan setiap penjualan dikenai PPh Pasal 22 final. Aturan ini menandai pengakuan resmi kripto sebagai objek perdagangan dan investasi yang kena pajak, sekaligus mendorong transaksi terjadi di platform terdaftar Bappebti. Belakangan, lewat UU P2SK, pengawasan aset kripto dialihkan ke OJK mulai sekitar awal 2025.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Kamu membeli aset kripto senilai Rp 10.000.000 lewat exchange yang terdaftar di Bappebti. Berapa PPN final yang dikenakan dengan tarif 0,11 persen (merujuk PMK 68/2022)?",
+        answer: 11000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution:
+          "0,11 persen x Rp 10.000.000 = 0,0011 x 10.000.000 = <strong>Rp 11.000</strong>. Tarif PPN final untuk exchange terdaftar Bappebti lebih rendah daripada yang tidak terdaftar (0,22 persen).",
+        hint: "Kalikan nilai pembelian dengan 0,11 persen, yaitu 0,0011.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Kamu menjual aset kripto senilai Rp 20.000.000 di exchange terdaftar Bappebti. Berapa PPh Pasal 22 final yang dikenakan dengan tarif 0,1 persen (merujuk PMK 68/2022)?",
+        answer: 20000,
+        tolerance: 0,
+        prefix: "Rp",
+        solution:
+          "0,1 persen x Rp 20.000.000 = 0,001 x 20.000.000 = <strong>Rp 20.000</strong>. PPh Pasal 22 final dikenakan atas penjualan, terpisah dari PPN atas pembelian.",
+        hint: "Kalikan nilai penjualan dengan 0,1 persen, yaitu 0,001.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan lembaga dengan perannya terkait kripto di Indonesia.",
+        pairs: [
+          { left: "Bappebti", right: "Pengawas awal aset kripto sebagai komoditas" },
+          { left: "OJK", right: "Pengawas aset kripto setelah peralihan UU P2SK" },
+          { left: "DJP", right: "Otoritas yang memungut pajak (PPN dan PPh) transaksi kripto" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Kripto di Indonesia bukan alat pembayaran sah, tetapi legal diperdagangkan sebagai komoditas.",
+          "Pengawasan awalnya di Bappebti, lalu beralih ke OJK sesuai UU P2SK (efektif sekitar awal 2025).",
+          "Pajak merujuk PMK 68/2022: PPN final 0,11 persen (terdaftar) atau 0,22 persen (tidak terdaftar) atas pembelian.",
+          "PPh Pasal 22 final 0,1 persen (terdaftar) atau 0,2 persen (tidak terdaftar) atas penjualan.",
+          "Tarif dan aturan bisa berubah; selalu rujuk sumber resmi DJP, Bappebti, dan OJK.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bagaimana status hukum kripto di Indonesia?",
+            options: [
+              "Alat pembayaran sah menggantikan rupiah",
+              "Komoditas (aset kripto) yang legal diperdagangkan",
+              "Dilarang sepenuhnya",
+              "Mata uang asing resmi",
+            ],
+            answer: 1,
+            explain: "Kripto diatur sebagai komoditas yang boleh diperdagangkan, bukan alat pembayaran sah.",
+          },
+          {
+            q: "Lembaga mana yang awalnya mengawasi aset kripto sebelum beralih ke OJK?",
+            options: ["Bank Indonesia", "Bappebti", "BPK", "Kemendag saja"],
+            answer: 1,
+            explain: "Bappebti adalah pengawas awal; pengawasan beralih ke OJK sesuai UU P2SK.",
+          },
+          {
+            q: "Berapa tarif PPN final pembelian kripto di exchange terdaftar Bappebti (merujuk PMK 68/2022)?",
+            options: ["0,11 persen", "0,22 persen", "1 persen", "11 persen"],
+            answer: 0,
+            explain: "PPN final 0,11 persen untuk exchange terdaftar, 0,22 persen untuk yang tidak terdaftar.",
+          },
+          {
+            q: "Pajak atas penjualan kripto dikenai sebagai apa?",
+            options: [
+              "PPh Pasal 22 final",
+              "Pajak bumi dan bangunan",
+              "Bea masuk",
+              "Cukai",
+            ],
+            answer: 0,
+            explain: "Penjualan kripto dikenai PPh Pasal 22 final (0,1 persen terdaftar atau 0,2 persen tidak terdaftar).",
+          },
+          {
+            q: "Kapan pajak kripto Indonesia mulai berlaku?",
+            options: ["1 Januari 2020", "1 Mei 2022", "1 Mei 2025", "1 Januari 2018"],
+            answer: 1,
+            explain: "Pajak kripto merujuk PMK 68/2022 dan berlaku sejak 1 Mei 2022.",
           },
         ],
       },

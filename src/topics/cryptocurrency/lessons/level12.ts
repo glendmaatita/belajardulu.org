@@ -46,6 +46,18 @@ export const level12: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorBridge" },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin.svg?width=400",
+        alt: "Logo Bitcoin",
+        caption: "WBTC adalah Bitcoin yang dibungkus menjadi token di jaringan Ethereum, dijamin 1:1 oleh BTC asli yang terkunci.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "case",
+        title: "Studi kasus: 250 WBTC untuk dipakai di DeFi",
+        html: "Seorang pemegang Bitcoin ingin memakai asetnya di aplikasi DeFi Ethereum tanpa menjual BTC. Ia menyetor <strong>250 BTC</strong> ke kustodian jembatan. Kustodian mengunci 250 BTC, lalu mencetak <strong>250 WBTC</strong> di Ethereum. Sekarang 250 WBTC itu bisa dijadikan agunan pinjaman atau ditaruh di kolam likuiditas, sementara 250 BTC asli tetap terkunci aman. Saat ia ingin kembali memegang Bitcoin, 250 WBTC dibakar dan 250 BTC dibuka kuncinya. Pasokan tetap seimbang 1:1 sepanjang proses.",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Invarian Jembatan: Terkunci vs Beredar (ilustrasi)",
@@ -192,6 +204,18 @@ export const level12: Lesson[] = [
         comp: "BridgeVideo",
         title: "Dari Aset ke Pesan Lintas-Rantai",
         caption: "Alur lock-mint yang sama menjadi dasar pengiriman pesan dan instruksi antar rantai.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain_workflow.png?width=400",
+        alt: "Diagram alur kerja blockchain",
+        caption: "Pesan lintas-rantai harus mengikuti alur yang ketat agar rantai tujuan yakin bahwa pesan benar-benar sah.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "case",
+        title: "Studi kasus: pesan 'syarat terpenuhi' antar rantai",
+        html: "Sebuah aplikasi asuransi panen hidup di rantai A, sedangkan dana ganti rugi disimpan di rantai B. Saat oracle di rantai A memastikan curah hujan di bawah ambang, aplikasi mengirim <strong>pesan lintas-rantai</strong> ke rantai B: 'syarat klaim terpenuhi, cairkan dana'. Tidak ada koin yang berpindah saat pesan dikirim; yang berpindah adalah <strong>instruksi</strong>. Kontrak di rantai B baru mencairkan dana setelah yakin pesan itu sah lewat verifikasi validator. Inilah inti bridge pesan: memindahkan perintah, bukan sekadar nilai.",
       },
       {
         type: "chart",
@@ -345,6 +369,18 @@ export const level12: Lesson[] = [
         caption: "Gagasan menghubungkan banyak blockchain, dari jembatan tambahan sampai arsitektur bawaan.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Cosmos_logo.svg?width=400",
+        alt: "Logo ekosistem Cosmos",
+        caption: "Cosmos menyebut dirinya 'Internet of Blockchains', menghubungkan banyak rantai mandiri lewat protokol IBC.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "case",
+        title: "Studi kasus: satu zone gangguan, yang lain tetap jalan",
+        html: "Bayangkan ekosistem Cosmos dengan satu hub dan 3 zone: zone bursa, zone game, dan zone identitas. Suatu hari zone game mengalami gangguan dan berhenti memproduksi blok. Karena tiap zone <strong>berdaulat dan mengamankan dirinya sendiri</strong>, gangguan itu tidak menjatuhkan zone bursa maupun zone identitas; keduanya tetap berjalan dan tetap bisa berkomunikasi lewat hub. Bandingkan dengan model keamanan terpusat Polkadot, di mana relay chain menjaga semua parachain sekaligus. Dua filosofi yang menukar kedaulatan dengan keseragaman.",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Membandingkan Model Berbagi Keamanan (ilustrasi)",
@@ -434,6 +470,352 @@ export const level12: Lesson[] = [
             options: ["Satoshi Nakamoto", "Gavin Wood", "Laszlo Hanyecz", "David Chaum"],
             answer: 1,
             explain: "Gavin Wood, salah satu pendiri Ethereum, menulis whitepaper Polkadot pada 2016.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "dunia-multichain",
+    levelId: "crosschain",
+    order: 4,
+    title: "Dunia Multi-Chain & Fragmentasi Likuiditas",
+    summary:
+      "Mengapa ada begitu banyak blockchain L1, dan bagaimana aset serta likuiditas yang terpisah-pisah memunculkan kebutuhan menjembatani antar rantai.",
+    durationMin: 14,
+    tags: ["crosschain", "multichain", "likuiditas", "L1"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Dahulu dunia kripto seolah hanya Bitcoin lalu Ethereum. Kini ada puluhan <strong>blockchain lapis-1 (L1)</strong> yang berdiri sendiri: Solana, Avalanche, BNB Chain, dan banyak lagi. Mengapa muncul begitu banyak rantai, dan apa konsekuensinya bagi pengguna?",
+      },
+      {
+        type: "paragraph",
+        html: "Setiap L1 punya aturan, komunitas, dan asetnya sendiri. Akibatnya, nilai dan likuiditas <strong>tersebar</strong> di banyak pulau yang terpisah. Inilah yang disebut <strong>fragmentasi likuiditas</strong>: uang yang seharusnya bisa bekerja sama justru terpecah di banyak tempat.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Apa itu fragmentasi likuiditas?",
+        html: "<strong>Likuiditas</strong> adalah seberapa mudah sebuah aset diperjualbelikan tanpa menggeser harga. Saat aset yang sama (misalnya stablecoin) tersebar di banyak rantai dan tiap rantai hanya punya sebagian kecil, tiap kolam menjadi dangkal. Transaksi besar jadi mahal karena harga mudah bergeser. Menyatukan likuiditas yang terpecah inilah salah satu alasan utama kita butuh <strong>jembatan</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Kenapa orang membuat L1 baru?",
+        html: "Sebuah L1 baru biasanya menjanjikan sesuatu yang berbeda: <strong>biaya lebih murah</strong>, transaksi lebih cepat, atau model keamanan lain. Saat satu rantai padat dan mahal, pengembang dan pengguna mencari alternatif, sehingga rantai-rantai baru tumbuh.",
+      },
+      {
+        type: "video",
+        comp: "BridgeVideo",
+        title: "Menyatukan Pulau-Pulau Likuiditas",
+        caption: "Saat aset tersebar di banyak rantai, jembatan menjadi penghubung agar nilai bisa berpindah dan bertemu.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Cosmos_logo.svg?width=400",
+        alt: "Logo ekosistem Cosmos",
+        caption: "Cosmos membayangkan banyak rantai mandiri yang saling terhubung, menjawab dunia yang makin multi-chain.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Likuiditas Terpecah vs Tersatukan (ilustrasi)",
+        unit: "kedalaman kolam (skala ilustratif)",
+        source: "ilustrasi edukatif konsep fragmentasi",
+        note: "Total dana sama, tetapi saat terpecah di banyak rantai tiap kolam jadi dangkal; jembatan membantu menyatukan kembali.",
+        data: [
+          { label: "Rantai A (terpecah)", value: 30, color: "#94a3b8" },
+          { label: "Rantai B (terpecah)", value: 25, color: "#94a3b8" },
+          { label: "Rantai C (terpecah)", value: 20, color: "#94a3b8" },
+          { label: "Tersatukan lewat jembatan", value: 75, color: "#22c55e" },
+        ],
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Gunakan simulator jembatan untuk membayangkan bagaimana memindahkan aset antar rantai membantu menyatukan likuiditas yang terpisah.",
+      },
+      { type: "widget", widget: "SimulatorBridge" },
+      {
+        type: "case",
+        title: "Studi kasus: stablecoin yang sama, tiga rantai berbeda",
+        html: "Sebuah proyek menyebarkan stablecoinnya di tiga rantai dengan total <strong>90 juta dolar AS</strong> likuiditas: 40 juta di rantai A, 30 juta di rantai B, dan 20 juta di rantai C. Seorang pengguna ingin menukar <strong>10 juta dolar AS</strong> di rantai C. Karena kolam C hanya 20 juta, tukar sebesar itu menggeser harga cukup jauh (slippage besar). Seandainya seluruh 90 juta menyatu dalam satu kolam, tukar 10 juta nyaris tak menggeser harga. Inilah ongkos nyata dari fragmentasi likuiditas.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: 'Alt L1 season' 2021",
+        html: "Sepanjang <strong>2021</strong>, biaya gas di Ethereum melonjak tinggi saat jaringan padat oleh DeFi dan NFT. Hal ini memicu yang dijuluki <strong>'alt L1 season'</strong>: bangkitnya banyak blockchain lapis-1 alternatif yang menawarkan biaya lebih murah dan transaksi lebih cepat. <strong>Solana</strong>, <strong>Avalanche</strong> (mainnet 2020, ramai 2021), dan <strong>BNB Chain</strong> (saat itu Binance Smart Chain, diluncurkan 2020) tumbuh pesat menarik pengguna dan dana. Akibatnya likuiditas makin terpecah ke banyak rantai, dan kebutuhan akan jembatan lintas-rantai justru kian mendesak.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Stablecoin tersebar di tiga rantai: 40 juta, 30 juta, dan 20 juta dolar AS. Berapa total likuiditas (dalam juta dolar AS) jika seluruhnya disatukan?",
+        answer: 90,
+        tolerance: 0,
+        suffix: "juta dolar AS",
+        solution:
+          "40 + 30 + 20 = <strong>90 juta dolar AS</strong>. Dana yang sama persis terasa jauh lebih kuat saat menyatu dalam satu kolam dibandingkan terpecah di tiga rantai.",
+        hint: "Jumlahkan ketiga angka likuiditas.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap pernyataan: ciri dunia multi-chain yang terfragmentasi, atau manfaat menyatukan likuiditas.",
+        buckets: ["Fragmentasi (terpecah)", "Penyatuan (manfaat jembatan)"],
+        items: [
+          { text: "Aset yang sama tersebar di banyak rantai dengan kolam dangkal", bucket: "Fragmentasi (terpecah)" },
+          { text: "Transaksi besar menggeser harga karena likuiditas tipis", bucket: "Fragmentasi (terpecah)" },
+          { text: "Nilai bisa berpindah antar rantai sehingga kolam lebih dalam", bucket: "Penyatuan (manfaat jembatan)" },
+          { text: "Slippage mengecil karena dana terkumpul di satu tempat", bucket: "Penyatuan (manfaat jembatan)" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Kini ada banyak blockchain L1, bukan hanya Bitcoin dan Ethereum.",
+          "L1 baru biasanya menjanjikan biaya lebih murah, kecepatan, atau model keamanan berbeda.",
+          "Fragmentasi likuiditas terjadi saat aset yang sama tersebar di banyak rantai dengan kolam dangkal.",
+          "Likuiditas yang terpecah membuat transaksi besar mahal karena harga mudah bergeser.",
+          "Alt L1 season 2021 dipicu gas Ethereum yang mahal, memperdalam kebutuhan akan jembatan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa yang dimaksud blockchain L1 (lapis-1)?",
+            options: [
+              "Sebuah dompet kripto",
+              "Blockchain dasar yang berdiri sendiri seperti Ethereum atau Solana",
+              "Sebuah jenis stablecoin",
+              "Aplikasi DeFi",
+            ],
+            answer: 1,
+            explain: "L1 adalah blockchain dasar yang berdiri sendiri dengan aturan dan keamanannya sendiri.",
+          },
+          {
+            q: "Apa itu fragmentasi likuiditas?",
+            options: [
+              "Likuiditas yang terlalu besar di satu rantai",
+              "Aset yang sama tersebar di banyak rantai sehingga tiap kolam jadi dangkal",
+              "Sebuah serangan peretas",
+              "Cara mencetak coin baru",
+            ],
+            answer: 1,
+            explain: "Saat aset terpecah di banyak rantai, tiap kolam dangkal dan transaksi besar jadi mahal.",
+          },
+          {
+            q: "Mengapa banyak L1 baru bermunculan?",
+            options: [
+              "Karena Bitcoin dihapus",
+              "Karena menawarkan biaya lebih murah, lebih cepat, atau model keamanan berbeda",
+              "Karena pemerintah mewajibkan",
+              "Karena tidak butuh keamanan",
+            ],
+            answer: 1,
+            explain: "L1 baru menarik pengguna dengan menjanjikan biaya, kecepatan, atau keamanan yang berbeda.",
+          },
+          {
+            q: "Apa pemicu utama 'alt L1 season' 2021?",
+            options: [
+              "Bitcoin halving",
+              "Biaya gas Ethereum yang mahal karena jaringan padat",
+              "Larangan kripto global",
+              "Runtuhnya stablecoin",
+            ],
+            answer: 1,
+            explain: "Gas Ethereum yang mahal pada 2021 mendorong pengguna mencari L1 alternatif yang lebih murah.",
+          },
+          {
+            q: "Apa dampak fragmentasi likuiditas pada transaksi besar?",
+            options: [
+              "Tidak ada dampak",
+              "Harga mudah bergeser (slippage besar) karena kolam dangkal",
+              "Transaksi menjadi gratis",
+              "Aset menghilang",
+            ],
+            answer: 1,
+            explain: "Kolam yang dangkal membuat transaksi besar menggeser harga lebih jauh, sehingga lebih mahal.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "keamanan-bridge",
+    levelId: "crosschain",
+    order: 5,
+    title: "Keamanan Bridge & Peretasan Besar",
+    summary:
+      "Mengapa jembatan menjadi sasaran empuk peretas, bagaimana model kepercayaannya, dan pelajaran dari peretasan terbesar dalam sejarah kripto.",
+    durationMin: 15,
+    tags: ["crosschain", "keamanan", "peretasan", "bridge"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Jembatan adalah infrastruktur paling rawan di dunia kripto. Untuk bisa mencetak wrapped token, jembatan harus <strong>menyimpan aset asli yang terkunci</strong> dalam jumlah besar di satu kontrak. Tumpukan dana ini ibarat brankas raksasa yang menggoda setiap penyerang.",
+      },
+      {
+        type: "paragraph",
+        html: "Sepanjang sejarah, sebagian besar dana kripto yang dicuri justru hilang lewat <strong>peretasan jembatan</strong>, bukan lewat blockchain dasarnya. Memahami mengapa jembatan rapuh membantu kita menilai risiko sebelum memindahkan aset.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Kenapa jembatan jadi target empuk?",
+        html: "Tiga alasan utama: (1) <strong>dana terpusat</strong>, ratusan juta dolar terkunci di satu kontrak; (2) <strong>kode rumit</strong>, jembatan menyambungkan dua sistem berbeda sehingga celah lebih mudah muncul; (3) <strong>titik kepercayaan</strong>, banyak jembatan bergantung pada sekelompok validator yang, jika dikuasai, bisa menandatangani penarikan palsu.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Model kepercayaan jembatan",
+        html: "Jembatan <strong>trusted</strong> (tepercaya) mengandalkan sekelompok validator atau kustodian; aman selama kelompok itu jujur dan kuncinya tak bocor. Jembatan <strong>trustless</strong> (tanpa perantara) berusaha membuktikan keabsahan lewat kode dan kriptografi, sehingga tidak bergantung pada niat baik segelintir pihak. Makin sedikit pihak yang harus dipercaya, makin kecil permukaan serangan.",
+      },
+      {
+        type: "video",
+        comp: "BridgeVideo",
+        title: "Di Mana Letak Risiko Jembatan?",
+        caption: "Aset terkunci dan titik kepercayaan validator menjadi sasaran utama peretas.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Lihat bagaimana aset yang terkunci di satu sisi menumpuk menjadi nilai besar; bayangkan itulah brankas yang diincar penyerang.",
+      },
+      { type: "widget", widget: "SimulatorBridge" },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain_workflow.png?width=400",
+        alt: "Diagram alur kerja blockchain",
+        caption: "Celah pada satu langkah verifikasi bisa membuat jembatan menerima penarikan palsu.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tiga Peretasan Jembatan Terbesar 2022 (juta dolar AS)",
+        unit: "juta dolar AS dicuri",
+        source: "laporan publik insiden 2022",
+        note: "Ketiganya terjadi pada tahun yang sama, menjadikan 2022 tahun kelam bagi keamanan jembatan.",
+        data: [
+          { label: "Ronin (Mar 2022)", value: 625, color: "#ef4444" },
+          { label: "Wormhole (Feb 2022)", value: 325, color: "#f59e0b" },
+          { label: "Nomad (Agu 2022)", value: 190, color: "#fbbf24" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi kasus: brankas 800 juta dolar di satu kontrak",
+        html: "Sebuah jembatan mengunci <strong>800 juta dolar AS</strong> aset pengguna dalam satu kontrak. Keamanannya bergantung pada 9 validator, dan penarikan sah jika 5 dari 9 menandatangani. Jika penyerang berhasil menguasai <strong>5 kunci</strong> saja, ia bisa menandatangani penarikan palsu dan menguras seluruh 800 juta dolar. Inilah bahaya memusatkan dana besar di belakang ambang tanda tangan yang bisa dijebol.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: tiga peretasan jembatan besar 2022",
+        html: "Tahun <strong>2022</strong> mencatat rentetan peretasan jembatan terburuk. <strong>Wormhole</strong> (Februari 2022) dibobol lewat pesan palsu sehingga peretas mencetak token tanpa jaminan, sekitar <strong>325 juta dolar AS</strong>. <strong>Ronin Bridge</strong> milik Axie Infinity (Maret 2022) kehilangan sekitar <strong>625 juta dolar AS</strong> setelah penyerang menguasai mayoritas kunci validator. Lalu <strong>Nomad</strong> (Agustus 2022) dikuras hampir <strong>190 juta dolar AS</strong> akibat celah yang membuat banyak orang ramai-ramai menarik dana yang bukan miliknya. Pelajaran besarnya: jembatan memusatkan dana dan kepercayaan, sehingga satu celah bisa berakibat fatal.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah jembatan mengunci 800 juta dolar AS. Jika peretas berhasil menguras 75 persen dana terkunci, berapa juta dolar AS yang dicuri?",
+        answer: 600,
+        tolerance: 0,
+        suffix: "juta dolar AS",
+        solution:
+          "75 persen dari 800 juta = 0,75 x 800 = <strong>600 juta dolar AS</strong>. Karena dana terpusat, satu celah bisa menguras sebagian besar brankas sekaligus.",
+        hint: "Hitung 0,75 dikali 800.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Berapa total kerugian (juta dolar AS) dari tiga peretasan 2022: Ronin 625, Wormhole 325, dan Nomad 190?",
+        answer: 1140,
+        tolerance: 0,
+        suffix: "juta dolar AS",
+        solution:
+          "625 + 325 + 190 = <strong>1.140 juta dolar AS</strong>, atau lebih dari 1,1 miliar dolar AS hanya dari tiga insiden jembatan dalam satu tahun.",
+        hint: "Jumlahkan ketiga angka kerugian.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan tiap peretasan jembatan dengan perkiraan kerugiannya.",
+        pairs: [
+          { left: "Ronin (Maret 2022)", right: "sekitar 625 juta dolar AS" },
+          { left: "Wormhole (Februari 2022)", right: "sekitar 325 juta dolar AS" },
+          { left: "Nomad (Agustus 2022)", right: "sekitar 190 juta dolar AS" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Jembatan menjadi target utama karena memusatkan dana besar di satu kontrak.",
+          "Kode jembatan rumit dan menyambung dua sistem, sehingga celah lebih mudah muncul.",
+          "Model trusted bergantung pada validator; model trustless berusaha membuktikan keabsahan lewat kode.",
+          "Tahun 2022 mencatat peretasan jembatan terbesar: Ronin, Wormhole, dan Nomad.",
+          "Sebelum memindahkan aset, nilai dulu seberapa banyak pihak yang harus kamu percayai.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mengapa jembatan menjadi sasaran empuk peretas?",
+            options: [
+              "Karena tidak ada yang memakainya",
+              "Karena memusatkan dana besar dan titik kepercayaan di satu tempat",
+              "Karena gas fee-nya gratis",
+              "Karena tidak punya kode",
+            ],
+            answer: 1,
+            explain: "Jembatan menumpuk aset terkunci bernilai besar dan bergantung pada validator tertentu.",
+          },
+          {
+            q: "Apa beda jembatan trusted dan trustless?",
+            options: [
+              "Tidak ada bedanya",
+              "Trusted mengandalkan sekelompok validator; trustless membuktikan keabsahan lewat kode",
+              "Trustless selalu lebih lambat",
+              "Trusted tidak menyimpan aset",
+            ],
+            answer: 1,
+            explain: "Trusted bergantung pada niat baik validator, trustless mengurangi pihak yang harus dipercaya.",
+          },
+          {
+            q: "Peretasan jembatan mana yang terbesar pada 2022?",
+            options: [
+              "Nomad (sekitar 190 juta dolar AS)",
+              "Ronin (sekitar 625 juta dolar AS)",
+              "Wormhole (sekitar 325 juta dolar AS)",
+              "Tidak ada yang besar",
+            ],
+            answer: 1,
+            explain: "Ronin Bridge kehilangan sekitar 625 juta dolar AS, yang terbesar di antara ketiganya.",
+          },
+          {
+            q: "Bagaimana Wormhole dibobol pada Februari 2022?",
+            options: [
+              "Menebak seed phrase pengguna",
+              "Lewat pesan palsu sehingga token dicetak tanpa jaminan",
+              "Mematikan internet",
+              "Menambah pasokan Bitcoin",
+            ],
+            answer: 1,
+            explain: "Celah membuat jembatan menerima pesan palsu, sehingga token dicetak tanpa aset terkunci.",
+          },
+          {
+            q: "Apa pelajaran utama dari rentetan peretasan jembatan 2022?",
+            options: [
+              "Blockchain dasar selalu yang dibobol",
+              "Memusatkan dana dan kepercayaan membuat satu celah bisa berakibat fatal",
+              "Jembatan tidak pernah berisiko",
+              "Validator tidak penting",
+            ],
+            answer: 1,
+            explain: "Dana dan kepercayaan yang terpusat membuat satu kelemahan bisa menguras seluruh brankas.",
           },
         ],
       },

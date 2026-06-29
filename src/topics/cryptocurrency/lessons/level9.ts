@@ -52,9 +52,21 @@ export const level9: Lesson[] = [
         ],
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tether_Logo.svg?width=400",
+        alt: "Logo Tether (USDT), stablecoin fiat-backed terbesar yang dipatok ke dolar AS",
+        caption: "Logo Tether (USDT), stablecoin fiat-backed terbesar yang nilainya dipatok ke dolar AS.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "case",
         title: "Studi Kasus: Memeriksa rasio cadangan",
         html: "Sebuah penerbit stablecoin menyatakan ada <strong>100 juta token</strong> beredar dan melaporkan cadangan <strong>98 juta dolar AS</strong> dalam kas dan surat utang jangka pendek. Rasio cadangannya 98 juta dibagi 100 juta sama dengan 98%. Angka di bawah 100% jadi sinyal waspada: bila banyak orang menebus token sekaligus, penerbit bisa kekurangan dana untuk membayar semua pada nilai penuh.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Tether didenda soal cadangan, Februari 2021",
+        html: "Kepercayaan pada stablecoin fiat-backed berdiri di atas kejujuran soal cadangan. Pada <strong>Februari 2021</strong>, Jaksa Agung New York menyelesaikan penyelidikan terhadap <strong>Tether (USDT)</strong> dan bursa terkaitnya, Bitfinex. Penyelidikan menyimpulkan klaim bahwa USDT sepenuhnya didukung dolar tidak selalu benar pada periode tertentu. Tether setuju membayar denda <strong>18,5 juta dolar AS</strong> dan berhenti beroperasi di New York, serta wajib melaporkan rincian cadangannya secara berkala. Kasus ini menegaskan bahwa transparansi cadangan bukan formalitas, melainkan inti kepercayaan.",
       },
       {
         type: "calcExercise",
@@ -174,6 +186,19 @@ export const level9: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorCollateralStablecoin" },
       {
+        type: "video",
+        comp: "StablecoinPegVideo",
+        title: "Menjaga Harga di Sekitar 1 Dolar",
+        caption: "Bagaimana stablecoin berusaha menjaga nilainya tetap dekat satu dolar, termasuk model yang dijamin kripto.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang menjadi tempat jaminan kripto dikunci dalam kontrak pintar",
+        caption: "Jaminan kripto stablecoin seperti DAI dikunci dalam kontrak pintar di atas blockchain.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "warn",
         title: "Risiko likuidasi",
@@ -195,6 +220,11 @@ export const level9: Lesson[] = [
         type: "case",
         title: "Studi Kasus: Saat jaminan turun nilai",
         html: "Seorang pengguna mengunci jaminan Ether senilai <strong>300 dolar AS</strong> lalu mencetak <strong>150 DAI</strong>. Rasio jaminannya 300 dibagi 150 sama dengan 200%, aman. Lalu harga Ether turun sehingga jaminannya tinggal <strong>225 dolar AS</strong>. Rasio jadi 225 dibagi 150 sama dengan 150%, tepat di batas minimum. Bila Ether turun lagi, jaminan akan dilikuidasi. Pelajarannya: selalu sisakan bantalan jauh di atas 150%.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Black Thursday MakerDAO, Maret 2020",
+        html: "Pada <strong>12 Maret 2020</strong>, saat pasar panik di awal pandemi COVID-19, harga Ether anjlok sekitar setengahnya dalam sehari. Jaringan Ethereum macet dan biaya transaksi melonjak, sehingga lelang likuidasi <strong>MakerDAO</strong> sempat dimenangkan dengan tawaran nyaris <strong>0 DAI</strong>. Akibatnya sistem menanggung utang macet sekitar <strong>4 juta dolar AS</strong>, yang akhirnya ditutup dengan melelang token tata kelola MKR. Peristiwa yang dijuluki Black Thursday ini menunjukkan bahwa overcollateralization saja tidak cukup; mekanisme likuidasi juga harus tahan saat pasar dan jaringan sama-sama tertekan.",
       },
       {
         type: "calcExercise",
@@ -313,6 +343,13 @@ export const level9: Lesson[] = [
         caption: "Bagaimana mekanisme suplai berusaha menarik harga kembali ke satu dolar, dan kapan itu gagal.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tether_Logo.svg?width=400",
+        alt: "Logo Tether (USDT) sebagai pembanding stablecoin yang didukung cadangan nyata",
+        caption: "Berbeda dari model algoritmik, stablecoin seperti USDT bersandar pada cadangan nyata, bukan sekadar aturan suplai.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "line",
         title: "Harga TerraUSD (UST) saat Keruntuhan Mei 2022 (ilustrasi)",
@@ -325,6 +362,11 @@ export const level9: Lesson[] = [
           { label: "11 Mei", value: 0.3 },
           { label: "13 Mei", value: 0.1 },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Bagaimana arbitrase menutup selisih harga",
+        html: "Bayangkan stablecoin algoritmik berharga <strong>0,98 dolar AS</strong>, sedikit di bawah peg. Sistem mengizinkan menukar 1 token dengan aset pasangan senilai <strong>1,00 dolar AS</strong> lalu memusnahkan token itu. Seorang pedagang membeli token seharga 0,98 dolar, menebusnya senilai 1,00 dolar, dan mengantongi <strong>0,02 dolar AS</strong> per token. Aksi ini mengurangi pasokan dan mendorong harga naik kembali ke 1 dolar. Selama tetap ada pembeli aset pasangan, mekanisme ini bekerja; begitu kepercayaan hilang, justru mekanisme yang sama bisa berubah jadi spiral kematian.",
       },
       {
         type: "case",
@@ -461,10 +503,28 @@ export const level9: Lesson[] = [
         ],
       },
       {
+        type: "video",
+        comp: "StablecoinPegVideo",
+        title: "Menjaga Harga di Sekitar 1 Dolar",
+        caption: "Mengapa kualitas cadangan menentukan apakah peg bertahan saat banyak orang menebus sekaligus.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang mencatat penerbitan dan penebusan stablecoin secara transparan",
+        caption: "Blockchain mencatat pasokan token secara terbuka, tetapi cadangan di dunia nyata tetap harus diaudit terpisah.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "warn",
         title: "Risiko depeg",
         html: "<strong>Depeg</strong> adalah saat harga stablecoin lepas dari 1 dolar. Pemicunya bisa cadangan yang kurang, aset cadangan yang macet, atau kepanikan pasar. Depeg bisa sementara bila cadangannya sebenarnya sehat, tetapi bisa permanen bila cadangannya memang bermasalah.",
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membaca laporan cadangan",
+        html: "Sebuah penerbit melaporkan total cadangan <strong>50 miliar dolar AS</strong> untuk <strong>50 miliar token</strong> beredar, terdiri atas <strong>42 miliar dolar AS kas dan surat utang jangka pendek</strong> serta 8 miliar dolar AS aset lain yang lebih sulit dicairkan. Rasio cadangannya tepat 100%, terlihat sehat. Namun bila penebusan besar datang serentak, hanya bagian likuid yang bisa segera dibayar. Karena itu pembaca laporan tidak cukup melihat angka total; ia harus menilai berapa porsi cadangan yang benar-benar likuid.",
       },
       {
         type: "case",
@@ -565,6 +625,340 @@ export const level9: Lesson[] = [
             ],
             answer: 1,
             explain: "Cadangan USDC secara keseluruhan utuh, sehingga harga cepat pulih ke 1 dolar.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "sejarah-stablecoin",
+    levelId: "stablecoin",
+    order: 5,
+    title: "Sejarah & Peran Stablecoin",
+    summary:
+      "Mengapa stablecoin muncul sebagai jembatan fiat dan kripto, alat dagang serta remitansi, dan bagaimana pasarnya tumbuh dari nol menjadi ratusan miliar dolar AS.",
+    durationMin: 14,
+    tags: ["stablecoin", "sejarah", "remitansi", "pasar", "usdt"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Harga kripto seperti Bitcoin bisa naik turun belasan persen dalam sehari. Bagi pedagang dan pengirim uang, ayunan itu merepotkan. <strong>Stablecoin</strong> lahir untuk menjawab masalah ini: aset kripto yang nilainya dipatok stabil ke dolar AS, sehingga bisa dipakai bertransaksi tanpa keluar dari dunia blockchain.",
+      },
+      {
+        type: "paragraph",
+        html: "Peran utama stablecoin ada tiga: menjadi <strong>jembatan</strong> antara uang fiat dan kripto, menjadi <strong>alat dagang</strong> yang stabil di bursa, dan menjadi cara <strong>remitansi</strong> lintas negara yang cepat dan murah dibanding transfer bank tradisional.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Jembatan, dagang, remitansi",
+        html: "Saat ingin keluar dari posisi kripto yang bergejolak tanpa menarik ke bank, pedagang pindah ke <strong>stablecoin</strong>. Saat bursa mencatat harga, pasangan paling umum adalah token terhadap stablecoin. Saat pekerja migran mengirim uang pulang, stablecoin bisa sampai dalam hitungan menit dengan biaya kecil.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Dolar digital tanpa rekening bank dolar",
+        html: "Stablecoin memungkinkan orang di mana pun memegang nilai setara dolar AS hanya dengan dompet kripto, tanpa harus membuka rekening bank dolar. Inilah salah satu alasan adopsinya cepat di negara dengan mata uang yang tidak stabil.",
+      },
+      {
+        type: "video",
+        comp: "StablecoinPegVideo",
+        title: "Menjaga Harga di Sekitar 1 Dolar",
+        caption: "Mengapa stablecoin bisa berfungsi sebagai dolar digital yang stabil untuk berdagang dan mengirim uang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tether_Logo.svg?width=400",
+        alt: "Logo Tether (USDT), stablecoin pertama yang jadi besar dan terbesar hingga kini",
+        caption: "Tether (USDT) hadir sejak 2014 dan menjadi stablecoin terbesar yang menjembatani fiat dan kripto.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "area",
+        title: "Pertumbuhan Total Kapitalisasi Stablecoin (ilustrasi)",
+        unit: "miliar dolar AS",
+        source: "ilustrasi berdasarkan tren pasar yang teramati",
+        note: "Pasar tumbuh pesat sampai awal 2022, sempat menyusut setelah keruntuhan TerraUSD, lalu pulih kembali.",
+        data: [
+          { label: "2018", value: 3 },
+          { label: "2020", value: 25 },
+          { label: "2022", value: 180 },
+          { label: "2024", value: 160 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Remitansi lewat stablecoin",
+        html: "Seorang pekerja migran ingin mengirim <strong>200 dolar AS</strong> ke keluarganya. Lewat penyedia transfer tradisional, biayanya bisa sekitar 6%, yaitu <strong>12 dolar AS</strong>, dan dananya baru sampai beberapa hari kemudian. Memakai <strong>stablecoin</strong>, ia hanya membayar biaya jaringan kecil dan dana sampai dalam hitungan menit. Karena nilainya dipatok ke dolar, jumlah yang diterima tidak tergerus ayunan harga di tengah jalan.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Lahirnya USDT (2014) lalu USDC (2018)",
+        html: "Stablecoin fiat-backed pertama yang jadi besar adalah <strong>Tether (USDT)</strong>, yang diluncurkan pada <strong>2014</strong> (awalnya bernama Realcoin sebelum berganti nama menjadi Tether). USDT dengan cepat jadi jembatan utama antara dolar dan kripto di banyak bursa. Empat tahun kemudian, pada <strong>2018</strong>, perusahaan Circle bersama Coinbase merilis <strong>USD Coin (USDC)</strong> yang menekankan transparansi dan laporan cadangan berkala. Kehadiran dua raksasa ini membentuk tulang punggung pasar stablecoin sampai hari ini.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "USDT diluncurkan pada 2014 dan USDC pada 2018. Berapa tahun jarak antara peluncuran keduanya?",
+        answer: 4,
+        tolerance: 0,
+        suffix: "tahun",
+        solution:
+          "2018 - 2014 = <strong>4 tahun</strong>. Dalam rentang itu USDT mendominasi, lalu USDC hadir menawarkan transparansi cadangan yang lebih ketat.",
+        hint: "Kurangkan tahun peluncuran USDT dari tahun peluncuran USDC.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Mengirim 200 dolar AS lewat penyedia tradisional dikenai biaya 6%. Berapa dolar AS biayanya?",
+        answer: 12,
+        tolerance: 0,
+        prefix: "$",
+        solution:
+          "200 x 6% = 200 x 0,06 = <strong>12 dolar AS</strong>. Lewat stablecoin, biaya jaringan biasanya jauh lebih kecil daripada ini.",
+        hint: "Kalikan jumlah kiriman dengan 0,06.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana yang merupakan peran nyata stablecoin dan mana yang bukan?",
+        buckets: ["Peran stablecoin", "Bukan peran stablecoin"],
+        items: [
+          { text: "Tempat berlindung sementara saat harga kripto bergejolak", bucket: "Peran stablecoin" },
+          { text: "Alat remitansi lintas negara yang cepat dan murah", bucket: "Peran stablecoin" },
+          { text: "Pasangan dagang utama di bursa kripto", bucket: "Peran stablecoin" },
+          { text: "Menjamin harganya akan terus naik seperti saham", bucket: "Bukan peran stablecoin" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Stablecoin muncul untuk menyediakan nilai stabil di dalam dunia kripto yang bergejolak.",
+          "Tiga perannya: jembatan fiat-kripto, alat dagang di bursa, dan remitansi lintas negara.",
+          "USDT (Tether) hadir 2014 sebagai stablecoin fiat-backed pertama yang jadi besar.",
+          "USDC menyusul pada 2018 dengan penekanan pada transparansi cadangan.",
+          "Pasar stablecoin tumbuh menjadi ratusan miliar dolar AS, meski sempat menyusut setelah keruntuhan TerraUSD.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mengapa stablecoin diciptakan?",
+            options: [
+              "Agar harganya melonjak cepat",
+              "Untuk menyediakan nilai stabil di dunia kripto yang bergejolak",
+              "Untuk menggantikan blockchain",
+              "Agar tidak butuh dompet",
+            ],
+            answer: 1,
+            explain: "Stablecoin memberi nilai stabil terhadap dolar sehingga praktis untuk berdagang dan mengirim uang.",
+          },
+          {
+            q: "Manakah yang BUKAN peran utama stablecoin?",
+            options: [
+              "Jembatan antara fiat dan kripto",
+              "Alat remitansi lintas negara",
+              "Menjamin keuntungan investasi yang terus naik",
+              "Pasangan dagang di bursa",
+            ],
+            answer: 2,
+            explain: "Stablecoin menjaga nilai tetap stabil, bukan menjanjikan kenaikan harga.",
+          },
+          {
+            q: "Kapan Tether (USDT) diluncurkan?",
+            options: ["2009", "2014", "2018", "2022"],
+            answer: 1,
+            explain: "USDT diluncurkan pada 2014 dan menjadi stablecoin fiat-backed pertama yang besar.",
+          },
+          {
+            q: "Stablecoin apa yang hadir pada 2018 dengan penekanan transparansi?",
+            options: ["USDC", "DAI", "TerraUSD", "Bitcoin"],
+            answer: 0,
+            explain: "USDC dirilis Circle dan Coinbase pada 2018 dengan laporan cadangan berkala.",
+          },
+          {
+            q: "Apa keunggulan stablecoin untuk remitansi?",
+            options: [
+              "Selalu gratis tanpa biaya apa pun",
+              "Cepat sampai dan biayanya kecil dibanding transfer bank tradisional",
+              "Nilainya pasti naik saat dikirim",
+              "Tidak butuh jaringan apa pun",
+            ],
+            answer: 1,
+            explain: "Stablecoin sampai dalam hitungan menit dengan biaya jaringan kecil, dan nilainya stabil.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "regulasi-stablecoin",
+    levelId: "stablecoin",
+    order: 6,
+    title: "Regulasi & Masa Depan Stablecoin",
+    summary:
+      "Mengapa regulator memperhatikan stablecoin: kualitas cadangan, transparansi, dan risiko sistemik. Mengenal arah regulasi global seperti kerangka MiCA Uni Eropa.",
+    durationMin: 15,
+    tags: ["stablecoin", "regulasi", "mica", "risiko-sistemik", "masa-depan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Ketika stablecoin tumbuh menjadi pasar ratusan miliar dolar AS dan dipakai jutaan orang, regulator di seluruh dunia mulai menaruh perhatian serius. Sebab bila sebuah stablecoin besar gagal, dampaknya bisa menjalar ke seluruh pasar kripto bahkan menyentuh sistem keuangan biasa.",
+      },
+      {
+        type: "paragraph",
+        html: "Ada tiga hal yang paling dikhawatirkan regulator: apakah <strong>cadangan</strong> benar-benar cukup dan berkualitas, apakah penerbit cukup <strong>transparan</strong> dan diaudit, dan seberapa besar <strong>risiko sistemik</strong> bila stablecoin sebesar itu runtuh tiba-tiba.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga perhatian utama regulator",
+        html: "<strong>Cadangan</strong>: harus 1:1 dengan aset likuid berkualitas tinggi. <strong>Transparansi</strong>: laporan cadangan rutin dan audit independen. <strong>Risiko sistemik</strong>: stablecoin sebesar bank harus diawasi agar kegagalannya tidak menular ke ekonomi luas.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Hak penebusan",
+        html: "Banyak aturan baru mewajibkan pemegang stablecoin bisa <strong>menebus</strong> tokennya kembali ke nilai penuh kapan saja. Jaminan ini memaksa penerbit benar-benar menyimpan cadangan yang dijanjikan, bukan sekadar mengklaim.",
+      },
+      {
+        type: "video",
+        comp: "StablecoinPegVideo",
+        title: "Menjaga Harga di Sekitar 1 Dolar",
+        caption: "Mengapa regulator ingin memastikan peg dan penebusan benar-benar terjamin oleh cadangan nyata.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang menjadi objek perhatian regulasi stablecoin",
+        caption: "Regulator berupaya menyeimbangkan inovasi blockchain dengan perlindungan pengguna dan stabilitas keuangan.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Garis Waktu Peristiwa yang Mendorong Regulasi Stablecoin",
+        unit: "tahun peristiwa",
+        source: "tanggal historis terverifikasi",
+        note: "Keruntuhan TerraUSD 2022 dan de-peg USDC 2023 mempercepat pengesahan aturan seperti MiCA.",
+        data: [
+          { label: "Keruntuhan UST", value: 2022 },
+          { label: "De-peg USDC", value: 2023 },
+          { label: "MiCA berlaku", value: 2024 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mengapa risiko sistemik ditakuti",
+        html: "Bayangkan sebuah stablecoin beredar senilai <strong>100 miliar dolar AS</strong> dan dipakai sebagai jaminan di banyak platform. Bila tiba-tiba muncul keraguan soal cadangannya, pengguna berebut menebus serentak. Penerbit harus menjual aset cadangan dalam jumlah besar sekaligus, yang bisa menekan harga pasar surat utang. Tekanan ini bisa menjalar ke luar dunia kripto. Itulah sebabnya regulator memperlakukan stablecoin raksasa mirip seperti lembaga keuangan yang harus diawasi ketat.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Terra 2022 & de-peg USDC 2023 mempercepat regulasi",
+        html: "Dua guncangan beruntun mengubah sikap regulator. Pada <strong>Mei 2022</strong>, stablecoin algoritmik <strong>TerraUSD (UST)</strong> runtuh dan melenyapkan nilai puluhan miliar dolar AS. Lalu pada <strong>Maret 2023</strong>, <strong>USDC</strong> sempat lepas dari peg karena sebagian cadangannya tersangkut di Silicon Valley Bank yang kolaps, meski cepat pulih. Kedua peristiwa ini mempercepat pembahasan aturan. Uni Eropa mengesahkan kerangka <strong>MiCA</strong> (Markets in Crypto-Assets), yang ketentuan stablecoinnya mulai berlaku pada <strong>2024</strong> dan mewajibkan cadangan memadai, transparansi, serta hak penebusan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Keruntuhan TerraUSD terjadi 2022 dan ketentuan stablecoin MiCA berlaku 2024. Berapa tahun jarak antara keduanya?",
+        answer: 2,
+        tolerance: 0,
+        suffix: "tahun",
+        solution:
+          "2024 - 2022 = <strong>2 tahun</strong>. Guncangan 2022 dan 2023 mempercepat regulator merampungkan aturan yang berlaku 2024.",
+        hint: "Kurangkan tahun keruntuhan Terra dari tahun MiCA berlaku.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan perhatian regulasi dengan maknanya.",
+        pairs: [
+          { left: "Cadangan", right: "Token harus didukung aset likuid berkualitas tinggi secara penuh" },
+          { left: "Transparansi", right: "Laporan cadangan rutin dan audit oleh pihak independen" },
+          { left: "Risiko sistemik", right: "Bahaya kegagalan stablecoin besar menular ke ekonomi luas" },
+          { left: "Hak penebusan", right: "Pemegang dapat menukar token kembali ke nilai penuh kapan saja" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana yang sejalan dengan arah regulasi stablecoin dan mana yang berlawanan?",
+        buckets: ["Sejalan dengan regulasi", "Berlawanan"],
+        items: [
+          { text: "Cadangan penuh berupa aset likuid berkualitas tinggi", bucket: "Sejalan dengan regulasi" },
+          { text: "Audit independen dan laporan cadangan berkala", bucket: "Sejalan dengan regulasi" },
+          { text: "Menolak membuka rincian cadangan kepada publik", bucket: "Berlawanan" },
+          { text: "Model algoritmik tanpa jaminan penuh berskala besar", bucket: "Berlawanan" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Regulator mengkhawatirkan cadangan, transparansi, dan risiko sistemik stablecoin.",
+          "Hak penebusan memaksa penerbit benar-benar menyimpan cadangan yang dijanjikan.",
+          "Stablecoin raksasa diperlakukan mirip lembaga keuangan yang harus diawasi ketat.",
+          "Keruntuhan TerraUSD 2022 dan de-peg USDC 2023 mempercepat lahirnya aturan baru.",
+          "MiCA Uni Eropa adalah salah satu kerangka regulasi stablecoin yang ketentuannya berlaku mulai 2024.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Mengapa regulator memperhatikan stablecoin besar?",
+            options: [
+              "Karena harganya selalu naik",
+              "Karena kegagalannya bisa menular ke pasar dan sistem keuangan luas",
+              "Karena tidak ada penggunanya",
+              "Karena tidak memakai blockchain",
+            ],
+            answer: 1,
+            explain: "Stablecoin sebesar lembaga keuangan menimbulkan risiko sistemik bila runtuh tiba-tiba.",
+          },
+          {
+            q: "Manakah yang TERMASUK perhatian utama regulator?",
+            options: [
+              "Warna logo stablecoin",
+              "Kualitas cadangan, transparansi, dan risiko sistemik",
+              "Kecepatan internet pengguna",
+              "Jumlah karyawan bursa",
+            ],
+            answer: 1,
+            explain: "Tiga fokusnya adalah cadangan yang cukup, keterbukaan, dan dampak sistemik.",
+          },
+          {
+            q: "Apa itu hak penebusan dalam aturan stablecoin?",
+            options: [
+              "Hak mencetak token baru",
+              "Hak menukar token kembali ke nilai penuh kapan saja",
+              "Hak menghapus audit",
+              "Hak menaikkan harga",
+            ],
+            answer: 1,
+            explain: "Hak penebusan memastikan penerbit benar menyimpan cadangan yang dijanjikan.",
+          },
+          {
+            q: "Dua peristiwa apa yang mempercepat regulasi stablecoin?",
+            options: [
+              "Halving Bitcoin dan pizza day",
+              "Keruntuhan TerraUSD 2022 dan de-peg USDC 2023",
+              "Lahirnya whitepaper Bitcoin",
+              "Peluncuran Ethereum",
+            ],
+            answer: 1,
+            explain: "Runtuhnya UST 2022 dan de-peg USDC 2023 mendorong regulator merampungkan aturan.",
+          },
+          {
+            q: "Apa MiCA?",
+            options: [
+              "Nama sebuah stablecoin",
+              "Kerangka regulasi kripto Uni Eropa yang ketentuan stablecoinnya berlaku mulai 2024",
+              "Sebuah bursa kripto",
+              "Algoritma penambangan",
+            ],
+            answer: 1,
+            explain: "MiCA (Markets in Crypto-Assets) adalah kerangka regulasi Uni Eropa untuk aset kripto termasuk stablecoin.",
           },
         ],
       },

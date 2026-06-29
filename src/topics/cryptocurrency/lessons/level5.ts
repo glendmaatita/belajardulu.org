@@ -39,6 +39,13 @@ export const level5: Lesson[] = [
         caption: "Transaksi membayar gas, EVM menjalankan kode, lalu state jaringan berubah.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum",
+        caption: "Ethereum: platform smart contract dengan account model dan EVM sebagai komputer dunia.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -63,6 +70,11 @@ export const level5: Lesson[] = [
         type: "case",
         title: "Studi Kasus: Membaca biaya sebuah transfer",
         html: "Andi mengirim ETH ke temannya. Transaksinya butuh <strong>21.000 gas</strong> dan saat itu harga gas <strong>30 gwei</strong>. Biaya total = 21.000 x 30 = 630.000 gwei. Karena 1 ETH = 1 miliar gwei, biayanya = 630.000 / 1.000.000.000 = <strong>0,00063 ETH</strong>. Biaya inilah yang dibayar Andi ke jaringan, bukan ke temannya.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Ethereum lahir 2015 dengan EVM dan gas sejak awal",
+        html: "Ketika Ethereum diluncurkan pada <strong>30 Juli 2015</strong>, konsep <strong>EVM</strong> dan <strong>gas</strong> sudah ada sejak hari pertama. Gagasannya berasal dari whitepaper <strong>Vitalik Buterin tahun 2013</strong> yang ingin membuat blockchain serbaguna, bukan sekadar uang. Mekanisme gas dirancang untuk mencegah program berjalan tanpa henti dan untuk membayar para node yang menjalankan komputasi. Sampai sekarang, transfer ETH biasa tetap menelan <strong>21.000 gas</strong>, angka yang sudah ditetapkan sejak awal.",
       },
       {
         type: "calcExercise",
@@ -186,6 +198,13 @@ export const level5: Lesson[] = [
         comp: "EVMSmartContractVideo",
         title: "EVM Menjalankan Kontrak",
         caption: "Bagaimana sebuah panggilan ke smart contract membayar gas dan mengubah state.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Ikon Ethereum berwarna ungu",
+        caption: "Smart contract disimpan dan dijalankan di atas Ethereum, tanpa perlu server pusat.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
@@ -338,6 +357,13 @@ export const level5: Lesson[] = [
         caption: "Token adalah smart contract; mentransfernya berarti memanggil kontrak dan mengubah state.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum",
+        caption: "Standar ERC menjadikan token apa pun di Ethereum bisa dikenali seragam oleh dompet dan aplikasi.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Perbandingan Karakter Tiga Standar Token",
@@ -484,6 +510,19 @@ export const level5: Lesson[] = [
         html: "<strong>Optimistic rollup</strong> menganggap transaksi benar secara default, dengan masa sanggah untuk menantang yang curang. <strong>ZK-rollup</strong> memakai bukti kriptografi (zero-knowledge proof) yang membuktikan transaksi benar tanpa perlu masa tunggu panjang.",
       },
       {
+        type: "video",
+        comp: "RollupVideo",
+        title: "Cara Kerja Rollup",
+        caption: "Banyak transaksi digulung di L2 menjadi satu ringkasan padat yang ditulis ke L1.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum",
+        caption: "Layer 2 dibangun di atas Ethereum (L1) dan mewarisi keamanannya sambil menekan biaya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -601,6 +640,508 @@ export const level5: Lesson[] = [
             ],
             answer: 1,
             explain: "Kemacetan dan gas mahal saat CryptoKitties 2017 dan boom DeFi 2020 mempercepat adopsi L2.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "sejarah-ethereum",
+    levelId: "ethereum",
+    order: 5,
+    title: "Sejarah Ethereum & The Merge",
+    summary:
+      "Dari whitepaper Vitalik Buterin sampai peralihan ke Proof of Stake: bagaimana Ethereum lahir, diuji oleh The DAO, lalu berubah konsensus lewat The Merge.",
+    durationMin: 14,
+    tags: ["ethereum", "sejarah", "the-merge", "proof-of-stake"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Ethereum</strong> bermula dari sebuah gagasan: bagaimana jika blockchain tidak hanya mencatat uang, tetapi bisa menjalankan <strong>program apa pun</strong>? Gagasan ini ditulis <strong>Vitalik Buterin</strong> dalam whitepaper pada tahun <strong>2013</strong>, saat ia masih sangat muda. Tujuannya membuat sebuah komputer dunia yang bisa diprogram siapa saja.",
+      },
+      {
+        type: "paragraph",
+        html: "Dana pengembangan dikumpulkan lewat <strong>penjualan token (ICO) tahun 2014</strong>. Jaringan utama akhirnya diluncurkan pada <strong>30 Juli 2015</strong>. Sejak itu Ethereum tumbuh menjadi fondasi bagi ribuan aplikasi: token, NFT, dan keuangan terdesentralisasi.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tonggak penting",
+        html: "<strong>2013</strong> whitepaper Vitalik Buterin. <strong>2014</strong> ICO penggalangan dana. <strong>2015</strong> peluncuran jaringan utama. <strong>2016</strong> peristiwa The DAO. <strong>September 2022</strong> The Merge: peralihan ke Proof of Stake.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Apa itu The Merge",
+        html: "<strong>The Merge</strong> adalah peralihan mekanisme konsensus Ethereum dari <strong>Proof of Work</strong> (menambang dengan daya komputasi) ke <strong>Proof of Stake</strong> (mengamankan jaringan dengan menaruh jaminan ETH). Terjadi pada <strong>September 2022</strong> dan memangkas konsumsi energi jaringan sekitar <strong>99,9%</strong>.",
+      },
+      {
+        type: "video",
+        comp: "EVMSmartContractVideo",
+        title: "Ethereum Sebagai Komputer Dunia",
+        caption: "Ide inti yang dituliskan Vitalik Buterin: blockchain yang bisa menjalankan program, bukan sekadar uang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Vitalik_Buterin_TechCrunch_London_2015_(cropped).jpg?width=400",
+        alt: "Vitalik Buterin, pendiri Ethereum",
+        caption: "Vitalik Buterin, yang menuliskan whitepaper Ethereum pada 2013.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Dampak The Merge terhadap Konsumsi Energi Ethereum",
+        unit: "indeks konsumsi energi (sebelum = 100)",
+        source: "ilustrasi edukatif berdasarkan klaim pengurangan energi sekitar 99,9% setelah The Merge",
+        note: "Peralihan ke Proof of Stake memangkas konsumsi energi jaringan sekitar 99,9%, dari 100 menjadi sekitar 0,1.",
+        data: [
+          { label: "Sebelum (Proof of Work)", value: 100, color: "#ef4444" },
+          { label: "Sesudah (Proof of Stake)", value: 0.1, color: "#22c55e" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membaca pengurangan energi The Merge",
+        html: "Misalkan sebelum The Merge jaringan memakai energi setara <strong>100 satuan</strong>. Pengurangan sekitar <strong>99,9%</strong> berarti pemakaian tinggal 0,1% x 100 = <strong>0,1 satuan</strong>. Jadi konsumsi energi turun dari 100 menjadi sekitar 0,1, atau sekitar <strong>seperseribu</strong> dari sebelumnya. Inilah salah satu alasan The Merge disebut perubahan besar bagi keberlanjutan Ethereum.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Dari whitepaper 2013 sampai The Merge 2022",
+        html: "Perjalanan Ethereum: <strong>2013</strong> Vitalik Buterin menulis whitepaper. <strong>2014</strong> ICO mengumpulkan dana pengembangan. <strong>30 Juli 2015</strong> jaringan utama diluncurkan. <strong>2016</strong> peristiwa <strong>The DAO</strong>, ketika bug pada smart contract dieksploitasi dan menyedot sekitar sepertiga dananya, hingga memicu perpecahan rantai. Bertahun kemudian, pada <strong>September 2022</strong>, Ethereum menjalankan <strong>The Merge</strong>, beralih dari Proof of Work ke Proof of Stake dan memangkas konsumsi energi sekitar <strong>99,9%</strong>. Semua tahun ini adalah fakta historis penting bagi ekosistem Ethereum.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebelum The Merge konsumsi energi setara 100 satuan. Setelah pengurangan 99,9%, berapa satuan energi yang tersisa?",
+        answer: 0.1,
+        tolerance: 0.01,
+        suffix: "satuan",
+        solution: "Sisa = 100 x (100% - 99,9%) = 100 x 0,1% = 100 x 0,001 = <strong>0,1 satuan</strong>.",
+        hint: "Pengurangan 99,9% menyisakan 0,1% dari nilai semula.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan tahun dengan peristiwa penting dalam sejarah Ethereum.",
+        pairs: [
+          { left: "2013", right: "Vitalik Buterin menulis whitepaper Ethereum" },
+          { left: "2015", right: "Jaringan utama Ethereum diluncurkan" },
+          { left: "2016", right: "Peristiwa The DAO dieksploitasi lewat bug" },
+          { left: "2022", right: "The Merge: peralihan ke Proof of Stake" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan ciri berikut: Proof of Work (sebelum) atau Proof of Stake (sesudah The Merge)?",
+        buckets: ["Proof of Work", "Proof of Stake"],
+        items: [
+          { text: "Mengamankan jaringan dengan daya komputasi (menambang)", bucket: "Proof of Work" },
+          { text: "Mengamankan jaringan dengan menaruh jaminan ETH", bucket: "Proof of Stake" },
+          { text: "Konsumsi energi sangat tinggi", bucket: "Proof of Work" },
+          { text: "Konsumsi energi turun sekitar 99,9%", bucket: "Proof of Stake" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Whitepaper Ethereum ditulis Vitalik Buterin pada 2013, dengan ide blockchain yang bisa diprogram.",
+          "Dana dikumpulkan lewat ICO 2014, lalu jaringan utama diluncurkan 30 Juli 2015.",
+          "Peristiwa The DAO 2016 menunjukkan risiko bug pada smart contract.",
+          "The Merge pada September 2022 mengubah konsensus dari Proof of Work ke Proof of Stake.",
+          "The Merge memangkas konsumsi energi jaringan sekitar 99,9%.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Siapa yang menulis whitepaper Ethereum dan tahun berapa?",
+            options: [
+              "Satoshi Nakamoto, 2008",
+              "Vitalik Buterin, 2013",
+              "Fabian Vogelsteller, 2015",
+              "Tidak diketahui",
+            ],
+            answer: 1,
+            explain: "Vitalik Buterin menuliskan whitepaper Ethereum pada tahun 2013.",
+          },
+          {
+            q: "Kapan jaringan utama Ethereum diluncurkan?",
+            options: ["2008", "2013", "2015", "2022"],
+            answer: 2,
+            explain: "Jaringan utama Ethereum diluncurkan pada 30 Juli 2015.",
+          },
+          {
+            q: "Apa itu The Merge?",
+            options: [
+              "Peluncuran Bitcoin",
+              "Peralihan Ethereum dari Proof of Work ke Proof of Stake",
+              "Penggabungan dua bursa kripto",
+              "Sebuah token baru",
+            ],
+            answer: 1,
+            explain: "The Merge adalah peralihan konsensus Ethereum ke Proof of Stake pada September 2022.",
+          },
+          {
+            q: "Kira-kira berapa pengurangan konsumsi energi setelah The Merge?",
+            options: ["Sekitar 10%", "Sekitar 50%", "Sekitar 99,9%", "Tidak berubah"],
+            answer: 2,
+            explain: "The Merge memangkas konsumsi energi jaringan sekitar 99,9%.",
+          },
+          {
+            q: "Apa yang terjadi pada peristiwa The DAO 2016?",
+            options: [
+              "Ethereum diluncurkan",
+              "Bug pada smart contract dieksploitasi sehingga banyak dana tersedot",
+              "Ethereum beralih ke Proof of Stake",
+              "ICO pertama dilakukan",
+            ],
+            answer: 1,
+            explain: "Pada 2016, bug The DAO dieksploitasi dan menyedot sekitar sepertiga dananya.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "gas-eip1559",
+    levelId: "ethereum",
+    order: 6,
+    title: "Gas, Fee & EIP-1559",
+    summary:
+      "Bagaimana biaya transaksi Ethereum dihitung: base fee yang dibakar, priority fee untuk penambang/validator, dan mengapa EIP-1559 mengubah pasar gas.",
+    durationMin: 14,
+    tags: ["ethereum", "gas", "fee", "eip-1559"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Setiap transaksi Ethereum membayar <strong>fee</strong> yang besarnya tergantung dua hal: berapa banyak <strong>gas</strong> yang dipakai, dan berapa <strong>harga per gas</strong> (dalam gwei). Sebelum tahun 2021, harga gas ditentukan lewat lelang sederhana: siapa berani bayar tinggi, transaksinya didahulukan. Sistem ini sering membuat fee melonjak liar dan sulit ditebak.",
+      },
+      {
+        type: "paragraph",
+        html: "Sejak pembaruan <strong>EIP-1559</strong>, fee dipecah menjadi dua bagian: <strong>base fee</strong> dan <strong>priority fee</strong> (tip). Base fee ditentukan otomatis oleh jaringan sesuai keramaian, lalu <strong>dibakar</strong> (dihapus dari peredaran). Priority fee adalah tip tambahan agar transaksi didahulukan, dan diberikan ke validator.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Rumus fee setelah EIP-1559",
+        html: "<strong>Total fee = gas dipakai x (base fee + priority fee)</strong>. Base fee dibakar sehingga mengurangi pasokan ETH; priority fee menjadi imbalan validator yang memasukkan transaksimu ke blok.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Mengapa base fee dibakar",
+        html: "Dengan <strong>membakar</strong> base fee, sebagian ETH lenyap dari peredaran setiap transaksi. Saat jaringan sangat ramai, ETH yang dibakar bisa melebihi ETH baru yang diterbitkan, sehingga pasokan ETH justru bisa berkurang.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Atur jumlah gas dan harga gas (gwei), lalu lihat bagaimana total fee dalam ETH berubah saat jaringan ramai atau sepi.",
+      },
+      { type: "widget", widget: "KalkulatorGasFee" },
+      {
+        type: "video",
+        comp: "EVMSmartContractVideo",
+        title: "Transaksi Membayar Gas",
+        caption: "Setiap panggilan ke EVM membayar gas; setelah EIP-1559 sebagian fee itu dibakar.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Ikon Ethereum berwarna ungu",
+        caption: "EIP-1559 mengubah cara Ethereum menentukan dan membakar biaya transaksi.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Komposisi Fee Sebuah Transaksi (ilustrasi edukatif)",
+        unit: "gwei per gas",
+        source: "ilustrasi edukatif untuk menjelaskan pembagian base fee dan priority fee",
+        note: "Total harga per gas adalah base fee (dibakar) ditambah priority fee (tip ke validator).",
+        data: [
+          { label: "Base fee (dibakar)", value: 25, color: "#ef4444" },
+          { label: "Priority fee (tip)", value: 2, color: "#627eea" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menghitung total fee setelah EIP-1559",
+        html: "Sebuah transfer ETH memakai <strong>21.000 gas</strong>. Saat itu base fee <strong>25 gwei</strong> dan priority fee (tip) <strong>2 gwei</strong>, sehingga harga total per gas = 25 + 2 = <strong>27 gwei</strong>. Total fee = 21.000 x 27 = 567.000 gwei. Karena 1 ETH = 1 miliar gwei, fee = 567.000 / 1.000.000.000 = <strong>0,000567 ETH</strong>. Dari jumlah itu, bagian base fee (21.000 x 25 = 525.000 gwei) <strong>dibakar</strong>, sisanya jadi tip validator.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: EIP-1559 aktif lewat London Upgrade Agustus 2021",
+        html: "Pembaruan <strong>EIP-1559</strong> diaktifkan lewat <strong>London Upgrade</strong> pada <strong>Agustus 2021</strong>. Sejak saat itu Ethereum mulai <strong>membakar base fee</strong> di setiap transaksi. Perubahan ini membuat estimasi fee lebih mudah ditebak dibanding sistem lelang lama, dan memperkenalkan mekanisme deflasi: pada periode jaringan sangat ramai, ETH yang dibakar bisa melampaui ETH yang baru diterbitkan. Tanggal dan nama upgrade ini adalah fakta historis.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah transfer memakai 21.000 gas dengan base fee 25 gwei dan priority fee 2 gwei. Berapa total fee dalam ETH? (1 ETH = 1 miliar gwei)",
+        answer: 0.000567,
+        tolerance: 0.000005,
+        suffix: "ETH",
+        solution:
+          "Harga per gas = 25 + 2 = 27 gwei. Total = 21.000 x 27 = 567.000 gwei. Lalu 567.000 / 1.000.000.000 = <strong>0,000567 ETH</strong>.",
+        hint: "Jumlahkan base fee dan priority fee dulu, kalikan gas, lalu bagi 1 miliar.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dari transaksi di atas, berapa banyak gwei base fee yang dibakar? (gas 21.000, base fee 25 gwei)",
+        answer: 525000,
+        tolerance: 0,
+        suffix: "gwei",
+        solution: "Base fee dibakar = 21.000 x 25 = <strong>525.000 gwei</strong>. Priority fee tidak dibakar, melainkan jadi tip validator.",
+        hint: "Kalikan gas dengan base fee saja (tanpa priority fee).",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan pernyataan: tentang base fee atau priority fee?",
+        buckets: ["Base fee", "Priority fee"],
+        items: [
+          { text: "Ditentukan otomatis oleh jaringan sesuai keramaian", bucket: "Base fee" },
+          { text: "Dibakar sehingga mengurangi pasokan ETH", bucket: "Base fee" },
+          { text: "Tip tambahan agar transaksi didahulukan", bucket: "Priority fee" },
+          { text: "Diberikan sebagai imbalan ke validator", bucket: "Priority fee" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Total fee = gas dipakai x (base fee + priority fee).",
+          "Base fee ditentukan otomatis oleh jaringan dan dibakar dari peredaran.",
+          "Priority fee adalah tip ke validator agar transaksi didahulukan.",
+          "EIP-1559 aktif lewat London Upgrade pada Agustus 2021 dan mulai membakar base fee.",
+          "Pembakaran base fee bisa membuat pasokan ETH berkurang saat jaringan ramai.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Setelah EIP-1559, fee transaksi dipecah menjadi apa?",
+            options: [
+              "Hanya satu harga tetap",
+              "Base fee dan priority fee",
+              "Pajak dan bea masuk",
+              "Biaya bank dan biaya kartu",
+            ],
+            answer: 1,
+            explain: "EIP-1559 memecah fee menjadi base fee dan priority fee (tip).",
+          },
+          {
+            q: "Apa yang terjadi pada base fee?",
+            options: [
+              "Diberikan ke pengirim",
+              "Dibakar sehingga mengurangi pasokan ETH",
+              "Disimpan di bank",
+              "Dikembalikan setelah sebulan",
+            ],
+            answer: 1,
+            explain: "Base fee dibakar (dihapus dari peredaran), bukan diberikan ke siapa pun.",
+          },
+          {
+            q: "Untuk apa priority fee?",
+            options: [
+              "Tip ke validator agar transaksi didahulukan",
+              "Membayar pajak negara",
+              "Dibakar sepenuhnya",
+              "Membeli ETH baru",
+            ],
+            answer: 0,
+            explain: "Priority fee adalah tip tambahan yang menjadi imbalan validator.",
+          },
+          {
+            q: "Kapan EIP-1559 mulai aktif?",
+            options: [
+              "Saat peluncuran Ethereum 2015",
+              "London Upgrade, Agustus 2021",
+              "The Merge, September 2022",
+              "Belum aktif",
+            ],
+            answer: 1,
+            explain: "EIP-1559 aktif lewat London Upgrade pada Agustus 2021.",
+          },
+          {
+            q: "Sebuah transfer memakai 10.000 gas dengan harga total 30 gwei per gas. Berapa total fee dalam gwei?",
+            options: ["300.000 gwei", "30.000 gwei", "3.000 gwei", "10.000 gwei"],
+            answer: 0,
+            explain: "Total = 10.000 x 30 = 300.000 gwei.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "dapp-ekosistem",
+    levelId: "ethereum",
+    order: 7,
+    title: "Aplikasi Terdesentralisasi (dApp)",
+    summary:
+      "dApp menggabungkan front-end biasa, smart contract sebagai otak, dan dompet sebagai identitas. Dari DeFi sampai NFT dan game, inilah wujud nyata Ethereum.",
+    durationMin: 14,
+    tags: ["ethereum", "dapp", "defi", "nft"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>dApp</strong> (decentralized application) adalah aplikasi yang otak logikanya berjalan di blockchain, bukan di server satu perusahaan. Dari sisi pengguna ia terlihat seperti aplikasi web biasa, tetapi aturan dan datanya disimpan di smart contract yang transparan dan tidak bisa diubah sepihak.",
+      },
+      {
+        type: "paragraph",
+        html: "Sebuah dApp khas punya tiga bagian: <strong>front-end</strong> (tampilan yang dilihat pengguna), <strong>smart contract</strong> (logika dan aturan di blockchain), dan <strong>dompet</strong> (identitas serta cara pengguna menandatangani transaksi). Tidak ada nama pengguna dan kata sandi; dompetlah yang menjadi identitas.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga lapis sebuah dApp",
+        html: "<strong>Front-end</strong>: antarmuka biasa (web atau aplikasi). <strong>Smart contract</strong>: otak yang menyimpan aturan dan dana di blockchain. <strong>Dompet</strong>: identitas pengguna sekaligus alat menandatangani transaksi.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Ragam dApp",
+        html: "<strong>DeFi</strong> (keuangan terdesentralisasi): tukar, pinjam, dan simpan aset tanpa bank. <strong>NFT</strong>: kepemilikan karya digital unik. <strong>Game</strong>: aset dalam game yang benar-benar dimiliki pemain. Semua berjalan di atas smart contract.",
+      },
+      {
+        type: "video",
+        comp: "AMMVideo",
+        title: "Contoh dApp: Bursa Terdesentralisasi",
+        caption: "Bursa otomatis (AMM) seperti Uniswap adalah salah satu dApp DeFi paling populer.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
+        alt: "Logo Uniswap",
+        caption: "Uniswap, bursa terdesentralisasi (DEX), adalah contoh dApp DeFi yang banyak dipakai.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Ragam Kategori dApp (ilustrasi edukatif)",
+        unit: "% pangsa aktivitas",
+        source: "ilustrasi edukatif berdasarkan pola pemakaian umum di ekosistem Ethereum",
+        note: "DeFi mendominasi aktivitas dApp, diikuti NFT, lalu game dan kategori lain.",
+        data: [
+          { label: "DeFi", value: 50, color: "#627eea" },
+          { label: "NFT", value: 25, color: "#8b9bf4" },
+          { label: "Game", value: 15, color: "#a5b4fc" },
+          { label: "Lainnya", value: 10, color: "#c4b5fd" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menukar token lewat dApp DEX",
+        html: "Rina ingin menukar <strong>100 USDT</strong> menjadi ETH. Ia membuka dApp bursa terdesentralisasi, menghubungkan <strong>dompet</strong>-nya (tanpa daftar akun), lalu menekan tukar. Front-end mengirim perintah ke <strong>smart contract</strong> bursa, ia menandatangani transaksi dan membayar gas, dan ETH langsung masuk ke dompetnya. Tidak ada perusahaan yang menyimpan dananya di tengah; semua diatur oleh kontrak.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: DeFi Summer 2020 dan lonjakan gas",
+        html: "Pada pertengahan <strong>2020</strong>, terjadi ledakan dApp keuangan terdesentralisasi yang dikenal sebagai <strong>DeFi Summer</strong>. Banyak protokol baru menawarkan imbal hasil dari menyediakan likuiditas (yield farming), sehingga jutaan transaksi membanjiri Ethereum. Akibatnya <strong>harga gas melonjak tajam</strong>, kadang menembus puluhan dolar per transaksi. Lonjakan ini menegaskan kebutuhan akan solusi penskalaan seperti Layer 2. Peristiwa DeFi Summer 2020 adalah momen historis nyata bagi ekosistem dApp.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah dApp memproses 3 jenis aksi: tukar (150.000 gas), pinjam (200.000 gas), dan klaim hadiah (50.000 gas). Berapa total gas untuk menjalankan ketiganya sekali?",
+        answer: 400000,
+        tolerance: 0,
+        suffix: "gas",
+        solution: "150.000 + 200.000 + 50.000 = <strong>400.000 gas</strong> total untuk ketiga aksi.",
+        hint: "Jumlahkan gas dari ketiga aksi.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap bagian ini ke lapisan dApp yang tepat.",
+        buckets: ["Front-end", "Smart contract", "Dompet"],
+        items: [
+          { text: "Tampilan tombol tukar yang dilihat pengguna", bucket: "Front-end" },
+          { text: "Logika yang menahan dan melepas dana di blockchain", bucket: "Smart contract" },
+          { text: "Alat menandatangani transaksi dan identitas pengguna", bucket: "Dompet" },
+          { text: "Aturan tukar token yang transparan dan tak bisa diubah sepihak", bucket: "Smart contract" },
+          { text: "Halaman web yang menampilkan saldo dan harga", bucket: "Front-end" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan kategori dApp dengan contoh nyatanya.",
+        pairs: [
+          { left: "DeFi", right: "Menukar dan meminjam aset tanpa bank" },
+          { left: "NFT", right: "Memiliki karya seni digital unik" },
+          { left: "Game", right: "Memiliki aset dalam game yang bisa diperjualbelikan" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "dApp adalah aplikasi yang otak logikanya berjalan di smart contract, bukan server satu perusahaan.",
+          "Tiga lapisnya: front-end (tampilan), smart contract (otak), dan dompet (identitas).",
+          "Dompet menggantikan nama pengguna dan kata sandi sebagai identitas.",
+          "Kategori populer: DeFi, NFT, dan game.",
+          "DeFi Summer 2020 meledakkan jumlah dApp dan membuat harga gas melonjak.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa yang membedakan dApp dari aplikasi biasa?",
+            options: [
+              "Tampilannya selalu jelek",
+              "Logikanya berjalan di smart contract, bukan server satu perusahaan",
+              "Tidak butuh internet",
+              "Hanya bisa dipakai pembuatnya",
+            ],
+            answer: 1,
+            explain: "dApp menjalankan logikanya di smart contract di blockchain, bukan server terpusat.",
+          },
+          {
+            q: "Apa tiga lapisan utama sebuah dApp?",
+            options: [
+              "CPU, RAM, dan disk",
+              "Front-end, smart contract, dan dompet",
+              "Bank, notaris, dan pengacara",
+              "Penambang, validator, dan node",
+            ],
+            answer: 1,
+            explain: "Sebuah dApp terdiri dari front-end, smart contract, dan dompet.",
+          },
+          {
+            q: "Apa peran dompet dalam dApp?",
+            options: [
+              "Menyimpan halaman web",
+              "Menjadi identitas pengguna dan alat menandatangani transaksi",
+              "Menjalankan logika kontrak",
+              "Mencetak ETH baru",
+            ],
+            answer: 1,
+            explain: "Dompet menjadi identitas dan alat menandatangani transaksi, menggantikan akun dan kata sandi.",
+          },
+          {
+            q: "Manakah contoh dApp kategori DeFi?",
+            options: [
+              "Bursa terdesentralisasi untuk menukar dan meminjam aset",
+              "Aplikasi cuaca biasa",
+              "Spreadsheet di komputer",
+              "Email pribadi",
+            ],
+            answer: 0,
+            explain: "DeFi mencakup tukar dan pinjam aset tanpa bank, seperti bursa terdesentralisasi.",
+          },
+          {
+            q: "Apa itu DeFi Summer 2020?",
+            options: [
+              "Peluncuran Bitcoin",
+              "Ledakan dApp DeFi pada 2020 yang membuat harga gas melonjak",
+              "The Merge",
+              "Pelarangan kripto global",
+            ],
+            answer: 1,
+            explain: "DeFi Summer 2020 adalah ledakan dApp keuangan terdesentralisasi yang melonjakkan harga gas.",
           },
         ],
       },

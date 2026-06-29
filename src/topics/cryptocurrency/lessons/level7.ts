@@ -33,6 +33,13 @@ export const level7: Lesson[] = [
         caption: "Dari tulis ke compile, deploy, lalu dipanggil sampai state-nya berubah.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Logo Ethereum berwarna ungu",
+        caption: "Ethereum adalah jaringan tempat smart contract Solidity hidup dan dijalankan.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "info",
         title: "Address kontrak itu permanen",
@@ -179,6 +186,13 @@ export const level7: Lesson[] = [
         comp: "DaurHidupKontrakVideo",
         title: "Saat Kontrak Mengubah State",
         caption: "Perhatikan momen pemanggilan fungsi mengubah state yang tersimpan di storage.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang saling terhubung",
+        caption: "State yang ditulis ke storage tersimpan permanen di rantai blok dan disalin tiap node.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
@@ -349,6 +363,13 @@ export const level7: Lesson[] = [
         caption: "Setelah di-deploy, kode kontrak tetap; satu celah bisa terus dieksploitasi.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum 2014",
+        caption: "Banyak insiden keamanan paling terkenal terjadi pada kontrak di jaringan Ethereum.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Kerugian Beberapa Insiden Smart Contract (perkiraan)",
@@ -497,6 +518,13 @@ export const level7: Lesson[] = [
         caption: "Proxy menjaga state dan address, sementara logic implementasi dapat diperbarui.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain_workflow.png?width=400",
+        alt: "Diagram alur kerja blockchain",
+        caption: "Pola proxy meneruskan tiap panggilan ke kontrak implementasi yang dapat ditukar.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "warn",
         title: "Fleksibilitas membawa risiko baru",
@@ -615,6 +643,335 @@ export const level7: Lesson[] = [
             ],
             answer: 1,
             explain: "Sekitar 513 ribu ETH terkunci karena bug pada pustaka kontrak bersama.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "bahasa-tooling",
+    levelId: "smartcontract",
+    order: 5,
+    title: "Bahasa & Tooling Smart Contract",
+    summary:
+      "Mengenal bahasa penulisan smart contract seperti Solidity dan Vyper, proses kompilasi ke bytecode, serta alat bantu modern seperti Remix, Hardhat, dan Foundry, plus pentingnya menguji di testnet sebelum mainnet.",
+    durationMin: 14,
+    tags: ["smart contract", "solidity", "tooling", "testnet"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Menulis smart contract bukan cuma soal mengetik kode. Pengembang memilih <strong>bahasa</strong> yang tepat, memakai <strong>alat (tooling)</strong> untuk mengompilasi serta menguji, lalu mencoba semuanya di <strong>testnet</strong> sebelum berani melepasnya ke jaringan utama. Rangkaian alat inilah yang membuat kontrak lebih aman dan dapat diandalkan.",
+      },
+      {
+        type: "paragraph",
+        html: "Dua bahasa paling dikenal di Ethereum adalah <strong>Solidity</strong> dan <strong>Vyper</strong>. Solidity bergaya mirip JavaScript dan paling banyak dipakai, sedangkan Vyper bergaya mirip Python dan sengaja dibuat lebih sederhana agar mudah diaudit. Apa pun bahasanya, kodenya tetap di-<strong>compile</strong> menjadi <strong>bytecode</strong> yang sama-sama dijalankan mesin virtual Ethereum.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Solidity vs Vyper",
+        html: "<strong>Solidity</strong>: paling populer, fitur lengkap, gaya mirip JavaScript. <strong>Vyper</strong>: lebih ringkas dan ketat, gaya mirip Python, dirancang agar mudah dibaca dan diaudit. Keduanya menghasilkan bytecode untuk EVM yang sama.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Tiga alat yang sering dipakai",
+        html: "<strong>Remix</strong>: editor di browser, cocok untuk belajar dan mencoba cepat. <strong>Hardhat</strong>: kerangka kerja berbasis JavaScript untuk menulis test dan men-deploy. <strong>Foundry</strong>: perangkat cepat berbasis bahasa Solidity untuk testing, populer karena kecepatannya.",
+      },
+      {
+        type: "video",
+        comp: "DaurHidupKontrakVideo",
+        title: "Dari Kode ke Kontrak yang Hidup",
+        caption: "Tooling membantu tiap tahap: menulis, compile jadi bytecode, menguji, lalu deploy.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum 2014",
+        caption: "Solidity dan Vyper sama-sama menargetkan mesin virtual Ethereum (EVM).",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Uji di testnet dulu",
+        html: "Sebelum melepas kontrak ke <strong>mainnet</strong> (jaringan utama dengan dana asli), pengembang men-deploy ke <strong>testnet</strong> seperti Sepolia. Di testnet, gas dibayar dengan token uji tanpa nilai, sehingga bug bisa ditemukan tanpa risiko kehilangan uang sungguhan.",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perkiraan Pemakaian Bahasa Smart Contract di Ethereum (ilustrasi)",
+        unit: "perkiraan pangsa (%)",
+        source: "ilustrasi edukatif, urutan sesuai praktik umum komunitas",
+        note: "Solidity mendominasi penulisan kontrak, sementara Vyper dipakai sebagian proyek yang mengutamakan kesederhanaan.",
+        data: [
+          { label: "Solidity", value: 85, color: "#627eea" },
+          { label: "Vyper", value: 10, color: "#26a17b" },
+          { label: "Lainnya", value: 5, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Alur kerja sebelum rilis",
+        html: "Sebuah tim menulis kontrak token di <strong>Solidity</strong> memakai <strong>Foundry</strong>. Mereka menulis puluhan test otomatis, menjalankannya hingga semua lulus, lalu men-deploy ke <strong>testnet Sepolia</strong> untuk dicoba bersama front-end. Setelah dua minggu tanpa masalah dan satu <strong>audit</strong> singkat, barulah kontrak yang sama di-deploy ke <strong>mainnet</strong>. Urutan ini memangkas risiko bug mahal yang sulit diperbaiki setelah live.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Solidity diusulkan, 2014",
+        html: "Pada <strong>2014</strong>, <strong>Gavin Wood</strong>, salah satu pendiri Ethereum, mengusulkan bahasa <strong>Solidity</strong>. Bahasa ini kemudian dikembangkan oleh tim Ethereum dan menjadi bahasa utama untuk menulis smart contract. Sejak itu, mayoritas aplikasi terdesentralisasi di Ethereum ditulis dengan Solidity, menjadikannya salah satu bahasa terpenting di dunia kripto.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah tim menjalankan 40 test otomatis, dan 38 di antaranya lulus. Berapa persen test yang lulus?",
+        answer: 95,
+        tolerance: 0,
+        suffix: "%",
+        solution:
+          "38 / 40 = 0,95 = <strong>95%</strong>. Dua test yang gagal menandai bug yang harus diperbaiki sebelum deploy.",
+        hint: "Bagi jumlah test lulus dengan total test, lalu kalikan 100.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap item ke kategori yang tepat.",
+        buckets: ["Bahasa", "Alat (Tooling)"],
+        items: [
+          { text: "Solidity", bucket: "Bahasa" },
+          { text: "Vyper", bucket: "Bahasa" },
+          { text: "Hardhat", bucket: "Alat (Tooling)" },
+          { text: "Foundry", bucket: "Alat (Tooling)" },
+          { text: "Remix", bucket: "Alat (Tooling)" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan tiap istilah dengan perannya.",
+        pairs: [
+          { left: "Compile", right: "Mengubah kode jadi bytecode" },
+          { left: "Testnet", right: "Jaringan uji tanpa dana asli" },
+          { left: "Mainnet", right: "Jaringan utama dengan dana nyata" },
+          { left: "Remix", right: "Editor kontrak di browser" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Solidity (gaya JavaScript) dan Vyper (gaya Python) adalah bahasa smart contract utama di Ethereum.",
+          "Apa pun bahasanya, kode di-compile menjadi bytecode untuk mesin virtual Ethereum.",
+          "Remix, Hardhat, dan Foundry adalah alat populer untuk menulis, menguji, dan men-deploy.",
+          "Uji kontrak di testnet sebelum melepasnya ke mainnet yang memegang dana asli.",
+          "Solidity diusulkan Gavin Wood pada 2014 dan menjadi bahasa utama smart contract.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bahasa mana yang bergaya mirip Python dan dirancang agar mudah diaudit?",
+            options: ["Solidity", "Vyper", "Rust", "Java"],
+            answer: 1,
+            explain: "Vyper bergaya mirip Python dan sengaja dibuat ringkas agar mudah dibaca dan diaudit.",
+          },
+          {
+            q: "Apa hasil dari mengompilasi kode Solidity atau Vyper?",
+            options: ["Bytecode untuk EVM", "Sebuah dompet", "Seed phrase", "Token gratis"],
+            answer: 0,
+            explain: "Kedua bahasa di-compile menjadi bytecode yang dijalankan mesin virtual Ethereum.",
+          },
+          {
+            q: "Apa fungsi testnet?",
+            options: [
+              "Tempat menyimpan dana asli",
+              "Jaringan uji untuk mencoba kontrak tanpa risiko uang sungguhan",
+              "Alat untuk menambang Bitcoin",
+              "Bahasa pemrograman baru",
+            ],
+            answer: 1,
+            explain: "Testnet memakai token uji tanpa nilai sehingga bug bisa ditemukan tanpa kerugian nyata.",
+          },
+          {
+            q: "Alat mana yang berupa editor kontrak di browser, cocok untuk belajar cepat?",
+            options: ["Foundry", "Hardhat", "Remix", "Vyper"],
+            answer: 2,
+            explain: "Remix adalah editor berbasis browser yang praktis untuk mencoba dan belajar.",
+          },
+          {
+            q: "Siapa yang mengusulkan bahasa Solidity pada 2014?",
+            options: ["Satoshi Nakamoto", "Gavin Wood", "Fabian Vogelsteller", "Charles Hoskinson"],
+            answer: 1,
+            explain: "Gavin Wood, salah satu pendiri Ethereum, mengusulkan Solidity pada 2014.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "pola-standar-kontrak",
+    levelId: "smartcontract",
+    order: 6,
+    title: "Pola Desain & Library Standar",
+    summary:
+      "Pengembang tidak menemukan ulang roda: ada pola desain teruji seperti kontrol akses (Ownable), pausable, dan pull-over-push, serta library standar seperti OpenZeppelin yang sudah diaudit untuk dipakai ulang dengan aman.",
+    durationMin: 14,
+    tags: ["smart contract", "pola desain", "openzeppelin", "keamanan"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Setelah memahami bahasa dan tooling, pertanyaan berikutnya adalah: bagaimana menulis kontrak yang aman dan rapi? Jawabannya bukan menulis semuanya dari nol, melainkan memakai <strong>pola desain</strong> yang sudah terbukti dan <strong>library standar</strong> yang sudah diaudit banyak orang.",
+      },
+      {
+        type: "paragraph",
+        html: "Beberapa pola yang paling sering dipakai: <strong>kontrol akses</strong> (mis. <em>Ownable</em>, membatasi fungsi penting hanya untuk pemilik), <strong>pausable</strong> (bisa menghentikan kontrak saat darurat), dan <strong>pull-over-push</strong> (pengguna menarik dananya sendiri alih-alih kontrak mengirim otomatis, agar lebih aman dari kegagalan dan reentrancy).",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga pola desain inti",
+        html: "<strong>Ownable</strong>: hanya pemilik boleh memanggil fungsi sensitif. <strong>Pausable</strong>: ada tombol jeda darurat untuk menghentikan operasi saat ada masalah. <strong>Pull-over-push</strong>: pengguna menarik dananya sendiri, bukan kontrak yang mendorong kirim, sehingga lebih tahan terhadap kegagalan dan reentrancy.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Pakai library teruji",
+        html: "<strong>OpenZeppelin</strong> adalah kumpulan kontrak standar (token ERC-20, ERC-721, Ownable, Pausable, dan lainnya) yang sudah diaudit dan dipakai ribuan proyek. Memakai kode teruji jauh lebih aman daripada menulis ulang sendiri dan berisiko mengulang bug lama.",
+      },
+      {
+        type: "video",
+        comp: "DaurHidupKontrakVideo",
+        title: "Menyusun Kontrak dari Pola Teruji",
+        caption: "Pola desain dan library standar menjadi fondasi kontrak yang aman dan rapi.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Logo Ethereum berwarna ungu",
+        caption: "Library seperti OpenZeppelin menyediakan kontrak standar siap pakai untuk Ethereum.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Mainkan kontrak <strong>multisig</strong>: amati bagaimana sebuah transaksi baru dieksekusi setelah cukup banyak pemilik menyetujuinya. Ini adalah salah satu pola kontrol akses paling penting untuk dana bersama.",
+      },
+      { type: "widget", widget: "SimulatorMultisig" },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Menulis Sendiri vs Memakai Library Teruji (ilustrasi)",
+        unit: "skor relatif 0-10",
+        source: "ilustrasi edukatif perbandingan pendekatan, bukan pengukuran",
+        note: "Library teruji unggul di keamanan dan kecepatan; menulis ulang sendiri menambah risiko mengulang bug yang sudah dikenal.",
+        data: [
+          { label: "Keamanan (library)", value: 9, color: "#26a17b" },
+          { label: "Keamanan (tulis sendiri)", value: 4, color: "#f7931a" },
+          { label: "Kecepatan (library)", value: 9, color: "#627eea" },
+          { label: "Kecepatan (tulis sendiri)", value: 3, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membangun token dengan pola standar",
+        html: "Sebuah tim ingin merilis token. Daripada menulis logika transfer dari nol, mereka memakai kontrak <strong>ERC-20</strong> dari <strong>OpenZeppelin</strong>, menambahkan <em>Ownable</em> agar hanya pemilik bisa mencetak token baru, dan <em>Pausable</em> sebagai rem darurat. Dengan kode yang sudah diaudit ribuan mata, mereka menghemat waktu sekaligus memangkas peluang bug fatal.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Bug multisig Parity, 2017",
+        html: "Pada <strong>November 2017</strong>, sebuah bug pada pustaka kontrak dompet <strong>multisig Parity</strong> dipicu seorang pengguna yang lalu mengunci pustaka itu. Karena banyak dompet bergantung pada satu pustaka bersama, sekitar <strong>513 ribu ETH</strong> ikut terkunci permanen dan tak bisa diakses. Insiden ini menegaskan pentingnya pola desain yang hati-hati dan <strong>audit</strong> menyeluruh: kesalahan pada kode bersama bisa berakibat luas dan tak bisa dibatalkan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah dompet multisig membutuhkan persetujuan minimal 3 dari 5 pemilik agar transaksi dieksekusi. Jika baru 2 pemilik menyetujui, berapa persetujuan lagi yang dibutuhkan?",
+        answer: 1,
+        tolerance: 0,
+        suffix: "persetujuan",
+        solution:
+          "Butuh 3, sudah ada 2, jadi kurang <strong>1 persetujuan</strong> lagi. Pola multisig mencegah satu orang bertindak sendirian atas dana bersama.",
+        hint: "Kurangkan jumlah persetujuan yang sudah ada dari ambang minimal.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap praktik sebagai praktik baik atau praktik buruk.",
+        buckets: ["Praktik baik", "Praktik buruk"],
+        items: [
+          { text: "Memakai library OpenZeppelin yang sudah diaudit", bucket: "Praktik baik" },
+          { text: "Menulis ulang logika token dari nol tanpa audit", bucket: "Praktik buruk" },
+          { text: "Membatasi fungsi cetak token hanya untuk pemilik (Ownable)", bucket: "Praktik baik" },
+          { text: "Membiarkan siapa pun memanggil fungsi sensitif", bucket: "Praktik buruk" },
+          { text: "Menyediakan tombol jeda darurat (Pausable)", bucket: "Praktik baik" },
+          { text: "Menyalin kode acak dari internet tanpa diperiksa", bucket: "Praktik buruk" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Pakai pola desain teruji daripada menulis semuanya dari nol.",
+          "Ownable membatasi fungsi sensitif, Pausable memberi rem darurat, pull-over-push lebih aman dari reentrancy.",
+          "Library standar seperti OpenZeppelin sudah diaudit dan dipakai ribuan proyek.",
+          "Multisig mensyaratkan beberapa persetujuan sehingga satu orang tak bisa bertindak sendiri atas dana bersama.",
+          "Bug pustaka multisig Parity 2017 membekukan sekitar 513 ribu ETH, menegaskan pentingnya pola dan audit.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa tujuan pola Ownable?",
+            options: [
+              "Membuat kontrak gratis",
+              "Membatasi fungsi penting hanya untuk pemilik",
+              "Menghapus kontrak otomatis",
+              "Mempercepat compile",
+            ],
+            answer: 1,
+            explain: "Ownable membatasi fungsi sensitif agar hanya bisa dipanggil pemilik.",
+          },
+          {
+            q: "Apa keunggulan pola pull-over-push?",
+            options: [
+              "Membuat gas gratis",
+              "Pengguna menarik dananya sendiri sehingga lebih aman dari kegagalan dan reentrancy",
+              "Kontrak mengirim dana ke semua orang otomatis",
+              "Menghapus kebutuhan storage",
+            ],
+            answer: 1,
+            explain: "Dengan pull, pengguna menarik dananya sendiri, mengurangi risiko kegagalan dan reentrancy.",
+          },
+          {
+            q: "Apa itu OpenZeppelin?",
+            options: [
+              "Sebuah bursa kripto",
+              "Kumpulan kontrak standar yang sudah diaudit dan dipakai ulang",
+              "Bahasa pemrograman baru",
+              "Sebuah dompet perangkat keras",
+            ],
+            answer: 1,
+            explain: "OpenZeppelin menyediakan kontrak standar teruji seperti ERC-20, Ownable, dan Pausable.",
+          },
+          {
+            q: "Mengapa memakai library teruji lebih disarankan daripada menulis ulang sendiri?",
+            options: [
+              "Karena selalu gratis",
+              "Karena kode sudah diaudit banyak orang sehingga lebih kecil peluang bug fatal",
+              "Karena membuat gas nol",
+              "Karena address jadi lebih pendek",
+            ],
+            answer: 1,
+            explain: "Kode teruji yang diaudit ribuan mata memangkas peluang mengulang bug lama.",
+          },
+          {
+            q: "Apa pelajaran utama dari bug multisig Parity 2017?",
+            options: [
+              "Library tidak pernah berguna",
+              "Kesalahan pada kode bersama bisa membekukan dana banyak pengguna secara permanen",
+              "Multisig membuat gas gratis",
+              "Audit tidak diperlukan",
+            ],
+            answer: 1,
+            explain: "Sekitar 513 ribu ETH terkunci permanen, menegaskan pentingnya pola hati-hati dan audit.",
           },
         ],
       },

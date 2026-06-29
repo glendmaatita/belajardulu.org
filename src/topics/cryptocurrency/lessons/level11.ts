@@ -54,6 +54,13 @@ export const level11: Lesson[] = [
         ],
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum 2014",
+        caption: "Mayoritas NFT lahir di Ethereum lewat standar ERC-721; logika kepemilikan dan tautan metadata dicatat di jaringan ini.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "case",
         title: "Sejarah: CryptoKitties 2017 memopulerkan NFT",
         html: "Pada akhir <strong>2017</strong>, sebuah permainan bernama <strong>CryptoKitties</strong> memungkinkan orang membeli, mengembangbiakkan, dan menjual kucing digital, masing-masing sebuah NFT unik. Permainan ini sangat populer sampai sempat <strong>memacetkan jaringan Ethereum</strong>: transaksi menumpuk dan biaya gas melonjak. CryptoKitties jadi salah satu contoh pertama yang memperkenalkan NFT ke publik luas dan menunjukkan bahwa aset digital unik punya pasar nyata.",
@@ -206,6 +213,13 @@ export const level11: Lesson[] = [
         html: "Karena identitas dan aset menempel pada dompet, kehilangan <strong>kunci privat</strong> atau <strong>seed phrase</strong> berarti kehilangan akses selamanya. Tidak ada tombol 'lupa kata sandi'. Jaga seed phrase seperti menjaga seluruh identitas digitalmu.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Ikon Ethereum berwarna ungu",
+        caption: "Dompet pada jaringan Ethereum menjadi identitas digital: kamu login dengan menandatangani pesan, bukan dengan kata sandi.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "case",
         title: "Sejarah: Sign-In with Ethereum (EIP-4361, 2021)",
         html: "Pada <strong>2021</strong>, komunitas Ethereum membakukan cara login pakai dompet lewat standar <strong>Sign-In with Ethereum (EIP-4361)</strong>. Sebelumnya tiap aplikasi membuat cara tanda tangan sendiri yang membingungkan. Standar ini menyeragamkan format pesan yang ditandatangani, sehingga pengguna tahu persis apa yang mereka setujui, dan pengembang punya pola login yang aman dan konsisten tanpa menyimpan kata sandi.",
@@ -332,6 +346,12 @@ export const level11: Lesson[] = [
         html: "Agar sebuah proposal sah, sering ada dua syarat: <strong>kuorum</strong> (jumlah suara minimal yang harus ikut, supaya keputusan tidak diambil segelintir orang) dan <strong>mayoritas</strong> (lebih banyak suara setuju daripada menolak). Bila kuorum tak tercapai, proposal gugur meski semua yang ikut setuju.",
       },
       {
+        type: "video",
+        comp: "DAOVideo",
+        title: "Bagaimana DAO Mengambil Keputusan",
+        caption: "Dari proposal, pemungutan suara pemegang token, hingga eksekusi otomatis oleh smart contract tanpa direksi.",
+      },
+      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -351,6 +371,13 @@ export const level11: Lesson[] = [
           { label: "Anggota C", value: 50, color: "#26a17b" },
           { label: "Anggota D", value: 30, color: "#f59e0b" },
         ],
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok",
+        caption: "Aturan dan kas DAO hidup di atas blockchain; setiap perubahan tercatat permanen dan terbuka untuk diperiksa siapa pun.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "case",
@@ -514,6 +541,13 @@ export const level11: Lesson[] = [
         html: "Sebuah marketplace NFT menampilkan katalog karya di <strong>front-end</strong>. Saat pengguna menekan beli, <strong>dompet</strong> muncul meminta tanda tangan dan persetujuan biaya. Transaksi dikirim ke <strong>smart contract on-chain</strong> yang memindahkan kepemilikan NFT ke address pembeli dan membagi pembayaran (termasuk royalti kreator). Gambar karya sendiri tidak ada di blockchain; ia diambil dari <strong>IPFS</strong> lewat tautan yang dicatat NFT. Empat lapisan bekerja bersama dalam satu pembelian.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain_workflow.png?width=400",
+        alt: "Diagram alur kerja blockchain",
+        caption: "Alur kerja blockchain menjadi tulang punggung dApp: transaksi yang ditandatangani dompet diverifikasi jaringan lalu dieksekusi smart contract.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "case",
         title: "Sejarah: Istilah Web3 dipopulerkan sekitar 2014",
         html: "Istilah <strong>Web3</strong> dipopulerkan sekitar <strong>2014</strong> oleh Gavin Wood, salah satu pendiri Ethereum, untuk menggambarkan web generasi baru yang berbasis blockchain dan kepemilikan pengguna. Gagasannya menanggapi keresahan bahwa di Web2 segelintir platform besar menguasai data dan identitas pengguna. Web3 menawarkan alternatif: pengguna menyimpan aset dan identitas di dompet yang mereka kendalikan sendiri.",
@@ -617,6 +651,317 @@ export const level11: Lesson[] = [
             ],
             answer: 1,
             explain: "Web3 menggeser kepemilikan data dan identitas dari platform ke pengguna lewat blockchain dan dompet.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "sejarah-nft",
+    levelId: "nftweb3",
+    order: 5,
+    title: "Sejarah NFT: dari CryptoPunks ke Bored Apes",
+    summary:
+      "Bagaimana NFT tumbuh dari eksperimen kecil menjadi pasar miliaran dolar. Telusuri CryptoPunks, CryptoKitties, lelang Beeple di Christie's, sampai Bored Ape Yacht Club.",
+    durationMin: 14,
+    tags: ["nft", "sejarah", "cryptopunks", "bored-apes"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Cerita <strong>NFT</strong> bukan ledakan sekejap, melainkan rangkaian eksperimen yang makin besar. Mulai dari koleksi gambar kecil yang dibagikan gratis, sampai karya yang terjual puluhan juta dolar di rumah lelang bergengsi. Memahami urutannya membantu kita melihat mengapa orang rela membayar mahal untuk sebuah token kepemilikan digital.",
+      },
+      {
+        type: "paragraph",
+        html: "Inti yang selalu sama: NFT membuktikan siapa pemilik sah sebuah aset digital, dan kepemilikan itu tercatat terbuka di blockchain. Yang berubah dari masa ke masa adalah skala, harga, dan jenis komunitas yang terbentuk di sekitarnya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Garis waktu singkat",
+        html: "<strong>2017</strong>: CryptoPunks dirilis gratis, lalu CryptoKitties memacetkan Ethereum. <strong>Maret 2021</strong>: karya Beeple terjual sekitar 69 juta dolar di Christie's. <strong>2021</strong>: Bored Ape Yacht Club memicu demam koleksi profil (PFP) dan utilitas komunitas.",
+      },
+      {
+        type: "video",
+        comp: "NFTKepemilikanVideo",
+        title: "NFT & Kepemilikan Digital",
+        caption: "Token unik yang menunjuk satu aset dan berpindah tangan antar dompet; inilah inti yang dibangun sejak CryptoPunks.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum 2014",
+        caption: "Hampir semua tonggak sejarah NFT terjadi di Ethereum, dari CryptoPunks 2017 hingga Bored Apes 2021.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Tonggak Harga Penjualan NFT Bersejarah",
+        unit: "juta dolar AS (perkiraan)",
+        source: "perkiraan dari laporan publik lelang dan penjualan",
+        note: "Lelang Beeple di Christie's pada Maret 2021 melompat jauh di atas penjualan sebelumnya dan menarik perhatian dunia seni arus utama.",
+        data: [
+          { label: "Beeple, Everydays (Christie's, 2021)", value: 69, color: "#627eea" },
+          { label: "CryptoPunk langka (puncak 2021)", value: 11.7, color: "#8b5cf6" },
+          { label: "Bored Ape langka (puncak 2021)", value: 3.4, color: "#26a17b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: dari gratis menjadi sangat mahal",
+        html: "CryptoPunks awalnya <strong>dibagikan gratis</strong> pada 2017; siapa pun dengan dompet Ethereum bisa mengklaim, hanya membayar biaya gas. Beberapa tahun kemudian, sejumlah Punk langka terjual jutaan dolar. Misalnya, jika seseorang mengklaim satu Punk seharga 0 dolar (hanya gas) lalu menjualnya kelak seharga 5 juta dolar, keuntungannya praktis sebesar harga jual itu. Kelangkaan, atribut unik, dan status sebagai 'koleksi pertama' mendongkrak nilainya.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Beeple, CryptoKitties, dan Bored Apes",
+        html: "Pada <strong>2017</strong>, dua peristiwa membuka jalan: <strong>CryptoPunks</strong> merilis 10.000 karakter piksel unik, dan <strong>CryptoKitties</strong> begitu populer sampai <strong>memacetkan jaringan Ethereum</strong>. Lalu pada <strong>Maret 2021</strong>, karya digital <strong>Beeple</strong> berjudul <em>Everydays: The First 5000 Days</em> terjual sekitar <strong>69 juta dolar AS</strong> di rumah lelang <strong>Christie's</strong>, salah satu penjualan karya seniman hidup termahal saat itu. Tahun yang sama, <strong>Bored Ape Yacht Club (2021)</strong> mempopulerkan NFT sebagai foto profil sekaligus tiket masuk komunitas eksklusif. Fakta dan tahun ini terdokumentasi luas di laporan publik.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Karya Beeple terjual sekitar 69 juta dolar. Jika rumah lelang mengambil komisi 15%, berapa juta dolar (perkiraan) yang diterima rumah lelang dari penjualan ini?",
+        answer: 10.35,
+        tolerance: 0.2,
+        prefix: "$",
+        suffix: "juta",
+        solution:
+          "15% x 69 juta = 0,15 x 69 = <strong>10,35 juta dolar</strong>. Sisanya, sekitar 58,65 juta dolar, menjadi bagian penjual sebelum biaya lain. Komisi adalah salah satu cara rumah lelang mendapat untung.",
+        hint: "Kalikan total harga jual dengan persentase komisi.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Cocokkan tiap peristiwa NFT dengan tahunnya.",
+        buckets: ["2017", "Maret 2021", "2021"],
+        items: [
+          { text: "CryptoPunks dirilis", bucket: "2017" },
+          { text: "CryptoKitties memacetkan Ethereum", bucket: "2017" },
+          { text: "Karya Beeple terjual ~69 juta dolar di Christie's", bucket: "Maret 2021" },
+          { text: "Bored Ape Yacht Club diluncurkan", bucket: "2021" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "CryptoPunks (2017) dibagikan gratis, lalu sebagian terjual jutaan dolar bertahun kemudian.",
+          "CryptoKitties (2017) sangat populer sampai memacetkan jaringan Ethereum.",
+          "Karya Beeple terjual sekitar 69 juta dolar di Christie's pada Maret 2021.",
+          "Bored Ape Yacht Club (2021) mempopulerkan NFT sebagai foto profil dan tiket komunitas.",
+          "Nilai NFT didorong kelangkaan, atribut unik, status historis, dan komunitas di sekitarnya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bagaimana CryptoPunks awalnya didistribusikan pada 2017?",
+            options: [
+              "Dilelang di Christie's",
+              "Dibagikan gratis, pengguna hanya membayar biaya gas",
+              "Dijual seharga 69 juta dolar",
+              "Hanya untuk investor besar",
+            ],
+            answer: 1,
+            explain: "CryptoPunks bisa diklaim gratis pada 2017; nilainya melonjak baru bertahun kemudian.",
+          },
+          {
+            q: "Apa yang terjadi akibat populernya CryptoKitties pada 2017?",
+            options: [
+              "Jaringan Bitcoin berhenti",
+              "Jaringan Ethereum macet karena lonjakan transaksi",
+              "Christie's tutup",
+              "NFT dilarang",
+            ],
+            answer: 1,
+            explain: "Lonjakan permainan ini membuat transaksi Ethereum menumpuk dan biaya gas melonjak.",
+          },
+          {
+            q: "Berapa kira-kira nilai penjualan karya Beeple di Christie's pada Maret 2021?",
+            options: ["6,9 juta dolar", "Sekitar 69 juta dolar", "690 juta dolar", "69 ribu dolar"],
+            answer: 1,
+            explain: "Everydays: The First 5000 Days terjual sekitar 69 juta dolar AS di Christie's.",
+          },
+          {
+            q: "Apa yang dipopulerkan oleh Bored Ape Yacht Club pada 2021?",
+            options: [
+              "Mata uang stabil",
+              "NFT sebagai foto profil sekaligus tiket komunitas eksklusif",
+              "Penambangan Bitcoin",
+              "Login tanpa dompet",
+            ],
+            answer: 1,
+            explain: "BAYC mempopulerkan NFT PFP yang juga memberi akses ke komunitas eksklusif.",
+          },
+          {
+            q: "Apa yang paling mendorong tingginya nilai NFT koleksi tertentu?",
+            options: [
+              "Jumlahnya tak terbatas",
+              "Kelangkaan, atribut unik, status historis, dan komunitas",
+              "Karena disimpan penuh on-chain",
+              "Karena gratis selamanya",
+            ],
+            answer: 1,
+            explain: "Nilai didorong kelangkaan, keunikan atribut, status sebagai koleksi awal, dan kekuatan komunitas.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "gamefi-metaverse",
+    levelId: "nftweb3",
+    order: 6,
+    title: "GameFi, Metaverse & Utilitas NFT",
+    summary:
+      "NFT bukan sekadar gambar koleksi. Pahami play-to-earn, aset game sebagai NFT yang benar-benar kamu miliki, lahan virtual di metaverse, dan risiko yang menyertainya.",
+    durationMin: 14,
+    tags: ["gamefi", "metaverse", "play-to-earn", "nft"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>GameFi</strong> menggabungkan game dan keuangan terdesentralisasi (DeFi). Idenya: aset di dalam game, seperti karakter, senjata, atau lahan, dibuat sebagai <strong>NFT</strong> yang benar-benar dimiliki pemain, bukan sekadar dipinjamkan oleh perusahaan game. Karena dimiliki, aset itu bisa dijual atau dipindahkan ke luar game.",
+      },
+      {
+        type: "paragraph",
+        html: "<strong>Play-to-earn</strong> (main untuk menghasilkan) adalah model di mana pemain bisa memperoleh token atau NFT bernilai dari aktivitas bermain. Di <strong>metaverse</strong>, dunia virtual 3D, orang bahkan membeli <strong>lahan virtual</strong> berupa NFT untuk membangun atau menyewakannya. Semua ini memperluas arti 'utilitas' NFT melampaui koleksi gambar.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Memiliki, bukan menyewa",
+        html: "Di game biasa, item yang kamu beli tetap milik perusahaan dan hilang bila akun ditutup. Dengan NFT, item itu menempel pada <strong>dompetmu</strong>: kamu bisa menjual, menukar, atau memakainya di pasar terbuka. Inilah pergeseran inti yang dijanjikan GameFi.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Aset game NFT yang dijual ulang sering memberi <strong>royalti</strong> ke pembuat game. Coba lihat berapa yang mengalir ke kreator saat sebuah item berpindah tangan beberapa kali.",
+      },
+      { type: "widget", widget: "SimulatorRoyaltiNFT" },
+      {
+        type: "video",
+        comp: "NFTKepemilikanVideo",
+        title: "Aset Game sebagai NFT",
+        caption: "Bagaimana item game yang berupa NFT berpindah antar dompet dan tetap dimiliki pemain di luar game.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Ikon Ethereum berwarna ungu",
+        caption: "Banyak game Web3 dan dunia metaverse berjalan di atas Ethereum atau jaringan yang terhubung dengannya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Game Biasa vs GameFi: Siapa Pemilik Aset",
+        unit: "perbandingan sifat (ilustrasi)",
+        source: "ilustrasi edukatif perbandingan konsep",
+        note: "Pada GameFi, kepemilikan aset berpindah dari server perusahaan ke dompet pemain, sehingga aset bisa dijual di pasar terbuka.",
+        data: [
+          { label: "Game biasa: aset milik perusahaan", value: 1, color: "#94a3b8" },
+          { label: "Game biasa: hilang bila akun ditutup", value: 1, color: "#94a3b8" },
+          { label: "GameFi: aset milik pemain (NFT)", value: 1, color: "#627eea" },
+          { label: "GameFi: bisa dijual di pasar terbuka", value: 1, color: "#26a17b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: ekonomi sebuah item game NFT",
+        html: "Bayangkan sebuah pedang langka berupa NFT dibeli seharga 2 ETH, lalu dijual ulang seharga 5 ETH. Pembuat game menetapkan royalti 5%. Dari penjualan ulang itu, kreator menerima 5% x 5 ETH = <strong>0,25 ETH</strong>, dan penjual menerima sisanya 4,75 ETH. Keuntungan kotor penjual dibanding harga belinya adalah 5 - 2 = 3 ETH (sebelum royalti dan biaya). Ekonomi seperti ini yang membuat aset game punya pasar nyata.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Axie Infinity dan peretasan jembatan Ronin",
+        html: "<strong>Axie Infinity</strong> menjadi ikon model <strong>play-to-earn</strong> dengan puncak popularitas pada <strong>2021</strong>; pemain di sejumlah negara, termasuk di Asia Tenggara, sempat menjadikannya sumber penghasilan. Game ini berjalan di jaringan pendukung bernama <strong>Ronin</strong>. Namun pada <strong>Maret 2022</strong>, jembatan (bridge) Ronin diretas dan dana senilai sekitar <strong>625 juta dolar AS</strong> dicuri, salah satu peretasan terbesar di kripto. Pelajarannya: model play-to-earn bisa rapuh terhadap perubahan ekonomi token, dan jembatan antar-jaringan adalah titik rawan yang harus diamankan ketat.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah item game NFT dijual ulang seharga 8 ETH dengan royalti kreator 7,5%. Berapa ETH yang diterima kreator dari penjualan ulang ini?",
+        answer: 0.6,
+        tolerance: 0.01,
+        suffix: "ETH",
+        solution:
+          "7,5% x 8 ETH = 0,075 x 8 = <strong>0,6 ETH</strong> untuk kreator. Penjual menerima sisanya, 7,4 ETH, sebelum biaya jaringan. Royalti otomatis ini diatur oleh smart contract NFT.",
+        hint: "Kalikan harga jual ulang dengan persentase royalti.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap ciri sebagai milik game biasa (Web2) atau GameFi (Web3).",
+        buckets: ["Game biasa (Web2)", "GameFi (Web3)"],
+        items: [
+          { text: "Item tetap milik perusahaan dan hilang bila akun ditutup", bucket: "Game biasa (Web2)" },
+          { text: "Aset berupa NFT yang dimiliki pemain di dompetnya", bucket: "GameFi (Web3)" },
+          { text: "Item bisa dijual atau ditukar di pasar terbuka", bucket: "GameFi (Web3)" },
+          { text: "Pemain bisa memperoleh token bernilai lewat play-to-earn", bucket: "GameFi (Web3)" },
+          { text: "Pembelian item tidak bisa dipindahkan keluar game", bucket: "Game biasa (Web2)" },
+          { text: "Lahan virtual metaverse dijual sebagai NFT", bucket: "GameFi (Web3)" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "GameFi menjadikan aset game sebagai NFT yang benar-benar dimiliki pemain, bukan disewakan perusahaan.",
+          "Play-to-earn memungkinkan pemain memperoleh token atau NFT bernilai dari aktivitas bermain.",
+          "Di metaverse, lahan virtual pun bisa diperjualbelikan sebagai NFT.",
+          "Axie Infinity mempopulerkan play-to-earn dengan puncak pada 2021.",
+          "Peretasan jembatan Ronin (Maret 2022, sekitar 625 juta dolar) menunjukkan bridge adalah titik rawan.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa inti dari GameFi?",
+            options: [
+              "Game tanpa grafik",
+              "Aset game dibuat sebagai NFT yang benar-benar dimiliki pemain",
+              "Game yang hanya bisa dimainkan offline",
+              "Game yang melarang jual beli item",
+            ],
+            answer: 1,
+            explain: "GameFi menjadikan aset game sebagai NFT milik pemain, bukan sekadar dipinjamkan perusahaan.",
+          },
+          {
+            q: "Apa arti model play-to-earn?",
+            options: [
+              "Membayar untuk menang",
+              "Pemain bisa memperoleh token atau NFT bernilai dari bermain",
+              "Bermain tanpa internet",
+              "Game yang selalu gratis hadiah uang",
+            ],
+            answer: 1,
+            explain: "Play-to-earn berarti aktivitas bermain dapat menghasilkan token atau NFT yang punya nilai.",
+          },
+          {
+            q: "Apa keuntungan aset game berupa NFT dibanding item game biasa?",
+            options: [
+              "Selalu lebih murah",
+              "Dimiliki pemain dan bisa dijual atau dipindahkan di pasar terbuka",
+              "Tidak butuh dompet",
+              "Tidak bisa dicuri sama sekali",
+            ],
+            answer: 1,
+            explain: "Karena menempel pada dompet pemain, aset NFT bisa dijual, ditukar, atau dipindahkan.",
+          },
+          {
+            q: "Game apa yang menjadi ikon model play-to-earn dengan puncak pada 2021?",
+            options: ["CryptoKitties", "Axie Infinity", "Bored Ape", "Uniswap"],
+            answer: 1,
+            explain: "Axie Infinity mempopulerkan play-to-earn dan memuncak pada 2021.",
+          },
+          {
+            q: "Apa yang terjadi pada jembatan Ronin pada Maret 2022?",
+            options: [
+              "Diluncurkan pertama kali",
+              "Diretas dan kehilangan dana sekitar 625 juta dolar",
+              "Menggandakan harga token",
+              "Berhenti memungut biaya",
+            ],
+            answer: 1,
+            explain: "Jembatan Ronin diretas pada Maret 2022 dengan kerugian sekitar 625 juta dolar AS.",
           },
         ],
       },

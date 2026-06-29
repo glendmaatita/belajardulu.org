@@ -42,6 +42,13 @@ export const level10: Lesson[] = [
         caption: "Dari total supply, alokasi, vesting, sampai burn: cara membaca rancangan sebuah token.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin.svg?width=400",
+        alt: "Logo Bitcoin, contoh token dengan total supply tetap 21 juta",
+        caption: "Bitcoin adalah contoh paling terkenal total supply tetap: maksimal 21 juta BTC selamanya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Circulating vs Total Supply Sebuah Token (ilustrasi)",
@@ -196,6 +203,19 @@ export const level10: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorTokenomics" },
       {
+        type: "video",
+        comp: "VestingEmisiVideo",
+        title: "Emisi & Vesting Token",
+        caption: "Bagaimana token baru diterbitkan tiap periode dan bagaimana burn menahan laju pertumbuhan pasokan.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, jaringan yang membakar base fee lewat EIP-1559",
+        caption: "Sejak EIP-1559 (2021), Ethereum membakar base fee tiap transaksi sehingga sebagian Ether hilang dari pasokan.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Emisi, Burn, dan Pertumbuhan Bersih Pasokan (ilustrasi)",
@@ -207,6 +227,11 @@ export const level10: Lesson[] = [
           { label: "Burn", value: 2, color: "#ef4444" },
           { label: "Net (inflasi)", value: 3, color: "#26a17b" },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menghitung pasokan bersih sebuah token",
+        html: "Sebuah token memiliki pasokan beredar <strong>2.000.000</strong> token. Jadwal emisinya menerbitkan <strong>8%</strong> token baru per tahun sebagai hadiah validator, yaitu 160.000 token. Pada saat yang sama, protokol membakar <strong>3%</strong> dari pasokan, yaitu 60.000 token. Pertumbuhan bersih = 160.000 - 60.000 = <strong>100.000 token</strong> atau <strong>5%</strong>. Pasokan akhir tahun menjadi 2.100.000 token. Karena angka bersihnya positif, token ini masih inflasioner meski sudah ada burn.",
       },
       {
         type: "case",
@@ -353,6 +378,20 @@ export const level10: Lesson[] = [
         caption: "Bagaimana token dibagi untuk tim, investor, dan komunitas, lalu dibuka bertahap lewat vesting.",
       },
       {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Atur besar alokasi, lama <strong>cliff</strong>, dan durasi <strong>vesting</strong> untuk melihat kapan token tim mulai terbuka dan seberapa cepat pasokan beredar bertambah.",
+      },
+      { type: "widget", widget: "SimulatorVesting" },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, proyek yang melepas alokasi tim secara bertahap sejak 2014",
+        caption: "Ethereum termasuk proyek awal yang melepas alokasi pendiri secara bertahap, bukan sekaligus.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "line",
         title: "Token Tim Terbuka Bertahap Selama 4 Tahun (ilustrasi)",
@@ -365,6 +404,11 @@ export const level10: Lesson[] = [
           { label: "Tahun 3", value: 26.7 },
           { label: "Tahun 4", value: 40 },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membaca jadwal unlock sebelum membeli",
+        html: "Seorang calon pembeli melihat sebuah token yang harganya sedang naik. Sebelum membeli, ia memeriksa jadwal vesting dan menemukan bahwa <strong>30%</strong> dari total supply, milik investor awal, akan terbuka sekaligus bulan depan setelah cliff berakhir. Ia sadar pasokan beredar bisa melonjak tajam dalam waktu singkat. Bila permintaan tidak ikut naik secepat itu, harga rawan tertekan. Ia memutuskan menunggu sampai unlock besar itu lewat sebelum mengambil keputusan, sebuah kebiasaan yang melindungi dari tekanan jual mendadak.",
       },
       {
         type: "case",
@@ -505,6 +549,13 @@ export const level10: Lesson[] = [
         caption: "Bagaimana alokasi token membentuk siapa yang memegang kendali suara sebuah protokol.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, rumah bagi banyak governance token dan DAO",
+        caption: "Ethereum menjadi rumah bagi banyak DAO dan governance token, termasuk eksperimen The DAO 2016.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "donut",
         title: "Sebaran Voting Power Governance (ilustrasi)",
@@ -516,6 +567,11 @@ export const level10: Lesson[] = [
           { label: "Pemegang menengah", value: 30, color: "#627eea" },
           { label: "Komunitas kecil", value: 15, color: "#26a17b" },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Sebuah proposal menaikkan biaya protokol",
+        html: "Sebuah protokol memiliki total <strong>10.000.000</strong> governance token dengan aturan satu token satu suara. Muncul proposal menaikkan biaya layanan dari 0,3% menjadi 0,5%. Sekelompok pemegang besar bersama-sama menguasai <strong>5.500.000</strong> token, yaitu <strong>55%</strong> suara. Karena melebihi setengah, mereka bisa meloloskan atau menjegal proposal apa pun tanpa perlu dukungan komunitas kecil. Kasus ini menunjukkan mengapa sebaran token yang terlalu terpusat membuat hasil voting bisa ditentukan sepihak.",
       },
       {
         type: "case",
@@ -611,6 +667,337 @@ export const level10: Lesson[] = [
             ],
             answer: 1,
             explain: "Celah kode The DAO menguras dana, menegaskan pentingnya keamanan kontrak.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "ico-penggalangan",
+    levelId: "tokenomics",
+    order: 5,
+    title: "ICO, IEO & IDO: Sejarah Penggalangan Dana",
+    summary:
+      "Bagaimana proyek kripto menggalang dana lewat ICO, IEO, dan IDO, beda ketiganya, serta risiko penipuan dan kegagalan yang menyertainya.",
+    durationMin: 14,
+    tags: ["tokenomics", "ico", "ieo", "ido", "penggalangan-dana"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Untuk membangun sebuah proyek, sebuah tim butuh dana. Di dunia kripto, salah satu caranya adalah menjual token mereka lebih dulu kepada publik untuk mengumpulkan modal. Penjualan perdana ini punya beberapa bentuk, yang paling dikenal adalah <strong>ICO</strong>, <strong>IEO</strong>, dan <strong>IDO</strong>.",
+      },
+      {
+        type: "paragraph",
+        html: "Ketiganya sama-sama menjual token sebelum proyek matang, tetapi berbeda pada <strong>siapa yang menyelenggarakan</strong> dan <strong>seberapa ketat penyaringannya</strong>. Perbedaan ini sangat menentukan tingkat risiko bagi pembeli.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "ICO, IEO, dan IDO",
+        html: "<strong>ICO (Initial Coin Offering)</strong>: proyek menjual token langsung ke publik dari situsnya sendiri, tanpa perantara. <strong>IEO (Initial Exchange Offering)</strong>: penjualan diselenggarakan dan diseleksi oleh sebuah <strong>bursa terpusat</strong>. <strong>IDO (Initial DEX Offering)</strong>: penjualan dilakukan lewat <strong>bursa terdesentralisasi (DEX)</strong> tanpa perantara terpusat.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Risiko besar penggalangan token",
+        html: "Membeli token perdana berarti membayar untuk sesuatu yang sering belum jadi. Banyak proyek gagal, sebagian adalah penipuan murni (<strong>rug pull</strong>), dan dana yang sudah dikirim biasanya tak bisa ditarik kembali. ICO tanpa penyaringan paling rawan, sedangkan IEO sedikit lebih terverifikasi karena bursa menyeleksi proyek lebih dulu.",
+      },
+      {
+        type: "video",
+        comp: "TokenomicsVideo",
+        title: "Cara Token Dijual Perdana",
+        caption: "Dari alokasi penjualan publik sampai harga perdana: bagaimana proyek menggalang dana lewat token.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, jaringan tempat ledakan ICO 2017 lewat token ERC-20",
+        caption: "Sebagian besar ICO 2017 menggalang dana lewat token ERC-20 di jaringan Ethereum.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Perkiraan Dana Terkumpul lewat ICO per Tahun (ilustrasi)",
+        unit: "miliar dolar AS",
+        source: "ilustrasi edukatif berdasarkan tren yang umum dilaporkan",
+        note: "Penggalangan ICO melonjak tajam pada 2017 ke 2018, lalu surut drastis setelah regulator menertibkan dan banyak proyek gagal.",
+        data: [
+          { label: "2016", value: 0.1, color: "#94a3b8" },
+          { label: "2017", value: 6.2, color: "#627eea" },
+          { label: "2018", value: 11.4, color: "#f7931a" },
+          { label: "2019", value: 0.4, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: IEO yang diseleksi bursa",
+        html: "Sebuah proyek ingin menggalang dana tetapi tahu pembeli ragu pada ICO yang tak tersaring. Ia memilih <strong>IEO</strong>: mengajukan diri ke sebuah bursa terpusat yang memeriksa tim, kode, dan rencananya lebih dulu. Setelah lolos, bursa menyelenggarakan penjualan token kepada penggunanya. Bagi pembeli, ada rasa aman lebih karena bursa mempertaruhkan reputasinya. Namun seleksi bukan jaminan: proyek tetap bisa gagal, dan pembeli tetap menanggung risiko harga.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Ledakan ICO 2017 dan penertiban regulator 2018",
+        html: "Sepanjang <strong>2017</strong>, ribuan proyek menggalang dana lewat <strong>ICO</strong>, sebagian besar dengan menerbitkan token <strong>ERC-20</strong> di Ethereum. Total dana yang terkumpul melonjak hingga miliaran dolar AS, banyak di antaranya untuk proyek yang hanya bermodal whitepaper. Otoritas mulai bereaksi: pada Juli 2017 regulator pasar modal AS, <strong>SEC</strong>, menerbitkan laporan yang menyatakan sebagian token bisa tergolong surat berharga. Sepanjang <strong>2018</strong>, SEC menindak sejumlah ICO yang dianggap menjual surat berharga tanpa izin dan menipu investor. Gelombang ICO pun surut tajam, dan model IEO serta IDO yang lebih tersaring mulai naik.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah proyek menjual 100 juta token pada harga 0,10 dolar AS per token dalam sebuah ICO. Berapa dana yang terkumpul (dalam juta dolar AS)?",
+        answer: 10,
+        tolerance: 0,
+        prefix: "$",
+        suffix: "juta",
+        solution:
+          "Dana terkumpul = jumlah token x harga = 100 juta x 0,10 = <strong>10 juta dolar AS</strong>. Inilah modal awal yang diterima proyek dari penjualan perdana.",
+        hint: "Kalikan jumlah token yang dijual dengan harga per token.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap ciri sebagai ICO, IEO, atau IDO.",
+        buckets: ["ICO", "IEO", "IDO"],
+        items: [
+          { text: "Proyek menjual token langsung ke publik dari situsnya sendiri", bucket: "ICO" },
+          { text: "Penjualan diselenggarakan dan diseleksi oleh bursa terpusat", bucket: "IEO" },
+          { text: "Token dijual lewat bursa terdesentralisasi (DEX) tanpa perantara terpusat", bucket: "IDO" },
+          { text: "Bentuk paling marak pada 2017 dengan banyak token ERC-20", bucket: "ICO" },
+          { text: "Bursa memverifikasi tim dan kode proyek lebih dulu", bucket: "IEO" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "ICO, IEO, dan IDO adalah cara menjual token perdana untuk menggalang dana proyek.",
+          "ICO dijual langsung tanpa perantara; IEO diseleksi bursa terpusat; IDO lewat DEX.",
+          "Membeli token perdana berisiko tinggi: banyak proyek gagal dan sebagian adalah penipuan.",
+          "Ledakan ICO 2017 menggalang miliaran dolar AS lewat token ERC-20 di Ethereum.",
+          "Penertiban regulator seperti SEC pada 2018 menyurutkan ICO dan mendorong model IEO/IDO.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa itu ICO?",
+            options: [
+              "Penjualan token yang diseleksi bursa terpusat",
+              "Penjualan token langsung ke publik oleh proyek tanpa perantara",
+              "Penjualan token lewat DEX",
+              "Pembakaran token permanen",
+            ],
+            answer: 1,
+            explain: "ICO (Initial Coin Offering) adalah penjualan token perdana langsung ke publik tanpa perantara.",
+          },
+          {
+            q: "Apa yang membedakan IEO dari ICO?",
+            options: [
+              "IEO tidak menjual token",
+              "IEO diselenggarakan dan diseleksi oleh bursa terpusat",
+              "IEO selalu gratis",
+              "IEO hanya untuk Bitcoin",
+            ],
+            answer: 1,
+            explain: "Pada IEO, bursa terpusat menyeleksi proyek dan menyelenggarakan penjualannya.",
+          },
+          {
+            q: "Di jaringan apa sebagian besar ICO 2017 berlangsung?",
+            options: ["Bitcoin", "Ethereum lewat token ERC-20", "Sebuah bank", "Tanpa blockchain"],
+            answer: 1,
+            explain: "Mayoritas ICO 2017 menerbitkan token ERC-20 di jaringan Ethereum.",
+          },
+          {
+            q: "Apa yang dilakukan regulator seperti SEC terhadap ICO pada 2017 sampai 2018?",
+            options: [
+              "Mendorong semua orang ikut ICO",
+              "Menyatakan sebagian token bisa tergolong surat berharga dan menindak yang melanggar",
+              "Melarang Ethereum sepenuhnya",
+              "Membeli semua token",
+            ],
+            answer: 1,
+            explain: "SEC menyatakan sebagian token bisa berupa surat berharga dan menindak ICO yang menjualnya tanpa izin.",
+          },
+          {
+            q: "Mengapa membeli token perdana berisiko tinggi?",
+            options: [
+              "Karena harganya selalu naik",
+              "Karena banyak proyek belum jadi, bisa gagal, atau menipu, dan dana sulit ditarik kembali",
+              "Karena bursa menjamin keuntungan",
+              "Karena token tidak bisa dijual",
+            ],
+            answer: 1,
+            explain: "Token perdana sering dibeli sebelum proyek matang; risiko gagal dan penipuan tinggi.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "distribusi-airdrop",
+    levelId: "tokenomics",
+    order: 6,
+    title: "Distribusi & Airdrop",
+    summary:
+      "Bagaimana token dibagi ke berbagai pihak lewat penjualan, reward, dan airdrop, serta bagaimana airdrop dipakai untuk memberi insentif dan membangun komunitas.",
+    durationMin: 14,
+    tags: ["tokenomics", "distribusi", "airdrop", "uniswap", "komunitas"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Setelah jumlah token ditentukan, pertanyaan berikutnya adalah <strong>siapa yang mendapatkannya</strong>. Cara sebuah proyek membagi tokennya disebut <strong>distribusi</strong>, dan rancangan ini sangat menentukan apakah proyek terasa adil atau hanya menguntungkan segelintir orang dalam.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tiga jalur distribusi utama",
+        html: "<strong>Penjualan</strong>: token dijual untuk menggalang dana (lewat ICO, IEO, atau IDO). <strong>Reward</strong>: token dibagikan sebagai hadiah, misalnya ke penambang, validator, atau penyedia likuiditas. <strong>Airdrop</strong>: token dibagikan gratis ke pengguna, biasanya sebagai apresiasi atau untuk menarik komunitas baru.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Apa itu airdrop?",
+        html: "<strong>Airdrop</strong> adalah pembagian token gratis ke banyak address sekaligus. Tujuannya beragam: memberi penghargaan kepada pengguna awal, menyebar kepemilikan agar lebih terdesentralisasi, atau memperkenalkan proyek baru. Airdrop yang menargetkan pengguna lama disebut <strong>airdrop retroaktif</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Atur alokasi penjualan, reward, dan airdrop, lalu lihat bagaimana porsi tiap kelompok membentuk sebaran kepemilikan token.",
+      },
+      { type: "widget", widget: "SimulatorTokenomics" },
+      {
+        type: "video",
+        comp: "TokenomicsVideo",
+        title: "Membagi Token ke Komunitas",
+        caption: "Bagaimana alokasi penjualan, reward, dan airdrop menentukan siapa yang memegang token sejak awal.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
+        alt: "Logo Uniswap, DEX yang melakukan airdrop token UNI pada 2020",
+        caption: "Uniswap melakukan salah satu airdrop paling terkenal: 400 UNI gratis untuk tiap pengguna awalnya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "donut",
+        title: "Contoh Sebaran Distribusi Token (ilustrasi mengacu pola Uniswap)",
+        unit: "% total supply",
+        source: "ilustrasi edukatif mengacu pola distribusi Uniswap",
+        note: "Porsi komunitas yang besar (termasuk airdrop dan reward) menandakan upaya menyebar kepemilikan ke banyak pengguna.",
+        data: [
+          { label: "Komunitas (airdrop & reward)", value: 60, color: "#26a17b" },
+          { label: "Tim", value: 21, color: "#627eea" },
+          { label: "Investor", value: 18, color: "#f7931a" },
+          { label: "Penasihat", value: 1, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Merancang porsi airdrop yang adil",
+        html: "Sebuah proyek punya total supply <strong>1 miliar</strong> token. Tim mengalokasikan <strong>15%</strong> untuk airdrop ke pengguna awal, yaitu <strong>150 juta</strong> token. Bila ada sekitar <strong>300.000</strong> pengguna yang memenuhi syarat, tiap orang rata-rata menerima <strong>500</strong> token. Porsi airdrop yang cukup besar membuat banyak pengguna ikut memiliki proyek, tetapi tim harus berhati-hati: airdrop terlalu besar bisa menambah pasokan beredar dan menekan harga saat penerima ramai-ramai menjual.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Airdrop UNI Uniswap, September 2020",
+        html: "Pada <strong>September 2020</strong>, bursa terdesentralisasi <strong>Uniswap</strong> meluncurkan token tata kelolanya, <strong>UNI</strong>, lewat sebuah airdrop retroaktif yang legendaris. Setiap address yang pernah memakai Uniswap sebelum batas waktu tertentu berhak mengklaim <strong>400 UNI</strong> secara gratis. Saat itu jumlahnya bernilai sekitar seribu dolar AS bagi tiap pengguna. Airdrop ini menyebar kepemilikan ke ratusan ribu pengguna sekaligus dan menjadi contoh kuat bagaimana token bisa dipakai untuk menghargai komunitas awal dan memperkuat tata kelola terdesentralisasi.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Uniswap membagikan 400 UNI untuk tiap address pengguna awal. Jika ada sekitar 250.000 address yang memenuhi syarat, berapa juta UNI total yang dibagikan lewat airdrop itu?",
+        answer: 100,
+        tolerance: 0,
+        suffix: "juta UNI",
+        solution:
+          "Total airdrop = 400 UNI x 250.000 address = 100.000.000 UNI = <strong>100 juta UNI</strong>. Ini sekitar 10% dari total supply 1 miliar UNI yang langsung tersebar ke komunitas.",
+        hint: "Kalikan jumlah token per address dengan jumlah address penerima.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah proyek punya total supply 1 miliar token dan mengalokasikan 15% untuk airdrop. Berapa juta token yang disediakan untuk airdrop?",
+        answer: 150,
+        tolerance: 0,
+        suffix: "juta token",
+        solution:
+          "15% x 1.000 juta = <strong>150 juta token</strong>. Porsi inilah yang dibagikan gratis ke pengguna yang memenuhi syarat airdrop.",
+        hint: "Hitung 15% dari total supply 1 miliar (1.000 juta) token.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap contoh sebagai distribusi lewat Penjualan, Reward, atau Airdrop.",
+        buckets: ["Penjualan", "Reward", "Airdrop"],
+        items: [
+          { text: "Token dijual ke publik untuk menggalang dana lewat ICO", bucket: "Penjualan" },
+          { text: "Token diberikan ke penyedia likuiditas sebagai insentif", bucket: "Reward" },
+          { text: "Token dibagikan gratis ke pengguna awal sebagai apresiasi", bucket: "Airdrop" },
+          { text: "Hadiah blok untuk penambang atau validator", bucket: "Reward" },
+          { text: "400 UNI gratis untuk tiap pengguna awal Uniswap", bucket: "Airdrop" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Distribusi menentukan siapa yang memegang token dan apakah sebarannya adil.",
+          "Tiga jalur utama: penjualan (menggalang dana), reward (hadiah), dan airdrop (pembagian gratis).",
+          "Airdrop membagikan token gratis untuk menghargai pengguna dan menyebar kepemilikan.",
+          "Airdrop UNI Uniswap (September 2020) memberi 400 UNI ke tiap pengguna awal.",
+          "Airdrop terlalu besar bisa menambah pasokan beredar dan menekan harga saat penerima menjual.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa yang dimaksud distribusi token?",
+            options: [
+              "Harga token saat dijual",
+              "Cara sebuah proyek membagi tokennya ke berbagai pihak",
+              "Jumlah token yang dibakar",
+              "Biaya transaksi jaringan",
+            ],
+            answer: 1,
+            explain: "Distribusi adalah rancangan bagaimana token dibagi ke penjualan, reward, airdrop, tim, dan lainnya.",
+          },
+          {
+            q: "Apa itu airdrop?",
+            options: [
+              "Penjualan token dengan harga diskon",
+              "Pembagian token gratis ke banyak address sekaligus",
+              "Pembakaran token permanen",
+              "Penguncian token tim",
+            ],
+            answer: 1,
+            explain: "Airdrop membagikan token gratis, sering ke pengguna awal sebagai apresiasi.",
+          },
+          {
+            q: "Berapa UNI yang diterima tiap pengguna awal pada airdrop Uniswap September 2020?",
+            options: ["40 UNI", "400 UNI", "4.000 UNI", "4 UNI"],
+            answer: 1,
+            explain: "Setiap address yang memenuhi syarat berhak mengklaim 400 UNI secara gratis.",
+          },
+          {
+            q: "Apa tujuan airdrop retroaktif?",
+            options: [
+              "Menghapus pengguna lama",
+              "Menghargai pengguna awal dan menyebar kepemilikan token",
+              "Menaikkan biaya transaksi",
+              "Mengunci semua token tim",
+            ],
+            answer: 1,
+            explain: "Airdrop retroaktif memberi penghargaan ke pengguna lama sekaligus menyebar kepemilikan.",
+          },
+          {
+            q: "Apa risiko airdrop yang terlalu besar?",
+            options: [
+              "Total supply otomatis berkurang",
+              "Pasokan beredar bertambah dan harga bisa tertekan saat penerima menjual",
+              "Token jadi tak bisa dikirim",
+              "Treasury otomatis kosong",
+            ],
+            answer: 1,
+            explain: "Banyak token gratis yang langsung dijual bisa menambah pasokan dan menekan harga.",
           },
         ],
       },

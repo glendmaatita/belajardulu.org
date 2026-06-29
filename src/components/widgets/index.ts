@@ -189,6 +189,12 @@ import { SimulatorRoyaltiNFT } from "./SimulatorRoyaltiNFT";
 import { SimulatorBridge } from "./SimulatorBridge";
 import { SimulatorMultisig } from "./SimulatorMultisig";
 import { SimulatorDCAKripto } from "./SimulatorDCAKripto";
+import { SimulatorMerkleTree } from "./SimulatorMerkleTree";
+import { SimulatorMining } from "./SimulatorMining";
+import { SimulatorVesting } from "./SimulatorVesting";
+import { SimulatorLiquidation } from "./SimulatorLiquidation";
+import { SimulatorStaking } from "./SimulatorStaking";
+import { SimulatorFeeMarket } from "./SimulatorFeeMarket";
 
 export const widgetRegistry: Record<WidgetId, FC> = {
   KalkulatorJejakKarbon,
@@ -363,4 +369,10 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorBridge,
   SimulatorMultisig,
   SimulatorDCAKripto,
+  SimulatorMerkleTree,
+  SimulatorMining,
+  SimulatorVesting,
+  SimulatorLiquidation,
+  SimulatorStaking,
+  SimulatorFeeMarket,
 };

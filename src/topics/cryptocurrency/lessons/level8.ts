@@ -40,6 +40,13 @@ export const level8: Lesson[] = [
         caption: "Bagaimana kolam likuiditas bekerja dan harga bergerak saat aset ditukar.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
+        alt: "Logo Uniswap, DEX dengan model Automated Market Maker",
+        caption: "Logo Uniswap, bursa terdesentralisasi yang mempopulerkan rumus produk konstan x kali y sama dengan k.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "line",
         title: "Kurva Produk Konstan: Aset B Tersisa saat Aset A Ditambah",
@@ -58,6 +65,11 @@ export const level8: Lesson[] = [
         type: "case",
         title: "Studi Kasus: Menukar di kolam kecil vs besar",
         html: "Sebuah kolam berisi 1000 token A dan 1000 token B (k sama dengan 1.000.000). Kamu menyetor 100 A. Jumlah A menjadi 1100, maka B harus menjadi 1.000.000 dibagi 1100 sama dengan sekitar 909,09. Jadi kamu menerima sekitar <strong>90,9 B</strong>, bukan 100 B. Selisih ini muncul karena harga bergeser saat kamu menukar. Di kolam yang jauh lebih besar, selisih harga untuk jumlah yang sama akan jauh lebih kecil.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Uniswap dan kelahiran AMM, November 2018",
+        html: "Pada <strong>November 2018</strong>, Hayden Adams meluncurkan <strong>Uniswap</strong> di jaringan Ethereum, terinspirasi catatan Vitalik Buterin tentang market maker berbasis rumus. Alih-alih buku pesanan, Uniswap memakai kolam dan rumus produk konstan x kali y sama dengan k. Banyak yang awalnya ragu model sesederhana itu bisa bekerja, tapi pada <strong>2020</strong> Uniswap V2 tumbuh menjadi salah satu DEX terbesar dan menjadi cetak biru bagi ratusan AMM lain. Ide bahwa harga bisa muncul dari matematika kolam, bukan dari satu pihak penentu, terbukti mengubah cara orang menukar aset on-chain.",
       },
       {
         type: "calcExercise",
@@ -167,6 +179,19 @@ export const level8: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorDCAKripto" },
       {
+        type: "video",
+        comp: "StakingVideo",
+        title: "Staking & Imbalan",
+        caption: "Bagaimana mengunci aset membantu mengamankan jaringan dan menghasilkan imbalan berkala.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, jaringan yang beralih ke Proof of Stake dan menjadi rumah banyak protokol yield",
+        caption: "Logo Ethereum, jaringan yang sejak 2022 memakai staking untuk mengamankan jaringan dan menjadi pusat aktivitas yield farming.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Perkiraan Imbal Hasil Tahunan per Strategi (ilustrasi)",
@@ -178,6 +203,11 @@ export const level8: Lesson[] = [
           { label: "Liquidity fee", value: 12, color: "#627eea" },
           { label: "Yield farming", value: 30, color: "#f7931a" },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Fee belum tentu menutup impermanent loss",
+        html: "Kamu menyetor dua aset senilai total <strong>2.000 dolar AS</strong> ke sebuah kolam dengan APR fee 12 persen. Setahun kemudian kamu mengantongi fee sekitar 240 dolar AS. Tapi karena harga salah satu aset naik tajam dibanding pasangannya, kamu mengalami impermanent loss sekitar 90 dolar AS. Untung bersihmu jadi 240 dikurangi 90 sama dengan <strong>150 dolar AS</strong>, bukan 240. Pelajarannya: selalu bandingkan fee yang didapat dengan kemungkinan impermanent loss, bukan tergiur APR semata.",
       },
       {
         type: "case",
@@ -316,6 +346,26 @@ export const level8: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorCollateralStablecoin" },
       {
+        type: "video",
+        comp: "LendingBorrowingVideo",
+        title: "Lending & Borrowing",
+        caption: "Bagaimana kolam pinjaman bekerja: pemberi pinjaman dapat bunga, peminjam menaruh jaminan berlebih.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulator likuidasi",
+        html: "Geser harga jaminan dan lihat bagaimana <strong>health factor</strong> turun mendekati ambang likuidasi saat harga anjlok.",
+      },
+      { type: "widget", widget: "SimulatorLiquidation" },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Ikon Ethereum, jaringan tempat protokol lending seperti Aave dan Compound berjalan",
+        caption: "Ikon Ethereum, tempat Aave dan Compound menjalankan pasar pinjam-meminjam secara otomatis lewat smart contract.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Pinjaman Maksimum per LTV pada Jaminan 1.000 dolar AS",
@@ -332,6 +382,11 @@ export const level8: Lesson[] = [
         type: "case",
         title: "Studi Kasus: Meminjam tanpa menjual aset",
         html: "Kamu punya jaminan kripto senilai <strong>1.000 dolar AS</strong> dan tidak ingin menjualnya karena yakin harganya naik. Dengan LTV maksimum 75 persen, kamu bisa meminjam hingga 1.000 dikali 75 persen sama dengan <strong>750 dolar AS</strong> stablecoin untuk kebutuhan lain. Tapi jika nilai jaminan turun, rasio pinjamanmu membengkak dan kamu bisa terkena likuidasi. Banyak orang sengaja meminjam jauh di bawah batas, misalnya hanya 400 dolar AS, agar punya bantalan aman.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Compound dan token COMP, Juni 2020",
+        html: "Protokol lending <strong>Compound</strong> yang diluncurkan di Ethereum mengubah sejarah DeFi pada <strong>Juni 2020</strong>, ketika ia mulai membagikan token tata kelola <strong>COMP</strong> kepada setiap orang yang meminjam maupun meminjamkan di platformnya. Tiba-tiba pengguna tidak hanya mendapat bunga, tapi juga token reward yang harganya melonjak. Dana yang dikunci di Compound dan protokol sejenis meledak dalam hitungan minggu, memicu periode yang dikenang sebagai DeFi Summer. Peristiwa ini menunjukkan betapa kuat insentif token dalam menarik likuiditas ke pasar pinjam-meminjam terdesentralisasi.",
       },
       {
         type: "calcExercise",
@@ -466,9 +521,22 @@ export const level8: Lesson[] = [
       },
       {
         type: "video",
+        comp: "FlashLoanVideo",
+        title: "Flash Loan dalam Satu Transaksi",
+        caption: "Pinjam, pakai, dan kembalikan dalam satu transaksi, atau seluruhnya batal otomatis.",
+      },
+      {
+        type: "video",
         comp: "AMMVideo",
         title: "Liquidity Pool & Swap",
         caption: "Memahami kolam likuiditas membantu melihat bagaimana harga di AMM bisa dimanipulasi dalam serangan flash loan.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, jaringan tempat flash loan dan likuidasi berlangsung dalam satu transaksi atomik",
+        caption: "Logo Ethereum, tempat flash loan mungkin terjadi berkat sifat transaksi yang atomik: berhasil seluruhnya atau batal seluruhnya.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
@@ -484,6 +552,11 @@ export const level8: Lesson[] = [
           { label: "Turun 30%", value: 1.05 },
           { label: "Turun 35%", value: 0.9 },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Likuidasi yang dipicu penurunan harga",
+        html: "Kamu menaruh jaminan senilai <strong>1.000 dolar AS</strong> dan meminjam 700 dolar AS stablecoin saat ambang likuidasi pada 80 persen. Selama harga jaminan stabil, posisimu aman karena utang 700 masih di bawah ambang 800. Tapi ketika harga jaminan turun 15 persen menjadi 850 dolar AS, ambang likuidasi ikut turun ke 850 dikali 80 persen sama dengan <strong>680 dolar AS</strong>. Karena utang 700 kini melewati 680, posisimu mulai dilikuidasi: sebagian jaminan dijual paksa untuk melunasi utang. Inilah mengapa meminjam jauh di bawah batas memberi bantalan terhadap penurunan harga.",
       },
       {
         type: "case",
@@ -600,6 +673,481 @@ export const level8: Lesson[] = [
             ],
             answer: 1,
             explain: "Bantalan jarak dari batas membuat penurunan harga tidak langsung memicu likuidasi.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "apa-itu-defi",
+    levelId: "defi",
+    order: 5,
+    title: "Apa Itu DeFi & DeFi Summer",
+    summary:
+      "DeFi (decentralized finance) menyalin layanan keuangan, seperti tukar, pinjam, dan simpan, ke dalam program di blockchain tanpa bank. Kenali bedanya dengan keuangan tradisional dan ledakan DeFi Summer 2020.",
+    durationMin: 14,
+    tags: ["defi", "tradfi", "tvl", "defi-summer"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>DeFi</strong> adalah singkatan dari <em>decentralized finance</em>, yaitu layanan keuangan yang dijalankan oleh program di blockchain, bukan oleh bank atau bursa terpusat. Menukar aset, meminjam, meminjamkan, hingga menabung imbal hasil, semua bisa dilakukan langsung lewat <strong>smart contract</strong> tanpa harus membuka rekening atau menunggu persetujuan petugas.",
+      },
+      {
+        type: "paragraph",
+        html: "Lawannya adalah <strong>TradFi</strong> (<em>traditional finance</em>), yaitu keuangan tradisional dengan bank, perusahaan, dan regulator di tengah. Di TradFi kamu menitipkan dana ke lembaga yang mencatat saldo dan bisa membekukannya. Di DeFi, aset tetap di dompetmu sampai kamu sendiri yang menyetujui transaksi lewat program terbuka yang bisa diperiksa siapa pun.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Ciri inti DeFi",
+        html: "<strong>Tanpa izin</strong> (siapa pun bisa ikut tanpa pendaftaran), <strong>terbuka</strong> (kode dan transaksi bisa diperiksa), <strong>tanpa kustodian</strong> (aset di dompetmu, bukan dititip ke perusahaan), dan <strong>komposabel</strong> (protokol bisa saling tumpuk seperti lego).",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Total Value Locked (TVL)",
+        html: "Ukuran populer untuk besarnya DeFi adalah <strong>TVL</strong>, yaitu total nilai aset yang dikunci di dalam protokol DeFi. TVL melonjak dari ratusan juta dolar AS pada awal 2020 menjadi puluhan miliar dolar AS dalam waktu singkat saat DeFi Summer.",
+      },
+      {
+        type: "video",
+        comp: "LendingBorrowingVideo",
+        title: "Layanan Keuangan Tanpa Bank",
+        caption: "Bagaimana DeFi memindahkan fungsi pinjam-meminjam ke dalam program di blockchain.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
+        alt: "Logo Uniswap, salah satu protokol DeFi paling awal dan terbesar",
+        caption: "Logo Uniswap, contoh protokol DeFi yang memungkinkan tukar aset tanpa perantara terpusat.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "area",
+        title: "Pertumbuhan Total Value Locked (TVL) DeFi (ilustrasi)",
+        unit: "TVL (miliar dolar AS)",
+        source: "ilustrasi berdasarkan tren TVL yang dilaporkan luas",
+        note: "TVL meledak saat DeFi Summer 2020, lalu naik lebih jauh pada 2021 sebelum surut mengikuti siklus pasar.",
+        data: [
+          { label: "Jan 2020", value: 0.7 },
+          { label: "Jun 2020", value: 1 },
+          { label: "Des 2020", value: 16 },
+          { label: "Nov 2021", value: 110 },
+          { label: "2023", value: 45 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menabung imbal hasil tanpa rekening bank",
+        html: "Seorang pengguna tanpa akses bank yang baik menyetor <strong>1.000 dolar AS</strong> stablecoin ke sebuah protokol DeFi yang memberi bunga 5 persen setahun. Ia tidak perlu mengisi formulir, menunggu persetujuan, atau menyerahkan dananya ke kustodian. Setahun kemudian ia menerima sekitar <strong>50 dolar AS</strong> bunga, dan bisa menariknya kapan saja. Kebebasan ini datang dengan tanggung jawab: tidak ada bank yang menanggung jika protokolnya kena bug.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: DeFi Summer 2020",
+        html: "Pada <strong>Juni 2020</strong>, protokol Compound meluncurkan token tata kelola <strong>COMP</strong> dan membagikannya kepada pengguna yang meminjam serta meminjamkan. Tiba-tiba menyetor dana berarti mendapat bunga sekaligus token reward yang harganya melonjak. Orang berlomba memindahkan dana ke berbagai protokol, memicu periode yang dikenang sebagai <strong>DeFi Summer</strong>. Total Value Locked di DeFi meledak dari sekitar 1 miliar menjadi belasan miliar dolar AS dalam hitungan bulan, menandai DeFi sebagai gelombang besar pertama setelah ledakan ICO 2017.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Kamu menyetor 1.000 dolar AS stablecoin ke protokol DeFi dengan bunga 5 persen setahun. Berapa dolar AS bunga kotor selama satu tahun (abaikan bunga berbunga)?",
+        answer: 50,
+        tolerance: 0,
+        prefix: "$",
+        solution:
+          "Bunga sama dengan 1.000 dikali 5 persen sama dengan 1.000 dikali 0,05 sama dengan <strong>50 dolar AS</strong> setahun. DeFi memungkinkan ini tanpa rekening bank, tapi tanpa jaring pengaman bank pula.",
+        hint: "Kalikan modal dengan bunga dalam bentuk desimal.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap ciri sebagai milik DeFi atau keuangan tradisional (TradFi).",
+        buckets: ["DeFi", "TradFi"],
+        items: [
+          { text: "Siapa pun bisa ikut tanpa pendaftaran atau persetujuan petugas", bucket: "DeFi" },
+          { text: "Lembaga pusat menyimpan dana dan bisa membekukannya", bucket: "TradFi" },
+          { text: "Aset tetap di dompet sendiri sampai transaksi disetujui", bucket: "DeFi" },
+          { text: "Aturan dijalankan smart contract terbuka yang bisa diperiksa", bucket: "DeFi" },
+          { text: "Kantor cabang dan jam operasional membatasi akses", bucket: "TradFi" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "DeFi memindahkan layanan keuangan ke program di blockchain, tanpa bank atau bursa terpusat.",
+          "Cirinya tanpa izin, terbuka, tanpa kustodian, dan komposabel seperti lego.",
+          "TVL mengukur total nilai yang dikunci di protokol DeFi sebagai indikator pertumbuhan.",
+          "DeFi Summer 2020 dipicu peluncuran token COMP oleh Compound pada Juni 2020.",
+          "Kebebasan DeFi datang tanpa jaring pengaman, jadi risiko bug dan kerugian ditanggung sendiri.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa kepanjangan DeFi?",
+            options: ["Defined finance", "Decentralized finance", "Deferred finance", "Default finance"],
+            answer: 1,
+            explain: "DeFi adalah decentralized finance, layanan keuangan terdesentralisasi di blockchain.",
+          },
+          {
+            q: "Apa beda utama DeFi dan TradFi?",
+            options: [
+              "DeFi selalu lebih untung",
+              "DeFi berjalan lewat program tanpa lembaga pusat yang menyimpan dana",
+              "TradFi tidak punya regulator",
+              "DeFi hanya untuk Bitcoin",
+            ],
+            answer: 1,
+            explain: "DeFi dijalankan smart contract tanpa kustodian pusat; TradFi mengandalkan bank dan lembaga.",
+          },
+          {
+            q: "Apa yang diukur oleh TVL?",
+            options: [
+              "Jumlah pengguna baru",
+              "Total nilai aset yang dikunci di protokol DeFi",
+              "Kecepatan jaringan",
+              "Harga satu token",
+            ],
+            answer: 1,
+            explain: "Total Value Locked mengukur total nilai aset yang ditaruh di dalam protokol DeFi.",
+          },
+          {
+            q: "Peristiwa apa yang memicu DeFi Summer 2020?",
+            options: [
+              "Halving Bitcoin",
+              "Peluncuran token COMP oleh Compound pada Juni 2020",
+              "Runtuhnya FTX",
+              "Bitcoin Pizza Day",
+            ],
+            answer: 1,
+            explain: "Compound membagikan token COMP pada Juni 2020, memicu lonjakan dana di DeFi.",
+          },
+          {
+            q: "Apa konsekuensi sifat tanpa kustodian di DeFi?",
+            options: [
+              "Bank menjamin semua kerugian",
+              "Aset di dompet sendiri, tapi risiko bug ditanggung pengguna",
+              "Tidak ada risiko sama sekali",
+              "Transaksi selalu gratis",
+            ],
+            answer: 1,
+            explain: "Tanpa kustodian dan jaring pengaman, pengguna memegang kendali sekaligus menanggung risikonya.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "impermanent-loss",
+    levelId: "defi",
+    order: 6,
+    title: "Impermanent Loss",
+    summary:
+      "Penyedia likuiditas bisa rugi relatif saat harga dua aset di kolam bergerak berbeda, dibanding sekadar menyimpan aset. Pahami penyebabnya, ukuran kerugiannya, dan kapan ia menjadi nyata.",
+    durationMin: 14,
+    tags: ["defi", "impermanent-loss", "amm", "likuiditas"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Saat kamu menjadi <strong>penyedia likuiditas</strong> di AMM, kamu menyetor dua aset ke kolam. Rumus x kali y sama dengan k membuat kolam otomatis menjual aset yang harganya naik dan membeli yang harganya turun. Akibatnya, saat harga dua aset bergerak berbeda, jatahmu di kolam bisa bernilai lebih kecil dibanding kalau kedua aset hanya kamu <strong>simpan diam</strong>. Selisih ini disebut <strong>impermanent loss</strong>.",
+      },
+      {
+        type: "paragraph",
+        html: "Disebut <em>impermanent</em> (sementara) karena selama harga belum benar-benar bergeser dan kamu belum menarik dana, kerugian itu hanya di atas kertas. Jika harga kembali ke titik awal, impermanent loss lenyap. Tapi begitu kamu menarik dana saat harga sudah jauh bergeser, kerugian itu menjadi <strong>nyata</strong> dan bisa menggerus keuntungan dari fee.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Makin jauh harga bergeser, makin besar kerugian",
+        html: "Impermanent loss nol saat harga tidak berubah, lalu membesar makin cepat saat selisih harga melebar. Pada kenaikan harga 2 kali lipat, kerugian relatifnya sekitar 5,7 persen; pada 4 kali lipat, sekitar 20 persen. Fee yang kamu kumpulkan harus cukup besar untuk menutup ini.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Geser jumlah aset yang ditukar di kolam dan amati bagaimana rasio bergeser. Pergeseran rasio inilah yang membuat nilai jatah penyedia likuiditas tertinggal dibanding sekadar menyimpan.",
+      },
+      { type: "widget", widget: "SimulatorAMM" },
+      {
+        type: "video",
+        comp: "AMMVideo",
+        title: "Liquidity Pool & Swap",
+        caption: "Memahami cara kolam menyeimbangkan dua aset membantu melihat dari mana impermanent loss berasal.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
+        alt: "Logo Uniswap, AMM yang menyadarkan banyak orang akan impermanent loss",
+        caption: "Logo Uniswap, AMM yang membuat istilah impermanent loss dikenal luas di kalangan penyedia likuiditas.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "line",
+        title: "Impermanent Loss vs Perubahan Harga Salah Satu Aset",
+        unit: "kerugian relatif (%)",
+        source: "rumus baku impermanent loss kolam 50/50, IL sama dengan 2 akar r dibagi (1 ditambah r) dikurangi 1",
+        note: "Kerugian nol saat harga stabil dan membesar makin cepat saat harga bergeser jauh; pada harga 4 kali lipat mencapai sekitar 20 persen.",
+        data: [
+          { label: "Naik 0%", value: 0 },
+          { label: "Naik 25%", value: 0.6 },
+          { label: "Naik 50%", value: 2.0 },
+          { label: "Naik 100%", value: 5.7 },
+          { label: "Naik 200%", value: 13.4 },
+          { label: "Naik 300%", value: 20.0 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: HODL vs jadi penyedia likuiditas",
+        html: "Kamu punya 1 ETH (harga 100 dolar AS) dan 100 dolar AS stablecoin, total <strong>200 dolar AS</strong>. Jika kamu hanya menyimpannya (HODL) dan harga ETH naik jadi 200 dolar AS, nilainya menjadi 1 dikali 200 ditambah 100 sama dengan <strong>300 dolar AS</strong>. Jika kamu menyetor keduanya ke kolam AMM, rumus x kali y sama dengan k membuat kolam menjual sebagian ETH-mu saat harganya naik. Saat ditarik, nilai jatahmu hanya sekitar <strong>282,84 dolar AS</strong>. Selisih sekitar 17,16 dolar AS itulah impermanent loss, sekitar 5,7 persen.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Uniswap V1 2018 dan V2 2020 memopulerkan AMM",
+        html: "Ketika <strong>Uniswap V1</strong> diluncurkan pada <strong>November 2018</strong> dan disusul <strong>Uniswap V2</strong> pada <strong>Mei 2020</strong>, ribuan orang untuk pertama kalinya menjadi penyedia likuiditas. Banyak yang awalnya hanya melihat janji fee, lalu terkejut menemukan nilai modalnya tertinggal dibanding sekadar menyimpan aset saat harga bergerak liar. Dari pengalaman pahit inilah istilah <strong>impermanent loss</strong> menyebar luas, dan kalkulator impermanent loss menjadi alat wajib sebelum orang menaruh dana di kolam AMM.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Jika kamu HODL, nilai asetmu 300 dolar AS. Jika kamu menjadi penyedia likuiditas, nilainya hanya 282,84 dolar AS. Berapa dolar AS impermanent loss-nya?",
+        answer: 17.16,
+        tolerance: 0.2,
+        prefix: "$",
+        solution:
+          "Impermanent loss sama dengan nilai HODL dikurangi nilai LP sama dengan 300 dikurangi 282,84 sama dengan <strong>17,16 dolar AS</strong>, atau sekitar 5,7 persen dari 300.",
+        hint: "Kurangkan nilai posisi penyedia likuiditas dari nilai HODL.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan kondisi harga dengan kira-kira besar impermanent loss-nya (kolam 50/50).",
+        pairs: [
+          { left: "Harga tidak berubah", right: "Kerugian sekitar 0 persen" },
+          { left: "Harga naik 50 persen", right: "Kerugian sekitar 2 persen" },
+          { left: "Harga naik 100 persen (2x)", right: "Kerugian sekitar 5,7 persen" },
+          { left: "Harga naik 300 persen (4x)", right: "Kerugian sekitar 20 persen" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Impermanent loss adalah kerugian relatif penyedia likuiditas dibanding sekadar menyimpan aset.",
+          "Penyebabnya rumus x kali y sama dengan k yang menjual aset naik dan membeli aset turun.",
+          "Disebut sementara karena lenyap bila harga kembali, tapi nyata bila ditarik saat harga bergeser.",
+          "Makin jauh harga bergeser, makin besar kerugian: sekitar 5,7 persen pada 2x, 20 persen pada 4x.",
+          "Fee yang dikumpulkan harus cukup besar untuk menutup impermanent loss agar tetap untung.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa itu impermanent loss?",
+            options: [
+              "Biaya gas yang hangus",
+              "Kerugian relatif penyedia likuiditas dibanding sekadar menyimpan aset",
+              "Pajak atas keuntungan kripto",
+              "Kehilangan seed phrase",
+            ],
+            answer: 1,
+            explain: "Impermanent loss adalah selisih nilai jatah kolam dibanding sekadar memegang aset.",
+          },
+          {
+            q: "Apa penyebab impermanent loss?",
+            options: [
+              "Biaya jaringan naik",
+              "Rumus kolam menjual aset yang naik dan membeli yang turun saat harga bergeser",
+              "Bursa membekukan dana",
+              "Token reward anjlok",
+            ],
+            answer: 1,
+            explain: "Rumus x kali y sama dengan k otomatis menyeimbangkan ulang, membuat jatah tertinggal saat harga bergerak.",
+          },
+          {
+            q: "Mengapa disebut 'impermanent' (sementara)?",
+            options: [
+              "Karena selalu hilang setelah sehari",
+              "Karena lenyap jika harga kembali ke titik awal dan dana belum ditarik",
+              "Karena hanya terjadi malam hari",
+              "Karena dijamin protokol",
+            ],
+            answer: 1,
+            explain: "Selama belum ditarik dan harga bisa kembali, kerugian itu hanya di atas kertas.",
+          },
+          {
+            q: "Kira-kira berapa impermanent loss saat harga salah satu aset naik 2 kali lipat?",
+            options: ["Sekitar 0,6 persen", "Sekitar 5,7 persen", "Sekitar 20 persen", "Sekitar 50 persen"],
+            answer: 1,
+            explain: "Pada kenaikan harga 2x, rumus baku memberi impermanent loss sekitar 5,7 persen.",
+          },
+          {
+            q: "Apa yang membuat menyediakan likuiditas tetap bisa untung meski ada impermanent loss?",
+            options: [
+              "Harga selalu naik",
+              "Fee yang dikumpulkan cukup besar untuk menutup impermanent loss",
+              "Protokol mengganti kerugian",
+              "Tidak ada cara untung",
+            ],
+            answer: 1,
+            explain: "Selama fee melebihi impermanent loss, penyedia likuiditas tetap meraih keuntungan bersih.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "komposabilitas-money-lego",
+    levelId: "defi",
+    order: 7,
+    title: "Komposabilitas: Money Lego",
+    summary:
+      "Protokol DeFi bisa saling tumpuk seperti balok lego: keluaran satu protokol menjadi masukan protokol lain. Inilah komposabilitas, kekuatan sekaligus sumber risiko berantai DeFi.",
+    durationMin: 14,
+    tags: ["defi", "komposabilitas", "money-lego", "aggregator"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Salah satu sifat paling kuat DeFi adalah <strong>komposabilitas</strong>: karena semua protokol berjalan terbuka di blockchain yang sama, keluaran satu protokol bisa langsung menjadi masukan protokol lain. Orang menyebutnya <strong>money lego</strong>, karena protokol bisa ditumpuk seperti balok lego untuk membangun layanan baru tanpa minta izin siapa pun.",
+      },
+      {
+        type: "paragraph",
+        html: "Contohnya, kamu bisa menyetor aset ke protokol lending untuk dapat bunga, menerima token bukti setoran, lalu memakai token itu sebagai jaminan di protokol lain. Sebuah <strong>yield aggregator</strong> mengotomatiskan rangkaian ini: ia memindahkan dana ke kolam dengan imbal hasil terbaik dan terus melakukan <strong>auto-compounding</strong>, sehingga pengguna cukup setor sekali.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Money lego",
+        html: "Komposabilitas berarti protokol <strong>tanpa izin</strong> bisa saling memanggil. Satu protokol menjadi balok dasar, protokol di atasnya menumpuk fungsi baru. Inilah yang membuat inovasi DeFi sangat cepat: tak perlu membangun semuanya dari nol.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Risiko berantai",
+        html: "Tumpukan lego juga menumpuk risiko. Jika balok dasar (misalnya sebuah protokol lending atau stablecoin) bermasalah, semua protokol di atasnya bisa ikut runtuh. Komposabilitas mempercepat inovasi sekaligus menyebarkan kegagalan lebih luas.",
+      },
+      {
+        type: "video",
+        comp: "AMMVideo",
+        title: "Protokol yang Saling Tumpuk",
+        caption: "Kolam likuiditas adalah salah satu balok dasar yang dipakai ulang oleh banyak protokol DeFi di atasnya.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, lapisan dasar tempat protokol DeFi saling tumpuk",
+        caption: "Logo Ethereum, blockchain terbuka yang menjadi fondasi tempat protokol DeFi saling tumpuk seperti lego.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Auto-Compounding Menaikkan APY Efektif (dari APR nominal 5%)",
+        unit: "APY efektif (%)",
+        source: "perhitungan bunga majemuk dari APR nominal 5 persen",
+        note: "Aggregator yang otomatis menanam ulang imbal hasil membuat APY efektif sedikit lebih tinggi daripada APR nominal; makin sering compound, makin tinggi.",
+        data: [
+          { label: "Tanpa compound", value: 5.0, color: "#94a3b8" },
+          { label: "Compound bulanan", value: 5.12, color: "#627eea" },
+          { label: "Compound harian", value: 5.13, color: "#26a17b" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Menumpuk dua sumber imbal hasil",
+        html: "Sebuah strategi aggregator menyetor stablecoin-mu ke protokol lending yang memberi bunga <strong>4 persen</strong> setahun, lalu memakai token reward yang didapat untuk menambah <strong>3 persen</strong> lagi. Dengan menumpuk dua balok lego ini, total imbal hasil menjadi 4 ditambah 3 sama dengan <strong>7 persen</strong>, semua dikelola otomatis oleh satu kontrak. Kamu cukup setor sekali, tapi kamu juga menanggung risiko kedua protokol sekaligus.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Yearn Finance dan lahirnya yield aggregator, 2020",
+        html: "Pada <strong>2020</strong>, di tengah DeFi Summer, Andre Cronje meluncurkan <strong>Yearn Finance</strong> (token YFI). Yearn adalah salah satu <strong>yield aggregator</strong> pertama yang populer: ia otomatis memindahkan dana pengguna ke protokol lending dan kolam dengan imbal hasil terbaik, lalu menanam ulang hasilnya. Yang menarik, token YFI dibagikan tanpa penjualan awal ke pendiri, dan harganya sempat melampaui harga satu Bitcoin. Yearn menjadi bukti nyata kekuatan money lego: ia tidak membangun protokol lending sendiri, melainkan menumpuk di atas protokol yang sudah ada seperti Compound dan Aave.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah aggregator menumpuk dua sumber imbal hasil: 4 persen dari lending dan 3 persen dari token reward. Berapa persen total imbal hasil tahunannya?",
+        answer: 7,
+        tolerance: 0,
+        suffix: "%",
+        solution:
+          "Total sama dengan 4 ditambah 3 sama dengan <strong>7 persen</strong>. Menumpuk balok lego menggabungkan beberapa sumber imbal hasil, tapi juga menumpuk risiko tiap protokol.",
+        hint: "Jumlahkan kedua sumber imbal hasil.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana yang mencerminkan komposabilitas (money lego) dan mana yang bukan?",
+        buckets: ["Komposabilitas", "Bukan komposabilitas"],
+        items: [
+          { text: "Token bukti setor dari protokol lending dipakai sebagai jaminan di protokol lain", bucket: "Komposabilitas" },
+          { text: "Aggregator otomatis memindahkan dana antarprotokol untuk imbal hasil terbaik", bucket: "Komposabilitas" },
+          { text: "Sebuah bank tertutup yang tidak bisa dihubungkan ke aplikasi lain", bucket: "Bukan komposabilitas" },
+          { text: "Protokol baru menumpuk di atas kolam likuiditas yang sudah ada", bucket: "Komposabilitas" },
+          { text: "Aplikasi yang menyimpan data secara rahasia dan tidak bisa dipanggil program lain", bucket: "Bukan komposabilitas" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Komposabilitas berarti keluaran satu protokol DeFi bisa menjadi masukan protokol lain.",
+          "Karena bisa ditumpuk seperti lego, DeFi disebut money lego dan inovasinya sangat cepat.",
+          "Yield aggregator menumpuk beberapa protokol dan auto-compounding agar pengguna cukup setor sekali.",
+          "Yearn Finance (2020) adalah contoh awal aggregator yang menumpuk di atas Compound dan Aave.",
+          "Tumpukan lego juga menumpuk risiko: kegagalan balok dasar bisa merembet ke atasnya.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa arti komposabilitas (money lego) di DeFi?",
+            options: [
+              "Semua protokol memakai satu token",
+              "Keluaran satu protokol bisa menjadi masukan protokol lain, ditumpuk seperti lego",
+              "Hanya bisa memakai satu aplikasi",
+              "Protokol dilarang saling memanggil",
+            ],
+            answer: 1,
+            explain: "Karena terbuka di blockchain yang sama, protokol DeFi bisa saling tumpuk dan memanggil.",
+          },
+          {
+            q: "Apa yang dilakukan sebuah yield aggregator?",
+            options: [
+              "Menambang Bitcoin",
+              "Otomatis memindahkan dana ke imbal hasil terbaik dan menanam ulang hasilnya",
+              "Mencetak stablecoin baru",
+              "Menyimpan seed phrase pengguna",
+            ],
+            answer: 1,
+            explain: "Aggregator mengotomatiskan pencarian imbal hasil terbaik dan auto-compounding.",
+          },
+          {
+            q: "Protokol apa yang menjadi contoh awal yield aggregator pada 2020?",
+            options: ["Bitcoin", "Yearn Finance", "FTX", "DigiCash"],
+            answer: 1,
+            explain: "Yearn Finance (token YFI) populer pada 2020 sebagai aggregator yang menumpuk di atas protokol lain.",
+          },
+          {
+            q: "Apa keuntungan auto-compounding bagi APY efektif?",
+            options: [
+              "Menurunkan imbal hasil",
+              "Membuat APY efektif sedikit lebih tinggi daripada APR nominal",
+              "Tidak berpengaruh sama sekali",
+              "Menghapus semua risiko",
+            ],
+            answer: 1,
+            explain: "Menanam ulang imbal hasil secara berkala menaikkan APY efektif di atas APR nominal.",
+          },
+          {
+            q: "Apa risiko utama dari komposabilitas?",
+            options: [
+              "Inovasi jadi lambat",
+              "Kegagalan satu balok dasar bisa merembet ke protokol di atasnya",
+              "Biaya gas selalu nol",
+              "Protokol tidak bisa saling terhubung",
+            ],
+            answer: 1,
+            explain: "Menumpuk protokol juga menumpuk risiko, sehingga kegagalan bisa menyebar berantai.",
           },
         ],
       },

@@ -39,6 +39,13 @@ export const level13: Lesson[] = [
         caption: "Seed phrase, hardware wallet, dan cara mewaspadai phishing dalam satu alur singkat.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Trezor_Model_T.jpg?width=400",
+        alt: "Hardware wallet Trezor Model T yang menyimpan private key secara offline",
+        caption: "Hardware wallet menyimpan kunci di dalam perangkat dan menandatangani transaksi tanpa membocorkannya ke komputer.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "info",
         title: "Hardware wallet menyimpan kunci offline",
@@ -67,6 +74,11 @@ export const level13: Lesson[] = [
           { label: "Hardware wallet", value: 7, color: "#f59e0b" },
           { label: "Multisig 2-of-3", value: 9, color: "#22c55e" },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membagi kuasa dana yayasan",
+        html: "Sebuah yayasan menyimpan dana donasi dalam kripto. Daripada menaruh seluruh kuasa pada satu pengurus, mereka memakai dompet <strong>multisig 2-of-3</strong>: tiga kunci dipegang ketua, bendahara, dan auditor. Tiap pengeluaran butuh dua tanda tangan, sehingga satu orang tidak bisa mengambil dana sendirian, dan kehilangan satu kunci pun tidak melumpuhkan dana. Pembagian kuasa ini menghapus satu titik kegagalan sekaligus mencegah penyalahgunaan oleh satu pihak.",
       },
       {
         type: "case",
@@ -204,6 +216,13 @@ export const level13: Lesson[] = [
         caption: "Prinsip kehati-hatian yang sama berlaku saat menyetujui transaksi ke smart contract.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, blockchain tempat smart contract dan kasus The DAO terjadi",
+        caption: "Ethereum menjalankan smart contract; di sinilah The DAO diretas lewat celah reentrancy pada 2016.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "line",
         title: "Simulasi Dana Terkuras oleh Reentrancy (ilustrasi edukatif)",
@@ -218,6 +237,11 @@ export const level13: Lesson[] = [
           { label: "Balik 3", value: 60 },
           { label: "Balik beruntun", value: 0 },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Satu baris yang menukar urutan",
+        html: "Sebuah protokol DeFi menulis fungsi penarikan yang <strong>mengirim dana dulu, baru mengurangi saldo</strong>. Saat audit, pemeriksa menandainya sebagai celah reentrancy klasik. Perbaikannya hanya menukar urutan dua baris: kurangi saldo internal dulu (effects), baru kirim dana keluar (interactions). Setelah pola checks-effects-interactions diterapkan, panggilan balik penyerang tidak lagi menemukan saldo untuk dikuras. Kasus ini menunjukkan bahwa kerentanan fatal kadang hanya soal urutan, dan audit menangkapnya sebelum dana masuk.",
       },
       {
         type: "case",
@@ -356,6 +380,19 @@ export const level13: Lesson[] = [
         html: "<strong>Flash loan</strong> memungkinkan meminjam dana sangat besar tanpa jaminan, asal dikembalikan dalam transaksi yang sama. Penyerang memakai dana raksasa ini untuk sesaat membanjiri satu pasar kecil, memelintir harga yang dibaca <strong>oracle</strong>, lalu mengeksploitasi kontrak yang mempercayai harga palsu itu, semuanya dalam satu transaksi.",
       },
       {
+        type: "video",
+        comp: "OracleVideo",
+        title: "Bagaimana Oracle Bekerja",
+        caption: "Mengapa smart contract butuh umpan harga dari luar, dan mengapa sumber tunggal mudah dipelintir.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
+        alt: "Logo Uniswap, bursa terdesentralisasi yang harganya kerap dipakai sebagai umpan oracle",
+        caption: "Harga di DEX seperti Uniswap kadang dipakai sebagai umpan oracle; pasar dangkal paling mudah dipelintir flash loan.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -382,6 +419,11 @@ export const level13: Lesson[] = [
           { label: "Likuiditas ditarik", value: 8 },
           { label: "Setelahnya", value: 1 },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pinjaman yang dijebol harga palsu",
+        html: "Sebuah protokol pinjaman menilai jaminan berdasarkan harga sebuah token dari satu pasar kecil. Penyerang mengambil <strong>flash loan</strong> raksasa, memborong token itu sampai harganya melonjak sesaat, lalu menjaminkannya ke protokol pada nilai yang sudah dipompa untuk meminjam aset lain jauh melebihi nilai aslinya. Setelah meminjam, ia mengembalikan flash loan dan kabur dengan selisihnya, semuanya dalam satu transaksi. Perbaikannya: oracle yang memakai banyak sumber dan harga rata-rata berbobot waktu (TWAP) agar tak mudah dipelintir sesaat.",
       },
       {
         type: "case",
@@ -536,6 +578,19 @@ export const level13: Lesson[] = [
         html: "Dua bentuk MEV yang sering ditemui: <strong>front-running</strong>, yaitu menyelinap mendahului transaksi yang menguntungkan; dan <strong>sandwich attack</strong>, yaitu menempatkan satu transaksi tepat sebelum dan satu tepat sesudah transaksi korban agar korban membeli lebih mahal dan menjual lebih murah, sementara penyerang menangguk selisihnya.",
       },
       {
+        type: "video",
+        comp: "MEVVideo",
+        title: "MEV: Untung dari Urutan Transaksi",
+        caption: "Bagaimana front-running dan sandwich attack memanfaatkan antrean transaksi publik.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Digital_Signature_diagram.svg?width=400",
+        alt: "Diagram alur tanda tangan digital saat menyetujui sebuah transaksi",
+        caption: "Tiap persetujuan transaksi adalah tanda tangan digital; phishing menipu korban menandatangani izin yang berbahaya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Sandwich Attack: Dampak pada Harga Beli Korban (ilustrasi edukatif)",
@@ -547,6 +602,11 @@ export const level13: Lesson[] = [
           { label: "Setelah beli penyerang", value: 108, color: "#f59e0b" },
           { label: "Harga bayar korban", value: 112, color: "#ef4444" },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Approve tak terbatas yang nyaris fatal",
+        html: "Seorang pengguna ingin menukar token di sebuah aplikasi. Pop-up meminta menyetujui (approve) akses, dan secara default jumlahnya <strong>tak terbatas</strong>. Untungnya ia membaca rincian transaksi sebelum menandatangani, menyadari aplikasinya situs tiruan, lalu membatalkan. Bila ia menekan setuju, sebuah <strong>drainer</strong> bisa langsung memindahkan seluruh token jenis itu. Pelajarannya: batasi izin pada jumlah yang diperlukan saja, dan cabut approval lama lewat alat pengelola izin secara berkala.",
       },
       {
         type: "case",
@@ -644,6 +704,515 @@ export const level13: Lesson[] = [
             ],
             answer: 1,
             explain: "Verifikasi alamat dan isi transaksi mencegah persetujuan berbahaya.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "sejarah-peretasan",
+    levelId: "keamanan",
+    order: 5,
+    title: "Sejarah Peretasan Besar Kripto",
+    summary:
+      "Pelajaran dari peretasan dan keruntuhan terbesar: Mt. Gox, The DAO, Coincheck, dan FTX. Mengapa sebagian besar kerugian justru datang dari titik terpusat.",
+    durationMin: 15,
+    tags: ["keamanan", "sejarah", "peretasan", "bursa", "ftx"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Sejarah kripto ditandai oleh sejumlah <strong>peretasan</strong> dan <strong>keruntuhan</strong> besar yang melenyapkan dana miliaran dolar. Mempelajarinya bukan untuk menakut-nakuti, melainkan untuk memahami pola: di mana titik lemah yang berulang, dan bagaimana cara melindungi diri.",
+      },
+      {
+        type: "paragraph",
+        html: "Pola yang paling sering muncul jelas: bukan jaringan blockchain itu sendiri yang jebol, melainkan <strong>pihak terpusat</strong> tempat orang menitipkan dana, seperti bursa. Sebagian kecil lainnya adalah celah pada <strong>smart contract</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Empat peristiwa yang wajib dikenang",
+        html: "<strong>Mt. Gox</strong> (2014, sekitar 850.000 BTC raib), <strong>The DAO</strong> (2016, celah reentrancy), <strong>Coincheck</strong> (Januari 2018, sekitar 530 juta dolar AS), dan keruntuhan bursa <strong>FTX</strong> (November 2022). Tiga dari empat adalah kegagalan pihak terpusat.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Risiko menitipkan aset",
+        html: "Menyimpan kripto di bursa berarti menyerahkan <strong>private key</strong> ke pihak lain. Jika bursa diretas, salah kelola, atau menyalahgunakan dana, asetmu ikut terancam, persis seperti yang terjadi pada Mt. Gox, Coincheck, dan FTX.",
+      },
+      {
+        type: "video",
+        comp: "RugPullVideo",
+        title: "Saat Dana Lenyap",
+        caption: "Pola berulang ketika dana investor menguap, dari penipuan proyek sampai keruntuhan bursa.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/FTX_logo.svg?width=400",
+        alt: "Logo bursa FTX yang runtuh pada November 2022",
+        caption: "FTX, salah satu bursa terbesar dunia, runtuh pada November 2022 dan menyeret dana pelanggan yang sangat besar.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perkiraan Skala Kerugian Tiap Peristiwa (perkiraan publik)",
+        unit: "perkiraan nilai kerugian (juta dolar AS)",
+        source: "perkiraan dari laporan publik, nilai pada masanya (ilustratif)",
+        note: "Keruntuhan bursa FTX jauh melampaui peretasan teknis mana pun; kerugian terbesar berasal dari pihak terpusat, bukan dari blockchain yang jebol.",
+        data: [
+          { label: "The DAO 2016", value: 60, color: "#627eea" },
+          { label: "Mt. Gox 2014", value: 450, color: "#f7931a" },
+          { label: "Coincheck 2018", value: 530, color: "#f59e0b" },
+          { label: "FTX 2022", value: 8000, color: "#ef4444" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Telur dalam satu keranjang",
+        html: "Seorang pengguna menyimpan seluruh asetnya, senilai 50 juta rupiah, di satu bursa demi kepraktisan. Ketika bursa itu membekukan penarikan karena masalah keuangan, ia tidak bisa berbuat apa-apa, sebab <strong>private key</strong> dipegang bursa, bukan dirinya. Pelajaran dari Mt. Gox hingga FTX sama: jangan menaruh semua dana di satu pihak terpusat. Sebagian besar simpanan jangka panjang lebih aman di dompet milik sendiri.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Empat keruntuhan besar yang mengubah kripto",
+        html: "<strong>Mt. Gox</strong> (2014): bursa Bitcoin terbesar pada masanya runtuh setelah kehilangan sekitar <strong>850.000 BTC</strong> akibat pencurian yang lama tak terdeteksi. <strong>The DAO</strong> (2016): dana investasi berbasis smart contract di Ethereum dikuras lewat celah <strong>reentrancy</strong>, memicu hard fork Ethereum dan Ethereum Classic. <strong>Coincheck</strong> (Januari 2018): bursa Jepang ini kehilangan token NEM senilai sekitar <strong>530 juta dolar AS</strong>, salah satu pencurian terbesar saat itu, karena aset disimpan di hot wallet tanpa pengamanan memadai. <strong>FTX</strong> (November 2022): bursa raksasa ini bangkrut setelah terungkap dana pelanggan disalahgunakan, melenyapkan nilai yang sangat besar dan mengguncang seluruh industri.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Mt. Gox kehilangan sekitar 850.000 BTC. Bila saat itu harga 1 BTC sekitar 500 dolar AS, berapa juta dolar AS perkiraan kerugiannya?",
+        answer: 425,
+        tolerance: 5,
+        suffix: "juta dolar AS",
+        solution:
+          "850.000 x 500 = 425.000.000 dolar AS = <strong>425 juta dolar AS</strong>. Angka ini memakai harga pada masanya; bila dihitung dengan harga jauh kemudian, nilainya melonjak berkali lipat.",
+        hint: "Kalikan jumlah BTC dengan harga per BTC, lalu ubah ke satuan juta.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap insiden: celah teknis smart contract atau kegagalan pihak terpusat?",
+        buckets: ["Celah teknis kontrak", "Kegagalan pihak terpusat"],
+        items: [
+          { text: "The DAO 2016, dikuras lewat reentrancy", bucket: "Celah teknis kontrak" },
+          { text: "Mt. Gox 2014, bursa kehilangan koin pelanggan", bucket: "Kegagalan pihak terpusat" },
+          { text: "Coincheck 2018, token dicuri dari hot wallet bursa", bucket: "Kegagalan pihak terpusat" },
+          { text: "FTX 2022, bursa menyalahgunakan dana pelanggan", bucket: "Kegagalan pihak terpusat" },
+        ],
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan tiap peristiwa dengan tahun dan cirinya.",
+        pairs: [
+          { left: "Mt. Gox", right: "2014, sekitar 850.000 BTC raib dari bursa" },
+          { left: "The DAO", right: "2016, dikuras lewat celah reentrancy" },
+          { left: "Coincheck", right: "Januari 2018, token NEM senilai sekitar 530 juta dolar dicuri" },
+          { left: "FTX", right: "November 2022, bursa bangkrut karena penyalahgunaan dana" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Mt. Gox (2014) kehilangan sekitar 850.000 BTC, menandai risiko menitip aset di bursa.",
+          "The DAO (2016) dikuras lewat reentrancy dan memicu hard fork Ethereum.",
+          "Coincheck (Januari 2018) kehilangan token senilai sekitar 530 juta dolar dari hot wallet.",
+          "FTX (November 2022) runtuh karena penyalahgunaan dana pelanggan, kerugian terbesar dari pihak terpusat.",
+          "Pola berulang: titik lemah utama adalah pihak terpusat, bukan blockchain itu sendiri.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Berapa kira-kira Bitcoin yang hilang dalam keruntuhan Mt. Gox?",
+            options: ["8.500 BTC", "85.000 BTC", "850.000 BTC", "8,5 juta BTC"],
+            answer: 2,
+            explain: "Mt. Gox mengumumkan kehilangan sekitar 850.000 BTC pada 2014.",
+          },
+          {
+            q: "Apa penyebab dikurasnya dana The DAO pada 2016?",
+            options: [
+              "Pencurian private key bursa",
+              "Celah reentrancy pada smart contract",
+              "Serangan SIM swap",
+              "Rug pull tim pengembang",
+            ],
+            answer: 1,
+            explain: "The DAO dikuras lewat reentrancy, lalu memicu hard fork Ethereum dan Ethereum Classic.",
+          },
+          {
+            q: "Apa yang terjadi pada Coincheck Januari 2018?",
+            options: [
+              "Bursa diluncurkan",
+              "Token senilai sekitar 530 juta dolar AS dicuri dari hot wallet",
+              "Menjadi bursa teraman dunia",
+              "Meluncurkan stablecoin",
+            ],
+            answer: 1,
+            explain: "Coincheck kehilangan token NEM senilai sekitar 530 juta dolar AS dari hot wallet.",
+          },
+          {
+            q: "Apa penyebab keruntuhan FTX pada November 2022?",
+            options: [
+              "Blockchain Bitcoin diretas",
+              "Penyalahgunaan dana pelanggan oleh bursa",
+              "Celah reentrancy",
+              "Halving yang gagal",
+            ],
+            answer: 1,
+            explain: "FTX bangkrut setelah terungkap dana pelanggan disalahgunakan.",
+          },
+          {
+            q: "Apa pola umum dari sebagian besar kerugian besar di sejarah kripto?",
+            options: [
+              "Blockchain selalu jebol",
+              "Kerugian terbesar datang dari pihak terpusat seperti bursa",
+              "Hanya menimpa Bitcoin",
+              "Selalu karena lupa seed phrase",
+            ],
+            answer: 1,
+            explain: "Mt. Gox, Coincheck, dan FTX menunjukkan titik lemah utama ada pada pihak terpusat.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "self-custody-kunci",
+    levelId: "keamanan",
+    order: 6,
+    title: "Self-Custody & Manajemen Kunci",
+    summary:
+      "Prinsip not your keys, not your coins, beda cold dan hot wallet, cara mencadangkan seed phrase dengan benar, dan kapan multisig dibutuhkan.",
+    durationMin: 15,
+    tags: ["keamanan", "self-custody", "seed-phrase", "cold-wallet", "multisig"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Self-custody</strong> berarti menyimpan asetmu sendiri, memegang <strong>private key</strong> tanpa menitipkannya ke bursa atau pihak ketiga. Inilah perwujudan langsung dari pepatah <strong>not your keys, not your coins</strong>: hanya pemegang kunci yang benar-benar menguasai dana.",
+      },
+      {
+        type: "paragraph",
+        html: "Kebebasan ini datang dengan tanggung jawab. Tidak ada layanan pelanggan yang bisa memulihkan kunci yang hilang. Maka <strong>manajemen kunci</strong> yang rapi, mulai dari cara menyimpan sampai mencadangkan <strong>seed phrase</strong>, menjadi keterampilan inti.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Cold wallet vs hot wallet",
+        html: "<strong>Hot wallet</strong> selalu terhubung internet: praktis untuk dana harian yang kecil. <strong>Cold wallet</strong> menyimpan kunci offline (mis. hardware wallet): tepat untuk simpanan besar jangka panjang. Banyak orang memakai keduanya, seperti dompet saku dan brankas.",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "Cadangkan seed phrase dengan benar",
+        html: "Tulis <strong>seed phrase</strong> di media fisik, simpan beberapa salinan di lokasi berbeda yang aman dari air dan api. Jangan pernah memotretnya, menyimpannya di cloud, atau mengetiknya di situs. Satu salinan yang bocor sama dengan menyerahkan seluruh aset.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Lihat bagaimana skema <strong>multisig m-of-n</strong> membagi kuasa: untuk dana besar, butuh beberapa kunci sebelum dana bisa dipindahkan.",
+      },
+      { type: "widget", widget: "SimulatorMultisig" },
+      {
+        type: "video",
+        comp: "KeamananDompetVideo",
+        title: "Menjaga Kunci Sendiri",
+        caption: "Mengapa dompet menyimpan kunci, bukan koin, dan cara menjaga seed phrase tetap aman.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Trezor_Model_T.jpg?width=400",
+        alt: "Hardware wallet Trezor Model T sebagai contoh cold storage untuk self-custody",
+        caption: "Hardware wallet adalah cold storage yang umum dipakai untuk menjaga kunci sendiri secara offline.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Ketahanan Skema Penyimpanan terhadap Kehilangan & Pencurian (ilustrasi edukatif)",
+        unit: "perkiraan ketahanan relatif",
+        source: "ilustrasi edukatif berdasarkan prinsip redundansi dan offline",
+        note: "Menambah cadangan dan membagi kuasa tanda tangan meningkatkan ketahanan; satu hot wallet tanpa cadangan paling rapuh.",
+        data: [
+          { label: "Hot wallet tanpa cadangan", value: 2, color: "#ef4444" },
+          { label: "Hardware wallet", value: 6, color: "#f59e0b" },
+          { label: "Hardware + cadangan seed", value: 8, color: "#84cc16" },
+          { label: "Multisig 2-of-3", value: 9, color: "#22c55e" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pindah dari bursa ke dompet sendiri",
+        html: "Seorang investor menyimpan 20 juta rupiah kripto untuk jangka panjang di bursa. Setelah belajar self-custody, ia membeli hardware wallet, memindahkan asetnya, lalu mencatat <strong>seed phrase</strong> di dua keping logam yang disimpan di dua lokasi berbeda. Dana harian kecil ia biarkan di hot wallet untuk kepraktisan. Kini, walau bursanya bermasalah, simpanan utamanya tetap di bawah kuasanya sendiri.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Gelombang self-custody setelah FTX runtuh (akhir 2022)",
+        html: "Ketika bursa <strong>FTX</strong> runtuh pada <strong>November 2022</strong>, banyak pengguna mendadak tak bisa menarik dana mereka. Akibatnya, terjadi <strong>gelombang pindah ke self-custody</strong>: penjualan <strong>hardware wallet</strong> melonjak tajam di akhir 2022, pencarian soal cara menyimpan kunci sendiri meningkat, dan banyak orang menarik aset dari bursa ke dompet pribadi. Peristiwa itu menegaskan kembali pelajaran lama, not your keys, not your coins, kali ini dirasakan langsung oleh jutaan orang.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah dompet bersama memakai skema multisig 3-of-5. Berapa kunci minimal yang harus menandatangani agar transaksi sah?",
+        answer: 3,
+        tolerance: 0,
+        suffix: "kunci",
+        solution:
+          "Pada 3-of-5, dibutuhkan minimal <strong>3 kunci</strong> dari 5 untuk menyetujui. Skema ini tahan jika sampai 2 kunci hilang, dan tetap aman jika 1 atau 2 kunci dicuri.",
+        hint: "Angka pertama pada m-of-n adalah jumlah tanda tangan minimum.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap kebiasaan manajemen kunci sebagai aman atau berbahaya.",
+        buckets: ["Aman", "Berbahaya"],
+        items: [
+          { text: "Menyimpan simpanan besar di cold wallet jangka panjang", bucket: "Aman" },
+          { text: "Menyimpan seluruh aset di bursa demi kepraktisan", bucket: "Berbahaya" },
+          { text: "Mencadangkan seed phrase di beberapa lokasi fisik aman", bucket: "Aman" },
+          { text: "Menyimpan foto seed phrase di penyimpanan cloud", bucket: "Berbahaya" },
+          { text: "Memakai multisig untuk dana bersama yang besar", bucket: "Aman" },
+          { text: "Mengetik seed phrase di situs yang menjanjikan bonus", bucket: "Berbahaya" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Self-custody berarti memegang private key sendiri, perwujudan not your keys, not your coins.",
+          "Hot wallet untuk dana harian kecil; cold wallet untuk simpanan besar jangka panjang.",
+          "Cadangkan seed phrase di media fisik di beberapa lokasi; jangan difoto atau diunggah ke cloud.",
+          "Multisig m-of-n membagi kuasa dan menghapus satu titik kegagalan untuk dana besar.",
+          "Runtuhnya FTX (akhir 2022) memicu gelombang pindah ke self-custody dan lonjakan hardware wallet.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa arti self-custody?",
+            options: [
+              "Menitipkan kunci ke bursa",
+              "Menyimpan aset sendiri dengan memegang private key tanpa pihak ketiga",
+              "Membeli asuransi kripto",
+              "Memakai kartu kredit untuk kripto",
+            ],
+            answer: 1,
+            explain: "Self-custody berarti memegang kuncimu sendiri, bukan menitipkannya.",
+          },
+          {
+            q: "Untuk apa cold wallet paling cocok?",
+            options: [
+              "Transaksi harian yang sangat sering",
+              "Simpanan besar jangka panjang",
+              "Membayar gas fee",
+              "Menyimpan seed phrase di cloud",
+            ],
+            answer: 1,
+            explain: "Cold wallet offline lebih aman untuk simpanan besar yang jarang dipindahkan.",
+          },
+          {
+            q: "Cara mencadangkan seed phrase yang benar adalah?",
+            options: [
+              "Memotretnya dan menyimpan di galeri",
+              "Menulisnya di media fisik dan menyimpan beberapa salinan di lokasi aman",
+              "Mengunggahnya ke email",
+              "Mengetiknya di situs dompet",
+            ],
+            answer: 1,
+            explain: "Cadangan fisik di beberapa lokasi aman menghindari kebocoran lewat internet.",
+          },
+          {
+            q: "Pada multisig 3-of-5, berapa tanda tangan minimum yang dibutuhkan?",
+            options: ["1", "2", "3", "5"],
+            answer: 2,
+            explain: "Angka m pada m-of-n adalah jumlah minimum, di sini 3 dari 5.",
+          },
+          {
+            q: "Apa dampak runtuhnya FTX akhir 2022 terhadap perilaku pengguna?",
+            options: [
+              "Semua orang pindah ke bursa lain",
+              "Muncul gelombang pindah ke self-custody dan lonjakan hardware wallet",
+              "Bitcoin dihentikan",
+              "Seed phrase tidak lagi diperlukan",
+            ],
+            answer: 1,
+            explain: "Banyak orang menarik dana ke dompet sendiri setelah merasakan risiko menitip aset di bursa.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "rekayasa-sosial",
+    levelId: "keamanan",
+    order: 7,
+    title: "Rekayasa Sosial & Penipuan Umum",
+    summary:
+      "Mengenali modus yang menyerang manusia, bukan kode: SIM swap, dukungan palsu, giveaway scam, address poisoning, dan approval drainer.",
+    durationMin: 15,
+    tags: ["keamanan", "rekayasa-sosial", "penipuan", "sim-swap", "scam"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Rekayasa sosial</strong> adalah seni menipu manusia agar menyerahkan akses, bukan membobol kode. Penyerang memainkan rasa takut, serakah, atau terburu-buru. Karena targetnya manusia, pertahanan terbaik adalah kebiasaan dan kewaspadaan, bukan sekadar perangkat lunak.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Lima modus yang sering ditemui",
+        html: "<strong>SIM swap</strong> (membajak nomor ponsel), <strong>dukungan palsu</strong> (mengaku admin resmi), <strong>giveaway scam</strong> (janji melipatgandakan kripto), <strong>address poisoning</strong> (menyusupkan alamat mirip), dan <strong>approval drainer</strong> (menjebak korban menyetujui izin yang menguras dompet).",
+      },
+      {
+        type: "callout",
+        tone: "warn",
+        title: "SIM swap dan kelemahan OTP lewat SMS",
+        html: "Pada <strong>SIM swap</strong>, penyerang membujuk operator memindahkan nomormu ke kartu SIM mereka, lalu merebut kode <strong>OTP</strong> yang dikirim lewat SMS. Karena itu, 2FA berbasis SMS jauh lebih lemah dibanding aplikasi authenticator atau kunci keamanan fisik.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Address poisoning dan approval drainer",
+        html: "<strong>Address poisoning</strong> menaruh alamat yang sangat mirip milikmu di riwayat transaksi, berharap kamu salah menyalinnya saat mengirim. <strong>Approval drainer</strong> menjebak korban menekan tombol setuju yang memberi izin tak terbatas, lalu menyedot dompet.",
+      },
+      {
+        type: "video",
+        comp: "KeamananDompetVideo",
+        title: "Mewaspadai Tipuan",
+        caption: "Cara mengenali pesan, situs, dan permintaan palsu sebelum terlanjur memberi akses.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tor-onion-network.png?width=400",
+        alt: "Ilustrasi jaringan terdistribusi yang menjaga privasi",
+        caption: "Privasi melindungi sebagian data, tetapi rekayasa sosial menyerang manusia langsung, bukan jaringannya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Ketahanan Metode 2FA terhadap SIM Swap (ilustrasi edukatif)",
+        unit: "perkiraan ketahanan relatif",
+        source: "ilustrasi edukatif berdasarkan prinsip keamanan",
+        note: "OTP lewat SMS paling rapuh terhadap SIM swap; aplikasi authenticator lebih kuat, dan kunci keamanan fisik paling tahan.",
+        data: [
+          { label: "OTP via SMS", value: 2, color: "#ef4444" },
+          { label: "Aplikasi authenticator", value: 7, color: "#f59e0b" },
+          { label: "Kunci keamanan fisik", value: 9, color: "#22c55e" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Pesan dukungan palsu di malam hari",
+        html: "Seorang pengguna menulis keluhan di forum publik. Beberapa menit kemudian sebuah akun mengaku <strong>tim dukungan resmi</strong> mengiriminya pesan pribadi, menawarkan bantuan, lalu meminta <strong>seed phrase</strong> untuk memverifikasi dompet. Untungnya ia ingat aturan emas: tidak ada pihak sah yang pernah meminta seed phrase. Ia memblokir akun itu. Modus ini mengandalkan rasa panik dan keinginan cepat selesai, ciri khas rekayasa sosial.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Peretasan Twitter Juli 2020",
+        html: "Pada <strong>15 Juli 2020</strong>, penyerang memakai <strong>rekayasa sosial</strong> terhadap karyawan Twitter untuk mengakses alat internal, lalu membajak akun tokoh terkenal seperti Barack Obama, Elon Musk, dan Bill Gates. Akun-akun itu memposting <strong>penipuan giveaway Bitcoin</strong>: kirim Bitcoin ke alamat tertentu dan terima dua kali lipat kembali. Banyak orang tertipu, dan penipu mengumpulkan sekitar <strong>12,86 BTC</strong> senilai kira-kira <strong>118.000 dolar AS</strong> dalam waktu singkat. Pelajarannya: bahkan pesan dari akun terverifikasi pun bisa palsu, dan janji melipatgandakan uang selalu penipuan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Dalam penipuan Twitter 2020, penipu mengumpulkan sekitar 12,86 BTC senilai kira-kira 118.000 dolar AS. Berapa kira-kira nilai 1 BTC saat itu (dolar AS)?",
+        answer: 9176,
+        tolerance: 200,
+        prefix: "$",
+        solution:
+          "118.000 dibagi 12,86 = sekitar <strong>9.176 dolar AS</strong> per BTC, mendekati harga Bitcoin pada pertengahan 2020. Janji melipatgandakan kripto seperti ini selalu tipuan.",
+        hint: "Bagi total nilai dolar dengan jumlah BTC yang terkumpul.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan tiap modus rekayasa sosial dengan cirinya.",
+        pairs: [
+          { left: "SIM swap", right: "Membajak nomor ponsel korban untuk merebut kode OTP" },
+          { left: "Dukungan palsu", right: "Mengaku admin resmi lalu meminta seed phrase atau akses" },
+          { left: "Giveaway scam", right: "Janji melipatgandakan kripto bila kamu mengirim lebih dulu" },
+          { left: "Address poisoning", right: "Menyusupkan alamat mirip ke riwayat agar korban salah salin" },
+          { left: "Approval drainer", right: "Menjebak korban menyetujui izin yang menguras dompet" },
+        ],
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Golongkan tiap situasi sebagai aman atau penipuan rekayasa sosial.",
+        buckets: ["Aman", "Penipuan"],
+        items: [
+          { text: "Memakai aplikasi authenticator alih-alih OTP SMS untuk akun penting", bucket: "Aman" },
+          { text: "Akun mengaku tim resmi meminta seed phrase lewat pesan pribadi", bucket: "Penipuan" },
+          { text: "Menyalin alamat tujuan dari sumber tepercaya, bukan dari riwayat", bucket: "Aman" },
+          { text: "Tawaran kirim 1 Bitcoin dapat 2 Bitcoin kembali", bucket: "Penipuan" },
+          { text: "Memeriksa seluruh karakter alamat sebelum mengirim", bucket: "Aman" },
+          { text: "Pop-up meminta approve akses tak terbatas dari situs tak dikenal", bucket: "Penipuan" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Rekayasa sosial menyerang manusia, bukan kode; pertahanannya adalah kebiasaan dan kewaspadaan.",
+          "SIM swap membajak nomor ponsel, sehingga OTP lewat SMS lebih lemah dari authenticator atau kunci fisik.",
+          "Tidak ada pihak sah yang meminta seed phrase, dan janji melipatgandakan kripto selalu penipuan.",
+          "Address poisoning mengandalkan korban menyalin alamat mirip; selalu periksa seluruh karakter.",
+          "Peretasan Twitter Juli 2020 membajak akun tokoh untuk penipuan giveaway Bitcoin senilai sekitar 118.000 dolar.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa sasaran utama rekayasa sosial?",
+            options: [
+              "Celah pada kode smart contract",
+              "Manusia, agar menyerahkan akses atau informasi rahasia",
+              "Penambang blok",
+              "Biaya gas jaringan",
+            ],
+            answer: 1,
+            explain: "Rekayasa sosial menipu manusia, bukan membobol kode.",
+          },
+          {
+            q: "Mengapa OTP lewat SMS rawan terhadap SIM swap?",
+            options: [
+              "Karena SMS gratis",
+              "Karena penyerang bisa membajak nomor ponsel lalu merebut kode OTP",
+              "Karena SMS terlalu lambat",
+              "Karena SMS terenkripsi penuh",
+            ],
+            answer: 1,
+            explain: "SIM swap memindahkan nomor korban ke penyerang sehingga OTP SMS bisa direbut.",
+          },
+          {
+            q: "Apa ciri khas giveaway scam?",
+            options: [
+              "Meminta kamu mengaudit kode",
+              "Menjanjikan melipatgandakan kripto bila kamu mengirim lebih dulu",
+              "Memberi hardware wallet gratis tanpa syarat",
+              "Mengunci likuiditas",
+            ],
+            answer: 1,
+            explain: "Janji menggandakan kripto bila kamu mengirim dulu selalu tipuan.",
+          },
+          {
+            q: "Apa itu address poisoning?",
+            options: [
+              "Meracuni server bursa",
+              "Menyusupkan alamat mirip ke riwayat agar korban salah menyalin saat mengirim",
+              "Menambahkan virus ke hardware wallet",
+              "Membakar token korban",
+            ],
+            answer: 1,
+            explain: "Penyerang berharap korban menyalin alamat mirip dari riwayat, lalu salah kirim.",
+          },
+          {
+            q: "Apa yang terjadi pada peretasan Twitter Juli 2020?",
+            options: [
+              "Bitcoin diretas langsung dari blockchain",
+              "Akun tokoh dibajak untuk penipuan giveaway Bitcoin",
+              "Bursa FTX runtuh",
+              "Stablecoin kehilangan patokan",
+            ],
+            answer: 1,
+            explain: "Lewat rekayasa sosial, akun tokoh terkenal dibajak untuk menyebar penipuan giveaway Bitcoin.",
           },
         ],
       },

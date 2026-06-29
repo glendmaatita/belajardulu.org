@@ -212,6 +212,22 @@ import { NFTKepemilikanVideo, NFTKepemilikanVideoDuration } from "./NFTKepemilik
 import { BridgeVideo, BridgeVideoDuration } from "./BridgeVideo";
 import { KeamananDompetVideo, KeamananDompetVideoDuration } from "./KeamananDompetVideo";
 import { DCAKriptoVideo, DCAKriptoVideoDuration } from "./DCAKriptoVideo";
+import { CypherpunkVideo, CypherpunkVideoDuration } from "./CypherpunkVideo";
+import { SiklusPasarVideo, SiklusPasarVideoDuration } from "./SiklusPasarVideo";
+import { MerkleTreeVideo, MerkleTreeVideoDuration } from "./MerkleTreeVideo";
+import { ForkBlockchainVideo, ForkBlockchainVideoDuration } from "./ForkBlockchainVideo";
+import { SeedPhraseVideo, SeedPhraseVideoDuration } from "./SeedPhraseVideo";
+import { UTXOVideo, UTXOVideoDuration } from "./UTXOVideo";
+import { MiningVideo, MiningVideoDuration } from "./MiningVideo";
+import { RollupVideo, RollupVideoDuration } from "./RollupVideo";
+import { LendingBorrowingVideo, LendingBorrowingVideoDuration } from "./LendingBorrowingVideo";
+import { FlashLoanVideo, FlashLoanVideoDuration } from "./FlashLoanVideo";
+import { DAOVideo, DAOVideoDuration } from "./DAOVideo";
+import { RugPullVideo, RugPullVideoDuration } from "./RugPullVideo";
+import { MEVVideo, MEVVideoDuration } from "./MEVVideo";
+import { VestingEmisiVideo, VestingEmisiVideoDuration } from "./VestingEmisiVideo";
+import { StakingVideo, StakingVideoDuration } from "./StakingVideo";
+import { OracleVideo, OracleVideoDuration } from "./OracleVideo";
 
 import type { FC } from "react";
 import { VIDEO } from "./theme";
@@ -237,6 +253,22 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   BridgeVideo: { component: BridgeVideo, durationInFrames: BridgeVideoDuration },
   KeamananDompetVideo: { component: KeamananDompetVideo, durationInFrames: KeamananDompetVideoDuration },
   DCAKriptoVideo: { component: DCAKriptoVideo, durationInFrames: DCAKriptoVideoDuration },
+  CypherpunkVideo: { component: CypherpunkVideo, durationInFrames: CypherpunkVideoDuration },
+  SiklusPasarVideo: { component: SiklusPasarVideo, durationInFrames: SiklusPasarVideoDuration },
+  MerkleTreeVideo: { component: MerkleTreeVideo, durationInFrames: MerkleTreeVideoDuration },
+  ForkBlockchainVideo: { component: ForkBlockchainVideo, durationInFrames: ForkBlockchainVideoDuration },
+  SeedPhraseVideo: { component: SeedPhraseVideo, durationInFrames: SeedPhraseVideoDuration },
+  UTXOVideo: { component: UTXOVideo, durationInFrames: UTXOVideoDuration },
+  MiningVideo: { component: MiningVideo, durationInFrames: MiningVideoDuration },
+  RollupVideo: { component: RollupVideo, durationInFrames: RollupVideoDuration },
+  LendingBorrowingVideo: { component: LendingBorrowingVideo, durationInFrames: LendingBorrowingVideoDuration },
+  FlashLoanVideo: { component: FlashLoanVideo, durationInFrames: FlashLoanVideoDuration },
+  DAOVideo: { component: DAOVideo, durationInFrames: DAOVideoDuration },
+  RugPullVideo: { component: RugPullVideo, durationInFrames: RugPullVideoDuration },
+  MEVVideo: { component: MEVVideo, durationInFrames: MEVVideoDuration },
+  VestingEmisiVideo: { component: VestingEmisiVideo, durationInFrames: VestingEmisiVideoDuration },
+  StakingVideo: { component: StakingVideo, durationInFrames: StakingVideoDuration },
+  OracleVideo: { component: OracleVideo, durationInFrames: OracleVideoDuration },
   // Carbon
   EfekRumahKaca: { component: EfekRumahKaca, durationInFrames: EfekRumahKacaDuration },
   PasarKarbon: { component: PasarKarbon, durationInFrames: PasarKarbonDuration },

@@ -220,6 +220,19 @@ export const GLOSSARY: Record<string, string> = {
   "phishing": "Penipuan yang mengelabui korban agar membuka kunci atau menyetujui transaksi berbahaya.",
   "MEV": "Maximal Extractable Value; keuntungan yang diperoleh dengan menyusun ulang urutan transaksi dalam blok.",
   "on-chain analysis": "Analisis data publik di blockchain (alamat aktif, arus dana) untuk menilai kondisi pasar.",
+  "impermanent loss": "Kerugian sementara penyedia likuiditas AMM saat harga kedua aset bergerak relatif satu sama lain.",
+  "airdrop": "Pembagian token gratis ke banyak alamat, biasanya untuk pengguna awal atau komunitas.",
+  "ICO": "Initial Coin Offering; penggalangan dana proyek kripto dengan menjual token baru ke publik.",
+  "TVL": "Total Value Locked; total nilai aset yang terkunci di sebuah protokol DeFi.",
+  "slippage": "Selisih harga yang diharapkan dengan harga eksekusi sebenarnya, membesar pada order besar atau kolam kecil.",
+  "gwei": "Satuan kecil ether untuk menyatakan gas; 1 ETH = 1 miliar (1e9) gwei.",
+  "cold storage": "Penyimpanan kunci kripto secara offline (mis. hardware wallet) agar aman dari serangan daring.",
+  "hot wallet": "Dompet yang terhubung internet; praktis untuk transaksi tetapi lebih rentan dibanding cold storage.",
+  "self-custody": "Menyimpan dan mengelola kunci aset kripto sendiri tanpa menitipkannya ke pihak ketiga.",
+  "play-to-earn": "Model permainan blockchain yang memberi pemain imbalan token atau NFT bernilai.",
+  "FOMO": "Fear of Missing Out; dorongan membeli karena takut ketinggalan saat harga melonjak.",
+  "FUD": "Fear, Uncertainty, Doubt; penyebaran rasa takut dan ragu yang menekan harga atau sentimen.",
+  "DeFi Summer": "Periode 2020 saat protokol DeFi dan yield farming meledak popularitasnya.",
 };
 
 // escape untuk konten elemen HTML (bukan atribut)

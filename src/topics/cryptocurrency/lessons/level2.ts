@@ -39,6 +39,13 @@ export const level2: Lesson[] = [
         caption: "Bagaimana prev hash menautkan tiap block ke pendahulunya menjadi satu rantai utuh.",
       },
       {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang saling menunjuk lewat hash",
+        caption: "Tiap block menyimpan hash block sebelumnya sehingga membentuk rantai yang saling mengunci.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Efek longsor: berapa karakter hash berubah saat data diutak-atik (ilustrasi)",
@@ -169,6 +176,19 @@ export const level2: Lesson[] = [
         title: "Efek longsor lagi",
         html: "Sama seperti hash block, Merkle root sangat sensitif. Mengubah satu transaksi di paling bawah pohon akan menjalar ke atas dan mengubah root. Coba rasakan sensitivitas hash lewat simulator berikut.",
       },
+      {
+        type: "video",
+        comp: "MerkleTreeVideo",
+        title: "Merkle Tree Meringkas Transaksi",
+        caption: "Pasangan hash digabung berjenjang sampai tersisa satu Merkle root di puncak.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hash_Tree.svg?width=400",
+        alt: "Diagram Merkle tree (pohon hash) yang menggabungkan hash berpasangan menuju root",
+        caption: "Hash daun digabung berpasangan, naik berjenjang, sampai tersisa satu Merkle root.",
+        credit: "Sumber: Wikimedia Commons",
+      },
       { type: "widget", widget: "SimulatorHashKripto" },
       {
         type: "chart",
@@ -296,6 +316,19 @@ export const level2: Lesson[] = [
         html: "Light node memanfaatkan Merkle tree dari pelajaran sebelumnya. Dengan header block dan jalur Merkle yang pendek, ia bisa memastikan sebuah transaksi termuat di suatu block tanpa menyimpan seluruh isi block.",
       },
       {
+        type: "video",
+        comp: "CypherpunkVideo",
+        title: "Jaringan Tanpa Pusat",
+        caption: "Semangat desentralisasi: node setara saling terhubung tanpa server tunggal yang mengendalikan.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tor-onion-network.png?width=400",
+        alt: "Ilustrasi jaringan terdistribusi dengan banyak simpul yang saling terhubung",
+        caption: "Di jaringan peer-to-peer, banyak node setara saling meneruskan data tanpa pusat pengendali.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Perkiraan kebutuhan penyimpanan: full node vs light node (ilustrasi)",
@@ -421,6 +454,19 @@ export const level2: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorDoubleSpending" },
       {
+        type: "video",
+        comp: "ForkBlockchainVideo",
+        title: "Saat Rantai Bercabang",
+        caption: "Bagaimana soft fork dan hard fork mengubah aturan, dan kapan rantai benar-benar terbelah.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain_workflow.png?width=400",
+        alt: "Diagram alur kerja blockchain dari transaksi sampai block ditambahkan",
+        caption: "Alur kerja blockchain: aturan jaringan menentukan block mana yang sah dan diterima node.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "line",
         title: "Peluang transaksi dibalik turun seiring jumlah konfirmasi (ilustrasi PoW)",
@@ -509,6 +555,422 @@ export const level2: Lesson[] = [
             options: ["Genesis block Bitcoin", "Hard fork yang melahirkan Bitcoin Cash", "Transaksi pertama ke Hal Finney", "Penemuan Merkle tree"],
             answer: 1,
             explain: "Hard fork pada 1 Agustus 2017 memecah rantai menjadi BTC dan Bitcoin Cash (BCH).",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "anatomi-blok",
+    levelId: "blockchain",
+    order: 5,
+    title: "Anatomi Sebuah Block",
+    summary:
+      "Bedah isi sebuah block sampai ke tulang: block header (versi, prev hash, Merkle root, timestamp, bits/target, nonce) dan daftar transaksi di badannya.",
+    durationMin: 14,
+    tags: ["block", "block-header", "struktur"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Setiap <strong>block</strong> sebenarnya terbagi dua: <strong>block header</strong> yang kecil tetapi padat informasi, dan <strong>badan block</strong> yang berisi daftar transaksi. Yang menarik, justru header yang mungil itulah yang di-hash untuk menghasilkan identitas block dan menautkannya ke rantai.",
+      },
+      {
+        type: "paragraph",
+        html: "Pada Bitcoin, block header berisi enam bagian: <strong>versi</strong> (aturan yang dipakai), <strong>prev hash</strong> (hash block sebelumnya), <strong>Merkle root</strong> (ringkasan semua transaksi), <strong>timestamp</strong> (waktu pembuatan), <strong>bits/target</strong> (tingkat kesulitan yang harus dipenuhi), dan <strong>nonce</strong> (angka yang diutak-atik penambang). Badan block menyimpan transaksi sesungguhnya.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Header yang di-hash, bukan seluruh transaksi",
+        html: "Penambang tidak meng-hash ribuan transaksi berulang kali. Mereka cukup meng-hash <strong>block header</strong> yang ramping. Transaksi sudah terwakili di dalamnya lewat <strong>Merkle root</strong>, jadi mengubah satu transaksi akan mengubah Merkle root, lalu mengubah hash header.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Bits/target itu ambang kesulitan",
+        html: "Kolom <strong>bits</strong> mengkodekan <strong>target</strong>: hash header harus lebih kecil dari nilai ini agar block diterima. Makin kecil target, makin sulit menemukannya, makin tinggi kesulitan jaringan.",
+      },
+      {
+        type: "video",
+        comp: "RantaiBlokVideo",
+        title: "Isi Sebuah Block",
+        caption: "Header yang ramping menyimpan prev hash dan Merkle root, lalu di-hash menjadi identitas block.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_Block_Data.png?width=400",
+        alt: "Diagram struktur data sebuah block Bitcoin beserta isinya",
+        caption: "Struktur sebuah block: header padat informasi di atas, daftar transaksi di badannya.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Ukuran tiap bagian block header Bitcoin",
+        unit: "byte",
+        source: "spesifikasi block header Bitcoin (total 80 byte)",
+        note: "Prev hash dan Merkle root paling besar (32 byte) karena keduanya hash SHA-256 penuh; sisanya hanya 4 byte.",
+        data: [
+          { label: "Versi", value: 4, color: "#94a3b8" },
+          { label: "Prev hash", value: 32, color: "#f7931a" },
+          { label: "Merkle root", value: 32, color: "#627eea" },
+          { label: "Timestamp", value: 4, color: "#26a17b" },
+          { label: "Bits/target", value: 4, color: "#94a3b8" },
+          { label: "Nonce", value: 4, color: "#94a3b8" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Membaca header satu block",
+        html: "Seorang pengembang membuka sebuah block dan melihat header 80 byte: versi block, prev hash yang menunjuk block sebelumnya, Merkle root yang meringkas <strong>2.500 transaksi</strong> di badan block, timestamp, bits, dan nonce hasil penambangan. Untuk membuktikan satu transaksi termuat, ia tidak perlu seluruh badan block, cukup Merkle root di header plus jalur Merkle pendek. Header kecil, tetapi menjadi jangkar seluruh isi block.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Perang ukuran block (2015-2017)",
+        html: "Sejak 2010 Bitcoin membatasi ukuran block di sekitar <strong>1 MB</strong>. Saat pemakaian meningkat, batas itu membuat transaksi antre dan biaya naik. Selama <strong>2015 sampai 2017</strong> komunitas berdebat sengit: sebagian ingin memperbesar block agar lebih murah dan cepat, sebagian menolak demi menjaga block tetap ringan agar mudah dijalankan banyak node. Perdebatan tak menemui titik temu, sehingga pada <strong>1 Agustus 2017</strong> kelompok block besar memisahkan diri lewat hard fork dan melahirkan <strong>Bitcoin Cash</strong> dengan batas block 8 MB.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Block header Bitcoin terdiri dari versi 4 byte, prev hash 32 byte, Merkle root 32 byte, timestamp 4 byte, bits 4 byte, dan nonce 4 byte. Berapa total ukuran header dalam byte?",
+        answer: 80,
+        tolerance: 0,
+        suffix: "byte",
+        solution:
+          "4 + 32 + 32 + 4 + 4 + 4 = <strong>80 byte</strong>. Berapa pun jumlah transaksi di badan block, ukuran header tetap 80 byte.",
+        hint: "Jumlahkan keenam bagian header: dua hash 32 byte dan empat bagian 4 byte.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap bagian: ada di block header atau di badan block?",
+        buckets: ["Block header", "Badan block"],
+        items: [
+          { text: "Prev hash block sebelumnya", bucket: "Block header" },
+          { text: "Merkle root ringkasan transaksi", bucket: "Block header" },
+          { text: "Daftar transaksi lengkap", bucket: "Badan block" },
+          { text: "Nonce hasil penambangan", bucket: "Block header" },
+          { text: "Bits/target tingkat kesulitan", bucket: "Block header" },
+          { text: "Transaksi coinbase penambang", bucket: "Badan block" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Block terbagi jadi block header yang ramping dan badan berisi transaksi.",
+          "Header Bitcoin berisi enam bagian dan totalnya hanya 80 byte.",
+          "Yang di-hash penambang adalah header, bukan seluruh transaksi.",
+          "Merkle root mewakili semua transaksi di dalam header.",
+          "Perdebatan ukuran block 2015-2017 berujung lahirnya Bitcoin Cash pada 2017.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Bagian mana dari block yang sebenarnya di-hash penambang?",
+            options: ["Seluruh badan block", "Block header", "Hanya transaksi coinbase", "Nomor urut block"],
+            answer: 1,
+            explain: "Penambang meng-hash block header yang ramping; transaksi sudah terwakili lewat Merkle root.",
+          },
+          {
+            q: "Berapa total ukuran block header Bitcoin?",
+            options: ["1 MB", "80 byte", "32 byte", "256 byte"],
+            answer: 1,
+            explain: "Enam bagian header berjumlah 80 byte, tetap berapa pun jumlah transaksi.",
+          },
+          {
+            q: "Apa fungsi kolom bits/target?",
+            options: ["Menyimpan saldo penambang", "Menentukan ambang kesulitan yang harus dipenuhi hash", "Mencatat nama pengirim", "Menghitung jumlah node"],
+            answer: 1,
+            explain: "Hash header harus lebih kecil dari target; makin kecil target makin sulit.",
+          },
+          {
+            q: "Apa yang mewakili semua transaksi di dalam header?",
+            options: ["Nonce", "Timestamp", "Merkle root", "Versi"],
+            answer: 2,
+            explain: "Merkle root adalah ringkasan hash seluruh transaksi badan block.",
+          },
+          {
+            q: "Apa hasil dari perang ukuran block pada 1 Agustus 2017?",
+            options: ["Bitcoin berhenti beroperasi", "Lahirnya Bitcoin Cash lewat hard fork", "Block dihapus seluruhnya", "Genesis block dibuat ulang"],
+            answer: 1,
+            explain: "Kelompok block besar memisahkan diri dan melahirkan Bitcoin Cash dengan batas 8 MB.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "imutabilitas-tamper",
+    levelId: "blockchain",
+    order: 6,
+    title: "Imutabilitas: Kenapa Data Sulit Diubah",
+    summary:
+      "Rantai hash membuat setiap perubahan ketahuan. Pahami mengapa data lama nyaris mustahil diubah diam-diam dan bandingkan dengan catatan biasa.",
+    durationMin: 14,
+    tags: ["imutabilitas", "tamper-evident", "hash"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "<strong>Imutabilitas</strong> bukan berarti data secara fisik tidak bisa diubah, melainkan bahwa setiap perubahan pasti <strong>ketahuan</strong>. Istilah tepatnya <strong>tamper-evident</strong>: bukan tak bisa dirusak, tetapi kerusakan langsung terlihat. Kuncinya ada pada rantai hash yang sudah kita pelajari.",
+      },
+      {
+        type: "paragraph",
+        html: "Karena hash satu block ikut menentukan prev hash block berikutnya, mengubah satu transaksi lama akan mengubah hash block itu, lalu memutus tautan ke seluruh block setelahnya. Untuk menutupinya, penyerang harus menghitung ulang semua block tersebut, dan di sistem Proof of Work itu berarti mengulang pekerjaan penambangan yang sangat mahal sambil mengejar jaringan yang terus maju.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Tamper-evident, bukan tamper-proof",
+        html: "Siapa pun bisa mengetik ulang angka di salinannya sendiri. Yang membuat blockchain kuat adalah perubahan itu <strong>tidak akan diterima</strong> node lain karena hash-nya tidak cocok. Makin dalam sebuah transaksi terkubur oleh block-block baru, makin besar pekerjaan yang harus diulang untuk menyembunyikan perubahannya.",
+      },
+      {
+        type: "callout",
+        tone: "tip",
+        title: "Coba simulatornya",
+        html: "Ubah data sebuah block dan saksikan hash-nya berubah lalu memutus tautan ke block-block setelahnya. Rantai langsung tampak rusak. Itulah tamper-evident yang bekerja.",
+      },
+      { type: "widget", widget: "SimulatorBlokHash" },
+      {
+        type: "video",
+        comp: "RantaiBlokVideo",
+        title: "Mengapa Perubahan Selalu Ketahuan",
+        caption: "Satu data diubah, hash berubah, dan seluruh tautan setelahnya ikut putus sehingga manipulasi terdeteksi.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
+        alt: "Diagram rantai blok yang menunjukkan tautan hash antar block",
+        caption: "Tautan hash antar block membuat perubahan di satu titik merembet dan langsung terdeteksi.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Berapa titik yang harus diubah serempak agar manipulasi lolos (ilustrasi)",
+        unit: "perkiraan jumlah titik",
+        source: "ilustrasi edukatif perbandingan model penyimpanan catatan",
+        note: "Catatan terpusat cukup diubah di satu tempat; pada blockchain perubahan harus diterima ribuan node sekaligus, nyaris mustahil.",
+        data: [
+          { label: "Catatan kertas", value: 1, color: "#94a3b8" },
+          { label: "Database 1 server", value: 1, color: "#627eea" },
+          { label: "Database + 3 backup", value: 4, color: "#26a17b" },
+          { label: "Blockchain (ribuan node)", value: 5000, color: "#f7931a" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Mencoba menghapus utang lama",
+        html: "Seseorang ingin menghapus catatan transaksi 2 BTC yang ia kirim setahun lalu, terkubur di kedalaman <strong>50.000 block</strong> dari ujung rantai. Untuk itu ia harus menambang ulang 50.000 block sekaligus mengalahkan laju seluruh penambang dunia yang terus menambah block baru. Biaya listrik dan perangkatnya jauh melampaui 2 BTC yang ingin ia hapus. Secara ekonomi, berbuat jujur jauh lebih murah. Itulah imutabilitas dalam praktik.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: Linked timestamping Haber dan Stornetta (1991)",
+        html: "Pada <strong>1991</strong> Stuart Haber dan W. Scott Stornetta menerbitkan makalah <em>How to Time-Stamp a Digital Document</em> di Journal of Cryptology. Gagasannya: tiap dokumen baru menyertakan hash dokumen sebelumnya, sehingga membentuk rantai yang saling mengunci dan tak bisa disisipi atau diubah tanpa ketahuan. Untuk memperkuatnya, sejak <strong>1995</strong> mereka bahkan menerbitkan hash gabungan mingguan di koran <strong>The New York Times</strong>. Whitepaper Bitcoin 2008 mengutip karya mereka sebagai dasar konsep rantai ber-timestamp.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah rantai memiliki 500 block. Seorang penyerang mengubah transaksi di block ke-450. Berapa block yang harus ditambang ulang agar rantai kembali konsisten sampai ujung?",
+        answer: 51,
+        tolerance: 0,
+        suffix: "block",
+        solution:
+          "Dari block ke-450 sampai ke-500 inklusif: 500 - 450 + 1 = <strong>51 block</strong>. Makin dalam transaksi terkubur, makin banyak block yang harus diulang.",
+        hint: "Hitung dari block yang diubah sampai block terakhir, inklusif.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Pasangkan istilah dengan maknanya.",
+        pairs: [
+          { left: "Tamper-evident", right: "Perubahan tetap mungkin tetapi pasti terdeteksi" },
+          { left: "Imutabilitas", right: "Data lama nyaris mustahil diubah diam-diam" },
+          { left: "Efek longsor", right: "Ubah sedikit data, hash berubah total" },
+          { left: "Linked timestamping", right: "Dokumen baru menyertakan hash dokumen sebelumnya" },
+          { left: "Prev hash", right: "Penaut yang putus saat block lama diubah" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Imutabilitas berarti perubahan pasti ketahuan, bukan mustahil dilakukan.",
+          "Mengubah block lama memutus tautan hash ke semua block setelahnya.",
+          "Di Proof of Work, menyembunyikan perubahan berarti menambang ulang yang sangat mahal.",
+          "Makin dalam transaksi terkubur, makin sulit dan mahal mengubahnya.",
+          "Konsep linked timestamping Haber dan Stornetta (1991) mendasari rantai Bitcoin.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa arti tepat dari imutabilitas blockchain?",
+            options: ["Data secara fisik tak bisa diketik ulang", "Setiap perubahan pasti terdeteksi (tamper-evident)", "Tidak ada yang bisa membaca data", "Data otomatis terhapus tiap tahun"],
+            answer: 1,
+            explain: "Blockchain bersifat tamper-evident: perubahan mungkin dicoba, tetapi tidak akan diterima karena hash tidak cocok.",
+          },
+          {
+            q: "Mengapa mengubah block lama begitu mahal di Proof of Work?",
+            options: ["Karena harus minta izin bank", "Harus menambang ulang semua block setelahnya sambil mengejar jaringan", "Karena data tidak punya hash", "Karena block lama dihapus otomatis"],
+            answer: 1,
+            explain: "Penyerang harus mengulang proof-of-work seluruh block berikutnya dan tetap kalah cepat dari jaringan jujur.",
+          },
+          {
+            q: "Apa yang terjadi pada prev hash saat sebuah block lama diubah?",
+            options: ["Tetap cocok", "Tautan ke block berikutnya putus karena hash berubah", "Berubah jadi nol", "Menghapus seluruh rantai"],
+            answer: 1,
+            explain: "Hash block yang diubah berubah, sehingga prev hash di block berikutnya tak lagi cocok dan tautan putus.",
+          },
+          {
+            q: "Apa kontribusi Haber dan Stornetta pada 1991?",
+            options: ["Menciptakan Bitcoin", "Memperkenalkan linked timestamping dokumen digital", "Menemukan kartu kredit", "Membuat bank pertama"],
+            answer: 1,
+            explain: "Mereka merancang rantai dokumen ber-timestamp yang menjadi cikal bakal konsep blockchain.",
+          },
+          {
+            q: "Mengapa transaksi yang terkubur lebih dalam lebih aman?",
+            options: ["Karena lebih murah diubah", "Karena makin banyak block yang harus ditambang ulang untuk mengubahnya", "Karena dihapus dari rantai", "Karena tidak punya hash"],
+            answer: 1,
+            explain: "Setiap block baru di atasnya menambah pekerjaan yang harus diulang untuk menyembunyikan perubahan.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "fork-bersejarah",
+    levelId: "blockchain",
+    order: 7,
+    title: "Fork Bersejarah & Chain Split",
+    summary:
+      "Bedah beda soft fork dan hard fork lewat peristiwa nyata: pemisahan Ethereum dan Ethereum Classic (2016) serta Bitcoin dan Bitcoin Cash (2017).",
+    durationMin: 15,
+    tags: ["fork", "chain-split", "sejarah"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Aturan jaringan blockchain tidak selalu beku. Ketika komunitas ingin mengubahnya, lahirlah sebuah <strong>fork</strong>. Ada dua jenis perubahan aturan: <strong>soft fork</strong> yang lembut dan <strong>hard fork</strong> yang tegas. Bedanya menentukan apakah jaringan tetap satu atau terbelah menjadi dua koin.",
+      },
+      {
+        type: "paragraph",
+        html: "<strong>Soft fork</strong> hanya memperketat aturan dan tetap <strong>kompatibel ke belakang</strong>: node lama masih menganggap block baru sah, sehingga jaringan tetap utuh. <strong>Hard fork</strong> mengubah aturan secara tidak kompatibel: node lama menolak block baru. Jika sebagian komunitas bertahan di aturan lama, rantai terpecah jadi dua jaringan terpisah, sebuah <strong>chain split</strong>.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Soft fork menyempit, hard fork melebar",
+        html: "Bayangkan aturan sebagai gerbang. <strong>Soft fork</strong> mempersempit gerbang: apa pun yang lolos gerbang baru pasti lolos gerbang lama, jadi node lama tetap setuju. <strong>Hard fork</strong> memperlebar gerbang: ada block yang diterima aturan baru tetapi ditolak aturan lama, sehingga keduanya bisa berpisah jalan.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Setelah split, pemilik punya dua koin",
+        html: "Saat chain split terjadi, riwayat sebelum titik fork sama persis di kedua rantai. Maka pemilik koin saat itu otomatis memegang saldo yang sama di kedua jaringan. Setelah berpisah, harga, komunitas, dan pengembangan kedua koin berjalan sendiri-sendiri.",
+      },
+      {
+        type: "video",
+        comp: "ForkBlockchainVideo",
+        title: "Saat Komunitas Berpisah Jalan",
+        caption: "Bagaimana satu rantai terbelah menjadi dua koin saat aturan baru tidak diterima semua orang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Vitalik_Buterin_TechCrunch_London_2015_(cropped).jpg?width=400",
+        alt: "Vitalik Buterin, salah satu pendiri Ethereum",
+        caption: "Vitalik Buterin, pendiri Ethereum. Fork The DAO 2016 melahirkan Ethereum dan Ethereum Classic.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Skala peristiwa The DAO yang memicu hard fork Ethereum 2016",
+        unit: "juta ETH",
+        source: "data peristiwa The DAO, Juni 2016 (angka dibulatkan)",
+        note: "Penyerang menguras sekitar 3,6 juta ETH dari total 12,7 juta ETH yang terkumpul, memicu perdebatan apakah perlu memutar balik rantai.",
+        data: [
+          { label: "Terkumpul The DAO", value: 12.7, color: "#627eea" },
+          { label: "Dikuras penyerang", value: 3.6, color: "#f7931a" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih ikut rantai mana saat split",
+        html: "Seorang pemegang 10 koin saat sebuah hard fork terjadi mendapati saldonya tersalin di dua rantai: 10 koin di rantai aturan baru dan 10 koin di rantai aturan lama. Total kepemilikannya jadi 20 koin dari dua jaringan berbeda, tetapi nilai gabungan keduanya belum tentu lebih besar dari sebelum split karena likuiditas, penambang, dan komunitas terbagi. Ia harus memutuskan rantai mana yang ia dukung dan gunakan.",
+      },
+      {
+        type: "case",
+        title: "Sejarah: The DAO dan lahirnya Ethereum Classic (2016)",
+        html: "Pada <strong>2016</strong> sebuah proyek bernama <strong>The DAO</strong> menggalang sekitar 12,7 juta ETH. Pada <strong>17 Juni 2016</strong> seorang penyerang memanfaatkan celah kode dan menguras sekitar 3,6 juta ETH. Komunitas Ethereum lalu menggelar <strong>hard fork</strong> pada <strong>20 Juli 2016</strong> untuk memutar balik pencurian itu. Sebagian peserta menolak, dengan alasan 'kode adalah hukum', dan tetap di rantai lama yang kini dikenal sebagai <strong>Ethereum Classic (ETC)</strong>, sementara rantai hasil fork menjadi <strong>Ethereum (ETH)</strong>. Setahun kemudian, pada <strong>1 Agustus 2017</strong>, hard fork serupa memecah Bitcoin menjadi <strong>Bitcoin (BTC)</strong> dan <strong>Bitcoin Cash (BCH)</strong>.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Penyerang The DAO menguras sekitar 3,6 juta ETH dari total 12,7 juta ETH yang terkumpul. Berapa persen dana yang dikuras? (bulatkan ke bilangan bulat)",
+        answer: 28,
+        tolerance: 2,
+        suffix: "%",
+        solution:
+          "3,6 / 12,7 = 0,283, yaitu sekitar <strong>28%</strong> dana The DAO dikuras. Skala sebesar ini yang membuat komunitas memilih hard fork untuk memutar baliknya.",
+        hint: "Bagi jumlah yang dikuras dengan total terkumpul, lalu kalikan 100.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Kelompokkan tiap ciri atau peristiwa: soft fork atau hard fork?",
+        buckets: ["Soft fork", "Hard fork"],
+        items: [
+          { text: "Memperketat aturan, kompatibel ke belakang", bucket: "Soft fork" },
+          { text: "Node lama tetap menerima block baru", bucket: "Soft fork" },
+          { text: "Node lama menolak block baru", bucket: "Hard fork" },
+          { text: "Bisa berujung dua koin terpisah", bucket: "Hard fork" },
+          { text: "Pemisahan Ethereum dan Ethereum Classic (2016)", bucket: "Hard fork" },
+          { text: "Pemisahan Bitcoin dan Bitcoin Cash (2017)", bucket: "Hard fork" },
+        ],
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Soft fork memperketat aturan dan kompatibel ke belakang, jaringan tetap utuh.",
+          "Hard fork mengubah aturan secara tidak kompatibel dan bisa memecah rantai.",
+          "Chain split menyalin riwayat lama, jadi pemilik memegang koin di kedua rantai.",
+          "The DAO 2016 memicu hard fork yang melahirkan Ethereum dan Ethereum Classic.",
+          "Bitcoin Cash lahir dari hard fork Bitcoin pada 1 Agustus 2017.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa ciri utama soft fork?",
+            options: ["Node lama menolak block baru", "Memperketat aturan dan tetap kompatibel ke belakang", "Selalu memecah rantai jadi dua", "Menghapus seluruh riwayat"],
+            answer: 1,
+            explain: "Soft fork mempersempit aturan sehingga block baru tetap diterima node lama.",
+          },
+          {
+            q: "Kapan hard fork bisa berujung chain split?",
+            options: ["Selalu, tanpa kecuali", "Saat sebagian komunitas bertahan di aturan lama", "Hanya jika tidak ada penambang", "Tidak pernah"],
+            answer: 1,
+            explain: "Bila ada kelompok yang tetap menjalankan aturan lama, rantai terbelah jadi dua jaringan.",
+          },
+          {
+            q: "Peristiwa apa yang memicu hard fork Ethereum pada 2016?",
+            options: ["Halving Bitcoin", "Peretasan The DAO yang menguras jutaan ETH", "Genesis block Ethereum", "Penemuan Merkle tree"],
+            answer: 1,
+            explain: "Penyerang menguras sekitar 3,6 juta ETH dari The DAO, memicu fork untuk memutar baliknya.",
+          },
+          {
+            q: "Apa nama rantai yang menolak fork dan bertahan di aturan lama?",
+            options: ["Bitcoin Cash", "Ethereum Classic", "Litecoin", "Dogecoin"],
+            answer: 1,
+            explain: "Kelompok 'kode adalah hukum' bertahan di rantai lama yang menjadi Ethereum Classic (ETC).",
+          },
+          {
+            q: "Saat chain split terjadi, apa yang terjadi pada saldo pemilik koin?",
+            options: ["Saldo hilang seluruhnya", "Tersalin di kedua rantai sehingga ia punya koin di dua jaringan", "Otomatis pindah ke bank", "Berkurang setengah"],
+            answer: 1,
+            explain: "Riwayat sebelum fork sama, jadi saldo lama muncul identik di kedua rantai.",
           },
         ],
       },

@@ -33,6 +33,19 @@ export const level6: Lesson[] = [
         caption: "Dua cara jaringan menyepakati blok: berlomba dengan energi, atau mempertaruhkan stake.",
       },
       {
+        type: "video",
+        comp: "MiningVideo",
+        title: "Cara Kerja Penambangan",
+        caption: "Bagaimana penambang menebak nonce sampai hash blok jatuh di bawah target.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_mining_farm.jpg?width=400",
+        alt: "Ladang penambangan Bitcoin berisi ratusan mesin ASIC yang berderet",
+        caption: "Ladang penambangan: ribuan mesin ASIC menebak hash tanpa henti, menjelaskan besarnya konsumsi energi PoW.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "callout",
         tone: "warn",
         title: "Harga keamanan: boros energi",
@@ -189,6 +202,19 @@ export const level6: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorPoWvsPoS" },
       {
+        type: "video",
+        comp: "StakingVideo",
+        title: "Cara Kerja Staking",
+        caption: "Mengunci koin sebagai stake, lalu dipilih jaringan untuk mengusulkan blok sesuai porsi stake.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
+        alt: "Logo Ethereum, jaringan yang beralih ke Proof of Stake lewat The Merge",
+        caption: "Ethereum, jaringan PoS terbesar setelah The Merge 2022 yang memangkas konsumsi energinya sekitar 99,9%.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
         type: "chart",
         variant: "bar",
         title: "Konsumsi Energi Ethereum Sebelum dan Sesudah The Merge",
@@ -199,6 +225,11 @@ export const level6: Lesson[] = [
           { label: "Sebelum (PoW)", value: 100, color: "#f7931a" },
           { label: "Sesudah (PoS)", value: 0.1, color: "#627eea" },
         ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Peluang terpilih sesuai stake",
+        html: "Sebuah jaringan PoS punya total stake 1.000.000 koin. Validator Sari mempertaruhkan 50.000 koin, sehingga peluangnya terpilih mengusulkan blok adalah 50.000 dibagi 1.000.000 = <strong>5%</strong>. Bila ia menambah stake menjadi 100.000 koin sementara total naik menjadi 1.050.000 koin, peluangnya menjadi sekitar 9,5%. Tidak ada listrik yang dibakar; yang menentukan hanyalah besar koin yang dikunci sebagai jaminan.",
       },
       {
         type: "case",
@@ -325,6 +356,13 @@ export const level6: Lesson[] = [
         comp: "KonsensusVideo",
         title: "Cara jaringan menyepakati blok",
         caption: "Gambaran bagaimana node menyepakati satu kebenaran meski sebagian bisa berbuat curang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tor-onion-network.png?width=400",
+        alt: "Ilustrasi jaringan node yang saling terhubung dan bertukar pesan",
+        caption: "Banyak node saling bertukar pesan: BFT menjamin mereka tetap sepakat meski sebagian node berbohong.",
+        credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
@@ -469,6 +507,20 @@ export const level6: Lesson[] = [
         html: "Lihat bagaimana besar stake mengubah peluang menang dan bandingkan dengan model energi PoW.",
       },
       { type: "widget", widget: "SimulatorPoWvsPoS" },
+      { type: "widget", widget: "SimulatorStaking" },
+      {
+        type: "video",
+        comp: "StakingVideo",
+        title: "Staking, Hadiah, dan Risiko Slashing",
+        caption: "Mengapa validator mengunci stake, mendapat hadiah saat jujur, dan kehilangan stake saat curang.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum-icon-purple.svg?width=400",
+        alt: "Ikon Ethereum, jaringan Proof of Stake yang menerapkan slashing",
+        caption: "Ethereum menjalankan slashing nyata sejak beralih ke PoS, menghukum validator yang melanggar.",
+        credit: "Sumber: Wikimedia Commons",
+      },
       {
         type: "chart",
         variant: "bar",
@@ -575,6 +627,325 @@ export const level6: Lesson[] = [
             ],
             answer: 1,
             explain: "Risiko kehilangan stake membuat kerugian curang lebih besar daripada keuntungannya.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "masalah-konsensus",
+    levelId: "konsensus",
+    order: 5,
+    title: "Masalah Konsensus & Solusi Nakamoto",
+    summary:
+      "Bagaimana ribuan komputer tanpa pemimpin bisa sepakat pada satu riwayat transaksi, dan bagaimana konsensus Nakamoto memecahkannya lewat PoW dan aturan rantai terpanjang.",
+    durationMin: 14,
+    tags: ["konsensus", "nakamoto", "byzantine", "rantai-terpanjang"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Bayangkan ribuan komputer di seluruh dunia, tanpa bos dan tanpa daftar peserta tetap, harus menyepakati satu hal: urutan transaksi yang benar. Pesan bisa terlambat, hilang, atau dipalsukan, dan sebagian peserta bisa berbohong. Inilah inti <strong>masalah konsensus terdistribusi</strong>: mencapai satu kesepakatan tunggal tanpa otoritas pusat.",
+      },
+      {
+        type: "paragraph",
+        html: "Masalahnya jauh lebih sulit daripada kelihatannya. Jika dua komputer mengusulkan blok berbeda pada saat hampir bersamaan, jaringan bisa terbelah. Tanpa aturan yang jelas, tidak ada cara menentukan versi mana yang sah, dan uang yang sama bisa dibelanjakan dua kali.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Solusi Nakamoto: kerja + rantai terpanjang",
+        html: "<strong>Konsensus Nakamoto</strong> menggabungkan dua aturan. Pertama, <strong>Proof of Work</strong> membuat pembuatan blok mahal sehingga tidak ada yang bisa membanjiri jaringan dengan blok palsu. Kedua, <strong>aturan rantai terpanjang</strong>: node selalu menganggap rantai dengan total kerja terbanyak sebagai yang benar. Kesepakatan muncul tanpa pemungutan suara dan tanpa daftar peserta.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Mengapa rantai terpanjang masuk akal",
+        html: "Untuk membuat rantai tandingan yang lebih panjang, penyerang harus mengulang seluruh kerja PoW lebih cepat daripada seluruh jaringan jujur. Karena itu butuh mayoritas hashrate (serangan 51%), rantai terpanjang yang jujur hampir selalu menang. Inilah cara kesepakatan tercapai meski peserta bisa datang dan pergi kapan saja.",
+      },
+      {
+        type: "video",
+        comp: "ForkBlockchainVideo",
+        title: "Saat Rantai Terbelah",
+        caption: "Bagaimana dua blok bersaing pada tinggi yang sama, dan aturan rantai terpanjang memilih pemenangnya.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tor-onion-network.png?width=400",
+        alt: "Ilustrasi banyak node yang saling terhubung tanpa pusat tunggal",
+        caption: "Jaringan tanpa pusat: tiap node harus sepakat pada satu riwayat tanpa ada yang memimpin.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Peluang Serangan Berhasil Sesuai Kedalaman Konfirmasi (ilustrasi)",
+        unit: "% peluang membalikkan transaksi",
+        source: "ilustrasi edukatif: penyerang dengan hashrate minoritas, peluang menyusul menurun tajam tiap blok",
+        note: "Makin dalam transaksi terkubur di bawah blok baru, makin kecil peluang penyerang minoritas menyusul rantai jujur.",
+        data: [
+          { label: "1 konfirmasi", value: 45 },
+          { label: "3 konfirmasi", value: 13 },
+          { label: "6 konfirmasi", value: 2 },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Dua blok lahir hampir bersamaan",
+        html: "Dua penambang menemukan blok valid pada tinggi yang sama dalam selisih beberapa detik, sehingga jaringan sempat terbelah menjadi dua versi. Node yang berbeda untuk sementara melihat blok berbeda sebagai ujung rantai. Begitu satu sisi menemukan blok berikutnya lebih dulu, sisi itu menjadi <strong>rantai terpanjang</strong>, dan seluruh jaringan otomatis berpindah ke sana. Blok yang kalah menjadi <strong>orphan</strong> dan transaksinya kembali menunggu. Tidak ada panitia yang memutuskan; aturan kerja terbanyaklah yang menyelesaikan perselisihan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah jaringan menghasilkan satu blok rata-rata tiap 10 menit. Berapa menit kira-kira waktu agar sebuah transaksi memperoleh 3 konfirmasi blok?",
+        answer: 30,
+        tolerance: 1,
+        suffix: "menit",
+        solution:
+          "3 konfirmasi x 10 menit = <strong>30 menit</strong>. Tiap blok tambahan memperdalam transaksi sehingga makin sulit dibalikkan oleh rantai tandingan.",
+        hint: "Kalikan jumlah konfirmasi dengan waktu rata-rata per blok.",
+      },
+      {
+        type: "classifyExercise",
+        prompt: "Mana bagian dari masalah konsensus dan mana bagian dari solusi Nakamoto?",
+        buckets: ["Masalah konsensus", "Solusi Nakamoto"],
+        items: [
+          { text: "Pesan bisa terlambat, hilang, atau dipalsukan", bucket: "Masalah konsensus" },
+          { text: "Tidak ada otoritas pusat yang menentukan urutan", bucket: "Masalah konsensus" },
+          { text: "Proof of Work membuat pembuatan blok mahal", bucket: "Solusi Nakamoto" },
+          { text: "Node memilih rantai dengan total kerja terbanyak", bucket: "Solusi Nakamoto" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Makalah Byzantine Generals 1982 menuju Bitcoin 2008",
+        html: "Pada <strong>1982</strong>, Leslie Lamport, Robert Shostak, dan Marshall Pease menerbitkan <em>The Byzantine Generals Problem</em>, yang merumuskan tantangan menyepakati satu rencana meski sebagian peserta berkhianat, dan membuktikan kesepakatan andal hanya mungkin bila pengkhianat kurang dari sepertiga peserta. Selama puluhan tahun, solusi praktisnya selalu mengandaikan daftar peserta yang dikenal. Terobosan datang pada <strong>2008</strong>, ketika whitepaper Bitcoin Satoshi Nakamoto memecahkan masalah serupa pada jaringan <strong>terbuka tanpa izin</strong>: dengan menggabungkan Proof of Work dan aturan rantai terpanjang, kesepakatan tercapai tanpa perlu tahu siapa saja pesertanya.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Masalah konsensus terdistribusi adalah menyepakati satu riwayat tunggal tanpa otoritas pusat.",
+          "Tantangannya: pesan bisa hilang atau dipalsukan, dan sebagian peserta bisa berbohong.",
+          "Konsensus Nakamoto menggabungkan Proof of Work dengan aturan rantai terpanjang.",
+          "Node selalu mengikuti rantai dengan total kerja terbanyak, sehingga rantai jujur menang.",
+          "Makalah Byzantine Generals 1982 merumuskan masalahnya; Bitcoin 2008 memecahkannya tanpa izin.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa inti masalah konsensus terdistribusi?",
+            options: [
+              "Menebak hash secepat mungkin",
+              "Menyepakati satu riwayat yang benar tanpa otoritas pusat",
+              "Menambah pasokan koin",
+              "Menentukan harga pasar",
+            ],
+            answer: 1,
+            explain: "Banyak komputer tanpa pemimpin harus sepakat pada satu urutan transaksi yang sama.",
+          },
+          {
+            q: "Dua aturan apa yang membentuk konsensus Nakamoto?",
+            options: [
+              "Voting dan identitas validator",
+              "Proof of Work dan aturan rantai terpanjang",
+              "Slashing dan staking",
+              "Gas fee dan halving",
+            ],
+            answer: 1,
+            explain: "PoW membuat blok mahal, dan node mengikuti rantai dengan total kerja terbanyak.",
+          },
+          {
+            q: "Mengapa node memilih rantai terpanjang?",
+            options: [
+              "Karena paling baru dibuat",
+              "Karena mewakili total kerja terbanyak sehingga paling sulit dipalsukan",
+              "Karena punya biaya transaksi terkecil",
+              "Karena dipilih pemerintah",
+            ],
+            answer: 1,
+            explain: "Menyusul rantai jujur butuh mengulang kerja lebih cepat dari seluruh jaringan, hampir mustahil tanpa mayoritas hashrate.",
+          },
+          {
+            q: "Apa yang terjadi pada blok yang kalah saat rantai sempat terbelah?",
+            options: [
+              "Dihapus dari sejarah uang",
+              "Menjadi orphan dan transaksinya kembali menunggu",
+              "Digandakan menjadi dua",
+              "Otomatis menjadi rantai utama",
+            ],
+            answer: 1,
+            explain: "Blok yang kalah menjadi orphan; transaksinya belum final dan menunggu masuk blok berikutnya.",
+          },
+          {
+            q: "Siapa yang merumuskan Byzantine Generals Problem pada 1982?",
+            options: [
+              "Satoshi Nakamoto",
+              "Lamport, Shostak, dan Pease",
+              "Vitalik Buterin",
+              "David Chaum",
+            ],
+            answer: 1,
+            explain: "Makalah 1982 oleh Lamport, Shostak, dan Pease merumuskan masalah ini secara matematis.",
+          },
+        ],
+      },
+    ],
+  },
+  // ============================================================
+  {
+    id: "ragam-konsensus",
+    levelId: "konsensus",
+    order: 6,
+    title: "Ragam Konsensus Modern",
+    summary:
+      "Setelah PoW dan PoS, lahir banyak variasi: Proof of History pada Solana, konsensus Avalanche, dan Tendermint/CometBFT pada Cosmos, masing-masing dengan trade-off skalabilitas dan desentralisasi.",
+    durationMin: 14,
+    tags: ["konsensus", "solana", "avalanche", "tendermint", "cosmos"],
+    blocks: [
+      {
+        type: "paragraph",
+        html: "Proof of Work dan Proof of Stake bukan akhir cerita. Untuk mengejar kecepatan dan finalitas lebih cepat, lahir banyak <strong>varian konsensus modern</strong>. Tiga yang paling berpengaruh adalah <strong>Proof of History</strong> (Solana), konsensus <strong>Avalanche</strong>, dan <strong>Tendermint/CometBFT</strong> (Cosmos).",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Proof of History (Solana)",
+        html: "<strong>Proof of History (PoH)</strong> bukan mekanisme pemilihan blok, melainkan sebuah <strong>jam terverifikasi</strong>. Solana membuat rantai panjang hash berurutan yang membuktikan waktu telah berlalu, sehingga validator tidak perlu saling bertukar pesan untuk menyepakati urutan waktu. PoH dipadukan dengan PoS, dan inilah yang membuat Solana sangat cepat.",
+      },
+      {
+        type: "callout",
+        tone: "info",
+        title: "Avalanche dan Tendermint",
+        html: "<strong>Avalanche</strong> memakai pengambilan sampel acak berulang: tiap node bertanya ke sekelompok kecil node lain berkali-kali sampai jaringan dengan cepat condong ke satu pilihan. <strong>Tendermint/CometBFT</strong> (dipakai ekosistem Cosmos) adalah BFT klasik yang memberi <strong>finalitas instan</strong>: begitu blok disepakati, ia final dan tidak bisa dibatalkan, selama node jahat kurang dari sepertiga.",
+      },
+      {
+        type: "callout",
+        tone: "key",
+        title: "Trade-off: trilema blockchain",
+        html: "Tidak ada konsensus yang sempurna. Mengejar <strong>skalabilitas</strong> (transaksi per detik tinggi) sering menuntut lebih sedikit validator atau perangkat keras mahal, yang menekan <strong>desentralisasi</strong>, sambil tetap menjaga <strong>keamanan</strong>. Inilah trilema blockchain: sulit memaksimalkan ketiganya sekaligus.",
+      },
+      {
+        type: "video",
+        comp: "KonsensusVideo",
+        title: "Banyak Cara Menyepakati Blok",
+        caption: "Dari lomba energi sampai jam terverifikasi dan BFT instan: ragam jalan menuju kesepakatan.",
+      },
+      {
+        type: "image",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Cosmos_logo.svg?width=400",
+        alt: "Logo Cosmos, ekosistem yang memakai konsensus Tendermint/CometBFT",
+        caption: "Cosmos memakai Tendermint/CometBFT, konsensus BFT dengan finalitas instan, untuk menghubungkan banyak blockchain.",
+        credit: "Sumber: Wikimedia Commons",
+      },
+      {
+        type: "chart",
+        variant: "bar",
+        title: "Perkiraan Throughput Beberapa Pendekatan Konsensus (ilustrasi)",
+        unit: "transaksi per detik (orde besar)",
+        source: "ilustrasi edukatif: angka orde besar, bukan tolok ukur resmi",
+        note: "Varian yang mengejar skalabilitas menawarkan throughput jauh lebih tinggi, biasanya dengan menukar sebagian desentralisasi.",
+        data: [
+          { label: "PoW (Bitcoin)", value: 7, color: "#f7931a" },
+          { label: "PoS klasik", value: 30, color: "#627eea" },
+          { label: "Tendermint/BFT", value: 1000, color: "#2e3148" },
+          { label: "PoH (Solana)", value: 3000, color: "#14f195" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Studi Kasus: Memilih konsensus untuk aplikasi pembayaran",
+        html: "Sebuah tim membangun aplikasi pembayaran yang butuh konfirmasi sangat cepat dan biaya rendah. Jaringan bergaya <strong>PoW</strong> yang menyepakati blok tiap sekitar 10 menit terlalu lambat untuk kasir. Mereka memilih jaringan bergaya <strong>BFT</strong> (Tendermint/CometBFT) yang memberi <strong>finalitas instan</strong> dalam hitungan detik, sehingga pembayaran dianggap selesai begitu blok disepakati. Konsekuensinya, jumlah validator dijaga relatif terbatas agar pesan kesepakatan tetap cepat, sebuah trade-off menukar sebagian desentralisasi demi kecepatan.",
+      },
+      {
+        type: "calcExercise",
+        prompt:
+          "Sebuah jaringan BFT memberi finalitas tiap 6 detik per blok. Berapa detik untuk memfinalkan 5 blok berturut-turut?",
+        answer: 30,
+        tolerance: 0,
+        suffix: "detik",
+        solution:
+          "5 blok x 6 detik = <strong>30 detik</strong>. Pada konsensus BFT, tiap blok sudah final begitu disepakati, jauh lebih cepat daripada menunggu banyak konfirmasi PoW.",
+        hint: "Kalikan jumlah blok dengan waktu finalitas per blok.",
+      },
+      {
+        type: "matchExercise",
+        prompt: "Cocokkan mekanisme konsensus dengan ciri khasnya.",
+        pairs: [
+          { left: "Proof of History (Solana)", right: "Jam terverifikasi dari rantai hash berurutan" },
+          { left: "Avalanche", right: "Pengambilan sampel acak berulang ke node lain" },
+          { left: "Tendermint/CometBFT (Cosmos)", right: "BFT klasik dengan finalitas instan" },
+          { left: "Proof of Work (Bitcoin)", right: "Lomba menebak hash dengan energi besar" },
+        ],
+      },
+      {
+        type: "case",
+        title: "Sejarah: Gelombang jaringan PoS skala besar, 2019 sampai 2020",
+        html: "Akhir 2010-an menandai gelombang peluncuran jaringan konsensus baru berskala besar. <strong>Cosmos Hub</strong> meluncur pada <strong>Maret 2019</strong> dengan Tendermint, memperkenalkan finalitas instan bergaya BFT dan visi menghubungkan banyak blockchain. Setahun kemudian, <strong>Solana</strong> meluncurkan mainnet beta pada <strong>Maret 2020</strong>, memadukan Proof of History dengan Proof of Stake untuk mengejar throughput sangat tinggi. Keduanya menunjukkan arah baru: setelah PoW Bitcoin, inovasi konsensus berpacu mengejar kecepatan dan finalitas, sambil terus bergulat dengan trilema skalabilitas dan desentralisasi.",
+      },
+      {
+        type: "takeaways",
+        items: [
+          "Proof of History pada Solana adalah jam terverifikasi yang mengurutkan waktu tanpa banyak pesan antar node.",
+          "Avalanche memakai pengambilan sampel acak berulang agar jaringan cepat condong ke satu pilihan.",
+          "Tendermint/CometBFT pada Cosmos adalah BFT klasik dengan finalitas instan, tahan node jahat kurang dari sepertiga.",
+          "Trilema blockchain: sulit memaksimalkan skalabilitas, desentralisasi, dan keamanan sekaligus.",
+          "Cosmos Hub (2019) dan Solana (2020) menandai gelombang jaringan konsensus modern berskala besar.",
+        ],
+      },
+      {
+        type: "quiz",
+        questions: [
+          {
+            q: "Apa fungsi Proof of History pada Solana?",
+            options: [
+              "Memilih validator lewat voting",
+              "Menjadi jam terverifikasi yang membuktikan urutan waktu",
+              "Membakar energi seperti PoW",
+              "Mematok harga koin ke dolar",
+            ],
+            answer: 1,
+            explain: "PoH membuat rantai hash berurutan sebagai bukti waktu berlalu, sehingga validator tak perlu banyak bertukar pesan soal urutan.",
+          },
+          {
+            q: "Bagaimana konsensus Avalanche mencapai kesepakatan?",
+            options: [
+              "Dengan satu pemimpin tetap",
+              "Dengan pengambilan sampel acak berulang ke kelompok kecil node",
+              "Dengan menambang hash tercepat",
+              "Dengan izin pemerintah",
+            ],
+            answer: 1,
+            explain: "Tiap node bertanya berkali-kali ke sampel acak node lain sampai jaringan cepat condong ke satu pilihan.",
+          },
+          {
+            q: "Apa keunggulan utama Tendermint/CometBFT?",
+            options: [
+              "Konsumsi energi paling besar",
+              "Finalitas instan: blok final begitu disepakati",
+              "Tidak butuh validator",
+              "Pasokan koin tak terbatas",
+            ],
+            answer: 1,
+            explain: "Sebagai BFT klasik, Tendermint memberi finalitas instan selama node jahat kurang dari sepertiga.",
+          },
+          {
+            q: "Apa inti trilema blockchain?",
+            options: [
+              "Memilih antara tiga koin",
+              "Sulit memaksimalkan skalabilitas, desentralisasi, dan keamanan sekaligus",
+              "Tiga jenis dompet",
+              "Tiga bursa terbesar",
+            ],
+            answer: 1,
+            explain: "Mengejar satu sisi sering menukar sisi lain; ketiganya sulit dimaksimalkan bersamaan.",
+          },
+          {
+            q: "Kapan Solana meluncurkan mainnet beta?",
+            options: ["Maret 2019", "Maret 2020", "September 2022", "Januari 2009"],
+            answer: 1,
+            explain: "Solana meluncurkan mainnet beta pada Maret 2020, memadukan Proof of History dengan Proof of Stake.",
           },
         ],
       },
