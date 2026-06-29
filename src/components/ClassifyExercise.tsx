@@ -1,9 +1,17 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useActivity } from "../lib/activity";
 import { Icon } from "./Icon";
 
 interface Item {
   text: string;
   bucket: string;
+}
+
+// Saved state keyed by stable item text (the on-screen order is shuffled, so
+// indices are not stable across reloads).
+interface ClassifySaved {
+  picks: Record<string, string>;
+  checked: boolean;
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -19,26 +27,69 @@ export function ClassifyExercise({
   prompt,
   buckets,
   items,
+  exerciseKey,
 }: {
   prompt: string;
   buckets: string[];
   items: Item[];
+  exerciseKey?: string;
 }) {
+  const { getExercise, saveExercise } = useActivity();
   const ordered = useMemo(() => shuffle(items), [items]);
   const [picks, setPicks] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState(false);
+  const hydrated = useRef(false);
 
   const allAnswered = Object.keys(picks).length === ordered.length;
   const correctCount = ordered.filter((it, i) => picks[i] === it.bucket).length;
 
+  // Rehydrate previous picks (survives page refresh), mapping stable item text
+  // back onto the freshly shuffled order.
+  const stored = exerciseKey ? getExercise<ClassifySaved>(exerciseKey) : undefined;
+  useEffect(() => {
+    if (hydrated.current || !stored) return;
+    hydrated.current = true;
+    if (Object.keys(picks).length === 0 && !checked) {
+      const restored: Record<number, string> = {};
+      ordered.forEach((it, i) => {
+        const b = stored.picks[it.text];
+        if (b) restored[i] = b;
+      });
+      setPicks(restored);
+      setChecked(stored.checked);
+    }
+  }, [stored, ordered, picks, checked]);
+
+  function persist(nextPicks: Record<number, string>, nextChecked: boolean) {
+    if (!exerciseKey) return;
+    const byText: Record<string, string> = {};
+    ordered.forEach((it, i) => {
+      if (nextPicks[i]) byText[it.text] = nextPicks[i];
+    });
+    saveExercise(exerciseKey, { picks: byText, checked: nextChecked } satisfies ClassifySaved);
+  }
+
   function setPick(i: number, bucket: string) {
     if (checked) return;
-    setPicks((p) => ({ ...p, [i]: bucket }));
+    hydrated.current = true;
+    setPicks((p) => {
+      const next = { ...p, [i]: bucket };
+      persist(next, false);
+      return next;
+    });
+  }
+
+  function check() {
+    hydrated.current = true;
+    setChecked(true);
+    persist(picks, true);
   }
 
   function reset() {
+    hydrated.current = true;
     setPicks({});
     setChecked(false);
+    if (exerciseKey) saveExercise(exerciseKey, { picks: {}, checked: false } satisfies ClassifySaved);
   }
 
   return (
@@ -75,7 +126,7 @@ export function ClassifyExercise({
                     key={b}
                     onClick={() => setPick(i, b)}
                     disabled={checked}
-                    className={`rounded-lg border px-2.5 py-1 text-xs font-semibold transition-colors ${
+                    className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
                       picked === b
                         ? "border-brand-500 bg-brand-600 text-white"
                         : "border-line bg-white text-ink-soft hover:bg-canvas"
@@ -92,7 +143,7 @@ export function ClassifyExercise({
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
         {!checked ? (
-          <button onClick={() => setChecked(true)} disabled={!allAnswered} className="btn-primary">
+          <button onClick={check} disabled={!allAnswered} className="btn-primary">
             Periksa Jawaban
           </button>
         ) : (

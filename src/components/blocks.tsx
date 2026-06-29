@@ -154,14 +154,28 @@ export function BlockRenderer({
           suffix={block.suffix}
           solution={block.solution}
           hint={block.hint}
+          exerciseKey={lessonKey ? `${lessonKey}#${index ?? 0}` : undefined}
         />
       );
 
     case "classifyExercise":
-      return <ClassifyExercise prompt={block.prompt} buckets={block.buckets} items={block.items} />;
+      return (
+        <ClassifyExercise
+          prompt={block.prompt}
+          buckets={block.buckets}
+          items={block.items}
+          exerciseKey={lessonKey ? `${lessonKey}#${index ?? 0}` : undefined}
+        />
+      );
 
     case "matchExercise":
-      return <MatchExercise prompt={block.prompt} pairs={block.pairs} />;
+      return (
+        <MatchExercise
+          prompt={block.prompt}
+          pairs={block.pairs}
+          exerciseKey={lessonKey ? `${lessonKey}#${index ?? 0}` : undefined}
+        />
+      );
 
     case "widget": {
       const W = widgetRegistry[block.widget];
@@ -229,29 +243,31 @@ function JournalTable({ title, date, lines, note }: { title?: string; date?: str
           {date && <span className="shrink-0 rounded-md bg-white px-2 py-0.5 text-xs font-medium text-ink-faint">{date}</span>}
         </div>
       )}
-      <table className="w-full text-sm">
-        <thead className="text-xs text-ink-faint">
-          <tr className="border-b border-line">
-            <th className="px-4 py-2 text-left font-semibold">Akun</th>
-            <th className="px-4 py-2 text-right font-semibold">Debit</th>
-            <th className="px-4 py-2 text-right font-semibold">Kredit</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lines.map((l, i) => (
-            <tr key={i} className="border-b border-line last:border-0">
-              <td className={`px-4 py-2 ${l.credit ? "pl-10 text-ink-soft" : "font-medium text-ink"}`}>{l.account}</td>
-              <td className="px-4 py-2 text-right tnum">{l.debit ? rupiah(l.debit) : ""}</td>
-              <td className="px-4 py-2 text-right tnum">{l.credit ? rupiah(l.credit) : ""}</td>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[20rem] text-sm">
+          <thead className="text-xs text-ink-faint">
+            <tr className="border-b border-line">
+              <th className="px-4 py-2 text-left font-semibold">Akun</th>
+              <th className="px-4 py-2 text-right font-semibold">Debit</th>
+              <th className="px-4 py-2 text-right font-semibold">Kredit</th>
             </tr>
-          ))}
-          <tr className="border-t-2 border-line bg-canvas font-bold">
-            <td className="px-4 py-2 text-xs uppercase text-ink-faint">Total</td>
-            <td className="px-4 py-2 text-right tnum">{rupiah(totalD)}</td>
-            <td className="px-4 py-2 text-right tnum">{rupiah(totalC)}</td>
-          </tr>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {lines.map((l, i) => (
+              <tr key={i} className="border-b border-line last:border-0">
+                <td className={`px-4 py-2 ${l.credit ? "pl-8 text-ink-soft sm:pl-10" : "font-medium text-ink"}`}>{l.account}</td>
+                <td className="px-4 py-2 text-right tnum whitespace-nowrap">{l.debit ? rupiah(l.debit) : ""}</td>
+                <td className="px-4 py-2 text-right tnum whitespace-nowrap">{l.credit ? rupiah(l.credit) : ""}</td>
+              </tr>
+            ))}
+            <tr className="border-t-2 border-line bg-canvas font-bold">
+              <td className="px-4 py-2 text-xs uppercase text-ink-faint">Total</td>
+              <td className="px-4 py-2 text-right tnum whitespace-nowrap">{rupiah(totalD)}</td>
+              <td className="px-4 py-2 text-right tnum whitespace-nowrap">{rupiah(totalC)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       {note && <p className="bg-white px-4 py-3 text-xs leading-relaxed text-ink-faint">{note}</p>}
     </div>
   );
@@ -276,7 +292,7 @@ function DataTable({ headers, rows, caption }: { headers: string[]; rows: string
               return (
                 <tr key={ri} className={`border-b border-line last:border-0 ${isTotal ? "bg-canvas font-bold" : ""}`}>
                   {row.map((cell, ci) => (
-                    <td key={ci} className={`px-4 py-2.5 ${ci > 0 ? "text-right tnum" : "text-ink-soft"}`}>{cell}</td>
+                    <td key={ci} className={`px-4 py-2.5 ${ci > 0 ? "text-right tnum whitespace-nowrap" : "text-ink-soft"}`}>{cell}</td>
                   ))}
                 </tr>
               );

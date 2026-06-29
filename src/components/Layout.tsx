@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { useProgress } from "../lib/progress";
 import { topics } from "../topics";
 import { useAuth, GoogleSignInButton } from "../lib/auth";
@@ -12,10 +13,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
   const { user, ready, logout } = useAuth();
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Tutup menu saat klik di luar atau saat berpindah halaman.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   const navLink = (to: string, active: boolean, icon: "layers" | "gauge", label: string) => (
     <Link
       to={to}
-      className={`relative flex items-center gap-1.5 px-2 py-1.5 transition-colors hover:text-ink ${
+      className={`relative flex items-center gap-1.5 px-2 py-2 transition-colors hover:text-ink ${
         active ? "text-ink" : ""
       }`}
     >
@@ -44,7 +62,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           <nav className="ml-auto flex items-center gap-2 text-sm font-semibold text-ink-faint">
             {navLink("/", pathname === "/", "layers", "Topik")}
-            {user && navLink("/saya", pathname === "/saya", "gauge", "Materi Saya")}
             <Link
               to={user ? "/saya" : "/"}
               className="hidden items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 transition-colors hover:border-line-strong sm:flex"
@@ -61,26 +78,66 @@ export function Layout({ children }: { children: React.ReactNode }) {
             {/* Auth */}
             {ready &&
               (user ? (
-                <div className="flex items-center gap-2">
-                  {user.picture ? (
-                    <img
-                      src={user.picture}
-                      alt={user.name ?? user.email}
-                      referrerPolicy="no-referrer"
-                      className="h-8 w-8 rounded-full border border-line"
-                    />
-                  ) : (
-                    <span className="grid h-8 w-8 place-items-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">
-                      {(user.name ?? user.email).charAt(0).toUpperCase()}
+                <div className="relative" ref={menuRef}>
+                  <button
+                    onClick={() => setMenuOpen((v) => !v)}
+                    className="flex items-center gap-2 rounded-full py-1 pl-1 pr-2 transition-colors hover:bg-white"
+                    title="Akun"
+                    aria-haspopup="menu"
+                    aria-expanded={menuOpen}
+                  >
+                    {user.picture ? (
+                      <img
+                        src={user.picture}
+                        alt={user.name ?? user.email}
+                        referrerPolicy="no-referrer"
+                        className="h-8 w-8 rounded-full border border-line"
+                      />
+                    ) : (
+                      <span className="grid h-8 w-8 place-items-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">
+                        {(user.name ?? user.email).charAt(0).toUpperCase()}
+                      </span>
+                    )}
+                    <span className="hidden max-w-[120px] truncate text-sm font-medium text-ink sm:block">
+                      {user.name ?? user.email}
                     </span>
-                  )}
-                  <span className="hidden max-w-[120px] truncate text-sm font-medium text-ink sm:block">
-                    {user.name ?? user.email}
-                  </span>
-                  <button onClick={() => void logout()} className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm transition-colors hover:bg-white" title="Keluar">
-                    <Icon name="logout" className="text-xs" />
-                    Keluar
+                    <Icon
+                      name="chevron-right"
+                      className={`text-[10px] text-ink-faint transition-transform ${menuOpen ? "rotate-90" : ""}`}
+                    />
                   </button>
+
+                  {menuOpen && (
+                    <div
+                      role="menu"
+                      className="absolute right-0 top-full z-40 mt-2 w-52 overflow-hidden rounded-xl border border-line bg-white py-1 shadow-card"
+                    >
+                      <div className="border-b border-line px-3 py-2 sm:hidden">
+                        <p className="truncate text-sm font-semibold text-ink">{user.name ?? user.email}</p>
+                        {user.name && <p className="truncate text-xs text-ink-faint">{user.email}</p>}
+                      </div>
+                      <Link
+                        to="/saya"
+                        role="menuitem"
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas"
+                      >
+                        <Icon name="gauge" className="text-xs text-ink-faint" />
+                        Materi Saya
+                      </Link>
+                      <button
+                        role="menuitem"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          void logout();
+                        }}
+                        className="flex w-full items-center gap-2.5 px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas"
+                      >
+                        <Icon name="logout" className="text-xs text-ink-faint" />
+                        Keluar
+                      </button>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <GoogleSignInButton />

@@ -81,6 +81,18 @@ db.exec(`
     PRIMARY KEY (user_id, quiz_key),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
+
+  -- Per-exercise saved state (ex_key = "topicId:lessonId#blockIndex"). state is
+  -- a JSON blob whose shape depends on the exercise type (calc/classify/match),
+  -- so an in-progress or checked exercise survives a page refresh.
+  CREATE TABLE IF NOT EXISTS exercise_state (
+    user_id    INTEGER NOT NULL,
+    ex_key     TEXT NOT NULL,
+    state      TEXT NOT NULL,
+    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (user_id, ex_key),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
 `);
 
 export interface UserRow {
@@ -277,6 +289,46 @@ export function mergeQuizResults(userId: number, items: Record<string, QuizRow>)
         .prepare("SELECT 1 FROM quiz_result WHERE user_id = ? AND quiz_key = ?")
         .get(userId, key);
       if (!exists) setQuizResult(userId, key, q.score, q.total, q.answers ?? []);
+    }
+  });
+  tx(Object.entries(items));
+}
+
+// ---- exercise state (calc / classify / match) ----
+
+export function setExerciseState(userId: number, exKey: string, state: unknown) {
+  db.prepare(
+    `INSERT INTO exercise_state (user_id, ex_key, state)
+     VALUES (?, ?, ?)
+     ON CONFLICT(user_id, ex_key) DO UPDATE SET
+       state = excluded.state,
+       updated_at = datetime('now')`
+  ).run(userId, exKey, JSON.stringify(state));
+}
+
+export function listExerciseStates(userId: number): Record<string, unknown> {
+  const rows = db
+    .prepare("SELECT ex_key, state FROM exercise_state WHERE user_id = ?")
+    .all(userId) as { ex_key: string; state: string }[];
+  const out: Record<string, unknown> = {};
+  for (const r of rows) {
+    try {
+      out[r.ex_key] = JSON.parse(r.state);
+    } catch {
+      // ignore malformed rows
+    }
+  }
+  return out;
+}
+
+export function mergeExerciseStates(userId: number, items: Record<string, unknown>) {
+  const tx = db.transaction((entries: [string, unknown][]) => {
+    for (const [key, state] of entries) {
+      // Only fill in exercises the account does not have yet.
+      const exists = db
+        .prepare("SELECT 1 FROM exercise_state WHERE user_id = ? AND ex_key = ?")
+        .get(userId, key);
+      if (!exists) setExerciseState(userId, key, state);
     }
   });
   tx(Object.entries(items));
