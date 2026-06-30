@@ -36,10 +36,13 @@ import { arusListrik } from "./arus-listrik/meta";
 import { magnetisme } from "./magnetisme/meta";
 import { optika } from "./optika/meta";
 import { cryptocurrency } from "./cryptocurrency/meta";
+import { supplyChain } from "./supply-chain/meta";
+import { kapitalisme } from "./kapitalisme/meta";
+import { demokrasi } from "./demokrasi/meta";
 
 // Register topics here. Adding a future topic = create a folder + meta.ts, then
 // import it and add to this array.
-export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, logika, filsafat, akuntansi];
+export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, supplyChain, kapitalisme, demokrasi, logika, filsafat, akuntansi];
 
 // ===== Kategori materi =====
 // Mengelompokkan topik ke dalam rumpun yang berkaitan. Topik yang belum
@@ -100,7 +103,7 @@ export const categories: Category[] = [
     tagline: "Bagaimana pasar, negara, dan regulasi membentuk keputusan ekonomi.",
     icon: "landmark",
     accent: "from-amber-500 to-orange-600",
-    topicIds: ["mikroekonomi", "makroekonomi", "kebijakan-fiskal", "pajak", "kepabeanan"],
+    topicIds: ["mikroekonomi", "makroekonomi", "kebijakan-fiskal", "pajak", "kepabeanan", "kapitalisme"],
   },
   {
     id: "keuangan-investasi",
@@ -124,6 +127,22 @@ export const categories: Category[] = [
     icon: "gears",
     accent: "from-amber-500 to-orange-600",
     topicIds: ["cryptocurrency"],
+  },
+  {
+    id: "operasi-rantai-pasok",
+    title: "Operasi & Rantai Pasok",
+    tagline: "Mengalirkan barang dari hulu ke hilir: pengadaan, gudang, logistik, sampai perdagangan global.",
+    icon: "gears",
+    accent: "from-sky-500 to-indigo-600",
+    topicIds: ["supply-chain"],
+  },
+  {
+    id: "sosial-politik",
+    title: "Sosial & Kewarganegaraan",
+    tagline: "Bagaimana masyarakat memerintah dirinya: demokrasi, kekuasaan, dan hak warga.",
+    icon: "landmark",
+    accent: "from-blue-500 to-indigo-600",
+    topicIds: ["demokrasi"],
   },
   {
     id: "logika-filsafat",

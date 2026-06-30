@@ -195,6 +195,36 @@ import { SimulatorVesting } from "./SimulatorVesting";
 import { SimulatorLiquidation } from "./SimulatorLiquidation";
 import { SimulatorStaking } from "./SimulatorStaking";
 import { SimulatorFeeMarket } from "./SimulatorFeeMarket";
+// Supply Chain Management
+import { SimulatorBullwhip } from "./SimulatorBullwhip";
+import { KalkulatorEOQ } from "./KalkulatorEOQ";
+import { KalkulatorSafetyStock } from "./KalkulatorSafetyStock";
+import { SimulatorABCInventory } from "./SimulatorABCInventory";
+import { KalkulatorVendorScoring } from "./KalkulatorVendorScoring";
+import { KalkulatorUtilisasiGudang } from "./KalkulatorUtilisasiGudang";
+import { KalkulatorPilihModa } from "./KalkulatorPilihModa";
+import { KalkulatorMRP } from "./KalkulatorMRP";
+import { KalkulatorOEE } from "./KalkulatorOEE";
+import { KalkulatorForecastAccuracy } from "./KalkulatorForecastAccuracy";
+import { KalkulatorCashToCash } from "./KalkulatorCashToCash";
+import { SimulatorRiskMatrix } from "./SimulatorRiskMatrix";
+import { KalkulatorJejakKarbonLogistik } from "./KalkulatorJejakKarbonLogistik";
+import { SimulatorSnOP } from "./SimulatorSnOP";
+import { KalkulatorOtomasiGudang } from "./KalkulatorOtomasiGudang";
+// Kapitalisme
+import { SimulatorTanganTakTampak } from "./SimulatorTanganTakTampak";
+import { KalkulatorGini } from "./KalkulatorGini";
+import { SimulatorSpektrumEkonomi } from "./SimulatorSpektrumEkonomi";
+import { KalkulatorLabaModal } from "./KalkulatorLabaModal";
+import { SimulatorBoomBust } from "./SimulatorBoomBust";
+import { KalkulatorUpahProduktivitas } from "./KalkulatorUpahProduktivitas";
+// Demokrasi
+import { SimulatorSistemPemilu } from "./SimulatorSistemPemilu";
+import { KalkulatorKursiDHondt } from "./KalkulatorKursiDHondt";
+import { SimulatorAmbangParlemen } from "./SimulatorAmbangParlemen";
+import { SimulatorTriasPolitica } from "./SimulatorTriasPolitica";
+import { SimulatorIndeksDemokrasi } from "./SimulatorIndeksDemokrasi";
+import { KalkulatorPartisipasiPemilih } from "./KalkulatorPartisipasiPemilih";
 
 export const widgetRegistry: Record<WidgetId, FC> = {
   KalkulatorJejakKarbon,
@@ -375,4 +405,31 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorLiquidation,
   SimulatorStaking,
   SimulatorFeeMarket,
+  SimulatorBullwhip,
+  KalkulatorEOQ,
+  KalkulatorSafetyStock,
+  SimulatorABCInventory,
+  KalkulatorVendorScoring,
+  KalkulatorUtilisasiGudang,
+  KalkulatorPilihModa,
+  KalkulatorMRP,
+  KalkulatorOEE,
+  KalkulatorForecastAccuracy,
+  KalkulatorCashToCash,
+  SimulatorRiskMatrix,
+  KalkulatorJejakKarbonLogistik,
+  SimulatorSnOP,
+  KalkulatorOtomasiGudang,
+  SimulatorTanganTakTampak,
+  KalkulatorGini,
+  SimulatorSpektrumEkonomi,
+  KalkulatorLabaModal,
+  SimulatorBoomBust,
+  KalkulatorUpahProduktivitas,
+  SimulatorSistemPemilu,
+  KalkulatorKursiDHondt,
+  SimulatorAmbangParlemen,
+  SimulatorTriasPolitica,
+  SimulatorIndeksDemokrasi,
+  KalkulatorPartisipasiPemilih,
 };

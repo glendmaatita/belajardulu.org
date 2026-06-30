@@ -228,6 +228,38 @@ import { MEVVideo, MEVVideoDuration } from "./MEVVideo";
 import { VestingEmisiVideo, VestingEmisiVideoDuration } from "./VestingEmisiVideo";
 import { StakingVideo, StakingVideoDuration } from "./StakingVideo";
 import { OracleVideo, OracleVideoDuration } from "./OracleVideo";
+// Supply Chain Management
+import { SCORModelVideo, SCORModelVideoDuration } from "./SCORModelVideo";
+import { BullwhipVideo, BullwhipVideoDuration } from "./BullwhipVideo";
+import { StrategicSourcingVideo, StrategicSourcingVideoDuration } from "./StrategicSourcingVideo";
+import { EOQVideo, EOQVideoDuration } from "./EOQVideo";
+import { ABCAnalysisVideo, ABCAnalysisVideoDuration } from "./ABCAnalysisVideo";
+import { WarehouseFlowVideo, WarehouseFlowVideoDuration } from "./WarehouseFlowVideo";
+import { ColdChainVideo, ColdChainVideoDuration } from "./ColdChainVideo";
+import { TolLautVideo, TolLautVideoDuration } from "./TolLautVideo";
+import { RouteOptimizationVideo, RouteOptimizationVideoDuration } from "./RouteOptimizationVideo";
+import { MRPVideo, MRPVideoDuration } from "./MRPVideo";
+import { LeanTPSVideo, LeanTPSVideoDuration } from "./LeanTPSVideo";
+import { SnOPVideo, SnOPVideoDuration } from "./SnOPVideo";
+import { DigitalTwinVideo, DigitalTwinVideoDuration } from "./DigitalTwinVideo";
+import { ResilienceVideo, ResilienceVideoDuration } from "./ResilienceVideo";
+import { GreenSupplyChainVideo, GreenSupplyChainVideoDuration } from "./GreenSupplyChainVideo";
+import { BlockchainTraceabilityVideo, BlockchainTraceabilityVideoDuration } from "./BlockchainTraceabilityVideo";
+import { GlobalTradeVideo, GlobalTradeVideoDuration } from "./GlobalTradeVideo";
+// Kapitalisme
+import { KapitalismeVideo, KapitalismeVideoDuration } from "./KapitalismeVideo";
+import { TanganTakTampak, TanganTakTampakDuration } from "./TanganTakTampak";
+import { SejarahKapitalismeVideo, SejarahKapitalismeVideoDuration } from "./SejarahKapitalismeVideo";
+import { SpektrumEkonomiVideo, SpektrumEkonomiVideoDuration } from "./SpektrumEkonomiVideo";
+import { KetimpanganGiniVideo, KetimpanganGiniVideoDuration } from "./KetimpanganGiniVideo";
+import { CreativeDestructionVideo, CreativeDestructionVideoDuration } from "./CreativeDestructionVideo";
+// Demokrasi
+import { DemokrasiVideo, DemokrasiVideoDuration } from "./DemokrasiVideo";
+import { SejarahDemokrasiVideo, SejarahDemokrasiVideoDuration } from "./SejarahDemokrasiVideo";
+import { TriasPoliticaVideo, TriasPoliticaVideoDuration } from "./TriasPoliticaVideo";
+import { SistemPemiluVideo, SistemPemiluVideoDuration } from "./SistemPemiluVideo";
+import { ChecksBalancesVideo, ChecksBalancesVideoDuration } from "./ChecksBalancesVideo";
+import { KemunduranDemokrasiVideo, KemunduranDemokrasiVideoDuration } from "./KemunduranDemokrasiVideo";
 
 import type { FC } from "react";
 import { VIDEO } from "./theme";
@@ -269,6 +301,38 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   VestingEmisiVideo: { component: VestingEmisiVideo, durationInFrames: VestingEmisiVideoDuration },
   StakingVideo: { component: StakingVideo, durationInFrames: StakingVideoDuration },
   OracleVideo: { component: OracleVideo, durationInFrames: OracleVideoDuration },
+  // Supply Chain Management
+  SCORModelVideo: { component: SCORModelVideo, durationInFrames: SCORModelVideoDuration },
+  BullwhipVideo: { component: BullwhipVideo, durationInFrames: BullwhipVideoDuration },
+  StrategicSourcingVideo: { component: StrategicSourcingVideo, durationInFrames: StrategicSourcingVideoDuration },
+  EOQVideo: { component: EOQVideo, durationInFrames: EOQVideoDuration },
+  ABCAnalysisVideo: { component: ABCAnalysisVideo, durationInFrames: ABCAnalysisVideoDuration },
+  WarehouseFlowVideo: { component: WarehouseFlowVideo, durationInFrames: WarehouseFlowVideoDuration },
+  ColdChainVideo: { component: ColdChainVideo, durationInFrames: ColdChainVideoDuration },
+  TolLautVideo: { component: TolLautVideo, durationInFrames: TolLautVideoDuration },
+  RouteOptimizationVideo: { component: RouteOptimizationVideo, durationInFrames: RouteOptimizationVideoDuration },
+  MRPVideo: { component: MRPVideo, durationInFrames: MRPVideoDuration },
+  LeanTPSVideo: { component: LeanTPSVideo, durationInFrames: LeanTPSVideoDuration },
+  SnOPVideo: { component: SnOPVideo, durationInFrames: SnOPVideoDuration },
+  DigitalTwinVideo: { component: DigitalTwinVideo, durationInFrames: DigitalTwinVideoDuration },
+  ResilienceVideo: { component: ResilienceVideo, durationInFrames: ResilienceVideoDuration },
+  GreenSupplyChainVideo: { component: GreenSupplyChainVideo, durationInFrames: GreenSupplyChainVideoDuration },
+  BlockchainTraceabilityVideo: { component: BlockchainTraceabilityVideo, durationInFrames: BlockchainTraceabilityVideoDuration },
+  GlobalTradeVideo: { component: GlobalTradeVideo, durationInFrames: GlobalTradeVideoDuration },
+  // Kapitalisme
+  KapitalismeVideo: { component: KapitalismeVideo, durationInFrames: KapitalismeVideoDuration },
+  TanganTakTampak: { component: TanganTakTampak, durationInFrames: TanganTakTampakDuration },
+  SejarahKapitalismeVideo: { component: SejarahKapitalismeVideo, durationInFrames: SejarahKapitalismeVideoDuration },
+  SpektrumEkonomiVideo: { component: SpektrumEkonomiVideo, durationInFrames: SpektrumEkonomiVideoDuration },
+  KetimpanganGiniVideo: { component: KetimpanganGiniVideo, durationInFrames: KetimpanganGiniVideoDuration },
+  CreativeDestructionVideo: { component: CreativeDestructionVideo, durationInFrames: CreativeDestructionVideoDuration },
+  // Demokrasi
+  DemokrasiVideo: { component: DemokrasiVideo, durationInFrames: DemokrasiVideoDuration },
+  SejarahDemokrasiVideo: { component: SejarahDemokrasiVideo, durationInFrames: SejarahDemokrasiVideoDuration },
+  TriasPoliticaVideo: { component: TriasPoliticaVideo, durationInFrames: TriasPoliticaVideoDuration },
+  SistemPemiluVideo: { component: SistemPemiluVideo, durationInFrames: SistemPemiluVideoDuration },
+  ChecksBalancesVideo: { component: ChecksBalancesVideo, durationInFrames: ChecksBalancesVideoDuration },
+  KemunduranDemokrasiVideo: { component: KemunduranDemokrasiVideo, durationInFrames: KemunduranDemokrasiVideoDuration },
   // Carbon
   EfekRumahKaca: { component: EfekRumahKaca, durationInFrames: EfekRumahKacaDuration },
   PasarKarbon: { component: PasarKarbon, durationInFrames: PasarKarbonDuration },
