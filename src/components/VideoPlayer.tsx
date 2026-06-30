@@ -1,4 +1,4 @@
-import { Player, type PlayerRef } from "@remotion/player";
+import { Player, type PlayerRef, type CallbackListener } from "@remotion/player";
 import { useEffect, useRef } from "react";
 import type { VideoComp } from "../types";
 import { videoRegistry, VIDEO } from "../remotion/registry";
@@ -10,15 +10,44 @@ export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: 
   const lastFrame = entry ? entry.durationInFrames - 1 : 0;
 
   // Saat video selesai, tahan di frame terakhir (jangan kembali ke detik awal).
+  // Remotion Player otomatis mereset ke frame 0 saat berakhir, jadi kita pin
+  // ulang frame terakhir: langsung, di frame berikutnya, dan saat terdeteksi reset.
   useEffect(() => {
     const player = playerRef.current;
     if (!player) return;
-    const onEnded = () => {
-      player.pause();
-      player.seekTo(lastFrame);
+    let ended = false;
+    const pin = () => {
+      try {
+        player.pause();
+        player.seekTo(lastFrame);
+      } catch {
+        // player belum siap; abaikan
+      }
+    };
+    const onEnded: CallbackListener<"ended"> = () => {
+      ended = true;
+      pin();
+      requestAnimationFrame(pin);
+    };
+    const onFrame: CallbackListener<"frameupdate"> = (e) => {
+      // Jika Remotion melompat balik ke awal setelah selesai (saat TIDAK sedang
+      // diputar), kembalikan ke frame terakhir. Saat sedang diputar (replay),
+      // jangan diganggu supaya video bisa diputar ulang dari awal.
+      if (ended && !player.isPlaying() && e.detail.frame < lastFrame - 1) pin();
+    };
+    const onPlay: CallbackListener<"play"> = () => {
+      ended = false;
+      // Jika ditekan play saat tertahan di akhir, putar ulang dari awal.
+      if (player.getCurrentFrame() >= lastFrame) player.seekTo(0);
     };
     player.addEventListener("ended", onEnded);
-    return () => player.removeEventListener("ended", onEnded);
+    player.addEventListener("frameupdate", onFrame);
+    player.addEventListener("play", onPlay);
+    return () => {
+      player.removeEventListener("ended", onEnded);
+      player.removeEventListener("frameupdate", onFrame);
+      player.removeEventListener("play", onPlay);
+    };
   }, [lastFrame]);
 
   if (!entry) return null;
