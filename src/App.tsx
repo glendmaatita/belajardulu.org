@@ -5,6 +5,7 @@ import { Landing } from "./pages/Landing";
 import { TopicHome } from "./pages/TopicHome";
 import { LessonPage } from "./pages/LessonPage";
 import { Dashboard } from "./pages/Dashboard";
+import { Admin } from "./pages/Admin";
 import { AuthProvider } from "./lib/auth";
 import { ProgressProvider } from "./lib/progress";
 import { ActivityProvider } from "./lib/activity";
@@ -37,6 +38,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/saya" element={<Dashboard />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="/:topicId" element={<TopicHome />} />
               <Route path="/:topicId/pelajaran/:id" element={<LessonPage />} />
               <Route path="*" element={<Landing />} />

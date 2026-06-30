@@ -24,7 +24,14 @@ import {
   setExerciseState,
   listExerciseStates,
   mergeExerciseStates,
+  adminOverview,
+  adminListUsers,
+  adminListSuggestions,
+  adminListFeedback,
+  adminDeleteUser,
+  adminDeleteSuggestion,
 } from "./db.ts";
+import { timingSafeEqual } from "node:crypto";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -32,7 +39,17 @@ const PORT = Number(process.env.PORT || 8787);
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
 const JWT_SECRET = process.env.JWT_SECRET || "dev-insecure-secret-change-me";
 const COOKIE = "belajaryuk_session";
+const ADMIN_COOKIE = "belajaryuk_admin";
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
+const adminConfigured = !!(ADMIN_USERNAME && ADMIN_PASSWORD);
 const isProd = process.env.NODE_ENV === "production";
+
+if (!adminConfigured) {
+  console.warn(
+    "⚠️  ADMIN_USERNAME / ADMIN_PASSWORD belum di-set. Halaman /admin dinonaktifkan sampai .env diisi (lihat .env.example)."
+  );
+}
 
 if (!GOOGLE_CLIENT_ID) {
   console.warn(
@@ -75,6 +92,44 @@ function requireAuth(
   const uid = currentUserId(req);
   if (!uid) return res.status(401).json({ error: "unauthorized" });
   (req as express.Request & { uid: number }).uid = uid;
+  next();
+}
+
+// ---- admin auth (username/password from env, separate cookie) ----
+function safeEqual(a: string, b: string): boolean {
+  const ba = Buffer.from(a);
+  const bb = Buffer.from(b);
+  if (ba.length !== bb.length) return false;
+  return timingSafeEqual(ba, bb);
+}
+
+function issueAdminSession(res: express.Response) {
+  const token = jwt.sign({ admin: true }, JWT_SECRET, { expiresIn: "1d" });
+  res.cookie(ADMIN_COOKIE, token, {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: isProd,
+    maxAge: 24 * 60 * 60 * 1000,
+  });
+}
+
+function isAdmin(req: express.Request): boolean {
+  const token = req.cookies?.[ADMIN_COOKIE];
+  if (!token) return false;
+  try {
+    const payload = jwt.verify(token, JWT_SECRET) as { admin?: boolean };
+    return !!payload.admin;
+  } catch {
+    return false;
+  }
+}
+
+function requireAdmin(
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+) {
+  if (!isAdmin(req)) return res.status(401).json({ error: "unauthorized" });
   next();
 }
 
@@ -211,6 +266,58 @@ app.post("/api/suggestion", (req, res) => {
   if (text.length > 4000) return res.status(400).json({ error: "message_too_long" });
   const contact = typeof email === "string" && email.trim() ? email.trim().slice(0, 200) : null;
   addSuggestion(lessonKey, currentUserId(req), text, contact);
+  res.json({ ok: true });
+});
+
+// ---- admin: manage data stored in SQLite ----
+app.get("/api/admin/me", (req, res) => {
+  res.json({ admin: isAdmin(req), configured: adminConfigured });
+});
+
+app.post("/api/admin/login", (req, res) => {
+  if (!adminConfigured) return res.status(503).json({ error: "admin_not_configured" });
+  const { username, password } = req.body ?? {};
+  if (typeof username !== "string" || typeof password !== "string")
+    return res.status(400).json({ error: "bad_request" });
+  if (safeEqual(username, ADMIN_USERNAME) && safeEqual(password, ADMIN_PASSWORD)) {
+    issueAdminSession(res);
+    return res.json({ ok: true });
+  }
+  return res.status(401).json({ error: "invalid_credentials" });
+});
+
+app.post("/api/admin/logout", (_req, res) => {
+  res.clearCookie(ADMIN_COOKIE);
+  res.json({ ok: true });
+});
+
+app.get("/api/admin/overview", requireAdmin, (_req, res) => {
+  res.json(adminOverview());
+});
+
+app.get("/api/admin/users", requireAdmin, (_req, res) => {
+  res.json({ users: adminListUsers() });
+});
+
+app.get("/api/admin/suggestions", requireAdmin, (_req, res) => {
+  res.json({ suggestions: adminListSuggestions() });
+});
+
+app.get("/api/admin/feedback", requireAdmin, (_req, res) => {
+  res.json({ feedback: adminListFeedback() });
+});
+
+app.delete("/api/admin/users/:id", requireAdmin, (req, res) => {
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id)) return res.status(400).json({ error: "bad_request" });
+  adminDeleteUser(id);
+  res.json({ ok: true });
+});
+
+app.delete("/api/admin/suggestions/:id", requireAdmin, (req, res) => {
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id)) return res.status(400).json({ error: "bad_request" });
+  adminDeleteSuggestion(id);
   res.json({ ok: true });
 });
 

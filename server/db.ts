@@ -333,3 +333,102 @@ export function mergeExerciseStates(userId: number, items: Record<string, unknow
   });
   tx(Object.entries(items));
 }
+
+// ---- admin: aggregate views and management over all stored data ----
+
+export interface AdminOverview {
+  users: number;
+  progress: number;
+  started: number;
+  quizzes: number;
+  exercises: number;
+  feedback: number;
+  suggestions: number;
+}
+
+export function adminOverview(): AdminOverview {
+  const count = (sql: string) => (db.prepare(sql).get() as { c: number }).c;
+  return {
+    users: count("SELECT COUNT(*) c FROM users"),
+    progress: count("SELECT COUNT(*) c FROM progress"),
+    started: count("SELECT COUNT(*) c FROM lesson_started"),
+    quizzes: count("SELECT COUNT(*) c FROM quiz_result"),
+    exercises: count("SELECT COUNT(*) c FROM exercise_state"),
+    feedback: count("SELECT COUNT(*) c FROM feedback"),
+    suggestions: count("SELECT COUNT(*) c FROM suggestion"),
+  };
+}
+
+export interface AdminUser {
+  id: number;
+  email: string;
+  name: string | null;
+  created_at: string;
+  last_login: string;
+  completed: number;
+  started: number;
+  quizzes: number;
+}
+
+export function adminListUsers(): AdminUser[] {
+  return db
+    .prepare(
+      `SELECT u.id, u.email, u.name, u.created_at, u.last_login,
+         (SELECT COUNT(*) FROM progress p WHERE p.user_id = u.id) AS completed,
+         (SELECT COUNT(*) FROM lesson_started s WHERE s.user_id = u.id) AS started,
+         (SELECT COUNT(*) FROM quiz_result q WHERE q.user_id = u.id) AS quizzes
+       FROM users u
+       ORDER BY u.last_login DESC
+       LIMIT 2000`
+    )
+    .all() as AdminUser[];
+}
+
+export interface AdminSuggestion {
+  id: number;
+  lesson_key: string;
+  email: string | null;
+  user_email: string | null;
+  message: string;
+  created_at: string;
+}
+
+export function adminListSuggestions(): AdminSuggestion[] {
+  return db
+    .prepare(
+      `SELECT s.id, s.lesson_key, s.email, s.message, s.created_at, u.email AS user_email
+       FROM suggestion s
+       LEFT JOIN users u ON u.id = s.user_id
+       ORDER BY s.created_at DESC
+       LIMIT 2000`
+    )
+    .all() as AdminSuggestion[];
+}
+
+export interface AdminFeedback {
+  lesson_key: string;
+  up: number;
+  down: number;
+}
+
+export function adminListFeedback(): AdminFeedback[] {
+  return db
+    .prepare(
+      `SELECT lesson_key,
+         SUM(CASE WHEN value = 1 THEN 1 ELSE 0 END) AS up,
+         SUM(CASE WHEN value = -1 THEN 1 ELSE 0 END) AS down
+       FROM feedback
+       GROUP BY lesson_key
+       ORDER BY (up + down) DESC
+       LIMIT 2000`
+    )
+    .all() as AdminFeedback[];
+}
+
+export function adminDeleteUser(id: number) {
+  db.prepare("DELETE FROM users WHERE id = ?").run(id);
+}
+
+export function adminDeleteSuggestion(id: number) {
+  db.prepare("DELETE FROM suggestion WHERE id = ?").run(id);
+}
