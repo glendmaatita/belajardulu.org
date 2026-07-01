@@ -225,6 +225,40 @@ import { SimulatorAmbangParlemen } from "./SimulatorAmbangParlemen";
 import { SimulatorTriasPolitica } from "./SimulatorTriasPolitica";
 import { SimulatorIndeksDemokrasi } from "./SimulatorIndeksDemokrasi";
 import { KalkulatorPartisipasiPemilih } from "./KalkulatorPartisipasiPemilih";
+// Tax Planning Korporat
+import { KalkulatorKoreksiFiskal } from "./KalkulatorKoreksiFiskal";
+import { SimulatorPenyusutanFiskal } from "./SimulatorPenyusutanFiskal";
+import { KalkulatorKompensasiKerugian } from "./KalkulatorKompensasiKerugian";
+import { SimulatorGrossUpPPh21 } from "./SimulatorGrossUpPPh21";
+import { KalkulatorThinCap } from "./KalkulatorThinCap";
+import { SimulatorInsentifPajak } from "./SimulatorInsentifPajak";
+import { KalkulatorWithholding } from "./KalkulatorWithholding";
+import { SimulatorTransferPricing } from "./SimulatorTransferPricing";
+import { KalkulatorTaxTreaty } from "./KalkulatorTaxTreaty";
+import { KalkulatorPilarDua } from "./KalkulatorPilarDua";
+import { KalkulatorRestitusiPPN } from "./KalkulatorRestitusiPPN";
+import { SimulatorEffectiveTaxRate } from "./SimulatorEffectiveTaxRate";
+import { KalkulatorAngsuranPPh25 } from "./KalkulatorAngsuranPPh25";
+import { SimulatorNatura } from "./SimulatorNatura";
+import { SimulatorBentukUsaha } from "./SimulatorBentukUsaha";
+import { KalkulatorPPh22 } from "./KalkulatorPPh22";
+import { KalkulatorDividenHolding } from "./KalkulatorDividenHolding";
+import { SimulatorPPNDigital } from "./SimulatorPPNDigital";
+import { KalkulatorSanksiPajakBunga } from "./KalkulatorSanksiPajakBunga";
+// Marxisme
+import { SimulatorNilaiLebih } from "./SimulatorNilaiLebih";
+import { KalkulatorTingkatEksploitasi } from "./KalkulatorTingkatEksploitasi";
+import { SimulatorModaProduksi } from "./SimulatorModaProduksi";
+import { SimulatorAlienasi } from "./SimulatorAlienasi";
+// Kebijakan Moneter
+import { KalkulatorMultiplierUang } from "./KalkulatorMultiplierUang";
+import { SimulatorBIRate } from "./SimulatorBIRate";
+import { KalkulatorCadanganDevisa } from "./KalkulatorCadanganDevisa";
+import { SimulatorTrilemma } from "./SimulatorTrilemma";
+import { KalkulatorNilaiLebihAbsolutRelatif } from "./KalkulatorNilaiLebihAbsolutRelatif";
+import { SimulatorKoridorSukuBunga } from "./SimulatorKoridorSukuBunga";
+import { KalkulatorPPP } from "./KalkulatorPPP";
+import { SimulatorInflasiInti } from "./SimulatorInflasiInti";
 
 export const widgetRegistry: Record<WidgetId, FC> = {
   KalkulatorJejakKarbon,
@@ -432,4 +466,35 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorTriasPolitica,
   SimulatorIndeksDemokrasi,
   KalkulatorPartisipasiPemilih,
+  KalkulatorKoreksiFiskal,
+  SimulatorPenyusutanFiskal,
+  KalkulatorKompensasiKerugian,
+  SimulatorGrossUpPPh21,
+  KalkulatorThinCap,
+  SimulatorInsentifPajak,
+  KalkulatorWithholding,
+  SimulatorTransferPricing,
+  KalkulatorTaxTreaty,
+  KalkulatorPilarDua,
+  KalkulatorRestitusiPPN,
+  SimulatorEffectiveTaxRate,
+  KalkulatorAngsuranPPh25,
+  SimulatorNatura,
+  SimulatorBentukUsaha,
+  KalkulatorPPh22,
+  KalkulatorDividenHolding,
+  SimulatorPPNDigital,
+  KalkulatorSanksiPajakBunga,
+  SimulatorNilaiLebih,
+  KalkulatorTingkatEksploitasi,
+  SimulatorModaProduksi,
+  SimulatorAlienasi,
+  KalkulatorMultiplierUang,
+  SimulatorBIRate,
+  KalkulatorCadanganDevisa,
+  SimulatorTrilemma,
+  KalkulatorNilaiLebihAbsolutRelatif,
+  SimulatorKoridorSukuBunga,
+  KalkulatorPPP,
+  SimulatorInflasiInti,
 };

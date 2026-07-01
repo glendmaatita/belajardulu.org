@@ -11,6 +11,9 @@ import { pasarKeuangan } from "./pasar-keuangan/meta";
 import { mikroekonomi } from "./mikroekonomi/meta";
 import { makroekonomi } from "./makroekonomi/meta";
 import { kebijakanFiskal } from "./kebijakan-fiskal/meta";
+import { taxPlanning } from "./tax-planning/meta";
+import { kebijakanMoneter } from "./kebijakan-moneter/meta";
+import { marxisme } from "./marxisme/meta";
 import { logika } from "./logika/meta";
 import { filsafat } from "./filsafat/meta";
 import { matematikaDasar } from "./matematika-dasar/meta";
@@ -42,7 +45,7 @@ import { demokrasi } from "./demokrasi/meta";
 
 // Register topics here. Adding a future topic = create a folder + meta.ts, then
 // import it and add to this array.
-export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, mikroekonomi, makroekonomi, kebijakanFiskal, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, supplyChain, kapitalisme, demokrasi, logika, filsafat, akuntansi];
+export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, taxPlanning, mikroekonomi, makroekonomi, kebijakanFiskal, kebijakanMoneter, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, supplyChain, kapitalisme, marxisme, demokrasi, logika, filsafat, akuntansi];
 
 // ===== Kategori materi =====
 // Mengelompokkan topik ke dalam rumpun yang berkaitan. Topik yang belum
@@ -103,7 +106,7 @@ export const categories: Category[] = [
     tagline: "Bagaimana pasar, negara, dan regulasi membentuk keputusan ekonomi.",
     icon: "landmark",
     accent: "from-amber-500 to-orange-600",
-    topicIds: ["mikroekonomi", "makroekonomi", "kebijakan-fiskal", "pajak", "kepabeanan", "kapitalisme"],
+    topicIds: ["mikroekonomi", "makroekonomi", "kebijakan-fiskal", "kebijakan-moneter", "pajak", "tax-planning", "kepabeanan", "kapitalisme"],
   },
   {
     id: "keuangan-investasi",
@@ -139,10 +142,10 @@ export const categories: Category[] = [
   {
     id: "sosial-politik",
     title: "Sosial & Kewarganegaraan",
-    tagline: "Bagaimana masyarakat memerintah dirinya: demokrasi, kekuasaan, dan hak warga.",
+    tagline: "Bagaimana masyarakat memerintah dirinya: demokrasi, ideologi, kekuasaan, dan hak warga.",
     icon: "landmark",
     accent: "from-blue-500 to-indigo-600",
-    topicIds: ["demokrasi"],
+    topicIds: ["demokrasi", "marxisme"],
   },
   {
     id: "logika-filsafat",

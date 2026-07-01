@@ -260,6 +260,47 @@ import { TriasPoliticaVideo, TriasPoliticaVideoDuration } from "./TriasPoliticaV
 import { SistemPemiluVideo, SistemPemiluVideoDuration } from "./SistemPemiluVideo";
 import { ChecksBalancesVideo, ChecksBalancesVideoDuration } from "./ChecksBalancesVideo";
 import { KemunduranDemokrasiVideo, KemunduranDemokrasiVideoDuration } from "./KemunduranDemokrasiVideo";
+// Tax Planning Korporat
+import { SpektrumPajakVideo, SpektrumPajakVideoDuration } from "./SpektrumPajakVideo";
+import { KoreksiFiskalVideo, KoreksiFiskalVideoDuration } from "./KoreksiFiskalVideo";
+import { PenyusutanFiskalVideo, PenyusutanFiskalVideoDuration } from "./PenyusutanFiskalVideo";
+import { KompensasiKerugianVideo, KompensasiKerugianVideoDuration } from "./KompensasiKerugianVideo";
+import { Fasilitas31EVideo, Fasilitas31EVideoDuration } from "./Fasilitas31EVideo";
+import { ThinCapVideo, ThinCapVideoDuration } from "./ThinCapVideo";
+import { WithholdingTaxVideo, WithholdingTaxVideoDuration } from "./WithholdingTaxVideo";
+import { TransferPricingVideo, TransferPricingVideoDuration } from "./TransferPricingVideo";
+import { TaxTreatyVideo, TaxTreatyVideoDuration } from "./TaxTreatyVideo";
+import { PilarDuaVideo, PilarDuaVideoDuration } from "./PilarDuaVideo";
+import { RisikoPajakVideo, RisikoPajakVideoDuration } from "./RisikoPajakVideo";
+import { AsasPajakVideo, AsasPajakVideoDuration } from "./AsasPajakVideo";
+import { PetaPajakKorporatVideo, PetaPajakKorporatVideoDuration } from "./PetaPajakKorporatVideo";
+import { PPh25AngsuranVideo, PPh25AngsuranVideoDuration } from "./PPh25AngsuranVideo";
+import { BentukUsahaVideo, BentukUsahaVideoDuration } from "./BentukUsahaVideo";
+import { HoldingDividenVideo, HoldingDividenVideoDuration } from "./HoldingDividenVideo";
+import { BUTVideo, BUTVideoDuration } from "./BUTVideo";
+import { PajakDigitalVideo, PajakDigitalVideoDuration } from "./PajakDigitalVideo";
+import { SanksiPajakVideo, SanksiPajakVideoDuration } from "./SanksiPajakVideo";
+import { AEOIVideo, AEOIVideoDuration } from "./AEOIVideo";
+// Marxisme
+import { MarxEngelsVideo, MarxEngelsVideoDuration } from "./MarxEngelsVideo";
+import { NilaiLebihVideo, NilaiLebihVideoDuration } from "./NilaiLebihVideo";
+import { AlienasiVideo, AlienasiVideoDuration } from "./AlienasiVideo";
+import { MaterialismeHistorisVideo, MaterialismeHistorisVideoDuration } from "./MaterialismeHistorisVideo";
+import { AkumulasiKrisisVideo, AkumulasiKrisisVideoDuration } from "./AkumulasiKrisisVideo";
+// Kebijakan Moneter
+import { SejarahUangVideo, SejarahUangVideoDuration } from "./SejarahUangVideo";
+import { BankSentralVideo, BankSentralVideoDuration } from "./BankSentralVideo";
+import { OperasiPasarTerbukaVideo, OperasiPasarTerbukaVideoDuration } from "./OperasiPasarTerbukaVideo";
+import { TrilemmaVideo, TrilemmaVideoDuration } from "./TrilemmaVideo";
+import { DigitalRupiahVideo, DigitalRupiahVideoDuration } from "./DigitalRupiahVideo";
+// Marxisme & Kebijakan Moneter (perluasan)
+import { TigaSumberMarxismeVideo, TigaSumberMarxismeVideoDuration } from "./TigaSumberMarxismeVideo";
+import { SirkuitKapitalVideo, SirkuitKapitalVideoDuration } from "./SirkuitKapitalVideo";
+import { NegaraKelasVideo, NegaraKelasVideoDuration } from "./NegaraKelasVideo";
+import { AkumulasiPrimitifVideo, AkumulasiPrimitifVideoDuration } from "./AkumulasiPrimitifVideo";
+import { KoridorSukuBungaVideo, KoridorSukuBungaVideoDuration } from "./KoridorSukuBungaVideo";
+import { PenentuNilaiTukarVideo, PenentuNilaiTukarVideoDuration } from "./PenentuNilaiTukarVideo";
+import { LenderOfLastResortVideo, LenderOfLastResortVideoDuration } from "./LenderOfLastResortVideo";
 
 import type { FC } from "react";
 import { VIDEO } from "./theme";
@@ -333,6 +374,46 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   SistemPemiluVideo: { component: SistemPemiluVideo, durationInFrames: SistemPemiluVideoDuration },
   ChecksBalancesVideo: { component: ChecksBalancesVideo, durationInFrames: ChecksBalancesVideoDuration },
   KemunduranDemokrasiVideo: { component: KemunduranDemokrasiVideo, durationInFrames: KemunduranDemokrasiVideoDuration },
+  // Tax Planning Korporat
+  SpektrumPajakVideo: { component: SpektrumPajakVideo, durationInFrames: SpektrumPajakVideoDuration },
+  KoreksiFiskalVideo: { component: KoreksiFiskalVideo, durationInFrames: KoreksiFiskalVideoDuration },
+  PenyusutanFiskalVideo: { component: PenyusutanFiskalVideo, durationInFrames: PenyusutanFiskalVideoDuration },
+  KompensasiKerugianVideo: { component: KompensasiKerugianVideo, durationInFrames: KompensasiKerugianVideoDuration },
+  Fasilitas31EVideo: { component: Fasilitas31EVideo, durationInFrames: Fasilitas31EVideoDuration },
+  ThinCapVideo: { component: ThinCapVideo, durationInFrames: ThinCapVideoDuration },
+  WithholdingTaxVideo: { component: WithholdingTaxVideo, durationInFrames: WithholdingTaxVideoDuration },
+  TransferPricingVideo: { component: TransferPricingVideo, durationInFrames: TransferPricingVideoDuration },
+  TaxTreatyVideo: { component: TaxTreatyVideo, durationInFrames: TaxTreatyVideoDuration },
+  PilarDuaVideo: { component: PilarDuaVideo, durationInFrames: PilarDuaVideoDuration },
+  RisikoPajakVideo: { component: RisikoPajakVideo, durationInFrames: RisikoPajakVideoDuration },
+  AsasPajakVideo: { component: AsasPajakVideo, durationInFrames: AsasPajakVideoDuration },
+  PetaPajakKorporatVideo: { component: PetaPajakKorporatVideo, durationInFrames: PetaPajakKorporatVideoDuration },
+  PPh25AngsuranVideo: { component: PPh25AngsuranVideo, durationInFrames: PPh25AngsuranVideoDuration },
+  BentukUsahaVideo: { component: BentukUsahaVideo, durationInFrames: BentukUsahaVideoDuration },
+  HoldingDividenVideo: { component: HoldingDividenVideo, durationInFrames: HoldingDividenVideoDuration },
+  BUTVideo: { component: BUTVideo, durationInFrames: BUTVideoDuration },
+  PajakDigitalVideo: { component: PajakDigitalVideo, durationInFrames: PajakDigitalVideoDuration },
+  SanksiPajakVideo: { component: SanksiPajakVideo, durationInFrames: SanksiPajakVideoDuration },
+  AEOIVideo: { component: AEOIVideo, durationInFrames: AEOIVideoDuration },
+  // Marxisme
+  MarxEngelsVideo: { component: MarxEngelsVideo, durationInFrames: MarxEngelsVideoDuration },
+  NilaiLebihVideo: { component: NilaiLebihVideo, durationInFrames: NilaiLebihVideoDuration },
+  AlienasiVideo: { component: AlienasiVideo, durationInFrames: AlienasiVideoDuration },
+  MaterialismeHistorisVideo: { component: MaterialismeHistorisVideo, durationInFrames: MaterialismeHistorisVideoDuration },
+  AkumulasiKrisisVideo: { component: AkumulasiKrisisVideo, durationInFrames: AkumulasiKrisisVideoDuration },
+  // Kebijakan Moneter
+  SejarahUangVideo: { component: SejarahUangVideo, durationInFrames: SejarahUangVideoDuration },
+  BankSentralVideo: { component: BankSentralVideo, durationInFrames: BankSentralVideoDuration },
+  OperasiPasarTerbukaVideo: { component: OperasiPasarTerbukaVideo, durationInFrames: OperasiPasarTerbukaVideoDuration },
+  TrilemmaVideo: { component: TrilemmaVideo, durationInFrames: TrilemmaVideoDuration },
+  DigitalRupiahVideo: { component: DigitalRupiahVideo, durationInFrames: DigitalRupiahVideoDuration },
+  TigaSumberMarxismeVideo: { component: TigaSumberMarxismeVideo, durationInFrames: TigaSumberMarxismeVideoDuration },
+  SirkuitKapitalVideo: { component: SirkuitKapitalVideo, durationInFrames: SirkuitKapitalVideoDuration },
+  NegaraKelasVideo: { component: NegaraKelasVideo, durationInFrames: NegaraKelasVideoDuration },
+  AkumulasiPrimitifVideo: { component: AkumulasiPrimitifVideo, durationInFrames: AkumulasiPrimitifVideoDuration },
+  KoridorSukuBungaVideo: { component: KoridorSukuBungaVideo, durationInFrames: KoridorSukuBungaVideoDuration },
+  PenentuNilaiTukarVideo: { component: PenentuNilaiTukarVideo, durationInFrames: PenentuNilaiTukarVideoDuration },
+  LenderOfLastResortVideo: { component: LenderOfLastResortVideo, durationInFrames: LenderOfLastResortVideoDuration },
   // Carbon
   EfekRumahKaca: { component: EfekRumahKaca, durationInFrames: EfekRumahKacaDuration },
   PasarKarbon: { component: PasarKarbon, durationInFrames: PasarKarbonDuration },
