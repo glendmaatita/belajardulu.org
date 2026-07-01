@@ -259,6 +259,29 @@ import { KalkulatorNilaiLebihAbsolutRelatif } from "./KalkulatorNilaiLebihAbsolu
 import { SimulatorKoridorSukuBunga } from "./SimulatorKoridorSukuBunga";
 import { KalkulatorPPP } from "./KalkulatorPPP";
 import { SimulatorInflasiInti } from "./SimulatorInflasiInti";
+// Perencanaan Keuangan
+import { KalkulatorAnggaran } from "./KalkulatorAnggaran";
+import { KalkulatorDanaDarurat } from "./KalkulatorDanaDarurat";
+import { SimulatorKPR } from "./SimulatorKPR";
+import { KalkulatorKartuKredit } from "./KalkulatorKartuKredit";
+import { KalkulatorUangPertanggungan } from "./KalkulatorUangPertanggungan";
+import { KalkulatorDanaPensiun } from "./KalkulatorDanaPensiun";
+import { KalkulatorDanaPendidikan } from "./KalkulatorDanaPendidikan";
+import { KalkulatorRasioPribadi } from "./KalkulatorRasioPribadi";
+import { SimulatorPaylater } from "./SimulatorPaylater";
+import { KalkulatorNetWorth } from "./KalkulatorNetWorth";
+import { KalkulatorGadaiEmas } from "./KalkulatorGadaiEmas";
+import { SimulatorWakafUang } from "./SimulatorWakafUang";
+// Ekonomi Syariah
+import { KalkulatorZakat } from "./KalkulatorZakat";
+import { SimulatorBagiHasil } from "./SimulatorBagiHasil";
+import { KalkulatorMurabahah } from "./KalkulatorMurabahah";
+import { SimulatorRibaVsBagiHasil } from "./SimulatorRibaVsBagiHasil";
+import { KalkulatorSukuk } from "./KalkulatorSukuk";
+import { SkriningSahamSyariah } from "./SkriningSahamSyariah";
+// Sejarah Pemikiran Ekonomi
+import { SimulatorKeunggulanKomparatif } from "./SimulatorKeunggulanKomparatif";
+import { TimelineMazhabEkonomi } from "./TimelineMazhabEkonomi";
 
 export const widgetRegistry: Record<WidgetId, FC> = {
   KalkulatorJejakKarbon,
@@ -497,4 +520,24 @@ export const widgetRegistry: Record<WidgetId, FC> = {
   SimulatorKoridorSukuBunga,
   KalkulatorPPP,
   SimulatorInflasiInti,
+  KalkulatorZakat,
+  SimulatorBagiHasil,
+  KalkulatorMurabahah,
+  SimulatorRibaVsBagiHasil,
+  KalkulatorSukuk,
+  SkriningSahamSyariah,
+  SimulatorKeunggulanKomparatif,
+  TimelineMazhabEkonomi,
+  KalkulatorAnggaran,
+  KalkulatorDanaDarurat,
+  SimulatorKPR,
+  KalkulatorKartuKredit,
+  KalkulatorUangPertanggungan,
+  KalkulatorDanaPensiun,
+  KalkulatorDanaPendidikan,
+  KalkulatorRasioPribadi,
+  SimulatorPaylater,
+  KalkulatorNetWorth,
+  KalkulatorGadaiEmas,
+  SimulatorWakafUang,
 };

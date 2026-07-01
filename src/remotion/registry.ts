@@ -301,6 +301,26 @@ import { AkumulasiPrimitifVideo, AkumulasiPrimitifVideoDuration } from "./Akumul
 import { KoridorSukuBungaVideo, KoridorSukuBungaVideoDuration } from "./KoridorSukuBungaVideo";
 import { PenentuNilaiTukarVideo, PenentuNilaiTukarVideoDuration } from "./PenentuNilaiTukarVideo";
 import { LenderOfLastResortVideo, LenderOfLastResortVideoDuration } from "./LenderOfLastResortVideo";
+// Ekonomi Syariah
+import { LaranganRibaVideo, LaranganRibaVideoDuration } from "./LaranganRibaVideo";
+import { AkadJualBeliVideo, AkadJualBeliVideoDuration } from "./AkadJualBeliVideo";
+import { BagiHasilSyariahVideo, BagiHasilSyariahVideoDuration } from "./BagiHasilSyariahVideo";
+import { AlurBankSyariahVideo, AlurBankSyariahVideoDuration } from "./AlurBankSyariahVideo";
+import { SukukVideo, SukukVideoDuration } from "./SukukVideo";
+import { ZiswafVideo, ZiswafVideoDuration } from "./ZiswafVideo";
+// Sejarah Pemikiran Ekonomi
+import { GarisWaktuEkonomiVideo, GarisWaktuEkonomiVideoDuration } from "./GarisWaktuEkonomiVideo";
+import { RevolusiMarginalVideo, RevolusiMarginalVideoDuration } from "./RevolusiMarginalVideo";
+import { DebatKeynesHayekVideo, DebatKeynesHayekVideoDuration } from "./DebatKeynesHayekVideo";
+// Perencanaan Keuangan
+import { SiklusHidupKeuanganVideo, SiklusHidupKeuanganVideoDuration } from "./SiklusHidupKeuanganVideo";
+import { PiramidaKeuanganVideo, PiramidaKeuanganVideoDuration } from "./PiramidaKeuanganVideo";
+import { DanaDaruratVideo, DanaDaruratVideoDuration } from "./DanaDaruratVideo";
+import { BolaSaljuUtangVideo, BolaSaljuUtangVideoDuration } from "./BolaSaljuUtangVideo";
+import { ProteksiBPJSVideo, ProteksiBPJSVideoDuration } from "./ProteksiBPJSVideo";
+import { KemandirianFinansialVideo, KemandirianFinansialVideoDuration } from "./KemandirianFinansialVideo";
+import { EtikaBisnisIslamVideo, EtikaBisnisIslamVideoDuration } from "./EtikaBisnisIslamVideo";
+import { PsikologiUangVideo, PsikologiUangVideoDuration } from "./PsikologiUangVideo";
 
 import type { FC } from "react";
 import { VIDEO } from "./theme";
@@ -414,6 +434,26 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   KoridorSukuBungaVideo: { component: KoridorSukuBungaVideo, durationInFrames: KoridorSukuBungaVideoDuration },
   PenentuNilaiTukarVideo: { component: PenentuNilaiTukarVideo, durationInFrames: PenentuNilaiTukarVideoDuration },
   LenderOfLastResortVideo: { component: LenderOfLastResortVideo, durationInFrames: LenderOfLastResortVideoDuration },
+  // Ekonomi Syariah
+  LaranganRibaVideo: { component: LaranganRibaVideo, durationInFrames: LaranganRibaVideoDuration },
+  AkadJualBeliVideo: { component: AkadJualBeliVideo, durationInFrames: AkadJualBeliVideoDuration },
+  BagiHasilSyariahVideo: { component: BagiHasilSyariahVideo, durationInFrames: BagiHasilSyariahVideoDuration },
+  AlurBankSyariahVideo: { component: AlurBankSyariahVideo, durationInFrames: AlurBankSyariahVideoDuration },
+  SukukVideo: { component: SukukVideo, durationInFrames: SukukVideoDuration },
+  ZiswafVideo: { component: ZiswafVideo, durationInFrames: ZiswafVideoDuration },
+  // Sejarah Pemikiran Ekonomi
+  GarisWaktuEkonomiVideo: { component: GarisWaktuEkonomiVideo, durationInFrames: GarisWaktuEkonomiVideoDuration },
+  RevolusiMarginalVideo: { component: RevolusiMarginalVideo, durationInFrames: RevolusiMarginalVideoDuration },
+  DebatKeynesHayekVideo: { component: DebatKeynesHayekVideo, durationInFrames: DebatKeynesHayekVideoDuration },
+  // Perencanaan Keuangan
+  SiklusHidupKeuanganVideo: { component: SiklusHidupKeuanganVideo, durationInFrames: SiklusHidupKeuanganVideoDuration },
+  PiramidaKeuanganVideo: { component: PiramidaKeuanganVideo, durationInFrames: PiramidaKeuanganVideoDuration },
+  DanaDaruratVideo: { component: DanaDaruratVideo, durationInFrames: DanaDaruratVideoDuration },
+  BolaSaljuUtangVideo: { component: BolaSaljuUtangVideo, durationInFrames: BolaSaljuUtangVideoDuration },
+  ProteksiBPJSVideo: { component: ProteksiBPJSVideo, durationInFrames: ProteksiBPJSVideoDuration },
+  KemandirianFinansialVideo: { component: KemandirianFinansialVideo, durationInFrames: KemandirianFinansialVideoDuration },
+  EtikaBisnisIslamVideo: { component: EtikaBisnisIslamVideo, durationInFrames: EtikaBisnisIslamVideoDuration },
+  PsikologiUangVideo: { component: PsikologiUangVideo, durationInFrames: PsikologiUangVideoDuration },
   // Carbon
   EfekRumahKaca: { component: EfekRumahKaca, durationInFrames: EfekRumahKacaDuration },
   PasarKarbon: { component: PasarKarbon, durationInFrames: PasarKarbonDuration },

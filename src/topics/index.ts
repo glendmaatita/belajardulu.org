@@ -14,6 +14,9 @@ import { kebijakanFiskal } from "./kebijakan-fiskal/meta";
 import { taxPlanning } from "./tax-planning/meta";
 import { kebijakanMoneter } from "./kebijakan-moneter/meta";
 import { marxisme } from "./marxisme/meta";
+import { ekonomiSyariah } from "./ekonomi-syariah/meta";
+import { sejarahPemikiranEkonomi } from "./sejarah-pemikiran-ekonomi/meta";
+import { perencanaanKeuangan } from "./perencanaan-keuangan/meta";
 import { logika } from "./logika/meta";
 import { filsafat } from "./filsafat/meta";
 import { matematikaDasar } from "./matematika-dasar/meta";
@@ -45,7 +48,7 @@ import { demokrasi } from "./demokrasi/meta";
 
 // Register topics here. Adding a future topic = create a folder + meta.ts, then
 // import it and add to this array.
-export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, taxPlanning, mikroekonomi, makroekonomi, kebijakanFiskal, kebijakanMoneter, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, supplyChain, kapitalisme, marxisme, demokrasi, logika, filsafat, akuntansi];
+export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, taxPlanning, mikroekonomi, makroekonomi, kebijakanFiskal, kebijakanMoneter, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, supplyChain, kapitalisme, marxisme, ekonomiSyariah, sejarahPemikiranEkonomi, perencanaanKeuangan, demokrasi, logika, filsafat, akuntansi];
 
 // ===== Kategori materi =====
 // Mengelompokkan topik ke dalam rumpun yang berkaitan. Topik yang belum
@@ -106,7 +109,7 @@ export const categories: Category[] = [
     tagline: "Bagaimana pasar, negara, dan regulasi membentuk keputusan ekonomi.",
     icon: "landmark",
     accent: "from-amber-500 to-orange-600",
-    topicIds: ["mikroekonomi", "makroekonomi", "kebijakan-fiskal", "kebijakan-moneter", "pajak", "tax-planning", "kepabeanan", "kapitalisme"],
+    topicIds: ["mikroekonomi", "makroekonomi", "kebijakan-fiskal", "kebijakan-moneter", "pajak", "tax-planning", "kepabeanan", "kapitalisme", "sejarah-pemikiran-ekonomi"],
   },
   {
     id: "keuangan-investasi",
@@ -121,6 +124,8 @@ export const categories: Category[] = [
       "climate-finance",
       "carbon",
       "akuntansi",
+      "ekonomi-syariah",
+      "perencanaan-keuangan",
     ],
   },
   {
