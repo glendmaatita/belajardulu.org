@@ -13,6 +13,7 @@ Stack: Vite + React 19 + TypeScript + Tailwind v3 + React Router 7. Video animas
 3. **Fakta harus akurat** (regulasi Indonesia: DJBC/Bea Cukai, OJK, DJP, INSW; rumus keuangan). **Verifikasi setiap angka** pada `calcExercise` dan studi kasus.
 4. **Hanya gunakan field yang ada di `ContentBlock`** (lihat `src/types.ts`). Jangan mengarang field (`level` pada heading boleh, tetapi jangan tambah `style`, `caption` pada stats, `unit` pada calcExercise, dll). `callout.tone` HANYA `info | tip | warn | key`.
 5. **Build harus bersih**: `npm run build` tanpa error TypeScript sebelum dianggap selesai.
+6. **Konten di-code-split**: isi pelajaran (blocks) dimuat lazy per-topik lewat `loadTopic()` (`src/topics/loaders.ts`) supaya bundel awal ringan (penting untuk HP). Katalog/navigasi/dashboard hanya memakai metadata ringan dari `src/topics/manifest.ts`. Kedua file itu **dibuat otomatis** oleh `scripts/gen-manifest.mts` (`npm run gen:manifest`), yang sudah otomatis jalan saat `npm run dev`/`dev:web`/`build`. JANGAN sunting `manifest.ts`/`loaders.ts` manual; cukup regenerate. Jika menambah topik, tetap daftarkan di `src/topics/index.ts` (array `ORDER` untuk urutan tampil) lalu regenerate.
 
 ---
 

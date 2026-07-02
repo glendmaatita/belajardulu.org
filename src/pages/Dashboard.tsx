@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Topic } from "../types";
+import type { TopicMeta } from "../types";
 import {
   topics,
   orderedLessons,
@@ -13,7 +13,7 @@ import { AuthGate } from "../components/AuthGate";
 import { Icon, type IconName } from "../components/Icon";
 
 interface TopicProgress {
-  topic: Topic;
+  topic: TopicMeta;
   total: number;
   done: number;
   pct: number;

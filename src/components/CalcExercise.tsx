@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useActivity } from "../lib/activity";
+import { groupThousands, parseGrouped } from "../lib/format";
 import { Icon } from "./Icon";
 
 interface CalcSaved {
@@ -46,7 +47,7 @@ export function CalcExercise({
   }, [stored, value, status]);
 
   function check() {
-    const num = Number(value.replace(/[^0-9.-]/g, ""));
+    const num = parseGrouped(value);
     if (Number.isNaN(num) || value.trim() === "") {
       setStatus("wrong");
       return;
@@ -73,7 +74,7 @@ export function CalcExercise({
             inputMode="numeric"
             value={value}
             onChange={(e) => {
-              setValue(e.target.value);
+              setValue(groupThousands(e.target.value));
               setStatus("idle");
             }}
             onKeyDown={(e) => e.key === "Enter" && check()}

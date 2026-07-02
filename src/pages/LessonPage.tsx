@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getTopic, getLesson, adjacentLessons, progressKey } from "../topics";
+import { getTopic, getLesson, adjacentLessons, progressKey, loadTopic } from "../topics";
+import type { ContentBlock } from "../types";
 import { BlockRenderer } from "../components/blocks";
 import { LessonFeedback } from "../components/LessonFeedback";
 import { AuthGate } from "../components/AuthGate";
@@ -16,6 +17,20 @@ export function LessonPage() {
   const { isDone, toggle } = useProgress();
   const { markStarted } = useActivity();
   const { user, ready } = useAuth();
+
+  // Isi pelajaran (blocks) dimuat lazy per-topik: null = sedang memuat.
+  const [blocks, setBlocks] = useState<ContentBlock[] | null>(null);
+  useEffect(() => {
+    let alive = true;
+    setBlocks(null);
+    loadTopic(topicId).then((full) => {
+      if (!alive) return;
+      setBlocks(full?.lessons.find((l) => l.id === id)?.blocks ?? []);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [topicId, id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -89,10 +104,16 @@ export function LessonPage() {
           title="Materi ini terkunci"
           description={`Untuk membuka isi "${lesson.title}", masuk dulu dengan Google. Gratis, dan progres belajarmu akan tersimpan otomatis.`}
         />
+      ) : blocks === null ? (
+        <div className="grid h-64 place-items-center text-ink-faint">
+          <span className="flex items-center gap-2 text-sm">
+            <Icon name="loading" spin /> Memuat materi…
+          </span>
+        </div>
       ) : (
         <>
           <div>
-            {lesson.blocks.map((block, i) => (
+            {blocks.map((block, i) => (
               <BlockRenderer key={i} block={block} lessonKey={key} index={i} />
             ))}
           </div>

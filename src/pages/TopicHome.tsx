@@ -27,9 +27,8 @@ export function TopicHome() {
   const nextLesson = ordered.find((l) => !isDone(progressKey(topic.id, l.id))) ?? ordered[0];
   const completed = doneInTopic(topic.id);
 
-  const allBlocks = topic.lessons.flatMap((l) => l.blocks);
-  const videoCount = allBlocks.filter((b) => b.type === "video").length;
-  const quizCount = allBlocks.reduce((s, b) => (b.type === "quiz" ? s + b.questions.length : s), 0);
+  const videoCount = topic.videoCount;
+  const quizCount = topic.quizCount;
 
   return (
     <>

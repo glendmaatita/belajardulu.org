@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import type { Topic } from "../types";
+import type { TopicMeta } from "../types";
 import { categorizedTopics } from "../topics";
 import { useProgress } from "../lib/progress";
 import { useAuth, GoogleSignInButton } from "../lib/auth";
@@ -216,7 +216,7 @@ export function Landing() {
   );
 }
 
-function TopicCard({ topic: t, done, locked }: { topic: Topic; done: number; locked: boolean }) {
+function TopicCard({ topic: t, done, locked }: { topic: TopicMeta; done: number; locked: boolean }) {
   const total = t.lessons.length;
   const pct = total ? Math.round((done / total) * 100) : 0;
   const finished = total > 0 && done === total;

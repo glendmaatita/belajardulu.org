@@ -1,54 +1,38 @@
-import type { Topic, Lesson } from "../types";
+import type { Topic, TopicMeta, LessonMeta } from "../types";
 import type { IconName } from "../components/Icon";
-import { akuntansi } from "./akuntansi/meta";
-import { carbon } from "./carbon/meta";
-import { pajak } from "./pajak/meta";
-import { climateFinance } from "./climate-finance/meta";
-import { corporateFinance } from "./corporate-finance/meta";
-import { investasi } from "./investasi/meta";
-import { kepabeanan } from "./kepabeanan/meta";
-import { pasarKeuangan } from "./pasar-keuangan/meta";
-import { mikroekonomi } from "./mikroekonomi/meta";
-import { makroekonomi } from "./makroekonomi/meta";
-import { kebijakanFiskal } from "./kebijakan-fiskal/meta";
-import { taxPlanning } from "./tax-planning/meta";
-import { kebijakanMoneter } from "./kebijakan-moneter/meta";
-import { marxisme } from "./marxisme/meta";
-import { ekonomiSyariah } from "./ekonomi-syariah/meta";
-import { sejarahPemikiranEkonomi } from "./sejarah-pemikiran-ekonomi/meta";
-import { perencanaanKeuangan } from "./perencanaan-keuangan/meta";
-import { logika } from "./logika/meta";
-import { filsafat } from "./filsafat/meta";
-import { matematikaDasar } from "./matematika-dasar/meta";
-import { aljabar } from "./aljabar/meta";
-import { geometri } from "./geometri/meta";
-import { trigonometri } from "./trigonometri/meta";
-import { fungsiGrafik } from "./fungsi-grafik/meta";
-import { logikaMatematika } from "./logika-matematika/meta";
-import { statistika } from "./statistika/meta";
-import { kalkulus } from "./kalkulus/meta";
-import { pengantarFisika } from "./pengantar-fisika/meta";
-import { kinematika } from "./kinematika/meta";
-import { dinamika } from "./dinamika/meta";
-import { usahaEnergi } from "./usaha-energi/meta";
-import { momentum } from "./momentum/meta";
-import { rotasi } from "./rotasi/meta";
-import { gravitasi } from "./gravitasi/meta";
-import { fluida } from "./fluida/meta";
-import { getaranGelombang } from "./getaran-gelombang/meta";
-import { termodinamika } from "./termodinamika/meta";
-import { listrikStatis } from "./listrik-statis/meta";
-import { arusListrik } from "./arus-listrik/meta";
-import { magnetisme } from "./magnetisme/meta";
-import { optika } from "./optika/meta";
-import { cryptocurrency } from "./cryptocurrency/meta";
-import { supplyChain } from "./supply-chain/meta";
-import { kapitalisme } from "./kapitalisme/meta";
-import { demokrasi } from "./demokrasi/meta";
+import { manifest } from "./manifest";
+import { topicLoaders } from "./loaders";
 
-// Register topics here. Adding a future topic = create a folder + meta.ts, then
-// import it and add to this array.
-export const topics: Topic[] = [matematikaDasar, aljabar, geometri, trigonometri, fungsiGrafik, logikaMatematika, statistika, kalkulus, pengantarFisika, kinematika, dinamika, usahaEnergi, momentum, rotasi, gravitasi, fluida, getaranGelombang, termodinamika, listrikStatis, arusListrik, magnetisme, optika, pajak, taxPlanning, mikroekonomi, makroekonomi, kebijakanFiskal, kebijakanMoneter, pasarKeuangan, kepabeanan, investasi, corporateFinance, climateFinance, carbon, cryptocurrency, supplyChain, kapitalisme, marxisme, ekonomiSyariah, sejarahPemikiranEkonomi, perencanaanKeuangan, demokrasi, logika, filsafat, akuntansi];
+// Katalog topik = metadata ringan (tanpa isi berat/blocks) yang dibuat otomatis
+// oleh scripts/gen-manifest.mts. Halaman katalog, navigasi, dan dashboard cukup
+// memakai ini. Urutan tampil ditentukan di sini agar tidak bergantung urutan folder.
+const ORDER = [
+  "matematika-dasar", "aljabar", "geometri", "trigonometri", "fungsi-grafik", "logika-matematika",
+  "statistika", "kalkulus", "pengantar-fisika", "kinematika", "dinamika", "usaha-energi", "momentum",
+  "rotasi", "gravitasi", "fluida", "getaran-gelombang", "termodinamika", "listrik-statis", "arus-listrik",
+  "magnetisme", "optika", "pajak", "tax-planning", "mikroekonomi", "makroekonomi", "kebijakan-fiskal",
+  "kebijakan-moneter", "pasar-keuangan", "kepabeanan", "investasi", "corporate-finance", "climate-finance",
+  "carbon", "cryptocurrency", "supply-chain", "kapitalisme", "marxisme", "ekonomi-syariah",
+  "sejarah-pemikiran-ekonomi", "perencanaan-keuangan", "demokrasi", "logika", "filsafat", "akuntansi",
+];
+
+const byId = new Map(manifest.map((t) => [t.id, t]));
+export const topics: TopicMeta[] = [
+  ...ORDER.map((id) => byId.get(id)).filter((t): t is TopicMeta => !!t),
+  ...manifest.filter((t) => !ORDER.includes(t.id)), // topik baru yang belum masuk urutan
+];
+
+// Muat isi lengkap satu topik (dengan blocks) secara lazy. Vite memecah tiap topik
+// menjadi chunk sendiri, jadi isi pelajaran hanya diunduh saat topik itu dibuka.
+export async function loadTopic(id: string | undefined): Promise<Topic | undefined> {
+  if (!id) return undefined;
+  const loader = topicLoaders[id];
+  if (!loader) return undefined;
+  const mod = await loader();
+  return Object.values(mod).find(
+    (v): v is Topic => !!v && typeof v === "object" && Array.isArray((v as Topic).lessons),
+  );
+}
 
 // ===== Kategori materi =====
 // Mengelompokkan topik ke dalam rumpun yang berkaitan. Topik yang belum
@@ -162,12 +146,12 @@ export const categories: Category[] = [
   },
 ];
 
-export function topicsInCategory(cat: Category): Topic[] {
-  return cat.topicIds.map((id) => getTopic(id)).filter((t): t is Topic => !!t);
+export function topicsInCategory(cat: Category): TopicMeta[] {
+  return cat.topicIds.map((id) => getTopic(id)).filter((t): t is TopicMeta => !!t);
 }
 
 /** Semua kategori beserta topiknya, plus kategori "Lainnya" untuk topik yang belum dipetakan. */
-export function categorizedTopics(): { category: Category; topics: Topic[] }[] {
+export function categorizedTopics(): { category: Category; topics: TopicMeta[] }[] {
   const mapped = new Set(categories.flatMap((c) => c.topicIds));
   const groups = categories
     .map((category) => ({ category, topics: topicsInCategory(category) }))
@@ -194,25 +178,25 @@ export function getCategoryForTopic(topicId: string): Category | undefined {
   return categories.find((c) => c.topicIds.includes(topicId));
 }
 
-export function getTopic(id: string | undefined): Topic | undefined {
+export function getTopic(id: string | undefined): TopicMeta | undefined {
   return topics.find((t) => t.id === id);
 }
 
-export function lessonsByLevel(topic: Topic, levelId: string): Lesson[] {
+export function lessonsByLevel(topic: TopicMeta, levelId: string): LessonMeta[] {
   return topic.lessons.filter((l) => l.levelId === levelId).sort((a, b) => a.order - b.order);
 }
 
-export function getLesson(topic: Topic, lessonId: string): Lesson | undefined {
+export function getLesson(topic: TopicMeta, lessonId: string): LessonMeta | undefined {
   return topic.lessons.find((l) => l.id === lessonId);
 }
 
-export function orderedLessons(topic: Topic): Lesson[] {
+export function orderedLessons(topic: TopicMeta): LessonMeta[] {
   return [...topic.levels]
     .sort((a, b) => a.order - b.order)
     .flatMap((lv) => lessonsByLevel(topic, lv.id));
 }
 
-export function adjacentLessons(topic: Topic, lessonId: string) {
+export function adjacentLessons(topic: TopicMeta, lessonId: string) {
   const ordered = orderedLessons(topic);
   const idx = ordered.findIndex((l) => l.id === lessonId);
   return {

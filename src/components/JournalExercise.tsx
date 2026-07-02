@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { JournalLine } from "../types";
-import { rupiah } from "../lib/format";
+import { rupiah, groupThousands, parseGrouped } from "../lib/format";
 import { Icon } from "./Icon";
 
 interface Row {
@@ -32,8 +32,8 @@ export function JournalExercise({
     setStatus("idle");
   }
 
-  const totalDebit = rows.reduce((s, r) => s + (Number(r.debit) || 0), 0);
-  const totalCredit = rows.reduce((s, r) => s + (Number(r.credit) || 0), 0);
+  const totalDebit = rows.reduce((s, r) => s + (parseGrouped(r.debit) || 0), 0);
+  const totalCredit = rows.reduce((s, r) => s + (parseGrouped(r.credit) || 0), 0);
   const balanced = totalDebit === totalCredit && totalDebit > 0;
 
   function check() {
@@ -42,7 +42,7 @@ export function JournalExercise({
     const want = new Set(answer.map(norm));
     const got = rows
       .filter((r) => r.account)
-      .map((r) => norm({ account: r.account, debit: Number(r.debit) || 0, credit: Number(r.credit) || 0 }));
+      .map((r) => norm({ account: r.account, debit: parseGrouped(r.debit) || 0, credit: parseGrouped(r.credit) || 0 }));
     const ok =
       got.length === answer.length && got.every((g) => want.has(g)) && new Set(got).size === got.length;
     setStatus(ok ? "correct" : "wrong");
@@ -76,17 +76,19 @@ export function JournalExercise({
               ))}
             </select>
             <input
-              type="number"
+              type="text"
+              inputMode="numeric"
               placeholder="0"
               value={r.debit}
-              onChange={(e) => update(i, { debit: e.target.value, credit: "" })}
+              onChange={(e) => update(i, { debit: groupThousands(e.target.value), credit: "" })}
               className="col-span-3 rounded-lg border border-line-strong px-2 py-2 text-right text-sm tnum focus:border-brand-500 focus:outline-none"
             />
             <input
-              type="number"
+              type="text"
+              inputMode="numeric"
               placeholder="0"
               value={r.credit}
-              onChange={(e) => update(i, { credit: e.target.value, debit: "" })}
+              onChange={(e) => update(i, { credit: groupThousands(e.target.value), debit: "" })}
               className="col-span-3 rounded-lg border border-line-strong px-2 py-2 text-right text-sm tnum focus:border-brand-500 focus:outline-none"
             />
           </div>

@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -n web,api -c cyan,green \"vite\" \"npm:dev:server\"",
-    "dev:web": "vite",
+    "dev": "npm run gen:manifest && concurrently -n web,api -c cyan,green \"vite\" \"npm:dev:server\"",
+    "dev:web": "npm run gen:manifest && vite",
     "dev:server": "tsx watch server/index.ts",
-    "build": "tsc -b && vite build",
+    "gen:manifest": "tsx scripts/gen-manifest.mts",
+    "build": "npm run gen:manifest && tsc -b && vite build",
     "start": "NODE_ENV=production tsx server/index.ts",
     "lint": "oxlint",
     "preview": "vite preview"

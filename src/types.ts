@@ -105,3 +105,20 @@ export interface Topic {
   levels: Level[];
   lessons: Lesson[];
 }
+
+// Ringkasan topik tanpa isi berat (blocks). Dipakai untuk katalog, navigasi, dan
+// dashboard agar halaman awal tidak perlu memuat seluruh konten pelajaran.
+// Isi lengkap (blocks) dimuat lazy per-topik lewat loadTopic() saat pelajaran dibuka.
+// Dibuat otomatis oleh scripts/gen-manifest.mts (jangan sunting manifest manual).
+export interface TopicMeta {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  icon: string;
+  hero: string;
+  levels: Level[];
+  lessons: LessonMeta[]; // shell pelajaran (tanpa blocks)
+  videoCount: number; // total block video di seluruh pelajaran (untuk statistik)
+  quizCount: number; // total soal kuis di seluruh pelajaran
+}
