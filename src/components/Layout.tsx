@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useProgress } from "../lib/progress";
 import { topics } from "../topics";
 import { useAuth, GoogleSignInButton } from "../lib/auth";
+import { hardRefresh } from "../lib/pwa";
 import { Icon } from "./Icon";
 
 const totalLessons = topics.reduce((s, t) => s + t.lessons.length, 0);
@@ -14,7 +15,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { user, ready, logout } = useAuth();
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Muat ulang total: bersihkan cache PWA + service worker lalu reload dari server.
+  const onReload = () => {
+    setRefreshing(true);
+    void hardRefresh();
+  };
 
   // Tutup menu saat klik di luar atau saat berpindah halaman.
   useEffect(() => {
@@ -62,6 +70,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           <nav className="ml-auto flex items-center gap-2 text-sm font-semibold text-ink-faint">
             {navLink("/", pathname === "/", "layers", "Topik")}
+            <button
+              onClick={onReload}
+              disabled={refreshing}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-white text-ink-soft transition-colors hover:border-line-strong hover:text-ink disabled:opacity-60"
+              title="Muat ulang: segarkan dan ambil ulang seluruh data"
+              aria-label="Muat ulang data"
+            >
+              <Icon name="refresh" className={refreshing ? "animate-spin" : ""} />
+            </button>
             <Link
               to={user ? "/saya" : "/"}
               className="hidden items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 transition-colors hover:border-line-strong sm:flex"
