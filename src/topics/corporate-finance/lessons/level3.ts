@@ -275,7 +275,7 @@ export const level3: Lesson[] = [
       {
         type: "case",
         title: "Sejarah: Krisis Rupiah 1997-1998",
-        html: "Selama <strong>Krisis Moneter Asia 1997-1998</strong>, nilai tukar rupiah ambruk dari sekitar <strong>Rp2.400 per USD</strong> menjadi sempat hampir <strong>Rp16.000 per USD</strong>. Banyak perusahaan Indonesia yang berutang dalam dolar AS tanpa lindung nilai mendadak melihat beban utangnya melonjak berkali-kali lipat dalam rupiah, dan sebagian besar bangkrut. Peristiwa ini menjadi pelajaran pahit tentang pentingnya hedging dan natural hedge terhadap risiko nilai tukar.",
+        html: "Selama <strong>Krisis Moneter Asia 1997-1998</strong>, nilai tukar rupiah ambruk dari sekitar <strong>Rp2.400 per USD</strong> menjadi sempat hampir <strong>Rp16.000 per USD</strong>. Banyak perusahaan Indonesia yang berutang dalam dolar AS tanpa hedging (lindung nilai) mendadak melihat beban utangnya melonjak berkali-kali lipat dalam rupiah, dan sebagian besar bangkrut. Peristiwa ini menjadi pelajaran pahit tentang pentingnya hedging dan natural hedge terhadap risiko nilai tukar.",
       },
       {
         type: "takeaways",
@@ -685,7 +685,7 @@ export const level3: Lesson[] = [
     blocks: [
       {
         type: "paragraph",
-        html: "Perusahaan dengan utang <strong>berbunga mengambang (floating)</strong> menghadapi <strong>risiko suku bunga</strong>: saat bunga acuan naik, beban bunganya ikut melonjak dan menggerus laba. Sama seperti risiko nilai tukar, risiko ini bisa diredam dengan lindung nilai, salah satunya lewat <strong>interest rate swap</strong>.",
+        html: "Perusahaan dengan utang <strong>berbunga mengambang (floating)</strong> menghadapi <strong>risiko suku bunga</strong>: saat bunga acuan naik, beban bunganya ikut melonjak dan menggerus laba. Sama seperti risiko nilai tukar, risiko ini bisa diredam dengan hedging, salah satunya lewat <strong>interest rate swap</strong>.",
       },
       {
         type: "video",
@@ -762,7 +762,7 @@ export const level3: Lesson[] = [
           { text: "Peminjam berbunga mengambang yang belum hedging", bucket: "Untung saat bunga turun" },
           { text: "Peminjam yang sudah mengunci bunga lewat swap", bucket: "Untung saat bunga naik" },
           { text: "Deposan dengan bunga mengambang", bucket: "Untung saat bunga naik" },
-          { text: "Perusahaan berutang besar tanpa lindung nilai", bucket: "Untung saat bunga turun" },
+          { text: "Perusahaan berutang besar tanpa hedging", bucket: "Untung saat bunga turun" },
         ],
       },
       {

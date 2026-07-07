@@ -187,7 +187,7 @@ export const level12: Lesson[] = [
       {
         type: "video",
         comp: "DigitalTwinVideo",
-        title: "Digital Twin: Kembaran Digital Lini Produksi",
+        title: "Digital Twin Lini Produksi",
         caption: "Salinan digital dari mesin nyata membuat tim bisa menguji skenario tanpa menghentikan produksi.",
       },
       {

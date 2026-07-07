@@ -1107,7 +1107,7 @@ export const level1: Lesson[] = [
           { left: "Ramalan berlebihan dari pesanan tetangga", right: "Berbagi data permintaan konsumen asli ke seluruh rantai" },
           { left: "Pemesanan dalam batch besar", right: "Memperkecil ukuran pesanan dan pesan lebih sering" },
           { left: "Promosi dan diskon mendadak", right: "Menstabilkan harga sehari-hari" },
-          { left: "Lead time panjang", right: "Memperpendek waktu tunggu pengiriman" },
+          { left: "Lead time panjang", right: "Memperpendek lead time pengiriman" },
         ],
       },
       {

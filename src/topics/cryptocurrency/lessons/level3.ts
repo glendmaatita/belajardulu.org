@@ -8,7 +8,7 @@ export const level3: Lesson[] = [
     order: 1,
     title: "Fungsi Hash & SHA-256",
     summary:
-      "Fungsi hash mengubah data apa pun menjadi sidik jari digital tetap. Kenali sifatnya dan SHA-256 lewat simulator efek longsor.",
+      "Fungsi hash mengubah data apa pun menjadi sidik jari digital tetap. Kenali sifatnya dan SHA-256 lewat simulator efek avalanche.",
     durationMin: 14,
     tags: ["kriptografi", "hash", "sha256"],
     blocks: [
@@ -24,13 +24,13 @@ export const level3: Lesson[] = [
         type: "callout",
         tone: "key",
         title: "Empat sifat fungsi hash kriptografis",
-        html: "<strong>Deterministik</strong> (masukan sama selalu memberi hash sama), <strong>satu arah</strong> (hash tidak bisa dibalik jadi data asli), <strong>tahan tabrakan</strong> (sangat sulit menemukan dua masukan dengan hash sama), dan <strong>efek longsor</strong> (ubah satu bit, separuh keluaran berubah).",
+        html: "<strong>Deterministik</strong> (masukan sama selalu memberi hash sama), <strong>satu arah</strong> (hash tidak bisa dibalik jadi data asli), <strong>tahan tabrakan</strong> (sangat sulit menemukan dua masukan dengan hash sama), dan <strong>efek avalanche</strong> (avalanche effect: ubah satu bit, separuh keluaran berubah).",
       },
       {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
-        html: "Ketik sebuah teks, lalu ubah satu huruf saja. Perhatikan bagaimana <strong>seluruh hash berubah total</strong>. Itulah efek longsor yang membuat hash sulit dipalsukan.",
+        html: "Ketik sebuah teks, lalu ubah satu huruf saja. Perhatikan bagaimana <strong>seluruh hash berubah total</strong>. Itulah efek avalanche yang membuat hash sulit dipalsukan.",
       },
       { type: "widget", widget: "SimulatorHashKripto" },
       {
@@ -62,7 +62,7 @@ export const level3: Lesson[] = [
       },
       {
         type: "case",
-        title: "Studi Kasus: Efek longsor menjaga kejujuran data",
+        title: "Studi Kasus: Efek avalanche menjaga kejujuran data",
         html: "Sebuah dokumen kontrak di-hash dan hasilnya 64 karakter disimpan terpisah. Bila ada yang diam-diam mengubah satu angka nominal di dokumen, hash baru yang dihitung ulang akan <strong>benar-benar berbeda</strong> dari hash tersimpan. Pemeriksa langsung tahu dokumen telah diutak-atik tanpa harus membaca seluruh isinya. Inilah cara blockchain mendeteksi pemalsuan: cukup bandingkan hash.",
       },
       {
@@ -97,8 +97,8 @@ export const level3: Lesson[] = [
         items: [
           "Fungsi hash mengubah data apa pun menjadi sidik jari digital berpanjang tetap.",
           "SHA-256 selalu menghasilkan 256 bit atau 64 karakter heksadesimal.",
-          "Sifat utamanya: deterministik, satu arah, tahan tabrakan, dan efek longsor.",
-          "Efek longsor membuat perubahan sekecil apa pun langsung terdeteksi.",
+          "Sifat utamanya: deterministik, satu arah, tahan tabrakan, dan efek avalanche.",
+          "Efek avalanche membuat perubahan sekecil apa pun langsung terdeteksi.",
           "SHA-256 dirancang NSA dan dipublikasikan NIST pada 2001, terbuka dan teruji.",
         ],
       },
@@ -131,7 +131,7 @@ export const level3: Lesson[] = [
               "Hash menjadi lebih panjang",
             ],
             answer: 2,
-            explain: "Karena efek longsor, perubahan sekecil apa pun mengacak seluruh keluaran.",
+            explain: "Karena efek avalanche, perubahan sekecil apa pun mengacak seluruh keluaran.",
           },
           {
             q: "Siapa yang merancang SHA-256 dan kapan dipublikasikan?",

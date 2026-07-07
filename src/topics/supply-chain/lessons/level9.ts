@@ -39,7 +39,7 @@ export const level9: Lesson[] = [
         type: "video",
         comp: "DigitalTwinVideo",
         title: "Digital Twin Rantai Pasok",
-        caption: "Kembaran digital untuk menguji skenario dan membaca metrik sebelum diterapkan di dunia nyata.",
+        caption: "Digital twin untuk menguji skenario dan membaca metrik sebelum diterapkan di dunia nyata.",
       },
       {
         type: "callout",
@@ -215,8 +215,8 @@ export const level9: Lesson[] = [
       {
         type: "video",
         comp: "DigitalTwinVideo",
-        title: "Dashboard Hidup di Kembaran Digital",
-        caption: "Kembaran digital memperbarui KPI di dashboard secara langsung sehingga manajer melihat status terkini dalam satu layar.",
+        title: "Dashboard Hidup di Digital Twin",
+        caption: "Digital twin memperbarui KPI di dashboard secara langsung sehingga manajer melihat status terkini dalam satu layar.",
       },
       {
         type: "chart",
@@ -384,8 +384,8 @@ export const level9: Lesson[] = [
       {
         type: "video",
         comp: "DigitalTwinVideo",
-        title: "Menguji Ramalan di Kembaran Digital",
-        caption: "Kembaran digital membandingkan ramalan dengan permintaan nyata sehingga bias dan akurasi terlihat sebelum keputusan stok diambil.",
+        title: "Menguji Ramalan di Digital Twin",
+        caption: "Digital twin membandingkan ramalan dengan permintaan nyata sehingga bias dan akurasi terlihat sebelum keputusan stok diambil.",
       },
       {
         type: "chart",
@@ -550,8 +550,8 @@ export const level9: Lesson[] = [
       {
         type: "video",
         comp: "DigitalTwinVideo",
-        title: "Menguji Trade-off SCOR di Kembaran Digital",
-        caption: "Kembaran digital membantu menimbang efek perubahan satu atribut terhadap atribut lainnya sebelum diterapkan.",
+        title: "Menguji Trade-off SCOR di Digital Twin",
+        caption: "Digital twin membantu menimbang efek perubahan satu atribut terhadap atribut lainnya sebelum diterapkan.",
       },
       {
         type: "chart",
@@ -711,8 +711,8 @@ export const level9: Lesson[] = [
       {
         type: "video",
         comp: "DigitalTwinVideo",
-        title: "Menata Jaringan di Kembaran Digital",
-        caption: "Kembaran digital menguji efek menambah atau mengonsolidasikan gudang terhadap biaya total sebelum jaringan nyata diubah.",
+        title: "Menata Jaringan di Digital Twin",
+        caption: "Digital twin menguji efek menambah atau mengonsolidasikan gudang terhadap biaya total sebelum jaringan nyata diubah.",
       },
       {
         type: "chart",
@@ -837,7 +837,7 @@ export const level9: Lesson[] = [
     blocks: [
       {
         type: "paragraph",
-        html: "Permintaan, waktu tunggu, dan gangguan tidak bisa diketahui pasti. Daripada menebak dengan satu angka rata-rata, <strong>simulasi</strong> menjalankan ribuan kemungkinan di komputer untuk memetakan rentang hasil yang mungkin terjadi, lengkap dengan peluangnya.",
+        html: "Permintaan, lead time, dan gangguan tidak bisa diketahui pasti. Daripada menebak dengan satu angka rata-rata, <strong>simulasi</strong> menjalankan ribuan kemungkinan di komputer untuk memetakan rentang hasil yang mungkin terjadi, lengkap dengan peluangnya.",
       },
       {
         type: "image",
@@ -850,7 +850,7 @@ export const level9: Lesson[] = [
         type: "callout",
         tone: "key",
         title: "Simulasi Monte Carlo",
-        html: "<strong>Monte Carlo</strong> mengambil angka acak dari distribusi permintaan dan waktu tunggu, lalu mengulang perhitungan ribuan kali. Hasilnya bukan satu jawaban, melainkan sebaran: misalnya peluang kehabisan stok 5%, atau tingkat layanan rata-rata 95%.",
+        html: "<strong>Monte Carlo</strong> mengambil angka acak dari distribusi permintaan dan lead time, lalu mengulang perhitungan ribuan kali. Hasilnya bukan satu jawaban, melainkan sebaran: misalnya peluang kehabisan stok 5%, atau tingkat layanan rata-rata 95%.",
       },
       {
         type: "callout",
@@ -867,8 +867,8 @@ export const level9: Lesson[] = [
       {
         type: "video",
         comp: "DigitalTwinVideo",
-        title: "Menjalankan Skenario di Kembaran Digital",
-        caption: "Kembaran digital adalah wadah ideal menjalankan simulasi Monte Carlo dan menguji skenario what-if.",
+        title: "Menjalankan Skenario di Digital Twin",
+        caption: "Digital twin adalah wadah ideal menjalankan simulasi Monte Carlo dan menguji skenario what-if.",
       },
       {
         type: "chart",
@@ -888,7 +888,7 @@ export const level9: Lesson[] = [
       {
         type: "case",
         title: "Studi Kasus: Menentukan stok pengaman lewat simulasi",
-        html: "Sebuah apotek jaringan di Indonesia menjual obat dengan permintaan harian rata-rata 100 boks, tetapi kadang melonjak. Dengan menjalankan 1.000 simulasi Monte Carlo atas permintaan dan waktu tunggu pemasok, mereka menemukan bahwa stok pengaman 40 boks menghasilkan tingkat layanan 95% (kehabisan stok hanya 50 dari 1.000 skenario). Menaikkan stok pengaman ke 70 boks hanya menambah layanan menjadi 99%, dengan biaya simpan jauh lebih besar. Simulasi membantu mereka memilih titik 95% yang paling ekonomis.",
+        html: "Sebuah apotek jaringan di Indonesia menjual obat dengan permintaan harian rata-rata 100 boks, tetapi kadang melonjak. Dengan menjalankan 1.000 simulasi Monte Carlo atas permintaan dan lead time pemasok, mereka menemukan bahwa stok pengaman 40 boks menghasilkan tingkat layanan 95% (kehabisan stok hanya 50 dari 1.000 skenario). Menaikkan stok pengaman ke 70 boks hanya menambah layanan menjadi 99%, dengan biaya simpan jauh lebih besar. Simulasi membantu mereka memilih titik 95% yang paling ekonomis.",
       },
       {
         type: "case",
@@ -991,7 +991,7 @@ export const level9: Lesson[] = [
     order: 7,
     title: "Digital Twin & Control Tower",
     summary:
-      "Puncak analitik rantai pasok: kembaran digital yang meniru operasi nyata dan control tower yang memberi visibilitas real-time untuk bertindak sebelum masalah membesar.",
+      "Puncak analitik rantai pasok: digital twin yang meniru operasi nyata dan control tower yang memberi visibilitas real-time untuk bertindak sebelum masalah membesar.",
     durationMin: 16,
     tags: ["analytics", "digital-twin", "control-tower", "visibilitas"],
     blocks: [
@@ -1009,8 +1009,8 @@ export const level9: Lesson[] = [
       {
         type: "callout",
         tone: "key",
-        title: "Digital twin: kembaran digital",
-        html: "<strong>Digital twin</strong> adalah model virtual yang meniru rantai pasok nyata, terus diperbarui oleh data sungguhan. Karena cerminannya hidup, kita bisa menguji perubahan di kembaran lebih dulu, melihat akibatnya, lalu menerapkannya di dunia nyata hanya jika hasilnya baik.",
+        title: "Digital twin: digital twin",
+        html: "<strong>Digital twin</strong> (kembaran digital) adalah model virtual yang meniru rantai pasok nyata, terus diperbarui oleh data sungguhan. Karena cerminannya hidup, kita bisa menguji perubahan di kembaran lebih dulu, melihat akibatnya, lalu menerapkannya di dunia nyata hanya jika hasilnya baik.",
       },
       {
         type: "callout",
@@ -1028,7 +1028,7 @@ export const level9: Lesson[] = [
         type: "video",
         comp: "DigitalTwinVideo",
         title: "Digital Twin & Control Tower Bekerja",
-        caption: "Kembaran digital menguji skenario sementara control tower memantau dan memberi peringatan dini secara real-time.",
+        caption: "Digital twin menguji skenario sementara control tower memantau dan memberi peringatan dini secara real-time.",
       },
       {
         type: "chart",

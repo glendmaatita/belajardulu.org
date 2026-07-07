@@ -141,7 +141,7 @@ export const level6: Lesson[] = [
               "Karena pelanggan memintanya",
             ],
             answer: 1,
-            explain: "Mengurangi belok kiri menghemat waktu tunggu, bahan bakar, dan emisi secara besar.",
+            explain: "Mengurangi belok kiri menghemat lead time, bahan bakar, dan emisi secara besar.",
           },
           {
             q: "Rute turun dari 220 km menjadi 185 km berarti hemat sekitar?",
@@ -271,7 +271,7 @@ export const level6: Lesson[] = [
           "Konsolidasi menggabungkan kiriman kecil menjadi muatan besar agar biaya per kilogram turun.",
           "Model hub-and-spoke menambah jarak tetapi menyederhanakan jaringan dan menaikkan tingkat isian truk.",
           "Biaya tetap dibagi muatan: truk penuh jauh lebih murah per kilogram daripada truk setengah kosong.",
-          "Trade-off konsolidasi adalah waktu tunggu pelanggan pertama hingga muatan terkumpul.",
+          "Trade-off konsolidasi adalah lead time pelanggan pertama hingga muatan terkumpul.",
         ],
       },
       {
@@ -319,7 +319,7 @@ export const level6: Lesson[] = [
               "Emisi per kilogram meningkat",
             ],
             answer: 1,
-            explain: "Menunggu muatan terkumpul menambah waktu tunggu, itulah trade-off konsolidasi.",
+            explain: "Menunggu muatan terkumpul menambah lead time, itulah trade-off konsolidasi.",
           },
           {
             q: "Siapa yang mempopulerkan model hub-and-spoke dalam pengiriman semalam sekitar 1973?",
@@ -410,7 +410,7 @@ export const level6: Lesson[] = [
         tolerance: 0,
         suffix: "%",
         solution:
-          "Utilisasi = 9 / 18 x 100% = <strong>50%</strong>. Separuh hari truk tidak menghasilkan, ini sinyal untuk memangkas waktu tunggu dan bongkar muat.",
+          "Utilisasi = 9 / 18 x 100% = <strong>50%</strong>. Separuh hari truk tidak menghasilkan, ini sinyal untuk memangkas lead time dan bongkar muat.",
         hint: "Bagi jam bermuatan dengan total jam operasi, lalu kali 100%.",
       },
       {

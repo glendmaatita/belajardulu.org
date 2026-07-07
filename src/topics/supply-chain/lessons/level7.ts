@@ -842,7 +842,7 @@ export const level7: Lesson[] = [
       {
         type: "callout",
         tone: "key",
-        title: "SPT memangkas waktu tunggu rata-rata",
+        title: "SPT memangkas lead time rata-rata",
         html: "Aturan <strong>Shortest Processing Time (SPT)</strong> mengerjakan job tercepat lebih dulu. Ini terbukti <strong>meminimalkan rata-rata waktu alir</strong> (flow time) dan rata-rata jumlah pekerjaan yang menunggu, karena job pendek tidak tertahan di belakang job panjang.",
       },
       {
@@ -873,7 +873,7 @@ export const level7: Lesson[] = [
       {
         type: "case",
         title: "Studi Kasus: Bengkel bubut mengatur antrean job",
-        html: "Sebuah bengkel bubut di Cikarang punya empat pesanan dengan waktu proses 2, 4, 1, dan 3 hari. Dengan urutan kedatangan <strong>FCFS</strong> (2, 4, 1, 3), waktu selesai tiap job adalah 2, 6, 7, 10 hari, rata-rata (2+6+7+10)/4 = <strong>6,25 hari</strong>. Dengan <strong>SPT</strong> (urut 1, 2, 3, 4), waktu selesai menjadi 1, 3, 6, 10 hari, rata-rata (1+3+6+10)/4 = <strong>5 hari</strong>. Hanya dengan mengubah urutan, rata-rata waktu tunggu pelanggan turun lebih dari satu hari tanpa biaya tambahan.",
+        html: "Sebuah bengkel bubut di Cikarang punya empat pesanan dengan waktu proses 2, 4, 1, dan 3 hari. Dengan urutan kedatangan <strong>FCFS</strong> (2, 4, 1, 3), waktu selesai tiap job adalah 2, 6, 7, 10 hari, rata-rata (2+6+7+10)/4 = <strong>6,25 hari</strong>. Dengan <strong>SPT</strong> (urut 1, 2, 3, 4), waktu selesai menjadi 1, 3, 6, 10 hari, rata-rata (1+3+6+10)/4 = <strong>5 hari</strong>. Hanya dengan mengubah urutan, rata-rata lead time pelanggan turun lebih dari satu hari tanpa biaya tambahan.",
       },
       {
         type: "case",
@@ -908,7 +908,7 @@ export const level7: Lesson[] = [
           "Aturan sequencing umum: FCFS, SPT, dan EDD, masing-masing untuk tujuan berbeda.",
           "SPT meminimalkan rata-rata waktu alir karena job pendek tidak tertahan job panjang.",
           "Bagan Gantt memvisualkan jadwal di garis waktu; dispatching memilih job berikutnya secara real time.",
-          "Mengubah urutan kerja bisa memangkas waktu tunggu tanpa biaya tambahan.",
+          "Mengubah urutan kerja bisa memangkas lead time tanpa biaya tambahan.",
         ],
       },
       {
@@ -945,7 +945,7 @@ export const level7: Lesson[] = [
               "Karena mesin lebih cepat",
             ],
             answer: 1,
-            explain: "Menyelesaikan job pendek dulu menurunkan total waktu tunggu seluruh antrean.",
+            explain: "Menyelesaikan job pendek dulu menurunkan total lead time seluruh antrean.",
           },
           {
             q: "Job dengan waktu 2, 4, 1, 3 hari diurut SPT memberi rata-rata waktu alir?",

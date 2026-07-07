@@ -596,7 +596,7 @@ export const level3: Lesson[] = [
       {
         type: "case",
         title: "Sejarah: Nifty Fifty dan bahaya PER tinggi 1972-1974",
-        html: "Pada awal 1970-an di Amerika Serikat, sekelompok saham unggulan yang dijuluki <strong>Nifty Fifty</strong> dianggap layak dibeli pada harga berapa pun. Sebagian diperdagangkan pada <strong>PER 40 hingga lebih dari 80</strong>, jauh di atas rata-rata pasar. Ketika pasar beruang <strong>1973-1974</strong> datang, banyak di antaranya jatuh <strong>50% hingga lebih dari 80%</strong>. Pelajarannya: bahkan perusahaan bagus bisa menjadi investasi buruk bila dibeli pada valuasi yang terlalu mahal.",
+        html: "Pada awal 1970-an di Amerika Serikat, sekelompok saham unggulan yang dijuluki <strong>Nifty Fifty</strong> dianggap layak dibeli pada harga berapa pun. Sebagian diperdagangkan pada <strong>PER 40 hingga lebih dari 80</strong>, jauh di atas rata-rata pasar. Ketika bear market (pasar beruang) <strong>1973-1974</strong> datang, banyak di antaranya jatuh <strong>50% hingga lebih dari 80%</strong>. Pelajarannya: bahkan perusahaan bagus bisa menjadi investasi buruk bila dibeli pada valuasi yang terlalu mahal.",
       },
       {
         type: "takeaways",

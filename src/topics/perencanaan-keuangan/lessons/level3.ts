@@ -18,7 +18,7 @@ export const level3: Lesson[] = [
       {
         type: "video",
         comp: "BolaSaljuUtangVideo",
-        title: "Video: Metode Bola Salju Utang",
+        title: "Video: Metode Snowball Utang",
         caption: "Cara melunasi banyak utang secara bertahap agar cepat bebas.",
       },
       {
@@ -155,7 +155,7 @@ export const level3: Lesson[] = [
       {
         type: "video",
         comp: "BolaSaljuUtangVideo",
-        title: "Video: Bola Salju Utang Kartu Kredit",
+        title: "Video: Snowball Utang Kartu Kredit",
         caption: "Bagaimana bunga berbunga membuat tagihan menggelinding makin besar.",
       },
       {
@@ -448,29 +448,29 @@ export const level3: Lesson[] = [
     levelId: "utang",
     order: 4,
     title: "Strategi Melunasi Utang",
-    summary: "Metode bola salju vs longsor, konsolidasi utang, dan bahaya gali lubang tutup lubang.",
+    summary: "Metode snowball vs avalanche, konsolidasi utang, dan bahaya gali lubang tutup lubang.",
     durationMin: 14,
-    tags: ["utang", "bola salju", "longsor", "konsolidasi", "pemula"],
+    tags: ["utang", "snowball", "avalanche", "konsolidasi", "pemula"],
     blocks: [
       {
         type: "paragraph",
-        html: "Kalau kamu punya beberapa utang sekaligus, jangan panik. Ada strategi terbukti untuk melunasinya satu per satu. Dua yang paling terkenal adalah <strong>metode bola salju</strong> dan <strong>metode longsor</strong>. Keduanya menyuruhmu membayar minimum semua utang, lalu mengarahkan uang lebih ke satu utang target.",
+        html: "Kalau kamu punya beberapa utang sekaligus, jangan panik. Ada strategi terbukti untuk melunasinya satu per satu. Dua yang paling terkenal adalah <strong>metode snowball</strong> (bola salju) dan <strong>metode avalanche</strong> (longsoran salju). Keduanya menyuruhmu membayar minimum semua utang, lalu mengarahkan uang lebih ke satu utang target.",
       },
       {
         type: "paragraph",
-        html: "Bedanya hanya pada <strong>urutan target</strong>. Bola salju melunasi <strong>saldo terkecil dulu</strong> agar cepat merasakan kemenangan dan termotivasi. Longsor melunasi <strong>bunga tertinggi dulu</strong> agar total bunga yang dibayar paling kecil.",
+        html: "Bedanya hanya pada <strong>urutan target</strong>. Snowball melunasi <strong>saldo terkecil dulu</strong> agar cepat merasakan kemenangan dan termotivasi. Avalanche melunasi <strong>bunga tertinggi dulu</strong> agar total bunga yang dibayar paling kecil.",
       },
       {
         type: "video",
         comp: "BolaSaljuUtangVideo",
-        title: "Video: Metode Bola Salju Utang",
+        title: "Video: Metode Snowball Utang",
         caption: "Melunasi utang satu per satu hingga momentum makin besar.",
       },
       {
         type: "callout",
         tone: "key",
-        title: "Bola salju vs longsor",
-        html: "<strong>Bola salju:</strong> urutkan dari saldo terkecil ke terbesar, lunasi yang kecil dulu. Menang secara psikologis. <strong>Longsor:</strong> urutkan dari bunga tertinggi ke terendah, lunasi bunga besar dulu. Menang secara matematis (paling hemat bunga). Pilih yang membuatmu konsisten.",
+        title: "Snowball vs avalanche",
+        html: "<strong>Snowball:</strong> urutkan dari saldo terkecil ke terbesar, lunasi yang kecil dulu. Menang secara psikologis. <strong>Avalanche:</strong> urutkan dari bunga tertinggi ke terendah, lunasi bunga besar dulu. Menang secara matematis (paling hemat bunga). Pilih yang membuatmu konsisten.",
       },
       {
         type: "callout",
@@ -494,19 +494,19 @@ export const level3: Lesson[] = [
       {
         type: "chart",
         variant: "bar",
-        title: "Total Bunga Dibayar: Bola Salju vs Longsor (ilustrasi 3 utang)",
+        title: "Total Bunga Dibayar: Snowball vs Avalanche (ilustrasi 3 utang)",
         unit: "juta rupiah",
         source: "ilustrasi edukatif perbandingan strategi",
-        note: "Longsor biasanya paling hemat bunga; bola salju sedikit lebih mahal tetapi lebih memotivasi.",
+        note: "Avalanche biasanya paling hemat bunga; snowball sedikit lebih mahal tetapi lebih memotivasi.",
         data: [
-          { label: "Longsor", value: 2.4, color: "#34d399" },
-          { label: "Bola salju", value: 2.9, color: "#fbbf24" },
+          { label: "Avalanche", value: 2.4, color: "#34d399" },
+          { label: "Snowball", value: 2.9, color: "#fbbf24" },
         ],
       },
       {
         type: "case",
         title: "Studi Kasus: Memilih target pertama",
-        html: "Budi punya tiga utang: paylater <strong>Rp1 juta</strong> (bunga 2%/bln), kartu kredit <strong>Rp3 juta</strong> (bunga 1,75%/bln), dan pinjaman teman <strong>Rp2 juta</strong> (tanpa bunga). Dengan <strong>bola salju</strong>, ia menyerang paylater Rp1 juta dulu karena terkecil. Dengan <strong>longsor</strong>, ia menyerang paylater dulu juga karena bunganya tertinggi (2%). Kebetulan keduanya sepakat: paylater lunas duluan.",
+        html: "Budi punya tiga utang: paylater <strong>Rp1 juta</strong> (bunga 2%/bln), kartu kredit <strong>Rp3 juta</strong> (bunga 1,75%/bln), dan pinjaman teman <strong>Rp2 juta</strong> (tanpa bunga). Dengan <strong>snowball</strong>, ia menyerang paylater Rp1 juta dulu karena terkecil. Dengan <strong>avalanche</strong>, ia menyerang paylater dulu juga karena bunganya tertinggi (2%). Kebetulan keduanya sepakat: paylater lunas duluan.",
       },
       {
         type: "calcExercise",
@@ -522,7 +522,7 @@ export const level3: Lesson[] = [
         prompt: "Langkah ini termasuk strategi sehat atau jebakan?",
         buckets: ["Strategi sehat", "Jebakan"],
         items: [
-          { text: "Melunasi utang berbunga tertinggi dulu (longsor)", bucket: "Strategi sehat" },
+          { text: "Melunasi utang berbunga tertinggi dulu (avalanche)", bucket: "Strategi sehat" },
           { text: "Menggabungkan utang ke pinjaman berbunga lebih rendah", bucket: "Strategi sehat" },
           { text: "Menutup pinjol lama dengan pinjol baru", bucket: "Jebakan" },
           { text: "Menambah paylater untuk membayar kartu kredit", bucket: "Jebakan" },
@@ -537,8 +537,8 @@ export const level3: Lesson[] = [
         type: "takeaways",
         items: [
           "Bayar minimum semua utang, arahkan dana ekstra ke satu target.",
-          "Bola salju (saldo terkecil dulu) menang secara psikologis.",
-          "Longsor (bunga tertinggi dulu) menang secara matematis.",
+          "Snowball (saldo terkecil dulu) menang secara psikologis.",
+          "Avalanche (bunga tertinggi dulu) menang secara matematis.",
           "Konsolidasi menggabungkan utang ke bunga lebih rendah.",
           "Gali lubang tutup lubang hanya memperdalam masalah.",
         ],
@@ -547,13 +547,13 @@ export const level3: Lesson[] = [
         type: "quiz",
         questions: [
           {
-            q: "Metode bola salju melunasi utang berdasarkan?",
+            q: "Metode snowball melunasi utang berdasarkan?",
             options: ["Bunga tertinggi dulu", "Saldo terkecil dulu", "Saldo terbesar dulu", "Acak"],
             answer: 1,
-            explain: "Bola salju menyerang saldo terkecil dulu untuk motivasi.",
+            explain: "Snowball menyerang saldo terkecil dulu untuk motivasi.",
           },
           {
-            q: "Metode longsor paling unggul dalam hal?",
+            q: "Metode avalanche paling unggul dalam hal?",
             options: [
               "Paling hemat total bunga",
               "Paling cepat memberi rasa menang",
@@ -561,7 +561,7 @@ export const level3: Lesson[] = [
               "Menambah utang",
             ],
             answer: 0,
-            explain: "Longsor melunasi bunga tertinggi dulu sehingga total bunga terkecil.",
+            explain: "Avalanche melunasi bunga tertinggi dulu sehingga total bunga terkecil.",
           },
           {
             q: "Konsolidasi utang yang sehat mensyaratkan?",
@@ -1188,9 +1188,9 @@ export const level3: Lesson[] = [
     levelId: "utang",
     order: 9,
     title: "Keluar dari Jerat Utang",
-    summary: "Langkah nyata keluar dari utang berat: berhenti menambah utang, mendata semua utang, restrukturisasi ke pemberi pinjaman resmi, dan menerapkan metode bola salju atau longsor tanpa gali lubang tutup lubang.",
+    summary: "Langkah nyata keluar dari utang berat: berhenti menambah utang, mendata semua utang, restrukturisasi ke pemberi pinjaman resmi, dan menerapkan metode snowball atau avalanche tanpa gali lubang tutup lubang.",
     durationMin: 15,
-    tags: ["utang", "restrukturisasi", "galbay", "pinjol", "bola salju", "pemula"],
+    tags: ["utang", "restrukturisasi", "galbay", "pinjol", "snowball", "pemula"],
     blocks: [
       {
         type: "paragraph",
@@ -1203,14 +1203,14 @@ export const level3: Lesson[] = [
       {
         type: "video",
         comp: "BolaSaljuUtangVideo",
-        title: "Video: Metode Bola Salju Utang",
+        title: "Video: Metode Snowball Utang",
         caption: "Melunasi utang satu per satu hingga momentum makin besar dan kamu bebas.",
       },
       {
         type: "callout",
         tone: "key",
         title: "Lima langkah keluar dari jerat utang",
-        html: "<strong>1)</strong> Berhenti menambah utang baru. <strong>2)</strong> Data semua utang (saldo, bunga, jatuh tempo). <strong>3)</strong> Negosiasi atau <strong>restrukturisasi</strong> ke pemberi pinjaman resmi. <strong>4)</strong> Terapkan metode <strong>bola salju</strong> (saldo terkecil dulu) atau <strong>longsor</strong> (bunga tertinggi dulu). <strong>5)</strong> Pangkas pengeluaran dan tambah setoran ke pokok.",
+        html: "<strong>1)</strong> Berhenti menambah utang baru. <strong>2)</strong> Data semua utang (saldo, bunga, jatuh tempo). <strong>3)</strong> Negosiasi atau <strong>restrukturisasi</strong> ke pemberi pinjaman resmi. <strong>4)</strong> Terapkan metode <strong>snowball</strong> (saldo terkecil dulu) atau <strong>avalanche</strong> (bunga tertinggi dulu). <strong>5)</strong> Pangkas pengeluaran dan tambah setoran ke pokok.",
       },
       {
         type: "callout",
@@ -1248,7 +1248,7 @@ export const level3: Lesson[] = [
       {
         type: "case",
         title: "Studi Kasus: Menata ulang utang Sinta",
-        html: "Sinta punya total utang <strong>Rp10 juta</strong> tersebar di beberapa paylater dan pinjol berizin. Ia berhenti berbelanja cicilan, mendata semua utangnya, lalu meminta <strong>restrukturisasi</strong> untuk memperpanjang tenor agar cicilan bulanan turun. Setiap bulan ia menyisihkan <strong>Rp2 juta</strong> untuk menyerang utang bunga tertinggi lebih dulu (longsor). Dalam waktu sekitar 5 bulan utangnya tinggal separuh, dan momentumnya terus membesar.",
+        html: "Sinta punya total utang <strong>Rp10 juta</strong> tersebar di beberapa paylater dan pinjol berizin. Ia berhenti berbelanja cicilan, mendata semua utangnya, lalu meminta <strong>restrukturisasi</strong> untuk memperpanjang tenor agar cicilan bulanan turun. Setiap bulan ia menyisihkan <strong>Rp2 juta</strong> untuk menyerang utang bunga tertinggi lebih dulu (avalanche). Dalam waktu sekitar 5 bulan utangnya tinggal separuh, dan momentumnya terus membesar.",
       },
       {
         type: "calcExercise",
@@ -1281,7 +1281,7 @@ export const level3: Lesson[] = [
           "Langkah pertama dan terpenting: berhenti menambah utang baru.",
           "Data semua utang lengkap dengan saldo, bunga, dan jatuh tempo.",
           "Restrukturisasi lewat pemberi pinjaman resmi bila cicilan tak terjangkau.",
-          "Serang utang dengan metode bola salju atau longsor secara konsisten.",
+          "Serang utang dengan metode snowball atau avalanche secara konsisten.",
           "Gali lubang tutup lubang hanya memperdalam jerat, bukan solusi.",
         ],
       },

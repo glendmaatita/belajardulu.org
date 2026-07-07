@@ -158,7 +158,7 @@ export const level3: Lesson[] = [
     order: 2,
     title: "Safety Stock & Titik Pemesanan Ulang",
     summary:
-      "Permintaan dan waktu tunggu tidak pernah pasti. Safety stock adalah bantalan agar tidak kehabisan stok, dan reorder point memberi tahu kapan harus memesan lagi.",
+      "Permintaan dan lead time tidak pernah pasti. Safety stock adalah bantalan agar tidak kehabisan stok, dan reorder point memberi tahu kapan harus memesan lagi.",
     durationMin: 15,
     tags: ["inventory", "safety-stock", "reorder-point", "tingkat-layanan"],
     blocks: [
@@ -168,7 +168,7 @@ export const level3: Lesson[] = [
       },
       {
         type: "paragraph",
-        html: "Kenapa butuh cadangan? Karena dua hal tidak pernah pasti: permintaan harian bisa naik turun, dan waktu tunggu (lead time) pemasok bisa molor. Safety stock melindungi kita dari kejutan keduanya.",
+        html: "Kenapa butuh cadangan? Karena dua hal tidak pernah pasti: permintaan harian bisa naik turun, dan lead time (lead time) pemasok bisa molor. Safety stock melindungi kita dari kejutan keduanya.",
       },
       {
         type: "image",
@@ -282,7 +282,7 @@ export const level3: Lesson[] = [
               "Menggantikan reorder point",
             ],
             answer: 1,
-            explain: "Safety stock melindungi dari kejutan permintaan dan waktu tunggu yang tidak pasti.",
+            explain: "Safety stock melindungi dari kejutan permintaan dan lead time yang tidak pasti.",
           },
           {
             q: "Reorder point dihitung sebagai?",

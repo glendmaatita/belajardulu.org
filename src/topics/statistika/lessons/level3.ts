@@ -286,7 +286,7 @@ export const level3: Lesson[] = [
     summary:
       "Jangkauan dan kuartil hanya melihat beberapa titik. Simpangan baku memakai setiap data untuk mengukur seberapa jauh, rata-rata, nilai menyimpang dari pusatnya.",
     durationMin: 16,
-    tags: ["statistika", "penyebaran", "simpangan-baku", "ragam"],
+    tags: ["statistika", "penyebaran", "simpangan-baku", "varians"],
     blocks: [
       {
         type: "paragraph",
@@ -312,35 +312,35 @@ export const level3: Lesson[] = [
         type: "callout",
         tone: "info",
         title: "Mengapa dikuadratkan lalu diakar?",
-        html: "Selisih dari rata-rata bisa positif atau negatif. Jika langsung dijumlahkan, totalnya selalu nol. Dengan <strong>mengkuadratkan</strong>, semua menjadi positif dan selisih besar diberi bobot lebih. Setelah dirata-rata kita peroleh ragam (variansi). Karena satuannya jadi kuadrat, kita <strong>akarkan</strong> kembali agar satuannya sama dengan data asli. Itulah simpangan baku.",
+        html: "Selisih dari rata-rata bisa positif atau negatif. Jika langsung dijumlahkan, totalnya selalu nol. Dengan <strong>mengkuadratkan</strong>, semua menjadi positif dan selisih besar diberi bobot lebih. Setelah dirata-rata kita peroleh varians. Karena satuannya jadi kuadrat, kita <strong>akarkan</strong> kembali agar satuannya sama dengan data asli. Itulah simpangan baku.",
       },
       {
         type: "calcExercise",
         prompt:
-          "Diketahui data: 5, 7, 9, 11, 13. Rata-ratanya 9. Hitung ragam (variansi) data tersebut.",
+          "Diketahui data: 5, 7, 9, 11, 13. Rata-ratanya 9. Hitung varians data tersebut.",
         answer: 8,
         tolerance: 0,
         solution:
-          "Selisih dari rata-rata: −4, −2, 0, 2, 4. Kuadratnya: 16, 4, 0, 4, 16, jumlahnya 40. Ragam = 40 ÷ 5 = <strong>8</strong>.",
+          "Selisih dari rata-rata: −4, −2, 0, 2, 4. Kuadratnya: 16, 4, 0, 4, 16, jumlahnya 40. Varians = 40 ÷ 5 = <strong>8</strong>.",
         hint: "Kurangkan tiap data dengan 9, kuadratkan, jumlahkan, lalu bagi banyak data.",
       },
       {
         type: "calcExercise",
         prompt:
-          "Dari data yang sama (5, 7, 9, 11, 13) dengan ragam 8, hitung simpangan bakunya. Bulatkan ke dua desimal.",
+          "Dari data yang sama (5, 7, 9, 11, 13) dengan varians 8, hitung simpangan bakunya. Bulatkan ke dua desimal.",
         answer: 2.83,
         tolerance: 0.05,
         solution:
-          "Simpangan baku adalah akar dari ragam. Akar 8 kira-kira <strong>2,83</strong>.",
-        hint: "Simpangan baku = akar kuadrat dari ragam.",
+          "Simpangan baku adalah akar dari varians. Akar 8 kira-kira <strong>2,83</strong>.",
+        hint: "Simpangan baku = akar kuadrat dari varians.",
       },
       {
         type: "matchExercise",
         prompt: "Pasangkan tiap istilah dengan maknanya.",
         pairs: [
           { left: "Simpangan dari mean", right: "Selisih tiap data dengan rata-rata" },
-          { left: "Ragam (variansi)", right: "Rata-rata kuadrat selisih dari mean" },
-          { left: "Simpangan baku", right: "Akar kuadrat dari ragam" },
+          { left: "Varians", right: "Rata-rata kuadrat selisih dari mean" },
+          { left: "Simpangan baku", right: "Akar kuadrat dari varians" },
           { left: "Mean", right: "Titik acuan untuk mengukur sebaran" },
         ],
       },
@@ -353,14 +353,14 @@ export const level3: Lesson[] = [
         type: "callout",
         tone: "key",
         title: "Rumusnya baru muncul di akhir",
-        html: "Setelah berpetualang, baru kita rangkum. Hitung rata-rata, lalu untuk tiap data ambil selisihnya dari rata-rata dan kuadratkan. <strong>Ragam = rata-rata dari kuadrat selisih itu.</strong> Lalu <strong>simpangan baku = akar kuadrat dari ragam.</strong> Inilah ukuran sebaran yang memakai setiap data dan bersatuan sama dengan data aslinya.",
+        html: "Setelah berpetualang, baru kita rangkum. Hitung rata-rata, lalu untuk tiap data ambil selisihnya dari rata-rata dan kuadratkan. <strong>Varians = rata-rata dari kuadrat selisih itu.</strong> Lalu <strong>simpangan baku = akar kuadrat dari varians.</strong> Inilah ukuran sebaran yang memakai setiap data dan bersatuan sama dengan data aslinya.",
       },
       {
         type: "takeaways",
         items: [
           "Simpangan baku mengukur rata-rata jarak data dari rata-ratanya.",
-          "Selisih dikuadratkan agar tidak saling meniadakan, lalu dirata-rata menjadi ragam.",
-          "Simpangan baku adalah akar kuadrat dari ragam, satuannya sama dengan data.",
+          "Selisih dikuadratkan agar tidak saling meniadakan, lalu dirata-rata menjadi varians.",
+          "Simpangan baku adalah akar kuadrat dari varians, satuannya sama dengan data.",
           "Tidak seperti jangkauan, simpangan baku memakai seluruh data.",
         ],
       },
@@ -370,13 +370,13 @@ export const level3: Lesson[] = [
           {
             q: "Simpangan baku adalah?",
             options: [
-              "Akar kuadrat dari ragam",
+              "Akar kuadrat dari varians",
               "Selisih maks dan min",
               "Nilai tengah data",
               "Q3 dikurangi Q1",
             ],
             answer: 0,
-            explain: "Simpangan baku = akar kuadrat dari ragam.",
+            explain: "Simpangan baku = akar kuadrat dari varians.",
           },
           {
             q: "Mengapa selisih dari mean dikuadratkan?",
@@ -393,10 +393,10 @@ export const level3: Lesson[] = [
             q: "Data 5, 7, 9, 11, 13 berata-rata 9. Ragamnya adalah?",
             options: ["4", "8", "16", "40"],
             answer: 1,
-            explain: "Jumlah kuadrat selisih 40, dibagi 5 data, menghasilkan ragam 8.",
+            explain: "Jumlah kuadrat selisih 40, dibagi 5 data, menghasilkan varians 8.",
           },
           {
-            q: "Jika ragam sebuah data adalah 9, simpangan bakunya adalah?",
+            q: "Jika varians sebuah data adalah 9, simpangan bakunya adalah?",
             options: ["81", "4,5", "3", "18"],
             answer: 2,
             explain: "Simpangan baku = akar 9 = 3.",
@@ -473,7 +473,7 @@ export const level3: Lesson[] = [
         answer: 2.83,
         tolerance: 0.05,
         solution:
-          "Selisih dari 74: −4, −2, 0, 2, 4. Kuadratnya 16, 4, 0, 4, 16, jumlah 40. Ragam = 40 ÷ 5 = 8. Simpangan baku = akar 8 ≈ <strong>2,83</strong>.",
+          "Selisih dari 74: −4, −2, 0, 2, 4. Kuadratnya 16, 4, 0, 4, 16, jumlah 40. Varians = 40 ÷ 5 = 8. Simpangan baku = akar 8 ≈ <strong>2,83</strong>.",
         hint: "Kurangkan tiap nilai dengan 74, kuadratkan, rata-ratakan, lalu akarkan.",
       },
       {
@@ -494,8 +494,8 @@ export const level3: Lesson[] = [
         pairs: [
           { left: "Jangkauan", right: "Nilai terbesar dikurangi nilai terkecil" },
           { left: "Jangkauan antarkuartil", right: "Q3 dikurangi Q1" },
-          { left: "Ragam", right: "Rata-rata kuadrat selisih dari mean" },
-          { left: "Simpangan baku", right: "Akar kuadrat dari ragam" },
+          { left: "Varians", right: "Rata-rata kuadrat selisih dari mean" },
+          { left: "Simpangan baku", right: "Akar kuadrat dari varians" },
         ],
       },
       {

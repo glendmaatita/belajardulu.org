@@ -209,10 +209,10 @@ export const level8: Lesson[] = [
       {
         type: "chart",
         variant: "line",
-        title: "Galat Ramalan Membesar Seiring Horizon (ilustrasi)",
-        unit: "rata-rata galat (%)",
+        title: "Error Ramalan Membesar Seiring Horizon (ilustrasi)",
+        unit: "rata-rata error (%)",
         source: "ilustrasi edukatif prinsip ketelitian peramalan",
-        note: "Semakin jauh horizon, semakin besar galat; rencana jangka panjang wajib sering diperbarui.",
+        note: "Semakin jauh horizon, semakin besar error; rencana jangka panjang wajib sering diperbarui.",
         data: [
           { label: "1 minggu", value: 8 },
           { label: "1 bulan", value: 15 },
@@ -285,10 +285,10 @@ export const level8: Lesson[] = [
               "Semakin jauh horizon, semakin akurat",
               "Horizon tidak memengaruhi ketelitian",
               "Semakin jauh horizon, semakin besar galatnya",
-              "Hanya horizon pendek yang punya galat",
+              "Hanya horizon pendek yang punya error",
             ],
             answer: 2,
-            explain: "Ketidakpastian tumbuh seiring jauhnya horizon sehingga galat membesar.",
+            explain: "Ketidakpastian tumbuh seiring jauhnya horizon sehingga error membesar.",
           },
           {
             q: "Manakah yang termasuk metode kuantitatif?",
@@ -329,7 +329,7 @@ export const level8: Lesson[] = [
     order: 3,
     title: "Peramalan Deret Waktu (Time Series)",
     summary:
-      "Saat riwayat penjualan tersedia, deret waktu menjadi alat utama. Pelajari rata-rata bergerak, penghalusan eksponensial, serta cara membaca tren dan musiman, lalu ukur ketelitiannya dengan MAPE.",
+      "Saat riwayat penjualan tersedia, deret waktu menjadi alat utama. Pelajari rata-rata bergerak, penghalusan eksponensial (exponential smoothing), serta cara membaca tren dan musiman, lalu ukur ketelitiannya dengan MAPE.",
     durationMin: 15,
     tags: ["demand", "forecasting", "time-series"],
     blocks: [
@@ -429,7 +429,7 @@ export const level8: Lesson[] = [
           { left: "Tren", right: "Kecenderungan naik atau turun jangka panjang" },
           { left: "Musiman", right: "Pola berulang pada periode tertentu" },
           { left: "Alfa", right: "Bobot data terbaru pada penghalusan eksponensial" },
-          { left: "MAPE", right: "Ukuran galat ramalan dalam persen" },
+          { left: "MAPE", right: "Ukuran error ramalan dalam persen" },
         ],
       },
       {
@@ -475,7 +475,7 @@ export const level8: Lesson[] = [
           },
           {
             q: "Komponen apa yang menangkap pola berulang menjelang Lebaran?",
-            options: ["Level", "Tren", "Musiman", "Galat acak"],
+            options: ["Level", "Tren", "Musiman", "Error acak"],
             answer: 2,
             explain: "Pola berulang pada periode tertentu adalah komponen musiman.",
           },

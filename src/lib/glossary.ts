@@ -30,6 +30,8 @@ export const GLOSSARY: Record<string, string> = {
   "value trap": "Saham yang tampak murah secara rasio, tetapi fundamentalnya terus memburuk.",
   "undervalued": "Harga pasar lebih rendah dari nilai wajar estimasi (berpotensi murah).",
   "overvalued": "Harga pasar lebih tinggi dari nilai wajar estimasi (berpotensi mahal).",
+  "bear market": "Kondisi pasar yang menurun berkepanjangan, umumnya turun lebih dari 20 persen dari puncaknya.",
+  "bull market": "Kondisi pasar yang menaik berkepanjangan disertai optimisme investor.",
 
   // ===== Saham, valuasi, laporan keuangan =====
   "valuasi": "Proses memperkirakan nilai wajar suatu aset atau perusahaan.",
@@ -232,6 +234,9 @@ export const GLOSSARY: Record<string, string> = {
   "DeFi": "Decentralized Finance; layanan keuangan di blockchain tanpa perantara terpusat.",
   "DEX": "Decentralized Exchange; bursa tempat menukar aset langsung tanpa perantara terpusat.",
   "AMM": "Automated Market Maker; penetapan harga otomatis lewat rumus kolam likuiditas, misalnya x*y=k.",
+  "constant product": "Rumus AMM x kali y = k (hasil kali konstan) yang menjaga hasil kali dua aset di kolam tetap konstan.",
+  "efek avalanche": "Sifat fungsi hash: mengubah satu bit masukan mengubah hampir separuh bit keluaran (avalanche effect).",
+  "death spiral": "Umpan balik jatuhnya harga stablecoin algoritmik yang saling memperparah hingga kolaps (spiral kematian).",
   "liquidity pool": "Kumpulan dua aset yang disetor penyedia likuiditas agar pengguna bisa menukar token.",
   "yield farming": "Strategi mengejar imbal hasil dengan menaruh aset di protokol DeFi untuk reward.",
   "staking": "Mengunci aset untuk mengamankan jaringan atau mendapat imbalan.",
@@ -285,6 +290,10 @@ export const GLOSSARY: Record<string, string> = {
   "galvanometer": "Alat peka yang mengukur arus listrik kecil lewat torsi pada kumparan dalam medan magnet, dasar amperemeter dan voltmeter analog.",
   "rugi daya": "Energi listrik yang hilang menjadi panas di kawat penghantar, besarnya I²R.",
 
+  // ===== Statistika =====
+  "varians": "Rata-rata dari kuadrat selisih tiap data terhadap rata-ratanya; ukuran sebaran data (dahulu disebut ragam).",
+  "simpangan baku": "Akar kuadrat dari varians, ukuran sebaran data dengan satuan yang sama seperti datanya.",
+
   // ===== Matematika dasar =====
   "aljabar": "Cabang matematika yang memakai huruf atau lambang untuk mewakili bilangan, sehingga pola umum bisa ditulis ringkas.",
   "generalisasi": "Menyimpulkan aturan umum yang berlaku untuk banyak kasus dari beberapa contoh yang diamati.",
@@ -334,7 +343,8 @@ export const GLOSSARY: Record<string, string> = {
   "demand sensing": "Penajaman ramalan jangka pendek dengan sinyal terkini seperti data penjualan, cuaca, dan promo.",
   "OTIF": "On-Time In-Full, persen pesanan yang tiba tepat waktu sekaligus lengkap.",
   "cash-to-cash": "Siklus kas-ke-kas, jumlah hari uang tertahan di rantai pasok = DIO + DSO - DPO.",
-  "digital twin": "Kembaran digital rantai pasok untuk menguji skenario sebelum diterapkan di dunia nyata.",
+  "digital twin": "Kembaran digital (model virtual) rantai pasok yang terus diperbarui data nyata, dipakai menguji skenario sebelum diterapkan.",
+  "exponential smoothing": "Metode peramalan deret waktu yang memberi bobot menurun secara eksponensial pada data yang makin lama.",
   "resiliensi": "Kemampuan rantai pasok bertahan dan pulih cepat saat terkena guncangan.",
   "ekonomi sirkular": "Model yang menutup lingkaran bahan lewat pakai ulang, perbaikan, dan daur ulang agar limbah ditekan.",
   "Industry 4.0": "Gelombang industri yang memadukan sistem siber-fisik, IoT, data, dan otomasi dalam rantai pasok.",
@@ -509,6 +519,8 @@ export const GLOSSARY: Record<string, string> = {
   "DPLK": "Dana Pensiun Lembaga Keuangan, program tabungan pensiun sukarela.",
   "LPS": "Lembaga Penjamin Simpanan yang menjamin simpanan nasabah bank sampai batas tertentu.",
   "paylater": "Fasilitas beli sekarang bayar nanti secara dicicil; mudah menumpuk bila tak dikendalikan.",
+  "debt snowball": "Strategi lunasi utang dari saldo terkecil lebih dulu untuk membangun momentum dan motivasi.",
+  "debt avalanche": "Strategi lunasi utang dari bunga tertinggi lebih dulu agar total bunga yang dibayar paling kecil.",
   // ===== Ekonomi syariah (istilah baru) =====
   "rahn": "Akad gadai dalam Islam: menahan barang berharga sebagai jaminan pinjaman, tanpa bunga.",
   "ujrah": "Upah atau biaya jasa yang sah dalam akad syariah, misalnya biaya penitipan pada gadai (bukan bunga).",

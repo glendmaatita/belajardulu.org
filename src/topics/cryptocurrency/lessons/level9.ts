@@ -166,7 +166,7 @@ export const level9: Lesson[] = [
     blocks: [
       {
         type: "paragraph",
-        html: "Tidak semua stablecoin didukung dolar di bank. <strong>Stablecoin crypto-backed</strong> dijamin oleh aset kripto seperti Ether yang dikunci dalam kontrak pintar. Contoh paling terkenal adalah <strong>DAI</strong>, yang dikelola lewat sistem <strong>MakerDAO</strong>.",
+        html: "Tidak semua stablecoin didukung dolar di bank. <strong>Stablecoin crypto-backed</strong> dijamin oleh aset kripto seperti Ether yang dikunci dalam smart contract. Contoh paling terkenal adalah <strong>DAI</strong>, yang dikelola lewat sistem <strong>MakerDAO</strong>.",
       },
       {
         type: "paragraph",
@@ -194,8 +194,8 @@ export const level9: Lesson[] = [
       {
         type: "image",
         src: "https://commons.wikimedia.org/wiki/Special:FilePath/Blockchain.svg?width=400",
-        alt: "Diagram rantai blok yang menjadi tempat jaminan kripto dikunci dalam kontrak pintar",
-        caption: "Jaminan kripto stablecoin seperti DAI dikunci dalam kontrak pintar di atas blockchain.",
+        alt: "Diagram rantai blok yang menjadi tempat jaminan kripto dikunci dalam smart contract",
+        caption: "Jaminan kripto stablecoin seperti DAI dikunci dalam smart contract di atas blockchain.",
         credit: "Sumber: Wikimedia Commons",
       },
       {
@@ -264,7 +264,7 @@ export const level9: Lesson[] = [
             q: "Apa yang menjamin stablecoin crypto-backed seperti DAI?",
             options: ["Dolar di bank", "Aset kripto yang dikunci", "Emas fisik", "Saham perusahaan"],
             answer: 1,
-            explain: "DAI dijamin aset kripto yang dikunci dalam kontrak pintar, bukan dolar di bank.",
+            explain: "DAI dijamin aset kripto yang dikunci dalam smart contract, bukan dolar di bank.",
           },
           {
             q: "Mengapa stablecoin crypto-backed perlu overcollateralization?",
@@ -334,7 +334,7 @@ export const level9: Lesson[] = [
         type: "callout",
         tone: "warn",
         title: "Mengapa rapuh",
-        html: "Mekanisme ini bekerja selama orang masih percaya. Bila kepercayaan hilang dan banyak orang menjual bersamaan, sistem mencetak token makin banyak untuk menahan harga, tetapi justru membanjiri pasar. Harga dan token pasangannya bisa jatuh bersama dalam <strong>spiral kematian</strong>.",
+        html: "Mekanisme ini bekerja selama orang masih percaya. Bila kepercayaan hilang dan banyak orang menjual bersamaan, sistem mencetak token makin banyak untuk menahan harga, tetapi justru membanjiri pasar. Harga dan token pasangannya bisa jatuh bersama dalam <strong>death spiral</strong> (spiral kematian).",
       },
       {
         type: "video",
@@ -366,7 +366,7 @@ export const level9: Lesson[] = [
       {
         type: "case",
         title: "Studi Kasus: Bagaimana arbitrase menutup selisih harga",
-        html: "Bayangkan stablecoin algoritmik berharga <strong>0,98 dolar AS</strong>, sedikit di bawah peg. Sistem mengizinkan menukar 1 token dengan aset pasangan senilai <strong>1,00 dolar AS</strong> lalu memusnahkan token itu. Seorang pedagang membeli token seharga 0,98 dolar, menebusnya senilai 1,00 dolar, dan mengantongi <strong>0,02 dolar AS</strong> per token. Aksi ini mengurangi pasokan dan mendorong harga naik kembali ke 1 dolar. Selama tetap ada pembeli aset pasangan, mekanisme ini bekerja; begitu kepercayaan hilang, justru mekanisme yang sama bisa berubah jadi spiral kematian.",
+        html: "Bayangkan stablecoin algoritmik berharga <strong>0,98 dolar AS</strong>, sedikit di bawah peg. Sistem mengizinkan menukar 1 token dengan aset pasangan senilai <strong>1,00 dolar AS</strong> lalu memusnahkan token itu. Seorang pedagang membeli token seharga 0,98 dolar, menebusnya senilai 1,00 dolar, dan mengantongi <strong>0,02 dolar AS</strong> per token. Aksi ini mengurangi pasokan dan mendorong harga naik kembali ke 1 dolar. Selama tetap ada pembeli aset pasangan, mekanisme ini bekerja; begitu kepercayaan hilang, justru mekanisme yang sama bisa berubah jadi death spiral.",
       },
       {
         type: "case",
@@ -401,7 +401,7 @@ export const level9: Lesson[] = [
           "Stablecoin algoritmik menjaga peg lewat aturan suplai, bukan cadangan penuh.",
           "Mekanisme mint-burn menambah pasokan saat harga tinggi dan mengurangi saat harga rendah.",
           "Arbitrase pedagang diharapkan menarik harga kembali ke 1 dolar.",
-          "Model ini rapuh: hilangnya kepercayaan bisa memicu spiral kematian.",
+          "Model ini rapuh: hilangnya kepercayaan bisa memicu death spiral.",
           "TerraUSD runtuh Mei 2022 dan melenyapkan nilai puluhan miliar dolar AS.",
         ],
       },
@@ -431,7 +431,7 @@ export const level9: Lesson[] = [
             explain: "Burn mengurangi pasokan sehingga, secara teori, harga terdorong kembali naik ke peg.",
           },
           {
-            q: "Apa itu spiral kematian pada stablecoin algoritmik?",
+            q: "Apa itu death spiral pada stablecoin algoritmik?",
             options: [
               "Harga naik tanpa henti",
               "Penjualan massal memicu pencetakan berlebih sehingga harga ambruk",

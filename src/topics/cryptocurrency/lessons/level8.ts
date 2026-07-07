@@ -8,7 +8,7 @@ export const level8: Lesson[] = [
     order: 1,
     title: "DEX & AMM",
     summary:
-      "Menukar kripto tanpa perantara terpusat lewat bursa terdesentralisasi (DEX) dan Automated Market Maker (AMM) dengan rumus produk konstan x kali y sama dengan k.",
+      "Menukar kripto tanpa perantara terpusat lewat bursa terdesentralisasi (DEX) dan Automated Market Maker (AMM) dengan rumus constant product (hasil kali konstan) x kali y sama dengan k.",
     durationMin: 14,
     tags: ["defi", "dex", "amm", "uniswap"],
     blocks: [
@@ -18,12 +18,12 @@ export const level8: Lesson[] = [
       },
       {
         type: "paragraph",
-        html: "Banyak DEX tidak memakai buku pesanan, melainkan <strong>Automated Market Maker</strong> (AMM): sebuah kolam berisi dua aset yang harganya ditentukan otomatis oleh rumus matematika. <strong>Uniswap</strong> adalah pelopor model ini dengan rumus <strong>produk konstan</strong>.",
+        html: "Banyak DEX tidak memakai buku pesanan, melainkan <strong>Automated Market Maker</strong> (AMM): sebuah kolam berisi dua aset yang harganya ditentukan otomatis oleh rumus matematika. <strong>Uniswap</strong> adalah pelopor model ini dengan rumus <strong>constant product</strong>.",
       },
       {
         type: "callout",
         tone: "key",
-        title: "Rumus produk konstan x kali y sama dengan k",
+        title: "Rumus constant product x kali y sama dengan k",
         html: "Dalam kolam berisi aset A sebanyak x dan aset B sebanyak y, hasil kali keduanya dijaga tetap: <strong>x kali y sama dengan k</strong>. Saat seseorang menukar A dengan B, jumlah A naik dan jumlah B turun, tapi hasil kalinya tetap k. Harga ditentukan oleh <strong>rasio kolam</strong>, bukan oleh satu pihak.",
       },
       {
@@ -43,13 +43,13 @@ export const level8: Lesson[] = [
         type: "image",
         src: "https://commons.wikimedia.org/wiki/Special:FilePath/Uniswap_Logo.svg?width=400",
         alt: "Logo Uniswap, DEX dengan model Automated Market Maker",
-        caption: "Logo Uniswap, bursa terdesentralisasi yang mempopulerkan rumus produk konstan x kali y sama dengan k.",
+        caption: "Logo Uniswap, bursa terdesentralisasi yang mempopulerkan rumus constant product x kali y sama dengan k.",
         credit: "Sumber: Wikimedia Commons",
       },
       {
         type: "chart",
         variant: "line",
-        title: "Kurva Produk Konstan: Aset B Tersisa saat Aset A Ditambah",
+        title: "Kurva Constant Product: Aset B Tersisa saat Aset A Ditambah",
         unit: "B tersisa di kolam",
         source: "ilustrasi rumus x kali y sama dengan k, k sama dengan 1.000.000",
         note: "Makin banyak A masuk, B keluar makin sedikit per unit. Inilah price impact yang membuat harga memburuk pada transaksi besar.",
@@ -69,7 +69,7 @@ export const level8: Lesson[] = [
       {
         type: "case",
         title: "Sejarah: Uniswap dan kelahiran AMM, November 2018",
-        html: "Pada <strong>November 2018</strong>, Hayden Adams meluncurkan <strong>Uniswap</strong> di jaringan Ethereum, terinspirasi catatan Vitalik Buterin tentang market maker berbasis rumus. Alih-alih buku pesanan, Uniswap memakai kolam dan rumus produk konstan x kali y sama dengan k. Banyak yang awalnya ragu model sesederhana itu bisa bekerja, tapi pada <strong>2020</strong> Uniswap V2 tumbuh menjadi salah satu DEX terbesar dan menjadi cetak biru bagi ratusan AMM lain. Ide bahwa harga bisa muncul dari matematika kolam, bukan dari satu pihak penentu, terbukti mengubah cara orang menukar aset on-chain.",
+        html: "Pada <strong>November 2018</strong>, Hayden Adams meluncurkan <strong>Uniswap</strong> di jaringan Ethereum, terinspirasi catatan Vitalik Buterin tentang market maker berbasis rumus. Alih-alih buku pesanan, Uniswap memakai kolam dan rumus constant product x kali y sama dengan k. Banyak yang awalnya ragu model sesederhana itu bisa bekerja, tapi pada <strong>2020</strong> Uniswap V2 tumbuh menjadi salah satu DEX terbesar dan menjadi cetak biru bagi ratusan AMM lain. Ide bahwa harga bisa muncul dari matematika kolam, bukan dari satu pihak penentu, terbukti mengubah cara orang menukar aset on-chain.",
       },
       {
         type: "calcExercise",
@@ -98,7 +98,7 @@ export const level8: Lesson[] = [
         items: [
           "DEX memungkinkan tukar kripto tanpa perantara terpusat, langsung lewat blockchain.",
           "AMM memakai kolam dua aset dengan harga ditentukan rumus, bukan buku pesanan.",
-          "Uniswap mempopulerkan rumus produk konstan x kali y sama dengan k.",
+          "Uniswap mempopulerkan rumus constant product x kali y sama dengan k.",
           "Harga ditentukan rasio kolam; transaksi besar menggeser harga (price impact).",
           "Kolam besar memberi price impact kecil; kolam kecil membuat harga cepat memburuk.",
         ],
@@ -110,7 +110,7 @@ export const level8: Lesson[] = [
             q: "Apa rumus inti AMM ala Uniswap?",
             options: ["x ditambah y sama dengan k", "x kali y sama dengan k", "x dibagi y sama dengan k", "x dikurang y sama dengan k"],
             answer: 1,
-            explain: "Rumus produk konstan menjaga hasil kali jumlah dua aset tetap, yaitu x kali y sama dengan k.",
+            explain: "Rumus constant product menjaga hasil kali jumlah dua aset tetap, yaitu x kali y sama dengan k.",
           },
           {
             q: "Apa yang menentukan harga di AMM?",

@@ -59,7 +59,7 @@ export const level13: Lesson[] = [
       {
         type: "case",
         title: "Studi Kasus: National Logistics Ecosystem (NLE) dan INSW",
-        html: "Dulu, mengurus impor di Indonesia berarti berhadapan dengan banyak instansi dan dokumen terpisah, lambat dan mahal. Pemerintah membangun <strong>INSW</strong> (Indonesia National Single Window) dan ekosistem <strong>NLE</strong> (National Logistics Ecosystem) untuk menyatukan perizinan dan arus dokumen lintas instansi dalam <strong>satu pintu digital</strong>. Pelaku usaha cukup memasukkan data sekali, lalu dibagikan ke semua pihak terkait. Tujuannya memangkas waktu tunggu di pelabuhan (<em>dwelling time</em>) dan biaya logistik, agar produk Indonesia lebih bersaing.",
+        html: "Dulu, mengurus impor di Indonesia berarti berhadapan dengan banyak instansi dan dokumen terpisah, lambat dan mahal. Pemerintah membangun <strong>INSW</strong> (Indonesia National Single Window) dan ekosistem <strong>NLE</strong> (National Logistics Ecosystem) untuk menyatukan perizinan dan arus dokumen lintas instansi dalam <strong>satu pintu digital</strong>. Pelaku usaha cukup memasukkan data sekali, lalu dibagikan ke semua pihak terkait. Tujuannya memangkas lead time di pelabuhan (<em>dwelling time</em>) dan biaya logistik, agar produk Indonesia lebih bersaing.",
       },
       {
         type: "case",
@@ -132,7 +132,7 @@ export const level13: Lesson[] = [
               "Menaikkan bea masuk",
             ],
             answer: 1,
-            explain: "Satu pintu digital memangkas waktu tunggu di pelabuhan dan biaya logistik.",
+            explain: "Satu pintu digital memangkas lead time di pelabuhan dan biaya logistik.",
           },
           {
             q: "Dari mana dan kapan Incoterms pertama lahir?",

@@ -8,7 +8,7 @@ export const level2: Lesson[] = [
     order: 1,
     title: "Blockchain, Block & Hash",
     summary:
-      "Memahami blockchain sebagai rantai blok yang saling mengunci lewat hash. Bedah anatomi satu block dan rasakan efek longsor saat datanya diubah.",
+      "Memahami blockchain sebagai rantai blok yang saling mengunci lewat hash. Bedah anatomi satu block dan rasakan efek avalanche saat datanya diubah.",
     durationMin: 14,
     tags: ["blockchain", "hash", "block"],
     blocks: [
@@ -48,7 +48,7 @@ export const level2: Lesson[] = [
       {
         type: "chart",
         variant: "bar",
-        title: "Efek longsor: berapa karakter hash berubah saat data diutak-atik (ilustrasi)",
+        title: "Efek avalanche: berapa karakter hash berubah saat data diutak-atik (ilustrasi)",
         unit: "perkiraan % karakter hash yang berubah",
         source: "ilustrasi edukatif sifat avalanche pada fungsi hash",
         note: "Sekecil apa pun perubahan masukan, sekitar separuh karakter hash berganti; hash lama dan baru tampak tak berhubungan.",
@@ -173,7 +173,7 @@ export const level2: Lesson[] = [
       {
         type: "callout",
         tone: "info",
-        title: "Efek longsor lagi",
+        title: "Efek avalanche lagi",
         html: "Sama seperti hash block, Merkle root sangat sensitif. Mengubah satu transaksi di paling bawah pohon akan menjalar ke atas dan mengubah root. Coba rasakan sensitivitas hash lewat simulator berikut.",
       },
       {
@@ -787,7 +787,7 @@ export const level2: Lesson[] = [
         pairs: [
           { left: "Tamper-evident", right: "Perubahan tetap mungkin tetapi pasti terdeteksi" },
           { left: "Imutabilitas", right: "Data lama nyaris mustahil diubah diam-diam" },
-          { left: "Efek longsor", right: "Ubah sedikit data, hash berubah total" },
+          { left: "Efek avalanche", right: "Ubah sedikit data, hash berubah total" },
           { left: "Linked timestamping", right: "Dokumen baru menyertakan hash dokumen sebelumnya" },
           { left: "Prev hash", right: "Penaut yang putus saat block lama diubah" },
         ],
