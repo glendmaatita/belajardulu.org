@@ -288,7 +288,10 @@ function DataTable({ headers, rows, caption }: { headers: string[]; rows: string
           </thead>
           <tbody>
             {rows.map((row, ri) => {
-              const isTotal = /total|hpp|harga pokok|barang tersedia/i.test(row[0]);
+              const isTotal =
+                /total|jumlah|hpp|harga pokok|barang tersedia|laba kotor|laba usaha|laba bersih|laba sebelum|rugi bersih|penjualan bersih|modal akhir|kas bersih|kas akhir/i.test(
+                  row[0],
+                );
               return (
                 <tr key={ri} className={`border-b border-line last:border-0 ${isTotal ? "bg-canvas font-bold" : ""}`}>
                   {row.map((cell, ci) => (
