@@ -66,7 +66,6 @@ export const level5: Lesson[] = [
         html: "Jawab beberapa pertanyaan untuk melihat aliran filsafat mana yang paling dekat dengan cara berpikirmu.",
       },
       { type: "widget", widget: "PencocokAliranFilsafat" },
-      { type: "widget", widget: "TebakFilsuf" },
       {
         type: "case",
         title: "Studi Kasus: Mencari makna dalam kesulitan",
@@ -112,10 +111,15 @@ export const level5: Lesson[] = [
             explain: "Eksistensialisme menegaskan manusia memberi makna lewat pilihan bebas.",
           },
           {
-            q: "'Eksistensi mendahului esensi' dikemukakan oleh?",
-            options: ["Aristoteles", "Sartre", "Kant", "Hume"],
+            q: "Menurut eksistensialisme, kebebasan memilih membuat manusia?",
+            options: [
+              "Lepas dari tanggung jawab",
+              "Bertanggung jawab atas pilihannya",
+              "Ditentukan nasib",
+              "Tak perlu bertindak",
+            ],
             answer: 1,
-            explain: "Jean-Paul Sartre, tokoh eksistensialisme.",
+            explain: "Kebebasan eksistensial selalu disertai tanggung jawab atas setiap pilihan yang diambil.",
           },
           {
             q: "Pancasila bagi Indonesia berfungsi sebagai?",
@@ -202,21 +206,6 @@ export const level5: Lesson[] = [
         html: "Kebebasan tanpa tanggung jawab menjadi sekadar kekosongan. Eksistensialisme menuntut keberanian memilih, bukan menyerah pada kehampaan.",
       },
       { type: "widget", widget: "PencocokAliranFilsafat" },
-      { type: "widget", widget: "GarisWaktuFilsuf" },
-      {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu tokoh eksistensialis (tahun kelahiran)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Menunjukkan urutan kronologis gagasan dari Kierkegaard hingga Camus.",
-        data: [
-          { label: "Kierkegaard", value: 1813, color: "#6366f1" },
-          { label: "Nietzsche", value: 1844, color: "#8b5cf6" },
-          { label: "Sartre", value: 1905, color: "#ec4899" },
-          { label: "Camus", value: 1913, color: "#f59e0b" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Memilih jalan hidup sendiri",
@@ -350,20 +339,6 @@ export const level5: Lesson[] = [
         tone: "tip",
         title: "Gotong royong",
         html: "Soekarno pernah menyebut gotong royong sebagai perasan Pancasila: kerja sama dan saling menanggung sebagai roh kehidupan bersama bangsa.",
-      },
-      {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu perintis tradisi Timur (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat, SM = Sebelum Masehi)",
-        note: "Tradisi besar Timur lahir berdekatan pada abad ke-6 hingga ke-4 SM (nilai negatif berarti Sebelum Masehi).",
-        data: [
-          { label: "Laozi (~571 SM)", value: -571, color: "#10b981" },
-          { label: "Buddha (~563 SM)", value: -563, color: "#f59e0b" },
-          { label: "Konfusius (551 SM)", value: -551, color: "#ef4444" },
-          { label: "Mengzi (~372 SM)", value: -372, color: "#3b82f6" },
-        ],
       },
       { type: "widget", widget: "TebakFilsuf" },
       {
@@ -521,23 +496,6 @@ export const level5: Lesson[] = [
         credit: "Sumber: Wikimedia Commons, domain publik",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu pemikir keadilan (tahun kelahiran)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Menunjukkan urutan kronologis dari kontrak sosial hingga keadilan modern Rawls.",
-        data: [
-          { label: "Hobbes", value: 1588, color: "#ef4444" },
-          { label: "Locke", value: 1632, color: "#3b82f6" },
-          { label: "Rousseau", value: 1712, color: "#10b981" },
-          { label: "Smith", value: 1723, color: "#f59e0b" },
-          { label: "Marx", value: 1818, color: "#a855f7" },
-          { label: "Rawls", value: 1921, color: "#8b5cf6" },
-        ],
-      },
-      { type: "widget", widget: "GarisWaktuFilsuf" },
-      {
         type: "case",
         title: "Studi Kasus: Merancang aturan beasiswa",
         html: "Sebuah kampus menyusun aturan beasiswa. Dengan logika <strong>tabir ketidaktahuan</strong> Rawls, perancang membayangkan dirinya bisa saja menjadi mahasiswa termiskin. Hasilnya, mereka memprioritaskan calon dari keluarga paling tidak mampu sambil tetap membuka jalur prestasi. Ketimpangan kuota dibenarkan justru karena menguntungkan pihak yang paling membutuhkan.",
@@ -658,7 +616,6 @@ export const level5: Lesson[] = [
         title: "Video: Apa Artinya Benar",
         caption: "Sains adalah salah satu cara paling ketat menguji kebenaran klaim tentang dunia.",
       },
-      { type: "widget", widget: "GarisWaktuFilsuf" },
       { type: "widget", widget: "TebakFilsuf" },
       {
         type: "table",
@@ -668,20 +625,6 @@ export const level5: Lesson[] = [
           ["Bisakah dibuktikan salah?", "Ya, dapat difalsifikasi lewat uji", "Tidak, selalu ada dalih baru"],
           ["Bagaimana menanggapi bukti tandingan?", "Merevisi atau menolak teori", "Mengabaikan atau menambalnya"],
           ["Seberapa berani ramalannya?", "Spesifik dan berisiko", "Kabur dan selalu aman"],
-        ],
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu pemikir filsafat ilmu (tahun lahir)",
-        unit: "tahun lahir",
-        source: "Tahun lahir historis para tokoh",
-        note: "Dari metode empiris Bacon, masalah induksi Hume, hingga falsifikasi Popper dan paradigma Kuhn.",
-        data: [
-          { label: "Francis Bacon", value: 1561, color: "#6366f1" },
-          { label: "David Hume", value: 1711, color: "#0ea5e9" },
-          { label: "Karl Popper", value: 1902, color: "#10b981" },
-          { label: "Thomas Kuhn", value: 1922, color: "#f59e0b" },
         ],
       },
       {

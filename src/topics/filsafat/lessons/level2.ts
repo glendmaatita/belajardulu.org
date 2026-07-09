@@ -75,20 +75,6 @@ export const level2: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Garis Waktu Tokoh Epistemologi Modern (tahun lahir)",
-        unit: "tahun lahir",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Urutan kelahiran membantu melihat bagaimana gagasan berkembang dan saling menanggapi dari era ke era.",
-        data: [
-          { label: "Descartes (rasionalis)", value: 1596, color: "#6366f1" },
-          { label: "Locke (empiris)", value: 1632, color: "#10b981" },
-          { label: "Hume (empiris)", value: 1711, color: "#f59e0b" },
-          { label: "Kant (sintesis)", value: 1724, color: "#ec4899" },
-        ],
-      },
-      {
         type: "widget",
         widget: "TebakFilsuf",
       },
@@ -234,23 +220,6 @@ export const level2: Lesson[] = [
         widget: "PencocokAliranFilsafat",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu rasionalisme dan empirisme (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Rasionalis benua (Descartes, Spinoza, Leibniz) dan empiris Britania (Locke, Berkeley, Hume) tumbuh hampir sezaman, lalu Kant lahir paling akhir dan menyatukan keduanya.",
-        data: [
-          { label: "Descartes (1596)", value: 1596, color: "#6366f1" },
-          { label: "Spinoza (1632)", value: 1632, color: "#6366f1" },
-          { label: "Locke (1632)", value: 1632, color: "#10b981" },
-          { label: "Leibniz (1646)", value: 1646, color: "#6366f1" },
-          { label: "Berkeley (1685)", value: 1685, color: "#10b981" },
-          { label: "Hume (1711)", value: 1711, color: "#10b981" },
-          { label: "Kant (1724)", value: 1724, color: "#ec4899" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Anak yang belum pernah melihat salju",
         html: "Seorang anak di daerah tropis belum pernah menyentuh salju, tetapi bisa memahami bahwa 'segitiga punya tiga sisi' tanpa pengalaman apa pun. Pengetahuan geometri ini bersifat <strong>a priori</strong>. Namun untuk tahu 'salju terasa dingin', ia butuh pengalaman langsung, yaitu pengetahuan <strong>a posteriori</strong>. Kasus ini menunjukkan akal dan pengalaman mengisi peran berbeda.",
@@ -265,10 +234,6 @@ export const level2: Lesson[] = [
           { text: "Tujuh ditambah lima sama dengan dua belas", bucket: "A priori" },
           { text: "Kopi di cangkir ini terasa pahit", bucket: "A posteriori" },
         ],
-      },
-      {
-        type: "widget",
-        widget: "TebakFilsuf",
       },
       {
         type: "matchExercise",

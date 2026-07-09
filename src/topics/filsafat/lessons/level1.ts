@@ -53,13 +53,6 @@ export const level1: Lesson[] = [
       { type: "widget", widget: "PetaCabangFilsafat" },
       {
         type: "callout",
-        tone: "tip",
-        title: "Coba garis waktu para filsuf",
-        html: "Klik tiap era untuk melihat filsuf yang hidup di masa itu beserta gagasan pentingnya, dan rasakan bagaimana pemikiran berkembang dari zaman ke zaman.",
-      },
-      { type: "widget", widget: "GarisWaktuFilsuf" },
-      {
-        type: "callout",
         tone: "info",
         title: "Cara berfilsafat",
         html: "Berfilsafat berarti bertanya 'mengapa', memeriksa asumsi, menuntut alasan, dan berani mempertanyakan hal yang dianggap sudah pasti, sambil tetap terbuka pada argumen lebih baik.",
@@ -215,22 +208,6 @@ export const level1: Lesson[] = [
         html: "Zaman <strong>modern</strong> (abad ke-17 sampai ke-19) menempatkan akal dan subjek manusia sebagai pusat. <strong>Descartes</strong> dengan 'aku berpikir maka aku ada' dan <strong>Kant</strong> yang menyelidiki batas akal. Zaman <strong>kontemporer</strong> (abad ke-20 dan seterusnya) justru mengkritik klaim akal yang terlalu besar, lewat Nietzsche, Sartre, dan Wittgenstein.",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu filsuf besar (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Ada jeda hampir 2000 tahun antara puncak Yunani kuno (Aristoteles) dan lahirnya filsafat modern (Descartes).",
-        data: [
-          { label: "Sokrates (-470)", value: -470, color: "#6366f1" },
-          { label: "Plato (-428)", value: -428, color: "#0ea5e9" },
-          { label: "Aristoteles (-384)", value: -384, color: "#10b981" },
-          { label: "Descartes (1596)", value: 1596, color: "#f59e0b" },
-          { label: "Kant (1724)", value: 1724, color: "#ef4444" },
-          { label: "Nietzsche (1844)", value: 1844, color: "#8b5cf6" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Jelajahi garis waktu interaktif",
@@ -365,7 +342,6 @@ export const level1: Lesson[] = [
         title: "Video: Cara Berpikir yang Diwariskan Antar Filsuf",
         caption: "Animasi bagaimana metode berpikir Sokrates dikembangkan Plato lalu Aristoteles.",
       },
-      { type: "widget", widget: "GarisWaktuFilsuf" },
       {
         type: "widget",
         widget: "PetaCabangFilsafat",
@@ -641,20 +617,6 @@ export const level1: Lesson[] = [
           ["Dilema palsu", "Menyodorkan seakan hanya ada dua pilihan", "Kalau tidak setuju denganku, berarti kamu musuhku"],
           ["Lereng licin", "Mengeklaim rantai akibat buruk tanpa bukti", "Kalau boleh terlambat sekali, semuanya pasti kacau total"],
           ["Argumentum ad populum", "Dianggap benar hanya karena banyak yang percaya", "Pasti benar, semua orang melakukannya"],
-        ],
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu perintis logika modern (tahun lahir)",
-        unit: "tahun lahir",
-        source: "Tahun lahir historis para tokoh",
-        note: "Logika Aristoteles disempurnakan menjadi logika simbolik oleh para tokoh ini dari abad ke-19 ke abad ke-20.",
-        data: [
-          { label: "George Boole", value: 1815, color: "#6366f1" },
-          { label: "Gottlob Frege", value: 1848, color: "#0ea5e9" },
-          { label: "Bertrand Russell", value: 1872, color: "#10b981" },
-          { label: "Kurt Godel", value: 1906, color: "#f59e0b" },
         ],
       },
       {

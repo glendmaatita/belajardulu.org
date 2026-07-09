@@ -74,10 +74,6 @@ export const level3: Lesson[] = [
         ],
       },
       {
-        type: "widget",
-        widget: "GarisWaktuFilsuf",
-      },
-      {
         type: "takeaways",
         items: [
           "Metafisika menanyakan hakikat keberadaan dan kenyataan.",
@@ -217,22 +213,6 @@ export const level3: Lesson[] = [
       {
         type: "widget",
         widget: "SimulatorDialektika",
-      },
-      {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu tokoh materialisme dan idealisme (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Materialisme dan idealisme silih berganti dari Yunani kuno hingga abad ke-19, persis pola dialektis.",
-        data: [
-          { label: "Herakleitos (-535)", value: -535, color: "#f59e0b" },
-          { label: "Plato (-428)", value: -428, color: "#10b981" },
-          { label: "Spinoza (1632)", value: 1632, color: "#6366f1" },
-          { label: "Berkeley (1685)", value: 1685, color: "#0ea5e9" },
-          { label: "Hegel (1770)", value: 1770, color: "#ec4899" },
-          { label: "Marx (1818)", value: 1818, color: "#2563eb" },
-        ],
       },
       {
         type: "classifyExercise",
@@ -407,20 +387,6 @@ export const level3: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu tokoh perdebatan identitas diri (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Perdebatan bergulir dari teori memori Locke hingga reduksionisme Parfit di abad ke-20.",
-        data: [
-          { label: "Locke (1632)", value: 1632, color: "#2563eb" },
-          { label: "Reid (1710)", value: 1710, color: "#10b981" },
-          { label: "Hume (1711)", value: 1711, color: "#f59e0b" },
-          { label: "Parfit (1942)", value: 1942, color: "#ec4899" },
-        ],
-      },
-      {
         type: "classifyExercise",
         prompt: "Pernyataan ini mendukung teori identitas yang mana?",
         buckets: ["Teori Memori", "Teori Tubuh"],
@@ -537,20 +503,6 @@ export const level3: Lesson[] = [
         tone: "tip",
         title: "Cara mengingat",
         html: "Turing menguji dari <em>luar</em> (perilaku), Searle menyoroti dari <em>dalam</em> (apakah ada pemahaman). Keduanya soal yang sama dari sisi berbeda.",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu tokoh filsafat pikiran dan mesin (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Perdebatan pikiran dan mesin sebagian besar dibentuk oleh tokoh abad ke-20.",
-        data: [
-          { label: "Berkeley (1685)", value: 1685, color: "#0ea5e9" },
-          { label: "Turing (1912)", value: 1912, color: "#2563eb" },
-          { label: "Searle (1932)", value: 1932, color: "#f59e0b" },
-          { label: "Chalmers (1966)", value: 1966, color: "#10b981" },
-        ],
       },
       {
         type: "case",
@@ -692,23 +644,6 @@ export const level3: Lesson[] = [
         comp: "DialektikaHegel",
         title: "Video: Tesis, Antitesis, Sintesis",
         caption: "Argumen dan kritiknya bergerak dialektis: setiap argumen memicu sanggahan, lalu rumusan yang lebih cermat.",
-      },
-      { type: "widget", widget: "GarisWaktuFilsuf" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu tokoh argumen keberadaan Tuhan (tahun lahir)",
-        unit: "tahun lahir",
-        source: "Tahun lahir historis para tokoh",
-        note: "Argumen dan kritik saling menanggapi dari abad ke abad, dari Anselmus hingga Kant dan Paley.",
-        data: [
-          { label: "Anselmus", value: 1033, color: "#6366f1" },
-          { label: "Thomas Aquinas", value: 1225, color: "#0ea5e9" },
-          { label: "Descartes", value: 1596, color: "#10b981" },
-          { label: "Hume", value: 1711, color: "#f59e0b" },
-          { label: "Kant", value: 1724, color: "#ec4899" },
-          { label: "Paley", value: 1743, color: "#ef4444" },
-        ],
       },
       {
         type: "case",

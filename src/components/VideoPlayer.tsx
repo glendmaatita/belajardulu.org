@@ -1,13 +1,41 @@
 import { Player, type PlayerRef, type CallbackListener } from "@remotion/player";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { VideoComp } from "../types";
 import { videoRegistry, VIDEO } from "../remotion/registry";
 import { Icon } from "./Icon";
 
 export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: string; caption?: string }) {
   const playerRef = useRef<PlayerRef>(null);
+  const figureRef = useRef<HTMLElement>(null);
   const entry = videoRegistry[comp];
   const lastFrame = entry ? entry.durationInFrames - 1 : 0;
+
+  // Mount the (heavy) Remotion Player only when the video scrolls near the
+  // viewport. A lesson can hold 5-6 videos plus widgets; mounting every Player
+  // at once pushes Chrome into "Aw, snap" (renderer out-of-memory). We gate on
+  // an IntersectionObserver and, once mounted, keep it mounted so play state is
+  // preserved when the user scrolls away.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    if (mounted) return;
+    const el = figureRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setMounted(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setMounted(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [mounted]);
 
   // Saat video selesai, tahan di frame terakhir (jangan kembali ke detik awal).
   // Remotion Player otomatis mereset ke frame 0 saat berakhir, jadi kita pin
@@ -52,7 +80,10 @@ export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: 
 
   if (!entry) return null;
   return (
-    <figure className="my-6 overflow-hidden rounded-2xl border border-line bg-ink shadow-sm">
+    <figure
+      ref={figureRef}
+      className="my-6 overflow-hidden rounded-2xl border border-line bg-ink shadow-sm"
+    >
       <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5">
         <span className="flex gap-1.5">
           <span className="h-3 w-3 rounded-full bg-rose-400" />
@@ -63,17 +94,26 @@ export function VideoPlayer({ comp, title, caption }: { comp: VideoComp; title: 
           <Icon name="film" className="text-rose-400" /> {title}
         </span>
       </div>
-      <Player
-        ref={playerRef}
-        component={entry.component}
-        durationInFrames={entry.durationInFrames}
-        fps={VIDEO.fps}
-        compositionWidth={VIDEO.width}
-        compositionHeight={VIDEO.height}
-        style={{ width: "100%" }}
-        controls
-        acknowledgeRemotionLicense
-      />
+      {mounted ? (
+        <Player
+          ref={playerRef}
+          component={entry.component}
+          durationInFrames={entry.durationInFrames}
+          fps={VIDEO.fps}
+          compositionWidth={VIDEO.width}
+          compositionHeight={VIDEO.height}
+          style={{ width: "100%" }}
+          controls
+          acknowledgeRemotionLicense
+        />
+      ) : (
+        <div
+          className="flex w-full items-center justify-center text-sm text-ink-faint"
+          style={{ aspectRatio: `${VIDEO.width} / ${VIDEO.height}` }}
+        >
+          Memuat video…
+        </div>
+      )}
       {caption && (
         <figcaption className="bg-ink px-4 py-3 text-sm text-ink-faint">{caption}</figcaption>
       )}

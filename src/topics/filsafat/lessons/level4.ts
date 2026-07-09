@@ -55,20 +55,6 @@ export const level4: Lesson[] = [
         credit: "Sumber: Wikimedia Commons, domain publik",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu tokoh tiga teori etika (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Etika keutamaan Aristoteles jauh mendahului deontologi Kant dan utilitarianisme Bentham serta Mill yang berdekatan di era Modern.",
-        data: [
-          { label: "Aristoteles (384 SM)", value: -384, color: "#f59e0b" },
-          { label: "Immanuel Kant (1724)", value: 1724, color: "#6366f1" },
-          { label: "Jeremy Bentham (1748)", value: 1748, color: "#22c55e" },
-          { label: "John Stuart Mill (1806)", value: 1806, color: "#16a34a" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -101,11 +87,9 @@ export const level4: Lesson[] = [
         type: "callout",
         tone: "tip",
         title: "Uji pemahamanmu",
-        html: "Cocokkan cara berpikir moral dengan aliran etikanya, lalu tebak filsuf di balik setiap gagasan.",
+        html: "Cocokkan cara berpikir moral dengan aliran etikanya.",
       },
-      { type: "widget", widget: "KuisAliranEtika" },
-      { type: "widget", widget: "TebakFilsuf" },
-      {
+      { type: "widget", widget: "KuisAliranEtika" },      {
         type: "matchExercise",
         prompt: "Pasangkan filsuf dengan teori etika yang ia kembangkan.",
         pairs: [
@@ -229,23 +213,7 @@ export const level4: Lesson[] = [
         title: "Coba simulatornya",
         html: "Pilih sebuah dilema dan amati bagaimana kacamata utilitarian menimbang untung-rugi bagi semua pihak.",
       },
-      { type: "widget", widget: "SimulatorDilemaEtika" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu tokoh utilitarianisme (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Dari Bentham dan Mill di abad ke-18 hingga ke-19, gagasan utilitarian berlanjut lewat Sidgwick dan Peter Singer di era modern.",
-        data: [
-          { label: "Jeremy Bentham (1748)", value: 1748, color: "#22c55e" },
-          { label: "John Stuart Mill (1806)", value: 1806, color: "#16a34a" },
-          { label: "Henry Sidgwick (1838)", value: 1838, color: "#0ea5e9" },
-          { label: "Peter Singer (1946)", value: 1946, color: "#a855f7" },
-        ],
-      },
-      { type: "widget", widget: "TebakFilsuf" },
-      {
+      { type: "widget", widget: "SimulatorDilemaEtika" },      {
         type: "case",
         title: "Studi Kasus: Sekoci penuh",
         html: "Sebuah sekoci kelebihan muatan dan akan tenggelam kecuali satu orang dikorbankan. <strong>Act utilitarian</strong> menghitung: mengorbankan 1 untuk menyelamatkan banyak menghasilkan kebahagiaan bersih lebih besar. <strong>Rule utilitarian</strong> khawatir, bila aturan \"boleh mengorbankan nyawa demi mayoritas\" diberlakukan umum, justru menimbulkan ketakutan dan kerusakan sosial yang lebih besar. Inilah ketegangan antara act dan rule.",
@@ -379,20 +347,6 @@ export const level4: Lesson[] = [
         caption: "Jeremy Bentham, utilitarian yang mengkritik kekakuan aturan mutlak Kant.",
         credit: "Sumber: Wikimedia Commons, domain publik",
       },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu tokoh deontologi dan etika Kantian (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Gagasan kewajiban Kant di abad ke-18 dikembangkan Ross, lalu Rawls dan Korsgaard yang menghidupkan etika Kantian di abad ke-20.",
-        data: [
-          { label: "Immanuel Kant (1724)", value: 1724, color: "#6366f1" },
-          { label: "W.D. Ross (1877)", value: 1877, color: "#818cf8" },
-          { label: "John Rawls (1921)", value: 1921, color: "#22c55e" },
-          { label: "Christine Korsgaard (1952)", value: 1952, color: "#f59e0b" },
-        ],
-      },
       { type: "widget", widget: "SimulatorDilemaEtika" },
       { type: "widget", widget: "KuisAliranEtika" },
       {
@@ -524,21 +478,6 @@ export const level4: Lesson[] = [
         html: "Banyak isu AI bukan soal aturan tunggal, melainkan soal karakter dan kebijaksanaan praktis (phronesis) pembuat keputusan dalam menimbang manfaat, risiko, dan martabat manusia.",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Garis waktu kebangkitan etika keutamaan (tahun lahir)",
-        unit: "tahun",
-        source: "Tahun lahir tokoh (sejarah filsafat)",
-        note: "Setelah Aristoteles di era Kuno, etika keutamaan sunyi berabad-abad lalu dihidupkan kembali oleh Anscombe, Foot, MacIntyre, dan Nussbaum di abad ke-20.",
-        data: [
-          { label: "Aristoteles (384 SM)", value: -384, color: "#f59e0b" },
-          { label: "G.E.M. Anscombe (1919)", value: 1919, color: "#22c55e" },
-          { label: "Philippa Foot (1920)", value: 1920, color: "#0ea5e9" },
-          { label: "Alasdair MacIntyre (1929)", value: 1929, color: "#6366f1" },
-          { label: "Martha Nussbaum (1947)", value: 1947, color: "#a855f7" },
-        ],
-      },
-      {
         type: "image",
         src: "https://commons.wikimedia.org/wiki/Special:FilePath/John_Stuart_Mill_by_London_Stereoscopic_Company,_c1870.jpg?width=400",
         alt: "Potret foto John Stuart Mill",
@@ -549,11 +488,9 @@ export const level4: Lesson[] = [
         type: "callout",
         tone: "tip",
         title: "Uji pemahamanmu",
-        html: "Coba simulasikan sebuah dilema, lalu tebak filsuf dan aliran etika di balik tiap gagasan.",
+        html: "Coba simulasikan sebuah dilema dan lihat bagaimana tiap aliran etika menimbangnya.",
       },
-      { type: "widget", widget: "SimulatorDilemaEtika" },
-      { type: "widget", widget: "TebakFilsuf" },
-      {
+      { type: "widget", widget: "SimulatorDilemaEtika" },      {
         type: "case",
         title: "Studi Kasus: Mobil otonom dan jalan tengah",
         html: "Sebuah mobil otonom harus diprogram untuk situasi kecelakaan tak terhindarkan. <strong>Utilitarian</strong> meminimalkan total korban. <strong>Deontolog</strong> menolak menjadikan siapa pun sekadar alat penyelamat. <strong>Etika keutamaan</strong> bertanya: keputusan apa yang akan diambil perancang yang bijaksana dan bertanggung jawab, menghindari baik kelalaian (kekurangan) maupun kesombongan teknologis (kelebihan)? Inilah pertemuan etika keutamaan dan etika AI.",
@@ -676,9 +613,7 @@ export const level4: Lesson[] = [
         title: "Video: Tiga Teori Etika",
         caption: "Meta-etika berada satu lapis di bawah ketiga teori normatif ini, mempertanyakan dasar dari nilai itu sendiri.",
       },
-      { type: "widget", widget: "KuisAliranEtika" },
-      { type: "widget", widget: "TebakFilsuf" },
-      {
+      { type: "widget", widget: "KuisAliranEtika" },      {
         type: "table",
         caption: "Empat posisi meta-etika tentang status nilai moral",
         headers: ["Posisi", "Ada fakta moral objektif?", "Contoh klaim"],
@@ -687,19 +622,6 @@ export const level4: Lesson[] = [
           ["Relativisme", "Bergantung budaya", "Benar dan salah berbeda di tiap masyarakat"],
           ["Emotivisme", "Tidak, hanya ungkapan rasa", "'Mencuri itu buruk' berarti 'mencuri, ih!'"],
           ["Nihilisme moral", "Tidak ada sama sekali", "Tak ada tindakan yang sungguh benar atau salah"],
-        ],
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Garis waktu pemikir meta-etika (tahun lahir)",
-        unit: "tahun lahir",
-        source: "Tahun lahir historis para tokoh",
-        note: "Pertanyaan tentang dasar nilai berkembang dari Hume di abad ke-18 hingga emotivisme Ayer di abad ke-20.",
-        data: [
-          { label: "David Hume", value: 1711, color: "#6366f1" },
-          { label: "G.E. Moore", value: 1873, color: "#10b981" },
-          { label: "A.J. Ayer", value: 1910, color: "#f59e0b" },
         ],
       },
       {
