@@ -653,21 +653,6 @@ export const level5: Lesson[] = [
         html: "Perkembangan fintech dan teknologi membuat dana bisa berpindah lintas negara dalam hitungan detik. Arus modal yang cepat menyulitkan stabilitas kurs dan menuntut <strong>koordinasi global</strong> antarbank sentral.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Perhatian Bank Sentral Modern (ilustrasi konsep)",
-        unit: "porsi perhatian",
-        source: "ilustrasi konsep keseimbangan mandat dan tantangan baru",
-        note: "Mandat inti stabilitas harga tetap dominan, sementara tantangan baru menambah beban perhatian.",
-        data: [
-          { label: "Stabilitas harga (mandat inti)", value: 50, color: "#10b981" },
-          { label: "Stabilitas sistem keuangan", value: 20, color: "#3b82f6" },
-          { label: "Digital & kripto", value: 12, color: "#f59e0b" },
-          { label: "Iklim & ketimpangan", value: 10, color: "#a78bfa" },
-          { label: "Koordinasi global", value: 8, color: "#fb7185" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -960,19 +945,6 @@ export const level5: Lesson[] = [
       {
         type: "widget",
         widget: "SimulatorKebijakanMoneter",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Respons Bank Sentral pada Beberapa Krisis (ilustrasi konsep)",
-        unit: "intensitas dukungan likuiditas",
-        source: "ilustrasi konsep, bukan besaran pasti",
-        note: "Pada tiap krisis besar, bank sentral menyuntikkan likuiditas darurat untuk mencegah keruntuhan sistemik.",
-        data: [
-          { label: "Krisis 1998", value: 70, color: "#fb7185" },
-          { label: "Krisis global 2008", value: 90, color: "#f59e0b" },
-          { label: "Pandemi 2020", value: 100, color: "#60a5fa" },
-        ],
       },
       {
         type: "case",

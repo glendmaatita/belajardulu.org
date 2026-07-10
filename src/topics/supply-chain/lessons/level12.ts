@@ -663,22 +663,6 @@ export const level12: Lesson[] = [
         caption: "Sebelum menumpuk stok, tim menguji ramalan dan skenario di salinan digital operasinya.",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Permintaan Aktual vs Ramalan Sederhana vs Ramalan ML (ilustrasi)",
-        unit: "ribu unit",
-        source: "ilustrasi edukatif: ML mengikuti pola musiman lebih dekat",
-        note: "Ramalan ML (hijau) menempel lebih rapat ke permintaan aktual ketimbang ramalan rata-rata sederhana.",
-        data: [
-          { label: "Jan", value: 100 },
-          { label: "Feb", value: 120 },
-          { label: "Mar", value: 90 },
-          { label: "Apr", value: 140 },
-          { label: "Mei", value: 160 },
-          { label: "Jun", value: 130 },
-        ],
-      },
-      {
         type: "callout",
         tone: "warn",
         title: "ML hanya sebaik datanya",

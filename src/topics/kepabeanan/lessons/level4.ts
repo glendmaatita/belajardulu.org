@@ -72,19 +72,6 @@ export const level4: Lesson[] = [
         caption: "Animasi perjalanan dokumen dari invoice, packing list, Bill of Lading, sampai dokumen kepabeanan.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Jumlah dokumen inti per kelompok (ilustrasi)",
-        unit: "dokumen",
-        source: "ilustrasi edukatif",
-        note: "Tiap kelompok punya beberapa dokumen yang saling melengkapi.",
-        data: [
-          { label: "Perdagangan", value: 3, color: "#2563eb" },
-          { label: "Pengiriman", value: 3, color: "#0ea5e9" },
-          { label: "Kepabeanan", value: 3, color: "#a855f7" },
-        ],
-      },
-      {
         type: "classifyExercise",
         prompt: "Kelompokkan dokumen berikut sesuai jenisnya.",
         buckets: ["Perdagangan", "Pengiriman"],
@@ -184,20 +171,6 @@ export const level4: Lesson[] = [
         html: "<strong>Delivery Order (DO)</strong> diterbitkan agen pelayaran setelah importir menebus B/L dan melunasi biaya. Tanpa DO, barang tidak bisa dikeluarkan dari terminal walaupun pabean sudah memberi izin keluar (SPPB).",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Penggunaan Dokumen Angkut per Moda (ilustrasi)",
-        unit: "% kiriman",
-        source: "ilustrasi edukatif",
-        note: "Bill of Lading mendominasi angkutan laut, Air Waybill untuk kargo udara.",
-        data: [
-          { label: "B/L (laut)", value: 55, color: "#0ea5e9" },
-          { label: "Sea Waybill (laut)", value: 20, color: "#38bdf8" },
-          { label: "Air Waybill (udara)", value: 18, color: "#ef4444" },
-          { label: "Lainnya", value: 7, color: "#94a3b8" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: B/L asli telat datang",
         html: "Importir sudah bayar lunas, tetapi <strong>B/L asli</strong> masih dikirim kurir dari luar negeri dan belum tiba. Barang menumpuk di pelabuhan menunggu B/L untuk menerbitkan <strong>Delivery Order</strong>. Biaya penyimpanan Rp1,2 juta per hari berjalan selama 4 hari sebelum B/L tiba. Banyak perusahaan beralih ke Sea Waybill atau Telex Release untuk menghindari risiko ini.",
@@ -220,18 +193,6 @@ export const level4: Lesson[] = [
           { left: "Sea Waybill", right: "Bukti angkut laut tanpa fungsi kepemilikan" },
           { left: "Delivery Order", right: "Surat perintah pengeluaran barang dari terminal" },
           { left: "Manifest", right: "Daftar rekap seluruh muatan dalam satu sarana angkut" },
-        ],
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Sifat dokumen angkut: negotiable vs non-negotiable (ilustrasi)",
-        unit: "% dokumen",
-        source: "ilustrasi edukatif",
-        note: "Hanya Bill of Lading yang bersifat negotiable (dokumen kepemilikan).",
-        data: [
-          { label: "Negotiable (B/L)", value: 45, color: "#0ea5e9" },
-          { label: "Non-negotiable (Sea/Air Waybill)", value: 55, color: "#94a3b8" },
         ],
       },
       {
@@ -340,20 +301,6 @@ export const level4: Lesson[] = [
         tone: "tip",
         title: "Sertifikat inspeksi & asuransi",
         html: "<strong>Sertifikat inspeksi</strong> (survey) memastikan kualitas, kuantitas, dan kondisi barang sesuai kontrak. <strong>Sertifikat asuransi</strong> menjadi bukti barang dipertanggungkan, penting untuk menghitung nilai CIF dan untuk klaim bila terjadi kerusakan.",
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Dokumen dalam Berkas Impor (ilustrasi)",
-        unit: "% berkas",
-        source: "ilustrasi edukatif",
-        note: "PIB menjadi inti, didukung dokumen perdagangan, pengiriman, dan sertifikat.",
-        data: [
-          { label: "PIB", value: 30, color: "#0ea5e9" },
-          { label: "Invoice & packing list", value: 28, color: "#22c55e" },
-          { label: "B/L atau AWB", value: 20, color: "#f59e0b" },
-          { label: "COO & sertifikat", value: 22, color: "#a855f7" },
-        ],
       },
       {
         type: "case",

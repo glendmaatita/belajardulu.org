@@ -1314,20 +1314,6 @@ export const level4: Lesson[] = [
         html: "Dalam Islam, jual beli <strong>emas</strong> harus <strong>tunai dan serah terima</strong> (tidak boleh tempo), karena emas tergolong barang ribawi. Untuk properti, tersedia <strong>KPR syariah</strong> dengan akad seperti murabahah (jual beli) atau musyarakah mutanaqishah (kepemilikan bertahap), tanpa bunga.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Perbandingan sifat aset riil (skor ilustrasi 1-5)",
-        unit: "skor",
-        source: "Ilustrasi edukatif",
-        note: "Emas unggul di likuiditas; properti unggul di potensi arus kas sewa. Keduanya saling melengkapi.",
-        data: [
-          { label: "Likuiditas emas", value: 5, color: "#eab308" },
-          { label: "Likuiditas properti", value: 2, color: "#f97316" },
-          { label: "Arus kas emas", value: 1, color: "#eab308" },
-          { label: "Arus kas properti", value: 4, color: "#f97316" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",

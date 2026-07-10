@@ -945,21 +945,6 @@ export const level4: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorSurplus" },
       {
-        type: "chart",
-        variant: "line",
-        title: "Perkiraan Pangsa Kerangka Neoklasik dalam Pengajaran Ekonomi (ilustrasi)",
-        unit: "pangsa perkiraan (%)",
-        source: "ilustrasi tren dominasi neoklasik, bukan data survei resmi",
-        note: "Neoklasik naik menjadi arus utama pada pertengahan abad ke-20, lalu sedikit menurun seiring munculnya ekonomi perilaku dan pendekatan lain.",
-        data: [
-          { label: "1900", value: 40 },
-          { label: "1930", value: 55 },
-          { label: "1960", value: 80 },
-          { label: "1990", value: 78 },
-          { label: "2020", value: 70 },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Homo economicus vs manusia nyata",
         html: "Model neoklasik meramalkan orang akan selalu memilih opsi dengan nilai harapan tertinggi. Namun eksperimen menunjukkan banyak orang menolak taruhan yang secara matematis menguntungkan karena takut rugi (loss aversion), atau membeli barang hanya karena diskon meski tak butuh. Perilaku nyata ini menjadi bahan bakar <strong>ekonomi perilaku</strong> yang melengkapi asumsi rasionalitas.",

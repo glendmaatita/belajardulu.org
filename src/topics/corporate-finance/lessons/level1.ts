@@ -22,38 +22,10 @@ export const level1: Lesson[] = [
         html: "1) <strong>Investasi</strong> (capital budgeting): proyek/aset apa yang dibeli? 2) <strong>Pendanaan</strong>: dari mana uangnya, utang atau ekuitas? 3) <strong>Dividen</strong>: laba dibagikan atau diinvestasikan lagi?",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Tiga Keputusan Inti Corporate Finance",
-        unit: "ilustrasi cakupan",
-        source: "ilustrasi konsep",
-        note: "Ketiganya saling terkait: investasi butuh pendanaan, dan sisa laba menentukan kebijakan dividen.",
-        data: [
-          { label: "Keputusan Investasi", value: 40 },
-          { label: "Keputusan Pendanaan", value: 35 },
-          { label: "Keputusan Dividen", value: 25 },
-        ],
-      },
-      {
         type: "callout",
         tone: "info",
         title: "Memaksimalkan nilai, bukan sekadar laba",
         html: "Tujuannya bukan laba jangka pendek semata, melainkan <strong>nilai jangka panjang</strong> yang memperhitungkan risiko dan waktu. Laba besar yang penuh risiko bisa menghancurkan nilai.",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Pemangku Kepentingan yang Dilayani Perusahaan (ilustrasi prioritas)",
-        unit: "bobot perhatian relatif",
-        source: "ilustrasi konsep tata kelola",
-        note: "Memaksimalkan nilai pemegang saham berkelanjutan tetap menuntut perusahaan melayani pelanggan, karyawan, dan kreditur dengan baik.",
-        data: [
-          { label: "Pemegang saham", value: 35, color: "#6366f1" },
-          { label: "Pelanggan", value: 25, color: "#0ea5e9" },
-          { label: "Karyawan", value: 20, color: "#10b981" },
-          { label: "Kreditur", value: 12, color: "#f59e0b" },
-          { label: "Masyarakat", value: 8, color: "#ef4444" },
-        ],
       },
       {
         type: "case",

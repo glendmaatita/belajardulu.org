@@ -204,19 +204,6 @@ export const level3: Lesson[] = [
         credit: "Sumber: Wikimedia Commons",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Mana yang Boleh Dibagikan, Mana yang Wajib Dirahasiakan",
-        unit: "kategori kunci",
-        source: "ilustrasi edukatif konsep kunci publik",
-        note: "Hanya private key yang wajib dirahasiakan; public key dan address dirancang untuk dibagikan.",
-        data: [
-          { label: "Wajib rahasia (private key)", value: 1, color: "#ef4444" },
-          { label: "Boleh dibagi (public key)", value: 1, color: "#22c55e" },
-          { label: "Boleh dibagi (address)", value: 1, color: "#3b82f6" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Menerima dana tanpa membuka rahasia",
         html: "Andi ingin dibayar dalam kripto. Ia cukup memberi pembayar <strong>address</strong> dompetnya, yang aman disebar di mana saja. Pembayar mengirim dana ke address itu. Selama hidup transaksi, Andi <strong>tidak pernah</strong> mengungkap private key-nya. Saat nanti ingin membelanjakan dana, Andi memakai private key untuk menandatangani transaksi tanpa membocorkannya ke jaringan.",

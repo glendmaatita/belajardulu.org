@@ -197,20 +197,6 @@ export const level1: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorRibaVsBagiHasil" },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Empat Pilar Cara Pandang Ekonomi Islam (ilustrasi konsep)",
-        unit: "bobot konseptual",
-        source: "ilustrasi konsep, bukan data survei",
-        note: "Keempat pilar saling menopang; tak satu pun berdiri sendiri dalam membentuk perilaku ekonomi Muslim.",
-        data: [
-          { label: "Tauhid", value: 25, color: "#10b981" },
-          { label: "Keadilan", value: 25, color: "#059669" },
-          { label: "Khalifah/Amanah", value: 25, color: "#34d399" },
-          { label: "Keseimbangan", value: 25, color: "#047857" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Pedagang menimbun beras saat langka",
         html: "Ketika pasokan beras menipis, seorang pedagang membeli dan menyimpan stok besar agar harga melonjak, lalu menjualnya mahal. Praktik <strong>ihtikar</strong> ini dilarang karena mengambil untung dari penderitaan orang banyak. Prinsip keadilan menuntut barang tetap mengalir dengan harga wajar, bukan ditahan demi keuntungan sepihak.",
@@ -467,19 +453,6 @@ export const level1: Lesson[] = [
         caption: "Instrumen distribusi yang menjaga kemaslahatan harta bagi semua.",
       },
       { type: "widget", widget: "KalkulatorGini" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Prioritas Kebutuhan Menurut Maqashid (ilustrasi konsep)",
-        unit: "tingkat prioritas (1-3)",
-        source: "ilustrasi konsep tingkatan kebutuhan",
-        note: "Dharuriyat didahulukan; tahsiniyat tak boleh mengorbankan yang primer. Ini pedoman menyusun prioritas belanja dan kebijakan.",
-        data: [
-          { label: "Dharuriyat", value: 3, color: "#059669" },
-          { label: "Hajiyat", value: 2, color: "#34d399" },
-          { label: "Tahsiniyat", value: 1, color: "#a7f3d0" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Menyusun prioritas anggaran keluarga",
@@ -744,19 +717,6 @@ export const level1: Lesson[] = [
         html: "Distribusi harta yang timpang menandakan hak sosial belum mengalir. Coba lihat ukuran ketimpangannya.",
       },
       { type: "widget", widget: "KalkulatorGini" },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Tiga Jenis Kepemilikan dalam Islam (ilustrasi konsep)",
-        unit: "kategori kepemilikan",
-        source: "ilustrasi konsep kategori kepemilikan",
-        note: "Kepemilikan umum dan negara membatasi kepemilikan pribadi agar sumber daya vital tetap terjangkau semua orang.",
-        data: [
-          { label: "Pribadi", value: 40, color: "#10b981" },
-          { label: "Umum", value: 35, color: "#059669" },
-          { label: "Negara", value: 25, color: "#34d399" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Sumber air desa dikuasai satu orang",

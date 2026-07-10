@@ -179,20 +179,6 @@ export const level1: Lesson[] = [
         html: "Perdagangan bukan permainan menang-kalah. Lewat <strong>spesialisasi</strong>, setiap pihak mengerjakan yang paling efisien lalu saling menukar, sehingga total barang dan jasa bertambah.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Apa yang Memengaruhi Keputusan Konsumen (ilustrasi)",
-        unit: "% responden",
-        source: "ilustrasi edukatif",
-        note: "Harga dan insentif lain mendominasi keputusan, sesuai prinsip bahwa orang bereaksi pada insentif.",
-        data: [
-          { label: "Harga", value: 45, color: "#0ea5e9" },
-          { label: "Kualitas", value: 25, color: "#8b5cf6" },
-          { label: "Promo/insentif", value: 20, color: "#22c55e" },
-          { label: "Lainnya", value: 10, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Insentif pajak rokok",
         html: "Pemerintah menaikkan cukai sehingga harga sebungkus rokok naik dari Rp25.000 menjadi Rp35.000 (naik 40%). Konsumsi turun dari 100 juta bungkus menjadi 80 juta bungkus per bulan. Penurunan konsumsi 20% ini menunjukkan orang <strong>bereaksi pada insentif</strong>: harga lebih tinggi mendorong sebagian orang berhenti atau mengurangi.",
@@ -367,20 +353,6 @@ export const level1: Lesson[] = [
         comp: "CircularFlow",
         title: "Video: Diagram Arus Melingkar",
         caption: "Animasi arus riil (barang dan faktor produksi) dan arus moneter (uang) antara rumah tangga, perusahaan, dan pemerintah.",
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Pelaku dalam Arus Perekonomian (ilustrasi)",
-        unit: "% nilai transaksi",
-        source: "ilustrasi edukatif",
-        note: "Rumah tangga dan perusahaan menjadi inti arus melingkar, dengan peran pemerintah dan luar negeri melengkapi.",
-        data: [
-          { label: "Rumah tangga", value: 40, color: "#0ea5e9" },
-          { label: "Perusahaan", value: 35, color: "#8b5cf6" },
-          { label: "Pemerintah", value: 15, color: "#f59e0b" },
-          { label: "Luar negeri", value: 10, color: "#22c55e" },
-        ],
       },
       {
         type: "classifyExercise",

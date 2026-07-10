@@ -609,33 +609,6 @@ export const level4: Lesson[] = [
         html: "Regulator makin menegakkan aturan agar klaim hijau berdasar bukti. Tiga alat saling melengkapi: <strong>pengungkapan</strong> (TCFD/ISSB) menyediakan data, <strong>taksonomi</strong> (mis. OJK) memberi kriteria apa yang hijau, dan <strong>verifikasi pihak ketiga</strong> mengecek klaim. Bersama, ketiganya mempersempit ruang greenwashing.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Klaim Hijau yang Tidak Dapat Dibuktikan saat Diperiksa (ilustrasi)",
-        unit: "% klaim diperiksa",
-        source: "ilustrasi konsep",
-        note: "Angka ilustrasi untuk menggambarkan besarnya masalah, bukan data riil.",
-        data: [
-          { label: "Bisa dibuktikan", value: 45 },
-          { label: "Sebagian/ambigu", value: 35 },
-          { label: "Tidak dapat dibuktikan", value: 20 },
-        ],
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Tanda Bahaya Greenwashing yang Paling Sering Muncul (ilustrasi)",
-        unit: "% klaim bermasalah yang memuatnya",
-        source: "ilustrasi konsep",
-        note: "Klaim samar tanpa data adalah pola yang paling sering ditemukan.",
-        data: [
-          { label: "Klaim samar tanpa data", value: 70 },
-          { label: "Tanpa verifikasi pihak ketiga", value: 55 },
-          { label: "Sorot 1 produk, sembunyikan dampak lain", value: 40 },
-          { label: "Target tanpa tonggak jelas", value: 35 },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Coba detektornya",

@@ -388,22 +388,6 @@ export const level9: Lesson[] = [
         caption: "Digital twin membandingkan ramalan dengan permintaan nyata sehingga bias dan akurasi terlihat sebelum keputusan stok diambil.",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Aktual vs Ramalan selama 6 bulan (ilustrasi)",
-        unit: "unit",
-        source: "ilustrasi edukatif",
-        note: "Ramalan yang selalu di atas aktual adalah tanda bias positif, bukan sekadar kesalahan acak.",
-        data: [
-          { label: "Jan", value: 100 },
-          { label: "Feb", value: 120 },
-          { label: "Mar", value: 90 },
-          { label: "Apr", value: 140 },
-          { label: "Mei", value: 110 },
-          { label: "Jun", value: 130 },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Over-forecast yang menumpuk stok",
         html: "Sebuah produsen minuman di Indonesia meramal penjualan 6 bulan: ramalan rata-rata 15% di atas aktual setiap bulan. Karena ramalan selalu lebih tinggi, gudang terus memproduksi berlebih sampai stok kedaluwarsa senilai Rp 480 juta dalam setahun. Setelah tim sadar ini bias positif (bukan kesalahan acak), mereka mengoreksi ramalan turun 15% dan kerugian kedaluwarsa anjlok menjadi Rp 90 juta.",
@@ -1029,20 +1013,6 @@ export const level9: Lesson[] = [
         comp: "DigitalTwinVideo",
         title: "Digital Twin & Control Tower Bekerja",
         caption: "Digital twin menguji skenario sementara control tower memantau dan memberi peringatan dini secara real-time.",
-      },
-      {
-        type: "chart",
-        variant: "area",
-        title: "Waktu deteksi gangguan: sebelum vs sesudah control tower (ilustrasi)",
-        unit: "jam sampai masalah terdeteksi",
-        source: "ilustrasi edukatif",
-        note: "Visibilitas real-time memangkas waktu deteksi gangguan secara drastis, memberi ruang bertindak lebih awal.",
-        data: [
-          { label: "Pemasok telat", value: 48 },
-          { label: "Stok kritis", value: 36 },
-          { label: "Pengiriman macet", value: 30 },
-          { label: "Lonjakan permintaan", value: 24 },
-        ],
       },
       {
         type: "case",

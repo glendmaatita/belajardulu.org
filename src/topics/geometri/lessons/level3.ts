@@ -317,19 +317,6 @@ export const level3: Lesson[] = [
         widget: "PenjelajahBentuk",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Perbandingan Sisi Bersesuaian pada Segitiga Sebangun",
-        unit: "perbandingan (skala)",
-        source: "ilustrasi edukatif",
-        note: "Segitiga 3-4-5 diperbesar menjadi 6-8-10. Perbandingan tiap pasang sisi bersesuaian sama, yaitu 2: itulah ciri kesebangunan.",
-        data: [
-          { label: "6 : 3", value: 2, color: "#38bdf8" },
-          { label: "8 : 4", value: 2, color: "#22d3ee" },
-          { label: "10 : 5", value: 2, color: "#2dd4bf" },
-        ],
-      },
-      {
         type: "callout",
         tone: "info",
         title: "Geometri, bukan sekadar berhitung",

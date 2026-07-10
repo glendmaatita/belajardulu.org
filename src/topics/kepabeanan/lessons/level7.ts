@@ -225,20 +225,6 @@ export const level7: Lesson[] = [
       },
       { type: "widget", widget: "KalkulatorTradeFinance" },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Instrumen Trade Finance pada Eksportir UKM (ilustrasi)",
-        unit: "%",
-        source: "ilustrasi edukatif",
-        note: "Factoring mendominasi karena kebutuhan kas jangka pendek paling sering.",
-        data: [
-          { label: "Factoring", value: 45, color: "#0ea5e9" },
-          { label: "Pembiayaan ekspor", value: 25, color: "#10b981" },
-          { label: "Bank guarantee", value: 20, color: "#f59e0b" },
-          { label: "Forfaiting", value: 10, color: "#a855f7" },
-        ],
-      },
-      {
         type: "calcExercise",
         prompt: "Piutang USD 100.000 difactoring, dicairkan 80% di muka dengan biaya factoring 2% dari nilai piutang. Berapa kas bersih yang diterima di muka (USD)?",
         answer: 78000,

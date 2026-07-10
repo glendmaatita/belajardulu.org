@@ -48,19 +48,6 @@ export const level1: Lesson[] = [
       },
       { type: "widget", widget: "KalkulatorMultiplierUang" },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Tujuan Utama Bank Indonesia (ilustrasi konsep)",
-        unit: "bobot peran",
-        source: "ilustrasi konsep mandat bank sentral",
-        note: "Tujuan tunggal BI adalah kestabilan nilai rupiah, mencakup stabilitas harga (inflasi) dan nilai tukar.",
-        data: [
-          { label: "Stabilitas harga (inflasi)", value: 45, color: "#34d399" },
-          { label: "Stabilitas nilai tukar", value: 35, color: "#60a5fa" },
-          { label: "Stabilitas sistem keuangan", value: 20, color: "#fbbf24" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Penggandaan uang oleh bank",
         html: "Seseorang menyetor <strong>Rp100 juta</strong> ke bank. Dengan giro wajib minimum <strong>5%</strong>, angka pengganda uang = 1 / 0,05 = <strong>20 kali</strong>. Secara teori, sistem perbankan dapat menciptakan uang beredar hingga Rp2 miliar dari setoran awal itu lewat siklus simpan-pinjam. Inilah sebabnya bank sentral mengendalikan GWM untuk mengatur likuiditas.",
@@ -194,22 +181,6 @@ export const level1: Lesson[] = [
         html: "Uang modern sebagian besar berupa uang giral yang diciptakan perbankan. Atur setoran dan GWM untuk melihat penggandaan uang.",
       },
       { type: "widget", widget: "KalkulatorMultiplierUang" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Tahapan Evolusi Uang (urutan kemunculan)",
-        unit: "abad/tahun perkiraan",
-        source: "ilustrasi konsep sejarah uang",
-        note: "Setiap tahap muncul karena tahap sebelumnya punya keterbatasan, sampai uang menjadi murni kepercayaan (fiat) dan digital.",
-        data: [
-          { label: "Barter", value: 1, color: "#94a3b8" },
-          { label: "Uang barang", value: 2, color: "#fbbf24" },
-          { label: "Uang logam", value: 3, color: "#f59e0b" },
-          { label: "Uang kertas (standar emas)", value: 4, color: "#60a5fa" },
-          { label: "Uang fiat", value: 5, color: "#34d399" },
-          { label: "Uang digital", value: 6, color: "#a78bfa" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Mengapa standar emas membatasi",
@@ -512,20 +483,6 @@ export const level1: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorBIRate" },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Empat Sasaran Antara Kebijakan Moneter (ilustrasi penekanan)",
-        unit: "bobot perhatian",
-        source: "ilustrasi konsep tujuan kebijakan moneter",
-        note: "Dengan mandat tunggal, BI menempatkan stabilitas harga dan nilai tukar sebagai prioritas, tanpa mengabaikan pertumbuhan.",
-        data: [
-          { label: "Stabilitas harga", value: 40, color: "#34d399" },
-          { label: "Stabilitas nilai tukar", value: 30, color: "#60a5fa" },
-          { label: "Pertumbuhan ekonomi", value: 18, color: "#fbbf24" },
-          { label: "Kesempatan kerja", value: 12, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Trade-off inflasi dan pengangguran",
         html: "Sebuah bank sentral memangkas suku bunga agar dunia usaha berani berinvestasi. Pengangguran turun dari <strong>6%</strong> ke <strong>5%</strong>, tetapi inflasi naik dari <strong>3%</strong> ke <strong>5%</strong>. Trade-off ini, yang secara klasik digambarkan <strong>kurva Phillips</strong>, menunjukkan bahwa menekan pengangguran terlalu jauh dapat memicu inflasi. Bank sentral harus memilih titik keseimbangan.",
@@ -675,18 +632,6 @@ export const level1: Lesson[] = [
         tone: "key",
         title: "Inflasi sehat itu moderat",
         html: "Bukan nol, melainkan rendah dan stabil. Bank Indonesia menetapkan <strong>sasaran inflasi</strong> sebagai jangkar, misalnya kisaran target tahunan, agar ekonomi tumbuh tanpa harga liar.",
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Dua Jenis Inflasi (ilustrasi konsep)",
-        unit: "kontribusi konsep",
-        source: "ilustrasi konsep jenis inflasi",
-        note: "Demand-pull berasal dari sisi permintaan, cost-push dari sisi biaya. Inflasi nyata sering campuran keduanya.",
-        data: [
-          { label: "Demand-pull (permintaan)", value: 50, color: "#60a5fa" },
-          { label: "Cost-push (biaya)", value: 50, color: "#f59e0b" },
-        ],
       },
       {
         type: "case",

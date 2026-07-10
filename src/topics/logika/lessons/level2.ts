@@ -390,19 +390,6 @@ export const level2: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Frekuensi Penggunaan Aturan Ekuivalensi (estimasi soal latihan)",
-        unit: "%",
-        source: "Distribusi soal logika dasar",
-        note: "De Morgan paling sering muncul dalam penyederhanaan.",
-        data: [
-          { label: "De Morgan", value: 45, color: "#6366f1" },
-          { label: "Kontraposisi", value: 30, color: "#22c55e" },
-          { label: "Distributif", value: 25, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Menyangkal aturan ganda",
         html: "Aturan 'Tidak boleh masuk jika tidak pakai sepatu DAN tidak pakai topi'. Negasi syarat 'tidak pakai sepatu DAN tidak pakai topi' menurut De Morgan menjadi 'pakai sepatu ATAU pakai topi'. Jadi cukup memenuhi salah satu untuk membatalkan larangan tersebut.",
@@ -532,19 +519,6 @@ export const level2: Lesson[] = [
         html: "Pilih operator lalu coba semua kombinasi p dan q pada simulator. Jika hasilnya selalu benar, itu tautologi; selalu salah, itu kontradiksi; campuran, itu kontingensi.",
       },
       { type: "widget", widget: "SimulatorOperatorLogika" },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Distribusi Golongan Ekspresi Logika",
-        unit: "%",
-        source: "ilustrasi edukatif",
-        note: "Sebagian besar ekspresi acak bersifat kontingensi; tautologi dan kontradiksi lebih jarang.",
-        data: [
-          { label: "Kontingensi", value: 70, color: "#f59e0b" },
-          { label: "Tautologi", value: 15, color: "#22c55e" },
-          { label: "Kontradiksi", value: 15, color: "#ef4444" },
-        ],
-      },
       {
         type: "chart",
         variant: "bar",

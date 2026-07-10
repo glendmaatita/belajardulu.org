@@ -531,20 +531,6 @@ export const level7: Lesson[] = [
         html: "Kemampuan upgrade berarti ada pihak (pemilik atau admin) yang bisa mengganti logic. Bila kunci admin bocor atau disalahgunakan, logic jahat bisa dipasang. Maka kekuatan upgrade sering dikunci di balik <strong>multisig</strong> atau <strong>timelock</strong> agar tidak bisa dipakai diam-diam.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Immutable vs Upgradeable: Trade-off (ilustrasi)",
-        unit: "skor relatif 0-10",
-        source: "ilustrasi edukatif perbandingan sifat, bukan pengukuran",
-        note: "Kontrak immutable unggul di kepercayaan; kontrak upgradeable unggul di fleksibilitas tetapi menambah permukaan risiko.",
-        data: [
-          { label: "Kepercayaan (immutable)", value: 9, color: "#26a17b" },
-          { label: "Fleksibilitas (immutable)", value: 2, color: "#94a3b8" },
-          { label: "Kepercayaan (proxy)", value: 5, color: "#627eea" },
-          { label: "Fleksibilitas (proxy)", value: 9, color: "#f7931a" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Memperbaiki bug tanpa pindah address",
         html: "Sebuah aplikasi keuangan terdesentralisasi memakai pola proxy. Suatu hari ditemukan bug kecil pada perhitungan bunga. Karena logic terpisah di kontrak <strong>implementasi</strong>, tim cukup men-deploy implementasi baru yang sudah diperbaiki lalu mengarahkan <strong>proxy</strong> kepadanya. Pengguna tetap memakai <strong>address</strong> yang sama dan saldo mereka, yang tersimpan di storage proxy, tidak bergeser sama sekali.",
@@ -857,20 +843,6 @@ export const level7: Lesson[] = [
         html: "Mainkan kontrak <strong>multisig</strong>: amati bagaimana sebuah transaksi baru dieksekusi setelah cukup banyak pemilik menyetujuinya. Ini adalah salah satu pola kontrol akses paling penting untuk dana bersama.",
       },
       { type: "widget", widget: "SimulatorMultisig" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Menulis Sendiri vs Memakai Library Teruji (ilustrasi)",
-        unit: "skor relatif 0-10",
-        source: "ilustrasi edukatif perbandingan pendekatan, bukan pengukuran",
-        note: "Library teruji unggul di keamanan dan kecepatan; menulis ulang sendiri menambah risiko mengulang bug yang sudah dikenal.",
-        data: [
-          { label: "Keamanan (library)", value: 9, color: "#26a17b" },
-          { label: "Keamanan (tulis sendiri)", value: 4, color: "#f7931a" },
-          { label: "Kecepatan (library)", value: 9, color: "#627eea" },
-          { label: "Kecepatan (tulis sendiri)", value: 3, color: "#94a3b8" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Membangun token dengan pola standar",

@@ -33,19 +33,6 @@ export const level1: Lesson[] = [
         widget: "SimulatorSudut",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Jumlah Sepasang Sudut pada Garis Lurus",
-        unit: "jumlah (derajat)",
-        source: "ilustrasi edukatif",
-        note: "Berapa pun pembagiannya, sepasang sudut pada garis lurus selalu berjumlah 180 derajat.",
-        data: [
-          { label: "40 + 140", value: 180, color: "#2dd4bf" },
-          { label: "75 + 105", value: 180, color: "#22d3ee" },
-          { label: "110 + 70", value: 180, color: "#38bdf8" },
-        ],
-      },
-      {
         type: "callout",
         tone: "info",
         title: "Geometri, bukan sekadar mengukur",
@@ -300,19 +287,6 @@ export const level1: Lesson[] = [
         widget: "SimulatorSudut",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Jumlah Semua Sudut yang Mengelilingi Satu Titik",
-        unit: "jumlah (derajat)",
-        source: "ilustrasi edukatif",
-        note: "Bagaimanapun titik dibagi, semua sudut di sekelilingnya selalu berjumlah 360 derajat (satu putaran penuh).",
-        data: [
-          { label: "90 + 90 + 90 + 90", value: 360, color: "#2dd4bf" },
-          { label: "120 + 120 + 120", value: 360, color: "#22d3ee" },
-          { label: "150 + 130 + 80", value: 360, color: "#38bdf8" },
-        ],
-      },
-      {
         type: "callout",
         tone: "info",
         title: "Geometri, bukan sekadar membaca angka",
@@ -437,19 +411,6 @@ export const level1: Lesson[] = [
       {
         type: "widget",
         widget: "SimulatorSudut",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Jumlah Sepasang Sudut Dalam Sepihak pada Garis Sejajar",
-        unit: "jumlah (derajat)",
-        source: "ilustrasi edukatif",
-        note: "Saat transversal memotong dua garis sejajar, sepasang sudut dalam sepihak selalu berjumlah 180 derajat.",
-        data: [
-          { label: "70 + 110", value: 180, color: "#2dd4bf" },
-          { label: "65 + 115", value: 180, color: "#22d3ee" },
-          { label: "130 + 50", value: 180, color: "#38bdf8" },
-        ],
       },
       {
         type: "callout",

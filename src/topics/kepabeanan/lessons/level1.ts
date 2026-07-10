@@ -32,20 +32,6 @@ export const level1: Lesson[] = [
         html: "<strong>WTO</strong> (World Trade Organization) menjadi wasit perdagangan dunia: menyusun aturan, mendorong penurunan tarif, dan menyelesaikan sengketa antarnegara agar perdagangan lebih adil dan terprediksi.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Instrumen Proteksi Perdagangan (ilustrasi tingkat penggunaan)",
-        unit: "frekuensi relatif",
-        source: "ilustrasi edukatif",
-        note: "Tarif paling umum, tetapi hambatan non-tarif makin sering dipakai negara modern.",
-        data: [
-          { label: "Tarif (bea masuk)", value: 40, color: "#0ea5e9" },
-          { label: "Kuota impor", value: 18, color: "#10b981" },
-          { label: "Perizinan/SNI", value: 28, color: "#f59e0b" },
-          { label: "Anti-dumping", value: 14, color: "#ef4444" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Istilah penting",
@@ -201,20 +187,6 @@ export const level1: Lesson[] = [
         html: "<strong>OEM</strong> (Original Equipment Manufacturer): pabrik membuat barang sesuai desain pemesan, lalu diberi merek pemesan. <strong>ODM</strong> (Original Design Manufacturer): pabrik merancang sekaligus membuat, pemesan tinggal memberi merek.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Saluran Ekspor UKM (ilustrasi)",
-        unit: "persen",
-        source: "ilustrasi edukatif",
-        note: "Banyak UKM masih bergantung pada perantara sebelum mampu ekspor langsung.",
-        data: [
-          { label: "Ekspor tidak langsung (trading house)", value: 45, color: "#0ea5e9" },
-          { label: "Distributor di luar negeri", value: 25, color: "#10b981" },
-          { label: "Ekspor langsung", value: 18, color: "#f59e0b" },
-          { label: "Cross-border e-commerce", value: 12, color: "#ef4444" },
-        ],
-      },
-      {
         type: "callout",
         tone: "info",
         title: "Cross-border e-commerce",
@@ -364,20 +336,6 @@ export const level1: Lesson[] = [
         html: "Bila barang tidak sesuai, pembeli mengajukan <strong>complaint</strong> atau klaim. Tanggapi cepat dengan bukti (foto, surveyor) dan rujuk klausul kontrak. Reputasi jangka panjang lebih berharga daripada satu transaksi.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Penyebab Sengketa Dagang (ilustrasi)",
-        unit: "persen kasus",
-        source: "ilustrasi edukatif",
-        note: "Sebagian besar sengketa berakar pada komunikasi dan dokumen yang tidak jelas.",
-        data: [
-          { label: "Spesifikasi tidak jelas", value: 32, color: "#0ea5e9" },
-          { label: "Syarat pembayaran", value: 26, color: "#10b981" },
-          { label: "Keterlambatan kirim", value: 24, color: "#f59e0b" },
-          { label: "Kualitas tidak sesuai", value: 18, color: "#ef4444" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Quotation yang mengikat margin",
         html: "Seorang eksportir mengirim quotation USD 12 per kg untuk 1.000 kg kopi, dengan biaya produksi USD 9 per kg. Pembeli menegosiasi turun ke USD 11 per kg. Margin per kg turun dari USD 3 menjadi USD 2, sehingga total margin dari USD 3.000 menjadi USD 2.000. Eksportir harus memastikan harga negosiasi tetap menutup biaya.",
@@ -400,20 +358,6 @@ export const level1: Lesson[] = [
           { left: "Purchase Order", right: "Surat pesanan yang diterbitkan pembeli" },
           { left: "Sales Contract", right: "Kontrak jual beli yang mengikat kedua pihak" },
           { left: "Complaint", right: "Klaim atas barang yang tidak sesuai" },
-        ],
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Topik dalam Negosiasi Dagang (ilustrasi)",
-        unit: "persen waktu negosiasi",
-        source: "ilustrasi edukatif",
-        note: "Harga penting, tetapi Incoterms, pembayaran, dan jadwal juga menentukan kesepakatan.",
-        data: [
-          { label: "Harga", value: 40, color: "#0ea5e9" },
-          { label: "Syarat pembayaran", value: 25, color: "#10b981" },
-          { label: "Incoterms", value: 20, color: "#f59e0b" },
-          { label: "Jadwal pengiriman", value: 15, color: "#6366f1" },
         ],
       },
       {

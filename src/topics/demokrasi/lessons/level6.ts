@@ -200,21 +200,6 @@ export const level6: Lesson[] = [
         credit: "Sumber: Wikimedia Commons",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Hierarki aturan di Indonesia (ilustrasi tingkat)",
-        unit: "tingkat dari yang tertinggi",
-        source: "ilustrasi edukatif berdasarkan UU 12/2011 tentang pembentukan peraturan",
-        note: "Makin tinggi tingkatnya, makin mengikat. UUD 1945 berada di puncak dan tak boleh dilanggar aturan di bawahnya.",
-        data: [
-          { label: "UUD 1945", value: 5, color: "#34d399" },
-          { label: "Undang-Undang", value: 4, color: "#60a5fa" },
-          { label: "Peraturan Pemerintah", value: 3, color: "#a78bfa" },
-          { label: "Peraturan Presiden", value: 2, color: "#fbbf24" },
-          { label: "Peraturan Daerah", value: 1, color: "#f87171" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Sebuah Perda dibatalkan karena melanggar UU",
         html: "Bayangkan sebuah pemerintah daerah menerbitkan Peraturan Daerah yang melarang warga pindah agama. Karena <strong>Perda</strong> berada di tingkat paling bawah dan UUD 1945 menjamin kebebasan beragama, aturan itu bertentangan dengan konstitusi dan undang-undang di atasnya. Lewat mekanisme pengujian, Perda semacam ini dapat dibatalkan. Inilah cara hierarki hukum menjaga agar tak ada aturan yang menabrak konstitusi.",

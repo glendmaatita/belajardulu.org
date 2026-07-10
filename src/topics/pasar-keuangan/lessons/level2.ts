@@ -294,19 +294,6 @@ export const level2: Lesson[] = [
         html: "BI tidak mengawasi bank secara individu sebagai pengawas mikroprudensial sejak 2014, tugas itu pindah ke <strong>OJK</strong>. BI juga tidak menetapkan APBN. Fokus BI ada pada moneter, sistem pembayaran, dan stabilitas sistem keuangan secara makro.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Fokus Mandat Bank Indonesia (ilustrasi bobot perhatian)",
-        unit: "% perhatian",
-        source: "ilustrasi konseptual",
-        note: "Ketiga pilar saling menopang tujuan akhir: stabilitas nilai rupiah.",
-        data: [
-          { label: "Kebijakan moneter", value: 40, color: "#0ea5e9" },
-          { label: "Sistem pembayaran", value: 30, color: "#10b981" },
-          { label: "Stabilitas sistem keuangan", value: 30, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: BI merespons inflasi tinggi",
         html: "Misalkan inflasi melonjak ke 6% sementara target 3%. Untuk meredam permintaan dan menahan laju harga, BI menaikkan BI Rate. Bunga kredit naik, konsumsi dan investasi yang dibiayai utang melambat, tekanan harga mereda. Ini contoh <strong>kebijakan moneter kontraktif</strong> demi menjaga stabilitas nilai rupiah.",

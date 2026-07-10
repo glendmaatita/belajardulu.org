@@ -73,20 +73,6 @@ export const level11: Lesson[] = [
         caption: "Visualisasi bagaimana tiga modus pelanggaran terbentuk dan terdeteksi saat audit.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Temuan Pelanggaran Kepabeanan (ilustrasi)",
-        unit: "% temuan",
-        source: "ilustrasi edukatif",
-        note: "Under-valuation paling sering ditemukan karena relatif mudah dilakukan namun mudah terlacak lewat data pembayaran.",
-        data: [
-          { label: "Under-valuation", value: 42, color: "#f59e0b" },
-          { label: "Misclassification", value: 28, color: "#fb923c" },
-          { label: "Smuggling", value: 18, color: "#ef4444" },
-          { label: "Dokumen palsu", value: 12, color: "#dc2626" },
-        ],
-      },
-      {
         type: "matchExercise",
         prompt: "Cocokkan istilah pelanggaran dengan definisinya.",
         pairs: [

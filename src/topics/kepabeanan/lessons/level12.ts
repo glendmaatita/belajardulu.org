@@ -184,19 +184,6 @@ export const level12: Lesson[] = [
         html: "Walau serba digital, ekspor tetap tunduk pada aturan. Pastikan produk tidak termasuk barang larangan/pembatasan (lartas), cantumkan deskripsi dan nilai yang benar di dokumen, dan pahami ketentuan negara tujuan (misalnya batas nilai bebas bea atau de minimis).",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Saluran Ekspor UMKM Digital (ilustrasi)",
-        unit: "% penjual",
-        source: "ilustrasi edukatif",
-        note: "Marketplace lintas batas menjadi pintu masuk paling populer bagi penjual kecil.",
-        data: [
-          { label: "Marketplace lintas batas", value: 55, color: "#10b981" },
-          { label: "Toko online sendiri", value: 25, color: "#3b82f6" },
-          { label: "Agregator/eksportir pihak ketiga", value: 20, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Perajin batik go global",
         html: "Bu Sari menjual scarf batik seharga Rp150.000 per lembar di pasar lokal. Lewat marketplace lintas batas, ia memasang harga USD 25 (sekitar Rp400.000) per lembar untuk pembeli mancanegara. Setelah dikurangi biaya kirim, komisi platform, dan biaya pembayaran sekitar Rp120.000 per lembar, ia tetap mengantongi sekitar Rp280.000 bersih, jauh di atas penjualan lokal. Dokumentasi dibuat elektronik dan paket dijemput kurir, tanpa perlu datang ke pelabuhan.",

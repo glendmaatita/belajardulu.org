@@ -51,18 +51,6 @@ export const level3: Lesson[] = [
         widget: "KalkulatorGini",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Fokus Perhatian: Klasik vs Marx (ilustrasi konsep)",
-        unit: "penekanan relatif",
-        source: "ilustrasi konsep perbandingan pandangan",
-        note: "Klasik menonjolkan efisiensi dan pertumbuhan; Marx menonjolkan distribusi, kelas, dan konflik.",
-        data: [
-          { label: "Klasik: efisiensi & pasar", value: 85, color: "#34d399" },
-          { label: "Marx: distribusi & kelas", value: 85, color: "#fb7185" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Menghitung nilai lebih",
         html: "Seorang buruh menciptakan nilai <strong>Rp400 ribu</strong> sehari, tetapi upahnya hanya <strong>Rp150 ribu</strong>. Menurut Marx, selisih <strong>Rp250 ribu</strong> adalah nilai lebih yang diambil pemilik modal. Ekonom klasik dan neoklasik menjawab berbeda: imbalan modal dan risiko juga menciptakan nilai. Perdebatan tentang dari mana laba berasal ini menjadi salah satu poros sejarah pemikiran ekonomi.",
@@ -336,19 +324,6 @@ export const level3: Lesson[] = [
         widget: "SimulatorSpektrumEkonomi",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Mode Produksi & Ciri Dominan (ilustrasi konsep)",
-        unit: "penekanan relatif",
-        source: "ilustrasi kerangka materialisme historis",
-        note: "Tiap mode produksi punya hubungan produksi khasnya: siapa memiliki alat produksi dan bagaimana surplus dibagi.",
-        data: [
-          { label: "Feodal: tanah & bangsawan", value: 70, color: "#a78bfa" },
-          { label: "Kapitalis: modal & pasar", value: 90, color: "#fb7185" },
-          { label: "Sosialis (ramalan): milik bersama", value: 60, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Dari feodal ke kapitalis",
         html: "Di Eropa, ketika perdagangan dan manufaktur tumbuh, hubungan tuan-tanah dan hamba yang mengikat mulai menghambat. Kaum pedagang dan pemilik modal membutuhkan buruh yang bebas berpindah dan pasar yang terbuka. Menurut Marx, <strong>kekuatan produksi baru</strong> (perdagangan, mesin) berbenturan dengan <strong>hubungan produksi lama</strong> (feodal), dan benturan itu melahirkan kapitalisme.",
@@ -477,18 +452,6 @@ export const level3: Lesson[] = [
       {
         type: "widget",
         widget: "SimulatorSpektrumEkonomi",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Penekanan: Utopis vs 'Ilmiah' (ilustrasi konsep)",
-        unit: "penekanan relatif",
-        source: "ilustrasi perbandingan pendekatan",
-        note: "Utopis menekankan rancangan komunitas ideal & moral; Marx-Engels menekankan analisis sejarah & perjuangan kelas.",
-        data: [
-          { label: "Utopis: komunitas & moral", value: 80, color: "#34d399" },
-          { label: "Marx-Engels: sejarah & kelas", value: 80, color: "#fb7185" },
-        ],
       },
       {
         type: "case",

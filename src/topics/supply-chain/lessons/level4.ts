@@ -880,19 +880,6 @@ export const level4: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Biaya Tahunan: Manual vs Otomasi menurut Volume (ilustrasi)",
-        unit: "biaya relatif total",
-        source: "ilustrasi edukatif",
-        note: "Otomasi mahal di volume rendah tapi unggul di volume tinggi; ada titik impas (break even).",
-        data: [
-          { label: "Volume rendah", value: 60, color: "#60a5fa" },
-          { label: "Volume sedang", value: 95, color: "#fbbf24" },
-          { label: "Volume tinggi", value: 150, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Gudang e-commerce hitung payback robot",
         html: "Sebuah gudang mempertimbangkan robot AMR seharga <strong>Rp 2 miliar</strong> yang menghemat biaya tenaga kerja <strong>Rp 500 juta per tahun</strong>. Payback sederhana = 2.000 / 500 = <strong>4 tahun</strong>. Jika umur ekonomis robot 8 tahun, investasi balik modal di tengah jalan lalu menghemat di sisa umurnya. Tapi bila volume pesanan diperkirakan turun, penghematan tahunan ikut turun dan payback molor, membuat keputusan jadi lebih berisiko.",
@@ -1048,20 +1035,6 @@ export const level4: Lesson[] = [
         data: [
           { label: "Manual (kertas)", value: 80, color: "#f87171" },
           { label: "Dengan WMS + barcode", value: 99, color: "#34d399" },
-        ],
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Manfaat yang Paling Dirasakan Setelah Adopsi WMS (ilustrasi)",
-        unit: "% bobot manfaat",
-        source: "ilustrasi edukatif",
-        note: "Akurasi stok dan kecepatan proses biasanya jadi manfaat yang paling terasa.",
-        data: [
-          { label: "Akurasi stok", value: 35, color: "#34d399" },
-          { label: "Kecepatan proses", value: 30, color: "#60a5fa" },
-          { label: "Kurang salah ambil", value: 20, color: "#fbbf24" },
-          { label: "Visibilitas data", value: 15, color: "#a78bfa" },
         ],
       },
       {

@@ -36,20 +36,6 @@ export const level7: Lesson[] = [
         credit: "Sumber: Wikimedia Commons",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Pilar Kebebasan Sipil dalam Demokrasi (ilustrasi)",
-        unit: "tingkat kepentingan (ilustrasi)",
-        source: "ilustrasi edukatif konsep kebebasan sipil",
-        note: "Kebebasan pers, berpendapat, berkumpul, dan beragama saling menopang menjaga demokrasi.",
-        data: [
-          { label: "Kebebasan pers", value: 92, color: "#60a5fa" },
-          { label: "Berpendapat", value: 90, color: "#34d399" },
-          { label: "Berkumpul", value: 85, color: "#fbbf24" },
-          { label: "Beragama", value: 88, color: "#a78bfa" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Kebebasan pers sebagai pilar keempat",
         html: "Pers sering disebut <strong>pilar keempat demokrasi</strong>, di samping legislatif, eksekutif, dan yudikatif. Lewat pemberitaan, jurnalis mengungkap korupsi, mengawasi penguasa, dan memberi rakyat informasi untuk memilih. Ketika pers dibungkam atau dikuasai penguasa, rakyat kehilangan mata dan telinga, dan penyalahgunaan kekuasaan jadi mudah disembunyikan. Itulah mengapa kebebasan pers menjadi penanda penting sehat-tidaknya sebuah demokrasi.",
@@ -509,18 +495,6 @@ export const level7: Lesson[] = [
         alt: "Warga berkumpul damai menyampaikan aspirasi di ruang publik",
         caption: "Berkumpul secara damai adalah cara rakyat menyuarakan aspirasi tanpa kekerasan.",
         credit: "Sumber: Wikimedia Commons",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Tahapan pemberitahuan unjuk rasa damai menurut aturan (ilustrasi)",
-        unit: "jam sebelum aksi",
-        source: "ilustrasi edukatif prosedur penyampaian pendapat di muka umum",
-        note: "Pemberitahuan tertulis sebelum aksi membantu aparat mengamankan tanpa membungkam aspirasi.",
-        data: [
-          { label: "Batas pemberitahuan (3 x 24 jam)", value: 72, color: "#60a5fa" },
-          { label: "Contoh pemberitahuan dini", value: 96, color: "#34d399" },
-        ],
       },
       {
         type: "case",

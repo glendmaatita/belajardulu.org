@@ -636,19 +636,6 @@ export const level2: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Contoh Peran Akad Jasa dalam Satu Pembiayaan (ilustrasi)",
-        unit: "jumlah akad pelengkap",
-        source: "ilustrasi edukatif",
-        note: "Satu produk pembiayaan bisa memakai beberapa akad jasa sekaligus untuk mengamankan transaksi.",
-        data: [
-          { label: "Wakalah", value: 1, color: "#34d399" },
-          { label: "Kafalah", value: 1, color: "#10b981" },
-          { label: "Rahn", value: 1, color: "#0ea5e9" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Gadai emas (rahn)",
         html: "Seorang nasabah menggadaikan emas untuk memperoleh pinjaman <strong>Rp10 juta</strong>. Emas menjadi barang jaminan (marhun). Bank tidak boleh mengambil bunga atas pinjaman, tetapi boleh menarik <strong>ujrah penyimpanan</strong> yang wajar atas jasa menjaga emas, misalnya Rp50 ribu per bulan. Jika utang lunas, emas dikembalikan; jika gagal bayar, emas boleh dijual untuk menutup utang dan sisanya dikembalikan.",

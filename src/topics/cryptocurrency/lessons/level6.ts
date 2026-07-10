@@ -52,20 +52,6 @@ export const level6: Lesson[] = [
         html: "Karena jutaan mesin menebak terus menerus, jaringan PoW seperti Bitcoin mengonsumsi listrik dalam skala setara sebuah negara kecil. Inilah kritik terbesar terhadap PoW dan alasan munculnya alternatif yang lebih hemat.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Peluang Menang Blok Sesuai Pangsa Hashrate",
-        unit: "% peluang menang per blok",
-        source: "ilustrasi: peluang menang sebanding dengan pangsa hashrate",
-        note: "Pada PoW, peluang menambang blok kira-kira sama dengan pangsa hashrate yang dimiliki penambang.",
-        data: [
-          { label: "10% hashrate", value: 10 },
-          { label: "25% hashrate", value: 25 },
-          { label: "50% hashrate", value: 50 },
-          { label: "75% hashrate", value: 75 },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Mengejar peluang dengan hashrate",
         html: "Sebuah jaringan PoW punya total hashrate 100 TH/s. Penambang Andi menyumbang 20 TH/s. Karena peluang menambang blok sebanding dengan pangsa hashrate, peluang Andi memenangkan blok adalah 20 dibagi 100 = <strong>20%</strong>. Jika ia menggandakan mesinnya menjadi 40 TH/s sementara penambang lain tidak berubah, total menjadi 120 TH/s dan peluangnya naik menjadi sekitar 33%. Menambah daya komputasi memang menaikkan peluang, tetapi tagihan listriknya ikut naik.",

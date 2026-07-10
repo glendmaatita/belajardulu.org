@@ -194,38 +194,9 @@ export const level1: Lesson[] = [
         html: "Sebelum menganalisis sebuah kalimat secara logis, pastikan ia deklaratif. Jika berupa pertanyaan atau perintah, ubah dulu menjadi pernyataan agar bisa dinilai benar atau salah.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Pembagian Empat Proposisi Kategoris",
-        unit: "jumlah bentuk",
-        source: "logika klasik Aristotelian",
-        note: "Empat bentuk standar dibagi menurut kuantitas (universal atau partikular) dan kualitas (afirmatif atau negatif).",
-        data: [
-          { label: "A universal afirmatif", value: 1, color: "#10b981" },
-          { label: "E universal negatif", value: 1, color: "#ef4444" },
-          { label: "I partikular afirmatif", value: 1, color: "#0ea5e9" },
-          { label: "O partikular negatif", value: 1, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Mengelompokkan 12 kalimat",
         html: "Seorang guru menulis 12 kalimat di papan. Setelah diperiksa, 8 kalimat berbentuk deklaratif dan 4 sisanya berupa pertanyaan atau perintah. Dari 8 kalimat deklaratif itu, 3 berbentuk A, 2 berbentuk E, 2 berbentuk I, dan 1 berbentuk O. Hanya 8 kalimat deklaratif itu yang dapat dianalisis sebagai proposisi, sedangkan 4 kalimat lain disisihkan karena tidak bisa dinilai benar atau salah.",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Sebaran 12 Kalimat di Papan (ilustrasi)",
-        unit: "jumlah kalimat",
-        source: "ilustrasi edukatif",
-        note: "Hanya kalimat deklaratif (bentuk A, E, I, O) yang dapat dinilai sebagai proposisi; kalimat non-deklaratif disisihkan.",
-        data: [
-          { label: "A", value: 3, color: "#10b981" },
-          { label: "E", value: 2, color: "#ef4444" },
-          { label: "I", value: 2, color: "#0ea5e9" },
-          { label: "O", value: 1, color: "#f59e0b" },
-          { label: "Non-deklaratif", value: 4, color: "#94a3b8" },
-        ],
       },
       {
         type: "calcExercise",
@@ -362,19 +333,6 @@ export const level1: Lesson[] = [
         unit: "jumlah argumen",
         source: "ilustrasi edukatif",
         note: "Dari 20 argumen, hanya yang valid sekaligus berpremis benar yang tergolong sound.",
-        data: [
-          { label: "Valid dan sound", value: 8, color: "#10b981" },
-          { label: "Valid tapi premis salah", value: 5, color: "#f59e0b" },
-          { label: "Tidak valid", value: 7, color: "#ef4444" },
-        ],
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Proporsi Status 20 Argumen (ilustrasi)",
-        unit: "jumlah argumen",
-        source: "ilustrasi edukatif",
-        note: "Hanya sebagian kecil argumen yang lolos kedua syarat sound, yaitu valid sekaligus berpremis benar.",
         data: [
           { label: "Valid dan sound", value: 8, color: "#10b981" },
           { label: "Valid tapi premis salah", value: 5, color: "#f59e0b" },

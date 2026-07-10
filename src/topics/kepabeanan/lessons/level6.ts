@@ -214,20 +214,6 @@ export const level6: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Penggunaan Incoterm pada Pengiriman Kontainer (ilustrasi)",
-        unit: "% transaksi",
-        source: "ilustrasi edukatif",
-        note: "Banyak eksportir masih keliru memakai FOB untuk kontainer, padahal FCA lebih tepat.",
-        data: [
-          { label: "FOB (kurang tepat)", value: 40, color: "#ef4444" },
-          { label: "FCA (tepat)", value: 35, color: "#22c55e" },
-          { label: "CIF", value: 15, color: "#f59e0b" },
-          { label: "Lainnya", value: 10, color: "#94a3b8" },
-        ],
-      },
-      {
         type: "calcExercise",
         prompt: "Asuransi via penjual (CIP) USD 90, via pembeli USD 150. Berapa penghematan jika penjual yang mengasuransikan (USD)?",
         answer: 60,

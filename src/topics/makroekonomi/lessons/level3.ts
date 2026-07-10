@@ -73,18 +73,6 @@ export const level3: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Ilustrasi Sumber Dorongan Ekonomi saat Stimulus (ilustrasi)",
-        unit: "porsi dorongan",
-        source: "ilustrasi edukatif",
-        note: "Saat stimulus, dorongan datang dari sisi fiskal (belanja & pajak) dan sisi moneter (suku bunga & likuiditas).",
-        data: [
-          { label: "Fiskal (belanja & pajak)", value: 55, color: "#10b981" },
-          { label: "Moneter (bunga & likuiditas)", value: 45, color: "#3b82f6" },
-        ],
-      },
-      {
         type: "matchExercise",
         prompt: "Pasangkan instrumen dengan otoritas yang menjalankannya.",
         pairs: [
@@ -233,19 +221,6 @@ export const level3: Lesson[] = [
         html: "Atur BI Rate, operasi pasar terbuka, dan GWM, lalu amati arah kebijakan dan dampaknya ke likuiditas serta inflasi.",
       },
       { type: "widget", widget: "SimulatorKebijakanMoneter" },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Ilustrasi Tiga Instrumen Moneter Bank Indonesia (ilustrasi)",
-        unit: "porsi peran",
-        source: "ilustrasi edukatif",
-        note: "BI Rate menjadi sinyal utama, didukung operasi pasar terbuka dan giro wajib minimum.",
-        data: [
-          { label: "BI Rate", value: 50, color: "#3b82f6" },
-          { label: "Operasi pasar terbuka", value: 30, color: "#60a5fa" },
-          { label: "Giro wajib minimum", value: 20, color: "#93c5fd" },
-        ],
-      },
       {
         type: "calcExercise",
         prompt: "BI menaikkan BI Rate dari 5,75% menjadi 6,5%. Berapa besar kenaikannya (poin persen)?",

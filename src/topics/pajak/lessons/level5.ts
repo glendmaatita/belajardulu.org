@@ -47,20 +47,6 @@ export const level5: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Kanal pembayaran pajak yang biasa dipakai UMKM (ilustrasi)",
-        unit: "%",
-        source: "ilustrasi",
-        note: "Angka ilustrasi untuk menggambarkan ragam kanal, bukan data resmi.",
-        data: [
-          { label: "m-banking / mobile", value: 45, color: "#2563eb" },
-          { label: "e-wallet / marketplace", value: 25, color: "#16a34a" },
-          { label: "ATM", value: 20, color: "#f59e0b" },
-          { label: "Teller bank / kantor pos", value: 10, color: "#94a3b8" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Bayar PPh final tepat waktu",
         html: "Bu Sinta beromzet Rp40 juta pada Mei. PPh final 0,5% = Rp200.000. Tanggal 12 Juni ia buka DJP Online, buat kode billing 15 digit untuk PPh Final masa Mei, lalu bayar Rp200.000 lewat m-banking. NTPN langsung terbit dan ia simpan. Karena dibayar sebelum tanggal 15, ia bebas dari bunga telat bayar. Total waktu yang dibutuhkan kurang dari 10 menit.",

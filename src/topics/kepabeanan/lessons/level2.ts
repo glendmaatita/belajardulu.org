@@ -218,20 +218,6 @@ export const level2: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Proporsi Tujuan Penerapan Lartas (ilustrasi)",
-        unit: "persen ketentuan",
-        source: "ilustrasi edukatif",
-        note: "Lartas melindungi keamanan, kesehatan, lingkungan, dan kepentingan ekonomi nasional.",
-        data: [
-          { label: "Keamanan dan kesehatan", value: 38, color: "#0ea5e9" },
-          { label: "Perlindungan lingkungan", value: 22, color: "#10b981" },
-          { label: "Perlindungan industri", value: 25, color: "#f59e0b" },
-          { label: "Pengendalian devisa", value: 15, color: "#6366f1" },
-        ],
-      },
-      {
         type: "matchExercise",
         prompt: "Pasangkan lembaga dengan jenis izin yang diterbitkannya.",
         pairs: [

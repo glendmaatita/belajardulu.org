@@ -354,18 +354,6 @@ export const level5: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorKebijakanMoneter" },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Dua Tuas Kebijakan dalam Kerangka IS-LM",
-        unit: "kurva yang digeser",
-        source: "ilustrasi konsep model IS-LM (Hicks, 1937)",
-        note: "Kebijakan fiskal bekerja lewat kurva IS; kebijakan moneter bekerja lewat kurva LM.",
-        data: [
-          { label: "Fiskal (geser IS)", value: 100, color: "#a78bfa" },
-          { label: "Moneter (geser LM)", value: 100, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Membaca resesi dengan IS-LM",
         html: "Saat investasi swasta jatuh, kurva IS bergeser ke kiri sehingga output turun. Pemerintah bisa merespons dengan menambah belanja (menggeser IS kembali ke kanan) atau bank sentral menurunkan suku bunga (menggeser LM). Kerangka sintesis memungkinkan analis membandingkan kedua opsi secara terstruktur, bukan sekadar intuisi.",
@@ -789,19 +777,6 @@ export const level5: Lesson[] = [
         html: "Geser posisi pada spektrum ekonomi dan renungkan: bukan hanya 'pasar versus negara', tetapi juga seberapa baik aturan main dan institusi yang menopang keduanya.",
       },
       { type: "widget", widget: "SimulatorSpektrumEkonomi" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Fokus Analisis Tiap Tokoh",
-        unit: "objek utama yang dianalisis",
-        source: "ilustrasi konsep, ringkasan fokus tiap tokoh",
-        note: "Buchanan menyoroti proses politik, Coase menyoroti biaya transaksi, North menyoroti institusi.",
-        data: [
-          { label: "Buchanan: politik", value: 100, color: "#a78bfa" },
-          { label: "Coase: transaksi", value: 100, color: "#f59e0b" },
-          { label: "North: institusi", value: 100, color: "#34d399" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Pabrik dan peternak",

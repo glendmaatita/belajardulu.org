@@ -47,20 +47,6 @@ export const level5: Lesson[] = [
       },
       {
         type: "chart",
-        variant: "bar",
-        title: "Bias Kognitif yang Sering Memengaruhi Keputusan (ilustrasi)",
-        unit: "frekuensi relatif",
-        source: "ilustrasi edukatif",
-        note: "Mengenali bias adalah langkah pertama menguranginya.",
-        data: [
-          { label: "Confirmation bias", value: 80, color: "#ef4444" },
-          { label: "Anchoring", value: 55, color: "#f59e0b" },
-          { label: "Bandwagon", value: 50, color: "#0ea5e9" },
-          { label: "Sunk cost", value: 45, color: "#8b5cf6" },
-        ],
-      },
-      {
-        type: "chart",
         variant: "donut",
         title: "Bobot Kekuatan Jenis Bukti (ilustrasi)",
         unit: "bobot relatif",
@@ -207,20 +193,6 @@ export const level5: Lesson[] = [
       {
         type: "chart",
         variant: "bar",
-        title: "Komponen yang Menentukan Kekuatan Argumen (ilustrasi)",
-        unit: "bobot relatif",
-        source: "ilustrasi edukatif",
-        note: "Argumen runtuh jika salah satu komponen lemah, sekuat apa pun komponen lain.",
-        data: [
-          { label: "Premis benar", value: 90, color: "#10b981" },
-          { label: "Logika valid", value: 85, color: "#0ea5e9" },
-          { label: "Bukti relevan", value: 70, color: "#f59e0b" },
-          { label: "Asumsi eksplisit", value: 60, color: "#8b5cf6" },
-        ],
-      },
-      {
-        type: "chart",
-        variant: "bar",
         title: "Bobot Bukti menurut Mutu Metodenya (ilustrasi)",
         unit: "bobot relatif",
         source: "ilustrasi edukatif",
@@ -356,20 +328,6 @@ export const level5: Lesson[] = [
         tone: "warn",
         title: "Hindari strawman",
         html: "Strawman memutarbalikkan ucapan lawan agar mudah dipatahkan. Misalnya lawan bilang 'kita perlu atur lalu lintas', lalu kamu balas 'jadi kamu mau melarang semua mobil?'. Ini menyesatkan dan tidak adil.",
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Mutu Tanggapan dalam Diskusi yang Sehat (ilustrasi)",
-        unit: "proporsi tanggapan",
-        source: "ilustrasi edukatif",
-        note: "Semakin besar porsi steelman dan bukti, semakin produktif sebuah debat.",
-        data: [
-          { label: "Steelman (versi terkuat)", value: 45, color: "#10b981" },
-          { label: "Tanggapan berbasis bukti", value: 35, color: "#0ea5e9" },
-          { label: "Strawman (versi lemah)", value: 12, color: "#ef4444" },
-          { label: "Serangan pribadi", value: 8, color: "#f59e0b" },
-        ],
       },
       {
         type: "chart",

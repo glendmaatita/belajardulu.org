@@ -755,20 +755,6 @@ export const level5: Lesson[] = [
         widget: "SimulatorOffset",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Hierarki Mitigasi: Kurangi Dulu, Offset Belakangan",
-        unit: "urutan prioritas (1 = utama)",
-        source: "ilustrasi prinsip mitigation hierarchy",
-        note: "Offset seharusnya menjadi pilihan terakhir untuk emisi yang benar-benar sulit dihilangkan, bukan jalan pintas.",
-        data: [
-          { label: "Hindari emisi", value: 1, color: "#10b981" },
-          { label: "Kurangi emisi", value: 2, color: "#34d399" },
-          { label: "Ganti energi bersih", value: 3, color: "#0ea5e9" },
-          { label: "Offset sisanya", value: 4, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Net-zero di atas kertas",
         html: "Sebuah perusahaan mengklaim net-zero hanya dengan membeli offset murah, sambil emisinya sendiri terus naik tiap tahun. Ketika diperiksa, sebagian besar kreditnya tidak additional. Publik dan regulator menilai ini greenwashing. Klaim net-zero yang kredibel harus menempatkan pengurangan emisi nyata lebih dulu, dan offset hanya untuk sisa yang sulit dihilangkan.",

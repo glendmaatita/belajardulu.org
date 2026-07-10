@@ -48,21 +48,6 @@ export const level3: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorModaProduksi" },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Tahap Mode Produksi menurut Marx (ilustrasi konsep)",
-        unit: "urutan historis",
-        source: "ilustrasi skema materialisme historis",
-        note: "Marx menyusun sejarah sebagai pergantian mode produksi, masing-masing dengan kelas dominan dan tertindasnya.",
-        data: [
-          { label: "Komunal", value: 1, color: "#34d399" },
-          { label: "Perbudakan", value: 2, color: "#fbbf24" },
-          { label: "Feodalisme", value: 3, color: "#f59e0b" },
-          { label: "Kapitalisme", value: 4, color: "#fb7185" },
-          { label: "Sosialisme", value: 5, color: "#60a5fa" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Dari feodalisme ke kapitalisme",
         html: "Di Eropa, ketika perdagangan dan manufaktur tumbuh, kelas pedagang dan pemilik modal (<strong>borjuasi</strong>) makin kuat, sementara hubungan produksi feodal (tuan tanah dan hamba) makin menghambat. Kontradiksi ini, kata Marx, akhirnya meruntuhkan feodalisme dan melahirkan kapitalisme. Perubahan basis ekonomi diikuti perubahan suprastruktur: hukum, negara, dan nilai-nilai ikut berubah.",
@@ -190,19 +175,6 @@ export const level3: Lesson[] = [
         html: "Telusuri tiap mode produksi dan perhatikan kontradiksi kelas yang ada di dalamnya. Itulah antitesis yang mendorong lahirnya tatanan baru.",
       },
       { type: "widget", widget: "SimulatorModaProduksi" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Pola Dialektis: dari Tesis ke Sintesis (ilustrasi konsep)",
-        unit: "tahap",
-        source: "ilustrasi skema dialektika",
-        note: "Sintesis bukan jalan tengah yang datar, melainkan keadaan baru yang menyerap dan melampaui tesis dan antitesis.",
-        data: [
-          { label: "Tesis", value: 2, color: "#60a5fa" },
-          { label: "Antitesis", value: 2, color: "#fb7185" },
-          { label: "Sintesis", value: 3, color: "#34d399" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Buruh dan modal sebagai kontradiksi",
@@ -476,21 +448,6 @@ export const level3: Lesson[] = [
         html: "Lihat tiap mode produksi dan kenali pasangan kelas dominan dan tertindasnya. Perhatikan bagaimana kontradiksi mendorong ke tahap berikut.",
       },
       { type: "widget", widget: "SimulatorModaProduksi" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Lima Tahap Mode Produksi (ilustrasi skema)",
-        unit: "urutan historis",
-        source: "ilustrasi skema tahap sejarah Marx",
-        note: "Urutan ini adalah peta kasar; sejarah nyata banyak yang tidak mengikutinya secara lurus.",
-        data: [
-          { label: "Komunal", value: 1, color: "#34d399" },
-          { label: "Perbudakan", value: 2, color: "#fbbf24" },
-          { label: "Feodalisme", value: 3, color: "#f59e0b" },
-          { label: "Kapitalisme", value: 4, color: "#fb7185" },
-          { label: "Komunisme", value: 5, color: "#60a5fa" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Kelas dominan berganti, polanya tetap",

@@ -347,19 +347,6 @@ export const level10: Lesson[] = [
         credit: "Sumber: Wikimedia Commons",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Peran Tiga Pelaku Ekonomi (ilustrasi)",
-        unit: "porsi peran (ilustrasi)",
-        source: "ilustrasi edukatif konsep tiga pelaku ekonomi",
-        note: "Swasta paling besar perannya, tetapi BUMN dan koperasi menjaga keseimbangan.",
-        data: [
-          { label: "Swasta", value: 55, color: "#60a5fa" },
-          { label: "BUMN", value: 35, color: "#f87171" },
-          { label: "Koperasi & UMKM", value: 10, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Dividen BUMN untuk negara",
         html: "BUMN yang sehat tidak hanya melayani publik, tetapi juga menyumbang ke kas negara lewat <strong>dividen</strong>. Misalkan sebuah BUMN mencatat laba bersih Rp10 triliun dan rapat pemegang saham menetapkan rasio dividen 40 persen untuk negara. Maka negara menerima Rp4 triliun yang bisa dipakai membiayai pembangunan. Inilah salah satu cara peran negara dalam ekonomi berputar kembali menjadi manfaat bagi rakyat.",

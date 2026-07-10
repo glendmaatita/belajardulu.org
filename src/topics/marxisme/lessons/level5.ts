@@ -41,19 +41,6 @@ export const level5: Lesson[] = [
         html: "Penerapan dalam praktik (mis. Uni Soviet) memunculkan kritik serius soal otoritarianisme, kegagalan ekonomi terencana, dan pelanggaran kebebasan. Marxisme sebagai analisis perlu dibedakan dari rezim yang mengatasnamakannya.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Cabang Pemikiran Marxis dan Penekanannya (ilustrasi konsep)",
-        unit: "fokus relatif",
-        source: "ilustrasi peta aliran, bukan ukuran kuantitatif",
-        note: "Tiap cabang menonjolkan aspek berbeda dari warisan Marx: revolusi, reformasi, atau kritik budaya.",
-        data: [
-          { label: "Leninisme (revolusi)", value: 40, color: "#fb7185" },
-          { label: "Sosialisme demokratik (reformasi)", value: 35, color: "#60a5fa" },
-          { label: "Mazhab Frankfurt (kritik budaya)", value: 25, color: "#a78bfa" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -614,20 +601,6 @@ export const level5: Lesson[] = [
         tone: "info",
         title: "Mengapa teori nilai kerja ditinggalkan?",
         html: "Marx menilai nilai barang berasal dari jumlah kerja yang dikandungnya. Sejak <strong>revolusi marginalis</strong> (Jevons, Menger, Walras, 1870-an), ekonomi arus utama berpindah ke <strong>teori nilai subjektif</strong>: nilai ditentukan oleh kegunaan tambahan (utilitas marginal) bagi konsumen, bukan oleh jam kerja. Ini perubahan mendasar yang masih dipakai sampai kini.",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Gagasan Marx: bertahan atau ditinggalkan (peta penilaian)",
-        unit: "penilaian arus utama",
-        source: "ilustrasi peta konsep, bukan survei kuantitatif",
-        note: "Sebagian alat analisis Marx masih dipakai luas, sementara inti teori ekonominya banyak ditinggalkan.",
-        data: [
-          { label: "Perhatian ketimpangan (bertahan)", value: 80, color: "#34d399" },
-          { label: "Konsep alienasi (bertahan)", value: 70, color: "#60a5fa" },
-          { label: "Teori nilai kerja (ditinggalkan)", value: 20, color: "#fb7185" },
-          { label: "Ramalan keruntuhan (gagal)", value: 15, color: "#f59e0b" },
-        ],
       },
       {
         type: "video",

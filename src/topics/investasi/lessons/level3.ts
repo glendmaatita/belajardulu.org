@@ -540,18 +540,6 @@ export const level3: Lesson[] = [
         html: "Teknikal tanpa disiplin risiko mudah berubah menjadi spekulasi. Tetapkan batas rugi (stop loss) dan ukuran posisi sebelum bertransaksi.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Fokus Waktu Tiap Pendekatan (ilustrasi)",
-        unit: "%",
-        source: "ilustrasi pola umum",
-        note: "Fundamental cenderung menatap horizon panjang, teknikal lebih banyak pada jangka pendek.",
-        data: [
-          { label: "Fundamental (jangka panjang)", value: 70, color: "#10b981" },
-          { label: "Teknikal (jangka pendek)", value: 30, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Dua investor, satu saham",
         html: "Budi memakai fundamental: ia membeli saham karena ROE 20% dan harga di bawah nilai wajar, lalu menahannya tiga tahun dan untung 60%. Sari memakai teknikal: ia membeli saat harga menembus resistance, menjual dua minggu kemudian saat momentum melemah, untung 8%. Keduanya bisa berhasil karena tujuan dan horizonnya berbeda.",

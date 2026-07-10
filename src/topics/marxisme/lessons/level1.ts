@@ -191,20 +191,6 @@ export const level1: Lesson[] = [
         html: "Materialisme Marx <strong>bukan</strong> berarti ide tidak penting atau manusia hanya digerakkan uang. Ide, hukum, dan budaya tetap berpengaruh balik. Marx hanya menegaskan basis materialnya lebih menentukan dalam jangka panjang. Banyak pemikir mengkritik ini sebagai terlalu menekankan ekonomi.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Dua Aliran, Dua Urutan Sebab (ilustrasi konsep)",
-        unit: "yang dianggap utama (skor ilustratif)",
-        source: "ilustrasi konsep filsafat",
-        note: "Idealisme menaruh ide sebagai penentu utama, materialisme menaruh kondisi material sebagai penentu utama. Keduanya mengakui keduanya ada, hanya berbeda urutan sebab.",
-        data: [
-          { label: "Idealisme: ide", value: 80, color: "#a855f7" },
-          { label: "Idealisme: materi", value: 20, color: "#c4b5fd" },
-          { label: "Materialisme: ide", value: 25, color: "#f59e0b" },
-          { label: "Materialisme: materi", value: 75, color: "#ef4444" },
-        ],
-      },
-      {
         type: "callout",
         tone: "tip",
         title: "Coba simulatornya",
@@ -810,19 +796,6 @@ export const level1: Lesson[] = [
         tone: "warn",
         title: "Bukan berarti utopis tak berjasa",
         html: "Owen dan Fourier sering disebut naif, tetapi merekalah yang pertama menuntut hari kerja lebih pendek, pendidikan anak buruh, dan koperasi. Marx menghargai keberanian moral mereka, lalu mencari dasar yang lebih analitis.",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Asal tiga unsur Marxisme menurut Lenin (1913)",
-        unit: "tokoh kunci tiap sumber",
-        source: "esai Lenin, Tiga Sumber dan Tiga Unsur Marxisme (1913)",
-        note: "Tiap sumber dipinjam dari negara yang paling maju di bidangnya: filsafat dari Jerman, ekonomi dari Inggris, sosialisme dari Prancis.",
-        data: [
-          { label: "Filsafat (Jerman)", value: 2, color: "#6366f1" },
-          { label: "Ekonomi (Inggris)", value: 2, color: "#0ea5e9" },
-          { label: "Sosialisme (Prancis)", value: 3, color: "#f59e0b" },
-        ],
       },
       {
         type: "callout",

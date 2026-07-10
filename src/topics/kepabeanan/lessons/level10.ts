@@ -28,20 +28,6 @@ export const level10: Lesson[] = [
         html: "Importir wajib menyimpan dokumen kepabeanan selama jangka waktu tertentu (umumnya 10 tahun). Tidak bisa menunjukkan dokumen saat audit dapat berujung penetapan kurang bayar dan sanksi.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Fokus Temuan Audit Kepabeanan (ilustrasi)",
-        unit: "% temuan",
-        source: "ilustrasi edukatif",
-        note: "Kesalahan nilai pabean dan klasifikasi adalah temuan paling sering.",
-        data: [
-          { label: "Nilai pabean (under-value)", value: 34, color: "#ef4444" },
-          { label: "Klasifikasi HS salah", value: 30, color: "#f59e0b" },
-          { label: "Salah pakai fasilitas", value: 20, color: "#0ea5e9" },
-          { label: "Dokumen tidak lengkap", value: 16, color: "#94a3b8" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Selisih nilai pabean saat audit",
         html: "Audit menemukan importir tidak memasukkan <strong>royalti</strong> Rp500 juta ke dalam nilai pabean selama setahun. Kekurangan bea masuk 10% = Rp50 juta, ditambah PPN dan PPh atas selisih itu, plus sanksi administrasi. Pencatatan yang benar sejak awal jauh lebih murah daripada koreksi saat audit.",

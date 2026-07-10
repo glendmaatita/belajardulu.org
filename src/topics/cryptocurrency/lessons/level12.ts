@@ -381,18 +381,6 @@ export const level12: Lesson[] = [
         html: "Bayangkan ekosistem Cosmos dengan satu hub dan 3 zone: zone bursa, zone game, dan zone identitas. Suatu hari zone game mengalami gangguan dan berhenti memproduksi blok. Karena tiap zone <strong>berdaulat dan mengamankan dirinya sendiri</strong>, gangguan itu tidak menjatuhkan zone bursa maupun zone identitas; keduanya tetap berjalan dan tetap bisa berkomunikasi lewat hub. Bandingkan dengan model keamanan terpusat Polkadot, di mana relay chain menjaga semua parachain sekaligus. Dua filosofi yang menukar kedaulatan dengan keseragaman.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Membandingkan Model Berbagi Keamanan (ilustrasi)",
-        unit: "tingkat keamanan bersama (skala ilustratif 1-10)",
-        source: "ilustrasi edukatif perbandingan arsitektur",
-        note: "Polkadot menyatukan keamanan di relay chain, sementara Cosmos membiarkan tiap zone mengamankan dirinya.",
-        data: [
-          { label: "Polkadot (keamanan bersama)", value: 9, color: "#e6007a" },
-          { label: "Cosmos (keamanan per zone)", value: 6, color: "#2e3148" },
-        ],
-      },
-      {
         type: "case",
         title: "Sejarah: Lahirnya Polkadot dan visi Gavin Wood",
         html: "<strong>Gavin Wood</strong>, salah satu pendiri Ethereum, menerbitkan whitepaper Polkadot pada <strong>2016</strong> dengan visi banyak blockchain saling terhubung lewat satu relay chain. Jaringan utama Polkadot akhirnya diluncurkan pada <strong>Mei 2020</strong>. Di jalur lain, Cosmos meluncurkan jaringan utamanya pada <strong>2019</strong>, lalu protokol IBC mulai aktif pada <strong>2021</strong> sehingga rantai-rantai Cosmos benar-benar bisa saling kirim pesan. Keduanya membuktikan interoperability bisa dirancang sejak fondasi, bukan ditambal belakangan.",

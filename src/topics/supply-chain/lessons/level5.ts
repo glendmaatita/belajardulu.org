@@ -675,20 +675,6 @@ export const level5: Lesson[] = [
       },
       { type: "widget", widget: "KalkulatorPilihModa" },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Perbandingan Kecepatan & Biaya Relatif antar Moda Darat-Udara (ilustrasi)",
-        unit: "indeks relatif",
-        source: "ilustrasi edukatif sesuai pola nyata",
-        note: "Pesawat unggul kecepatan tapi mahal; kereta murah untuk volume besar jarak jauh.",
-        data: [
-          { label: "Pesawat (biaya)", value: 38, color: "#f87171" },
-          { label: "Truk (biaya)", value: 5.2, color: "#fbbf24" },
-          { label: "Kereta (biaya)", value: 2.3, color: "#60a5fa" },
-          { label: "Pesawat (kecepatan)", value: 30, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Mengirim vaksin vs mengirim semen",
         html: "Sebuah distributor harus mengirim <strong>200 kg vaksin</strong> mendesak dari Jakarta ke Jayapura. Dengan tarif kargo udara <strong>Rp45.000 per kg</strong>, ongkosnya = 200 x Rp45.000 = <strong>Rp9.000.000</strong>, tapi tiba dalam hitungan jam. Sebaliknya, mengirim semen 20 ton yang tidak mendesak akan mubazir bila pakai pesawat; lebih tepat lewat kapal dan truk. Pilihan moda mengikuti urgensi dan nilai barang, bukan sekadar harga termurah.",

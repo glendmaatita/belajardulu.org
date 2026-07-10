@@ -413,21 +413,6 @@ export const level1: Lesson[] = [
         html: "OJK adalah pengawas, bukan tempat transaksi. Bank Indonesia mengurus kebijakan moneter, bukan mengawasi emiten saham. Selalu cocokkan setiap lembaga dengan fungsinya agar tidak keliru.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Fokus Pengawasan dan Fungsi Lembaga (ilustrasi bobot peran)",
-        unit: "skor relatif",
-        source: "ilustrasi pola umum",
-        note: "Setiap lembaga memiliki domain fokus yang berbeda namun saling melengkapi.",
-        data: [
-          { label: "OJK (pengawasan)", value: 100, color: "#0ea5e9" },
-          { label: "BI (moneter)", value: 90, color: "#f59e0b" },
-          { label: "BEI (bursa)", value: 80, color: "#10b981" },
-          { label: "KSEI (kustodi)", value: 70, color: "#8b5cf6" },
-          { label: "KPEI (kliring)", value: 65, color: "#ef4444" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Perjalanan transaksi saham Pak Joko",
         html: "Pak Joko membeli 5.000 saham seharga Rp2.000 per lembar lewat aplikasi sekuritas, total Rp10 juta. Order diteruskan ke sistem <strong>BEI</strong> dan bertemu penjual. Setelah transaksi cocok, <strong>KPEI</strong> melakukan kliring dan menjamin penyelesaiannya, lalu <strong>KSEI</strong> mencatat 5.000 saham tersebut atas nama Pak Joko di rekening efeknya. Sepanjang proses, <strong>OJK</strong> memastikan semua pihak mematuhi aturan, sementara <strong>Bank Indonesia</strong> menjaga kelancaran sistem pembayaran rupiah yang mendasarinya.",

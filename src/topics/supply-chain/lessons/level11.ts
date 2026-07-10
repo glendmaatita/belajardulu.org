@@ -384,19 +384,6 @@ export const level11: Lesson[] = [
         widget: "KalkulatorJejakKarbonLogistik",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Komposisi Indikator dalam Laporan Keberlanjutan Rantai Pasok (ilustrasi)",
-        unit: "% bobot indikator",
-        source: "ilustrasi edukatif",
-        note: "Laporan yang sehat menyeimbangkan ketiga pilar, bukan hanya memamerkan sisi lingkungan.",
-        data: [
-          { label: "Environmental", value: 40, color: "#34d399" },
-          { label: "Social", value: 35, color: "#60a5fa" },
-          { label: "Governance", value: 25, color: "#a78bfa" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Audit pemasok sawit dan sertifikasi",
         html: "Sebuah produsen barang konsumen di Indonesia memakai minyak sawit dari banyak pemasok. Untuk memenuhi target ESG, ia mewajibkan pemasok bersertifikat <strong>ISPO</strong> (sertifikasi sawit berkelanjutan wajib pemerintah Indonesia) atau <strong>RSPO</strong> (standar global sukarela). Dari 50 pemasok awal, hanya 30 yang lolos audit pertama soal legalitas lahan, larangan pembukaan hutan, dan kondisi kerja. Perusahaan membina 20 sisanya selama setahun. Hasil audit ini, persentase volume bersertifikat, menjadi salah satu angka kunci di laporan keberlanjutannya.",

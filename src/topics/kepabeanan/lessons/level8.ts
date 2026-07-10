@@ -199,20 +199,6 @@ export const level8: Lesson[] = [
         html: "Alasan umum penolakan: <strong>terlambat lapor</strong>, kerusakan <strong>di luar cakupan</strong> polis (misalnya klaim air laut pada ICC C), <strong>inherent vice</strong> atau kemasan buruk, dokumen tidak lengkap, dan tidak menahan hak ke pengangkut. Mencegah lebih mudah daripada membantah penolakan.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Penyebab Klaim Ditolak (ilustrasi)",
-        unit: "%",
-        source: "ilustrasi edukatif",
-        note: "Keterlambatan dan dokumen tidak lengkap mendominasi penolakan klaim.",
-        data: [
-          { label: "Terlambat lapor", value: 35, color: "#ef4444" },
-          { label: "Di luar cakupan polis", value: 30, color: "#f59e0b" },
-          { label: "Dokumen tidak lengkap", value: 25, color: "#0ea5e9" },
-          { label: "Lainnya", value: 10, color: "#94a3b8" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Klaim yang berhasil dibayar",
         html: "Importir menemukan 30 dari 200 karton basah saat kontainer dibuka. Ia segera memotret, menahan barang, melapor ke penanggung dalam 24 jam, dan memanggil <strong>surveyor</strong>. Dengan polis <strong>ICC A</strong>, laporan survei, B/L, dan invoice lengkap, klaim atas kerugian USD 6.000 dibayar penuh dalam tiga minggu.",

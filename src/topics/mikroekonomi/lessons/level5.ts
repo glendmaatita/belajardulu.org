@@ -481,20 +481,6 @@ export const level5: Lesson[] = [
         html: "Pemerintah mengoreksi kegagalan pasar lewat <strong>pajak</strong> atas polusi, <strong>subsidi</strong> untuk eksternalitas positif, penyediaan barang publik, serta regulasi. <strong>KPPU</strong> (Komisi Pengawas Persaingan Usaha) mengawasi persaingan dan menindak monopoli serta kartel sesuai UU No. 5 Tahun 1999.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Instrumen Pemerintah Mengatasi Kegagalan Pasar (ilustrasi)",
-        unit: "porsi penggunaan ilustratif",
-        source: "ilustrasi edukatif",
-        note: "Kombinasi pajak, subsidi, regulasi, dan penyediaan barang publik dipakai sesuai jenis kegagalan pasar.",
-        data: [
-          { label: "Pajak (eksternalitas negatif)", value: 30, color: "#ef4444" },
-          { label: "Subsidi (eksternalitas positif)", value: 25, color: "#10b981" },
-          { label: "Penyediaan barang publik", value: 25, color: "#0ea5e9" },
-          { label: "Regulasi & pengawasan (KPPU)", value: 20, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Pajak polusi (pajak Pigou)",
         html: "Sebuah pabrik menghasilkan polusi yang merugikan warga sekitar senilai <strong>Rp2.000 per unit</strong> produk. Pabrik memproduksi 500.000 unit setahun. Untuk menutup eksternalitas negatif, pemerintah mengenakan pajak Rp2.000 per unit, sehingga total pajak <strong>Rp2.000 x 500.000 = Rp1.000.000.000</strong> setahun. Pajak ini membuat pabrik menanggung biaya sosial dan mendorong produksi turun ke tingkat yang lebih efisien bagi masyarakat.",

@@ -691,19 +691,6 @@ export const level7: Lesson[] = [
         caption: "Logika MRP yang sama meluas dari bahan menjadi kapasitas, keuangan, lalu seluruh perusahaan di ERP.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Cakupan Fungsi Bisnis: MRP, MRP II, ERP (ilustrasi)",
-        unit: "jumlah fungsi terhubung",
-        source: "ilustrasi edukatif",
-        note: "Tiap tahap evolusi menambah fungsi yang terhubung dalam satu rencana, dari sekadar bahan sampai seluruh perusahaan.",
-        data: [
-          { label: "MRP", value: 1, color: "#60a5fa" },
-          { label: "MRP II", value: 3, color: "#fbbf24" },
-          { label: "ERP", value: 7, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Produsen elektronik memeriksa kapasitas",
         html: "Sebuah produsen elektronik di Batam memakai MRP II. MRP menyatakan perlu memproduksi <strong>320 unit</strong> dalam satu minggu. Tiap unit butuh <strong>0,25 jam mesin</strong> perakitan, sehingga kebutuhan kapasitas (CRP) = 320 x 0,25 = <strong>80 jam mesin</strong>. Kapasitas tersedia hanya 100 jam mesin/minggu, jadi beban = 80 / 100 = <strong>80%</strong>, masih layak. Jika permintaan naik menjadi 480 unit (kebutuhan 120 jam), rencana melebihi kapasitas dan perusahaan harus lembur atau menggeser jadwal sebelum berkomitmen.",

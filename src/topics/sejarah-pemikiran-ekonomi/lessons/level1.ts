@@ -48,19 +48,6 @@ export const level1: Lesson[] = [
       },
       { type: "widget", widget: "TimelineMazhabEkonomi" },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Fokus Sumber Kekayaan menurut Aliran Praklasik (ilustrasi konsep)",
-        unit: "penekanan relatif",
-        source: "ilustrasi konsep perbandingan pandangan",
-        note: "Merkantilis menekankan emas dan perdagangan; fisiokrat menekankan alam/pertanian sebagai sumber sejati kekayaan.",
-        data: [
-          { label: "Merkantilis: emas & dagang", value: 80, color: "#f59e0b" },
-          { label: "Fisiokrat: alam/pertanian", value: 85, color: "#34d399" },
-          { label: "Skolastik: harga adil & etika", value: 60, color: "#60a5fa" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Kebijakan merkantilis",
         html: "Sebuah kerajaan abad ke-17 melarang impor kain jadi dan memberi subsidi ekspor, agar emas mengalir masuk dan tidak keluar. Kebijakan ini khas <strong>merkantilisme</strong>: kekayaan diukur dari cadangan logam mulia. Adam Smith kelak mengkritiknya, dengan menegaskan bahwa kekayaan sejati adalah barang dan jasa yang bisa dinikmati rakyat, bukan tumpukan emas.",
@@ -612,20 +599,6 @@ export const level1: Lesson[] = [
         html: "Telusuri peta mazhab untuk melihat posisi merkantilisme di antara skolastik sebelumnya dan ekonomi klasik sesudahnya.",
       },
       { type: "widget", widget: "TimelineMazhabEkonomi" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Prinsip Kebijakan Merkantilis (ilustrasi konsep)",
-        unit: "penekanan relatif",
-        source: "ilustrasi konsep rangkuman kebijakan merkantilis",
-        note: "Merkantilis menekankan penimbunan emas, surplus dagang, dan proteksi; ekspor didorong, impor ditekan.",
-        data: [
-          { label: "Timbun emas (bullionism)", value: 90, color: "#f59e0b" },
-          { label: "Dorong ekspor", value: 85, color: "#34d399" },
-          { label: "Batasi impor (tarif)", value: 80, color: "#ef4444" },
-          { label: "Bangun manufaktur negara", value: 65, color: "#60a5fa" },
-        ],
-      },
       {
         type: "case",
         title: "Studi Kasus: Menekan impor demi emas",

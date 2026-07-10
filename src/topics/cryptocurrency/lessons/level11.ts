@@ -40,20 +40,6 @@ export const level11: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorRoyaltiNFT" },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Di Mana Bagian NFT Disimpan",
-        unit: "lokasi penyimpanan",
-        source: "ilustrasi edukatif arsitektur NFT yang umum",
-        note: "Yang on-chain hanya nomor token dan tautan; berkas berat seperti gambar disimpan off-chain di IPFS.",
-        data: [
-          { label: "Nomor token (on-chain)", value: 1, color: "#627eea" },
-          { label: "Tautan metadata (on-chain)", value: 1, color: "#8b5cf6" },
-          { label: "Metadata JSON (IPFS)", value: 3, color: "#26a17b" },
-          { label: "File gambar (IPFS)", value: 8, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "image",
         src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ethereum_logo_2014.svg?width=400",
         alt: "Logo Ethereum 2014",
@@ -191,20 +177,6 @@ export const level11: Lesson[] = [
         comp: "NFTKepemilikanVideo",
         title: "Kepemilikan yang Berpindah",
         caption: "Dompet sebagai kunci identitas: aset dan kepemilikan menempel pada address, bukan pada akun perusahaan.",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Login Web2 vs Login Web3",
-        unit: "perbandingan sifat",
-        source: "ilustrasi edukatif perbandingan konsep",
-        note: "Login Web3 memindahkan kendali rahasia dari server perusahaan ke dompet milik pengguna.",
-        data: [
-          { label: "Web2: rahasia di server", value: 1, color: "#94a3b8" },
-          { label: "Web2: butuh kata sandi", value: 1, color: "#94a3b8" },
-          { label: "Web3: rahasia di dompet", value: 1, color: "#627eea" },
-          { label: "Web3: tanda tangan pesan", value: 1, color: "#26a17b" },
-        ],
       },
       {
         type: "callout",
@@ -523,19 +495,6 @@ export const level11: Lesson[] = [
         caption: "Bagaimana kepemilikan aset menempel pada dompet dan dicatat smart contract, bukan pada akun platform.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Tiga Era Web dan Hak Penggunanya",
-        unit: "tingkat hak pengguna (ilustrasi)",
-        source: "ilustrasi edukatif perkembangan web",
-        note: "Tiap era menambah satu kemampuan: dari sekadar membaca, ke menulis, lalu ke memiliki.",
-        data: [
-          { label: "Web1: baca", value: 1, color: "#94a3b8" },
-          { label: "Web2: baca-tulis", value: 2, color: "#627eea" },
-          { label: "Web3: baca-tulis-miliki", value: 3, color: "#26a17b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Marketplace NFT dari sisi arsitektur",
         html: "Sebuah marketplace NFT menampilkan katalog karya di <strong>front-end</strong>. Saat pengguna menekan beli, <strong>dompet</strong> muncul meminta tanda tangan dan persetujuan biaya. Transaksi dikirim ke <strong>smart contract on-chain</strong> yang memindahkan kepemilikan NFT ke address pembeli dan membagi pembayaran (termasuk royalti kreator). Gambar karya sendiri tidak ada di blockchain; ia diambil dari <strong>IPFS</strong> lewat tautan yang dicatat NFT. Empat lapisan bekerja bersama dalam satu pembelian.",
@@ -851,20 +810,6 @@ export const level11: Lesson[] = [
         alt: "Ikon Ethereum berwarna ungu",
         caption: "Banyak game Web3 dan dunia metaverse berjalan di atas Ethereum atau jaringan yang terhubung dengannya.",
         credit: "Sumber: Wikimedia Commons",
-      },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Game Biasa vs GameFi: Siapa Pemilik Aset",
-        unit: "perbandingan sifat (ilustrasi)",
-        source: "ilustrasi edukatif perbandingan konsep",
-        note: "Pada GameFi, kepemilikan aset berpindah dari server perusahaan ke dompet pemain, sehingga aset bisa dijual di pasar terbuka.",
-        data: [
-          { label: "Game biasa: aset milik perusahaan", value: 1, color: "#94a3b8" },
-          { label: "Game biasa: hilang bila akun ditutup", value: 1, color: "#94a3b8" },
-          { label: "GameFi: aset milik pemain (NFT)", value: 1, color: "#627eea" },
-          { label: "GameFi: bisa dijual di pasar terbuka", value: 1, color: "#26a17b" },
-        ],
       },
       {
         type: "case",

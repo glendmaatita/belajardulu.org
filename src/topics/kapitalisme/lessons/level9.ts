@@ -43,20 +43,6 @@ export const level9: Lesson[] = [
         credit: "Sumber: Wikimedia Commons",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Contoh Kegagalan Pasar yang Memanggil Negara (ilustrasi)",
-        unit: "tingkat keparahan relatif",
-        source: "ilustrasi edukatif konsep kegagalan pasar",
-        note: "Monopoli, polusi, dan krisis adalah contoh saat pasar sendirian menghasilkan hasil buruk.",
-        data: [
-          { label: "Monopoli", value: 70, color: "#f87171" },
-          { label: "Polusi (eksternalitas)", value: 80, color: "#fbbf24" },
-          { label: "Krisis keuangan", value: 90, color: "#60a5fa" },
-          { label: "Barang publik kurang", value: 60, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Bank sentral memadamkan krisis",
         html: "Saat krisis 2008 mengancam membekukan seluruh sistem keuangan, <strong>bank sentral</strong> seperti The Federal Reserve turun tangan: menurunkan suku bunga drastis dan menyuntikkan likuiditas agar bank tidak ambruk berantai. Pemerintah juga menggelontorkan dana talangan dan stimulus. Tindakan ini kontroversial, sebagian menilainya menyelamatkan ekonomi, sebagian menilainya menolong bank yang serakah. Yang jelas, krisis menunjukkan pasar modern tidak bisa lepas sepenuhnya dari tangan negara.",

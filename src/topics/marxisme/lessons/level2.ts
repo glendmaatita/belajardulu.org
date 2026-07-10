@@ -467,20 +467,6 @@ export const level2: Lesson[] = [
       },
       { type: "widget", widget: "SimulatorAlienasi" },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Sumber Rasa Keterasingan Kerja (ilustrasi konsep)",
-        unit: "bobot relatif",
-        source: "ilustrasi empat bentuk alienasi Marx",
-        note: "Keempat bentuk alienasi bekerja bersama; tidak ada satu sumber tunggal.",
-        data: [
-          { label: "Dari produk", value: 25, color: "#fb7185" },
-          { label: "Dari proses kerja", value: 25, color: "#fbbf24" },
-          { label: "Dari hakikat diri", value: 25, color: "#60a5fa" },
-          { label: "Dari sesama manusia", value: 25, color: "#34d399" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Buruh lini perakitan",
         html: "Bayangkan seorang buruh yang sepanjang hari hanya memasang satu sekrup di lini perakitan. Ia tidak memiliki <strong>produk</strong> akhir (terjual jadi milik perusahaan), tidak mengendalikan <strong>proses</strong> (tempo diatur mesin), kehilangan rasa <strong>kreativitas</strong> (gerakan diulang ribuan kali), dan bersaing dengan rekan demi jam kerja. Inilah gambaran konkret keempat bentuk alienasi sekaligus.",

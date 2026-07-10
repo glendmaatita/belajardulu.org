@@ -34,19 +34,6 @@ export const level1: Lesson[] = [
         html: "<strong>Ekspansif</strong>: menambah belanja dan/atau menurunkan pajak untuk mendorong ekonomi saat lesu. <strong>Kontraktif</strong>: kebalikannya, untuk meredam ekonomi yang terlalu panas.",
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Porsi Tiga Fungsi dalam Belanja Negara (ilustrasi)",
-        unit: "% belanja",
-        source: "ilustrasi edukatif",
-        note: "Ketiga fungsi sering tumpang tindih dalam satu pos belanja.",
-        data: [
-          { label: "Alokasi (barang publik)", value: 45, color: "#10b981" },
-          { label: "Distribusi (subsidi/bansos)", value: 35, color: "#0ea5e9" },
-          { label: "Stabilisasi", value: 20, color: "#f59e0b" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Stimulus saat pandemi",
         html: "Saat pandemi 2020 menekan ekonomi, pemerintah menjalankan kebijakan fiskal <strong>ekspansif</strong>: menambah belanja kesehatan dan bansos, serta memberi insentif pajak. Defisit APBN melebar sementara (sempat dilonggarkan dari batas 3% PDB lewat Perppu) untuk menahan ekonomi agar tidak jatuh lebih dalam. Ini contoh fungsi stabilisasi.",
@@ -493,18 +480,6 @@ export const level1: Lesson[] = [
         tone: "warn",
         title: "Jika tidak selaras",
         html: "Bila fiskal sangat ekspansif tapi moneter sangat ketat, dampaknya bisa saling meniadakan: defisit besar tertekan suku bunga tinggi, biaya utang naik, dan efek stimulus berkurang.",
-      },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Pembagian Peran Pengelola Ekonomi Makro",
-        unit: "fokus",
-        source: "ilustrasi edukatif",
-        note: "Keduanya berbagi tujuan stabilitas, dengan instrumen berbeda.",
-        data: [
-          { label: "Fiskal: pajak & belanja (pemerintah)", value: 50, color: "#10b981" },
-          { label: "Moneter: suku bunga & likuiditas (BI)", value: 50, color: "#0ea5e9" },
-        ],
       },
       {
         type: "case",

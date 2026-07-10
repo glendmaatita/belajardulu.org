@@ -945,19 +945,6 @@ export const level3: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Cakupan Fasilitas di Kawasan Ekonomi Khusus (ilustrasi)",
-        unit: "jenis fasilitas",
-        source: "ilustrasi konsep KEK",
-        note: "KEK menggabungkan beberapa instrumen sekaligus: PPh, bea masuk, dan PPN.",
-        data: [
-          { label: "Fasilitas PPh (holiday/allowance)", value: 40, color: "#6366f1" },
-          { label: "Pembebasan bea masuk", value: 35, color: "#0ea5e9" },
-          { label: "PPN/PPnBM tidak dipungut", value: 25, color: "#10b981" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Pabrik ekspor di Kawasan Berikat",
         html: "Sebuah pabrik garmen mengimpor kain senilai <strong>Rp500 juta</strong> per kontainer untuk dijahit lalu diekspor. Di luar kawasan, ia harus membayar bea masuk sekitar Rp50 juta dan pajak dalam rangka impor (PDRI) sekitar Rp60 juta di muka. Di <strong>Kawasan Berikat</strong>, kedua pungutan itu <strong>ditangguhkan</strong> karena barang akan diekspor kembali. Pabrik menghemat <strong>Rp110 juta arus kas</strong> per kontainer, modal yang bisa diputar untuk produksi.",

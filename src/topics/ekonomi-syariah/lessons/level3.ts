@@ -745,20 +745,6 @@ export const level3: Lesson[] = [
         ],
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Ilustrasi Jumlah Lapisan Pengawasan yang Dilewati Sebuah Produk",
-        unit: "tahap",
-        source: "ilustrasi edukatif alur tata kelola",
-        note: "Sebuah produk syariah melewati fatwa, review DPS, lalu izin dan pengawasan OJK.",
-        data: [
-          { label: "Fatwa DSN", value: 1 },
-          { label: "Review DPS", value: 1 },
-          { label: "Izin OJK", value: 1 },
-          { label: "Pengawasan rutin", value: 1 },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Jalan sebuah produk baru",
         html: "Sebuah bank ingin meluncurkan produk KPR <strong>musyarakah mutanaqishah</strong>. Prosesnya: mengacu pada <strong>fatwa DSN-MUI</strong> tentang MMQ, ditelaah <strong>DPS</strong> internal bank agar akadnya benar, lalu diajukan izin ke <strong>OJK</strong> sebelum dipasarkan. KNEKS mendorong ekosistem agar produk seperti ini makin berkembang.",

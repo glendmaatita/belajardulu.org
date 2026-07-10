@@ -71,18 +71,6 @@ export const level3: Lesson[] = [
       },
       { type: "widget", widget: "DetektorPremisTersembunyi" },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Dari 30 argumen siswa: valid vs tidak valid",
-        unit: "argumen",
-        source: "ilustrasi edukatif",
-        note: "Banyak argumen yang terdengar meyakinkan ternyata tidak valid secara bentuk.",
-        data: [
-          { label: "Valid", value: 17, color: "#22c55e" },
-          { label: "Tidak valid", value: 13, color: "#ef4444" },
-        ],
-      },
-      {
         type: "classifyExercise",
         prompt: "Nilai tiap argumen: apakah bentuknya valid atau tidak valid?",
         buckets: ["Valid", "Tidak valid"],
@@ -349,20 +337,6 @@ export const level3: Lesson[] = [
       },
       { type: "widget", widget: "CekValiditasSilogisme" },
       {
-        type: "chart",
-        variant: "donut",
-        title: "Empat bentuk inferensi kondisional",
-        unit: "bentuk",
-        source: "Logika proposisional",
-        note: "Dua bentuk valid (ponens, tollens) dan dua sesat pikir formal yang menyerupainya.",
-        data: [
-          { label: "Modus ponens (valid)", value: 1, color: "#22c55e" },
-          { label: "Modus tollens (valid)", value: 1, color: "#3b82f6" },
-          { label: "Menegaskan akibat (keliru)", value: 1, color: "#ef4444" },
-          { label: "Menyangkal sebab (keliru)", value: 1, color: "#f97316" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Alarm kebakaran",
         html: "Aturan: 'Jika ada kebakaran maka alarm berbunyi.' (a) Alarm tidak berbunyi, maka tidak ada kebakaran -> ini <strong>modus tollens, valid</strong>. (b) Alarm berbunyi, maka ada kebakaran -> ini <strong>menegaskan akibat, keliru</strong> karena alarm bisa berbunyi karena uji coba atau asap rokok.",
@@ -392,20 +366,6 @@ export const level3: Lesson[] = [
         html: "Diberi sebuah argumen kondisional, tentukan bentuknya (ponens, tollens, menegaskan akibat, atau menyangkal sebab) dan apakah ia valid.",
       },
       { type: "widget", widget: "IdentifikasiModus" },
-      {
-        type: "chart",
-        variant: "bar",
-        title: "Dari 50 argumen kondisional siswa: sebaran bentuk",
-        unit: "argumen",
-        source: "ilustrasi edukatif",
-        note: "Dua bentuk pertama valid; dua sisanya sesat pikir formal yang sering tertukar.",
-        data: [
-          { label: "Modus ponens (valid)", value: 16, color: "#22c55e" },
-          { label: "Modus tollens (valid)", value: 12, color: "#3b82f6" },
-          { label: "Menegaskan akibat (keliru)", value: 13, color: "#ef4444" },
-          { label: "Menyangkal sebab (keliru)", value: 9, color: "#f97316" },
-        ],
-      },
       {
         type: "classifyExercise",
         prompt: "Klasifikasikan tiap argumen kondisional ke bentuknya.",
@@ -508,19 +468,6 @@ export const level3: Lesson[] = [
         html: "Kata 'semua/setiap/seluruh' menandai universal; 'sebagian/ada/beberapa/sekurangnya satu' menandai eksistensial; 'tidak ada/tak satu pun' menandai universal negatif.",
       },
       {
-        type: "chart",
-        variant: "bar",
-        title: "Sebaran kalimat berkuantor dalam contoh teks",
-        unit: "kalimat",
-        source: "Contoh analisis 40 kalimat",
-        note: "Distribusi ilustratif jenis kuantor pada teks argumentatif sederhana.",
-        data: [
-          { label: "Universal (semua)", value: 18, color: "#3b82f6" },
-          { label: "Eksistensial (sebagian)", value: 14, color: "#22c55e" },
-          { label: "Universal negatif (tidak ada)", value: 8, color: "#ef4444" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Negasi yang keliru",
         html: "Pernyataan: 'Semua mahasiswa lulus ujian.' Seseorang menyangkalnya dengan 'Berarti tidak ada mahasiswa yang lulus.' Ini <strong>salah</strong>. Negasi yang benar adalah 'Sebagian mahasiswa tidak lulus', cukup satu mahasiswa gagal untuk membatalkan klaim universal.",
@@ -553,20 +500,6 @@ export const level3: Lesson[] = [
         html: "Negasi proposisi universal (A, E) menghasilkan proposisi partikular (O, I), dan sebaliknya. Latih menyimpulkan nilai kebenaran satu kuantor dari kuantor lain.",
       },
       { type: "widget", widget: "LatihanKuadratOposisi" },
-      {
-        type: "chart",
-        variant: "donut",
-        title: "Empat hubungan dalam kuadrat oposisi",
-        unit: "hubungan",
-        source: "Logika kategoris klasik",
-        note: "Kontradiktori, kontrari, subkontrari, dan subaltern menautkan A, E, I, dan O.",
-        data: [
-          { label: "Kontradiktori (A-O, E-I)", value: 1, color: "#ef4444" },
-          { label: "Kontrari (A-E)", value: 1, color: "#3b82f6" },
-          { label: "Subkontrari (I-O)", value: 1, color: "#22c55e" },
-          { label: "Subaltern (A-I, E-O)", value: 1, color: "#a855f7" },
-        ],
-      },
       {
         type: "matchExercise",
         prompt: "Pasangkan tiap proposisi dengan negasinya (pasangan kontradiktori).",
