@@ -353,20 +353,6 @@ export const level2: Lesson[] = [
         html: "Tujuan skeptisisme ilmiah bukan menyerah pada ketidaktahuan, melainkan menuntut bukti yang memadai sebelum menerima sebuah klaim sebagai pengetahuan.",
       },
       {
-        type: "chart",
-        variant: "line",
-        title: "Prinsip: Keyakinan Rasional Naik seiring Bertambahnya Bukti (ilustrasi konsep)",
-        unit: "tingkat keyakinan (0-100)",
-        source: "Ilustrasi konsep, bukan data survei",
-        note: "Menggambarkan prinsip skeptisisme metodis: derajat keyakinan yang wajar sebaiknya mengikuti kekuatan bukti, bukan melampauinya.",
-        data: [
-          { label: "Tanpa bukti", value: 10, color: "#ef4444" },
-          { label: "Satu pengamatan", value: 30, color: "#f59e0b" },
-          { label: "Pengamatan berulang", value: 60, color: "#eab308" },
-          { label: "Diuji & direplikasi", value: 90, color: "#10b981" },
-        ],
-      },
-      {
         type: "case",
         title: "Studi Kasus: Kalkun Hume",
         html: "Seekor kalkun diberi makan setiap pagi selama 364 hari, lalu menyimpulkan secara induktif bahwa manusia selalu memberinya makan. Pada hari ke-365, menjelang hari raya, ia justru disembelih. Kasus klasik ini menggambarkan <strong>problem of induction</strong>: pola masa lalu tidak menjamin masa depan, sebanyak apa pun pengamatannya.",
