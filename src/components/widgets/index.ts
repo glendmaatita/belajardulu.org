@@ -5,6 +5,10 @@ import { KalkulatorJejakKarbon } from "./KalkulatorJejakKarbon";
 import { SimulatorCapTrade } from "./SimulatorCapTrade";
 import { KalkulatorPajakKarbon } from "./KalkulatorPajakKarbon";
 import { SimulatorOffset } from "./SimulatorOffset";
+// Ekspor
+import { SimulatorKesiapanEkspor } from "./SimulatorKesiapanEkspor";
+import { KalkulatorHargaEkspor } from "./KalkulatorHargaEkspor";
+import { SimulatorModelEkspor } from "./SimulatorModelEkspor";
 // Akuntansi
 import { EquationPlayground } from "./EquationPlayground";
 import { DebitKreditDrill } from "./DebitKreditDrill";
@@ -284,6 +288,9 @@ import { SimulatorKeunggulanKomparatif } from "./SimulatorKeunggulanKomparatif";
 import { TimelineMazhabEkonomi } from "./TimelineMazhabEkonomi";
 
 export const widgetRegistry: Record<WidgetId, FC> = {
+  SimulatorKesiapanEkspor,
+  KalkulatorHargaEkspor,
+  SimulatorModelEkspor,
   KalkulatorJejakKarbon,
   SimulatorCapTrade,
   KalkulatorPajakKarbon,

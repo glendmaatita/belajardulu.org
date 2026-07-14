@@ -64,6 +64,7 @@ import { RebalancingVideo, RebalancingVideoDuration } from "./RebalancingVideo";
 // Kepabeanan
 import { AlurImpor, AlurImporDuration } from "./AlurImpor";
 import { AlurEkspor, AlurEksporDuration } from "./AlurEkspor";
+import { EksporTanpaPabrik, EksporTanpaPabrikDuration } from "./EksporTanpaPabrik";
 import { StrukturHSCode, StrukturHSCodeDuration } from "./StrukturHSCode";
 import { IncotermsVideo, IncotermsVideoDuration } from "./IncotermsVideo";
 import { PungutanImpor, PungutanImporDuration } from "./PungutanImpor";
@@ -519,6 +520,7 @@ export const videoRegistry: Record<VideoComp, CompEntry> = {
   // Kepabeanan
   AlurImpor: { component: AlurImpor, durationInFrames: AlurImporDuration },
   AlurEkspor: { component: AlurEkspor, durationInFrames: AlurEksporDuration },
+  EksporTanpaPabrik: { component: EksporTanpaPabrik, durationInFrames: EksporTanpaPabrikDuration },
   StrukturHSCode: { component: StrukturHSCode, durationInFrames: StrukturHSCodeDuration },
   IncotermsVideo: { component: IncotermsVideo, durationInFrames: IncotermsVideoDuration },
   PungutanImpor: { component: PungutanImpor, durationInFrames: PungutanImporDuration },

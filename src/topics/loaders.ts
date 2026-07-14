@@ -12,6 +12,7 @@ export const topicLoaders: Record<string, () => Promise<Record<string, unknown>>
   "demokrasi": () => import("./demokrasi/meta"),
   "dinamika": () => import("./dinamika/meta"),
   "ekonomi-syariah": () => import("./ekonomi-syariah/meta"),
+  "ekspor": () => import("./ekspor/meta"),
   "filsafat": () => import("./filsafat/meta"),
   "fluida": () => import("./fluida/meta"),
   "fungsi-grafik": () => import("./fungsi-grafik/meta"),

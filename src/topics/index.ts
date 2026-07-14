@@ -11,7 +11,7 @@ const ORDER = [
   "statistika", "kalkulus", "pengantar-fisika", "kinematika", "dinamika", "usaha-energi", "momentum",
   "rotasi", "gravitasi", "fluida", "getaran-gelombang", "termodinamika", "listrik-statis", "arus-listrik",
   "magnetisme", "optika", "pajak", "tax-planning", "mikroekonomi", "makroekonomi", "kebijakan-fiskal",
-  "kebijakan-moneter", "pasar-keuangan", "kepabeanan", "investasi", "corporate-finance", "climate-finance",
+  "kebijakan-moneter", "pasar-keuangan", "kepabeanan", "ekspor", "investasi", "corporate-finance", "climate-finance",
   "carbon", "cryptocurrency", "supply-chain", "kapitalisme", "marxisme", "ekonomi-syariah",
   "sejarah-pemikiran-ekonomi", "perencanaan-keuangan", "demokrasi", "logika", "filsafat", "akuntansi",
 ];
@@ -126,7 +126,7 @@ export const categories: Category[] = [
     tagline: "Mengalirkan barang dari hulu ke hilir: pengadaan, gudang, logistik, sampai perdagangan global.",
     icon: "gears",
     accent: "from-sky-500 to-indigo-600",
-    topicIds: ["supply-chain"],
+    topicIds: ["supply-chain", "ekspor"],
   },
   {
     id: "sosial-politik",
