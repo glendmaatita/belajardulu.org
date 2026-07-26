@@ -114,7 +114,7 @@ export function LessonPage() {
         <>
           <div>
             {blocks.map((block, i) => (
-              <BlockRenderer key={i} block={block} lessonKey={key} index={i} />
+              <BlockRenderer key={`${key}#${i}`} block={block} lessonKey={key} index={i} />
             ))}
           </div>
 
